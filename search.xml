@@ -2308,15 +2308,87 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>J1939标准用于卡车、公共汽车和移动液压等重型车辆</p>
 <p>J1939标准定义的大部分报文均旨在广播,使用CAN 2.0B协议中定义的29位标识符</p>
-<p>优先级/P | 扩展数据页/EDP | 数据页/DP | PDU格式/PF | 特定PDU/PS | 源地址/SA | DATA<br>|:-:|:-:|:-:|:-:|:-:|:-:| :-: |<br>3bit|1bit|1bit|8bit|8bit|8bit|0~64bit</p>
-<p>P：Priority，优先级，调整该值可改变报文在总线上的仲裁优先级<br>EDP及DP：扩展数据页及数据页，当前均为0<br>PF：PDU format，确定PDU格式，如PF值区间为0<del>239（0x00</del>0xEF），则表明是PDU1格式，如区间为240<del>255（0xF0</del>0xFF），则表明是PDU2格式。该场是PGN的组成部分<br>PS：PDU Specific，如为PUD1格式，则该场表示帧的目标地址，如为PDU2格式，则表示组扩展GE（用于扩展PGN的个数）<br>SA：Source Address，源地址</p>
+<h2 id="网络应用"><a href="#网络应用" class="headerlink" title="网络应用"></a>网络应用</h2><h3 id="J1939物理层（基于J1939-11-15）"><a href="#J1939物理层（基于J1939-11-15）" class="headerlink" title="J1939物理层（基于J1939-11/15）"></a>J1939物理层（基于J1939-11/15）</h3><h3 id="J1939数据链路层（基于J1939-21）"><a href="#J1939数据链路层（基于J1939-21）" class="headerlink" title="J1939数据链路层（基于J1939-21）"></a>J1939数据链路层（基于J1939-21）</h3><table>
+<thead>
+<tr>
+<th align="center">优先级/P</th>
+<th align="center">扩展数据页/EDP</th>
+<th align="center">数据页/DP</th>
+<th align="center">PDU格式/PF</th>
+<th align="center">特定PDU/PS</th>
+<th align="center">源地址/SA</th>
+<th align="center">DATA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">3bit</td>
+<td align="center">1bit</td>
+<td align="center">1bit</td>
+<td align="center">8bit</td>
+<td align="center">8bit</td>
+<td align="center">8bit</td>
+<td align="center">0~64bit</td>
+</tr>
+</tbody></table>
+<p>P：Priority，优先级，调整该值可改变报文在总线上的仲裁优先级<br>These three bits are used to optimize message latency for transmission onto the bus only. They should be globally<br>masked off by the receiver (ignored). The priority of any message can be set from highest, 0 (0002), to lowest, 7 (1112).<br>The default for all control oriented messages is 3 (0112). The default for all other informational, proprietary, request, and<br>ACK messages is 6 (1102). This permits the priority to be raised or lowered in the future as new PGNs are assigned and<br>bus traffic changes. A recommended priority is assigned to each PGN when it is added to the application layer document.<br>However, the priority field should be reprogrammable to allow for network tuning by the OEM should the need arise</p>
+<p>EDP及DP：扩展数据页及数据页，当前均为0<br>The Extended Data Page bit is used in conjunction with the Data Page bit to determine the structure of the CAN identifier<br>of the CAN data frame. All J1939 messages should set the Extended Data Page bit to ZERO on transmit. See Table 3,<br>Definition of Extended Data Page and Data Page Use, to find the defined uses of the EDP and DP fields. Future<br>definitions might possibly be expanding the PDU Format field, defining new PDU formats, or increasing the address<br>space</p>
+<table>
+<thead>
+<tr>
+<th align="center">Extended Data Page bit 25 CAN ID bit 25</th>
+<th align="center">Data Page bit 24 CAN ID bit 24</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">SAE J1939 page 0 PGNs</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">SAE J1939 page 1 PGNs</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">SAE J1939 reserved</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">ISO 15765-3 defined</td>
+</tr>
+</tbody></table>
+<p>PF：PDU format，确定PDU格式，如PF值区间为0~239（0x00~0xEF），则表明是PDU1格式，如区间为240~255（0xF0~0xFF），则表明是PDU2格式。该场是PGN的组成部分<br>PS：PDU Specific，如为PUD1格式，则该场表示帧的目标地址，如为PDU2格式，则表示组扩展GE（用于扩展PGN的个数）</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">PDU Format Field</th>
+<th align="center">PDU Specific Field</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PDU1 Format</td>
+<td align="center">0-239</td>
+<td align="center">Destination Address</td>
+</tr>
+<tr>
+<td align="center">PDU2 Format</td>
+<td align="center">240-255</td>
+<td align="center">Group Extension</td>
+</tr>
+</tbody></table>
+<p>SA：Source Address，源地址<br>The Source Address field is 8 bits long. There shall only be one device on the network with a given source address.<br>Therefore, the source address field assures that the CAN identifier is unique, as required by CAN. Address management<br>and allocation is detailed in SAE J1939-81. Procedures are defined in SAE J1939-81 to prevent duplication of source<br>addresses. Reference SAE J1939 Appendix B, Tables B2 through B9, for source address assignments</p>
 <p>在ID场中，Priority值根据需要调整，EDP和DP一般均为0，PF和PS决定了报文的PGN，SA体现了报文的发送节点。</p>
-<h2 id="请求PGN"><a href="#请求PGN" class="headerlink" title="请求PGN"></a>请求PGN</h2><p>PGN55904(EA00)专门用于数据请求</p>
+<h4 id="请求PGN"><a href="#请求PGN" class="headerlink" title="请求PGN"></a>请求PGN</h4><p>PGN55904(EA00)专门用于数据请求</p>
 <blockquote>
 <p>定义:用于从一个或多个网络设备请求参数组<br>速率:用户定义,推荐每秒不多于2~3次<br>数据长度:3字节<br>数据页:0<br>PDU格式:234(EA)<br>PDU特定域:目标地址<br>缺省优先级:6<br>参数组编号:59904(EA00)<br>参数定义:字节1,2,3位被请求参数组编号</p>
 </blockquote>
 <p>例如:请求发动机转速<br>Send:18EA00FF 04 F0 00<br>recv:0CF00400 00 00 00 00 00 00 00 00</p>
-<h2 id="多帧传输"><a href="#多帧传输" class="headerlink" title="多帧传输"></a>多帧传输</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><table>
+<h4 id="多帧传输"><a href="#多帧传输" class="headerlink" title="多帧传输"></a>多帧传输</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><table>
 <thead>
 <tr>
 <th align="center">缩写</th>
@@ -2355,8 +2427,10 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 <td align="center">广播报文</td>
 </tr>
 </tbody></table>
-<p>TP.CM<br>数据|Byte0|Byte1|Byte2|Byte3|Byte4|Byte5|Byte6|Byte7<br>|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|<br>TP.CM|控制字|报文字节数||全部数据包数|最大数据包数|能够发送的数据包数|要发送的下一个数据包数|包编号<br>TP.CM.RTS|16|整个报文的字节数||全部数据包数|最大数据包(默认FF)|PGN||<br>TP.CM.CTS|17|能够发送的包数(不超过RTS[4])|要发送下一数据包编号|FF|FF|PGN||<br>TP.CM.Abort|255|放弃连接原因|FF|FF|FF|PGN||<br>TP.CM.EndofMsgAsk|19|整个报文字节数||全部数据包数|FF|PGN||</p>
-<h3 id="请求多帧示例"><a href="#请求多帧示例" class="headerlink" title="请求多帧示例"></a>请求多帧示例</h3><p>T:18EA0081 EC FE 00<br>R:18EC8100 10 12 00 03 FF EC FE 00<br>T:18EC0081 11 03 01 FF FF EC FE 00<br>R:18EB8100 01 XX XX XX XX XX XX XX<br>R:18EB8100 02 XX XX XX XX XX XX XX<br>R:18EB8100 03 XX XX XX XX FF FF FF<br>T:18EC0081 13 12 00 03 FF EC FE 00</p>
+<p>TP.CM<br>|数据|Byte0|Byte1|Byte2|Byte3|Byte4|Byte5|Byte6|Byte7|<br>|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|<br>TP.CM|控制字|报文字节数||全部数据包数|最大数据包数|能够发送的数据包数|要发送的下一个数据包数|包编号<br>TP.CM.RTS|16|整个报文的字节数||全部数据包数|最大数据包(默认FF)|PGN||<br>TP.CM.CTS|17|能够发送的包数(不超过RTS[4])|要发送下一数据包编号|FF|FF|PGN||<br>TP.CM.Abort|255|放弃连接原因|FF|FF|FF|PGN||<br>TP.CM.EndofMsgAsk|19|整个报文字节数||全部数据包数|FF|PGN||</p>
+<h5 id="请求多帧示例"><a href="#请求多帧示例" class="headerlink" title="请求多帧示例"></a>请求多帧示例</h5><p>T:18EA0081 EC FE 00<br>R:18EC8100 10 12 00 03 FF EC FE 00<br>T:18EC0081 11 03 01 FF FF EC FE 00<br>R:18EB8100 01 XX XX XX XX XX XX XX<br>R:18EB8100 02 XX XX XX XX XX XX XX<br>R:18EB8100 03 XX XX XX XX FF FF FF<br>T:18EC0081 13 12 00 03 FF EC FE 00</p>
+<h3 id="J1939网络层（基于J1939-31）"><a href="#J1939网络层（基于J1939-31）" class="headerlink" title="J1939网络层（基于J1939-31）"></a>J1939网络层（基于J1939-31）</h3><h3 id="J1939应用层（基于J1939-71）"><a href="#J1939应用层（基于J1939-71）" class="headerlink" title="J1939应用层（基于J1939-71）"></a>J1939应用层（基于J1939-71）</h3><p>定义SPN与PGN</p>
+<h3 id="J1939网络管理（基于J1939-81）"><a href="#J1939网络管理（基于J1939-81）" class="headerlink" title="J1939网络管理（基于J1939-81）"></a>J1939网络管理（基于J1939-81）</h3><h3 id="J1939诊断（基于J1939-13-73）"><a href="#J1939诊断（基于J1939-13-73）" class="headerlink" title="J1939诊断（基于J1939-13/73）"></a>J1939诊断（基于J1939-13/73）</h3><p>DM1 Diagnostic Message 1, Active Diagnostic Trouble Codes<br>DM2 Diagnostic Message 2, Previously Active Diagnostic Trouble Codes<br>DM3 Diagnostic Message 3, Diagnostic Data Clear/Reset For Previously Active DTCs<br>DM4 Diagnostic Message 4, Freeze Frame Parameters<br>DM5 Diagnostic Message 5, Diagnostic Readiness<br>DM6 Diagnostic Message 6, Continuously Monitored Systems Test Results<br>DM7 Diagnostic Message 7, Command Non-Continuously Monitored Test<br>DM8 Diagnostic Message 8, Test Results For Non-Continuously Monitored Systems<br>DM9 Diagnostic Message 9, Oxygen Sensor Test Results<br>DM10 Diagnostic Message 10, Non-Continuously Monitored Systems Test IDs Support<br>DM11 Diagnostic Message 11, Diagnostic Data Clear/Reset For Active DTCs<br>DM12 Diagnostic Message 12, Emissions Related Active DTCs<br>DTC Diagnostic Trouble Code<br>FTP Federal Test Procedure<br>MIL Malfunction Indicator Lamp<br>NA Not applicable<br>PID Parameter Identifier (SAE J1587 or SAE J1979)<br>OBD II On Board Diagnostics II</p>
 ]]></content>
   </entry>
   <entry>
