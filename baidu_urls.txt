@@ -1,3 +1,4 @@
+https://silencejql.github.io/PostgreSQL数据库安装配置.html
 https://silencejql.github.io/轮眉软件调试.html
 https://silencejql.github.io/轮眉相机配置.html
 https://silencejql.github.io/SQLServer权限配置.html
