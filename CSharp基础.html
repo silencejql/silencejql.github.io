@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Silencejql">
 <meta property="og:description" content="记录写bug过程中遇到的一些疑问">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-03-30T07:37:19.503Z">
+<meta property="og:updated_time" content="2022-01-06T06:00:51.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSharp基础">
 <meta name="twitter:description" content="记录写bug过程中遇到的一些疑问">
@@ -455,7 +455,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-03-30 15:37:19" itemprop="dateModified" datetime="2021-03-30T15:37:19+08:00">2021-03-30</time>
+                <time title="修改时间：2022-01-06 14:00:51" itemprop="dateModified" datetime="2022-01-06T14:00:51+08:00">2022-01-06</time>
               
             
           </span>
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">887</span>
+                <span title="本文字数">1.1k</span>
               
               
                 <span class="post-meta-divider">|</span>
@@ -560,6 +560,11 @@
         <p>记录写bug过程中遇到的一些疑问</p>
 <a id="more"></a>
 
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>protected:只有同一类或派生类中的代码可以访问该类型或成员</p>
+<p>internal:同一程序集中的任何代码都可以访问该类型或成员，但其他程序集中的代码不可以。</p>
+<p>protected internal:同一程序集中的任何代码或其他程序集中的任何派生类都可以访问该类型或成员。</p>
+<p>private protected:同一类或基类程序集内派生类中的代码可以访问该类型或成<br>员。</p>
+<p>abstract:要求在派生类中重写类成员。</p>
 <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>值类型存储在堆栈上，引用类型在栈中存储一个引用，其实际的存储位置位于托管堆。<br>C#类为引用类型，结构为值类型。<br>从值类型转化为引用类型称为装箱，如果方法需要把一个对象作为参数，而且传送一个值类型，装箱操作会自动进行；装箱的值类型可以使用拆箱操作转换为值类型，在拆箱时，<strong>需要使用类型转换运算符</strong>。</p>
 <h3 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h3><p>结构体 数值类型(整数，浮点数，高精度浮点数) 可空类型 布尔 字符 枚举</p>
 <h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>数组，用户定义的类、接口、委托，object，字符串</p>
@@ -576,6 +581,7 @@
 <p>详见： <a href="/泛型的特点.html" title="泛型的特点">泛型的特点</a></p>
 <h3 id="为什么不用object代替泛型"><a href="#为什么不用object代替泛型" class="headerlink" title="为什么不用object代替泛型"></a>为什么不用object代替泛型</h3><p>由于Object为所有类型的基类，所以可以处理任何数据类型的数据，但是其中存在这拆箱和装箱，如果数据太多会影响到程序的性能。<br>在使用泛型的时候程序会在编译阶段根据我们提供的类型生成相应的二进制代码，无须进行装箱和拆箱操作。</p>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="为什么要用接口"><a href="#为什么要用接口" class="headerlink" title="为什么要用接口"></a>为什么要用接口</h3><p>接口一般由上层人员发起，下层人员实现。<br>写接口并不是为了扩展，而是为了扩展以后的模块仍然跟项目模块保持高度一致，为了扩展后的规范化。</p>
+<p>反射</p>
 <h3 id="实例化接口对象"><a href="#实例化接口对象" class="headerlink" title="实例化接口对象"></a>实例化接口对象</h3><h4 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h4><p>接口不仅可以声明对象，而且可以把对象实例化，还可以当做参数被传入。<br>即继承中的向上转型，父类 FL=new 子类()，只不过这里的父类就是interface接口。</p>
 <div><div class="fold_hider"><div class="close hider_title">展开/折叠示例</div></div><div class="fold">
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">double</span> <span class="title">plus</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">num</span> : <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">double</span> aa, bb;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">num</span>(<span class="params"><span class="keyword">double</span> a, <span class="keyword">double</span> b</span>)</span></span><br><span class="line"><span class="function"></span>  &#123;</span><br><span class="line">    <span class="keyword">this</span>.bb = b;</span><br><span class="line">    <span class="keyword">this</span>.aa = a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">plus</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>  &#123;</span><br><span class="line">    <span class="keyword">return</span> (aa + bb);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Itemp tm = <span class="literal">null</span>;<span class="comment">//声明接口对象引用</span></span><br><span class="line">  tm = <span class="keyword">new</span> num(<span class="number">1</span>, <span class="number">2</span>);<span class="comment">//接口回调(向上转型)</span></span><br><span class="line">  Console.WriteLine(tm.plus());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -666,8 +672,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSharp Static.html" rel="next" title="CSharp Static">
-                <i class="fa fa-chevron-left"></i> CSharp Static
+              <a href="/Hexo博客部署到Coding和github.html" rel="next" title="Hexo博客部署到Coding和github">
+                <i class="fa fa-chevron-left"></i> Hexo博客部署到Coding和github
               </a>
             
           </div>
@@ -676,8 +682,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/泛型的特点.html" rel="prev" title="泛型的特点">
-                泛型的特点 <i class="fa fa-chevron-right"></i>
+              <a href="/CSharp Static.html" rel="prev" title="CSharp Static">
+                CSharp Static <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -755,7 +761,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -810,7 +816,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">19</span>
+                      
+                    
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -943,7 +951,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">58</span>
+                      
+                    
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1044,7 +1054,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-number">1.1.</span> <span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">1.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">2.</span> <span class="nav-text">装箱和拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">3.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不用object代替泛型"><span class="nav-number">3.1.</span> <span class="nav-text">为什么不用object代替泛型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">4.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用接口"><span class="nav-number">4.1.</span> <span class="nav-text">为什么要用接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化接口对象"><span class="nav-number">4.2.</span> <span class="nav-text">实例化接口对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口回调"><span class="nav-number">4.2.1.</span> <span class="nav-text">接口回调</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型参数约束"><span class="nav-number">5.</span> <span class="nav-text">类型参数约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前程序运行路径"><span class="nav-number">6.</span> <span class="nav-text">当前程序运行路径</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-number">2.1.</span> <span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">2.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">3.</span> <span class="nav-text">装箱和拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">4.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不用object代替泛型"><span class="nav-number">4.1.</span> <span class="nav-text">为什么不用object代替泛型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">5.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用接口"><span class="nav-number">5.1.</span> <span class="nav-text">为什么要用接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化接口对象"><span class="nav-number">5.2.</span> <span class="nav-text">实例化接口对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口回调"><span class="nav-number">5.2.1.</span> <span class="nav-text">接口回调</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型参数约束"><span class="nav-number">6.</span> <span class="nav-text">类型参数约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前程序运行路径"><span class="nav-number">7.</span> <span class="nav-text">当前程序运行路径</span></a></li></ol></div>
             
 
           </div>
@@ -1068,7 +1078,7 @@
       <div class="footer-inner">
         <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2021</span>
+<div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2022</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </span>
@@ -1082,7 +1092,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">83k</span>
+    <span title="站点总字数">89k</span>
   
 
   
@@ -1093,7 +1103,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:15</span>
+    <span title="站点阅读时长">1:21</span>
   
 </div>
 <!--
@@ -1118,7 +1128,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共55.8k字</span>
+  <span class="post-count">博客全站共60.8k字</span>
 </div>
 -->
 
