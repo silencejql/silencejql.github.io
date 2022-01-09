@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Silencejql">
 <meta property="og:description" content="写在前面 Representational State Transfer">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-01-09T01:54:05.006Z">
+<meta property="og:updated_time" content="2022-01-09T09:06:11.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C# RESTful">
 <meta name="twitter:description" content="写在前面 Representational State Transfer">
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-01-09 09:54:05" itemprop="dateModified" datetime="2022-01-09T09:54:05+08:00">2022-01-09</time>
+                <time title="修改时间：2022-01-09 17:06:11" itemprop="dateModified" datetime="2022-01-09T17:06:11+08:00">2022-01-09</time>
               
             
           </span>
@@ -505,7 +505,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">42</span>
+                <span title="本文字数">608</span>
               
               
                 <span class="post-meta-divider">|</span>
@@ -542,11 +542,12 @@
 Representational State Transfer
 <a id="more"></a>
 
-<p>##</p>
-<div><div class="fold_hider"><div class="close hider_title">展开/折叠示例</div></div><div class="fold">
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-</div></div>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>表现层状态转化<br>如果一个架构符合REST原则，就称它为RESTful架构</p>
+<p>REST的名称”表现层状态转化”中, “表现层”指的是”资源”（Resources）的”表现层”。<br>URI（统一资源标识符）指向资源，每种资源对应一个特定的URI。要获取这个资源，访问它的URI就可以，因此URI就成了每一个资源的地址或独一无二的识别符。</p>
+<h3 id="Representation"><a href="#Representation" class="headerlink" title="Representation"></a>Representation</h3><p>把”资源”具体呈现出来的形式，叫做它的”表现层”（Representation）<br>比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现</p>
+<h3 id="State-Transfer"><a href="#State-Transfer" class="headerlink" title="State Transfer"></a>State Transfer</h3><p>访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化</p>
+<p>互联网通信协议HTTP协议，是一个无状态协议。这意味着，所有的状态都保存在服务器端。因此，如果客户端想要操作服务器，必须通过某种手段，让服务器端发生”状态转化”（State Transfer）。而这种转化是建立在表现层之上的，所以就是”表现层状态转化”</p>
+<p>客户端用到的手段，只能是HTTP协议。具体来说，就是HTTP协议里面，四个表示操作方式的动词：GET、POST、PUT、DELETE。它们分别对应四种基本操作：GET用来获取资源，POST用来新建资源（也可以用于更新资源），PUT用来更新资源，DELETE用来删除资源</p>
 
       
     </div>
@@ -568,7 +569,7 @@ Representational State Transfer
   <p><span>本文标题:</span><a href="/C# RESTful.html">C# RESTful</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Justin 的个人博客">Justin</a></p>
   <p><span>发布时间:</span>2022年01月08日 - 17:01</p>
-  <p><span>最后更新:</span>2022年01月09日 - 09:01</p>
+  <p><span>最后更新:</span>2022年01月09日 - 17:01</p>
   <p><span>原始链接:</span><a href="/C# RESTful.html" title="C# RESTful">https://silencejql.github.io/C# RESTful.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://silencejql.github.io/C# RESTful.html" aria-label="复制成功！"></i></span>
   </p>
@@ -703,8 +704,17 @@ Representational State Transfer
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1006,6 +1016,23 @@ Representational State Transfer
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解"><span class="nav-number">1.</span> <span class="nav-text">理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Representation"><span class="nav-number">1.1.</span> <span class="nav-text">Representation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State-Transfer"><span class="nav-number">1.2.</span> <span class="nav-text">State Transfer</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
     </div>
@@ -1073,7 +1100,7 @@ Representational State Transfer
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共61.0k字</span>
+  <span class="post-count">博客全站共61.3k字</span>
 </div>
 -->
 
