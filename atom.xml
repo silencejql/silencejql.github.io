@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://silencejql.github.io/"/>
-  <updated>2022-01-08T09:13:10.104Z</updated>
+  <updated>2022-01-09T01:54:05.006Z</updated>
   <id>https://silencejql.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://silencejql.github.io/C#%20RESTful.html"/>
     <id>https://silencejql.github.io/C# RESTful.html</id>
     <published>2022-01-08T09:12:00.000Z</published>
-    <updated>2022-01-08T09:13:10.104Z</updated>
+    <updated>2022-01-09T01:54:05.006Z</updated>
     
-    <content type="html"><![CDATA[<center>写在前面</center>在写了在写了<a id="more"></a><p>##</p><div><div class="fold_hider"><div class="close hider_title">展开/折叠示例</div></div><div class="fold"><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div>]]></content>
+    <content type="html"><![CDATA[<center>写在前面</center>Representational State Transfer<a id="more"></a><p>##</p><div><div class="fold_hider"><div class="close hider_title">展开/折叠示例</div></div><div class="fold"><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div>]]></content>
     
     <summary type="html">
     
       &lt;center&gt;写在前面&lt;/center&gt;
-在写了在写了
+Representational State Transfer
     
     </summary>
     

@@ -122,7 +122,7 @@
 <meta property="og:site_name" content="Silencejql">
 <meta property="og:description" content="写在前面">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-09-07T06:33:37.343Z">
+<meta property="og:updated_time" content="2022-01-09T06:39:07.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON字符串">
 <meta name="twitter:description" content="写在前面">
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-09-07 14:33:37" itemprop="dateModified" datetime="2021-09-07T14:33:37+08:00">2021-09-07</time>
+                <time title="修改时间：2022-01-09 14:39:07" itemprop="dateModified" datetime="2022-01-09T14:39:07+08:00">2022-01-09</time>
               
             
           </span>
@@ -556,6 +556,8 @@
 <h3 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h3><p>ClassA a = JsonConvert.DeserializeObject<classa>(strResult);</classa></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">List&lt;Student&gt; lstStuModel = <span class="keyword">new</span> List&lt;Student&gt;()</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">new</span> Student()&#123;ID=<span class="number">1</span>,Name=<span class="string">"Name1"</span>,Age=<span class="number">250</span>,Sex=<span class="string">"男"</span>&#125;,</span><br><span class="line"><span class="keyword">new</span> Student()&#123;ID=<span class="number">2</span>,Name=<span class="string">"Name2"</span>,Age=<span class="number">300</span>,Sex=<span class="string">"女"</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Json.NET序列化</span></span><br><span class="line"><span class="keyword">string</span> jsonData = JsonConvert.SerializeObject(lstStuModel);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Json.NET反序列化</span></span><br><span class="line"><span class="keyword">string</span> json = <span class="string">@"&#123; 'Name':'Name1','Age':'3000','ID':'1','Sex':'女'&#125;"</span>;</span><br><span class="line">Student descJsonStu = JsonConvert.DeserializeObject&lt;Student&gt;(json);<span class="comment">//反序列化</span></span><br><span class="line">Console.WriteLine(<span class="keyword">string</span>.Format(<span class="string">"反序列化： ID=&#123;0&#125;,Name=&#123;1&#125;,Sex=&#123;2&#125;,Sex=&#123;3&#125;"</span>, descJsonStu.ID, descJsonStu.Name, descJsonStu.Age, descJsonStu.Sex));</span><br><span class="line">Console.ReadKey();</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//序列化时默认都是处理公共成员，如果需要处理非公共成员，就要在该成员上加特性[JsonProperty]</span></span><br><span class="line"><span class="comment">//类中所有公有成员会被序列化，如果不想被序列化，可以用特性JsonIgnore</span></span><br><span class="line">[<span class="meta">JsonObject(MemberSerialization.OptIn)</span>]</span><br><span class="line"><span class="keyword">class</span> <span class="title">TestItem</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">JsonProperty</span>]</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> testNo;</span><br><span class="line">  [<span class="meta">JsonIgnore</span>]</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">string</span> testItem;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">string</span> testValue;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//所有的成员不会被序列化，类中的成员只有标有特性JsonProperty的才会被序列化</span></span><br><span class="line">[<span class="meta">JsonObject(MemberSerialization.OptIn)</span>]</span><br><span class="line"><span class="keyword">class</span> <span class="title">TestItem1</span></span><br><span class="line">&#123;</span><br><span class="line">  [<span class="meta">JsonIgnore</span>]</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">string</span> testItem;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">string</span> testValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -577,7 +579,7 @@
   <p><span>本文标题:</span><a href="/JSON字符串.html">JSON字符串</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Justin 的个人博客">Justin</a></p>
   <p><span>发布时间:</span>2020年06月24日 - 10:06</p>
-  <p><span>最后更新:</span>2021年09月07日 - 14:09</p>
+  <p><span>最后更新:</span>2022年01月09日 - 14:01</p>
   <p><span>原始链接:</span><a href="/JSON字符串.html" title="JSON字符串">https://silencejql.github.io/JSON字符串.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://silencejql.github.io/JSON字符串.html" aria-label="复制成功！"></i></span>
   </p>
@@ -1112,7 +1114,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共60.8k字</span>
+  <span class="post-count">博客全站共61.0k字</span>
 </div>
 -->
 
