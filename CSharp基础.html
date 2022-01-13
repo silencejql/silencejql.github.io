@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Silencejql">
 <meta property="og:description" content="记录写bug过程中遇到的一些疑问">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2022-01-06T06:00:51.167Z">
+<meta property="og:updated_time" content="2022-01-12T08:31:28.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSharp基础">
 <meta name="twitter:description" content="记录写bug过程中遇到的一些疑问">
@@ -455,7 +455,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2022-01-06 14:00:51" itemprop="dateModified" datetime="2022-01-06T14:00:51+08:00">2022-01-06</time>
+                <time title="修改时间：2022-01-12 16:31:28" itemprop="dateModified" datetime="2022-01-12T16:31:28+08:00">2022-01-12</time>
               
             
           </span>
@@ -524,7 +524,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1.6k</span>
               
               
                 <span class="post-meta-divider">|</span>
@@ -592,6 +592,28 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> T : <span class="keyword">struct</span>  <span class="comment">//类型参数必须是值类型；可以指定除 Nullable 以外的任何值类型</span></span><br><span class="line"><span class="keyword">where</span> T : <span class="keyword">class</span>   <span class="comment">//类型参数必须是引用类型；这一点也适用于任何类、接口、委托或数组类型</span></span><br><span class="line">where T : new()   //类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new() 约束必须最后指定</span><br><span class="line"><span class="keyword">where</span> T : NameOfBaseClass   <span class="comment">//类型参数必须是指定的基类或派生自指定的基类</span></span><br><span class="line"><span class="keyword">where</span> T : NameOfInterface   <span class="comment">//类型参数必须是指定的接口或实现指定的接口。可以指定多个接口约束。约束接口也可以是泛型的</span></span><br><span class="line"><span class="keyword">where</span> T : U    <span class="comment">//为 T 提供的类型参数必须是为 U 提供的参数或派生自为 U 提供的参数</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="当前程序运行路径"><a href="#当前程序运行路径" class="headerlink" title="当前程序运行路径"></a>当前程序运行路径</h2><p><code>Directory.GetCurrentDirectory() + &quot;\\Config</code></p>
+<h2 id="数据类型补充"><a href="#数据类型补充" class="headerlink" title="数据类型补充"></a>数据类型补充</h2><p><code>@&quot;&quot;&quot;Ahoy!&quot;&quot; cried the captain.&quot; // &quot;Ahoy!&quot; cried the captain.</code></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d = <span class="number">3</span>D;</span><br><span class="line">d = <span class="number">4</span>d;</span><br><span class="line">d = <span class="number">3.934</span>_001;</span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3</span>_000<span class="number">.5F</span>;</span><br><span class="line">f = <span class="number">5.4f</span>;</span><br><span class="line"><span class="keyword">decimal</span> myMoney = <span class="number">3</span>_000<span class="number">.5</span>m;</span><br><span class="line">myMoney = <span class="number">400.75</span>M;</span><br><span class="line"></span><br><span class="line">[<span class="meta">Flags</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Days</span><br><span class="line">&#123;</span><br><span class="line">  None = <span class="number">0b</span>_0000_0000, <span class="comment">// 0</span></span><br><span class="line">  Monday = <span class="number">0b</span>_0000_0001, <span class="comment">// 1</span></span><br><span class="line">  Tuesday = <span class="number">0b</span>_0000_0010, <span class="comment">// 2</span></span><br><span class="line">  Wednesday = <span class="number">0b</span>_0000_0100, <span class="comment">// 4</span></span><br><span class="line">  Thursday = <span class="number">0b</span>_0000_1000, <span class="comment">// 8</span></span><br><span class="line">  Friday = <span class="number">0b</span>_0001_0000, <span class="comment">// 16</span></span><br><span class="line">  Saturday = <span class="number">0b</span>_0010_0000, <span class="comment">// 32</span></span><br><span class="line">  Sunday = <span class="number">0b</span>_0100_0000, <span class="comment">// 64</span></span><br><span class="line">  Weekend = Saturday | Sunday</span><br><span class="line">&#125;</span><br><span class="line">Days meetingDays = Days.Monday | Days.Wednesday | Days.Friday;</span><br></pre></td></tr></table></figure>
+
+<p>checked 关键字用于对整型类型算术运算和转换显式启用溢出检查</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">2147483647</span>;</span><br><span class="line"><span class="keyword">checked</span></span><br><span class="line">&#123;</span><br><span class="line">  i += <span class="number">10</span>;</span><br><span class="line">  Console.WriteLine(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//i=0;不会抛异常</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h2><p>lock 语句获取给定对象的互斥 lock，执行语句块，然后释放 lock。 持有 lock 时，持有 lock 的线程可以再次获取并释放 lock。 阻止任何其他线程获取 lock 并等待释放 lock。</p>
+<p>lock(引用类型)</p>
+<p>当同步对共享资源的线程访问时，请锁定专用对象实例（例如,private readonly object balanceLock = new object(); ）或另一个不太可能被代码无关部分用作 lock 对象的实例。避免对不同的共享资源使用相同的 lock 对象实例，因为这可能导致死锁或锁争用</p>
+<h2 id="when"><a href="#when" class="headerlink" title="when"></a>when</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">new</span> HttpClient();</span><br><span class="line"><span class="keyword">var</span> streamTask = client.GetStringAsync(<span class="string">"https://localHost:10000"</span>);</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> responseText = <span class="keyword">await</span> streamTask;</span><br><span class="line">  <span class="keyword">return</span> responseText;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) when (e.Message.Contains(<span class="string">"301"</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Site Moved"</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) when (e.Message.Contains(<span class="string">"404"</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"Page Not Found"</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> e.Message;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>case 标签无需是互斥的，且 case 标签在 switch 语句中的显示顺序可以决定要执行的 switch块。 when 关键字可指定一个筛选条件，该条件使得仅当筛选条件也为 true 时，与其相关联的 case 标签才为 true。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> (expr) when (when-condition):</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> Shape shape when shape.Area == <span class="number">0</span>:</span><br><span class="line">Console.WriteLine(<span class="string">$"The shape: <span class="subst">&#123;shape.GetType().Name&#125;</span> with no dimensions"</span>);</span><br><span class="line"><span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符-C-8-0"><a href="#运算符-C-8-0" class="headerlink" title="运算符 C#8.0"></a>运算符 C#8.0</h2><p>从末尾运算符 ^ 开始索引</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] xs = <span class="keyword">new</span>[] &#123; <span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> last = xs[^<span class="number">1</span>];</span><br><span class="line"><span class="comment">// last = 40</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span>[] &#123; <span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line"><span class="keyword">int</span> start = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> amountToTake = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">int</span>[] subset = numbers[start..(start + amountToTake)];</span><br><span class="line">Display(subset); <span class="comment">// output: 10 20 30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//a.. 等效于 a..^0</span></span><br><span class="line"><span class="comment">//..b 等效于 0..b</span></span><br><span class="line"><span class="comment">//.. 等效于 0..^0</span></span><br></pre></td></tr></table></figure>
+
+<p>命名空间别名限定符 :: 访问已设置别名的命名空间的成员</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> forwinforms = System.Drawing;</span><br><span class="line"><span class="keyword">using</span> forwpf = System.Windows;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Converters</span></span><br><span class="line">&#123;</span><br><span class="line">  public static forwpf::Point Convert(forwinforms::Point point) =&gt; new forwpf::Point(point.X, point.Y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -761,7 +783,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">89</span>
+                    <span class="site-state-item-count">92</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1054,7 +1076,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-number">2.1.</span> <span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">2.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">3.</span> <span class="nav-text">装箱和拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">4.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不用object代替泛型"><span class="nav-number">4.1.</span> <span class="nav-text">为什么不用object代替泛型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">5.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用接口"><span class="nav-number">5.1.</span> <span class="nav-text">为什么要用接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化接口对象"><span class="nav-number">5.2.</span> <span class="nav-text">实例化接口对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口回调"><span class="nav-number">5.2.1.</span> <span class="nav-text">接口回调</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型参数约束"><span class="nav-number">6.</span> <span class="nav-text">类型参数约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前程序运行路径"><span class="nav-number">7.</span> <span class="nav-text">当前程序运行路径</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-number">2.1.</span> <span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用类型"><span class="nav-number">2.2.</span> <span class="nav-text">引用类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-number">3.</span> <span class="nav-text">装箱和拆箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛型"><span class="nav-number">4.</span> <span class="nav-text">泛型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么不用object代替泛型"><span class="nav-number">4.1.</span> <span class="nav-text">为什么不用object代替泛型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口"><span class="nav-number">5.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要用接口"><span class="nav-number">5.1.</span> <span class="nav-text">为什么要用接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例化接口对象"><span class="nav-number">5.2.</span> <span class="nav-text">实例化接口对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口回调"><span class="nav-number">5.2.1.</span> <span class="nav-text">接口回调</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型参数约束"><span class="nav-number">6.</span> <span class="nav-text">类型参数约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当前程序运行路径"><span class="nav-number">7.</span> <span class="nav-text">当前程序运行路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型补充"><span class="nav-number">8.</span> <span class="nav-text">数据类型补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lock"><span class="nav-number">9.</span> <span class="nav-text">lock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#when"><span class="nav-number">10.</span> <span class="nav-text">when</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符-C-8-0"><span class="nav-number">11.</span> <span class="nav-text">运算符 C#8.0</span></a></li></ol></div>
             
 
           </div>
@@ -1092,7 +1114,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">89k</span>
+    <span title="站点总字数">92k</span>
   
 
   
@@ -1103,7 +1125,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:21</span>
+    <span title="站点阅读时长">1:24</span>
   
 </div>
 <!--
@@ -1128,7 +1150,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共61.3k字</span>
+  <span class="post-count">博客全站共63.6k字</span>
 </div>
 -->
 
