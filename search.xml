@@ -2702,7 +2702,7 @@ Postgre数据库安装与配置
 </blockquote>
 <p>标定板:</p>
 <blockquote>
-<p>Board_CenterX:<br>Board_CenterY: 相机玻璃面到标定板后边沿(黑孔处)的距离<br>Board_CenterZ: 四个识别点组成矩形中心到地的高度<br>Board_ColumnSpace: 四个识别点列宽<br>Board_RowSpace: 四个标定点行高</p>
+<p>Board_CenterX:<br>Board_CenterY: 标定板后边沿(黑孔处)到标定架中心的距离<br>Board_CenterZ: 四个识别点组成矩形中心到地的高度<br>Board_ColumnSpace: 四个识别点列宽<br>Board_RowSpace: 四个标定点行高</p>
 </blockquote>
 <p>算法参数:</p>
 <blockquote>
