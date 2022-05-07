@@ -3053,7 +3053,7 @@ LINQ to XML 是一种启用了 LINQ 的内存 XML 编程接口，支持在 .NET 
 <a id="more"></a>
 
 <h2 id="标定相机"><a href="#标定相机" class="headerlink" title="标定相机"></a>标定相机</h2><h3 id="添加标定界面"><a href="#添加标定界面" class="headerlink" title="添加标定界面"></a>添加标定界面</h3><p>参考轮眉标定配置:</p>
-<a href="/轮眉相机配置.html" title="轮眉相机配置">轮眉相机配置</a>
+<a href="/轮眉软件调试-棋盘格.html" title="轮眉软件调试-棋盘格">轮眉软件调试-棋盘格</a>
 
 <h3 id="选择标定类型"><a href="#选择标定类型" class="headerlink" title="选择标定类型"></a>选择标定类型</h3><p><img src="HUD%E6%A0%87%E5%AE%9A/%E9%85%8D%E7%BD%AE%E6%A0%87%E5%AE%9A.PNG" alt="标定类型"></p>
 <h3 id="标定"><a href="#标定" class="headerlink" title="标定"></a>标定</h3><p><img src="HUD%E6%A0%87%E5%AE%9A/%E6%A0%87%E5%AE%9A.PNG" alt="标定界面"></p>
