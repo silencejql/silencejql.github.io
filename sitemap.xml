@@ -2,6 +2,13 @@
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silencejql.github.io/BBKTimeLock.html</loc>
+    
+    <lastmod>2022-06-08T07:44:19.025Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/HUD%E6%A0%87%E5%AE%9A.html</loc>
     
     <lastmod>2022-05-07T12:12:42.228Z</lastmod>
@@ -425,13 +432,6 @@
     <loc>https://silencejql.github.io/HttpWeb.html</loc>
     
     <lastmod>2020-07-10T06:35:40.388Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/BBKTimeLock.html</loc>
-    
-    <lastmod>2020-07-10T06:29:10.298Z</lastmod>
     
   </url>
   
