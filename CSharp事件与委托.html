@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Silencejql">
 <meta property="og:description" content="写在前面 参考HeadFirstC#">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-11-18T09:13:06.880Z">
+<meta property="og:updated_time" content="2022-07-04T05:15:25.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C#事件与委托">
 <meta name="twitter:description" content="写在前面 参考HeadFirstC#">
@@ -439,12 +439,23 @@
                 
               
 
-              <time title="创建时间：2020-11-18 15:31:24 / 修改时间：17:13:06" itemprop="dateCreated datePublished" datetime="2020-11-18T15:31:24+08:00">2020-11-18</time>
+              <time title="创建时间：2020-11-18 15:31:24" itemprop="dateCreated datePublished" datetime="2020-11-18T15:31:24+08:00">2020-11-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2022-07-04 13:15:25" itemprop="dateModified" datetime="2022-07-04T13:15:25+08:00">2022-07-04</time>
               
             
           </span>
@@ -513,7 +524,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">153</span>
+                <span title="本文字数">160</span>
               
               
                 <span class="post-meta-divider">|</span>
@@ -566,6 +577,11 @@
 
 </div></div>
 
+<div><div class="fold_hider"><div class="close hider_title">展开/折叠示例</div></div><div class="fold">
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Delegate</span> &#123;</span><br><span class="line">    <span class="comment">// 热水器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Heater</span> &#123;</span><br><span class="line">       <span class="keyword">private</span> <span class="keyword">int</span> temperature;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">delegate</span> <span class="keyword">void</span> <span class="title">BoilHandler</span>(<span class="params"><span class="keyword">int</span> param</span>)</span>;   <span class="comment">//声明委托</span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">event</span> BoilHandler BoilEvent;        <span class="comment">//声明事件</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">// 烧水</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BoilWater</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">              temperature = i;</span><br><span class="line"></span><br><span class="line">              <span class="keyword">if</span> (temperature &gt; <span class="number">95</span>) &#123;</span><br><span class="line">                  <span class="keyword">if</span> (BoilEvent != <span class="literal">null</span>) &#123; <span class="comment">//如果有对象注册</span></span><br><span class="line">                      BoilEvent(temperature);  <span class="comment">//调用所有注册对象的方法</span></span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 警报器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Alarm</span> &#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MakeAlert</span>(<span class="params"><span class="keyword">int</span> param</span>)</span> &#123;</span><br><span class="line">           Console.WriteLine(<span class="string">"Alarm：嘀嘀嘀，水已经 &#123;0&#125; 度了："</span>, param);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示器</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Display</span> &#123;</span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">ShowMsg</span>(<span class="params"><span class="keyword">int</span> param</span>)</span> &#123; <span class="comment">//静态方法</span></span><br><span class="line">           Console.WriteLine(<span class="string">"Display：水快烧开了，当前温度：&#123;0&#125;度。"</span>, param);</span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span> &#123;</span><br><span class="line">       <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">           Heater heater = <span class="keyword">new</span> Heater();</span><br><span class="line">           Alarm alarm = <span class="keyword">new</span> Alarm();</span><br><span class="line"></span><br><span class="line">           heater.BoilEvent += alarm.MakeAlert;    <span class="comment">//注册方法</span></span><br><span class="line">           heater.BoilEvent += (<span class="keyword">new</span> Alarm()).MakeAlert;   <span class="comment">//给匿名对象注册方法</span></span><br><span class="line">           heater.BoilEvent += Display.ShowMsg;       <span class="comment">//注册静态方法</span></span><br><span class="line"></span><br><span class="line">           heater.BoilWater();   <span class="comment">//烧水，会自动调用注册过对象的方法</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+
 <h3 id="回调和事件"><a href="#回调和事件" class="headerlink" title="回调和事件"></a>回调和事件</h3><p>代码上的区别：<br>事件发生后的响应在当前类<br>回调响应方法在其他类</p>
 
       
@@ -588,7 +604,7 @@
   <p><span>本文标题:</span><a href="/CSharp事件与委托.html">C#事件与委托</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Justin 的个人博客">Justin</a></p>
   <p><span>发布时间:</span>2020年11月18日 - 15:11</p>
-  <p><span>最后更新:</span>2020年11月18日 - 17:11</p>
+  <p><span>最后更新:</span>2022年07月04日 - 13:07</p>
   <p><span>原始链接:</span><a href="/CSharp事件与委托.html" title="C#事件与委托">https://silencejql.github.io/CSharp事件与委托.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://silencejql.github.io/CSharp事件与委托.html" aria-label="复制成功！"></i></span>
   </p>
@@ -1100,7 +1116,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">64.7k</span>
+    <span title="Site words total count">65.0k</span>
   
 </div>
 
