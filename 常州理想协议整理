@@ -1,121 +1,25 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-  
-  
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css"/>
-
-
-  <script>
-  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
-  daovoice('init', {
-      app_id: "193e899a"
-    });
-  daovoice('update');
-  </script>
-
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2"/>
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"silencejql.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.13.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-
-
-
-
-
-
-
-
-  <meta name="baidu-site-verification" content="2PF27005jP"/>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0"/>
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2"/>
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '',
-    scheme: 'Mist',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":true,"dimmer":true},
-    back2top: true,
-    back2top_sidebar: false,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-  
-
-
-
-
-  <meta name="description" content="交钱！">
+    <meta name="description" content="交钱！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常州理想协议整理">
 <meta property="og:url" content="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86">
@@ -128,34 +32,15 @@
 <meta name="twitter:card" content="summary">
 
 
-
-  <link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml"/>
-
+<link rel="canonical" href="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86">
 
 
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86","path":"/常州理想协议整理","title":"常州理想协议整理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>常州理想协议整理 | Silencejql</title>
   
-  
-  <link rel="canonical" href="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86"/>
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>常州理想协议整理 | Silencejql</title>
-  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
-  <script src="/live2d-widget/autoload.js"></script>
-  
-
-
-
-
-
-
 
 
 
@@ -163,383 +48,193 @@
 
 
   <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+</head>
 
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-	<a target="_blank" rel="noopener" href="https://github.com/silencejql" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Silencejql</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-    
-  </div>
-
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Silencejql</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
   </div>
 </div>
 
 
 
-<nav class="site-nav">
+
+
+
+
+</div>
+        
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
 
-    
-    
-    
-      
-    
+  <aside class="sidebar">
 
-    
-
-    <a href="/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-home&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;首页</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/tags/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-tags&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;标签</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/categories/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-th&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;分类</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-archive&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;归档</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/about/" rel="section">&lt;i class&#x3D;&quot;menu-item-icon fa fa-fw fa-user&quot;&gt;&lt;&#x2F;i&gt; &lt;br&#x2F;&gt;关于</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>搜索</a>
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
         </li>
-      
-    </ul>
-  
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-  
-    
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
 
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Author</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
 </div>
 
 
 
+        </div>
+      </div>
     </div>
-  
-</nav>
+  </aside>
+  <div class="sidebar-dimmer"></div>
 
 
-
-  
-
-
-
-</div>
     </header>
 
     
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
+    <div class="main-inner post posts-expand">
 
-  <div id="posts" class="posts-expand">
-    
 
   
 
-  
+
+<div class="post-block">
   
   
 
-  
-    <div class="reading-progress-bar"></div>
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86"/>
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Author"/>
-      <meta itemprop="description" content=""/>
-      <meta itemprop="image" content="/images/headim.png"/>
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Author">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silencejql"/>
+      <meta itemprop="name" content="Silencejql">
+      <meta itemprop="description" content="">
     </span>
 
-    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="常州理想协议整理 | Silencejql">
+      <meta itemprop="description" content="">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常州理想协议整理
+        </h1>
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">常州理想协议整理
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
 
-              
-            
-          </h2>
-        
+      <time title="创建时间：2021-12-15 15:48:09" itemprop="dateCreated datePublished" datetime="2021-12-15T15:48:09+08:00">2021-12-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-24 16:54:55" itemprop="dateModified" datetime="2022-06-24T16:54:55+08:00">2022-06-24</time>
+    </span>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-12-15 15:48:09" itemprop="dateCreated datePublished" datetime="2021-12-15T15:48:09+08:00">2021-12-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2022-06-24 16:54:55" itemprop="dateModified" datetime="2022-06-24T16:54:55+08:00">2022-06-24</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-            <span id="/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86" class="leancloud_visitors" data-flag-title="常州理想协议整理">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">热度：</span>
-              
-                <span class="leancloud-visitors-count"></span>
-                <span>℃</span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">828</span>
-              
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>828</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <script id="hbeData" type="hbeData" data-hmacdigest="6008cfc452e94d7ac45b1bf051a864b462490e1d5b67ff2d462d57898174fd83">bd44d608fb94f1b31e91f762a8bbf1a41f848fe4e5940f6c4b7a97d9acf2d5d3ff37f09d6536269c1c8f263ec4d774269b52a3d96dc75fc79fa588930af6398b0041688cda145e62a87d3e462ec5efae3cb7171084fbae4827272d52d694a712c21e6fd014000c1b53fcd544224e2db203bd72fc86b3ad964270a07332e8bfcd1481409fce19f1247327a6e091234d7744082b4bef0da2e360ad26743b4618b8c30f1119d2c37442c99a988a831def0f78213b0c8b795d94bf44a29034688b968bcbe1110d7b696516c54300700f9a355c44100f96ea0399f3f4a39269d33d5a1471fe7a25a2485ad5e7b354d83b873d315926c3d10eca40b883ccb2b1207f6f61c142acc3e4273b0fa7a7aedf951cdf98ba0f822927ff5d8175c9fdd67322cf6b179fa2147ee6bb271e852dabc26f2073c4d1f52b241925e5a6eabcf665b673ca5c963d6a40a6691ae5bc1d827de5f93c4357374879b9b5b0cb478ad2a079668c6f0a74d3d57cb7057309dedbc9e0a4cb5ab13d4889bb8d922d3d2e5651b374266b69db5b48e2ff4a1be26fa02417b4613cd1579c4b04a6da03e9fc38464ffb091b747897832bf2597e06e0df3f67517c74bb5ca7fc75daf24e2f9faa35502c761e176d6a1e156825cada755546483eb2886bb690bc465e4dda76f8dd7f2afa7ca5bd606cd1ff4fd7016ddfbbaae75dd1736a26ca2856213bab7efa36f3598c0ac1f6fc53d5d60cc927d5222c95a052105c10b9765f471f85b521851e9d4d77cf1308991e4188693e4c1023b87c48d9323f0048a3b80beb16d2a809e77ae22e68f759e3fa131464a9d97b8b72e3b2cc824788da4aeb6f91eead3826744b6d18328de5dd033d771f65edbea54a52a65fe49d59694909daf60b838a09a421c39d91099efa82b4df948bfbe1adb2c0bdc6f29387bb510c834d73d477f0c0d58a3d8cc0a77acfbd3a04701d68f42d8c33a8023a1a4489802d2786478427dbc10783ad480115d47541f6ab3c75eda9270e620602f914c0d045b234d25a17a1af7221ec4f04bc958d1d0973e4a67de0656c4ea29a5f2fcaa326d6bb0f5e536cfa167bf6d2ffb5f1030919bac13f9283f0153b2eef28d42f47688394bbb5a5a2e719c37d9b0649f8709f75430601644865c645d0f02a4dac894a298659e7aa8e33e737ed2961271d91ce0ca032f71d4deb053b965227d4e9b576b0fddc0db94a6c17d38e2cc44d549384c58bb4aeeccd12734ae3a8138a669374d88dac8679450e6b54a7c37fc9ceec6859ad62ce5f33499681c25146ceb7074c516f12c361550f44c6f13da1224470feba74c61c11d90964e20de2082663a4f15e1fe9db0ace0f9e8add50f95706c86293c056d12a4a425bc53c61be860028e17bc754f629d7dce33ae98a8255d3caa75c118c9591d7cfa370cadaa6f28595c330286b06f87c1b67722684e6f68c6a14c29df352509f91969f31353c448672d13edebeffda3d12134a9854df2d9328468f30386d94c31b1c16d587277fb546d7a99997ccce2fd2f8c1d20a0bd3a6ac19ef3089ca6ecb238d365de3b1d5e039cb464f5868495a4d8fc377269bf77aac161758a91708446692c28a360133dd950688458f12f7e0f53a8cd9e2d0753eda5d3a2a6af780d7c9fa90ee0183cf40c44b8585ca3f8ec3ac13c33fe07dd59ce5a799bcebaff8ef7cee13593abc510a928adc361bebb4c75b2671cea1224a70beaf2b01f255fd93b582e8d43ee688985f00c7511dde111232cb87b90c0f09a9b4ec149dad9a5228eaa23692846a00884612c2a0a985df793cb4f962b38a6f0f26ee14e5d14d92d05201b1270d02df3c596b1419cefb44c6da59fb906f74b3573b3785d450d2e3728555811e52c350dfa29e320d75a0b9d021e9dc50f6c92f11834ca5881fa8ea8561ad073ba863cd1395f56fe4df9baf5e13b524eaacf04ec04f497b9c89f560fa35095c06e24bc7b70df47b88040d74043cbb3db91abc7de5efb84c1734b38c93114404f16fb25291ace60e57e0432a3fd6c398ec7df76ccbcd522096af3ba918ff4565f6a6fc4dc47972eef108d6adb10dd332ca0486454ce250b18d29b35d7b4549b6f6fb6f3e1fa8f49c42b5c16319fdd250fb449f9f32f9e329e9f146c1a5de78c5cea984b9c3f48e60391113c350b27e1c749c2b5aef0b72a3629dcef2a823818286901b26e79f54142dca2776c66b878dd57729300eaf72825a1381ef3a2ddb54027e49687f0f2a9c7dc174d4c1e57e8cc002f42d58bc6d56323f5da774eaff4cf03a69759485374b5d4ae3df6a9ae6a0f2e81802b14efc55b371fb97c00194b4944cc7a85a644c3749d4c6fc5453c1fa4d67b85faad51b297e28c28576d893174d91df3631c7ed49c7b29ddfca955cad0c42f190e2380588640caf9be18a65a717209c1ad2f25ee584ca66c29bed85ee40c784eeafbe18cbf90ef2836758e19adb5964842f9f76c9a87bc978e43029a346d69e30978389efd01327574b0e539a98a57e4554a148f68e635af4c1fd2067606400450c5bffdacdb97adae9e39c1853e647c78130b9560427ee0f3e634aac2ee3d8e0d2aef5e849cce1b731dcd1264072a87c649f98019d1a5ccddb990968606665520f3ca68aa60db735a1c1277e31015d2dc25f4da8ce7ac6cd89eeb9666195ba0964ab11783794b09b29995ae5f28a434d16df8ffd4cddac9eb0bc1db5635a71afbe7755ba324ce3557835630d79da0e4b10fb11cd394813b8fbd98473ed5a941bce0f658cdc2348a6264a653b49e769fe4fbf2eeca69cea00c4c6b32dfc19f27f9fe42563dc38365c73e7b54a4f4a4ce1a8923d8f29b633b0f71a6a9e80741aad5949d9062b83e169f6f4272bad09251dec158f54d799b69add20c2cf67951b476d74c9fa8029017e2ede1902d51da9c81ec18b3a9e96804ce42b0859eba8cd11818a4f85ef6e8545e646614f54c0e0acffd4bd452671c70e3a050a1513d203fc7b99fee3d61b8a8fc51002eb556bb01a029d721391dd6ceae8cde10db79b1daf05aaa6d556dd9c68d94b462ccf6b5045f0e16bd450c18cde9ad19391e0d1cb2671a4c326630576bb464cb0bf87b2df4713d2d1536bd0de625adbe696d6db7c48f0766d4e247b20f1f3931f34befee0afbf29ed01ca589447cc501402fafdcaed0641798ada9354fc133e005ee3dc4ba05352d6b585550003451b56f2bda8629e26a112d527e1cb6fc47d63a0e4b14f99fe692fd28e8b6c02fdd818ecef2744840fcca1078b233342a870016dd8449eadd55ecace3f1131cdde3c8ca2f23fcbc4ce90a6a4fcfc6d1a8624cc0da91acf4e6af6c86ed95d6eec9ca06b73bc4750ff2536871e0b9c2324aa9c0cd1cee54884e4d83403fef3e81918109550827ed1a00e27abe6a9b83f1e89da88d5b2e1c20e8d83581c6d6a881332b9aaded56ecf843b1fe2e64639c021ea2fd77e7226c7ae4bf60323bfeb7e2ddde8676000f48538e324c91077c08174fb2370619dee1456a1e6ce47aafc059b96a5ea23017decc5f6342ef87c25a6b665ed914aa41823e05ddc08feb642cabfc31c83cdfef488b47c6833401079ed96a5ac2e8051665835f8ff7e515115d7f522b62f7000af03406e209284eb62b0690b3d0dafaa111dea7f9d6c5a57850ef4fffd3e41e60dd08a712c4b62a06c4df9acdcfd585c0c22c2006572eb0dab5beca2fce42450bbc2c170f36cf896093bf3007af98ad1020810aec4e3a99b730bf459cb29301c79021ea4796ebc15faaa09da3624a7b6b8d9674a840e5ceea384c59205c31e8efe321ed88db7b9202c24020b365aef6b20d4ed5d25411fdf9a33f2290a3095b2f7b6db7ceaef0e54e4c2f1fbd24cd169dde26b526aaa5e2ef122332995274dfd89a7cbec65ad3e7b9a288ac41523e22331c0a2743b2285bbf2f62b7ab8737f3ad5a842c89bed528bfedfc45a6a423c8f07d84beb4e26b67b8d06c93daa362e68240153ee614e4b378c51192fda6ced9783b40a8515a85b112d147715f5e60dac0ed5c88c1530bab64989f33b29738089df80f0ee49f886ecc6f2698d73a29155213a4f46f12b6bf8239aa52df10950faf526b4f134beb123843dd808d631d9656d42fed092a2ababb73390a1a05bd3d3f9bf754cbf8b60d0c440e52e1aa077b1c263e78b898895d0660128308b13dbcb614b8ca5abe237e24817b20714d76c12eb1a7dee1281ffeec21a5bfdd2fe353012fe012ca0d1903677576c3c285eccc2686ae881aa0efff852cd3b1b5170868348647b9e2c57ac248ea09e2b7c0831c7b5bf2b4e2726a03bbd75f8ccbb0a77ff8b20e628888ad86600fae30a5624da5c78d0db3a6443fd909ccbe03d4d3b3f5a5fdc3aa925ad497917148d937be300fed9a64453df73c47b3cbbda98d3e17e64be689a13842f687a1afe53e8bfd75125efe572c6d9e6016043e37d66eb72f7515c5bc43c43207105b2c427b820c6aff08d4ef743bfd60d03749e51a9e93bbeaddbd75e7090db9a4fec404ef5563742ed2af996d2975f75d604711cc9f967fd85cb4ada66228d79f6111103402cdb5b69d40ae52ca027afda1488162e1ec1126576cf41f305f39f97b8b0548afd093351efb272dd25aa55804c9e01e50d59b5256696c3f526695e3578ee751be2e73f53d43750c0c2704f5d2c056de6526aa9</script>
   <div class="hbe hbe-content">
@@ -552,605 +247,77 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
-      
     </div>
 
     
-
-    
-    
-    
-    <div>
-      
-        
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86">常州理想协议整理</a></p>
-  <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-  <p><span>发布时间:</span>2021年12月15日 - 15:12</p>
-  <p><span>最后更新:</span>2022年06月24日 - 16:06</p>
-  <p><span>原始链接:</span><a href="/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86" title="常州理想协议整理">https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86"  aria-label="复制成功！"></i></span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
-</div>
-<script>
-    var clipboard = new Clipboard('.fa-clipboard');
-    $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({
-          title: "",
-          text: '复制成功',
-          icon: "success",
-          showConfirmButton: true
-          });
-    });
-    });
-</script>
-
-
-      
-    </div>
-    
-
-    
-      
     
     
 
-    
-    <div>
-      
-        <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
-
-      
-    </div>
     <footer class="post-footer">
-      
-
-      
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
 
         
 
-        
-          
-            <span class="post-meta-divider">|</span>
-          
-          <div class="social_share">
-            
-            
-              <div id="needsharebutton-postbottom">
-                <span class="btn">
-                  <i class="fa fa-share-alt" aria-hidden="true"></i>
-                </span>
-              </div>
-            
-            
-          </div>
-        
-        </div>
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC" rel="next" title="轮眉软件调试-棋盘格">
-                <i class="fa fa-chevron-left"></i> 轮眉软件调试-棋盘格
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Hex%E6%96%87%E4%BB%B6" rel="prev" title="Hex文件">
-                Hex文件 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-    </div>
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-            <a href="/">
-              <img class="site-author-image" itemprop="image"
-                src="/images/headim.png"
-                alt="Author"/>
-            </a>
-            
-              <p class="site-author-name" itemprop="name">Author</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/%20%7C%7C%20archive">
-                
-                    <span class="site-state-item-count">100</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/%20%7C%7C%20th">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">20</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                      <a href="/tags/%20%7C%7C%20tags">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">59</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="chat motion-element">
-              
-              
-              <i class="fa fa-comment"></i>
-                  Chat
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC" rel="prev" title="轮眉软件调试-棋盘格">
+                  <i class="fa fa-chevron-left"></i> 轮眉软件调试-棋盘格
                 </a>
             </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/silencejql" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;silencejql" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-github&quot;&gt;&lt;&#x2F;i&gt;GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="mailto:silencejql@163.com" title="E-Mail &amp;rarr; mailto:silencejql@163.com" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-envelope&quot;&gt;&lt;&#x2F;i&gt;E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://music.163.com/#/user/home?id=103195839" title="NetEaet &amp;rarr; https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;103195839" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-headphones&quot;&gt;&lt;&#x2F;i&gt;NetEaet</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                    
-                  
-                  
-                    
-                  
-                  <a href="https://weibo.com/2808102675/profile?topnav=1&wvr=6" title="Weibo &amp;rarr; https:&#x2F;&#x2F;weibo.com&#x2F;2808102675&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank">&lt;i class&#x3D;&quot;fa fa-fw fa-weibo&quot;&gt;&lt;&#x2F;i&gt;Weibo</a>
-                </span>
-              
+            <div class="post-nav-item">
+                <a href="/Hex%E6%96%87%E4%BB%B6" rel="next" title="Hex文件">
+                  Hex文件 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
-          
-
-          
-
-          
-          
-
-          
-            
-          
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=441116287&auto=0&height=66"></iframe>
-
-        </div>
-      </div>
-
-      
-
-      
-    </div>
-  </aside>
-  
-    <div id="sidebar-dimmer"></div>
-  
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2022</span>
-  <span class="with-love">
-    <i class="fa fa-[object Object]"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Justin</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">Site words total count&#58;</span>
-    
-    <span title="Site words total count">67.5k</span>
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v</div>
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="总访客量">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-      </div>
+          </div>
     </footer>
+  </article>
+</div>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
 
-    
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    
 
-    
 
-    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Author</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">234k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:33</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </footer>
 
   
-    
-    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
   
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
-
-
-
-
-
-
 
 
 
@@ -1160,573 +327,7 @@
 
 
 
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
 
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/reading_progress/reading_progress.js"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/schemes/muse.js?v=7.1.2"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-  <script src="/js/js.cookie.js?v=7.1.2"></script>
-  <script src="/js/scroll-cookie.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-  
-
-<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
-
-
-
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-<script>
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: '8c9MWTg5hbBfsCntHAbBOKqg-gzGzoHsz',
-    appKey: 'pJWUgkSsuys2uKmnaleLMmi6',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: '' || 'zh-cn'
-  });
-</script>
-
-
-
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('10');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-  
-  
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-    
-      pbOptions = {};
-      
-        pbOptions.iconStyle = "box";
-      
-        pbOptions.boxForm = "horizontal";
-      
-        pbOptions.position = "bottomCenter";
-      
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-      flOptions = {};
-      
-        flOptions.iconStyle = "box";
-      
-        flOptions.boxForm = "horizontal";
-      
-        flOptions.position = "middleRight";
-      
-        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-float', flOptions);
-    
-  </script>
-
-
-  
-  <script>
-    wpac_init = window.wpac_init || [];
-    wpac_init.push({
-      widget: 'Rating',
-      id: 20236,
-      el: 'wpac-rating',
-      color: 'fc6423'
-    });
-    (function() {
-      if ('WIDGETPACK_LOADED' in window) return;
-      WIDGETPACK_LOADED = true;
-      var mc = document.createElement('script');
-      mc.type = 'text/javascript';
-      mc.async = true;
-      mc.src = '//embed.widgetpack.com/widget.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-    })();
-  </script>
-
-
-  
-
-  
-  
-  
-  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
-  <script>
-  
-    bookmark.scrollToMark('auto', "#更多");
-  
-  </script>
-
-
-  
-<script>
-  $('.highlight').not('.gist .highlight').each(function(i, e) {
-    var $wrap = $('<div>').addClass('highlight-wrap');
-    $(e).after($wrap);
-    $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-        return $(e).text();
-      }).toArray().join('\n');
-      var ta = document.createElement('textarea');
-      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-      ta.style.top = yPosition + 'px'; // Prevent page scroll
-      ta.style.position = 'absolute';
-      ta.style.opacity = '0';
-      ta.readOnly = true;
-      ta.value = code;
-      document.body.appendChild(ta);
-      const selection = document.getSelection();
-      const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
-      ta.select();
-      ta.setSelectionRange(0, code.length);
-      ta.readOnly = false;
-      var result = document.execCommand('copy');
-      
-        if (result) $(this).text('复制成功');
-        else $(this).text('复制失败');
-      
-      ta.blur(); // For iOS
-      $(this).blur();
-      if (selected) {
-        selection.removeAllRanges();
-        selection.addRange(selected);
-      }
-    })).on('mouseleave', function(e) {
-      var $b = $(this).find('.copy-btn');
-      setTimeout(function() {
-        $b.text('复制');
-      }, 300);
-    }).append(e);
-  })
-</script>
-
-
-  
-
-  
-
-  
-  <script type="text/javascript" src="/js/love.js"></script>
-  <script src="/live2d-widget/autoload.js"></script>
-  <!--动态线条背景-->
-  <!--<script type="text/javascript"
-  color="120,20,120" opacity='0.5' zIndex="-2" count="100" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-  </script>-->
-  <!-- 雪花特效 -->
-  <!-- <script type="text/javascript" src="\js\snow.js"></script> -->
-  <!--浏览器搞笑标题-->
-  <script type="text/javascript" src="\js\WebTitle.js"></script>
 </body>
 </html>
