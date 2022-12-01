@@ -1,4 +1,4 @@
-https://silencejql.github.io/Impinj.html
+https://silencejql.github.io/Impinj
 https://silencejql.github.io/HTTPServer
 https://silencejql.github.io/json%E5%9B%BE%E7%89%87%E8%AF%BB%E5%8F%96
 https://silencejql.github.io/%E5%BC%82%E6%AD%A5TCP
