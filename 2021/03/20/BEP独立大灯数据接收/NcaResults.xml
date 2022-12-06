@@ -1,0 +1,72 @@
+<TestResults>
+
+    <Delimiter>,</Delimiter>
+    <Header>2</Header>
+    <Footer>13</Footer>
+    <Footer>10</Footer>
+	<flagsettings>
+      <pass>P</pass>
+      <fail>F</fail>
+      <abort>A</abort>
+      <audit>U</audit>
+      <auditfail>V</auditfail>
+      <hlaonly>H</hlaonly>
+      <notest>Z</notest>
+   </flagsettings>
+	
+    <!-- Scalefactor to convert from % to inch at 25ft: 3 -->
+    <!-- Scalefactor to convert from % to mm at 10m: 100 -->
+    <!-- Scalefactor to convert from % to cm at 10m: 10 -->
+	<!-- VINZTS -->
+    <!-- Pass/Fail Result -->	
+    <Tag name="OverallResult" preset="Z" type="State">
+		<Condition name="OverallResult"   preset="Z"/>
+		<Condition name="LowbeamLeft.Result"   preset="Z"/>
+		<Condition name="LowbeamRight.Result"  preset="Z"/>
+		<Condition name="HighbeamLeft.Result"  preset="Z"/>
+		<Condition name="HighbeamRight.Result" preset="Z"/>
+		<Condition name="HighbeamLeft.IntensityResult" preset="Z"/>
+		<Condition name="HighbeamRight.IntensityResult" preset="Z"/>
+	</Tag>
+	<Tag name="BeamLeftResult" preset="Z" type="State">
+		<Condition name="LowbeamLeft.Result"   preset="Z"/>
+		<Condition name="HighbeamLeft.Result"  preset="Z"/>
+		<Condition name="HighbeamLeft.IntensityResult" preset="Z"/>
+	</Tag>
+	<Tag name="BeamRightResult" preset="Z" type="State">
+		<Condition name="LowbeamRight.Result"  preset="Z"/>
+		<Condition name="HighbeamRight.Result" preset="Z"/>
+		<Condition name="HighbeamRight.IntensityResult" preset="Z"/>
+	</Tag>
+
+    <!-- LOWBEAM -->
+	
+    <Tag name="LowbeamLeft.SideResult" preset="Z"/>
+    <Tag name="LowbeamLeft.SideValue" scalefactor="1" preset="99.99"/>
+    <Tag name="LowbeamLeft.HeightResult" preset="Z"/>
+    <Tag name="LowbeamLeft.HeightValue" scalefactor="1" preset="99.99"/>
+    <Tag name="LowbeamRight.SideResult" preset="Z"/>
+    <Tag name="LowbeamRight.SideValue" scalefactor="1" preset="99.99"/>
+    <Tag name="LowbeamRight.HeightResult" preset="Z"/>
+    <Tag name="LowbeamRight.HeightValue" scalefactor="1" preset="99.99"/>
+	 
+    <!-- HIGHBEAM -->
+			
+    <Tag name="HighbeamLeft.SideResult" preset="Z"/>
+    <Tag name="HighbeamLeft.SideValue" scalefactor="1" preset="99.99"/>
+    <Tag name="HighbeamLeft.HeightResult" preset="Z"/>
+    <Tag name="HighbeamLeft.HeightValue" scalefactor="1" preset="99.99"/>
+    <Tag name="HighbeamRight.SideResult" preset="Z"/>
+    <Tag name="HighbeamRight.SideValue" scalefactor="1" preset="99.99"/>
+    <Tag name="HighbeamRight.HeightResult" preset="Z"/>
+    <Tag name="HighbeamRight.HeightValue" scalefactor="1" preset="99.99"/>
+	<Tag name="HighbeamLeft.IntensityResult" preset="Z"/>
+    <Tag name="HighbeamLeft.IntensityValue" scalefactor="1" preset="99999"/>
+	<Tag name="HighbeamRight.IntensityResult" preset="Z"/>
+    <Tag name="HighbeamRight.IntensityValue" scalefactor="1" preset="99999"/>		
+	
+</TestResults>
+
+
+
+

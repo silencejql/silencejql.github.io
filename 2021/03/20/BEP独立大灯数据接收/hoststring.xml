@@ -1,0 +1,49 @@
+<results>
+   <!-- Flag strings -->
+   <flagsettings>
+      <pass>P</pass>
+      <fail>F</fail>
+      <abort>A</abort>
+      <audit>U</audit>
+      <auditfail>V</auditfail>
+      <hlaonly>H</hlaonly>
+      <notest>Z</notest>
+   </flagsettings>
+   <!-- Do not perform special formatting for VIN fields -->
+   <vinchars>0</vinchars>
+   <!-- STX -->
+   <char>0x02</char>
+   <!-- Fields are comma delimited -->
+   <group delim=",">
+      <!-- ********** HLA RESULTS ************ -->
+	  
+      <data type="double" format="%4.2f">OverallResult</data>
+      <data type="double" format="%4.2f">BeamLeftResult</data>
+      <data type="double" format="%4.2f">BeamRightResult</data>
+	  
+      <data type="double" format="%4.2f">LowbeamLeft.SideResult</data>
+      <data type="double" format="%4.2f">LowbeamLeft.SideValue</data>
+      <data type="double" format="%4.2f">LowbeamLeft.HeightResult</data>
+      <data type="double" format="%4.2f">LowbeamLeft.HeightValue</data>
+      <data type="double" format="%4.2f">LowbeamRight.SideResult</data>
+	  <data type="double" format="%4.2f">LowbeamRight.SideValue</data>
+      <data type="double" format="%4.2f">LowbeamRight.HeightResult</data>
+      <data type="double" format="%4.2f">LowbeamRight.HeightValue</data>
+	  
+	  <data type="double" format="%4.2f">HighbeamLeft.SideResult</data>
+      <data type="double" format="%4.2f">HighbeamLeft.SideValue</data>
+      <data type="double" format="%4.2f">HighbeamLeft.HeightResult</data>
+      <data type="double" format="%4.2f">HighbeamLeft.HeightValue</data>
+      <data type="double" format="%4.2f">HighbeamRight.SideResult</data>
+	  <data type="double" format="%4.2f">HighbeamRight.SideValue</data>
+      <data type="double" format="%4.2f">HighbeamRight.HeightResult</data>
+      <data type="double" format="%4.2f">HighbeamRight.HeightValue</data>
+	  
+	  <data type="double" format="%4.2f">HighbeamLeft.IntensityResult</data>
+	  <data type="double" format="%4.2f">HighbeamLeft.IntensityValue</data>
+      <data type="double" format="%4.2f">HighbeamRight.IntensityResult</data>
+      <data type="double" format="%4.2f">HighbeamRight.IntensityValue</data>
+   </group>
+   <!-- ETX -->
+   <char>0x03</char>
+</results>
