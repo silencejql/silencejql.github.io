@@ -19,6 +19,16 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误,交钱还是跑路？');
+                history.back();
+            }
+        }
+    })();
+</script>
 
   <meta name="description" content="写在前面">
 <meta property="og:type" content="article">
@@ -238,7 +248,14 @@
                 </span>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -392,7 +409,7 @@
 <td align="center">删除文件</td>
 </tr>
 <tr>
-<td align="left">git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;</a>:yourgithubname&#x2F;Repositoryname.git</td>
+<td align="left">git remote add origin <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a>:yourgithubname&#x2F;Repositoryname.git</td>
 <td align="center">关联远程库</td>
 </tr>
 <tr>
@@ -404,7 +421,7 @@
 <td align="center">推送到远程master分支</td>
 </tr>
 <tr>
-<td align="left">git clone <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:githubname&#x2F;Repositoryname.git</td>
+<td align="left">git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>:githubname&#x2F;Repositoryname.git</td>
 <td align="center">clone到本地</td>
 </tr>
 <tr>
@@ -614,6 +631,26 @@
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -668,5 +705,5 @@
 
   
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>
