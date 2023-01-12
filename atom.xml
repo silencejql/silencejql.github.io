@@ -6,7 +6,7 @@
   <link href="https://silencejql.github.io/atom.xml" rel="self"/>
   
   <link href="https://silencejql.github.io/"/>
-  <updated>2023-01-06T03:28:45.437Z</updated>
+  <updated>2023-01-12T08:44:15.290Z</updated>
   <id>https://silencejql.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据格式</title>
+    <link href="https://silencejql.github.io/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.html"/>
+    <id>https://silencejql.github.io/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.html</id>
+    <published>2023-01-12T08:32:04.000Z</published>
+    <updated>2023-01-12T08:44:15.290Z</updated>
+    
+    <content type="html"><![CDATA[<center>写在前面</center>数据格式说明<span id="more"></span><h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>基于64个可打印字符来表示二进制数据的方法<br>64个字符0<del>63分别对应A</del>Za<del>z0</del>9+&#x2F;</p><p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3*8 &#x3D; 4*6 &#x3D; 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1&#x2F;3。</p><h3 id="编码规则"><a href="#编码规则" class="headerlink" title="编码规则"></a>编码规则</h3><ol><li>把3个字节变成4个字节。</li><li>每76个字符加一个换行符。</li><li>最后的结束符也要处理。</li></ol><p>例如:<br>转换前: 10101101,10111010,01110110<br>转换后: 00101011, 00011011 ,00101001 ,00110110<br>十进制 43 27 41 54<br>对应码表中的值 r b p 2<br>所以上面的24位编码，编码后的Base64值为 rbp2</p><p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的Bit用0补足。然后，每次取出6个bit，按照其值选择ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+&#x2F;中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。<br>如果最后剩下两个输入数据，在编码结果后加1个“&#x3D;”；如果最后剩下一个输入数据，编码结果后加2个“&#x3D;”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>]]></content>
+    
+    
+    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
+数据格式说明</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>HttpWeb补充</title>
@@ -377,30 +395,6 @@ Postgre数据库安装与配置</summary>
     <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
 
 &lt;p&gt;BBK轮眉软件调试—标定板为四个孔的版本&lt;br&gt;棋盘格: &lt;a href=&quot;/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC.html&quot; title=&quot;轮眉软件调试-棋盘格&quot;&gt;轮眉软件调试-棋盘格&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本文未说明的地方自己琢磨吧&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="手册" scheme="https://silencejql.github.io/categories/%E6%89%8B%E5%86%8C/"/>
-    
-    
-    <category term="轮眉" scheme="https://silencejql.github.io/tags/%E8%BD%AE%E7%9C%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>轮眉相机配置</title>
-    <link href="https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE.html"/>
-    <id>https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE.html</id>
-    <published>2021-12-04T03:04:50.000Z</published>
-    <updated>2023-01-05T05:14:29.565Z</updated>
-    
-    <content type="html"><![CDATA[<center>写在前面</center>BBK轮眉相机配置<p>本文未说明的地方自己琢磨吧</p><span id="more"></span><h2 id="Basler驱动安装"><a href="#Basler驱动安装" class="headerlink" title="Basler驱动安装"></a>Basler驱动安装</h2><p>根据相机版本安装对应相机驱动</p><h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><p>配置巨帧等,如图:</p><p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-edit.PNG" alt="NetWorkConfig"></p><p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-Jumbo.PNG" alt="NetWorkConfig"></p><p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-packet.PNG" alt="NetWorkConfig"></p><h2 id="相机IP配置"><a href="#相机IP配置" class="headerlink" title="相机IP配置"></a>相机IP配置</h2><h3 id="识别相机"><a href="#识别相机" class="headerlink" title="识别相机"></a>识别相机</h3><p>打开控制面板IP配置<br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP.PNG" alt="IPConfig"></p><p>打开Pylon IPConfig软件<br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/PylonIPConfig.PNG" alt="Pylon IPConfig"></p><p>根据IP与Serial Number的对应对网卡进行标注</p><h3 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h3><p>给相机分配静态IP</p><p>分配规则:</p><blockquote><p>1.网卡与相机在同一网段</p><p>2.不同相机分配不同网段</p></blockquote><p>例如:</p><p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-detail.PNG" alt="IPConfig"></p><h2 id="相机检查"><a href="#相机检查" class="headerlink" title="相机检查"></a>相机检查</h2><p>打开Pylon View软件检查各相机打开及图像读取是否正常</p><p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon.PNG" alt="PylonView"><br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon-Features.PNG" alt="PylonView"></p>]]></content>
-    
-    
-    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
-BBK轮眉相机配置
-
 &lt;p&gt;本文未说明的地方自己琢磨吧&lt;/p&gt;</summary>
     
     

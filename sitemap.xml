@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silencejql.github.io/%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F.html</loc>
+    
+    <lastmod>2023-01-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/Python-learning-Script.html</loc>
     
     <lastmod>2023-01-11</lastmod>
