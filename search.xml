@@ -5976,7 +5976,7 @@ LINQ to XML 是一种启用了 LINQ 的内存 XML 编程接口，支持在 .NET 
     <title>BBK启用CAN通讯超时时间配置</title>
     <url>/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE.html</url>
     <content><![CDATA[<center>写在前面</center>
-像ABS测试默认通讯超时时间为100ms配置中的Time并未使用
+像ABS测试默认通讯超时时间为100ms配置中的Time并未使用,可在代码中启用也可在Always中启用
 <span id="more"></span>
 
 <h2 id="启用超时配置"><a href="#启用超时配置" class="headerlink" title="启用超时配置"></a>启用超时配置</h2><ol>
@@ -5984,6 +5984,56 @@ LINQ to XML 是一种启用了 LINQ 的内存 XML 编程接口，支持在 .NET 
 <li>执行EnableUserTimeout方法</li>
 </ol>
 <p><img src="/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE/EnableUserTimeout.png" alt="启用超时配置"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>ABS参数配置说明</title>
+    <url>/ABS%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</url>
+    <content><![CDATA[<center>写在前面</center>
+ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车型会自动生成相应配置文件
+<span id="more"></span>
+
+<h2 id="ABS参数配置说明"><a href="#ABS参数配置说明" class="headerlink" title="ABS参数配置说明"></a>ABS参数配置说明</h2><p>增减压时间参数说明如下, 因各现场及车型不同, 参数意义可能不同</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">NewDataSet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Table1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--0:增减压力值采集满设定时间后退出当前增减压步骤;1:增减压力值合格后立即退出当前增减压步骤--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">UseJump</span>&gt;</span>0<span class="tag">&lt;/<span class="name">UseJump</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--脉冲增压次数,用于ESC或ESP--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncPulseN</span>&gt;</span>5<span class="tag">&lt;/<span class="name">IncPulseN</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--增压力值采集时间,记录当前时间内的最大值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">IncCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--减压力值采集时间,记录当前时间内的最小值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DecCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">DecCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT1</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A1_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A2_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A2_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A2_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--预留--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A3_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A3_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A3_DecT</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A4_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A4_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A4_DecT</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Table1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">NewDataSet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>EOLPrint参数配置说明</title>
+    <url>/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</url>
+    <content><![CDATA[<center>写在前面</center>
+EOLPrint一般用于检测线打印工位
+<span id="more"></span>
+
+<h2 id="EOLPrint"><a href="#EOLPrint" class="headerlink" title="EOLPrint"></a>EOLPrint</h2><p>该打印软件以EOLPrint\Report文件夹下的Excel为模板, 编辑中绑定单元格对应数据库字段</p>
+<h3 id="主界面"><a href="#主界面" class="headerlink" title="主界面"></a>主界面</h3><p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Print.jpg" alt="打印主界面"></p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>用于编辑链接字符串</p>
+<p>自动打印时需检查链接字符串的配置是否满足需求, 如下图只会打印”报告打印”字段为N且”全部合格”字段为Y的数据</p>
+<p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/ParamConfig.jpg" alt="编辑"></p>
+<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>用于绑定数据库中字段, 如需更改模板字体或格式, 需要直接更改Report文件夹中excel模板文件</p>
+<h3 id="管理模板"><a href="#管理模板" class="headerlink" title="管理模板"></a>管理模板</h3><p>用于添加重载模板<br><font color="#FF0000"> 请勿随便点击”删除选中模板” </font>  </p>
+<p>点击 打开Excel文件 选中Report文件中的模板来更新或添加</p>
+<p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Temp.jpg" alt="编辑"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>OBDII参数配置说明</title>
+    <url>/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</url>
+    <content><![CDATA[<center>写在前面</center>
+前面啥也没有
+<span id="more"></span>
+
+<h2 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h2><p>如下图:</p>
+<ol>
+<li>KeyName: 通讯标识,不存在时程序自动创建</li>
+<li>ClassName: BBKCAN驱动标识, 一般使用VCanCmdForBBKDrive</li>
+<li>Time1: 单帧超时时间, 超过此时间报错Timeout</li>
+<li>Time2: 收到78等待时间</li>
+<li>Param1: OBD串口号</li>
+<li>Param2: 波特率</li>
+<li>Param3: 当前KeyName通讯生成的log名称(可不填)</li>
+<li>Param4: 其他配置, 如250表示CAN通讯250K(默认500k); 250,1表示250k扩展帧; 500,1表示500k扩展帧;</li>
+</ol>
+<p><img src="/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Config.jpg" alt="启用超时配置"></p>
 ]]></content>
   </entry>
 </search>

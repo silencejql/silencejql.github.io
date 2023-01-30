@@ -6,7 +6,7 @@
   <link href="https://silencejql.github.io/atom.xml" rel="self"/>
   
   <link href="https://silencejql.github.io/"/>
-  <updated>2023-01-30T05:55:28.164Z</updated>
+  <updated>2023-01-30T08:15:41.340Z</updated>
   <id>https://silencejql.github.io/</id>
   
   <author>
@@ -17,17 +17,71 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>EOLPrint参数配置说明</title>
+    <link href="https://silencejql.github.io/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html"/>
+    <id>https://silencejql.github.io/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</id>
+    <published>2023-01-30T07:57:54.000Z</published>
+    <updated>2023-01-30T08:15:41.340Z</updated>
+    
+    <content type="html"><![CDATA[<center>写在前面</center>EOLPrint一般用于检测线打印工位<span id="more"></span><h2 id="EOLPrint"><a href="#EOLPrint" class="headerlink" title="EOLPrint"></a>EOLPrint</h2><p>该打印软件以EOLPrint\Report文件夹下的Excel为模板, 编辑中绑定单元格对应数据库字段</p><h3 id="主界面"><a href="#主界面" class="headerlink" title="主界面"></a>主界面</h3><p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Print.jpg" alt="打印主界面"></p><h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>用于编辑链接字符串</p><p>自动打印时需检查链接字符串的配置是否满足需求, 如下图只会打印”报告打印”字段为N且”全部合格”字段为Y的数据</p><p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/ParamConfig.jpg" alt="编辑"></p><h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><p>用于绑定数据库中字段, 如需更改模板字体或格式, 需要直接更改Report文件夹中excel模板文件</p><h3 id="管理模板"><a href="#管理模板" class="headerlink" title="管理模板"></a>管理模板</h3><p>用于添加重载模板<br><font color="#FF0000"> 请勿随便点击”删除选中模板” </font>  </p><p>点击 打开Excel文件 选中Report文件中的模板来更新或添加</p><p><img src="/EOLPrint%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Temp.jpg" alt="编辑"></p>]]></content>
+    
+    
+    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
+EOLPrint一般用于检测线打印工位</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ABS参数配置说明</title>
+    <link href="https://silencejql.github.io/ABS%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html"/>
+    <id>https://silencejql.github.io/ABS%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</id>
+    <published>2023-01-30T07:41:46.000Z</published>
+    <updated>2023-01-30T07:55:43.238Z</updated>
+    
+    <content type="html"><![CDATA[<center>写在前面</center>ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车型会自动生成相应配置文件<span id="more"></span><h2 id="ABS参数配置说明"><a href="#ABS参数配置说明" class="headerlink" title="ABS参数配置说明"></a>ABS参数配置说明</h2><p>增减压时间参数说明如下, 因各现场及车型不同, 参数意义可能不同</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">NewDataSet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Table1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--0:增减压力值采集满设定时间后退出当前增减压步骤;1:增减压力值合格后立即退出当前增减压步骤--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">UseJump</span>&gt;</span>0<span class="tag">&lt;/<span class="name">UseJump</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--脉冲增压次数,用于ESC或ESP--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncPulseN</span>&gt;</span>5<span class="tag">&lt;/<span class="name">IncPulseN</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--增压力值采集时间,记录当前时间内的最大值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">IncCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--减压力值采集时间,记录当前时间内的最小值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DecCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">DecCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT1</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A1_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A2_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A2_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A2_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--预留--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A3_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A3_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A3_DecT</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A4_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A4_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A4_DecT</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Table1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">NewDataSet</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
+ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车型会自动生成相应配置文件</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>OBDII参数配置说明</title>
+    <link href="https://silencejql.github.io/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html"/>
+    <id>https://silencejql.github.io/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E.html</id>
+    <published>2023-01-30T07:20:46.000Z</published>
+    <updated>2023-01-30T07:41:15.095Z</updated>
+    
+    <content type="html"><![CDATA[<center>写在前面</center>前面啥也没有<span id="more"></span><h2 id="参数配置"><a href="#参数配置" class="headerlink" title="参数配置"></a>参数配置</h2><p>如下图:</p><ol><li>KeyName: 通讯标识,不存在时程序自动创建</li><li>ClassName: BBKCAN驱动标识, 一般使用VCanCmdForBBKDrive</li><li>Time1: 单帧超时时间, 超过此时间报错Timeout</li><li>Time2: 收到78等待时间</li><li>Param1: OBD串口号</li><li>Param2: 波特率</li><li>Param3: 当前KeyName通讯生成的log名称(可不填)</li><li>Param4: 其他配置, 如250表示CAN通讯250K(默认500k); 250,1表示250k扩展帧; 500,1表示500k扩展帧;</li></ol><p><img src="/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Config.jpg" alt="启用超时配置"></p>]]></content>
+    
+    
+    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
+前面啥也没有</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>BBK启用CAN通讯超时时间配置</title>
     <link href="https://silencejql.github.io/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE.html"/>
     <id>https://silencejql.github.io/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE.html</id>
     <published>2023-01-30T05:48:26.000Z</published>
-    <updated>2023-01-30T05:55:28.164Z</updated>
+    <updated>2023-01-30T07:32:14.432Z</updated>
     
-    <content type="html"><![CDATA[<center>写在前面</center>像ABS测试默认通讯超时时间为100ms配置中的Time并未使用<span id="more"></span><h2 id="启用超时配置"><a href="#启用超时配置" class="headerlink" title="启用超时配置"></a>启用超时配置</h2><ol><li>找到Always文件中CAN通讯对象, ABS可在初始化通讯中看到</li><li>执行EnableUserTimeout方法</li></ol><p><img src="/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE/EnableUserTimeout.png" alt="启用超时配置"></p>]]></content>
+    <content type="html"><![CDATA[<center>写在前面</center>像ABS测试默认通讯超时时间为100ms配置中的Time并未使用,可在代码中启用也可在Always中启用<span id="more"></span><h2 id="启用超时配置"><a href="#启用超时配置" class="headerlink" title="启用超时配置"></a>启用超时配置</h2><ol><li>找到Always文件中CAN通讯对象, ABS可在初始化通讯中看到</li><li>执行EnableUserTimeout方法</li></ol><p><img src="/BBK%E5%90%AF%E7%94%A8CAN%E9%80%9A%E8%AE%AF%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4%E9%85%8D%E7%BD%AE/EnableUserTimeout.png" alt="启用超时配置"></p>]]></content>
     
     
     <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
-像ABS测试默认通讯超时时间为100ms配置中的Time并未使用</summary>
+像ABS测试默认通讯超时时间为100ms配置中的Time并未使用,可在代码中启用也可在Always中启用</summary>
     
     
     
@@ -341,59 +395,6 @@ LINQ to XML 是一种启用了 LINQ 的内存 XML 编程接口，支持在 .NET 
     
     <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
 前面啥也没有</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>常州理想协议整理</title>
-    <link href="https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86.html"/>
-    <id>https://silencejql.github.io/%E5%B8%B8%E5%B7%9E%E7%90%86%E6%83%B3%E5%8D%8F%E8%AE%AE%E6%95%B4%E7%90%86.html</id>
-    <published>2021-12-15T07:48:09.000Z</published>
-    <updated>2023-01-05T05:14:13.191Z</updated>
-    
-    <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="Oh, these decrypted content cannot be verified, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="6008cfc452e94d7ac45b1bf051a864b462490e1d5b67ff2d462d57898174fd83">bd44d608fb94f1b31e91f762a8bbf1a41f848fe4e5940f6c4b7a97d9acf2d5d3ff37f09d6536269c1c8f263ec4d774269b52a3d96dc75fc79fa588930af6398b0041688cda145e62a87d3e462ec5efae3cb7171084fbae4827272d52d694a712c21e6fd014000c1b53fcd544224e2db203bd72fc86b3ad964270a07332e8bfcd1481409fce19f1247327a6e091234d7744082b4bef0da2e360ad26743b4618b8c30f1119d2c37442c99a988a831def0f78213b0c8b795d94bf44a29034688b968bcbe1110d7b696516c54300700f9a355c44100f96ea0399f3f4a39269d33d5a1471fe7a25a2485ad5e7b354d83b873d315926c3d10eca40b883ccb2b1207f6f61c142acc3e4273b0fa7a7aedf951cdf98ba0f822927ff5d8175c9fdd67322cf6b179fa2147ee6bb271e852dabc26f2073c4d1f52b241925e5a6eabcf665b673ca5c963d6a40a6691ae5bc1d827de5f93c4357374879b9b5b0cb478ad2a079668c6f0a74d3d57cb7057309dedbc9e0a4cb5ab13d4889bb8d922d3d2e5651b374266b69db5b48e2ff4a1be26fa02417b4613cd1579c4b04a6da03e9fc38464ffb091b747897832bf2597e06e0df3f67517c74bb5ca7fc75daf24e2f9faa35502c761e176d6a1e156825cada755546483eb2886bb690bc465e4dda76f8dd7f2afa7ca5bd606cd1ff4fd7016ddfbbaae75dd1736a26ca2856213bab7efa36f3598c0ac1f6fc53d5d60cc927d5222c95a052105c10b9765f471f85b521851e9d4d77cf1308991e4188693e4c1023b87c48d9323f0048a3b80beb16d2a809e77ae22e68f759e3fa131464a9d97b8b72e3b2cc824788da4aeb6f91eead3826744b6d18328de5dd033d771f65edbea54a52a65fe49d59694909daf60b838a09a421c39d91099efa82b4df948bfbe1adb2c0bdc6f29387bb510c834d73d477f0c0d58a3d8cc0a77acfbd3a04701d68f42d8c33a8023a1a4489802d2786478427dbc10783ad480115d47541f6ab3c75eda9270e620602f914c0d045b234d25a17a1af7221ec4f04bc958d1d0973e4a67de0656c4ea29a5f2fcaa326d6bb0f5e536cfa167bf6d2ffb5f1030919bac13f9283f0153b2eef28d42f47688394bbb5a5a2e719c37d9b0649f8709f75430601644865c645d0f02a4dac894a298659e7aa8e33e737ed2961271d91ce0ca032f71d4deb053b965227d4e9b576b0fddc0db94a6c17d38e2cc44d549384c58bb4aeeccd12734ae3a8138a669374d88dac8679450e6b54a7c37fc9ceec6859ad62ce5f33499681c25146ceb7074c516f12c361550f44c6f13da1224470feba74c61c11d90964e20de2082663a4f15e1fe9db0ace0f9e8add50f95706c86293c056d12a4a425bc53c61be860028e17bc754f629d7dce33ae98a8255d3caa75c118c9591d7cfa370cadaa6f28595c330286b06f87c1b67722684e6f68c6a14c29df352509f91969f31353c448672d13edebeffda3d12134a9854df2d9328468f30386d94c31b1c16d587277fb546d7a99997ccce2fd2f8c1d20a0bd3a6ac19ef3089ca6ecb238d365de3b1d5e039cb464f5868495a4d8fc377269bf77aac161758a91708446692c28a360133dd950688458f12f7e0f53a8cd9e2d0753eda5d3a2a6af780d7c9fa90ee0183cf40c44b8585ca3f8ec3ac13c33fe07dd59ce5a799bcebaff8ef7cee13593abc510a928adc361bebb4c75b2671cea1224a70beaf2b01f255fd93b582e8d43ee688985f00c7511dde111232cb87b90c0f09a9b4ec149dad9a5228eaa23692846a00884612c2a0a985df793cb4f962b38a6f0f26ee14e5d14d92d05201b1270d02df3c596b1419cefb44c6da59fb906f74b3573b3785d450d2e3728555811e52c350dfa29e320d75a0b9d021e9dc50f6c92f11834ca5881fa8ea8561ad073ba863cd1395f56fe4df9baf5e13b524eaacf04ec04f497b9c89f560fa35095c06e24bc7b70df47b88040d74043cbb3db91abc7de5efb84c1734b38c93114404f16fb25291ace60e57e0432a3fd6c398ec7df76ccbcd522096af3ba918ff4565f6a6fc4dc47972eef108d6adb10dd332ca0486454ce250b18d29b35d7b4549b6f6fb6f3e1fa8f49c42b5c16319fdd250fb449f9f32f9e329e9f146c1a5de78c5cea984b9c3f48e60391113c350b27e1c749c2b5aef0b72a3629dcef2a823818286901b26e79f54142dca2776c66b878dd57729300eaf72825a1381ef3a2ddb54027e49687f0f2a9c7dc174d4c1e57e8cc002f42d58bc6d56323f5da774eaff4cf03a69759485374b5d4ae3df6a9ae6a0f2e81802b14efc55b371fb97c00194b4944cc7a85a644c3749d4c6fc5453c1fa4d67b85faad51b297e28c28576d893174d91df3631c7ed49c7b29ddfca955cad0c42f190e2380588640caf9be18a65a717209c1ad2f25ee584ca66c29bed85ee40c784eeafbe18cbf90ef2836758e19adb5964842f9f76c9a87bc978e43029a346d69e30978389efd01327574b0e539a98a57e4554a148f68e635af4c1fd2067606400450c5bffdacdb97adae9e39c1853e647c78130b9560427ee0f3e634aac2ee3d8e0d2aef5e849cce1b731dcd1264072a87c649f98019d1a5ccddb990968606665520f3ca68aa60db735a1c1277e31015d2dc25f4da8ce7ac6cd89eeb9666195ba0964ab11783794b09b29995ae5f28a434d16df8ffd4cddac9eb0bc1db5635a71afbe7755ba324ce3557835630d79da0e4b10fb11cd394813b8fbd98473ed5a941bce0f658cdc2348a6264a653b49e769fe4fbf2eeca69cea00c4c6b32dfc19f27f9fe42563dc38365c73e7b54a4f4a4ce1a8923d8f29b633b0f71a6a9e80741aad5949d9062b83e169f6f4272bad09251dec158f54d799b69add20c2cf67951b476d74c9fa8029017e2ede1902d51da9c81ec18b3a9e96804ce42b0859eba8cd11818a4f85ef6e8545e646614f54c0e0acffd4bd452671c70e3a050a1513d203fc7b99fee3d61b8a8fc51002eb556bb01a029d721391dd6ceae8cde10db79b1daf05aaa6d556dd9c68d94b462ccf6b5045f0e16bd450c18cde9ad19391e0d1cb2671a4c326630576bb464cb0bf87b2df4713d2d1536bd0de625adbe696d6db7c48f0766d4e247b20f1f3931f34befee0afbf29ed01ca589447cc501402fafdcaed0641798ada9354fc133e005ee3dc4ba05352d6b585550003451b56f2bda8629e26a112d527e1cb6fc47d63a0e4b14f99fe692fd28e8b6c02fdd818ecef2744840fcca1078b233342a870016dd8449eadd55ecace3f1131cdde3c8ca2f23fcbc4ce90a6a4fcfc6d1a8624cc0da91acf4e6af6c86ed95d6eec9ca06b73bc4750ff2536871e0b9c2324aa9c0cd1cee54884e4d83403fef3e81918109550827ed1a00e27abe6a9b83f1e89da88d5b2e1c20e8d83581c6d6a881332b9aaded56ecf843b1fe2e64639c021ea2fd77e7226c7ae4bf60323bfeb7e2ddde8676000f48538e324c91077c08174fb2370619dee1456a1e6ce47aafc059b96a5ea23017decc5f6342ef87c25a6b665ed914aa41823e05ddc08feb642cabfc31c83cdfef488b47c6833401079ed96a5ac2e8051665835f8ff7e515115d7f522b62f7000af03406e209284eb62b0690b3d0dafaa111dea7f9d6c5a57850ef4fffd3e41e60dd08a712c4b62a06c4df9acdcfd585c0c22c2006572eb0dab5beca2fce42450bbc2c170f36cf896093bf3007af98ad1020810aec4e3a99b730bf459cb29301c79021ea4796ebc15faaa09da3624a7b6b8d9674a840e5ceea384c59205c31e8efe321ed88db7b9202c24020b365aef6b20d4ed5d25411fdf9a33f2290a3095b2f7b6db7ceaef0e54e4c2f1fbd24cd169dde26b526aaa5e2ef122332995274dfd89a7cbec65ad3e7b9a288ac41523e22331c0a2743b2285bbf2f62b7ab8737f3ad5a842c89bed528bfedfc45a6a423c8f07d84beb4e26b67b8d06c93daa362e68240153ee614e4b378c51192fda6ced9783b40a8515a85b112d147715f5e60dac0ed5c88c1530bab64989f33b29738089df80f0ee49f886ecc6f2698d73a29155213a4f46f12b6bf8239aa52df10950faf526b4f134beb123843dd808d631d9656d42fed092a2ababb73390a1a05bd3d3f9bf754cbf8b60d0c440e52e1aa077b1c263e78b898895d0660128308b13dbcb614b8ca5abe237e24817b20714d76c12eb1a7dee1281ffeec21a5bfdd2fe353012fe012ca0d1903677576c3c285eccc2686ae881aa0efff852cd3b1b5170868348647b9e2c57ac248ea09e2b7c0831c7b5bf2b4e2726a03bbd75f8ccbb0a77ff8b20e628888ad86600fae30a5624da5c78d0db3a6443fd909ccbe03d4d3b3f5a5fdc3aa925ad497917148d937be300fed9a64453df73c47b3cbbda98d3e17e64be689a13842f687a1afe53e8bfd75125efe572c6d9e6016043e37d66eb72f7515c5bc43c43207105b2c427b820c6aff08d4ef743bfd60d03749e51a9e93bbeaddbd75e7090db9a4fec404ef5563742ed2af996d2975f75d604711cc9f967fd85cb4ada66228d79f6111103402cdb5b69d40ae52ca027afda1488162e1ec1126576cf41f305f39f97b8b0548afd093351efb272dd25aa55804c9e01e50d59b5256696c3f526695e3578ee751be2e73f53d43750c0c2704f5d2c056de6526aa9</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Enter password to read！</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-    
-    
-    <summary type="html">交钱！</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>轮眉软件调试-棋盘格</title>
-    <link href="https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC.html"/>
-    <id>https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC.html</id>
-    <published>2021-12-14T09:34:59.000Z</published>
-    <updated>2023-01-05T05:14:19.072Z</updated>
-    
-    <content type="html"><![CDATA[<center>写在前面</center>前面啥也没有<span id="more"></span><h2 id="坐标系说明"><a href="#坐标系说明" class="headerlink" title="坐标系说明"></a>坐标系说明</h2><p>工位后方是Z轴正方向,右侧为X正方向,上侧为Y正方向</p><h2 id="标定界面"><a href="#标定界面" class="headerlink" title="标定界面"></a>标定界面</h2><p><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL01.PNG" alt="CAL"><br><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL02.PNG" alt="CAL"><br><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL03.PNG" alt="CAL"></p><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>PixelSize: 传感器像素尺寸<br>说明: 比如相机Sensor Size 为5.7mm <em>4.3mm, 分辨率为2592</em> 1944px, 则<br>PixelSizeH &#x3D; 5.7 &#x2F; 2592<br>PixelSizeV &#x3D; 4.3 &#x2F; 1944</p><p>左上角:</p><blockquote><p>Point3DX:<br>Point3DY: 棋盘格左上角第一个黑块的右下角这一点到地面的高度<br>Point3DZ: 棋盘格到标定架中心的距离</p></blockquote><p>右边:</p><blockquote><p>ChessboardRow: 棋盘格行数<br>ChessboardColumn: 棋盘格列数<br>ChessboardLength: 棋盘格边长<br>ChessboardDistance: 棋盘格到相机的距离 + 110(外壳镜面到相机传感器的距离)</p></blockquote><p>相机坐标:</p><blockquote><p>Camera_X:<br>Camera_Y: 相机玻璃面到标定架中心线的距离<br>Camera_Z: 相机玻璃面中心到地的距离</p></blockquote><h3 id="标定结果"><a href="#标定结果" class="headerlink" title="标定结果"></a>标定结果</h3><p>内参标定完成后焦距f应接近相机镜头实际焦距大小;<br>fx,fy两数接近</p><p>可以检查棋盘格识别点,表示识别到每个点的像素坐标值</p><h2 id="测试界面"><a href="#测试界面" class="headerlink" title="测试界面"></a>测试界面</h2><p>与四个孔的标定架不同点:</p><blockquote><p>轮眉距离: 轮眉到车中轴线的距离</p></blockquote><p>测试点识别同样是识别ROI中最下面的白点</p><p><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST01.PNG" alt="CAL"><br><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST02.PNG" alt="CAL"><br><img src="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST03.PNG" alt="CAL"></p>]]></content>
-    
-    
-    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
-前面啥也没有</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>PostgreSQL数据库安装配置</title>
-    <link href="https://silencejql.github.io/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html"/>
-    <id>https://silencejql.github.io/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE.html</id>
-    <published>2021-12-04T07:19:10.000Z</published>
-    <updated>2023-01-05T05:14:40.155Z</updated>
-    
-    <content type="html"><![CDATA[<center>写在前面</center>Postgre数据库安装与配置<span id="more"></span><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>目前用的数据库版本为: postgresql-9.5.3-1-windows.exe<br>驱动安装包为: Setup_Npgsql-2.2.3.0-r2-net40.exe<br>安装包获取: 自己想办法</p><p>网盘路径:&#x2F;BBK_File_Server&#x2F;汽车测试事业部&#x2F;17-转存（每月1日定期清理）&#x2F;Justin&#x2F;程序安装包</p><h3 id="数据库安装"><a href="#数据库安装" class="headerlink" title="数据库安装"></a>数据库安装</h3><p>安装中需设置数据库密码,检测线密码设置为:123,其他自己看着办</p><p><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/SetupPassword.jpg" alt="Setup"></p><p>安装最后界面取消勾选后点击完成即可</p><p><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/SetupDone.jpg" alt="Setup"></p><h3 id="驱动安装"><a href="#驱动安装" class="headerlink" title="驱动安装"></a>驱动安装</h3><p>双击安装包一切默认即可</p><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h3><p>打开安装后的数据库软件:PostgreSQL 9.5 (x86)\pgAdmin III</p><p><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/NewDatabase.jpg" alt="Setup"></p><p>点击新建数据库,名称填LocalDB,其他默认点击确定</p><p><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/NewDatabase1.jpg" alt="Setup"></p><h3 id="数据库恢复"><a href="#数据库恢复" class="headerlink" title="数据库恢复"></a>数据库恢复</h3><p><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/Restor.jpg" alt="Setup"><br><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/Restor-SelectFile.jpg" alt="Setup"><br><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/RestorDone.jpg" alt="Setup"><br><img src="/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/Return0.jpg" alt="Setup"></p><h2 id="检测线联网配置"><a href="#检测线联网配置" class="headerlink" title="检测线联网配置"></a>检测线联网配置</h2><a href="/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91.html" title="BBK检测线联网">PostgreSQL配置</a>]]></content>
-    
-    
-    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
-Postgre数据库安装与配置</summary>
     
     
     
