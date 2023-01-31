@@ -6062,10 +6062,7 @@ EOLPrint一般用于检测线打印工位
 
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph</span><br><span class="line">    id1&#123;菱形&#125;</span><br><span class="line">    id2&#123;&#123;六角形&#125;&#125;</span><br><span class="line">    id3[/平行四边形/]</span><br><span class="line">    id4[\反向平行四边形\]</span><br><span class="line">    id5[/梯形\]</span><br><span class="line">    id6[\反向梯形/]</span><br></pre></td></tr></table></figure>
 
-<h4 id="连线样式"><a href="#连线样式" class="headerlink" title="连线样式"></a>连线样式</h4><ol>
-<li>实线箭头</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">a--&gt;b--实线--&gt;c--&gt;|实线|d</span><br><span class="line">a==&gt;b==粗线==&gt;c</span><br><span class="line">a-.-&gt;b-.虚线.-&gt;c</span><br></pre></td></tr></table></figure>
+<h4 id="连线样式"><a href="#连线样式" class="headerlink" title="连线样式"></a>连线样式</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">a--&gt;b--实线--&gt;c--&gt;|实线|d</span><br><span class="line">a==&gt;b==粗线==&gt;c</span><br><span class="line">a-.-&gt;b-.虚线.-&gt;c</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">a--&gt;b--实线--&gt;c--&gt;|实线|d</span><br><span class="line">a==&gt;b==粗线==&gt;c</span><br><span class="line">a-.-&gt;b-.虚线.-&gt;c</span><br></pre></td></tr></table></figure>
 
