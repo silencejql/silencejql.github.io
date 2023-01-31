@@ -6036,4 +6036,50 @@ EOLPrint一般用于检测线打印工位
 <p><img src="/OBDII%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/Config.jpg" alt="启用超时配置"></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Markdown画图</title>
+    <url>/Markdown%E7%94%BB%E5%9B%BE.html</url>
+    <content><![CDATA[<center>写在前面</center>
+利用Mermaid绘制图标
+<span id="more"></span>
+
+<h2 id="图类"><a href="#图类" class="headerlink" title="图类"></a>图类</h2><p>饼状图：使用pie关键字<br>流程图：使用graph关键字<br>序列图：使用sequenceDiagram关键字<br>甘特图：使用gantt关键字<br>类图：使用classDiagram关键字<br>状态图：使用stateDiagram关键字<br>用户旅程图：使用journey关键字</p>
+<h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">pie</span><br><span class="line">    title 为什么总是宅在家里？</span><br><span class="line">    &quot;喜欢宅&quot; : 15</span><br><span class="line">    &quot;天气太热或太冷&quot; : 20</span><br><span class="line">    &quot;穷&quot; : 500</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">pie</span><br><span class="line">    title 为什么总是宅在家里？</span><br><span class="line">    &quot;喜欢宅&quot; : 15</span><br><span class="line">    &quot;天气太热或太冷&quot; : 20</span><br><span class="line">    &quot;穷&quot; : 500</span><br></pre></td></tr></table></figure>
+
+<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">    A[Start] --&gt; B&#123;Is it?&#125;;</span><br><span class="line">    B -- Yes --&gt; C[OK];</span><br><span class="line">    C --&gt; D[Rethink];</span><br><span class="line">    D --&gt; B;</span><br><span class="line">    B -- No ----&gt; E[End];</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">    A[Start] --&gt; B&#123;Is it?&#125;;</span><br><span class="line">    B -- Yes --&gt; C[OK];</span><br><span class="line">    C --&gt; D[Rethink];</span><br><span class="line">    D --&gt; B;</span><br><span class="line">    B -- No ----&gt; E[End];</span><br></pre></td></tr></table></figure>
+
+<h4 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h4><p>graph或graph TB或graph TD：从上往下<br>graph BT：从下往上<br>graph LR：从左往右<br>graph RL：从右往左</p>
+<h4 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h4><p>无名字的结点：直接写内容，此时结点边框为方形；节点内容不支持空格<br>有名字的结点：节点名后书写内容，内容左右有特定符号，结点边框由符号决定；节点内容可以有空格</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph</span><br><span class="line">    默认方形</span><br><span class="line">    id1[方形]</span><br><span class="line">    id2(圆边矩形)</span><br><span class="line">    id3([体育场形])</span><br><span class="line">    id4[[子程序形]]</span><br><span class="line">    id5[(圆柱形)]</span><br><span class="line">    id6((圆形))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph</span><br><span class="line">    默认方形</span><br><span class="line">    id1[方形]</span><br><span class="line">    id2(圆边矩形)</span><br><span class="line">    id3([体育场形])</span><br><span class="line">    id4[[子程序形]]</span><br><span class="line">    id5[(圆柱形)]</span><br><span class="line">    id6((圆形))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph</span><br><span class="line">    id1&#123;菱形&#125;</span><br><span class="line">    id2&#123;&#123;六角形&#125;&#125;</span><br><span class="line">    id3[/平行四边形/]</span><br><span class="line">    id4[\反向平行四边形\]</span><br><span class="line">    id5[/梯形\]</span><br><span class="line">    id6[\反向梯形/]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph</span><br><span class="line">    id1&#123;菱形&#125;</span><br><span class="line">    id2&#123;&#123;六角形&#125;&#125;</span><br><span class="line">    id3[/平行四边形/]</span><br><span class="line">    id4[\反向平行四边形\]</span><br><span class="line">    id5[/梯形\]</span><br><span class="line">    id6[\反向梯形/]</span><br></pre></td></tr></table></figure>
+
+<h4 id="连线样式"><a href="#连线样式" class="headerlink" title="连线样式"></a>连线样式</h4><ol>
+<li>实线箭头</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">a--&gt;b--实线--&gt;c--&gt;|实线|d</span><br><span class="line">a==&gt;b==粗线==&gt;c</span><br><span class="line">a-.-&gt;b-.虚线.-&gt;c</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%注释</span><br><span class="line">graph LR</span><br><span class="line">a--&gt;b--实线--&gt;c--&gt;|实线|d</span><br><span class="line">a==&gt;b==粗线==&gt;c</span><br><span class="line">a-.-&gt;b-.虚线.-&gt;c</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a---b</span><br><span class="line">b--无箭头!---c</span><br><span class="line">c---|无箭头|d</span><br><span class="line">d===e</span><br><span class="line">e==无箭头===f</span><br><span class="line">f-.-g</span><br><span class="line">g-.无箭头.-h</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a---b</span><br><span class="line">b--无箭头!---c</span><br><span class="line">c---|无箭头|d</span><br><span class="line">d===e</span><br><span class="line">e==无箭头===f</span><br><span class="line">f-.-g</span><br><span class="line">g-.无箭头.-h</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A o--o B</span><br><span class="line">    B &lt;--&gt; C</span><br><span class="line">    C x--x D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">flowchart LR</span><br><span class="line">    A o--o B</span><br><span class="line">    B &lt;--&gt; C</span><br><span class="line">    C x--x D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%多重连接</span><br><span class="line">graph </span><br><span class="line">   a --&gt; b &amp; c--&gt; d</span><br><span class="line">   </span><br><span class="line">   A &amp; B--&gt; C &amp; D</span><br><span class="line">   </span><br><span class="line">    X --&gt; M</span><br><span class="line">    X --&gt; N</span><br><span class="line">    Y --&gt; M</span><br><span class="line">    Y --&gt; N</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">%%多重连接</span><br><span class="line">graph </span><br><span class="line">   a --&gt; b &amp; c--&gt; d</span><br><span class="line">   </span><br><span class="line">   A &amp; B--&gt; C &amp; D</span><br><span class="line">   </span><br><span class="line">    X --&gt; M</span><br><span class="line">    X --&gt; N</span><br><span class="line">    Y --&gt; M</span><br><span class="line">    Y --&gt; N</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
 </search>
