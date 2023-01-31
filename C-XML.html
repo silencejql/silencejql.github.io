@@ -463,6 +463,12 @@
 </div>
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
   </div>
+  <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
         
 <div class="busuanzi-count">
