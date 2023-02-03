@@ -4642,8 +4642,6 @@ GAEProxy AppID
 <h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>客户端配置<br>GeneralLib.xDvConfigClient.init(GeneralLib.xRemoterClientConfig)<br>服务端配置<br>GeneralLib.GenO.InitRemoterTcpServer()</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Root</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">xDevice</span> <span class="attr">updateRate</span>=<span class="string">&quot;50&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Item</span> <span class="attr">ip</span>=<span class="string">&quot;10.18.13.50:10240&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">__COUNTER_OUT</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">__COUNTER_IN</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Communication_ZTS</span> <span class="attr">value</span>=<span class="string">&quot;CarParam_ZTS&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Communication_VIN</span> <span class="attr">value</span>=<span class="string">&quot;CarParam_VIN&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DeviceDescribe</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--用于与具有远程功能的平台程序通讯(@开头为PubObject对象,#开头为组合控制),默认端口10240,ip格式:127.0.0.1:10240--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">DeviceDescribe</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Alarms</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">AlarmItem</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Alarm</span> <span class="attr">Index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">Name</span>=<span class="string">&quot;告警信息格式模板&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">AlarmItem</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Alarms</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">xDevice</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
 <p>配置完成后，相当于客户端的Communication_VIN与服务端的CarParam_VIN进行了绑定</p>
 <h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>客户端配置<br>SocketOpraLib.UDPClientOpra.SetDestInfoConfig(ConfigSend)<br>SocketOpraLib.UDPClientOpra.SendTo(“{VIN};{ZTS}”)<br>服务端配置<br>SocketOpraLib.UDPServerOpra.SetLocalInfoConfig(ConfigRecv)</p>
 ]]></content>
@@ -6127,6 +6125,44 @@ graph
     X --> N
     Y --> M
     Y --> N</pre>
+]]></content>
+  </entry>
+  <entry>
+    <title>BBK平台软件添加通讯点</title>
+    <url>/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9.html</url>
+    <content><![CDATA[<center>写在前面</center>
+Always中添加并使用通讯点, 如ADAS,侧滑等或需要在平台实现动作控制的工位
+<span id="more"></span>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Client.PNG" alt="创建Client"></p>
+<p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Base.PNG" alt="创建Base"></p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Init.png" alt="初始化"></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/In.png" alt="输入点"></p>
+<p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Out.png" alt="输出点"></p>
+<h3 id="状态显示"><a href="#状态显示" class="headerlink" title="状态显示"></a>状态显示</h3><p>在菜单中添加状态显示</p>
+<p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Show.png" alt="显示"></p>
+<p>点击菜单中的 查看-设备状态</p>
+<p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/ShowIO.jpg" alt="显示"></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>按示例添加完成后打开程序会自动在Config文件夹中生成对应名称的xml文件</p>
+<p><img src="/BBK%E5%B9%B3%E5%8F%B0%E8%BD%AF%E4%BB%B6%E6%B7%BB%E5%8A%A0%E9%80%9A%E8%AE%AF%E7%82%B9/Config.jpg" alt="输出点"></p>
+<p>value需要手动配置绑定到对应IO点<br>WriteEnable输出点需配置为true<br>Reversion用于输入点位取反<br>AutoReset用于输出点位自动复位,-1为禁用,500为500ms后复位<br>ShowName为设备状态界面显示分类及名称</p>
+<h3 id="常用类型说明"><a href="#常用类型说明" class="headerlink" title="常用类型说明"></a>常用类型说明</h3><ol>
+<li>AdvOpera4.AdvConfigEx : 研华板卡</li>
+<li>EIPNetOperaLib.EIPABConfig : AB PLC</li>
+<li>S7NetOperaLib.S7NetConfig : 西门子PLC</li>
+<li>EtherCATOperaLib.EtherCATConfig : 倍福模块</li>
+<li>GeneralLib.xRemoterClientConfig : TCP设备间软件对象绑定:<a href="/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E9%80%9A%E8%AE%AF%E7%9B%B8%E5%85%B3%E4%BB%8B%E7%BB%8D.html" title="BBK检测线通讯相关介绍">BBK检测线通讯相关介绍</a></li>
+<li>OPCOpraLib.OPCConfigEx : OPC</li>
+</ol>
+<h3 id="通讯点使用说明"><a href="#通讯点使用说明" class="headerlink" title="通讯点使用说明"></a>通讯点使用说明</h3><h4 id="输入点"><a href="#输入点" class="headerlink" title="输入点"></a>输入点</h4><ol>
+<li>IsTrue</li>
+<li>IsFalse</li>
+</ol>
+<h4 id="输出点"><a href="#输出点" class="headerlink" title="输出点"></a>输出点</h4><ol>
+<li>SetTrue</li>
+<li>SetFalse</li>
+<li>SetTrueFalseTimer脉冲输出, 默认持续500ms, 可输入参数为脉冲时间(int)</li>
+</ol>
 ]]></content>
   </entry>
 </search>
