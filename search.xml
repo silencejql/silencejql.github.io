@@ -6315,14 +6315,14 @@ ISO13400
 <td align="center">协议版本信息按位取反</td>
 <td align="left">有效数据类型</td>
 <td align="center">有效数据长度</td>
-<td align="center">根据PayloadType</td>
+<td align="center">SA TA UserData</td>
 </tr>
 <tr>
 <td align="center">1Byte</td>
 <td align="center">1Byte</td>
 <td align="left">2Byte</td>
 <td align="center">4Byte</td>
-<td align="center">-</td>
+<td align="center">源地址(2Byte)目标地址(2Byte)UDS数据</td>
 </tr>
 <tr>
 <td align="center">0x01:DoIp13400-2010</td>
@@ -6358,6 +6358,13 @@ ISO13400
 <td align="left">0x0006RoutingActivationRespose</td>
 <td align="center"></td>
 <td align="center"></td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="center">FD</td>
+<td align="left">8001</td>
+<td align="center">02</td>
+<td align="center">0E8003041003</td>
 </tr>
 </tbody></table>
 <p>关于数据类型参考:<a href="https://blog.csdn.net/weixin_42967006/article/details/121638078">https://blog.csdn.net/weixin_42967006/article/details/121638078</a></p>
