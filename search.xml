@@ -6355,7 +6355,21 @@ ISO13400
 <tr>
 <td align="center"></td>
 <td align="center"></td>
-<td align="left">0x0006RoutingActivationRespose</td>
+<td align="left">0x0006:RoutingActivationRespose</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">0x0007:AliveCheckRequest</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="left">0x0008:AliveCheckReponse</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
@@ -6364,7 +6378,7 @@ ISO13400
 <td align="center">FD</td>
 <td align="left">8001</td>
 <td align="center">00000006</td>
-<td align="center">0E8003041003</td>
+<td align="center">0E800304 1003</td>
 </tr>
 </tbody></table>
 <p>关于数据类型参考:<a href="https://blog.csdn.net/weixin_42967006/article/details/121638078">https://blog.csdn.net/weixin_42967006/article/details/121638078</a></p>
