@@ -6406,4 +6406,13 @@ ISO13400
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">ArrayList al = <span class="keyword">new</span> ArrayList();</span><br><span class="line">al.Add(<span class="number">1</span>);</span><br><span class="line">al.Add(<span class="number">2</span>);</span><br><span class="line">al.Add(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//IEnumerable&lt;int&gt; IECast = al.Cast&lt;int&gt;();    //抛出异常</span></span><br><span class="line"><span class="comment">//foreach (var i in IECast)</span></span><br><span class="line"><span class="comment">//&#123;</span></span><br><span class="line"><span class="comment">//    Console.WriteLine(i);</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line">IEnumerable&lt;<span class="built_in">int</span>&gt; IEOfType = al.OfType&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">int</span> i <span class="keyword">in</span> IEOfType)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(i);   <span class="comment">//输出 1 2 其中转换不了的a则不转换            </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>VSCode CMake</title>
+    <url>/VSCode-CMake.html</url>
+    <content><![CDATA[<center>写在前面</center>
+前面啥也没有
+<span id="more"></span>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+  </entry>
 </search>
