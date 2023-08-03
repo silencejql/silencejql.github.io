@@ -73,7 +73,7 @@ https://silencejql.github.io/Hashmap%E3%80%81Hashtabel%E3%80%81Dictionary.html
 https://silencejql.github.io/%E5%8A%A8%E6%80%81EV-ETP-%E6%B5%8B%E8%AF%95.html
 https://silencejql.github.io/PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93.html
 https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91.html
-https://silencejql.github.io/BBK%E8%BD%AF%E4%BB%B6%E9%94%81.html
+https://silencejql.github.io/BBKTimeLock.html
 https://silencejql.github.io/BBK%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E6%96%B9%E6%B3%95.html
 https://silencejql.github.io/VCU.html
 https://silencejql.github.io/lambda-Expressions.html
