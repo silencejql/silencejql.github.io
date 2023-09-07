@@ -6795,4 +6795,49 @@ Ubuntu下基于Docker搭建Gitlab
         <category>设计模式</category>
       </categories>
   </entry>
+  <entry>
+    <title>UML-PlantUML</title>
+    <url>/UML-PlantUML.html</url>
+    <content><![CDATA[<center>写在前面</center>
+前面啥也没有
+<span id="more"></span>
+
+<h2 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line"><span class="title">interface</span> <span class="title">Person</span></span><br><span class="line"><span class="title">enum</span> <span class="title">Gender</span> &#123; MALE, FEMALE &#125;</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vM22ufJKdDA-7Ap2j9BKfBJ4vL24WjAixFuqhDAyrLS4_DIqajKgXMy7NqSTLHS7C5qGgr0000>
+
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法属性</span></span><br><span class="line"><span class="comment">//+:public</span></span><br><span class="line"><span class="comment">//-:private</span></span><br><span class="line"><span class="comment">//#:protected</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">ClassName</span> &#123;</span><br><span class="line">  + attribute1 : Type1</span><br><span class="line">  <span class="meta"># attribute2 : Type2</span></span><br><span class="line">  - method1() : ReturnType1</span><br><span class="line">  + method2(param1:Type1, param2:Type2) : ReturnType2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS0QHVecvgGhLNDeAYIKbHPb9fIMfXWfM2Y6L1Qc6NCe8GIEee15GPMvgIKP-Yg669b0iABMaj2WFeXmcOwHHa5YKc6je1HRMKG3pZC0y8rGzHbor0000>
+
+<h2 id="类之间关系"><a href="#类之间关系" class="headerlink" title="类之间关系"></a>类之间关系</h2><h3 id="泛化关系"><a href="#泛化关系" class="headerlink" title="泛化关系"></a>泛化关系</h3><p>继承非抽象类<br>继承关系为 is-a的关系；两个对象之间如果可以用 is-a 来表示</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//B继承自A</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;|-- B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71faPNLy490000>
+
+<h3 id="实现关系"><a href="#实现关系" class="headerlink" title="实现关系"></a>实现关系</h3><p>实现关系表现为继承抽象类</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//B继承自A</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;|.. B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/oymhIIrAIqnELN1KgERILiXDBSd8Jz7GLB1I24ejAItA2waiIEMgvKhEIImkLd32gyPHmQP6Jq_12G00>
+
+<h3 id="聚合关系"><a href="#聚合关系" class="headerlink" title="聚合关系"></a>聚合关系</h3><p>与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//B聚合到A上，或者说A由B组成</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A o-- B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb4XNrTNmGa0>
+
+<h3 id="组合关系"><a href="#组合关系" class="headerlink" title="组合关系"></a>组合关系</h3><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//说A由B组成</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A *-- B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb51IrTNmGa0>
+
+<h3 id="关联关系"><a href="#关联关系" class="headerlink" title="关联关系"></a>关联关系</h3><p>描述不同类的对象之间的结构关系<br>比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系<br>关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示B知道A，但 A不知道B</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;-- B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HbTNmGa0>
+
+<h3 id="依赖关系"><a href="#依赖关系" class="headerlink" title="依赖关系"></a>依赖关系</h3><p>一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化<br>一个对象在运行期间会用到另一个对象的关系<br>应该保持单向依赖，杜绝双向依赖的产生</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;.. B</span><br></pre></td></tr></table></figure>
+
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HazFmGa0>
+]]></content>
+  </entry>
 </search>
