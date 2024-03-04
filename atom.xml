@@ -6,7 +6,7 @@
   <link href="https://silencejql.github.io/atom.xml" rel="self"/>
   
   <link href="https://silencejql.github.io/"/>
-  <updated>2023-12-20T08:55:28.727Z</updated>
+  <updated>2024-03-04T03:16:20.305Z</updated>
   <id>https://silencejql.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git拆分仓库</title>
+    <link href="https://silencejql.github.io/Git%E6%8B%86%E5%88%86%E4%BB%93%E5%BA%93.html"/>
+    <id>https://silencejql.github.io/Git%E6%8B%86%E5%88%86%E4%BB%93%E5%BA%93.html</id>
+    <published>2024-03-04T02:54:39.000Z</published>
+    <updated>2024-03-04T03:16:20.305Z</updated>
+    
+    <content type="html"><![CDATA[<center>写在前面</center><p>将功能复杂的版本库拆分为功能单一的版本库并保存所有相关提交信息</p><span id="more"></span><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>比如, Project项目中存在Pro1和Pro2两个项目, 现在我们要将Pro1项目拆分到单独的版本库中进行维护, 并且要保留原有提交信息</p><p>文件路径如下</p><blockquote><p>Project</p><blockquote><p>Pro1</p><blockquote><p>File1<br>File2</p></blockquote></blockquote><blockquote><p>Pro2</p><blockquote><p>File1<br>File2</p></blockquote></blockquote></blockquote><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Pro1 -b Project1</span><br></pre></td></tr></table></figure><h2 id="复制分支"><a href="#复制分支" class="headerlink" title="复制分支"></a>复制分支</h2><h3 id="在新路径保存分支"><a href="#在新路径保存分支" class="headerlink" title="在新路径保存分支"></a>在新路径保存分支</h3><p>在合适位置新建文件夹后初始化Git, 然后拉去刚才新建的Project1分支即可<br>查看git log</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;path-of-Project&gt; &lt;name-of-new-branch&gt;</span><br><span class="line">git pull &lt;path-of-Project&gt; Project1</span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure><h3 id="在Pro1中初始化Git-不更改原文件夹结构"><a href="#在Pro1中初始化Git-不更改原文件夹结构" class="headerlink" title="在Pro1中初始化Git, 不更改原文件夹结构"></a>在Pro1中初始化Git, 不更改原文件夹结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Pro1中执行</span></span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;提交信息&quot;</span></span><br><span class="line"></span><br><span class="line">git pull .. Project1</span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;center&gt;写在前面&lt;/center&gt;
+
+&lt;p&gt;将功能复杂的版本库拆分为功能单一的版本库并保存所有相关提交信息&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="https://silencejql.github.io/categories/git/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>扩展方法</title>
@@ -427,29 +448,6 @@
       
     <summary type="html">&lt;p&gt;使用多个简单的对象一步一步构建成一个复杂的对象&lt;br&gt;将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示&lt;/p&gt;
 &lt;h2 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h2&gt;&lt;fig</summary>
-      
-    
-    
-    
-    <category term="设计模式" scheme="https://silencejql.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式-外观模式</title>
-    <link href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.html"/>
-    <id>https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.html</id>
-    <published>2023-08-30T05:14:58.000Z</published>
-    <updated>2023-08-30T05:24:13.425Z</updated>
-    
-    <content type="html"><![CDATA[<p>隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口<br>降低访问复杂系统的内部子系统时的复杂度，简化客户端之间的接口。</p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//子系统</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">SubSystemOne</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MethodOne</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;子系统一&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">SubSystemTwo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MethodTwo</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;子系统二&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">SubSystemThree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MethodThree</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;子系统三&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//外观类</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">Facade</span></span><br><span class="line">&#123;</span><br><span class="line">    SubSystemOne one;</span><br><span class="line">    SubSystemOne two;</span><br><span class="line">    SubSystemOne three;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Facade</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        one = <span class="keyword">new</span> SubSystemOne();</span><br><span class="line">        two = <span class="keyword">new</span> SubSystemTwo();</span><br><span class="line">        three = <span class="keyword">new</span> SubSystemThree();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MethodA</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        one.MethodOne();</span><br><span class="line">        two.MethodTwo();</span><br><span class="line">        three.MethodThree();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MethodB</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        one.MethodOne();</span><br><span class="line">        three.MethodThree();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Client</span></span><br><span class="line">Facade facade = <span class="keyword">new</span> Facade();</span><br><span class="line">facade.MethodA();</span><br><span class="line">facade.MethodB();</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口&lt;br&gt;降低访问复杂系统的内部子系统时的复杂度，简化客户端之间的接口。&lt;/p&gt;
-&lt;h2 id=&quot;示例&quot;&gt;&lt;a href=&quot;#示例&quot; class=&quot;headerlink&quot; title=&quot;示例&quot;&gt;&lt;/a&gt;示例&lt;/h2</summary>
       
     
     
