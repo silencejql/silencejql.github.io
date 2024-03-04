@@ -6871,21 +6871,8 @@ Ubuntu下基于Docker搭建Gitlab
 
 <h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>比如, Project项目中存在Pro1和Pro2两个项目, 现在我们要将Pro1项目拆分到单独的版本库中进行维护, 并且要保留原有提交信息</p>
 <p>文件路径如下</p>
-<blockquote>
-<p>Project</p>
-<blockquote>
-<p>Pro1</p>
-<blockquote>
-<p>File1<br>File2</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>Pro2</p>
-<blockquote>
-<p>File1<br>File2</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">D:.</span><br><span class="line">├─Project</span><br><span class="line">│  └─Pro1</span><br><span class="line">│     └─File1</span><br><span class="line">│     └─File2</span><br><span class="line">│  └─Pro2</span><br><span class="line">│     └─File1</span><br><span class="line">│     └─File2</span><br></pre></td></tr></table></figure>
+
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Pro1 -b Project1</span><br></pre></td></tr></table></figure>
 
 <h2 id="复制分支"><a href="#复制分支" class="headerlink" title="复制分支"></a>复制分支</h2><h3 id="在新路径保存分支"><a href="#在新路径保存分支" class="headerlink" title="在新路径保存分支"></a>在新路径保存分支</h3><p>在合适位置新建文件夹后初始化Git, 然后拉去刚才新建的Project1分支即可<br>查看git log</p>
