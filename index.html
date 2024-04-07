@@ -220,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-04-07 20:03:35 / 修改时间：20:08:06" itemprop="dateCreated datePublished" datetime="2024-04-07T20:03:35+08:00">2024-04-07</time>
+              <time title="创建时间：2024-04-07 20:03:35 / 修改时间：20:18:28" itemprop="dateCreated datePublished" datetime="2024-04-07T20:03:35+08:00">2024-04-07</time>
             </span>
 
           
@@ -231,7 +231,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>146</span>
+              <span>473</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -252,7 +252,8 @@
       
           <span id="more"></span>
 
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>.gitignore 文件只会忽略没有被暂存(Staged)的文件，对于已经被暂存的文件，加入 ignore文件时需要先untrack从暂存中删除才会生效</p>
+<h2 id="gitignore官方文档"><a href="#gitignore官方文档" class="headerlink" title=".gitignore官方文档"></a>.gitignore官方文档</h2><p>A <code>gitignore</code> file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected<br>To stop tracking a file that is currently tracked, use <code>git rm --cached</code> to remove the file from the index. The filename can then be added to the <code>.gitignore</code> file to stop the file from being reintroduced in later commits.</p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><code>.gitignore</code>文件只会作用于未跟踪(untracked)的文件，如果需要作用于已经跟踪(tracked)的文件，加入ignore文件时需要先停止跟踪(stop tracking)从暂存中删除才会生效</p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;update .gitignore&quot;</span></span><br></pre></td></tr></table></figure>
 
       
@@ -2207,7 +2208,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">300k</span>
+    <span title="站点总字数">301k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
