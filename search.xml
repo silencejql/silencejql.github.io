@@ -6989,4 +6989,13 @@ Ubuntu下基于Docker搭建Gitlab
 <p>通过Socket助手创建UDP Client, IP配置需要测试的显示器IP或者设置成广播同时配置所有显示器, 端口设置5000<br>发送触发器创建时的内容进行图片切换</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>Git 添加gitignore后不起作用</title>
+    <url>/Git-%E6%B7%BB%E5%8A%A0gitignore%E5%90%8E%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8.html</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>.gitignore 文件只会忽略没有被暂存(Staged)的文件，对于已经被暂存的文件，加入 ignore文件时需要先untrack从暂存中删除才会生效</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;update .gitignore&quot;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
 </search>
