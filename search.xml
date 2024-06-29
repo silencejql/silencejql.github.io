@@ -7700,6 +7700,7 @@ Ubuntu下基于Docker搭建Gitlab
 <li>根据点中最小Y + AutoROISize排除一部分下面的点</li>
 <li>FindALlTopPositions筛选聚类后X宽度大的点集合, 排除X向点数少的簇,找到满足条件的各簇的最高点topPositions</li>
 <li>筛选出大于最小topPosition - 150的点(取出下方无效点)作为绿色区域</li>
+<li>FindJumpPoints-待看</li>
 <li>Dictionary&lt;int, List<Vector3>&gt; LineMaps, 从上述点云中以X为key存储相同X±2坐标点的集合</li>
 <li>LineMaps所有value找到连续点Z向差值大于dropDepth的点, 即断点处, 添加断点附近点的集合(红色区域)</li>
 <li>拟合曲线找到曲线最高点(若配置强制轮眉中心则从曲线中取出X为CenterX处的Y值作为最高点)</li>
