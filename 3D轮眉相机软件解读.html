@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="3D轮眉测试说明">
+  <meta name="description" content="3D轮眉测试说明, 后续整理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3D轮眉相机软件解读">
 <meta property="og:url" content="https://silencejql.github.io/3D%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%A7%A3%E8%AF%BB.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="3D轮眉测试说明">
+<meta property="og:description" content="3D轮眉测试说明, 后续整理">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-06-28T01:25:34.000Z">
-<meta property="article:modified_time" content="2024-06-29T07:33:52.468Z">
+<meta property="article:modified_time" content="2024-06-29T07:38:46.345Z">
 <meta property="article:author" content="Justin">
 <meta name="twitter:card" content="summary">
 
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-29 15:33:52" itemprop="dateModified" datetime="2024-06-29T15:33:52+08:00">2024-06-29</time>
+                <time title="修改时间：2024-06-29 15:38:46" itemprop="dateModified" datetime="2024-06-29T15:38:46+08:00">2024-06-29</time>
               </span>
 
           
@@ -260,14 +260,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -279,7 +279,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>3D轮眉测试说明</p>
+        <p>3D轮眉测试说明, 后续整理</p>
 <span id="more"></span>
 
 <h2 id="轮眉"><a href="#轮眉" class="headerlink" title="轮眉"></a>轮眉</h2><p>WBH3DAlgorithm_WBH</p>
@@ -289,7 +289,8 @@
 <li>筛选点云中X坐标在CenterX ± AutoROISize * 2范围内的所有点(绿色区域)</li>
 <li>GetCentroid通过点云中心筛选有效点</li>
 <li>根据点中最小Y + AutoROISize排除一部分下面的点</li>
-<li>待看</li>
+<li>FindALlTopPositions筛选聚类后X宽度大的点集合, 排除X向点数少的簇,找到满足条件的各簇的最高点topPositions</li>
+<li>筛选出大于最小topPosition - 150的点(取出下方无效点)作为绿色区域</li>
 <li>Dictionary&lt;int, List<Vector3>&gt; LineMaps, 从上述点云中以X为key存储相同X±2坐标点的集合</li>
 <li>LineMaps所有value找到连续点Z向差值大于dropDepth的点, 即断点处, 添加断点附近点的集合(红色区域)</li>
 <li>拟合曲线找到曲线最高点(若配置强制轮眉中心则从曲线中取出X为CenterX处的Y值作为最高点)</li>
