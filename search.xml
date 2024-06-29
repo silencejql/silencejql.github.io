@@ -6938,7 +6938,7 @@ Ubuntu下基于Docker搭建Gitlab
     <content><![CDATA[<p>HUD相机标定完成后辅助调节机器人角度时角度的计算方法</p>
 <span id="more"></span>
 
-<h2 id="坐标系说明"><a href="#坐标系说明" class="headerlink" title="坐标系说明"></a>坐标系说明</h2><h3 id="车辆坐标系"><a href="#车辆坐标系" class="headerlink" title="车辆坐标系"></a>车辆坐标系</h3><p><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Z.PNG" alt="X-Z"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Y.PNG" alt="X-Y"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/Y-Z.PNG" alt="Y-Z"></p>
+<h2 id="坐标系说明"><a href="#坐标系说明" class="headerlink" title="坐标系说明"></a>坐标系说明</h2><h3 id="车辆坐标系"><a href="#车辆坐标系" class="headerlink" title="车辆坐标系"></a>车辆坐标系</h3><p><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Z.png" alt="X-Z"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Y.png" alt="X-Y"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/Y-Z.png" alt="Y-Z"></p>
 <h2 id="标定说明"><a href="#标定说明" class="headerlink" title="标定说明"></a>标定说明</h2><ol>
 <li>根据标靶四孔的三坐标计算出标靶中心坐标$O$</li>
 <li>相机走到与$O$点相同的$YZ$坐标处, 保证相机中心与$O$点在同一轴线上</li>
@@ -7663,5 +7663,49 @@ Ubuntu下基于Docker搭建Gitlab
     <content><![CDATA[<span id="more"></span>
 
 <h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+  </entry>
+  <entry>
+    <title>聚类算法</title>
+    <url>/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95.html</url>
+    <content><![CDATA[<p>聚类: 将相似或满足条件的样本归类到同一类别中</p>
+<span id="more"></span>
+
+<h2 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h2><p>DBSCAN(Density-Based Spatial Clustering of Applications with Noise)基于密度的聚类算法</p>
+<p><img src="/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/DBSCAN.gif" alt="DBSCAN"></p>
+<h3 id="聚类方式"><a href="#聚类方式" class="headerlink" title="聚类方式"></a>聚类方式</h3><ol>
+<li>以任一点开始, 判断当前点ep范围内点数是否大于minPts, 若大于则为核心点, 否则为噪点</li>
+<li>然后以邻域内任一点重复步骤1, 将样本归类为不同簇</li>
+</ol>
+<h3 id="算法参数"><a href="#算法参数" class="headerlink" title="算法参数"></a>算法参数</h3><p>ep: 邻域半径<br>minPts: 最少点数</p>
+<h3 id="点类别"><a href="#点类别" class="headerlink" title="点类别"></a>点类别</h3><ol>
+<li>核心点是指那些在邻域内具有足够多的点的对象(&gt;minPts)</li>
+<li>边界点则是那些邻近核心点但自身不是核心点的点</li>
+<li>噪声点则既不是核心点也不是边界点</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>3D轮眉相机软件解读</title>
+    <url>/3D%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%A7%A3%E8%AF%BB.html</url>
+    <content><![CDATA[<p>3D轮眉测试说明</p>
+<span id="more"></span>
+
+<h2 id="轮眉"><a href="#轮眉" class="headerlink" title="轮眉"></a>轮眉</h2><p>WBH3DAlgorithm_WBH</p>
+<ol>
+<li>从点云中读取原始数据通过标定架矩阵转换为实际坐标系</li>
+<li>GetMiddleX()获取X中心坐标 CenterX &#x3D; 标定点坐标X + X向偏移 &#x3D; Calibration.MasterGaugeExParam.Point.X + OffsetMiddle</li>
+<li>筛选点云中X坐标在CenterX ± AutoROISize * 2范围内的所有点(绿色区域)</li>
+<li>GetCentroid通过点云中心筛选有效点</li>
+<li>根据点中最小Y + AutoROISize排除一部分下面的点</li>
+<li>待看</li>
+<li>Dictionary&lt;int, List<Vector3>&gt; LineMaps, 从上述点云中以X为key存储相同X±2坐标点的集合</li>
+<li>LineMaps所有value找到连续点Z向差值大于dropDepth的点, 即断点处, 添加断点附近点的集合(红色区域)</li>
+<li>拟合曲线找到曲线最高点(若配置强制轮眉中心则从曲线中取出X为CenterX处的Y值作为最高点)</li>
+<li>取点云中最外侧的Z作为最高点的Z</li>
+<li>判断最高点X是否在ROI内合理范围</li>
+</ol>
+<h2 id="轮毂"><a href="#轮毂" class="headerlink" title="轮毂"></a>轮毂</h2><p>WBH3DAlgorithm_Wheel_Hub_Curve</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//FindLine</span></span><br><span class="line"><span class="comment">//Dictionary&lt;int, List&lt;Vector3&gt;&gt; LineMaps:ROI内从左上角相同X坐标组成List&lt;Vector3&gt; v3,结果为&lt;X, v3&gt;即ROI竖线上点的集合</span></span><br><span class="line"><span class="comment">//PlanePoints:ROI内标定架平面点集合</span></span><br><span class="line"><span class="comment">//Dictionary&lt;int, List&lt;Vector3&gt;&gt; CurvePointsMap:ROI内标定架孔中心点, int=0为最上面孔中心的点集合v3</span></span><br><span class="line"><span class="comment">//CurvePointsMap[0]为最上面孔中心点集合,CurvePointsMap[1]为第二个孔中心点集合</span></span><br><span class="line"><span class="keyword">var</span> mat = CalculateMatrix(PlanePoints, CurvePointsMap[<span class="number">0</span>], CurvePointsMap[<span class="number">1</span>],</span><br><span class="line">     CurvePointsMap.Count &gt; <span class="number">2</span> ? CurvePointsMap[<span class="number">2</span>] : <span class="literal">null</span>, CurvePointsMap.Count &gt; <span class="number">3</span> ? CurvePointsMap[<span class="number">3</span>] : <span class="literal">null</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
 </search>
