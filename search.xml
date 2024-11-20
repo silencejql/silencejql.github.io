@@ -4806,7 +4806,7 @@ Representational State Transfer
     <url>/C-Sharp-%E8%A1%A5%E8%AF%BE%E7%AC%94%E8%AE%B0%20--%20%E5%8F%98%E4%BD%93%E6%B3%9B%E5%9E%8B.html</url>
     <content><![CDATA[<center></center>
 
-<p>基础知识普及</p>
+<p>基础知识普及<br>逆变与协变对应子类与父类之间的转换</p>
 <span id="more"></span>
 
 <h2 id="变体泛型接口"><a href="#变体泛型接口" class="headerlink" title="变体泛型接口"></a>变体泛型接口</h2><p>使用 out 关键字将泛型类型参数声明为协变</p>
