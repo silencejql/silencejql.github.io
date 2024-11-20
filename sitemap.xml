@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silencejql.github.io/%E5%A7%94%E6%89%98-%E5%8C%BF%E5%90%8D-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html</loc>
+    
+    <lastmod>2024-11-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-%E7%89%B9%E6%80%A7.html</loc>
     
     <lastmod>2024-11-20</lastmod>
@@ -1551,15 +1560,6 @@
   
   <url>
     <loc>https://silencejql.github.io/Test-Project.html</loc>
-    
-    <lastmod>2023-01-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/%E5%A7%94%E6%89%98-%E5%8C%BF%E5%90%8D-Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F.html</loc>
     
     <lastmod>2023-01-05</lastmod>
     
