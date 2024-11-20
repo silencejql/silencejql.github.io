@@ -6,7 +6,7 @@
   <link href="https://silencejql.github.io/atom.xml" rel="self"/>
   
   <link href="https://silencejql.github.io/"/>
-  <updated>2024-06-30T01:46:17.936Z</updated>
+  <updated>2024-11-20T06:42:44.427Z</updated>
   <id>https://silencejql.github.io/</id>
   
   <author>
@@ -15,6 +15,113 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSharp冷知识-特性</title>
+    <link href="https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-%E7%89%B9%E6%80%A7.html"/>
+    <id>https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-%E7%89%B9%E6%80%A7.html</id>
+    <published>2024-11-20T06:37:26.000Z</published>
+    <updated>2024-11-20T06:42:44.427Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="Conditional"><a href="#Conditional" class="headerlink" title="Conditional"></a>Conditional</h2><p>满足特定条件才会执行</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> ABC</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> test = <span class="keyword">new</span> Test()</span><br><span class="line">        test.Func1();</span><br><span class="line">        test.Func2();<span class="comment">//只有定义了ABC后才会执行</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Func1</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//只能用于void函数</span></span><br><span class="line">    [<span class="meta">Conditional(<span class="string">&quot;ABC&quot;</span>)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Func2</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h2 id=&quot;Conditional&quot;&gt;&lt;a href=&quot;#Conditional&quot; class=&quot;headerlink&quot; title=&quot;Conditional&quot;&gt;&lt;/a&gt;Conditional&lt;/h2&gt;&lt;p&gt;满足特定条件才会执</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSharp冷知识-IEnumerator</title>
+    <link href="https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-IEnumerator.html"/>
+    <id>https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-IEnumerator.html</id>
+    <published>2024-11-20T04:02:13.000Z</published>
+    <updated>2024-11-20T06:37:08.873Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="IEnumerator"><a href="#IEnumerator" class="headerlink" title="IEnumerator"></a>IEnumerator</h2><p>类实现 IEnumerator 接口可以实现foreach循环</p><p>只要提供IEnumerator GetEnumerator便可实现foreach循环</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MyClass(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> item <span class="keyword">in</span> mc)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span> : <span class="title">IEnumerator</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> length;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params"><span class="built_in">int</span> length</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.length = length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IEnumerator <span class="title">GetEnumerator</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">yield</span> <span class="keyword">return</span> i.ToString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> mc = <span class="keyword">new</span> MyClass(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> item <span class="keyword">in</span> mc)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> length;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span>(<span class="params"><span class="built_in">int</span> length</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.length = length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> IEnumerator <span class="title">GetEnumerator</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">yield</span> <span class="keyword">return</span> i.ToString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> item <span class="keyword">in</span> <span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IEnumerator <span class="title">GetEnumerator</span>(<span class="params"><span class="keyword">this</span> <span class="built_in">int</span> count</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">yield</span> <span class="keyword">return</span> i.ToString();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h2 id=&quot;IEnumerator&quot;&gt;&lt;a href=&quot;#IEnumerator&quot; class=&quot;headerlink&quot; title=&quot;IEnumerator&quot;&gt;&lt;/a&gt;IEnumerator&lt;/h2&gt;&lt;p&gt;类实现 IEnum</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CSharp冷知识-await</title>
+    <link href="https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-await.html"/>
+    <id>https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-await.html</id>
+    <published>2024-11-20T03:46:24.000Z</published>
+    <updated>2024-11-20T04:01:37.663Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id="await"><a href="#await" class="headerlink" title="await"></a>await</h2><p>await 可以作用于任何提供GetAwaiter方法的类</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//常用</span></span><br><span class="line"><span class="keyword">await</span> FuncAsync();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">async</span> Task <span class="title">FuncAsync</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">await</span> Task.Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义</span></span><br><span class="line"><span class="keyword">var</span> myDelay = <span class="keyword">new</span> MyDelay(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">await</span> myDelay;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyDelay</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> second;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDelay</span>(<span class="params"><span class="built_in">int</span> second</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.second = second;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TaskAwaiter <span class="title">GetAwaiter</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Task.Delay(TimeSpan.FromSeconds(second)).GetAwaiter();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进阶</span></span><br><span class="line"><span class="keyword">var</span> myDelay = <span class="keyword">new</span> MyDelay(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">await</span> myDelay;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">MyDelay</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span> second;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyDelay</span>(<span class="params"><span class="built_in">int</span> second</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.second = second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyExtensions</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> MyDelay md</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Task.Delay(TimeSpan.FromSeconds(md.second)).GetAwaiter();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//进进阶</span></span><br><span class="line"><span class="keyword">await</span> TimeSpan.FromSeconds(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyExtensions</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> MyDelay md</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Task.Delay(TimeSpan.FromSeconds(md.second)).GetAwaiter();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> TimeSpan ts</span>)</span></span><br><span class="line">        =&gt;Task.Delay(ts).GetAwaiter();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//进进进阶</span></span><br><span class="line"><span class="keyword">await</span> <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">class</span> <span class="title">MyExtensions</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> MyDelay md</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Task.Delay(TimeSpan.FromSeconds(md.second)).GetAwaiter();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> TimeSpan ts</span>)</span></span><br><span class="line">        =&gt;Task.Delay(ts).GetAwaiter();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TaskAwaiter <span class="title">GetAwaiter</span>(<span class="params"><span class="keyword">this</span> <span class="built_in">int</span> second</span>)</span></span><br><span class="line">        =&gt;Task.Delay(TimeSpan.FromSeconds(second)).GetAwaiter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h2 id=&quot;await&quot;&gt;&lt;a href=&quot;#await&quot; class=&quot;headerlink&quot; title=&quot;await&quot;&gt;&lt;/a&gt;await&lt;/h2&gt;&lt;p&gt;await 可以作用于任何提供GetAwaiter方法的类&lt;/p&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常用Tcp程序</title>
+    <link href="https://silencejql.github.io/%E5%B8%B8%E7%94%A8Tcp%E7%A8%8B%E5%BA%8F.html"/>
+    <id>https://silencejql.github.io/%E5%B8%B8%E7%94%A8Tcp%E7%A8%8B%E5%BA%8F.html</id>
+    <published>2024-11-04T02:20:20.000Z</published>
+    <updated>2024-11-04T02:20:20.417Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h2&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>合并不同仓库的历史提交</title>
+    <link href="https://silencejql.github.io/%E5%90%88%E5%B9%B6%E4%B8%8D%E5%90%8C%E4%BB%93%E5%BA%93%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4.html"/>
+    <id>https://silencejql.github.io/%E5%90%88%E5%B9%B6%E4%B8%8D%E5%90%8C%E4%BB%93%E5%BA%93%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4.html</id>
+    <published>2024-09-10T05:38:26.000Z</published>
+    <updated>2024-09-10T06:03:16.410Z</updated>
+    
+    <content type="html"><![CDATA[<p>目的:<br>如两个开发人员分别在本地创建了自己的仓库进行同一项目的开发工作, 后需合并的同时需要保留所有历史提交或其中某个重要的历史提交</p><span id="more"></span><h2 id="合并部分提交"><a href="#合并部分提交" class="headerlink" title="合并部分提交"></a>合并部分提交</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看rrepo1/master的历史提交</span></span><br><span class="line">git <span class="built_in">log</span> rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并某一次提交</span></span><br><span class="line">git cherry-pick &lt;commit-hash&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并连续的几次提交</span></span><br><span class="line">git cherry-pick A..B <span class="comment"># 合并从A~B的提交(不含A)</span></span><br><span class="line">git cherry-pick A^..B <span class="comment"># 合并从A~B的提交(含A)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure><h2 id="合并所有提交"><a href="#合并所有提交" class="headerlink" title="合并所有提交"></a>合并所有提交</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并到repo</span></span><br><span class="line">git merge rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;目的:&lt;br&gt;如两个开发人员分别在本地创建了自己的仓库进行同一项目的开发工作, 后需合并的同时需要保留所有历史提交或其中某个重要的历史提交&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="git" scheme="https://silencejql.github.io/categories/git/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>3D轮眉标定</title>
@@ -270,100 +377,6 @@
     
     
     <summary type="html">&lt;p&gt;小米DSA通讯部分说明&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>分布式系统</title>
-    <link href="https://silencejql.github.io/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F.html"/>
-    <id>https://silencejql.github.io/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F.html</id>
-    <published>2024-04-16T02:38:09.000Z</published>
-    <updated>2024-05-17T08:58:24.478Z</updated>
-    
-    <content type="html"><![CDATA[<span id="more"></span><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>分布式系统是其组件分布在连网的计算机上, 组件之间通过传递消息进行通讯和动作协调的系统<br>具有组件的并发性.缺乏全局时钟.组件故障独立性的特征</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h2&gt;&lt;p&gt;分布式系统是其组件分布在连网的计算机上, 组件之间通过传递消息进行通讯和动作协调的系统&lt;b</summary>
-      
-    
-    
-    
-    <category term="读书笔记" scheme="https://silencejql.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="分布式系统" scheme="https://silencejql.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>软件架构</title>
-    <link href="https://silencejql.github.io/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84.html"/>
-    <id>https://silencejql.github.io/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84.html</id>
-    <published>2024-04-16T01:13:34.000Z</published>
-    <updated>2024-05-18T05:22:51.345Z</updated>
-    
-    <content type="html"><![CDATA[<p>软件架构入门笔记</p><span id="more"></span><h2 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h2><p>常见: 展示层-&gt;业务层-&gt;数据层</p><h2 id="事件驱动架构"><a href="#事件驱动架构" class="headerlink" title="事件驱动架构"></a>事件驱动架构</h2><p>事件驱动架构模式是⼀一种主流的异步分发事件架构模式，常⽤用于设计⾼高度可拓展的应⽤</p><p>中介拓扑模式, 代理拓扑模式</p><h2 id="微内核架构"><a href="#微内核架构" class="headerlink" title="微内核架构"></a>微内核架构</h2><p>插件化应用架构</p><p>核心系统, 插件模块</p><h2 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h2><p>是一种分布式架构<br>常见的有: 基于REST API的拓扑结构, 基于REST的应用拓扑结构, 集中式消息拓扑结构</p><h2 id="基于空间的架构"><a href="#基于空间的架构" class="headerlink" title="基于空间的架构"></a>基于空间的架构</h2><p>云架构模型</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;软件架构入门笔记&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Git 添加gitignore后不起作用</title>
-    <link href="https://silencejql.github.io/Git-%E6%B7%BB%E5%8A%A0gitignore%E5%90%8E%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8.html"/>
-    <id>https://silencejql.github.io/Git-%E6%B7%BB%E5%8A%A0gitignore%E5%90%8E%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8.html</id>
-    <published>2024-04-07T12:03:35.000Z</published>
-    <updated>2024-04-08T05:15:55.492Z</updated>
-    
-    <content type="html"><![CDATA[<p>gitignore - Specifies intentionally untracked files to ignore</p><span id="more"></span><h2 id="gitignore官方文档"><a href="#gitignore官方文档" class="headerlink" title=".gitignore官方文档"></a>.gitignore官方文档</h2><p>A <code>gitignore</code> file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected<br>To stop tracking a file that is currently tracked, use <code>git rm --cached</code> to remove the file from the index. The filename can then be added to the <code>.gitignore</code> file to stop the file from being reintroduced in later commits.</p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p><code>.gitignore</code>文件只会作用于未跟踪(untracked)的文件，如果需要作用于已经跟踪(tracked)的文件，加入ignore文件时需要先停止跟踪(stop tracking)从暂存中删除才会生效</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;update .gitignore&quot;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;gitignore - Specifies intentionally untracked files to ignore&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MagicInfo三星多显示器配置</title>
-    <link href="https://silencejql.github.io/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE.html"/>
-    <id>https://silencejql.github.io/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE.html</id>
-    <published>2024-04-03T01:59:44.000Z</published>
-    <updated>2024-04-03T02:46:54.631Z</updated>
-    
-    <content type="html"><![CDATA[<p>三星MagicInfo显示器配置简单说明<br>重点在多图像切换的配置</p><span id="more"></span><h2 id="添加显示器设备"><a href="#添加显示器设备" class="headerlink" title="添加显示器设备"></a>添加显示器设备</h2><p>配置好各显示器IP等准备工作后, 进入网页配置界面添加显示器</p><p>添加设备前先创建设备组, 每个显示器都要添加相应的组<br><strong>命名中最好标识出显示器ID及当前显示器要显示的图像, 方便后续内容的添加</strong></p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/%E8%AE%BE%E5%A4%87%E7%BB%84.png" alt="设备组"></p><p>添加完设备组后, 逐一批准设备到相应组内</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/%E6%89%B9%E5%87%86%E8%AE%BE%E5%A4%87.png" alt="批准设备"></p><h2 id="添加内容"><a href="#添加内容" class="headerlink" title="添加内容"></a>添加内容</h2><h3 id="上传要显示的图片"><a href="#上传要显示的图片" class="headerlink" title="上传要显示的图片"></a>上传要显示的图片</h3><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/%E5%86%85%E5%AE%B9.png" alt="内容"></p><p><strong>若每个显示器只需要显示一张图</strong>下一章节不需要看,跳到 添加日程表</p><h3 id="创建WebAuthor内容"><a href="#创建WebAuthor内容" class="headerlink" title="创建WebAuthor内容"></a>创建WebAuthor内容</h3><p>如果显示器需要根据不同需求显示不同图片, 则需要上位机触发图片切换<br>需要在WebAuthor中为<strong>每个显示器</strong>创建包含多张图片的内容, 并设置触发图片切换的条件<br>点击WebAuthor进入WebAuthor主界面, 如下图配置, 点击创建</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E6%B7%BB%E5%8A%A0%E5%86%85%E5%AE%B9.png" alt="WebAuthor添加内容"></p><p>进入WebAuthor主界面</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E4%B8%BB%E7%95%8C%E9%9D%A2.png" alt="WebAuthor主界面"></p><p>进入内容界面, 改变内容查看方式, 点击下方 … 显示Page页</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E5%86%85%E5%AE%B9.png" alt="WebAuthor内容"></p><p>将某个显示器需要显示的图片拉到右侧(若左侧没有图片, 需要先完成上一节的内容上传)</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E6%B7%BB%E5%8A%A0%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87.png" alt="WebAuthor添加显示图片"></p><p>点击图片下方添加页面的按钮添加Page页并拖入需要显示的图片, Page页为显示器显示的内容, 下方时间为当前图片显示的时间, 若用上位机控制图片切换则将时间设置成23小时59分59秒, 即不自动切换.</p><p>点击新增全局页, 用于创建图片切换触发事件</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E6%B7%BB%E5%8A%A0%E5%A4%9A%E5%BC%A0%E5%9B%BE%E7%89%87.png" alt="WebAuthor添加多张图片"></p><p>配置好当前显示器需要显示的图片后, 双击全局页后点击编辑事件进入事件编辑页面</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E5%85%A8%E5%B1%80%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%BA%8B%E4%BB%B6.png" alt="WebAuthor全局页添加事件"></p><p>添加事件触发器, 选择网络端口后添加触发配置</p><p><strong>触发器</strong>: 接收到相应内容后执行后续操作, 如通过网络通讯接收到<code>1</code>后自动切换到Page1设置的图片, 收到<code>2</code>后自动切换到Page2设置的图片</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/WebAuthor%E5%85%A8%E5%B1%80%E9%A1%B5%E8%AE%BE%E7%BD%AE%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E5%99%A8.png" alt="WebAuthor全局页设置事件触发器"></p><p>改页面没有找到保存按钮, 完成上述配置后可点击右上角新建内容, 提示保存, 保存时命名推荐同上</p><h2 id="添加日程表"><a href="#添加日程表" class="headerlink" title="添加日程表"></a>添加日程表</h2><p>添加日程表前先添加日程表组, 命名同上</p><p><img src="/MagicInfo%E4%B8%89%E6%98%9F%E5%A4%9A%E6%98%BE%E7%A4%BA%E5%99%A8%E9%85%8D%E7%BD%AE/%E6%97%A5%E7%A8%8B%E8%A1%A8.png" alt="日程表"></p><p>点击新时间表添加, 其中内容部分选择WebAuthor中创建的内容</p><h2 id="事件触发器验证"><a href="#事件触发器验证" class="headerlink" title="事件触发器验证"></a>事件触发器验证</h2><p>MagicInfo会创建监听5000端口的UDP Server</p><p>通过Socket助手创建UDP Client, IP配置需要测试的显示器IP或者设置成广播同时配置所有显示器, 端口设置5000<br>发送触发器创建时的内容进行图片切换</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;三星MagicInfo显示器配置简单说明&lt;br&gt;重点在多图像切换的配置&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>HUD机器人标定及验证</title>
-    <link href="https://silencejql.github.io/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95.html"/>
-    <id>https://silencejql.github.io/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95.html</id>
-    <published>2024-03-23T10:46:11.000Z</published>
-    <updated>2024-06-16T02:38:54.486Z</updated>
-    
-    <content type="html"><![CDATA[<p>HUD相机标定完成后辅助调节机器人角度时角度的计算方法</p><span id="more"></span><h2 id="坐标系说明"><a href="#坐标系说明" class="headerlink" title="坐标系说明"></a>坐标系说明</h2><h3 id="车辆坐标系"><a href="#车辆坐标系" class="headerlink" title="车辆坐标系"></a>车辆坐标系</h3><p><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Z.png" alt="X-Z"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/X-Y.png" alt="X-Y"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/Y-Z.png" alt="Y-Z"></p><h2 id="标定说明"><a href="#标定说明" class="headerlink" title="标定说明"></a>标定说明</h2><ol><li>根据标靶四孔的三坐标计算出标靶中心坐标$O$</li><li>相机走到与$O$点相同的$YZ$坐标处, 保证相机中心与$O$点在同一轴线上</li><li>将标靶左上角圆孔中心坐标填入<strong>标定点.Point3DXYZ</strong>中</li><li>测量相机感光芯片到标靶的距离填入<strong>特征点.DotDistance</strong>中</li><li>调整相机角度使得图像中心十字位于标靶中心$O$处, 且目测图像角度偏差不大</li><li>拍照识别四个圆孔</li><li>标定内外参</li><li>将ROI框住某个圆孔点击标定验证, 查看输出角度进行微调后重复567步, 直到输出满足要求</li><li>若角度偏差大但图像很正, 可能是坐标参数的输入有问题</li><li>若某个点的偏移量大, 可适当调整曝光使识别更准确后再验证</li></ol><h2 id="图像说明"><a href="#图像说明" class="headerlink" title="图像说明"></a>图像说明</h2><p><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/HUDCalResult1.PNG" alt="标定结果图1"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/HUDCalResult2.PNG" alt="标定结果图2"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/HUDVerify.PNG" alt="标定验证"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/HUDVerifyWithPCenter.PNG" alt="标定验证输出PCenter"><br><img src="/HUD%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%A7%92%E5%BA%A6%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95/HUDVerifyCtrlByPC.PNG" alt="PC控制运动到标定点验证"></p><p>左上角为P1,右上角为P3<br>左下角为P7,右下角为P9</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PointF3D Point3d = CameraAgorithm.Pixel2World(p, Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line"></span><br><span class="line">PointF3D P1 = CameraAgorithm.Pixel2World(_calibrationAgorithm.DotLeftTop, Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line">PointF3D P3 = CameraAgorithm.Pixel2World(_calibrationAgorithm.DotRightTop, Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line">PointF3D P7 = CameraAgorithm.Pixel2World(_calibrationAgorithm.DotLeftBottom, Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line">PointF3D P9 = CameraAgorithm.Pixel2World(_calibrationAgorithm.DotRightBottom, Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line"></span><br><span class="line"><span class="comment">//PCenter为图像中心点坐标在世界坐标系中的点</span></span><br><span class="line"><span class="comment">//PCenter.P_X=&gt;车辆坐标系的Y</span></span><br><span class="line"><span class="comment">//PCenter.P_Y=&gt;车辆坐标系的Z</span></span><br><span class="line"><span class="comment">//PCenter.P_Z=&gt;车辆坐标系的X</span></span><br><span class="line"><span class="comment">//Camera.Point3DX=&gt;车辆坐标系的Y</span></span><br><span class="line"><span class="comment">//Camera.Point3DY=&gt;车辆坐标系的Z</span></span><br><span class="line"><span class="comment">//Camera.Point3DZ=&gt;车辆坐标系的X</span></span><br><span class="line">PointF3D PCenter = CameraAgorithm.Pixel2World(<span class="keyword">new</span> PointF(Camera.PixelWidth/<span class="number">2</span>,Camera.PixelHeight/<span class="number">2</span>), Camera, Camera.Extrinsics_Tz_mm - Camera.Point3DZ);</span><br><span class="line"></span><br><span class="line"><span class="comment">//上面两点的倾斜度</span></span><br><span class="line"><span class="built_in">double</span> RX = Math.Atan((P3.P_Y - P1.P_Y) / (P3.P_X - P1.P_X)) * <span class="number">180</span> / Math.PI;</span><br><span class="line"><span class="comment">//图像中心相对相机中心(机器人坐标)水平方向偏移</span></span><br><span class="line"><span class="built_in">double</span> RY = Math.Atan(((PCenter.P_X - m_Motion.Data_YPos.xValue.zFloat())) / (Camera.Extrinsics_Tz_mm - Camera.Point3DZ)) * <span class="number">180</span> / Math.PI;</span><br><span class="line"><span class="comment">//图像中心相对相机中心(机器人坐标)竖直方向偏移</span></span><br><span class="line"><span class="built_in">double</span> RZ = Math.Atan(((PCenter.P_Y - m_Motion.Data_ZPos.xValue.zFloat())) / (Camera.Extrinsics_Tz_mm - Camera.Point3DZ)) * <span class="number">180</span> / Math.PI;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;HUD相机标定完成后辅助调节机器人角度时角度的计算方法&lt;/p&gt;</summary>
     
     
     
