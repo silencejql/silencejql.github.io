@@ -1,3 +1,4 @@
+https://silencejql.github.io/WindowsTerminal%E9%85%8D%E7%BD%AE.html
 https://silencejql.github.io/CSharp%E9%97%AD%E5%8C%85.html
 https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-%E7%89%B9%E6%80%A7.html
 https://silencejql.github.io/CSharp%E5%86%B7%E7%9F%A5%E8%AF%86-IEnumerator.html
