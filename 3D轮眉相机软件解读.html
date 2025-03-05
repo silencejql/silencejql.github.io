@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -281,11 +285,11 @@
       
         <p>3D轮眉测试说明, 后续整理</p>
 <span id="more"></span>
-
-<h2 id="轮眉"><a href="#轮眉" class="headerlink" title="轮眉"></a>轮眉</h2><p>WBH3DAlgorithm_WBH</p>
+<h2 id="轮眉">轮眉</h2>
+<p>WBH3DAlgorithm_WBH</p>
 <ol>
 <li>从点云中读取原始数据通过标定架矩阵转换为实际坐标系</li>
-<li>GetMiddleX()获取X中心坐标 CenterX &#x3D; 标定点坐标X + X向偏移 &#x3D; Calibration.MasterGaugeExParam.Point.X + OffsetMiddle</li>
+<li>GetMiddleX()获取X中心坐标 CenterX = 标定点坐标X + X向偏移 = Calibration.MasterGaugeExParam.Point.X + OffsetMiddle</li>
 <li>筛选点云中X坐标在CenterX ± AutoROISize * 2范围内的所有点(绿色区域)</li>
 <li>GetCentroid通过点云中心筛选有效点</li>
 <li>根据点中最小Y + AutoROISize排除一部分下面的点</li>
@@ -298,13 +302,17 @@
 <li>取点云中最外侧的Z作为最高点的Z</li>
 <li>判断最高点X是否在ROI内合理范围</li>
 </ol>
-<h2 id="轮毂"><a href="#轮毂" class="headerlink" title="轮毂"></a>轮毂</h2><p>WBH3DAlgorithm_Wheel_Hub_Curve</p>
+<h2 id="轮毂">轮毂</h2>
+<p>WBH3DAlgorithm_Wheel_Hub_Curve</p>
 <blockquote>
 <p>Calculate</p>
 <blockquote>
 <p>FindTop</p>
 <blockquote>
-<p>WhitePointsGetHandle分离提取轮眉下方点集合<br>FindTop所有距离最高点Y向小于4mm点的集合<br>FindTopPosition根据最高点的集合拟合曲线求出轮胎最高点TopPosition并估算轮胎半径TireRadiusFit<br>根据轮胎半径和最高点估算轮心Center,取轮胎半径+20mm范围内的所有点</p>
+<p>WhitePointsGetHandle分离提取轮眉下方点集合<br />
+FindTop所有距离最高点Y向小于4mm点的集合<br />
+FindTopPosition根据最高点的集合拟合曲线求出轮胎最高点TopPosition并估算轮胎半径TireRadiusFit<br />
+根据轮胎半径和最高点估算轮心Center,取轮胎半径+20mm范围内的所有点</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -314,9 +322,15 @@
 <blockquote>
 <p>FindHubPosition</p>
 <blockquote>
-<p>FindXOrYFit<br>findDatas为计算的轮心XY±20mm的矩形边上的点<br>找到轮胎最高点后Y-轮胎半径+轮毂半径后的点估算轮毂最高点坐标HubPosition<br>在计算的轮胎中心点基础上XY坐标左右上下范围放大±20mm<br>_FindHubPosition筛选所有点中Z向深度差值最大的小范围集合及最大Z向差值</p>
+<p>FindXOrYFit<br />
+findDatas为计算的轮心XY±20mm的矩形边上的点<br />
+找到轮胎最高点后Y-轮胎半径+轮毂半径后的点估算轮毂最高点坐标HubPosition<br />
+在计算的轮胎中心点基础上XY坐标左右上下范围放大±20mm<br />
+_FindHubPosition筛选所有点中Z向深度差值最大的小范围集合及最大Z向差值</p>
 <blockquote>
-<p>GreenPointsToMid轮胎半径+20mm内所有点到轮心附近的距离满足轮毂半径±40mm切角度在±AutoROISize &#x2F; 10内的环形内的所有点<br>将上述点全部集中在center相同XY下, Z向深度不同, 所有点沿圆心压缩到同一Y轴上<br>FindMidFeaturePoint以oneRange为范围筛选所有点中Z向深度差值最大的范围</p>
+<p>GreenPointsToMid轮胎半径+20mm内所有点到轮心附近的距离满足轮毂半径±40mm切角度在±AutoROISize / 10内的环形内的所有点<br />
+将上述点全部集中在center相同XY下, Z向深度不同, 所有点沿圆心压缩到同一Y轴上<br />
+FindMidFeaturePoint以oneRange为范围筛选所有点中Z向深度差值最大的范围</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -326,7 +340,10 @@
 <blockquote>
 <blockquote>
 <blockquote>
-<p>取出所有点中Z向差值最大的部分<br>GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作为轮毂最高点HubPosition<br>通过TopPosition和轮胎半径计算出轮胎中心点以轮胎半径画圆<br>通过HubPosition和轮毂半径计算出轮毂中心点以轮毂半径画圆</p>
+<p>取出所有点中Z向差值最大的部分<br />
+GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作为轮毂最高点HubPosition<br />
+通过TopPosition和轮胎半径计算出轮胎中心点以轮胎半径画圆<br />
+通过HubPosition和轮毂半径计算出轮毂中心点以轮毂半径画圆</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -429,7 +446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -493,13 +510,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -510,7 +527,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -543,7 +560,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -559,70 +575,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -664,7 +621,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -679,7 +636,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -713,6 +671,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

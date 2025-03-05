@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -282,21 +286,14 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">flask-demo/</span><br><span class="line">  ├ run.py           <span class="meta"># 应用启动程序</span></span><br><span class="line">  ├ config.py        <span class="meta"># 环境配置</span></span><br><span class="line">  ├ requirements.txt <span class="meta"># 列出应用程序依赖的所有Python包</span></span><br><span class="line">  ├ tests/           <span class="meta"># 测试代码包</span></span><br><span class="line">  │   ├ __init__.py</span><br><span class="line">  │   └ test_*.py    <span class="meta"># 测试用例</span></span><br><span class="line">  └ myapp/</span><br><span class="line">      ├ admin/       <span class="meta"># 蓝图目录</span></span><br><span class="line">      ├ <span class="keyword">static</span>/</span><br><span class="line">      │   ├ css/     <span class="meta"># css文件目录</span></span><br><span class="line">      │   ├ img/     <span class="meta"># 图片文件目录</span></span><br><span class="line">      │   └ js/      <span class="meta"># js文件目录</span></span><br><span class="line">      ├ templates/   <span class="meta"># 模板文件目录</span></span><br><span class="line">      ├ __init__.py</span><br><span class="line">      ├ forms.py     <span class="meta"># 存放所有表单，如果多，将其变为一个包</span></span><br><span class="line">      ├ models.py    <span class="meta"># 存放所有数据模型，如果多，将其变为一个包</span></span><br><span class="line">      └ views.py     <span class="meta"># 存放所有视图函数，如果多，将其变为一个包</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>示例：<br>IconFont网址下载图标</p>
+<h2 id="目录结构">目录结构</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">flask-demo/</span><br><span class="line">  ├ run.py           <span class="meta"># 应用启动程序</span></span><br><span class="line">  ├ config.py        <span class="meta"># 环境配置</span></span><br><span class="line">  ├ requirements.txt <span class="meta"># 列出应用程序依赖的所有Python包</span></span><br><span class="line">  ├ tests/           <span class="meta"># 测试代码包</span></span><br><span class="line">  │   ├ __init__.py</span><br><span class="line">  │   └ test_*.py    <span class="meta"># 测试用例</span></span><br><span class="line">  └ myapp/</span><br><span class="line">      ├ admin/       <span class="meta"># 蓝图目录</span></span><br><span class="line">      ├ <span class="keyword">static</span>/</span><br><span class="line">      │   ├ css/     <span class="meta"># css文件目录</span></span><br><span class="line">      │   ├ img/     <span class="meta"># 图片文件目录</span></span><br><span class="line">      │   └ js/      <span class="meta"># js文件目录</span></span><br><span class="line">      ├ templates/   <span class="meta"># 模板文件目录</span></span><br><span class="line">      ├ __init__.py</span><br><span class="line">      ├ forms.py     <span class="meta"># 存放所有表单，如果多，将其变为一个包</span></span><br><span class="line">      ├ models.py    <span class="meta"># 存放所有数据模型，如果多，将其变为一个包</span></span><br><span class="line">      └ views.py     <span class="meta"># 存放所有视图函数，如果多，将其变为一个包</span></span><br></pre></td></tr></table></figure>
+<p>示例：<br />
+IconFont网址下载图标</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,render_template,request</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/index&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">hello_world</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Hello World!&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/user/&lt;name&gt;&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">welcome</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;welcome %s&quot;</span>%name</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/user/&lt;int:id&gt;&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">welcomeid</span>(<span class="params"><span class="built_in">id</span></span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;welcome num %d&quot;</span>%<span class="built_in">id</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&quot;/&quot;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index2</span>():</span><br><span class="line">    <span class="built_in">list</span> = [<span class="string">&quot;l1&quot;</span>,<span class="string">&quot;l2&quot;</span>,<span class="string">&quot;l3&quot;</span>]</span><br><span class="line">    time = datetime.date.today()</span><br><span class="line">    task = &#123;<span class="string">&quot;task&quot;</span>:<span class="string">&quot;clean&quot;</span>,<span class="string">&quot;time&quot;</span>:<span class="string">&quot;3hours&quot;</span>&#125;</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;index.html&quot;</span>,var = time,<span class="built_in">list</span> = <span class="built_in">list</span>, task = task)</span><br><span class="line"></span><br><span class="line"><span class="comment">#表单提交</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/register&#x27;</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">register</span>():</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&quot;register.html&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/result&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>,<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">result</span>():</span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        result = request.form <span class="comment">#表单字典</span></span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">&quot;result.html&quot;</span>,result = result)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>) <span class="comment">#还需要在项目配置中启动Debug</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    welcome.</span><br><span class="line">    Today is &#123;&#123; var &#125;&#125;<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    on duty<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    &#123;% for data in list %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span> &#123;&#123; data &#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">    task:s<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">            &#123;% for key,value in task.items() %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;key&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;value&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&#123;&#123; url_for(&#x27;result&#x27;) &#125;&#125;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>age:  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>sex:  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">            &#123;% for key,value in result.items() %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span>&gt;</span>&#123;&#123;key&#125;&#125;<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;value&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    Result</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
 
     </div>
 
@@ -394,7 +391,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -458,13 +455,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -475,7 +472,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -508,7 +505,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -524,70 +520,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -629,7 +566,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -644,7 +581,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -678,6 +616,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -260,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>619</span>
+              <span>584</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,16 +286,24 @@
         <center></center>
 数据格式说明
 <span id="more"></span>
-
-<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>基于64个可打印字符来表示二进制数据的方法<br>64个字符0<del>63分别对应A</del>Za<del>z0</del>9+&#x2F;</p>
-<p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3*8 &#x3D; 4*6 &#x3D; 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1&#x2F;3。</p>
-<h3 id="编码规则"><a href="#编码规则" class="headerlink" title="编码规则"></a>编码规则</h3><ol>
+<h2 id="Base64">Base64</h2>
+<p>基于64个可打印字符来表示二进制数据的方法<br />
+64个字符0<sub>63分别对应A</sub>Za<sub>z0</sub>9+/</p>
+<p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3*8 = 4*6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。</p>
+<h3 id="编码规则">编码规则</h3>
+<ol>
 <li>把3个字节变成4个字节。</li>
 <li>每76个字符加一个换行符。</li>
 <li>最后的结束符也要处理。</li>
 </ol>
-<p>例如:<br>转换前: 10101101,10111010,01110110<br>转换后: 00101011, 00011011 ,00101001 ,00110110<br>十进制 43 27 41 54<br>对应码表中的值 r b p 2<br>所以上面的24位编码，编码后的Base64值为 rbp2</p>
-<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的Bit用0补足。然后，每次取出6个bit，按照其值选择ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+&#x2F;中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。<br>如果最后剩下两个输入数据，在编码结果后加1个“&#x3D;”；如果最后剩下一个输入数据，编码结果后加2个“&#x3D;”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
+<p>例如:<br />
+转换前: 10101101,10111010,01110110<br />
+转换后: 00101011, 00011011 ,00101001 ,00110110<br />
+十进制 43 27 41 54<br />
+对应码表中的值 r b p 2<br />
+所以上面的24位编码，编码后的Base64值为 rbp2</p>
+<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的Bit用0补足。然后，每次取出6个bit，按照其值选择ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。<br />
+如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
 
     </div>
 
@@ -389,7 +401,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -453,13 +465,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -470,7 +482,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -503,7 +515,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -519,70 +530,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -624,7 +576,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -639,7 +591,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -673,6 +626,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

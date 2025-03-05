@@ -74,7 +74,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -129,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -191,6 +195,317 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/UML-PlantUML.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headim.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silencejql">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/UML-PlantUML.html" class="post-title-link" itemprop="url">UML-PlantUML</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-07 14:40:11" itemprop="dateCreated datePublished" datetime="2023-09-07T14:40:11+08:00">2023-09-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-03-04 12:20:19" itemprop="dateModified" datetime="2024-03-04T12:20:19+08:00">2024-03-04</time>
+              </span>
+
+          
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+<h2 id="类图">类图</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line"><span class="title">abstract</span> <span class="keyword">class</span> <span class="title">Student</span></span><br><span class="line"><span class="title">interface</span> <span class="title">Person</span></span><br><span class="line"><span class="title">enum</span> <span class="title">Gender</span> &#123; MALE, FEMALE &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法属性</span></span><br><span class="line"><span class="comment">//+:public</span></span><br><span class="line"><span class="comment">//-:private</span></span><br><span class="line"><span class="comment">//#:protected</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">ClassName</span> &#123;</span><br><span class="line">  + attribute1 : Type1</span><br><span class="line">  <span class="meta"># attribute2 : Type2</span></span><br><span class="line">  - method1() : ReturnType1</span><br><span class="line">  + method2(param1:Type1, param2:Type2) : ReturnType2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS0QHVecvgGhLNDeAYIKbHPb9fIMfXWfM2Y6L1Qc6NCe8GIEee15GPMvgIKP-Yg669b0iABMaj2WFeXmcOwHHa5YKc6je1HRMKG3pZC0y8rGzHbor0000>
+<h2 id="类之间关系">类之间关系</h2>
+<h3 id="泛化关系">泛化关系</h3>
+<p>继承非抽象类<br />
+继承关系为 is-a的关系；两个对象之间如果可以用 is-a 来表示</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B继承自A</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;|-- B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71faPNLy490000>
+<h3 id="实现关系">实现关系</h3>
+<p>实现关系表现为继承抽象类</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B继承自A</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;|.. B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/oymhIIrAIqnELN1KgERILiXDBSd8Jz7GLB1I24ejAItA2waiIEMgvKhEIImkLd32gyPHmQP6Jq_12G00>
+<h3 id="聚合关系">聚合关系</h3>
+<p>与组合关系不同的是，整体和部分不是强依赖的，即使整体不存在了，部分仍然存在</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B聚合到A上，或者说A由B组成</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A o-- B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb4XNrTNmGa0>
+<h3 id="组合关系">组合关系</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//说A由B组成</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A *-- B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb51IrTNmGa0>
+<h3 id="关联关系">关联关系</h3>
+<p>描述不同类的对象之间的结构关系<br />
+比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系<br />
+关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示B知道A，但 A不知道B</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;-- B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HbTNmGa0>
+<h3 id="依赖关系">依赖关系</h3>
+<p>一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化<br />
+一个对象在运行期间会用到另一个对象的关系<br />
+应该保持单向依赖，杜绝双向依赖的产生</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;.. B</span><br></pre></td></tr></table></figure>
+<img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HazFmGa0>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-MVC%E6%A8%A1%E5%BC%8F.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headim.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silencejql">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-MVC%E6%A8%A1%E5%BC%8F.html" class="post-title-link" itemprop="url">设计模式-MVC模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-06 16:50:50" itemprop="dateCreated datePublished" datetime="2023-09-06T16:50:50+08:00">2023-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-03-04 12:20:08" itemprop="dateModified" datetime="2024-03-04T12:20:08+08:00">2024-03-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Model（模型） - 模型代表一个存取数据的对象<br />
+View（视图） - 视图代表模型包含的数据的可视化<br />
+Controller（控制器） - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-MVC%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E7%BB%93.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headim.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silencejql">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E7%BB%93.html" class="post-title-link" itemprop="url">设计模式-总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-09-06 16:48:59" itemprop="dateCreated datePublished" datetime="2023-09-06T16:48:59+08:00">2023-09-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-03-04 12:19:45" itemprop="dateModified" datetime="2024-03-04T12:19:45+08:00">2024-03-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+                </span>
+            </span>
+
+          
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>设计模式是众多软件开发人员经过相当长的一段时间的试验和错误的总结</p>
+<p>目的是使程序 可维护, 可扩展, 可复用, 灵活性好</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E7%BB%93.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -459,7 +774,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>用于减少创建对象的数量，以减少内存占用和提高性能<br>运用共享技术有效地支持大量细粒度的对象<br>在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建<br>用 HashMap(Hashtable) 存储这些对象</p>
+          <p>用于减少创建对象的数量，以减少内存占用和提高性能<br />
+运用共享技术有效地支持大量细粒度的对象<br />
+在有大量对象时，有可能会造成内存溢出，我们把其中共同的部分抽象出来，如果有相同的业务请求，直接返回在内存中已有的对象，避免重新创建<br />
+用 HashMap(Hashtable) 存储这些对象</p>
 <p>string 运用了Flyweight模式</p>
           <!--noindex-->
             <div class="post-button">
@@ -557,7 +875,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护<br>用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互<br>对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理</p>
+          <p>用来降低多个对象和类之间的通信复杂性。这种模式提供了一个中介类，该类通常处理不同类之间的通信，并支持松耦合，使代码易于维护<br />
+用一个中介对象来封装一系列的对象交互，中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互<br />
+对象与对象之间存在大量的关联关系，这样势必会导致系统的结构变得很复杂，同时若一个对象发生改变，我们也需要跟踪与之相关联的对象，同时做出相应的处理</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -654,7 +974,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止<br>职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了</p>
+          <p>避免请求发送者与接收者耦合在一起，让多个对象都有可能接收请求，将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止<br />
+职责链上的处理者负责处理请求，客户只需要将请求发送到职责链上即可，无须关心请求的处理细节和请求的传递，所以职责链将请求的发送者和请求的处理者解耦了</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -848,7 +1169,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>将抽象部分与实现部分分离，使它们都可以独立的变化<br>需要多角度去分类实现对象， 而只用继承会造成大量的类增加， 不能满足开放-封闭原则时， 就应该要考虑用桥接模式</p>
+          <p>将抽象部分与实现部分分离，使它们都可以独立的变化<br />
+需要多角度去分类实现对象， 而只用继承会造成大量的类增加， 不能满足开放-封闭原则时， 就应该要考虑用桥接模式</p>
 <p>适用于一个类存在两个独立变化的维度, 且每个维度都需要进行扩展</p>
           <!--noindex-->
             <div class="post-button">
@@ -1218,7 +1540,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>653</span>
+              <span>663</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1237,7 +1559,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>将一个类的接口转换成客户希望的另外一个接口<br>主要解决在软件系统中，常常要将一些”现存的对象”放到新的环境中，而新环境要求的接口是现对象不能满足的。<br>1、系统需要使用现有的类，而此类的接口不符合系统的需要。<br>2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。<br>3、通过接口转换，将一个类插入另一个类系中</p>
+          <p>将一个类的接口转换成客户希望的另外一个接口<br />
+主要解决在软件系统中，常常要将一些&quot;现存的对象&quot;放到新的环境中，而新环境要求的接口是现对象不能满足的。<br />
+1、系统需要使用现有的类，而此类的接口不符合系统的需要。<br />
+2、想要建立一个可以重复使用的类，用于与一些彼此之间没有太大关联的一些类，包括一些可能在将来引进的类一起工作，这些源类不一定有一致的接口。<br />
+3、通过接口转换，将一个类插入另一个类系中</p>
 <p>DataAdapter</p>
           <!--noindex-->
             <div class="post-button">
@@ -1335,7 +1661,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>当一个控制对象状态转换的条件表达式过于复杂时, 将状态的判断逻辑转移到表示不同状态的一系列类中<br>当代码中包含大量与对象状态有关的条件语句时, 使用状态模式</p>
+          <p>当一个控制对象状态转换的条件表达式过于复杂时, 将状态的判断逻辑转移到表示不同状态的一系列类中<br />
+当代码中包含大量与对象状态有关的条件语句时, 使用状态模式</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -1529,7 +1856,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>使用多个简单的对象一步一步构建成一个复杂的对象<br>将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示</p>
+          <p>使用多个简单的对象一步一步构建成一个复杂的对象<br />
+将一个复杂的构建与其表示相分离，使得同样的构建过程可以创建不同的表示</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -1626,7 +1954,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口<br>降低访问复杂系统的内部子系统时的复杂度，简化客户端之间的接口。</p>
+          <p>隐藏系统的复杂性，并向客户端提供了一个客户端可以访问系统的接口<br />
+降低访问复杂系统的内部子系统时的复杂度，简化客户端之间的接口。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -1723,7 +2052,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>一个抽象类公开定义了执行它的方法的方式&#x2F;模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行<br>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中<br>把不变的部分移至父类, 去除子类重复代码</p>
+          <p>一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行<br />
+定义一个操作中的算法的骨架，而将一些步骤延迟到子类中<br />
+把不变的部分移至父类, 去除子类重复代码</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
@@ -1843,299 +2174,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headim.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silencejql">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.html" class="post-title-link" itemprop="url">设计模式-代理模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-08-29 16:57:32" itemprop="dateCreated datePublished" datetime="2023-08-29T16:57:32+08:00">2023-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-04 12:21:14" itemprop="dateModified" datetime="2024-03-04T12:21:14+08:00">2024-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>782</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>创建具有现有对象的对象，以便向外界提供功能接口。用于解决直接访问对象时带来的问题</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headim.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silencejql">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.html" class="post-title-link" itemprop="url">设计模式-策略模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-08-29 16:12:13" itemprop="dateCreated datePublished" datetime="2023-08-29T16:12:13+08:00">2023-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-04 12:20:39" itemprop="dateModified" datetime="2024-03-04T12:20:39+08:00">2024-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。<br>在有多种算法相似的情况下，使用 if…else 所带来的复杂和难以维护。</p>
-<p>策略模式相对简单工厂耦合度更低, 只需要开放一个类给客户端</p>
-<p>无论是简单工厂还是策略模式都没有消除switch, 若想消除可用反射, 参考抽象工厂模式</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/headim.png">
-      <meta itemprop="name" content="Justin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Silencejql">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F.html" class="post-title-link" itemprop="url">设计模式-装饰模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-08-29 15:38:34" itemprop="dateCreated datePublished" datetime="2023-08-29T15:38:34+08:00">2023-08-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-03-04 12:20:31" itemprop="dateModified" datetime="2024-03-04T12:20:31+08:00">2024-03-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
-                </span>
-            </span>
-
-          
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>装饰模式:<br>把所需的功能按正确的顺序串联起来<br>动态的给一个对象添加一些职责</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2207,7 +2245,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -2271,13 +2309,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -2288,7 +2326,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -2321,7 +2359,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -2337,70 +2374,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -2442,7 +2420,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -2457,7 +2435,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -2501,6 +2480,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

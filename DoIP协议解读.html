@@ -80,7 +80,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -135,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -262,7 +266,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>943</span>
+              <span>897</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,97 +288,104 @@
         <center></center>
 ISO13400
 <span id="more"></span>
-
-<h2 id="帧格式"><a href="#帧格式" class="headerlink" title="帧格式"></a>帧格式</h2><table>
+<h2 id="帧格式">帧格式</h2>
+<table>
 <thead>
 <tr>
-<th align="center">ProtocolVersion</th>
-<th align="center">InverseProtocolVersion</th>
-<th align="left">PayloadType</th>
-<th align="center">PayloadLength</th>
-<th align="center">DoIPPayload</th>
+<th style="text-align:center">ProtocolVersion</th>
+<th style="text-align:center">InverseProtocolVersion</th>
+<th style="text-align:left">PayloadType</th>
+<th style="text-align:center">PayloadLength</th>
+<th style="text-align:center">DoIPPayload</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">协议版本信息</td>
-<td align="center">协议版本信息按位取反</td>
-<td align="left">有效数据类型</td>
-<td align="center">有效数据长度</td>
-<td align="center">SA TA UserData</td>
+<tbody>
+<tr>
+<td style="text-align:center">协议版本信息</td>
+<td style="text-align:center">协议版本信息按位取反</td>
+<td style="text-align:left">有效数据类型</td>
+<td style="text-align:center">有效数据长度</td>
+<td style="text-align:center">SA TA UserData</td>
 </tr>
 <tr>
-<td align="center">1Byte</td>
-<td align="center">1Byte</td>
-<td align="left">2Byte</td>
-<td align="center">4Byte</td>
-<td align="center">源地址(2Byte)目标地址(2Byte)UDS数据</td>
+<td style="text-align:center">1Byte</td>
+<td style="text-align:center">1Byte</td>
+<td style="text-align:left">2Byte</td>
+<td style="text-align:center">4Byte</td>
+<td style="text-align:center">源地址(2Byte)目标地址(2Byte)UDS数据</td>
 </tr>
 <tr>
-<td align="center">0x01:DoIp13400-2010</td>
-<td align="center">^ProtocolVersion</td>
-<td align="left"><strong>0x8001:DiagnosticMessage</strong></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">0x01:DoIp13400-2010</td>
+<td style="text-align:center">^ProtocolVersion</td>
+<td style="text-align:left"><strong>0x8001:DiagnosticMessage</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center"><strong>0x02:DoIp13400-2012</strong></td>
-<td align="center">^ProtocolVersion</td>
-<td align="left"><strong>0x8002:DiagnosticMessagePositiveAcknowledgement</strong></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"><strong>0x02:DoIp13400-2012</strong></td>
+<td style="text-align:center">^ProtocolVersion</td>
+<td style="text-align:left"><strong>0x8002:DiagnosticMessagePositiveAcknowledgement</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">0x03~0xFE:DoIp13400-xxxx</td>
-<td align="center">^ProtocolVersion</td>
-<td align="left"><strong>0x8003:DiagnosticMessageNegativeAcknowledgement</strong></td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">0x03~0xFE:DoIp13400-xxxx</td>
+<td style="text-align:center">^ProtocolVersion</td>
+<td style="text-align:left"><strong>0x8003:DiagnosticMessageNegativeAcknowledgement</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">0xFF</td>
-<td align="center">^ProtocolVersion</td>
-<td align="left">0x0005:RoutingActivationRequest</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">0xFF</td>
+<td style="text-align:center">^ProtocolVersion</td>
+<td style="text-align:left">0x0005:RoutingActivationRequest</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="left">0x0006:RoutingActivationRespose</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">0x0006:RoutingActivationRespose</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="left">0x0007:AliveCheckRequest</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">0x0007:AliveCheckRequest</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="left">0x0008:AliveCheckReponse</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:left">0x0008:AliveCheckReponse</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
-<td align="center">02</td>
-<td align="center">FD</td>
-<td align="left">8001</td>
-<td align="center">00000006</td>
-<td align="center">0E800304 1003</td>
+<td style="text-align:center">02</td>
+<td style="text-align:center">FD</td>
+<td style="text-align:left">8001</td>
+<td style="text-align:center">00000006</td>
+<td style="text-align:center">0E800304 1003</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>关于数据类型参考:<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42967006/article/details/121638078">https://blog.csdn.net/weixin_42967006/article/details/121638078</a></p>
-<h2 id="源地址"><a href="#源地址" class="headerlink" title="源地址"></a>源地址</h2><p>0x0E00-0x0E7F用于OBD诊断，0x0E80-0x0EFF用于增强型诊断<br>物理逻辑地址，在0x0001-0x0DFF或0x1000-0x7FFF范围内<br>功能寻址，是0xE000</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ol>
-<li>02 FD 0005 0000000B 0E80 000000000000000000 &#x2F;&#x2F;请求路由激活</li>
-<li>02 FD 0006 000000XX XXXX XXXX XXXX YY XX… &#x2F;&#x2F;收到回复YY&#x3D;0x10表示成功</li>
-<li>02 FD 8001 00000006 0E800304 1003 &#x2F;&#x2F;进入诊断模式</li>
-<li>02 FD 8002 000000XX 03040E80 5003XXXX.. &#x2F;&#x2F;收到正反馈</li>
+<h2 id="源地址">源地址</h2>
+<p>0x0E00-0x0E7F用于OBD诊断，0x0E80-0x0EFF用于增强型诊断<br />
+物理逻辑地址，在0x0001-0x0DFF或0x1000-0x7FFF范围内<br />
+功能寻址，是0xE000</p>
+<h2 id="示例">示例</h2>
+<ol>
+<li>02 FD 0005 0000000B 0E80 000000000000000000 //请求路由激活</li>
+<li>02 FD 0006 000000XX XXXX XXXX XXXX YY XX… //收到回复YY=0x10表示成功</li>
+<li>02 FD 8001 00000006 0E800304 1003 //进入诊断模式</li>
+<li>02 FD 8002 000000XX 03040E80 5003XXXX… //收到正反馈</li>
 </ol>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><img src="/DoIP%E5%8D%8F%E8%AE%AE%E8%A7%A3%E8%AF%BB/PayloadType.jpg" alt="截图"></p>
+<h2 id="参考">参考</h2>
+<p><img src="DoIP%E5%8D%8F%E8%AE%AE%E8%A7%A3%E8%AF%BB/PayloadType.jpg" alt="截图" /></p>
 
     </div>
 
@@ -472,7 +483,7 @@ ISO13400
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -536,13 +547,13 @@ ISO13400
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -553,7 +564,7 @@ ISO13400
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -586,7 +597,6 @@ ISO13400
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -602,70 +612,11 @@ ISO13400
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -707,7 +658,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -722,7 +673,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -756,6 +708,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

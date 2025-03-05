@@ -79,7 +79,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -134,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,7 +278,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>431</span>
+              <span>421</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,20 +298,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Postgresql"><a href="#Postgresql" class="headerlink" title="Postgresql"></a>Postgresql</h1><h2 id="测试软件导出、Postgresql导入"><a href="#测试软件导出、Postgresql导入" class="headerlink" title="测试软件导出、Postgresql导入"></a>测试软件导出、Postgresql导入</h2><h3 id="测试软件导出"><a href="#测试软件导出" class="headerlink" title="测试软件导出"></a>测试软件导出</h3><blockquote>
+        <h1>Postgresql</h1>
+<h2 id="测试软件导出、Postgresql导入">测试软件导出、Postgresql导入</h2>
+<h3 id="测试软件导出">测试软件导出</h3>
+<blockquote>
 <p>连接数据库设置完筛选条件后点击导出到Excel重命名为：表名.csv</p>
 </blockquote>
-<h3 id="测试软件导入"><a href="#测试软件导入" class="headerlink" title="测试软件导入"></a>测试软件导入</h3><blockquote>
-<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br>2、删除原数据库已有行后保存<br>3、打开Postgres找到相应表右键导入<br>4、文件名选择csv文件路径、格式选csv、字符编码可选<br>5、点击导入即可</p>
+<h3 id="测试软件导入">测试软件导入</h3>
 <blockquote>
-<p>如果主键为自增序列执行6、7<br>6、将相应表的序列创建脚本后删除<br>7、更改脚本中的START大于新增数据的主键ID后执行脚本</p>
+<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br />
+2、删除原数据库已有行后保存<br />
+3、打开Postgres找到相应表右键导入<br />
+4、文件名选择csv文件路径、格式选csv、字符编码可选<br />
+5、点击导入即可</p>
+<blockquote>
+<p>如果主键为自增序列执行6、7<br />
+6、将相应表的序列创建脚本后删除<br />
+7、更改脚本中的START大于新增数据的主键ID后执行脚本</p>
 </blockquote>
 </blockquote>
-<h2 id="SQL-shell-psql-导入"><a href="#SQL-shell-psql-导入" class="headerlink" title="SQL shell(psql)导入"></a>SQL shell(psql)导入</h2><blockquote>
-<p>1、将excel处理好后，另存为csv（Comma Delimited）<br>2、运行SQL shell(psql) 并登录<br>3、运行’COPY mytable FROM ‘&#x2F;myfile.csv’  WITH CSV  HEADER</p>
+<h2 id="SQL-shell-psql-导入">SQL shell(psql)导入</h2>
+<blockquote>
+<p>1、将excel处理好后，另存为csv（Comma Delimited）<br />
+2、运行SQL shell(psql) 并登录<br />
+3、运行’COPY mytable FROM ‘/myfile.csv’  WITH CSV  HEADER</p>
 </blockquote>
-<h2 id="SQL-shell-psql-导出"><a href="#SQL-shell-psql-导出" class="headerlink" title="SQL shell(psql)导出"></a>SQL shell(psql)导出</h2><blockquote>
-<p>COPY (select * from mytable) to ‘&#x2F;myfile.csv’ with csv header;</p>
+<h2 id="SQL-shell-psql-导出">SQL shell(psql)导出</h2>
+<blockquote>
+<p>COPY (select * from mytable) to ‘/myfile.csv’ with csv header;</p>
 </blockquote>
 
     </div>
@@ -394,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Postgresql"><span class="nav-number">1.</span> <span class="nav-text">Postgresql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%87%BA%E3%80%81Postgresql%E5%AF%BC%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">测试软件导出、Postgresql导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%87%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">测试软件导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%85%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">测试软件导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-shell-psql-%E5%AF%BC%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">SQL shell(psql)导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-shell-psql-%E5%AF%BC%E5%87%BA"><span class="nav-number">1.3.</span> <span class="nav-text">SQL shell(psql)导出</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Postgresql</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%87%BA%E3%80%81Postgresql%E5%AF%BC%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">测试软件导出、Postgresql导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%87%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">测试软件导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BD%AF%E4%BB%B6%E5%AF%BC%E5%85%A5"><span class="nav-number">1.1.2.</span> <span class="nav-text">测试软件导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-shell-psql-%E5%AF%BC%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">SQL shell(psql)导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-shell-psql-%E5%AF%BC%E5%87%BA"><span class="nav-number">1.3.</span> <span class="nav-text">SQL shell(psql)导出</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -410,7 +428,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -474,13 +492,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -491,7 +509,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -524,7 +542,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -540,70 +557,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -645,7 +603,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -660,7 +618,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -694,6 +653,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

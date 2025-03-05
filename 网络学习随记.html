@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -260,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>758</span>
+              <span>738</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,22 +290,66 @@
 数据链路层
 物理层
 <span id="more"></span>
-
-<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>-Bit流  </p>
-<h2 id="数据链路层-帧"><a href="#数据链路层-帧" class="headerlink" title="数据链路层 帧"></a>数据链路层 帧</h2><p>交换机 可识别MAC<br>FCS|Data|SIP|DIP|SMAC|DMAC</p>
-<h2 id="网络层-包"><a href="#网络层-包" class="headerlink" title="网络层 包"></a>网络层 包</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>IP、ARP、ICMP、IGMP<br>路由器 可识别IP<br>Data|SIP|DIP</p>
-<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><p>ARP广播查询目标MAC地址<br>ipconfig &#x2F;all查看网卡MAC<br>arp -a查询局域网内MAC<br><em><strong>ARP欺骗</strong></em><br>arp -s ip mac设置静态MAC(更改网络通讯中IP对应的MAC)<br>网卡属性中修复可重置</p>
-<h4 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h4><p>PING-Packet Internet Grope因特网包探索器<br>ping局域网延迟一般小于10ms<br>TTL数据包生存周期，每过一个路由-1，防止网络回路<br>ping ip -i n 通过n值查看途经路由器IP<br>默认TTL：</p>
+<h2 id="物理层">物理层</h2>
+<p>-Bit流</p>
+<h2 id="数据链路层-帧">数据链路层 帧</h2>
+<p>交换机 可识别MAC<br />
+FCS|Data|SIP|DIP|SMAC|DMAC</p>
+<h2 id="网络层-包">网络层 包</h2>
+<h3 id="协议">协议</h3>
+<p>IP、ARP、ICMP、IGMP<br />
+路由器 可识别IP<br />
+Data|SIP|DIP</p>
+<h4 id="ARP">ARP</h4>
+<p>ARP广播查询目标MAC地址<br />
+ipconfig /all查看网卡MAC<br />
+arp -a查询局域网内MAC<br />
+<em><strong>ARP欺骗</strong></em><br />
+arp -s ip mac设置静态MAC(更改网络通讯中IP对应的MAC)<br />
+网卡属性中修复可重置</p>
+<h4 id="ICMP">ICMP</h4>
+<p>PING-Packet Internet Grope因特网包探索器<br />
+ping局域网延迟一般小于10ms<br />
+TTL数据包生存周期，每过一个路由-1，防止网络回路<br />
+ping ip -i n 通过n值查看途经路由器IP<br />
+默认TTL：</p>
 <blockquote>
-<p>Linux : 64<br>Windows : 128<br>Unix : 255</p>
+<p>Linux : 64<br />
+Windows : 128<br />
+Unix : 255</p>
 </blockquote>
-<p>tracert ip 跟踪数据包路径<br>pathping 跟踪数据包路径，计算丢包情况</p>
-<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>静态路由 管理员配置路径<br>动态路由 RIP协议 最大15级</p>
-<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>netstat -n查看会话<br>netstat -nb查看会话及会话进程<br>netstat -an查看监听端口</p>
-<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>16位<br>常用端口：0-1023<br>登机端口：1024-49151<br>客户端端口：49152-65535<br>常见应用层协议端口</p>
-<p>协议|端口<br>:|:<br>http  |TCP:80<br>https  |TCP:443<br>ftp  |TCP:21<br>RDP  |TCP:3389  远程桌面<br>SMTP  |TCP:25<br>POP3  |TCP:110<br>Telnet  |TCP:23<br>SQL  |TCP:1433<br>  |<br>DNS  |UDP:53(一般)</p>
-<h3 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h3><p>socket&#x3D;IP:Port</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>设置开&#x2F;关机&#x2F;登录启动脚本<br>gpedit.msc</p>
+<p>tracert ip 跟踪数据包路径<br />
+pathping 跟踪数据包路径，计算丢包情况</p>
+<h3 id="路由">路由</h3>
+<p>静态路由 管理员配置路径<br />
+动态路由 RIP协议 最大15级</p>
+<h2 id="传输层">传输层</h2>
+<p>netstat -n查看会话<br />
+netstat -nb查看会话及会话进程<br />
+netstat -an查看监听端口</p>
+<h3 id="端口">端口</h3>
+<p>16位<br />
+常用端口：0-1023<br />
+登机端口：1024-49151<br />
+客户端端口：49152-65535<br />
+常见应用层协议端口</p>
+<p>协议|端口<br />
+:|:<br />
+http  |TCP:80<br />
+https  |TCP:443<br />
+ftp  |TCP:21<br />
+RDP  |TCP:3389  远程桌面<br />
+SMTP  |TCP:25<br />
+POP3  |TCP:110<br />
+Telnet  |TCP:23<br />
+SQL  |TCP:1433<br />
+|<br />
+DNS  |UDP:53(一般)</p>
+<h3 id="套接字">套接字</h3>
+<p>socket=IP:Port</p>
+<h2 id="其他">其他</h2>
+<p>设置开/关机/登录启动脚本<br />
+gpedit.msc</p>
 
     </div>
 
@@ -399,7 +447,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -463,13 +511,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -480,7 +528,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -513,7 +561,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -529,70 +576,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -634,7 +622,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -649,7 +637,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -683,6 +672,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

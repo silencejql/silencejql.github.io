@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -260,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.7k</span>
+              <span>9.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,54 +286,45 @@
         <center></center>
 [参考](https://www.appinn.com/markdown/)
 <span id="more"></span>
-
-<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><h3 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
-<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 &#96;&#96;标签。</p>
-<p>如果你确实想要依赖 Markdown 来插入 &#96;&#96;标签的话，在插入处先按入两个以上的空格然后回车。</p>
+<h2 id="区块元素">区块元素</h2>
+<h3 id="段落和换行">段落和换行</h3>
+<p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。</p>
+<p>「由一个或多个连续的文本行组成」这句话其实暗示了 Markdown 允许段落内的强迫换行（插入换行符），这个特性和其他大部分的 text-to-HTML 格式不一样（包括 Movable Type 的「Convert Line Breaks」选项），其它的格式会把每个换行符都转成 ``标签。</p>
+<p>如果你确实想要依赖 Markdown 来插入 ``标签的话，在插入处先按入两个以上的空格然后回车。</p>
 <p>的确，需要多费点事（多加空格）来产生 ，但是简单地「每个换行都转换为」的方法在 Markdown 中并不适合， Markdown 中 email 式的 区块引用 和多段落的 列表 在使用换行来排版的时候，不但更好用，还更方便阅读。</p>
-<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。</p>
-<p>类 Setext 形式是用底线的形式，利用 &#x3D; （最高阶标题）和 - （第二阶标题），例如：</p>
+<h3 id="标题">标题</h3>
+<p>Markdown 支持两种标题的语法，类 Setext 和类 atx 形式。</p>
+<p>类 Setext 形式是用底线的形式，利用 = （最高阶标题）和 - （第二阶标题），例如：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">This is an H1</span></span><br><span class="line"><span class="section">=============</span></span><br><span class="line">​</span><br><span class="line"><span class="section">This is an H2</span></span><br><span class="line"><span class="section">-------------</span></span><br></pre></td></tr></table></figure>
-
-<p>任何数量的 &#x3D; 和 - 都可以有效果。</p>
+<p>任何数量的 = 和 - 都可以有效果。</p>
 <p>类 Atx 形式则是在行首插入 1 到 6 个 # ，对应到标题 1 到 6 阶，例如：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 这是 H1</span></span><br><span class="line">​</span><br><span class="line"><span class="section">## 这是 H2</span></span><br><span class="line">​</span><br><span class="line"><span class="section">###### 这是 H6</span></span><br></pre></td></tr></table></figure>
-
 <p>你可以选择性地「闭合」类 atx 样式的标题，这纯粹只是美观用的，若是觉得这样看起来比较舒适，你就可以在行尾加上 #，而行尾的 # 数量也不用和开头一样（行首的井字符数量决定标题的阶数）：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 这是 H1 #</span></span><br><span class="line">​</span><br><span class="line"><span class="section">## 这是 H2 ##</span></span><br><span class="line">​</span><br><span class="line"><span class="section">### 这是 H3 ######</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="区块引用-Blockquotes"><a href="#区块引用-Blockquotes" class="headerlink" title="区块引用 Blockquotes"></a>区块引用 Blockquotes</h3><p>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &gt; ：</p>
+<h3 id="区块引用-Blockquotes">区块引用 Blockquotes</h3>
+<p>Markdown 标记区块引用是使用类似 email 中用 &gt; 的引用方式。如果你还熟悉在 email 信件中的引言部分，你就知道怎么在 Markdown 文件中建立一个区块引用，那会看起来像是你自己先断好行，然后在每行的最前面加上 &gt; ：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">&gt; consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">&gt; Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">&gt; </span><br><span class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</span><br><span class="line">&gt; id sem consectetuer libero luctus adipiscing.</span><br><span class="line">Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt; ：</span><br><span class="line"></span><br><span class="line">&gt; This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,</span><br><span class="line">consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.</span><br><span class="line">Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">​</span><br><span class="line">&gt; Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse</span><br><span class="line">id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
-
 <p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; This is the first level of quoting.</span><br><span class="line">&gt;</span><br><span class="line">&gt; &gt; This is nested blockquote.</span><br><span class="line">&gt;</span><br><span class="line">&gt; Back to the first level.</span><br></pre></td></tr></table></figure>
-
 <p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; ## 这是一个标题。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 1.   这是第一行列表项。</span><br><span class="line">&gt; 2.   这是第二行列表项。</span><br><span class="line">&gt; </span><br><span class="line">&gt; 给出一些例子代码：</span><br><span class="line">&gt; </span><br><span class="line">&gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);</span><br></pre></td></tr></table></figure>
-
 <p>任何像样的文本编辑器都能轻松地建立 email 型的引用。例如在 BBEdit 中，你可以选取文字后然后从选单中选择增加引用阶层。</p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown 支持有序列表和无序列表。</p>
+<h2 id="列表">列表</h2>
+<p>Markdown 支持有序列表和无序列表。</p>
 <p>无序列表使用星号、加号或是减号作为列表标记：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   Red</span><br><span class="line">*   Green</span><br><span class="line">*   Blue</span><br></pre></td></tr></table></figure>
-
 <p>等同于：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+   Red</span><br><span class="line">+   Green</span><br><span class="line">+   Blue</span><br></pre></td></tr></table></figure>
-
 <p>也等同于：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-   Red</span><br><span class="line">-   Green</span><br><span class="line">-   Blue</span><br></pre></td></tr></table></figure>
-
 <p>有序列表则使用数字接着一个英文句点：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.  Bird</span><br><span class="line">2.  McHale</span><br><span class="line">3.  Parish</span><br></pre></td></tr></table></figure>
-
 <p>很重要的一点是，你在列表标记上使用的数字并不会影响输出的 HTML 结果，上面的列表所产生的 HTML 标记为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;Bird&lt;/li&gt;</span><br><span class="line">&lt;li&gt;McHale&lt;/li&gt;</span><br><span class="line">&lt;li&gt;Parish&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
-
 <p>如果你的列表标记写成：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.  Bird</span><br><span class="line">1.  McHale</span><br><span class="line">1.  Parish</span><br></pre></td></tr></table></figure>
-
 <p>或甚至是：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3. Bird</span><br><span class="line">1. McHale</span><br><span class="line">8. Parish</span><br></pre></td></tr></table></figure>
-
 <p>你都会得到完全相同的 HTML 输出。重点在于，你可以让 Markdown 文件的列表数字和输出的结果相同，或是你懒一点，你可以完全不用在意数字的正确性。</p>
 <p>如果你使用懒惰的写法，建议第一个项目最好还是从 1. 开始，因为 Markdown 未来可能会支持有序列表的 start 属性。</p>
 <p>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
@@ -337,39 +332,73 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">    Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</span><br><span class="line">    viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</span><br><span class="line">    Suspendisse id sem consectetuer libero luctus adipiscing.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>但是如果你懒，那也行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span><br><span class="line">Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi,</span><br><span class="line">viverra nec, fringilla in, laoreet vitae, risus.</span><br><span class="line">*   Donec sit amet nisl. Aliquam semper ipsum sit amet velit.</span><br><span class="line">Suspendisse id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
-
-<p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 &#96;&#96; 标签包起来，举例来说：</p>
+<p>如果列表项目间用空行分开，在输出 HTML 时 Markdown 就会将项目内容用 `` 标签包起来，举例来说：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">*   Bird</span><br><span class="line">*   Magic</span><br></pre></td></tr></table></figure>
-
 <p>会被转换为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;Bird&lt;/li&gt;</span><br><span class="line">&lt;li&gt;Magic&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-
 <p>但是这个：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   Bird</span><br><span class="line">​</span><br><span class="line">*   Magic</span><br></pre></td></tr></table></figure>
-
 <p>会被转换为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;&lt;p&gt;Bird&lt;/p&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;p&gt;Magic&lt;/p&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-
 <p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.  This is a list item with two paragraphs. Lorem ipsum dolor</span><br><span class="line">    sit amet, consectetuer adipiscing elit. Aliquam hendrerit</span><br><span class="line">    mi posuere lectus.</span><br><span class="line">​</span><br><span class="line">    Vestibulum enim wisi, viverra nec, fringilla in, laoreet</span><br><span class="line">    vitae, risus. Donec sit amet nisl. Aliquam semper ipsum</span><br><span class="line">    sit amet velit.</span><br><span class="line"></span><br><span class="line">2.  Suspendisse id sem consectetuer libero luctus adipiscing.</span><br></pre></td></tr></table></figure>
-
 <p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*   This is a list item with two paragraphs.</span><br><span class="line">​</span><br><span class="line">    This is the second paragraph in the list item. You&#x27;re</span><br><span class="line">only required to indent the first line. Lorem ipsum dolor</span><br><span class="line">sit amet, consectetuer adipiscing elit.</span><br><span class="line">​</span><br><span class="line">*   Another item in the same list.</span><br></pre></td></tr></table></figure>
-
 <p>如果要在列表项目内放进引用，那 &gt; 就需要缩进：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*   A list item with a blockquote:</span><br><span class="line">​</span><br><span class="line">    &gt; This is a blockquote</span><br><span class="line">    &gt; inside a list item.</span><br></pre></td></tr></table></figure>
-
 <p>如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   一列表项包含一个列表区块：</span><br><span class="line">​</span><br><span class="line">        &lt;代码写在这&gt;</span><br></pre></td></tr></table></figure>
-
 <p>当然，项目列表很可能会不小心产生，像是下面这样的写法：</p>
 <p><code>1986. What a great season.</code></p>
 <p>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠。</p>
 <p><code>1986\. What a great season.</code></p>
-<h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 和 标签来把代码区块包起来。</p>
+<h3 id="代码区块">代码区块</h3>
+<p>和程序相关的写作或是标签语言原始码通常会有已经排版好的代码区块，通常这些区块我们并不希望它以一般段落文件的方式去排版，而是照原来的样子显示，Markdown 会用 和 标签来把代码区块包起来。</p>
 <p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
-<h2 id="这是一个普通段落：​-96-96-96-这是一个代码区块。这是一个普通段落：​这是一个代码区块。Here-is-an-example-of-AppleScript-​-tell-application-“Foo”-beep-end-tellHere-is-an-example-of-AppleScript-​tell-application-Foo-beepend-tell-amp-copy-2004-Foo-Corporation-lt-div-class-footer-gt-amp-copy-2004-Foo-Corporation-lt-div-gt-​-​-​-​"><a href="#这是一个普通段落：​-96-96-96-这是一个代码区块。这是一个普通段落：​这是一个代码区块。Here-is-an-example-of-AppleScript-​-tell-application-“Foo”-beep-end-tellHere-is-an-example-of-AppleScript-​tell-application-Foo-beepend-tell-amp-copy-2004-Foo-Corporation-lt-div-class-footer-gt-amp-copy-2004-Foo-Corporation-lt-div-gt-​-​-​-​" class="headerlink" title="这是一个普通段落：​&#96;&#96;&#96;    这是一个代码区块。这是一个普通段落：​这是一个代码区块。Here is an example of AppleScript:​    tell application “Foo”        beep    end tellHere is an example of AppleScript:​tell application "Foo"    beepend tell            &amp;copy; 2004 Foo Corporation    &lt;div class="footer"&gt;    &amp;copy; 2004 Foo Corporation&lt;/div&gt;* * *​***​*****​- - -​"></a>这是一个普通段落：<br>​&#96;&#96;&#96;<br>    这是一个代码区块。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转换成：</span><br></pre></td></tr></table></figure><br><p>这是一个普通段落：</p><br>​<br><pre><code>这是一个代码区块。<br></code></pre><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</span><br></pre></td></tr></table></figure><br>Here is an example of AppleScript:<br>​<br>    tell application “Foo”<br>        beep<br>    end tell<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">会被转换为：</span><br></pre></td></tr></table></figure><br><p>Here is an example of AppleScript:</p><br>​<br><pre><code>tell application "Foo"<br>    beep<br>end tell<br></code></pre><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</span><br><span class="line"></span><br><span class="line">在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</span><br></pre></td></tr></table></figure><br>    <div class="footer"><br>        &amp;copy; 2004 Foo Corporation<br>    </div><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">会被转换为：</span><br></pre></td></tr></table></figure><br><pre><code>&lt;div class="footer"&gt;<br>    &amp;copy; 2004 Foo Corporation<br>&lt;/div&gt;<br></code></pre><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</span><br><span class="line"></span><br><span class="line">分隔线</span><br><span class="line">你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</span><br></pre></td></tr></table></figure><br>* * *<br>​<br>***<br>​<br>*****<br>​<br>- - -<br>​</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 区段元素</span><br><span class="line">### 链接</span><br><span class="line">Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</span><br><span class="line"></span><br><span class="line">不管是哪一种，链接文字都是用 [方括号] 来标记。</span><br><span class="line"></span><br><span class="line">要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</span><br></pre></td></tr></table></figure>
-<p>This is <a target="_blank" rel="noopener" href="http://example.com/" title="Title">an example</a> inline link.<br>​<br><a target="_blank" rel="noopener" href="http://example.net/">This link</a> has no title attribute.</p>
+<p>这是一个普通段落：<br />
+​```<br />
+这是一个代码区块。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转换成：</span><br></pre></td></tr></table></figure>
+<p>这是一个普通段落：</p>
+​
+<pre><code>这是一个代码区块。
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：</span><br></pre></td></tr></table></figure>
+Here is an example of AppleScript:
+​
+    tell application "Foo"
+        beep
+    end tell
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">会被转换为：</span><br></pre></td></tr></table></figure>
+<p>Here is an example of AppleScript:</p>
+​
+<pre><code>tell application "Foo"
+    beep
+end tell
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</span><br><span class="line"></span><br><span class="line">在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：</span><br></pre></td></tr></table></figure>
+    <div class="footer">
+        &copy; 2004 Foo Corporation
+    </div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">会被转换为：</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;div class="footer"&gt;
+    &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。</span><br><span class="line"></span><br><span class="line">分隔线</span><br><span class="line">你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</span><br></pre></td></tr></table></figure>
+* * *
+​
+***
+​
+*****
+​
+- - -
+​
+---------------------------------------
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 区段元素</span><br><span class="line">### 链接</span><br><span class="line">Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。</span><br><span class="line"></span><br><span class="line">不管是哪一种，链接文字都是用 [方括号] 来标记。</span><br><span class="line"></span><br><span class="line">要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：</span><br></pre></td></tr></table></figure>
+This is [an example](http://example.com/ "Title") inline link.
+​
+[This link](http://example.net/) has no title attribute.
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">会产生：</span><br></pre></td></tr></table></figure>
 <p>This is <a target="_blank" rel="noopener" href="http://example.com/" title="Title">
 an example</a> inline link.</p>
@@ -477,30 +506,37 @@ equivalent of <code>&amp;mdash;</code>.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">详细叙述如下：</span><br><span class="line"></span><br><span class="line">一个惊叹号 !</span><br><span class="line">接着一个方括号，里面放上图片的替代文字</span><br><span class="line">接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 &#x27;title&#x27; 文字。</span><br><span class="line">参考式的图片语法则长得像这样：</span><br></pre></td></tr></table></figure>
 ![Alt text][id]
 「id」是图片参考的名称，图片参考的定义方式则和连结参考一样：
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">到目前为止， Markdown 还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的 `` 标签。</span><br><span class="line"></span><br><span class="line">## 其它</span><br><span class="line">### 自动链接</span><br><span class="line">Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转为：</span><br></pre></td></tr></table></figure>
 <p><a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">邮址的自动链接也很类似，只是 Markdown 会先做一个编码转换的过程，把文字字符转成 16 进位码的 HTML 实体，这样的格式可以糊弄一些不好的邮址收集机器人，例如：</span><br></pre></td></tr></table></figure>
-<p><a href="mailto:&#x61;&#x64;&#x64;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;">&#x61;&#x64;&#x64;&#114;&#x65;&#x73;&#x73;&#64;&#101;&#x78;&#x61;&#x6d;&#112;&#x6c;&#101;&#46;&#99;&#x6f;&#109;</a></p>
+<p><a href="mailto:address@example.com">address@example.com</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Markdown 会转成：</span><br></pre></td></tr></table></figure>
 <p><a href="&#x6D;&#x61;i&#x6C;&#x74;&#x6F;:&#x61;&#x64;&#x64;&#x72;&#x65;
 &#115;&#115;&#64;&#101;&#120;&#x61;&#109;&#x70;&#x6C;e&#x2E;&#99;&#111;
-&#109;">&amp;#x61;&amp;#x64;&amp;#x64;&amp;#x72;&amp;#x65;&amp;#115;&amp;#115;&amp;#64;&amp;#101;&amp;#120;&amp;#x61;<br>&amp;#109;&amp;#x70;&amp;#x6C;e&amp;#x2E;&amp;#99;&amp;#111;&amp;#109;</a></p>
+&#109;">address@exa<br />
+mple.com</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在浏览器里面，这段字串（其实是 `[address@example.com](mailto:address@example.com)`）会变成一个可以点击的「address@example.com」链接。</span><br><span class="line"></span><br><span class="line">（这种作法虽然可以糊弄不少的机器人，但并不能全部挡下来，不过总比什么都不做好些。不管怎样，公开你的信箱终究会引来广告信件的。）</span><br><span class="line"></span><br><span class="line">### 反斜杠</span><br><span class="line">Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 `` 标签），你可以在星号的前面加上反斜杠：</span><br><span class="line"></span><br><span class="line">`\*literal asterisks\*`</span><br><span class="line">Markdown 支持以下这些符号前面加上反斜杠来帮助插入普通的符号：</span><br></pre></td></tr></table></figure>
-<p>\   反斜线<br>&#96;   反引号</p>
+<p>\   反斜线<br />
+`   反引号</p>
 <ul>
-<li>星号<br>_   底线<br>{}  花括号<br>[]  方括号<br>()  括弧</li>
+<li>星号<br />
+_   底线<br />
+{}  花括号<br />
+[]  方括号<br />
+()  括弧</li>
 </ul>
-<h1 id="井字号"><a href="#井字号" class="headerlink" title="井字号"></a>井字号</h1><ul>
+<h1>井字号</h1>
+<ul>
 <li>加号</li>
 </ul>
 <ul>
-<li>减号<br>.   英文句点<br>!   惊叹号</li>
+<li>减号<br />
+.   英文句点<br />
+!   惊叹号</li>
 </ul>
-<pre><code>
-</code></pre>
+<pre><code></code></pre>
 
     </div>
 
@@ -582,7 +618,7 @@ equivalent of <code>&amp;mdash;</code>.</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">区块元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%92%8C%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8-Blockquotes"><span class="nav-number">1.3.</span> <span class="nav-text">区块引用 Blockquotes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.1.</span> <span class="nav-text">代码区块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E6%AE%B5%E8%90%BD%EF%BC%9A%E2%80%8B-96-96-96-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97%E3%80%82%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E6%AE%B5%E8%90%BD%EF%BC%9A%E2%80%8B%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97%E3%80%82Here-is-an-example-of-AppleScript-%E2%80%8B-tell-application-%E2%80%9CFoo%E2%80%9D-beep-end-tellHere-is-an-example-of-AppleScript-%E2%80%8Btell-application-Foo-beepend-tell-amp-copy-2004-Foo-Corporation-lt-div-class-footer-gt-amp-copy-2004-Foo-Corporation-lt-div-gt-%E2%80%8B-%E2%80%8B-%E2%80%8B-%E2%80%8B"><span class="nav-number">3.</span> <span class="nav-text">这是一个普通段落：​&#96;&#96;&#96;    这是一个代码区块。12Markdown 会转换成：这是一个普通段落：​这是一个代码区块。12这个每行一阶的缩进（4 个空格或是 1 个制表符），都会被移除，例如：Here is an example of AppleScript:​    tell application “Foo”        beep    end tell12会被转换为：Here is an example of AppleScript:​tell application &quot;Foo&quot;    beepend tell1234一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，再加上缩进就可以了，剩下的 Markdown 都会帮你处理，例如：            &amp;copy; 2004 Foo Corporation    12会被转换为：&lt;div class&#x3D;&quot;footer&quot;&gt;    &amp;copy; 2004 Foo Corporation&lt;&#x2F;div&gt;12345代码区块中，一般的 Markdown 语法不会被转换，像是星号便只是星号，这表示你可以很容易地以 Markdown 语法撰写 Markdown 语法相关的文件。分隔线你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：* * *​***​*****​- - -​</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%95%E5%AD%97%E5%8F%B7"><span class="nav-number"></span> <span class="nav-text">井字号</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-number">1.</span> <span class="nav-text">区块元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%92%8C%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">段落和换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8-Blockquotes"><span class="nav-number">1.3.</span> <span class="nav-text">区块引用 Blockquotes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">2.</span> <span class="nav-text">列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97"><span class="nav-number">2.1.</span> <span class="nav-text">代码区块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text">井字号</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -598,7 +634,7 @@ equivalent of <code>&amp;mdash;</code>.</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -662,13 +698,13 @@ equivalent of <code>&amp;mdash;</code>.</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -679,7 +715,7 @@ equivalent of <code>&amp;mdash;</code>.</p>
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -712,7 +748,6 @@ equivalent of <code>&amp;mdash;</code>.</p>
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -728,70 +763,11 @@ equivalent of <code>&amp;mdash;</code>.</p>
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -833,7 +809,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -848,7 +824,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -882,6 +859,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

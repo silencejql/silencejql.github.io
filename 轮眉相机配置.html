@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="BBK轮眉相机配置  本文未说明的地方自己琢磨吧">
+  <meta name="description" content="BBK轮眉相机配置 本文未说明的地方自己琢磨吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="轮眉相机配置">
 <meta property="og:url" content="https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="BBK轮眉相机配置  本文未说明的地方自己琢磨吧">
+<meta property="og:description" content="BBK轮眉相机配置 本文未说明的地方自己琢磨吧">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-edit.PNG">
 <meta property="og:image" content="https://silencejql.github.io/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-Jumbo.PNG">
@@ -88,7 +88,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -143,7 +147,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -300,28 +304,35 @@
       
         <center></center>
 BBK轮眉相机配置
-
 <p>本文未说明的地方自己琢磨吧</p>
 <span id="more"></span>
-
-<h2 id="Basler驱动安装"><a href="#Basler驱动安装" class="headerlink" title="Basler驱动安装"></a>Basler驱动安装</h2><p>根据相机版本安装对应相机驱动</p>
-<h2 id="网卡配置"><a href="#网卡配置" class="headerlink" title="网卡配置"></a>网卡配置</h2><p>配置巨帧等,如图:</p>
-<p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-edit.PNG" alt="NetWorkConfig"></p>
-<p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-Jumbo.PNG" alt="NetWorkConfig"></p>
-<p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-packet.PNG" alt="NetWorkConfig"></p>
-<h2 id="相机IP配置"><a href="#相机IP配置" class="headerlink" title="相机IP配置"></a>相机IP配置</h2><h3 id="识别相机"><a href="#识别相机" class="headerlink" title="识别相机"></a>识别相机</h3><p>打开控制面板IP配置<br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP.PNG" alt="IPConfig"></p>
-<p>打开Pylon IPConfig软件<br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/PylonIPConfig.PNG" alt="Pylon IPConfig"></p>
+<h2 id="Basler驱动安装">Basler驱动安装</h2>
+<p>根据相机版本安装对应相机驱动</p>
+<h2 id="网卡配置">网卡配置</h2>
+<p>配置巨帧等,如图:</p>
+<p><img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-edit.PNG" alt="NetWorkConfig" /></p>
+<p><img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-Jumbo.PNG" alt="NetWorkConfig" /></p>
+<p><img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-packet.PNG" alt="NetWorkConfig" /></p>
+<h2 id="相机IP配置">相机IP配置</h2>
+<h3 id="识别相机">识别相机</h3>
+<p>打开控制面板IP配置<br />
+<img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP.PNG" alt="IPConfig" /></p>
+<p>打开Pylon IPConfig软件<br />
+<img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/PylonIPConfig.PNG" alt="Pylon IPConfig" /></p>
 <p>根据IP与Serial Number的对应对网卡进行标注</p>
-<h3 id="配置静态IP"><a href="#配置静态IP" class="headerlink" title="配置静态IP"></a>配置静态IP</h3><p>给相机分配静态IP</p>
+<h3 id="配置静态IP">配置静态IP</h3>
+<p>给相机分配静态IP</p>
 <p>分配规则:</p>
 <blockquote>
 <p>1.网卡与相机在同一网段</p>
 <p>2.不同相机分配不同网段</p>
 </blockquote>
 <p>例如:</p>
-<p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-detail.PNG" alt="IPConfig"></p>
-<h2 id="相机检查"><a href="#相机检查" class="headerlink" title="相机检查"></a>相机检查</h2><p>打开Pylon View软件检查各相机打开及图像读取是否正常</p>
-<p><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon.PNG" alt="PylonView"><br><img src="/%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon-Features.PNG" alt="PylonView"></p>
+<p><img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/IP-detail.PNG" alt="IPConfig" /></p>
+<h2 id="相机检查">相机检查</h2>
+<p>打开Pylon View软件检查各相机打开及图像读取是否正常</p>
+<p><img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon.PNG" alt="PylonView" /><br />
+<img src="%E8%BD%AE%E7%9C%89%E7%9B%B8%E6%9C%BA%E9%85%8D%E7%BD%AE/Pylon-Features.PNG" alt="PylonView" /></p>
 
     </div>
 
@@ -423,7 +434,7 @@ BBK轮眉相机配置
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -487,13 +498,13 @@ BBK轮眉相机配置
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -504,7 +515,7 @@ BBK轮眉相机配置
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -537,7 +548,6 @@ BBK轮眉相机配置
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -553,70 +563,11 @@ BBK轮眉相机配置
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -658,7 +609,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -673,7 +624,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -707,6 +659,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

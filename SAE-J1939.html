@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -260,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.1k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,203 +288,279 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 了解帧格式
 了解单,多帧数据请求
 <span id="more"></span>
-
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>J1939标准用于卡车、公共汽车和移动液压等重型车辆</p>
+<h2 id="简介">简介</h2>
+<p>J1939标准用于卡车、公共汽车和移动液压等重型车辆</p>
 <p>J1939标准定义的大部分报文均旨在广播,使用CAN 2.0B协议中定义的29位标识符</p>
-<h2 id="协议结构"><a href="#协议结构" class="headerlink" title="协议结构"></a>协议结构</h2><h3 id="J1939物理层（基于J1939-11-x2F-15）"><a href="#J1939物理层（基于J1939-11-x2F-15）" class="headerlink" title="J1939物理层（基于J1939-11&#x2F;15）"></a>J1939物理层（基于J1939-11&#x2F;15）</h3><p>速率:250kbit&#x2F;s<br>差动电压方式传输,隐性电压均为2.5,显性电压1.5,3.5<br>终端电阻:120欧<br>最大传输线长40m<br>同一网络最多ECU个数为30</p>
-<h3 id="J1939数据链路层（基于J1939-21）"><a href="#J1939数据链路层（基于J1939-21）" class="headerlink" title="J1939数据链路层（基于J1939-21）"></a>J1939数据链路层（基于J1939-21）</h3><table>
-<thead>
-<tr>
-<th align="center">优先级&#x2F;P</th>
-<th align="center">扩展数据页&#x2F;EDP</th>
-<th align="center">数据页&#x2F;DP</th>
-<th align="center">PDU格式&#x2F;PF</th>
-<th align="center">特定PDU&#x2F;PS</th>
-<th align="center">源地址&#x2F;SA</th>
-<th align="center">DATA</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">3bit</td>
-<td align="center">1bit</td>
-<td align="center">1bit</td>
-<td align="center">8bit</td>
-<td align="center">8bit</td>
-<td align="center">8bit</td>
-<td align="center">0~64bit</td>
-</tr>
-</tbody></table>
-<p>P：Priority，优先级，调整该值可改变报文在总线上的仲裁优先级<br>These three bits are used to optimize message latency for transmission onto the bus only. They should be globally<br>masked off by the receiver (ignored). The priority of any message can be set from highest, 0 (0002), to lowest, 7 (1112).<br>The default for all control oriented messages is 3 (0112). The default for all other informational, proprietary, request, and<br>ACK messages is 6 (1102). This permits the priority to be raised or lowered in the future as new PGNs are assigned and<br>bus traffic changes. A recommended priority is assigned to each PGN when it is added to the application layer document.<br>However, the priority field should be reprogrammable to allow for network tuning by the OEM should the need arise</p>
-<p>EDP及DP：扩展数据页及数据页，当前均为0<br>The Extended Data Page bit is used in conjunction with the Data Page bit to determine the structure of the CAN identifier<br>of the CAN data frame. All J1939 messages should set the Extended Data Page bit to ZERO on transmit. See Table 3,<br>Definition of Extended Data Page and Data Page Use, to find the defined uses of the EDP and DP fields. Future<br>definitions might possibly be expanding the PDU Format field, defining new PDU formats, or increasing the address<br>space</p>
+<h2 id="协议结构">协议结构</h2>
+<h3 id="J1939物理层（基于J1939-11-15）">J1939物理层（基于J1939-11/15）</h3>
+<p>速率:250kbit/s<br />
+差动电压方式传输,隐性电压均为2.5,显性电压1.5,3.5<br />
+终端电阻:120欧<br />
+最大传输线长40m<br />
+同一网络最多ECU个数为30</p>
+<h3 id="J1939数据链路层（基于J1939-21）">J1939数据链路层（基于J1939-21）</h3>
 <table>
 <thead>
 <tr>
-<th align="center">Extended Data Page bit 25 CAN ID bit 25</th>
-<th align="center">Data Page bit 24 CAN ID bit 24</th>
-<th align="center">Description</th>
+<th style="text-align:center">优先级/P</th>
+<th style="text-align:center">扩展数据页/EDP</th>
+<th style="text-align:center">数据页/DP</th>
+<th style="text-align:center">PDU格式/PF</th>
+<th style="text-align:center">特定PDU/PS</th>
+<th style="text-align:center">源地址/SA</th>
+<th style="text-align:center">DATA</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">SAE J1939 page 0 PGNs</td>
-</tr>
+<tbody>
 <tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">SAE J1939 page 1 PGNs</td>
+<td style="text-align:center">3bit</td>
+<td style="text-align:center">1bit</td>
+<td style="text-align:center">1bit</td>
+<td style="text-align:center">8bit</td>
+<td style="text-align:center">8bit</td>
+<td style="text-align:center">8bit</td>
+<td style="text-align:center">0~64bit</td>
 </tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">SAE J1939 reserved</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">ISO 15765-3 defined</td>
-</tr>
-</tbody></table>
-<p>PF：PDU format，确定PDU格式，如PF值区间为0~239（0x00~0xEF），则表明是PDU1格式，如区间为240~255（0xF0~0xFF），则表明是PDU2格式。该场是PGN的组成部分<br>PS：PDU Specific，如为PUD1格式，则该场表示帧的目标地址，如为PDU2格式，则表示组扩展GE（用于扩展PGN的个数）</p>
+</tbody>
+</table>
+<p>P：Priority，优先级，调整该值可改变报文在总线上的仲裁优先级<br />
+These three bits are used to optimize message latency for transmission onto the bus only. They should be globally<br />
+masked off by the receiver (ignored). The priority of any message can be set from highest, 0 (0002), to lowest, 7 (1112).<br />
+The default for all control oriented messages is 3 (0112). The default for all other informational, proprietary, request, and<br />
+ACK messages is 6 (1102). This permits the priority to be raised or lowered in the future as new PGNs are assigned and<br />
+bus traffic changes. A recommended priority is assigned to each PGN when it is added to the application layer document.<br />
+However, the priority field should be reprogrammable to allow for network tuning by the OEM should the need arise</p>
+<p>EDP及DP：扩展数据页及数据页，当前均为0<br />
+The Extended Data Page bit is used in conjunction with the Data Page bit to determine the structure of the CAN identifier<br />
+of the CAN data frame. All J1939 messages should set the Extended Data Page bit to ZERO on transmit. See Table 3,<br />
+Definition of Extended Data Page and Data Page Use, to find the defined uses of the EDP and DP fields. Future<br />
+definitions might possibly be expanding the PDU Format field, defining new PDU formats, or increasing the address<br />
+space</p>
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">PDU Format Field</th>
-<th align="center">PDU Specific Field</th>
+<th style="text-align:center">Extended Data Page bit 25 CAN ID bit 25</th>
+<th style="text-align:center">Data Page bit 24 CAN ID bit 24</th>
+<th style="text-align:center">Description</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">PDU1 Format</td>
-<td align="center">0-239</td>
-<td align="center">Destination Address</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">SAE J1939 page 0 PGNs</td>
 </tr>
 <tr>
-<td align="center">PDU2 Format</td>
-<td align="center">240-255</td>
-<td align="center">Group Extension</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">SAE J1939 page 1 PGNs</td>
 </tr>
-</tbody></table>
-<p>SA：Source Address，源地址<br>The Source Address field is 8 bits long. There shall only be one device on the network with a given source address.<br>Therefore, the source address field assures that the CAN identifier is unique, as required by CAN. Address management<br>and allocation is detailed in SAE J1939-81. Procedures are defined in SAE J1939-81 to prevent duplication of source<br>addresses. Reference SAE J1939 Appendix B, Tables B2 through B9, for source address assignments</p>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">SAE J1939 reserved</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">ISO 15765-3 defined</td>
+</tr>
+</tbody>
+</table>
+<p>PF：PDU format，确定PDU格式，如PF值区间为0~239（0x00~0xEF），则表明是PDU1格式，如区间为240~255（0xF0~0xFF），则表明是PDU2格式。该场是PGN的组成部分<br />
+PS：PDU Specific，如为PUD1格式，则该场表示帧的目标地址，如为PDU2格式，则表示组扩展GE（用于扩展PGN的个数）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">PDU Format Field</th>
+<th style="text-align:center">PDU Specific Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PDU1 Format</td>
+<td style="text-align:center">0-239</td>
+<td style="text-align:center">Destination Address</td>
+</tr>
+<tr>
+<td style="text-align:center">PDU2 Format</td>
+<td style="text-align:center">240-255</td>
+<td style="text-align:center">Group Extension</td>
+</tr>
+</tbody>
+</table>
+<p>SA：Source Address，源地址<br />
+The Source Address field is 8 bits long. There shall only be one device on the network with a given source address.<br />
+Therefore, the source address field assures that the CAN identifier is unique, as required by CAN. Address management<br />
+and allocation is detailed in SAE J1939-81. Procedures are defined in SAE J1939-81 to prevent duplication of source<br />
+addresses. Reference SAE J1939 Appendix B, Tables B2 through B9, for source address assignments</p>
 <p>在ID场中，Priority值根据需要调整，EDP和DP一般均为0，PF和PS决定了报文的PGN，SA体现了报文的发送节点。</p>
-<h4 id="请求PGN"><a href="#请求PGN" class="headerlink" title="请求PGN"></a>请求PGN</h4><p>PGN55904(EA00)专门用于数据请求</p>
+<h4 id="请求PGN">请求PGN</h4>
+<p>PGN55904(EA00)专门用于数据请求</p>
 <blockquote>
-<p>定义:用于从一个或多个网络设备请求参数组<br>速率:用户定义,推荐每秒不多于2~3次<br>数据长度:3字节<br>数据页:0<br>PDU格式:234(EA)<br>PDU特定域:目标地址<br>缺省优先级:6<br>参数组编号:59904(EA00)<br>参数定义:字节1,2,3位被请求参数组编号</p>
+<p>定义:用于从一个或多个网络设备请求参数组<br />
+速率:用户定义,推荐每秒不多于2~3次<br />
+数据长度:3字节<br />
+数据页:0<br />
+PDU格式:234(EA)<br />
+PDU特定域:目标地址<br />
+缺省优先级:6<br />
+参数组编号:59904(EA00)<br />
+参数定义:字节1,2,3位被请求参数组编号</p>
 </blockquote>
-<p>例如:请求发动机转速<br>Send:18EA00FF 04 F0 00<br>recv:0CF00400 00 00 00 00 00 00 00 00</p>
-<h4 id="多帧传输"><a href="#多帧传输" class="headerlink" title="多帧传输"></a>多帧传输</h4><h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><table>
-<thead>
-<tr>
-<th align="center">缩写</th>
-<th align="center">英文</th>
-<th align="center">释义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">TP</td>
-<td align="center">Transport Protocol</td>
-<td align="center">传输协议</td>
-</tr>
-<tr>
-<td align="center">CM</td>
-<td align="center">Connection Management</td>
-<td align="center">连接管理</td>
-</tr>
-<tr>
-<td align="center">RTS</td>
-<td align="center">Request to Send</td>
-<td align="center">请求发送</td>
-</tr>
-<tr>
-<td align="center">CTS</td>
-<td align="center">Clear to Send</td>
-<td align="center">允许发送</td>
-</tr>
-<tr>
-<td align="center">DT</td>
-<td align="center">Data Transmission</td>
-<td align="center">数据传输</td>
-</tr>
-<tr>
-<td align="center">BAM</td>
-<td align="center">Broadcast Announce Message</td>
-<td align="center">广播报文</td>
-</tr>
-</tbody></table>
-<p>TP.CM</p>
+<p>例如:请求发动机转速<br />
+Send:18EA00FF 04 F0 00<br />
+recv:0CF00400 00 00 00 00 00 00 00 00</p>
+<h4 id="多帧传输">多帧传输</h4>
+<h5 id="定义">定义</h5>
 <table>
 <thead>
 <tr>
-<th align="center">数据</th>
-<th align="center">Byte0</th>
-<th align="center">Byte1</th>
-<th align="center">Byte2</th>
-<th align="center">Byte3</th>
-<th align="center">Byte4</th>
-<th align="center">Byte5</th>
-<th align="center">Byte6</th>
-<th align="center">Byte7</th>
+<th style="text-align:center">缩写</th>
+<th style="text-align:center">英文</th>
+<th style="text-align:center">释义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">TP.CM</td>
-<td align="center">控制字</td>
-<td align="center">报文字节数</td>
-<td align="center"></td>
-<td align="center">全部数据包数</td>
-<td align="center">最大数据包数</td>
-<td align="center">能够发送的数据包数</td>
-<td align="center">要发送的下一个数据包数</td>
-<td align="center">包编号</td>
+<tbody>
+<tr>
+<td style="text-align:center">TP</td>
+<td style="text-align:center">Transport Protocol</td>
+<td style="text-align:center">传输协议</td>
 </tr>
 <tr>
-<td align="center">TP.CM.RTS</td>
-<td align="center">16</td>
-<td align="center">整个报文的字节数</td>
-<td align="center"></td>
-<td align="center">全部数据包数</td>
-<td align="center">最大数据包(默认FF)</td>
-<td align="center">PGN</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">CM</td>
+<td style="text-align:center">Connection Management</td>
+<td style="text-align:center">连接管理</td>
 </tr>
 <tr>
-<td align="center">TP.CM.CTS</td>
-<td align="center">17</td>
-<td align="center">能够发送的包数(不超过RTS[4])</td>
-<td align="center">要发送下一数据包编号</td>
-<td align="center">FF</td>
-<td align="center">FF</td>
-<td align="center">PGN</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">RTS</td>
+<td style="text-align:center">Request to Send</td>
+<td style="text-align:center">请求发送</td>
 </tr>
 <tr>
-<td align="center">TP.CM.Abort</td>
-<td align="center">255</td>
-<td align="center">放弃连接原因</td>
-<td align="center">FF</td>
-<td align="center">FF</td>
-<td align="center">FF</td>
-<td align="center">PGN</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">CTS</td>
+<td style="text-align:center">Clear to Send</td>
+<td style="text-align:center">允许发送</td>
 </tr>
 <tr>
-<td align="center">TP.CM.EndofMsgAsk</td>
-<td align="center">19</td>
-<td align="center">整个报文字节数</td>
-<td align="center"></td>
-<td align="center">全部数据包数</td>
-<td align="center">FF</td>
-<td align="center">PGN</td>
-<td align="center"></td>
-<td align="center"></td>
+<td style="text-align:center">DT</td>
+<td style="text-align:center">Data Transmission</td>
+<td style="text-align:center">数据传输</td>
 </tr>
-</tbody></table>
-<h5 id="请求多帧示例"><a href="#请求多帧示例" class="headerlink" title="请求多帧示例"></a>请求多帧示例</h5><p>T:18EA0081 EC FE 00<br>R:18EC8100 10 12 00 03 FF EC FE 00<br>T:18EC0081 11 03 01 FF FF EC FE 00<br>R:18EB8100 01 XX XX XX XX XX XX XX<br>R:18EB8100 02 XX XX XX XX XX XX XX<br>R:18EB8100 03 XX XX XX XX FF FF FF<br>T:18EC0081 13 12 00 03 FF EC FE 00</p>
-<h3 id="J1939网络层（基于J1939-31）"><a href="#J1939网络层（基于J1939-31）" class="headerlink" title="J1939网络层（基于J1939-31）"></a>J1939网络层（基于J1939-31）</h3><h3 id="J1939应用层（基于J1939-71）"><a href="#J1939应用层（基于J1939-71）" class="headerlink" title="J1939应用层（基于J1939-71）"></a>J1939应用层（基于J1939-71）</h3><p>This particular SAE Recommended Practice, SAE J1939-71, describes an Application Layer for<br>vehicle use.<br>定义SPN与PGN</p>
-<h3 id="J1939网络管理（基于J1939-81）"><a href="#J1939网络管理（基于J1939-81）" class="headerlink" title="J1939网络管理（基于J1939-81）"></a>J1939网络管理（基于J1939-81）</h3><h3 id="J1939诊断（基于J1939-13-x2F-73）"><a href="#J1939诊断（基于J1939-13-x2F-73）" class="headerlink" title="J1939诊断（基于J1939-13&#x2F;73）"></a>J1939诊断（基于J1939-13&#x2F;73）</h3><p>DM1 Diagnostic Message 1, Active Diagnostic Trouble Codes<br>DM2 Diagnostic Message 2, Previously Active Diagnostic Trouble Codes<br>DM3 Diagnostic Message 3, Diagnostic Data Clear&#x2F;Reset For Previously Active DTCs<br>DM4 Diagnostic Message 4, Freeze Frame Parameters<br>DM5 Diagnostic Message 5, Diagnostic Readiness<br>DM6 Diagnostic Message 6, Continuously Monitored Systems Test Results<br>DM7 Diagnostic Message 7, Command Non-Continuously Monitored Test<br>DM8 Diagnostic Message 8, Test Results For Non-Continuously Monitored Systems<br>DM9 Diagnostic Message 9, Oxygen Sensor Test Results<br>DM10 Diagnostic Message 10, Non-Continuously Monitored Systems Test IDs Support<br>DM11 Diagnostic Message 11, Diagnostic Data Clear&#x2F;Reset For Active DTCs<br>DM12 Diagnostic Message 12, Emissions Related Active DTCs<br>DTC Diagnostic Trouble Code<br>FTP Federal Test Procedure<br>MIL Malfunction Indicator Lamp<br>NA Not applicable<br>PID Parameter Identifier (SAE J1587 or SAE J1979)<br>OBD II On Board Diagnostics II</p>
+<tr>
+<td style="text-align:center">BAM</td>
+<td style="text-align:center">Broadcast Announce Message</td>
+<td style="text-align:center">广播报文</td>
+</tr>
+</tbody>
+</table>
+<p><a target="_blank" rel="noopener" href="http://TP.CM">TP.CM</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数据</th>
+<th style="text-align:center">Byte0</th>
+<th style="text-align:center">Byte1</th>
+<th style="text-align:center">Byte2</th>
+<th style="text-align:center">Byte3</th>
+<th style="text-align:center">Byte4</th>
+<th style="text-align:center">Byte5</th>
+<th style="text-align:center">Byte6</th>
+<th style="text-align:center">Byte7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="http://TP.CM">TP.CM</a></td>
+<td style="text-align:center">控制字</td>
+<td style="text-align:center">报文字节数</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">全部数据包数</td>
+<td style="text-align:center">最大数据包数</td>
+<td style="text-align:center">能够发送的数据包数</td>
+<td style="text-align:center">要发送的下一个数据包数</td>
+<td style="text-align:center">包编号</td>
+</tr>
+<tr>
+<td style="text-align:center">TP.CM.RTS</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">整个报文的字节数</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">全部数据包数</td>
+<td style="text-align:center">最大数据包(默认FF)</td>
+<td style="text-align:center">PGN</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">TP.CM.CTS</td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">能够发送的包数(不超过RTS[4])</td>
+<td style="text-align:center">要发送下一数据包编号</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">PGN</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">TP.CM.Abort</td>
+<td style="text-align:center">255</td>
+<td style="text-align:center">放弃连接原因</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">PGN</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">TP.CM.EndofMsgAsk</td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">整个报文字节数</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">全部数据包数</td>
+<td style="text-align:center">FF</td>
+<td style="text-align:center">PGN</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="请求多帧示例">请求多帧示例</h5>
+<p>T:18EA0081 EC FE 00<br />
+R:18EC8100 10 12 00 03 FF EC FE 00<br />
+T:18EC0081 11 03 01 FF FF EC FE 00<br />
+R:18EB8100 01 XX XX XX XX XX XX XX<br />
+R:18EB8100 02 XX XX XX XX XX XX XX<br />
+R:18EB8100 03 XX XX XX XX FF FF FF<br />
+T:18EC0081 13 12 00 03 FF EC FE 00</p>
+<h3 id="J1939网络层（基于J1939-31）">J1939网络层（基于J1939-31）</h3>
+<h3 id="J1939应用层（基于J1939-71）">J1939应用层（基于J1939-71）</h3>
+<p>This particular SAE Recommended Practice, SAE J1939-71, describes an Application Layer for<br />
+vehicle use.<br />
+定义SPN与PGN</p>
+<h3 id="J1939网络管理（基于J1939-81）">J1939网络管理（基于J1939-81）</h3>
+<h3 id="J1939诊断（基于J1939-13-73）">J1939诊断（基于J1939-13/73）</h3>
+<p>DM1 Diagnostic Message 1, Active Diagnostic Trouble Codes<br />
+DM2 Diagnostic Message 2, Previously Active Diagnostic Trouble Codes<br />
+DM3 Diagnostic Message 3, Diagnostic Data Clear/Reset For Previously Active DTCs<br />
+DM4 Diagnostic Message 4, Freeze Frame Parameters<br />
+DM5 Diagnostic Message 5, Diagnostic Readiness<br />
+DM6 Diagnostic Message 6, Continuously Monitored Systems Test Results<br />
+DM7 Diagnostic Message 7, Command Non-Continuously Monitored Test<br />
+DM8 Diagnostic Message 8, Test Results For Non-Continuously Monitored Systems<br />
+DM9 Diagnostic Message 9, Oxygen Sensor Test Results<br />
+DM10 Diagnostic Message 10, Non-Continuously Monitored Systems Test IDs Support<br />
+DM11 Diagnostic Message 11, Diagnostic Data Clear/Reset For Active DTCs<br />
+DM12 Diagnostic Message 12, Emissions Related Active DTCs<br />
+DTC Diagnostic Trouble Code<br />
+FTP Federal Test Procedure<br />
+MIL Malfunction Indicator Lamp<br />
+NA Not applicable<br />
+PID Parameter Identifier (SAE J1587 or SAE J1979)<br />
+OBD II On Board Diagnostics II</p>
 
     </div>
 
@@ -562,7 +642,7 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">协议结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%89%A9%E7%90%86%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-11-x2F-15%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">J1939物理层（基于J1939-11&#x2F;15）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-21%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">J1939数据链路层（基于J1939-21）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82PGN"><span class="nav-number">2.2.1.</span> <span class="nav-text">请求PGN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%B8%A7%E4%BC%A0%E8%BE%93"><span class="nav-number">2.2.2.</span> <span class="nav-text">多帧传输</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%9A%E5%B8%A7%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">请求多帧示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-31%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">J1939网络层（基于J1939-31）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E5%BA%94%E7%94%A8%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-71%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">J1939应用层（基于J1939-71）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-81%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">J1939网络管理（基于J1939-81）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E8%AF%8A%E6%96%AD%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-13-x2F-73%EF%BC%89"><span class="nav-number">2.6.</span> <span class="nav-text">J1939诊断（基于J1939-13&#x2F;73）</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">协议结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%89%A9%E7%90%86%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-11-15%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">J1939物理层（基于J1939-11&#x2F;15）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-21%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">J1939数据链路层（基于J1939-21）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82PGN"><span class="nav-number">2.2.1.</span> <span class="nav-text">请求PGN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%B8%A7%E4%BC%A0%E8%BE%93"><span class="nav-number">2.2.2.</span> <span class="nav-text">多帧传输</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%9A%E5%B8%A7%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">请求多帧示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-31%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">J1939网络层（基于J1939-31）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E5%BA%94%E7%94%A8%E5%B1%82%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-71%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">J1939应用层（基于J1939-71）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-81%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">J1939网络管理（基于J1939-81）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J1939%E8%AF%8A%E6%96%AD%EF%BC%88%E5%9F%BA%E4%BA%8EJ1939-13-73%EF%BC%89"><span class="nav-number">2.6.</span> <span class="nav-text">J1939诊断（基于J1939-13&#x2F;73）</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -578,7 +658,7 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -642,13 +722,13 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -659,7 +739,7 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -692,7 +772,6 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -708,70 +787,11 @@ J1939主要需要了解ID组成,根据所需数据查找SPN,PGN然后组成ID;
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -813,7 +833,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -828,7 +848,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -862,6 +883,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

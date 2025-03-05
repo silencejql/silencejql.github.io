@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -282,206 +286,245 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="Modbus-TCP-数据帧"><a href="#Modbus-TCP-数据帧" class="headerlink" title="Modbus TCP 数据帧"></a>Modbus TCP 数据帧</h2><p>MBAP + PDU<br>MBAP： Modbus Application Protocol Header<br>PDU：Protocol Data Unit<br>MBAP + Function code + Data</p>
-<p>示例：<br>00 01 00 00 00 06 01<br>事务标识2+modbus协议2+数据长度2+Slave站号1</p>
-<p>Function code：<br>0x01：读线圈<br>02：读离散量输入<br>03：读保持寄存器<br>04：读输入寄存器<br>05：写单个线圈<br>06：写单个保持寄存器<br>10：写多个保持寄存器<br>0F：写多个线圈</p>
+<h2 id="Modbus-TCP-数据帧">Modbus TCP 数据帧</h2>
+<p>MBAP + PDU<br />
+MBAP： Modbus Application Protocol Header<br />
+PDU：Protocol Data Unit<br />
+MBAP + Function code + Data</p>
+<p>示例：<br />
+00 01 00 00 00 06 01<br />
+事务标识2+modbus协议2+数据长度2+Slave站号1</p>
+<p>Function code：<br />
+0x01：读线圈<br />
+02：读离散量输入<br />
+03：读保持寄存器<br />
+04：读输入寄存器<br />
+05：写单个线圈<br />
+06：写单个保持寄存器<br />
+10：写多个保持寄存器<br />
+0F：写多个线圈</p>
 <p>报文头部：</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
-<th align="center">客户端</th>
-<th align="center">服务器</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
+<th style="text-align:center">客户端</th>
+<th style="text-align:center">服务器</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 0 – 1</td>
-<td align="center">传输标志，事务标识符</td>
-<td align="center">由客户端生成</td>
-<td align="center">应答时复制该值</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 0 – 1</td>
+<td style="text-align:center">传输标志，事务标识符</td>
+<td style="text-align:center">由客户端生成</td>
+<td style="text-align:center">应答时复制该值</td>
 </tr>
 <tr>
-<td align="center">BYTE 2 – 3</td>
-<td align="center">协议标识，Modbus 协议&#x3D;0</td>
-<td align="center">由客户端生成</td>
-<td align="center">应答时复制该值</td>
+<td style="text-align:center">BYTE 2 – 3</td>
+<td style="text-align:center">协议标识，Modbus 协议=0</td>
+<td style="text-align:center">由客户端生成</td>
+<td style="text-align:center">应答时复制该值</td>
 </tr>
 <tr>
-<td align="center">BYTE 4 ¬-  5</td>
-<td align="center">报文后续数据的字节长度</td>
-<td align="center">由客户端生成</td>
-<td align="center">应答时由服务器重新生成</td>
+<td style="text-align:center">BYTE 4 ¬-  5</td>
+<td style="text-align:center">报文后续数据的字节长度</td>
+<td style="text-align:center">由客户端生成</td>
+<td style="text-align:center">应答时由服务器重新生成</td>
 </tr>
 <tr>
-<td align="center">BYTE 6</td>
-<td align="center">MODBUS单元标志</td>
-<td align="center">由客户端生成</td>
-<td align="center">应答时复制该值</td>
+<td style="text-align:center">BYTE 6</td>
+<td style="text-align:center">MODBUS单元标志</td>
+<td style="text-align:center">由客户端生成</td>
+<td style="text-align:center">应答时复制该值</td>
 </tr>
-</tbody></table>
-<p>Modbus TCP协议功能码报文<br>功能码3 读多个寄存器<br>请求报文格式</p>
+</tbody>
+</table>
+<p>Modbus TCP协议功能码报文<br />
+功能码3 读多个寄存器<br />
+请求报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;3</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=3</td>
 </tr>
 <tr>
-<td align="center">BYTE 8 - 9</td>
-<td align="center">读取数据的寄存器偏移地址</td>
+<td style="text-align:center">BYTE 8 - 9</td>
+<td style="text-align:center">读取数据的寄存器偏移地址</td>
 </tr>
 <tr>
-<td align="center">BYTE 10 - 11</td>
-<td align="center">读取数据的寄存器数量，单位为Word</td>
+<td style="text-align:center">BYTE 10 - 11</td>
+<td style="text-align:center">读取数据的寄存器数量，单位为Word</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>读数据成功的响应报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;3</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=3</td>
 </tr>
 <tr>
-<td align="center">BYTE 8</td>
-<td align="center">读取到的数据的字节数</td>
+<td style="text-align:center">BYTE 8</td>
+<td style="text-align:center">读取到的数据的字节数</td>
 </tr>
 <tr>
-<td align="center">BYTE 9- 10</td>
-<td align="center">读取到的寄存器1的数据</td>
+<td style="text-align:center">BYTE 9- 10</td>
+<td style="text-align:center">读取到的寄存器1的数据</td>
 </tr>
 <tr>
-<td align="center">BYTE 11 - 12</td>
-<td align="center">读取到的寄存器2的数据</td>
+<td style="text-align:center">BYTE 11 - 12</td>
+<td style="text-align:center">读取到的寄存器2的数据</td>
 </tr>
 <tr>
-<td align="center">….</td>
-<td align="center">…</td>
+<td style="text-align:center">….</td>
+<td style="text-align:center">…</td>
 </tr>
-</tbody></table>
-<p>功能码16 写多个寄存器<br>请求报文格式</p>
+</tbody>
+</table>
+<p>功能码16 写多个寄存器<br />
+请求报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;16</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=16</td>
 </tr>
 <tr>
-<td align="center">BYTE 8 - 9</td>
-<td align="center">写数据的寄存器偏移地址</td>
+<td style="text-align:center">BYTE 8 - 9</td>
+<td style="text-align:center">写数据的寄存器偏移地址</td>
 </tr>
 <tr>
-<td align="center">BYTE 10 - 11</td>
-<td align="center">写数据的寄存器数量，单位为Word</td>
+<td style="text-align:center">BYTE 10 - 11</td>
+<td style="text-align:center">写数据的寄存器数量，单位为Word</td>
 </tr>
 <tr>
-<td align="center">BYTE 12</td>
-<td align="center">写数据的字节数（数据等于写数据的寄存器数量 x 2）</td>
+<td style="text-align:center">BYTE 12</td>
+<td style="text-align:center">写数据的字节数（数据等于写数据的寄存器数量 x 2）</td>
 </tr>
 <tr>
-<td align="center">BYTE 13 - 14</td>
-<td align="center">寄存器1的数据</td>
+<td style="text-align:center">BYTE 13 - 14</td>
+<td style="text-align:center">寄存器1的数据</td>
 </tr>
 <tr>
-<td align="center">BYTE 15 - 16</td>
-<td align="center">寄存器1的数据</td>
+<td style="text-align:center">BYTE 15 - 16</td>
+<td style="text-align:center">寄存器1的数据</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>写数据成功的响应报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;16</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=16</td>
 </tr>
 <tr>
-<td align="center">BYTE 8 - 9</td>
-<td align="center">写数据的寄存器偏移地址</td>
+<td style="text-align:center">BYTE 8 - 9</td>
+<td style="text-align:center">写数据的寄存器偏移地址</td>
 </tr>
 <tr>
-<td align="center">BYTE 10 - 11</td>
-<td align="center">写数据的寄存器数量，单位为WORD</td>
+<td style="text-align:center">BYTE 10 - 11</td>
+<td style="text-align:center">写数据的寄存器数量，单位为WORD</td>
 </tr>
-</tbody></table>
-<p>功能码6 写单个寄存器<br>请求报文格式</p>
+</tbody>
+</table>
+<p>功能码6 写单个寄存器<br />
+请求报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;6</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=6</td>
 </tr>
 <tr>
-<td align="center">BYTE 8 - 9</td>
-<td align="center">写数据的寄存器偏移地址</td>
+<td style="text-align:center">BYTE 8 - 9</td>
+<td style="text-align:center">写数据的寄存器偏移地址</td>
 </tr>
 <tr>
-<td align="center">BYTE 10 - 11</td>
-<td align="center">寄存器的数值</td>
+<td style="text-align:center">BYTE 10 - 11</td>
+<td style="text-align:center">寄存器的数值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>写数据成功的响应报文格式</p>
 <table>
 <thead>
 <tr>
-<th align="center">字节序号</th>
-<th align="center">含义</th>
+<th style="text-align:center">字节序号</th>
+<th style="text-align:center">含义</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">BYTE 7</td>
-<td align="center">功能码&#x3D;6</td>
+<tbody>
+<tr>
+<td style="text-align:center">BYTE 7</td>
+<td style="text-align:center">功能码=6</td>
 </tr>
 <tr>
-<td align="center">BYTE 8 - 9</td>
-<td align="center">写数据的寄存器偏移地址</td>
+<td style="text-align:center">BYTE 8 - 9</td>
+<td style="text-align:center">写数据的寄存器偏移地址</td>
 </tr>
 <tr>
-<td align="center">BYTE 10 - 11</td>
-<td align="center">寄存器的数值</td>
+<td style="text-align:center">BYTE 10 - 11</td>
+<td style="text-align:center">寄存器的数值</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>控制 IB IL 24 DO8开关量输出模块请求报文，模块寄存器地址：384，控制数据在最后一个字节；</p>
 <p>0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
-<p>控制DO输出成功响应报文<br>0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
+<p>控制DO输出成功响应报文<br />
+0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
 <p>读取 IB IL 24 DI8开关量输入模块请求报文，模块寄存器地址：0，数据寄存器长度为1；</p>
 <p>0B 01 00 00 00 06 FF 03 00 00 00 01</p>
-<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br>0B 01 00 00 00 05 FF 03 02 00 XX</p>
+<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br />
+0B 01 00 00 00 05 FF 03 02 00 XX</p>
 <p>读取 IB IL AI2SF-230模拟量输入模块请求报文，模块寄存器地址：192，数据寄存器长度为2，该模块默认连接0~10V信号；</p>
 <p>0B 02 00 00 00 06 FF 03 00 C0 00 02</p>
-<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br>0B 02 00 00 00 07 FF 03 04 XX XX XX XX</p>
-<h2 id="Kepserver"><a href="#Kepserver" class="headerlink" title="Kepserver"></a>Kepserver</h2><p>Address<br>输出线圈：  000001 ~ 065536<br>输入线圈：  100001 ~ 165536<br>内部寄存器：300001 ~ 365536<br>保持寄存器：400001 ~ 465536</p>
-<p>访问输出线圈：Address：000001<br>访问连续10个输出线圈：Address：000001#10</p>
-<p>访问保持寄存器：Address：400001<br>访问连续10个保持寄存器：Address：400001[10]</p>
+<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br />
+0B 02 00 00 00 07 FF 03 04 XX XX XX XX</p>
+<h2 id="Kepserver">Kepserver</h2>
+<p>Address<br />
+输出线圈：  000001 ~ 065536<br />
+输入线圈：  100001 ~ 165536<br />
+内部寄存器：300001 ~ 365536<br />
+保持寄存器：400001 ~ 465536</p>
+<p>访问输出线圈：Address：000001<br />
+访问连续10个输出线圈：Address：000001#10</p>
+<p>访问保持寄存器：Address：400001<br />
+访问连续10个保持寄存器：Address：400001[10]</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-
 
     </div>
 
@@ -579,7 +622,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -643,13 +686,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -660,7 +703,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -693,7 +736,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -709,70 +751,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -814,7 +797,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -829,7 +812,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -863,6 +847,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

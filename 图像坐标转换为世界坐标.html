@@ -30,7 +30,7 @@
 <meta property="og:description" content="理解CameraLib.CameraAgorithm下的public static PointF3D Pixel2World(PointF Pixel, CameraBase _camera, double Distance)图像坐标转换为空间坐标的过程涉及相机的内参矩阵、外参矩阵（旋转矩阵和平移向量）以及可能的深度信息.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-04T05:53:13.000Z">
-<meta property="article:modified_time" content="2025-03-04T05:56:07.494Z">
+<meta property="article:modified_time" content="2025-03-05T07:23:47.646Z">
 <meta property="article:author" content="Justin">
 <meta name="twitter:card" content="summary">
 
@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -222,10 +226,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-03-04 13:53:13 / 修改时间：13:56:07" itemprop="dateCreated datePublished" datetime="2025-03-04T13:53:13+08:00">2025-03-04</time>
+              <time title="创建时间：2025-03-04 13:53:13" itemprop="dateCreated datePublished" datetime="2025-03-04T13:53:13+08:00">2025-03-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-05 15:23:47" itemprop="dateModified" datetime="2025-03-05T15:23:47+08:00">2025-03-05</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -254,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>3.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -274,9 +284,7 @@
 
       
         <p>理解<code>CameraLib.CameraAgorithm</code>下的<code>public static PointF3D Pixel2World(PointF Pixel, CameraBase _camera, double Distance)</code><br>图像坐标转换为空间坐标的过程涉及相机的内参矩阵、外参矩阵（旋转矩阵和平移向量）以及可能的深度信息.</p>
-<span id="more"></span>
-<hr>
-<h3 id="1-坐标系定义"><a href="#1-坐标系定义" class="headerlink" title="1. 坐标系定义"></a><strong>1. 坐标系定义</strong></h3><ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h2><h3 id="1-坐标系定义"><a href="#1-坐标系定义" class="headerlink" title="1. 坐标系定义"></a><strong>1. 坐标系定义</strong></h3><ol>
 <li><strong>世界坐标系（World Coordinate System）</strong>：三维空间中的绝对坐标系，记为 ((X_w, Y_w, Z_w))。</li>
 <li><strong>相机坐标系（Camera Coordinate System）</strong>：以相机光心为原点，记为 ((X_c, Y_c, Z_c))。</li>
 <li><strong>图像坐标系（Image Coordinate System）</strong>：二维像素坐标系，记为 ((u, v))。</li>
@@ -294,17 +302,17 @@
 </li>
 </ol>
 <hr>
-<h3 id="3-公式推导"><a href="#3-公式推导" class="headerlink" title="3. 公式推导"></a><strong>3. 公式推导</strong></h3><h4 id="（1）相机模型与投影公式"><a href="#（1）相机模型与投影公式" class="headerlink" title="（1）相机模型与投影公式"></a><strong>（1）相机模型与投影公式</strong></h4><p>相机的投影公式为：<br>[<br>Z_c \begin{bmatrix} u \ v \ 1 \end{bmatrix} &#x3D;<br>K \begin{bmatrix} R &amp; T \end{bmatrix} \begin{bmatrix} X_w \ Y_w \ Z_w \ 1 \end{bmatrix}<br>]<br>其中：</p>
+<h3 id="3-公式推导"><a href="#3-公式推导" class="headerlink" title="3. 公式推导"></a><strong>3. 公式推导</strong></h3><h4 id="（1）相机模型与投影公式"><a href="#（1）相机模型与投影公式" class="headerlink" title="（1）相机模型与投影公式"></a><strong>（1）相机模型与投影公式</strong></h4><p>相机的投影公式为：<br>[<br>Z_c \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} =<br>K \begin{bmatrix} R &amp; T \end{bmatrix} \begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix}<br>]<br>其中：</p>
 <ul>
-<li>(K) 为内参矩阵：<br>[<br>K &#x3D; \begin{bmatrix}<br>f_x &amp; 0 &amp; c_x \<br>0 &amp; f_y &amp; c_y \<br>0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>]</li>
+<li>(K) 为内参矩阵：<br>[<br>K = \begin{bmatrix}<br>f_x &amp; 0 &amp; c_x \\<br>0 &amp; f_y &amp; c_y \\<br>0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>]</li>
 <li>(R) 和 (T) 为外参矩阵（旋转和平移）。</li>
 </ul>
 <hr>
-<h4 id="（2）逆投影：图像坐标-→-相机坐标系"><a href="#（2）逆投影：图像坐标-→-相机坐标系" class="headerlink" title="（2）逆投影：图像坐标 → 相机坐标系"></a><strong>（2）逆投影：图像坐标 → 相机坐标系</strong></h4><p>假设已知深度 (Z_c)，图像坐标 ((u, v)) 对应的相机坐标系坐标为：<br>[<br>\begin{cases}<br>X_c &#x3D; \frac{(u - c_x) \cdot Z_c}{f_x} \<br>Y_c &#x3D; \frac{(v - c_y) \cdot Z_c}{f_y} \<br>Z_c &#x3D; \text{已知深度值}<br>\end{cases}<br>]<br><strong>矩阵形式</strong>：<br>[<br>\begin{bmatrix} X_c \ Y_c \ Z_c \end{bmatrix} &#x3D;<br>K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \ v \ 1 \end{bmatrix}<br>]<br>其中 (K^{-1}) 为内参矩阵的逆：<br>[<br>K^{-1} &#x3D; \begin{bmatrix}<br>\frac{1}{f_x} &amp; 0 &amp; -\frac{c_x}{f_x} \<br>0 &amp; \frac{1}{f_y} &amp; -\frac{c_y}{f_y} \<br>0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>]</p>
+<h4 id="（2）逆投影：图像坐标-→-相机坐标系"><a href="#（2）逆投影：图像坐标-→-相机坐标系" class="headerlink" title="（2）逆投影：图像坐标 → 相机坐标系"></a><strong>（2）逆投影：图像坐标 → 相机坐标系</strong></h4><p>假设已知深度 (Z_c)，图像坐标 ((u, v)) 对应的相机坐标系坐标为：<br>[<br>\begin{cases}<br>X_c = \frac{(u - c_x) \cdot Z_c}{f_x} \\<br>Y_c = \frac{(v - c_y) \cdot Z_c}{f_y} \\<br>Z_c = \text{已知深度值}<br>\end{cases}<br>]<br><strong>矩阵形式</strong>：<br>[<br>\begin{bmatrix} X_c \\ Y_c \\ Z_c \end{bmatrix} =<br>K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \\ v \\ 1 \end{bmatrix}<br>]<br>其中 (K^{-1}) 为内参矩阵的逆：<br>[<br>K^{-1} = \begin{bmatrix}<br>\frac{1}{f_x} &amp; 0 &amp; -\frac{c_x}{f_x} \\<br>0 &amp; \frac{1}{f_y} &amp; -\frac{c_y}{f_y} \\<br>0 &amp; 0 &amp; 1<br>\end{bmatrix}<br>]</p>
 <hr>
-<h4 id="（3）相机坐标系-→-世界坐标系"><a href="#（3）相机坐标系-→-世界坐标系" class="headerlink" title="（3）相机坐标系 → 世界坐标系"></a><strong>（3）相机坐标系 → 世界坐标系</strong></h4><p>利用外参矩阵将相机坐标系坐标转换到世界坐标系：<br>[<br>\begin{bmatrix} X_w \ Y_w \ Z_w \ 1 \end{bmatrix} &#x3D;<br>\begin{bmatrix} R^T &amp; -R^T T \ 0 &amp; 1 \end{bmatrix} \cdot<br>\begin{bmatrix} X_c \ Y_c \ Z_c \ 1 \end{bmatrix}<br>]<br>其中 (R^T) 是旋转矩阵的转置，(-R^T T) 是平移向量的逆变换。</p>
+<h4 id="（3）相机坐标系-→-世界坐标系"><a href="#（3）相机坐标系-→-世界坐标系" class="headerlink" title="（3）相机坐标系 → 世界坐标系"></a><strong>（3）相机坐标系 → 世界坐标系</strong></h4><p>利用外参矩阵将相机坐标系坐标转换到世界坐标系：<br>[<br>\begin{bmatrix} X_w \\ Y_w \\ Z_w \\ 1 \end{bmatrix} =<br>\begin{bmatrix} R^T &amp; -R^T T \\ 0 &amp; 1 \end{bmatrix} \cdot<br>\begin{bmatrix} X_c \\ Y_c \\ Z_c \\ 1 \end{bmatrix}<br>]<br>其中 (R^T) 是旋转矩阵的转置，(-R^T T) 是平移向量的逆变换。</p>
 <hr>
-<h3 id="4-整合公式"><a href="#4-整合公式" class="headerlink" title="4. 整合公式"></a><strong>4. 整合公式</strong></h3><p>若已知深度 (Z_c)，完整的转换公式为：<br>[<br>\begin{bmatrix} X_w \ Y_w \ Z_w \end{bmatrix} &#x3D;<br>R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \ v \ 1 \end{bmatrix} - T \right)<br>]</p>
+<h3 id="4-整合公式"><a href="#4-整合公式" class="headerlink" title="4. 整合公式"></a><strong>4. 整合公式</strong></h3><p>若已知深度 (Z_c)，完整的转换公式为：<br>[<br>\begin{bmatrix} X_w \\ Y_w \\ Z_w \end{bmatrix} =<br>R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} - T \right)<br>]</p>
 <hr>
 <h3 id="5-特殊情况说明"><a href="#5-特殊情况说明" class="headerlink" title="5. 特殊情况说明"></a><strong>5. 特殊情况说明</strong></h3><ol>
 <li><strong>深度未知（单目相机）</strong>：<ul>
@@ -312,17 +320,16 @@
 </ul>
 </li>
 <li><strong>平面场景假设</strong>：<ul>
-<li>若物体位于已知平面 (Z_w &#x3D; 0)，可通过单应性矩阵（Homography）直接转换。</li>
+<li>若物体位于已知平面 (Z_w = 0)，可通过单应性矩阵（Homography）直接转换。</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="6-示例代码（Python）"><a href="#6-示例代码（Python）" class="headerlink" title="6. 示例代码（Python）"></a><strong>6. 示例代码（Python）</strong></h3><p>假设已知深度 (Z_c &#x3D; 1)，使用 OpenCV 进行坐标转换：</p>
+<h3 id="6-示例代码（Python）"><a href="#6-示例代码（Python）" class="headerlink" title="6. 示例代码（Python）"></a><strong>6. 示例代码（Python）</strong></h3><p>假设已知深度 (Z_c = 1)，使用 OpenCV 进行坐标转换：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 内参矩阵 K</span></span><br><span class="line">K = np.array([[<span class="number">1000</span>, <span class="number">0</span>, <span class="number">320</span>], [<span class="number">0</span>, <span class="number">1000</span>, <span class="number">240</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 外参矩阵 R 和 T</span></span><br><span class="line">R = np.eye(<span class="number">3</span>)  <span class="comment"># 假设无旋转</span></span><br><span class="line">T = np.array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])  <span class="comment"># 假设无平移</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像坐标 (u, v)</span></span><br><span class="line">u, v = <span class="number">400</span>, <span class="number">300</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 已知深度 Z_c</span></span><br><span class="line">Z_c = <span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 逆投影到相机坐标系</span></span><br><span class="line">uv1 = np.array([u, v, <span class="number">1</span>])</span><br><span class="line">K_inv = np.linalg.inv(K)</span><br><span class="line">Xc_Yc_Zc = Z_c * K_inv.dot(uv1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换到世界坐标系</span></span><br><span class="line">Xc_Yc_Zc_homogeneous = np.append(Xc_Yc_Zc, <span class="number">1</span>)</span><br><span class="line">RT = np.hstack((R.T, -R.T.dot(T).reshape(-<span class="number">1</span>, <span class="number">1</span>)))</span><br><span class="line">Xw_Yw_Zw = RT.dot(Xc_Yc_Zc_homogeneous)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;世界坐标系坐标:&quot;</span>, Xw_Yw_Zw[:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-
 <hr>
 <h3 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a><strong>7. 总结</strong></h3><ul>
-<li><strong>核心公式</strong>：<br>[<br>\begin{bmatrix} X_w \ Y_w \ Z_w \end{bmatrix} &#x3D; R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \ v \ 1 \end{bmatrix} - T \right)<br>]</li>
+<li><strong>核心公式</strong>：<br>[<br>\begin{bmatrix} X_w \\ Y_w \\ Z_w \end{bmatrix} = R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} - T \right)<br>]</li>
 <li><strong>依赖参数</strong>：<ul>
 <li>相机内参 (K)、外参 (R, T)、深度 (Z_c)。</li>
 </ul>
@@ -332,6 +339,7 @@
 </ul>
 </li>
 </ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> PointF3D <span class="title">Pixel2World</span>(<span class="params">PointF Pixel, CameraBase _camera, <span class="built_in">double</span> Distance</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Mat Rvecs = <span class="keyword">new</span> Mat(<span class="number">3</span>, <span class="number">1</span>, MatType.CV_64FC1, <span class="keyword">new</span> <span class="built_in">double</span>[] &#123; _camera.Extrinsics_Rx, _camera.Extrinsics_Ry, _camera.Extrinsics_Rz &#125;);</span><br><span class="line">    Mat Tvecs = <span class="keyword">new</span> Mat(<span class="number">3</span>, <span class="number">1</span>, MatType.CV_64FC1, <span class="keyword">new</span> <span class="built_in">double</span>[] &#123;</span><br><span class="line">        _camera.Extrinsics_Tx,</span><br><span class="line">        _camera.Extrinsics_Ty,</span><br><span class="line">        _camera.Extrinsics_Tz &#125;);</span><br><span class="line">    Mat RotationMatrix = <span class="keyword">new</span> Mat(<span class="number">3</span>, <span class="number">3</span>, MatType.CV_64FC1);</span><br><span class="line">    Mat RotationMatrix_Invert = <span class="keyword">new</span> Mat(<span class="number">3</span>, <span class="number">3</span>, MatType.CV_64FC1);</span><br><span class="line">    Mat CameraMatrix = <span class="keyword">new</span> Mat(<span class="number">3</span>,<span class="number">3</span>,MatType.CV_64FC1,<span class="keyword">new</span> <span class="built_in">double</span>[<span class="number">3</span>,<span class="number">3</span>]&#123; </span><br><span class="line">    &#123;_camera.Intrinsics_Fx,<span class="number">0</span>,_camera.Intrinsics_Cx&#125;,</span><br><span class="line">    &#123;<span class="number">0</span>,_camera.Intrinsics_Fy,_camera.Intrinsics_Cy&#125;,</span><br><span class="line">    &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;&#125;);</span><br><span class="line">    Mat CameraMatrix_Invert = <span class="keyword">new</span> Mat(<span class="number">3</span>,<span class="number">3</span>,MatType.CV_64FC1);</span><br><span class="line">    Mat ImagePoint = <span class="keyword">new</span> Mat(<span class="number">3</span>, <span class="number">1</span>, MatType.CV_64FC1, <span class="keyword">new</span> <span class="built_in">double</span>[] &#123; Pixel.X, Pixel.Y, <span class="number">1</span> &#125;);</span><br><span class="line"></span><br><span class="line">    Cv2.Rodrigues(Rvecs, RotationMatrix);</span><br><span class="line">    Cv2.Invert(RotationMatrix, RotationMatrix_Invert, DecompTypes.SVD);</span><br><span class="line">    Cv2.Invert(CameraMatrix, CameraMatrix_Invert, DecompTypes.SVD);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//计算坐标(相机坐标系)</span></span><br><span class="line">    Mat wcPoint = RotationMatrix_Invert * (Distance * CameraMatrix_Invert * ImagePoint - Tvecs);</span><br><span class="line"></span><br><span class="line">    PointF3D worldPoint = <span class="keyword">new</span> PointF3D(</span><br><span class="line">        wcPoint.At&lt;<span class="built_in">double</span>&gt;(<span class="number">0</span>, <span class="number">0</span>)  + _camera.Point3DX, </span><br><span class="line">        wcPoint.At&lt;<span class="built_in">double</span>&gt;(<span class="number">1</span>, <span class="number">0</span>)  + _camera.Point3DY, </span><br><span class="line">        wcPoint.At&lt;<span class="built_in">double</span>&gt;(<span class="number">2</span>, <span class="number">0</span>) + _camera.Point3DZ);</span><br><span class="line">    <span class="keyword">return</span> worldPoint;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -413,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">1. 坐标系定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BD%AC%E6%8D%A2%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">2. 转换流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="nav-number">3.</span> <span class="nav-text">3. 公式推导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8A%95%E5%BD%B1%E5%85%AC%E5%BC%8F"><span class="nav-number">3.1.</span> <span class="nav-text">（1）相机模型与投影公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E9%80%86%E6%8A%95%E5%BD%B1%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%9D%90%E6%A0%87-%E2%86%92-%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.2.</span> <span class="nav-text">（2）逆投影：图像坐标 → 相机坐标系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB-%E2%86%92-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">3.3.</span> <span class="nav-text">（3）相机坐标系 → 世界坐标系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%95%B4%E5%90%88%E5%85%AC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">4. 整合公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">5. 特殊情况说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%88Python%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">6. 示例代码（Python）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">7. 总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9D%90%E6%A0%87%E7%B3%BB%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">1. 坐标系定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E8%BD%AC%E6%8D%A2%E6%B5%81%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">2. 转换流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="nav-number">1.3.</span> <span class="nav-text">3. 公式推导</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B%E4%B8%8E%E6%8A%95%E5%BD%B1%E5%85%AC%E5%BC%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">（1）相机模型与投影公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E9%80%86%E6%8A%95%E5%BD%B1%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%9D%90%E6%A0%87-%E2%86%92-%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.3.2.</span> <span class="nav-text">（2）逆投影：图像坐标 → 相机坐标系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E7%9B%B8%E6%9C%BA%E5%9D%90%E6%A0%87%E7%B3%BB-%E2%86%92-%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="nav-number">1.3.3.</span> <span class="nav-text">（3）相机坐标系 → 世界坐标系</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%95%B4%E5%90%88%E5%85%AC%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">4. 整合公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">1.5.</span> <span class="nav-text">5. 特殊情况说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%88Python%EF%BC%89"><span class="nav-number">1.6.</span> <span class="nav-text">6. 示例代码（Python）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%80%BB%E7%BB%93"><span class="nav-number">1.7.</span> <span class="nav-text">7. 总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -429,7 +437,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -493,13 +501,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -510,7 +518,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -543,7 +551,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -559,70 +566,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -664,7 +612,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -679,7 +627,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -713,6 +662,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -282,14 +286,15 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Class1"><a href="#Class1" class="headerlink" title="Class1"></a>Class1</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Student</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> name; &#125; <span class="keyword">set</span> =&gt; <span class="keyword">this</span>.name = <span class="keyword">value</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> i = <span class="number">88</span>;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Write homework.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Worker</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> =&gt; <span class="keyword">throw</span> <span class="keyword">new</span> NotImplementedException(); <span class="keyword">set</span> =&gt; <span class="keyword">throw</span> <span class="keyword">new</span> NotImplementedException(); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Working.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Cat</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Class2"><a href="#Class2" class="headerlink" title="Class2"></a>Class2</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Teacher</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> name; &#125; <span class="keyword">set</span> =&gt; <span class="keyword">this</span>.name = <span class="keyword">value</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Teaching Math.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="TestClass"><a href="#TestClass" class="headerlink" title="TestClass"></a>TestClass</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> dllPath = System.Environment.CurrentDirectory;</span><br><span class="line"><span class="comment">//加载路径下的文件</span></span><br><span class="line"><span class="built_in">string</span>[] files = Directory.GetFiles(dllPath);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">string</span> file <span class="keyword">in</span> files)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!file.Contains(<span class="string">&quot;.dll&quot;</span>))<span class="comment">//过滤</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    Assembly ass = Assembly.LoadFile(file);</span><br><span class="line">    Type[] types = ass.GetTypes();</span><br><span class="line">    <span class="built_in">object</span> obj = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">foreach</span> (Type t <span class="keyword">in</span> types)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 判断类是否实现接口</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span>(InterfaceBase).IsAssignableFrom(t))</span><br><span class="line">        &#123;</span><br><span class="line">            obj = ass.CreateInstance(t.FullName, <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj <span class="keyword">is</span> InterfaceBase)<span class="comment">//判断的另一种形式</span></span><br><span class="line">        &#123;</span><br><span class="line">            InterfaceBase ib = obj <span class="keyword">as</span> InterfaceBase;</span><br><span class="line">            ib.DoSomething();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例">示例</h2>
+<h3 id="Interface">Interface</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Class1">Class1</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Student</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> name; &#125; <span class="keyword">set</span> =&gt; <span class="keyword">this</span>.name = <span class="keyword">value</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> i = <span class="number">88</span>;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Write homework.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Worker</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> =&gt; <span class="keyword">throw</span> <span class="keyword">new</span> NotImplementedException(); <span class="keyword">set</span> =&gt; <span class="keyword">throw</span> <span class="keyword">new</span> NotImplementedException(); &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Working.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">Cat</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Class2">Class2</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Teacher</span> : <span class="title">InterfaceBase</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">string</span> name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name &#123; <span class="keyword">get</span> &#123; <span class="keyword">return</span> name; &#125; <span class="keyword">set</span> =&gt; <span class="keyword">this</span>.name = <span class="keyword">value</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">DoSomething</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Teaching Math.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="TestClass">TestClass</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> dllPath = System.Environment.CurrentDirectory;</span><br><span class="line"><span class="comment">//加载路径下的文件</span></span><br><span class="line"><span class="built_in">string</span>[] files = Directory.GetFiles(dllPath);</span><br><span class="line"><span class="keyword">foreach</span>(<span class="built_in">string</span> file <span class="keyword">in</span> files)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!file.Contains(<span class="string">&quot;.dll&quot;</span>))<span class="comment">//过滤</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    Assembly ass = Assembly.LoadFile(file);</span><br><span class="line">    Type[] types = ass.GetTypes();</span><br><span class="line">    <span class="built_in">object</span> obj = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">foreach</span> (Type t <span class="keyword">in</span> types)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 判断类是否实现接口</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span>(InterfaceBase).IsAssignableFrom(t))</span><br><span class="line">        &#123;</span><br><span class="line">            obj = ass.CreateInstance(t.FullName, <span class="literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj <span class="keyword">is</span> InterfaceBase)<span class="comment">//判断的另一种形式</span></span><br><span class="line">        &#123;</span><br><span class="line">            InterfaceBase ib = obj <span class="keyword">as</span> InterfaceBase;</span><br><span class="line">            ib.DoSomething();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -387,7 +392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -451,13 +456,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -468,7 +473,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -501,7 +506,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -517,70 +521,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -622,7 +567,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -637,7 +582,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -671,6 +617,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -30,7 +30,7 @@
 <meta property="og:description" content="UDS DTC故障码解析说明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-22T08:23:50.000Z">
-<meta property="article:modified_time" content="2024-04-22T09:44:23.440Z">
+<meta property="article:modified_time" content="2024-04-23T06:29:54.107Z">
 <meta property="article:author" content="Justin">
 <meta name="twitter:card" content="summary">
 
@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -222,10 +226,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-04-22 16:23:50 / 修改时间：17:44:23" itemprop="dateCreated datePublished" datetime="2024-04-22T16:23:50+08:00">2024-04-22</time>
+              <time title="创建时间：2024-04-22 16:23:50" itemprop="dateCreated datePublished" datetime="2024-04-22T16:23:50+08:00">2024-04-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-04-23 14:29:54" itemprop="dateModified" datetime="2024-04-23T14:29:54+08:00">2024-04-23</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -254,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>988</span>
+              <span>973</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -275,8 +285,9 @@
       
         <p>UDS DTC故障码解析说明</p>
 <span id="more"></span>
-
-<h2 id="格式结构"><a href="#格式结构" class="headerlink" title="格式结构"></a>格式结构</h2><p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br>DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
+<h2 id="格式结构">格式结构</h2>
+<p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br />
+DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
 <table>
     <tr>
         <td colspan="8" style="text-align:center;">DTCHightByte</td>>
@@ -307,121 +318,133 @@
         <td colspan="8" style="text-align:center;">第四五位</td>
     </tr>
 </table>
-
-<h3 id="故障内码"><a href="#故障内码" class="headerlink" title="故障内码"></a>故障内码</h3><p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
-<h4 id="第一位"><a href="#第一位" class="headerlink" title="第一位"></a>第一位</h4><p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
+<h3 id="故障内码">故障内码</h3>
+<p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
+<h4 id="第一位">第一位</h4>
+<p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
 <table>
 <thead>
 <tr>
-<th align="center">Bit7Bit6</th>
-<th align="center">标准故障码字符</th>
-<th align="center">所属系统</th>
+<th style="text-align:center">Bit7Bit6</th>
+<th style="text-align:center">标准故障码字符</th>
+<th style="text-align:center">所属系统</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">00</td>
-<td align="center">P</td>
-<td align="center">Powertrain动力系统故障</td>
+<tbody>
+<tr>
+<td style="text-align:center">00</td>
+<td style="text-align:center">P</td>
+<td style="text-align:center">Powertrain动力系统故障</td>
 </tr>
 <tr>
-<td align="center">01</td>
-<td align="center">C</td>
-<td align="center">Chassis底盘故障</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">Chassis底盘故障</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">B</td>
-<td align="center">Body车身故障</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">Body车身故障</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">U</td>
-<td align="center">Network and vehicle integration网络和车辆集成</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">U</td>
+<td style="text-align:center">Network and vehicle integration网络和车辆集成</td>
 </tr>
-</tbody></table>
-<h4 id="第二位"><a href="#第二位" class="headerlink" title="第二位"></a>第二位</h4><p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
+</tbody>
+</table>
+<h4 id="第二位">第二位</h4>
+<p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
 <table>
 <thead>
 <tr>
-<th align="center">Bit5Bit4</th>
-<th align="center">标准故障码字符</th>
-<th align="center">故障类型</th>
+<th style="text-align:center">Bit5Bit4</th>
+<th style="text-align:center">标准故障码字符</th>
+<th style="text-align:center">故障类型</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">00</td>
-<td align="center">0</td>
-<td align="center">ISO&#x2F;SAE标准定义的故障码</td>
+<tbody>
+<tr>
+<td style="text-align:center">00</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">ISO/SAE标准定义的故障码</td>
 </tr>
 <tr>
-<td align="center">01</td>
-<td align="center">1</td>
-<td align="center">制造商自定义故障码</td>
+<td style="text-align:center">01</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">制造商自定义故障码</td>
 </tr>
 <tr>
-<td align="center">10</td>
-<td align="center">2</td>
-<td align="center">ISO&#x2F;SAE标准定义的故障码</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">ISO/SAE标准定义的故障码</td>
 </tr>
 <tr>
-<td align="center">11</td>
-<td align="center">3</td>
-<td align="center">ISO&#x2F;SAE保留</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">ISO/SAE保留</td>
 </tr>
-</tbody></table>
-<h4 id="第三位"><a href="#第三位" class="headerlink" title="第三位"></a>第三位</h4><p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
-<h4 id="第四五位"><a href="#第四五位" class="headerlink" title="第四五位"></a>第四五位</h4><p>最后两位表示具体故障对象和类型(hex)</p>
-<h3 id="DTCLowByte"><a href="#DTCLowByte" class="headerlink" title="DTCLowByte"></a>DTCLowByte</h3><p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
-<h3 id="StatusofDTC"><a href="#StatusofDTC" class="headerlink" title="StatusofDTC"></a>StatusofDTC</h3><p>故障码状态位:</p>
+</tbody>
+</table>
+<h4 id="第三位">第三位</h4>
+<p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
+<h4 id="第四五位">第四五位</h4>
+<p>最后两位表示具体故障对象和类型(hex)</p>
+<h3 id="DTCLowByte">DTCLowByte</h3>
+<p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
+<h3 id="StatusofDTC">StatusofDTC</h3>
+<p>故障码状态位:</p>
 <table>
 <thead>
 <tr>
-<th align="center">Bit</th>
-<th align="center">描述</th>
-<th align="center">英文描述</th>
+<th style="text-align:center">Bit</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">英文描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">当前故障</td>
-<td align="center">testFailed</td>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">当前故障</td>
+<td style="text-align:center">testFailed</td>
 </tr>
 <tr>
-<td align="center">1</td>
-<td align="center">当前测试循环故障</td>
-<td align="center">testFailedThisOperationCycle</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">当前测试循环故障</td>
+<td style="text-align:center">testFailedThisOperationCycle</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">待确定DTC</td>
-<td align="center">pendingDTC</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">待确定DTC</td>
+<td style="text-align:center">pendingDTC</td>
 </tr>
 <tr>
-<td align="center">3</td>
-<td align="center">确认的DTC(历史故障)</td>
-<td align="center">confirmedDTC</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">确认的DTC(历史故障)</td>
+<td style="text-align:center">confirmedDTC</td>
 </tr>
 <tr>
-<td align="center">4</td>
-<td align="center">故障清除后测试没有完成</td>
-<td align="center">testNotCompletedSinceLastClear</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">故障清除后测试没有完成</td>
+<td style="text-align:center">testNotCompletedSinceLastClear</td>
 </tr>
 <tr>
-<td align="center">5</td>
-<td align="center">故障清除后测试失败</td>
-<td align="center">testFailedSinceLastClear</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">故障清除后测试失败</td>
+<td style="text-align:center">testFailedSinceLastClear</td>
 </tr>
 <tr>
-<td align="center">6</td>
-<td align="center">当前操作循环没有完成</td>
-<td align="center">testNotCompletedThisOperationCycle</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">当前操作循环没有完成</td>
+<td style="text-align:center">testNotCompletedThisOperationCycle</td>
 </tr>
 <tr>
-<td align="center">7</td>
-<td align="center">故障指示请求</td>
-<td align="center">warningIndicatorRequested</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">故障指示请求</td>
+<td style="text-align:center">warningIndicatorRequested</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 
     </div>
 
@@ -519,7 +542,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -583,13 +606,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -600,7 +623,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -633,7 +656,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -649,70 +671,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -754,7 +717,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -769,7 +732,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -803,6 +767,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

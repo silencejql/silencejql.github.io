@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -260,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>555</span>
+              <span>475</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,26 +286,33 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="FreeFormsAlways"><a href="#FreeFormsAlways" class="headerlink" title="FreeFormsAlways"></a>FreeFormsAlways</h2><p>程序入口Main()</p>
-<p>CheckAppHasStart()&#x2F;&#x2F;判断程序是否已经打开</p>
+<h2 id="FreeFormsAlways">FreeFormsAlways</h2>
+<p>程序入口Main()</p>
+<p>CheckAppHasStart()//判断程序是否已经打开</p>
 <blockquote>
-<p>Initialize()&#x2F;&#x2F;</p>
+<p>Initialize()//</p>
 <blockquote>
-<p>BackupStart()&#x2F;&#x2F;Log备份<br>Environment.GetCommandLineArgs()<br>System.Threading.Mutex(true, sysName, out IsNew)</p>
+<p>BackupStart()//Log备份<br />
+Environment.GetCommandLineArgs()<br />
+System.Threading.Mutex(true, sysName, out IsNew)</p>
 </blockquote>
 </blockquote>
-<p>GetStartFile()&#x2F;&#x2F;获取启动程序文件名<br>SystemIni(OpenFile, ref Inform)&#x2F;&#x2F;初始化程序并获取主界面</p>
+<p>GetStartFile()//获取启动程序文件名<br />
+SystemIni(OpenFile, ref Inform)//初始化程序并获取主界面</p>
 <blockquote>
 <p>ReadDataXml()读取xml文件</p>
 <blockquote>
-<p>Configs.ReadXml()读取配置文件<br>MyLoadXml(xDoc, GetFullPath(XmlFile))加载xml文件<br>UpdateObjectList()实例化对象列表中的对象<br>GreateProjectList()创建组合列表<br>CheckProjectList()检查<br>BeginExePro(“Always”)&#x2F;&#x2F;执行Always线程<br>Run(Inform, true)&#x2F;&#x2F;执行显示窗体</p>
+<p>Configs.ReadXml()读取配置文件<br />
+MyLoadXml(xDoc, GetFullPath(XmlFile))加载xml文件<br />
+UpdateObjectList()实例化对象列表中的对象<br />
+GreateProjectList()创建组合列表<br />
+CheckProjectList()检查<br />
+BeginExePro(“Always”)//执行Always线程<br />
+Run(Inform, true)//执行显示窗体</p>
 </blockquote>
 </blockquote>
-<p>ExeProject()&#x2F;&#x2F;执行组合</p>
+<p>ExeProject()//执行组合</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-
 
     </div>
 
@@ -399,7 +410,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -463,13 +474,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -480,7 +491,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -513,7 +524,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -529,70 +539,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -634,7 +585,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -649,7 +600,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -683,6 +635,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

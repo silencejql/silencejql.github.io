@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -282,16 +286,15 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="HttpWeb说明"><a href="#HttpWeb说明" class="headerlink" title="HttpWeb说明"></a>HttpWeb说明</h2><a href="/HttpWeb.html" title="HttpWeb">HttpWeb</a>
-
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="解决SSL-x2F-TLS证书验证报错"><a href="#解决SSL-x2F-TLS证书验证报错" class="headerlink" title="解决SSL&#x2F;TLS证书验证报错"></a>解决SSL&#x2F;TLS证书验证报错</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Net.Security;</span><br><span class="line"><span class="keyword">using</span> System.Security.Authentication;</span><br><span class="line"><span class="keyword">using</span> System.Security.Cryptography.X509Certificates;</span><br><span class="line"></span><br><span class="line"><span class="comment">//忽略SSL验证</span></span><br><span class="line">ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) =&gt; <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加SSL证书</span></span><br><span class="line">ServicePointManager.ServerCertificateValidationCallback = <span class="keyword">new</span> System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);</span><br><span class="line">ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 |</span><br><span class="line">    SecurityProtocolType.Tls |</span><br><span class="line">    (SecurityProtocolType)<span class="number">0x300</span> |<span class="comment">//Tls11</span></span><br><span class="line">    (SecurityProtocolType)<span class="number">0xC00</span>;<span class="comment">//Tls12</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">WebClient web = <span class="keyword">new</span> WebClient();</span><br><span class="line">web.Headers.Add(HttpRequestHeader.ContentType, <span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">web.Encoding = Encoding.UTF8;</span><br><span class="line"><span class="comment">//post</span></span><br><span class="line">recv = web.UploadString(mesGetVInfoUrl, jsonGetCurVehicle.ToString());</span><br><span class="line"><span class="comment">//request</span></span><br><span class="line">recv = web.DownloadString(url);</span><br><span class="line"><span class="keyword">var</span> recvObject = JObject.Parse(recv)</span><br><span class="line">JsonRecv jrecv = JsonConvert.DeserializeObject&lt;JsonRecv&gt;(recv);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">HttpListener httpListenner;</span><br><span class="line">httpListenner = <span class="keyword">new</span> HttpListener();</span><br><span class="line">httpListenner.AuthenticationSchemes = AuthenticationSchemes.Anonymous;</span><br><span class="line">httpListenner.Prefixes.Add(httpServerUrl);</span><br><span class="line">httpListenner.Start();</span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> ThreadStart(<span class="built_in">delegate</span></span><br><span class="line">&#123;</span><br><span class="line">    loop(httpListenner);</span><br><span class="line">&#125;)).Start();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loop</span>(<span class="params">HttpListener httpListenner</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        HttpListenerContext context = httpListenner.GetContext();</span><br><span class="line">        HttpListenerRequest request = context.Request;</span><br><span class="line">        HttpListenerResponse response = context.Response;</span><br><span class="line">        <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;POST&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            HandlePost(request, response);                    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;GET&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            response.OutputStream.Write(Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>), <span class="number">0</span>, Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>).Length);</span><br><span class="line">        &#125;</span><br><span class="line">        response.Close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandlePost</span>(<span class="params">HttpListenerRequest request, HttpListenerResponse response</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> stream = response.OutputStream;</span><br><span class="line">    <span class="built_in">byte</span>[] readBytes = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    request.InputStream.Read(readBytes, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line">    <span class="built_in">string</span> recv = Encoding.ASCII.GetString(readBytes);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> jsonRecv = JObject.Parse(recv.Trim(<span class="string">&#x27;\0&#x27;</span>));</span><br><span class="line">    JObject jsonSend = <span class="keyword">new</span> JObject();</span><br><span class="line">    <span class="keyword">if</span> (jsonRecv[<span class="string">&quot;stationCode&quot;</span>].ToString() == <span class="string">&quot;EV&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        jsonSend[<span class="string">&quot;factoryCode&quot;</span>] = <span class="string">&quot;Changzhou&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;stationCode&quot;</span>] = <span class="string">&quot;EV&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;vin&quot;</span>] = <span class="string">&quot;12345678901234567&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;state&quot;</span>] = <span class="string">&quot;Start&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;result&quot;</span>] = <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    stream.Write(Encoding.ASCII.GetBytes(jsonSend.ToString()), <span class="number">0</span>, Encoding.ASCII.GetBytes(jsonSend.ToString()).Length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="HttpWeb说明">HttpWeb说明</h2>
+<a href="/HttpWeb.html" title="HttpWeb">HttpWeb</a>
+<h2 id="补充">补充</h2>
+<h3 id="解决SSL-TLS证书验证报错">解决SSL/TLS证书验证报错</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Net.Security;</span><br><span class="line"><span class="keyword">using</span> System.Security.Authentication;</span><br><span class="line"><span class="keyword">using</span> System.Security.Cryptography.X509Certificates;</span><br><span class="line"></span><br><span class="line"><span class="comment">//忽略SSL验证</span></span><br><span class="line">ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) =&gt; <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加SSL证书</span></span><br><span class="line">ServicePointManager.ServerCertificateValidationCallback = <span class="keyword">new</span> System.Net.Security.RemoteCertificateValidationCallback(CheckValidationResult);</span><br><span class="line">ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 |</span><br><span class="line">    SecurityProtocolType.Tls |</span><br><span class="line">    (SecurityProtocolType)<span class="number">0x300</span> |<span class="comment">//Tls11</span></span><br><span class="line">    (SecurityProtocolType)<span class="number">0xC00</span>;<span class="comment">//Tls12</span></span><br></pre></td></tr></table></figure>
+<h3 id="Client">Client</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">WebClient web = <span class="keyword">new</span> WebClient();</span><br><span class="line">web.Headers.Add(HttpRequestHeader.ContentType, <span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">web.Encoding = Encoding.UTF8;</span><br><span class="line"><span class="comment">//post</span></span><br><span class="line">recv = web.UploadString(mesGetVInfoUrl, jsonGetCurVehicle.ToString());</span><br><span class="line"><span class="comment">//request</span></span><br><span class="line">recv = web.DownloadString(url);</span><br><span class="line"><span class="keyword">var</span> recvObject = JObject.Parse(recv)</span><br><span class="line">JsonRecv jrecv = JsonConvert.DeserializeObject&lt;JsonRecv&gt;(recv);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="Server">Server</h3>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">HttpListener httpListenner;</span><br><span class="line">httpListenner = <span class="keyword">new</span> HttpListener();</span><br><span class="line">httpListenner.AuthenticationSchemes = AuthenticationSchemes.Anonymous;</span><br><span class="line">httpListenner.Prefixes.Add(httpServerUrl);</span><br><span class="line">httpListenner.Start();</span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> ThreadStart(<span class="built_in">delegate</span></span><br><span class="line">&#123;</span><br><span class="line">    loop(httpListenner);</span><br><span class="line">&#125;)).Start();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loop</span>(<span class="params">HttpListener httpListenner</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        HttpListenerContext context = httpListenner.GetContext();</span><br><span class="line">        HttpListenerRequest request = context.Request;</span><br><span class="line">        HttpListenerResponse response = context.Response;</span><br><span class="line">        <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;POST&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            HandlePost(request, response);                    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;GET&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            response.OutputStream.Write(Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>), <span class="number">0</span>, Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>).Length);</span><br><span class="line">        &#125;</span><br><span class="line">        response.Close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandlePost</span>(<span class="params">HttpListenerRequest request, HttpListenerResponse response</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> stream = response.OutputStream;</span><br><span class="line">    <span class="built_in">byte</span>[] readBytes = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    request.InputStream.Read(readBytes, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line">    <span class="built_in">string</span> recv = Encoding.ASCII.GetString(readBytes);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> jsonRecv = JObject.Parse(recv.Trim(<span class="string">&#x27;\0&#x27;</span>));</span><br><span class="line">    JObject jsonSend = <span class="keyword">new</span> JObject();</span><br><span class="line">    <span class="keyword">if</span> (jsonRecv[<span class="string">&quot;stationCode&quot;</span>].ToString() == <span class="string">&quot;EV&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        jsonSend[<span class="string">&quot;factoryCode&quot;</span>] = <span class="string">&quot;Changzhou&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;stationCode&quot;</span>] = <span class="string">&quot;EV&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;vin&quot;</span>] = <span class="string">&quot;12345678901234567&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;state&quot;</span>] = <span class="string">&quot;Start&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;result&quot;</span>] = <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    stream.Write(Encoding.ASCII.GetBytes(jsonSend.ToString()), <span class="number">0</span>, Encoding.ASCII.GetBytes(jsonSend.ToString()).Length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -373,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpWeb%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">HttpWeb说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3SSL-x2F-TLS%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E6%8A%A5%E9%94%99"><span class="nav-number">2.1.</span> <span class="nav-text">解决SSL&#x2F;TLS证书验证报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client"><span class="nav-number">2.2.</span> <span class="nav-text">Client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server"><span class="nav-number">2.3.</span> <span class="nav-text">Server</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpWeb%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">HttpWeb说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">2.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3SSL-TLS%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81%E6%8A%A5%E9%94%99"><span class="nav-number">2.1.</span> <span class="nav-text">解决SSL&#x2F;TLS证书验证报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client"><span class="nav-number">2.2.</span> <span class="nav-text">Client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Server"><span class="nav-number">2.3.</span> <span class="nav-text">Server</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -389,7 +392,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -453,13 +456,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -470,7 +473,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -503,7 +506,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -519,70 +521,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -624,7 +567,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -639,7 +582,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -673,6 +617,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

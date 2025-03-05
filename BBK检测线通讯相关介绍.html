@@ -78,7 +78,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -133,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -291,12 +295,19 @@
         <center></center>
 前面啥也没有
 <span id="more"></span>
-
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p>客户端配置<br>GeneralLib.xDvConfigClient.init(GeneralLib.xRemoterClientConfig)<br>服务端配置<br>GeneralLib.GenO.InitRemoterTcpServer()</p>
+<h2 id="TCP">TCP</h2>
+<p>客户端配置<br />
+GeneralLib.xDvConfigClient.init(GeneralLib.xRemoterClientConfig)<br />
+服务端配置<br />
+GeneralLib.GenO.InitRemoterTcpServer()</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Root</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">xDevice</span> <span class="attr">updateRate</span>=<span class="string">&quot;50&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Item</span> <span class="attr">ip</span>=<span class="string">&quot;10.18.13.50:10240&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">__COUNTER_OUT</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">__COUNTER_IN</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;false&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Communication_ZTS</span> <span class="attr">value</span>=<span class="string">&quot;CarParam_ZTS&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">Communication_VIN</span> <span class="attr">value</span>=<span class="string">&quot;CarParam_VIN&quot;</span> <span class="attr">WriteEnable</span>=<span class="string">&quot;true&quot;</span> <span class="attr">Reversion</span>=<span class="string">&quot;false&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DeviceDescribe</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--用于与具有远程功能的平台程序通讯(@开头为PubObject对象,#开头为组合控制),默认端口10240,ip格式:127.0.0.1:10240--&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">DeviceDescribe</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Alarms</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">AlarmItem</span> <span class="attr">value</span>=<span class="string">&quot;None&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Alarm</span> <span class="attr">Index</span>=<span class="string">&quot;0&quot;</span> <span class="attr">Name</span>=<span class="string">&quot;告警信息格式模板&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">AlarmItem</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Alarms</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">xDevice</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Root</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>配置完成后，相当于客户端的Communication_VIN与服务端的CarParam_VIN进行了绑定</p>
-<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p>客户端配置<br>SocketOpraLib.UDPClientOpra.SetDestInfoConfig(ConfigSend)<br>SocketOpraLib.UDPClientOpra.SendTo(“{VIN};{ZTS}”)<br>服务端配置<br>SocketOpraLib.UDPServerOpra.SetLocalInfoConfig(ConfigRecv)</p>
+<h2 id="UDP">UDP</h2>
+<p>客户端配置<br />
+SocketOpraLib.UDPClientOpra.SetDestInfoConfig(ConfigSend)<br />
+SocketOpraLib.UDPClientOpra.SendTo(“{VIN};{ZTS}”)<br />
+服务端配置<br />
+SocketOpraLib.UDPServerOpra.SetLocalInfoConfig(ConfigRecv)</p>
 
     </div>
 
@@ -394,7 +405,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -458,13 +469,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -475,7 +486,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -508,7 +519,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -524,70 +534,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -629,7 +580,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -644,7 +595,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -678,6 +630,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

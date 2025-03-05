@@ -79,7 +79,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -134,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -270,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,58 +294,100 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="HTML标签"><a href="#HTML标签" class="headerlink" title="HTML标签"></a>HTML标签</h2><h3 id="HTML标题"><a href="#HTML标题" class="headerlink" title="HTML标题"></a>HTML标题</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>h1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>h4<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>h5<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>h6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="水平线-x2F-分割线"><a href="#水平线-x2F-分割线" class="headerlink" title="水平线&#x2F;分割线"></a>水平线&#x2F;分割线</h3><p><code>&lt;hr/&gt;</code></p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><code>html注释：&lt;!-- comment --&gt;</code></p>
-<h3 id="段落及换行"><a href="#段落及换行" class="headerlink" title="段落及换行"></a>段落及换行</h3><p>html段落<code>&lt;p&gt;</code>以及段落换行<code>&lt;br/&gt;</code></p>
+        <h2 id="HTML标签">HTML标签</h2>
+<h3 id="HTML标题">HTML标题</h3>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>h1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>h2<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>h3<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>h4<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>h5<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>h6<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="水平线-分割线">水平线/分割线</h3>
+<p><code>&lt;hr/&gt;</code></p>
+<h3 id="注释">注释</h3>
+<p><code>html注释：&lt;!-- comment --&gt;</code></p>
+<h3 id="段落及换行">段落及换行</h3>
+<p>html段落<code>&lt;p&gt;</code>以及段落换行<code>&lt;br/&gt;</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>hello <span class="tag">&lt;<span class="name">br</span>/&gt;</span> world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="文本格式化"><a href="#文本格式化" class="headerlink" title="文本格式化"></a>文本格式化</h3><table>
+<h3 id="文本格式化">文本格式化</h3>
+<table>
 <thead>
 <tr>
-<th align="center">标签</th>
-<th align="center">描述</th>
+<th style="text-align:center">标签</th>
+<th style="text-align:center">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><code>&lt;b&gt;</code></td>
-<td align="center">加粗</td>
+<tbody>
+<tr>
+<td style="text-align:center"><code>&lt;b&gt;</code></td>
+<td style="text-align:center">加粗</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;big&gt;</code></td>
-<td align="center">大号字体</td>
+<td style="text-align:center"><code>&lt;big&gt;</code></td>
+<td style="text-align:center">大号字体</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;em&gt;</code></td>
-<td align="center">着重文字</td>
+<td style="text-align:center"><code>&lt;em&gt;</code></td>
+<td style="text-align:center">着重文字</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;i&gt;</code></td>
-<td align="center">斜体</td>
+<td style="text-align:center"><code>&lt;i&gt;</code></td>
+<td style="text-align:center">斜体</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;small&gt;</code></td>
-<td align="center">小号字体</td>
+<td style="text-align:center"><code>&lt;small&gt;</code></td>
+<td style="text-align:center">小号字体</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;sub&gt;</code></td>
-<td align="center">下标</td>
+<td style="text-align:center"><code>&lt;sub&gt;</code></td>
+<td style="text-align:center">下标</td>
 </tr>
 <tr>
-<td align="center"><code>&lt;sup&gt;</code></td>
-<td align="center">上标</td>
+<td style="text-align:center"><code>&lt;sup&gt;</code></td>
+<td style="text-align:center">上标</td>
 </tr>
-</tbody></table>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p><code>&lt;a&gt;</code>比较重要的属性有两个，分别是href、target<br>href指定超链接地址<br>target指定打开方式<br>&amp;emsp;_blank  新页面打开</p>
-<h4 id="普通链接"><a href="#普通链接" class="headerlink" title="普通链接"></a>普通链接</h4><p><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</code></p>
-<h4 id="邮件链接"><a href="#邮件链接" class="headerlink" title="邮件链接"></a>邮件链接</h4><p>标签最简式<br><code>&lt;a href=&quot;mailto:xxx@xx.com&quot;&gt;联系站长&lt;/a&gt;</code></p>
-<h3 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h3><p>使用格式：<code>&lt;img src=&quot;url&quot;&gt;</code><br>&amp;emsp;alt  定义当图片无法加载时，显示什么信息<br>&amp;emsp;width 定义宽度，单位可以为像素  也可以为百分比<br>&amp;emsp;height 定义高度<br><code>&lt; img src=“11.jpg” width=&quot;100px&quot; height=&quot;200px&quot; title=&quot;title&quot; alt=&quot;图片无法显示，请刷新&quot;/&gt;</code></p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>表格由<code>&lt;table&gt;</code>来定义，每行<code>&lt;tr&gt;</code> 有许多单元格<code>&lt;td&gt;</code>。表头可以使用<code>&lt;th&gt;</code><br><code>&lt;table&gt;</code>标签属性：</p>
+</tbody>
+</table>
+<h3 id="超链接">超链接</h3>
+<p><code>&lt;a&gt;</code>比较重要的属性有两个，分别是href、target<br />
+href指定超链接地址<br />
+target指定打开方式<br />
+ _blank  新页面打开</p>
+<h4 id="普通链接">普通链接</h4>
+<p><code>&lt;a href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</code></p>
+<h4 id="邮件链接">邮件链接</h4>
+<p>标签最简式<br />
+<code>&lt;a href=&quot;mailto:xxx@xx.com&quot;&gt;联系站长&lt;/a&gt;</code></p>
+<h3 id="图像">图像</h3>
+<p>使用格式：<code>&lt;img src=&quot;url&quot;&gt;</code><br />
+ alt  定义当图片无法加载时，显示什么信息<br />
+ width 定义宽度，单位可以为像素  也可以为百分比<br />
+ height 定义高度<br />
+<code>&lt; img src=“11.jpg” width=&quot;100px&quot; height=&quot;200px&quot; title=&quot;title&quot; alt=&quot;图片无法显示，请刷新&quot;/&gt;</code></p>
+<h3 id="表格">表格</h3>
+<p>表格由<code>&lt;table&gt;</code>来定义，每行<code>&lt;tr&gt;</code> 有许多单元格<code>&lt;td&gt;</code>。表头可以使用<code>&lt;th&gt;</code><br />
+<code>&lt;table&gt;</code>标签属性：</p>
 <blockquote>
-<p>border：表格边框属性；当使用border&#x3D;”1”设置边框时，会在所有td以及table上嵌套边框，当border加大时，只有table框会加粗。<br>cellspacing：单元格与单元格之间的间隙。当cellspacing&#x3D;”0”时，单元格之间的间隙为0，但边框线并不会合并。<br>☆☆合并边框的写法style&#x3D;”border-collapse:collapse;” 使用边框合并时，无需设置cellspacing。<br>cellpadding:单元格内边距，单元格中文字与单元格边框之间的距离。<br>width&#x2F;height:表格的宽高<br>align：设置表格在父容器中的对齐方式 ，left&#x2F;居左 center&#x2F;居中 right&#x2F;居右<br>☆☆当表格使用align属性时，相当于使表格浮动，可能会导致表格后面的元素受表格浮动影响，导致布局错乱。<br>bgcolor：背景色<br>background：背景图，后接相对路径。背景图和背景色同时生效时，图会覆盖背景色<br>bordercolor：设置边框颜色</p>
+<p>border：表格边框属性；当使用border=&quot;1&quot;设置边框时，会在所有td以及table上嵌套边框，当border加大时，只有table框会加粗。<br />
+cellspacing：单元格与单元格之间的间隙。当cellspacing=&quot;0&quot;时，单元格之间的间隙为0，但边框线并不会合并。<br />
+☆☆合并边框的写法style=“border-collapse:collapse;” 使用边框合并时，无需设置cellspacing。<br />
+cellpadding:单元格内边距，单元格中文字与单元格边框之间的距离。<br />
+width/height:表格的宽高<br />
+align：设置表格在父容器中的对齐方式 ，left/居左 center/居中 right/居右<br />
+☆☆当表格使用align属性时，相当于使表格浮动，可能会导致表格后面的元素受表格浮动影响，导致布局错乱。<br />
+bgcolor：背景色<br />
+background：背景图，后接相对路径。背景图和背景色同时生效时，图会覆盖背景色<br />
+bordercolor：设置边框颜色</p>
 </blockquote>
-<p>在<code>&lt;table&gt;</code>中可以嵌入<code>&lt;th&gt;  &lt;tr&gt;  &lt;td&gt;</code>等标签<br>　　<code>&lt;tr&gt;</code>   定义行<br>　　<code>&lt;th&gt;</code>   定义表头<br>　　　　colspan  定义表头单元格可以横跨的列数。<br>　　　　rowspan  定义表头单元格横跨的行数<br>　　　　heardes  定义与表头单元格相关联的一个或者多个单元格。(html5新增)　　　<br>　　<code>&lt;td&gt;</code>   定义单元格<br>　　　　colspan  定义单元格可以横跨的列数。<br>　　　　rowspan  定义单元格横跨的行数<br>　　　　heardes  定义与单元格相关联的一个或者多个单元格。(html5新增)　　<br>表格固定高度：overflow-y:auto;</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表<code>&lt;ul&gt;</code><br>有序列表<code>&lt;ol&gt;</code></p>
+<p>在<code>&lt;table&gt;</code>中可以嵌入<code>&lt;th&gt;  &lt;tr&gt;  &lt;td&gt;</code>等标签<br />
+　　<code>&lt;tr&gt;</code>   定义行<br />
+　　<code>&lt;th&gt;</code>   定义表头<br />
+　　　　colspan  定义表头单元格可以横跨的列数。<br />
+　　　　rowspan  定义表头单元格横跨的行数<br />
+　　　　heardes  定义与表头单元格相关联的一个或者多个单元格。(html5新增)　　　<br />
+　　<code>&lt;td&gt;</code>   定义单元格<br />
+　　　　colspan  定义单元格可以横跨的列数。<br />
+　　　　rowspan  定义单元格横跨的行数<br />
+　　　　heardes  定义与单元格相关联的一个或者多个单元格。(html5新增)　　<br />
+表格固定高度：overflow-y:auto;</p>
+<h3 id="列表">列表</h3>
+<p>无序列表<code>&lt;ul&gt;</code><br />
+有序列表<code>&lt;ol&gt;</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>male<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>female<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>male<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>female<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -428,7 +474,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E6%A0%87%E7%AD%BE"><span class="nav-number">1.</span> <span class="nav-text">HTML标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">HTML标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E7%BA%BF-x2F-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">1.2.</span> <span class="nav-text">水平线&#x2F;分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%8F%8A%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">段落及换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">1.5.</span> <span class="nav-text">文本格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.</span> <span class="nav-text">超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.1.</span> <span class="nav-text">普通链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.2.</span> <span class="nav-text">邮件链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F"><span class="nav-number">1.7.</span> <span class="nav-text">图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">1.8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">1.9.</span> <span class="nav-text">列表</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E6%A0%87%E7%AD%BE"><span class="nav-number">1.</span> <span class="nav-text">HTML标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E6%A0%87%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">HTML标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B4%E5%B9%B3%E7%BA%BF-%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">1.2.</span> <span class="nav-text">水平线&#x2F;分割线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">1.3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E5%8F%8A%E6%8D%A2%E8%A1%8C"><span class="nav-number">1.4.</span> <span class="nav-text">段落及换行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">1.5.</span> <span class="nav-text">文本格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.</span> <span class="nav-text">超链接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.1.</span> <span class="nav-text">普通链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.2.</span> <span class="nav-text">邮件链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F"><span class="nav-number">1.7.</span> <span class="nav-text">图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">1.8.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">1.9.</span> <span class="nav-text">列表</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -444,7 +490,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -508,13 +554,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -525,7 +571,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -558,7 +604,6 @@
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -574,70 +619,11 @@
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -679,7 +665,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -694,7 +680,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -728,6 +715,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>

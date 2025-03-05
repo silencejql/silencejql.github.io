@@ -81,7 +81,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -136,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">183</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -263,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>474</span>
+              <span>464</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -285,15 +289,26 @@
         <center></center>
 BBK软件设置密码方法
 <span id="more"></span>
-
-<h2 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h2><p>在Bin文件夹中找到LoginLock.Lock文件，将其复制到C盘根目录下<br>若无此文件可新建文本文档后另存为此名称，内容为</p>
+<h2 id="步骤一">步骤一</h2>
+<p>在Bin文件夹中找到LoginLock.Lock文件，将其复制到C盘根目录下<br />
+若无此文件可新建文本文档后另存为此名称，内容为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SuperAccount = &quot;BBKTSTSYS&quot;;</span><br><span class="line">SuperPassword = &quot;ZMY20140527&quot;;</span><br></pre></td></tr></table></figure>
 <p>均为英文字符</p>
-<h2 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h2><p>编辑方式打开设备程序使用的always文件(桌面快捷方式对应文件)<br>1、双击打开组合列表中Always下的InitForm组合<br>2、双击打开Menu，点击HELP进入菜单编辑界面<br>3、选择需要设置密码的菜单项及子项后，选择右侧<em><strong>需要权限</strong></em>,权限0为不需要权限，不同应权限可设置相应密码<br>0~9为权限等级，高等级可访问低等级权限，比如权限9可访问所有内容<br>4、更改完成后依次点击保存后退出</p>
-<h2 id="步骤三"><a href="#步骤三" class="headerlink" title="步骤三"></a>步骤三</h2><h3 id="设置权限密码"><a href="#设置权限密码" class="headerlink" title="设置权限密码"></a>设置权限密码</h3><p>双击打开always程序，点击左上角登录弹出如下界面</p>
-<p><img src="/BBK%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E6%96%B9%E6%B3%95/Login.png"></p>
-<p>输入管理员账号后点击<em><strong>设置</strong></em>进行账户管理<br>SuperAccount &#x3D; “BBKTSTSYS”<br>SuperPassword &#x3D; “ZMY20140527”</p>
-<p><img src="/BBK%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E6%96%B9%E6%B3%95/Account.png"></p>
+<h2 id="步骤二">步骤二</h2>
+<p>编辑方式打开设备程序使用的always文件(桌面快捷方式对应文件)<br />
+1、双击打开组合列表中Always下的InitForm组合<br />
+2、双击打开Menu，点击HELP进入菜单编辑界面<br />
+3、选择需要设置密码的菜单项及子项后，选择右侧<em><strong>需要权限</strong></em>,权限0为不需要权限，不同应权限可设置相应密码<br />
+0~9为权限等级，高等级可访问低等级权限，比如权限9可访问所有内容<br />
+4、更改完成后依次点击保存后退出</p>
+<h2 id="步骤三">步骤三</h2>
+<h3 id="设置权限密码">设置权限密码</h3>
+<p>双击打开always程序，点击左上角登录弹出如下界面</p>
+<p><img src="BBK%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E6%96%B9%E6%B3%95/Login.png" alt="" /></p>
+<p>输入管理员账号后点击<em><strong>设置</strong></em>进行账户管理<br />
+SuperAccount = “BBKTSTSYS”<br />
+SuperPassword = “ZMY20140527”</p>
+<p><img src="BBK%E8%BD%AF%E4%BB%B6%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81%E6%96%B9%E6%B3%95/Account.png" alt="" /></p>
 <p>设置完成后便可登录相应等级账户</p>
 
     </div>
@@ -392,7 +407,7 @@ BBK软件设置密码方法
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">183</span>
+          <span class="site-state-item-count">186</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -456,13 +471,13 @@ BBK软件设置密码方法
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">379k</span>
+    <span title="站点总字数">391k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:45</span>
+    <span title="站点阅读时长">5:56</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -473,7 +488,7 @@ BBK软件设置密码方法
 
         
 <div class="busuanzi-count">
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -506,7 +521,6 @@ BBK软件设置密码方法
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -522,70 +536,11 @@ BBK软件设置密码方法
 
 <script src="/js/bookmark.js"></script>
 
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
-
 
 
 
   
-  <script data-pjax>
+  <script>
     (function(){
       var canonicalURL, curProtocol;
       //Get the <link> tag
@@ -627,7 +582,7 @@ window.addEventListener('pjax:success', () => {
 
 
 
-<script data-pjax>
+<script>
 if (document.querySelectorAll('pre.mermaid').length) {
   NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
     mermaid.initialize({
@@ -642,7 +597,8 @@ if (document.querySelectorAll('pre.mermaid').length) {
 </script>
 
 
-    <div id="pjax">
+  
+
   
 
   
@@ -676,6 +632,5 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 });
 </script>
 
-    </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
 </html>
