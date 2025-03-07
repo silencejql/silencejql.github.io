@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>2.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,8 +293,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>静态方法只能访问类的静态成员，不能访问类的非静态成员；<br />
-非静态方法可以访问类的静态成员，也可以访问类的非静态成员；<br />
+        <p>静态方法只能访问类的静态成员，不能访问类的非静态成员；<br>
+非静态方法可以访问类的静态成员，也可以访问类的非静态成员；<br>
 静态方法不能使用实例来调用，只能使用类名来调用。</p>
 <span id="more"></span>
 <h2 id="static">static</h2>
@@ -302,7 +302,7 @@
 <blockquote>
 <p>特点：</p>
 <blockquote>
-<p>1、该变量在全局数据区分配内存。<br />
+<p>1、该变量在全局数据区分配内存。<br>
 2、初始化：如果不显式初始化，那么将被隐式初始化为0。</p>
 </blockquote>
 </blockquote>
@@ -310,18 +310,18 @@
 <blockquote>
 <p>特点：</p>
 <blockquote>
-<p>1、该变量在全局数据区分配内存。<br />
-2、初始化：如果不显式初始化，那么将被隐式初始化为0。<br />
+<p>1、该变量在全局数据区分配内存。<br>
+2、初始化：如果不显式初始化，那么将被隐式初始化为0。<br>
 3、<strong>它始终驻留在全局数据区，直到程序运行结束。但其作用域为局部作用域，当定义它的函数或语句块结束时，其作用域随之结束。</strong></p>
 </blockquote>
 </blockquote>
 <h3 id="静态数据成员">静态数据成员</h3>
 <blockquote>
-<p>内存分配：在程序的全局数据区分配。<br />
+<p>内存分配：在程序的全局数据区分配。<br>
 初始化和定义：</p>
 <blockquote>
-<p>1、静态数据成员定义时要分配空间，所以不能在类声明中定义。<br />
-2、为了避免在多个使用该类的源文件中，对其重复定义，所以，不能在类的头文件中定义。<br />
+<p>1、静态数据成员定义时要分配空间，所以不能在类声明中定义。<br>
+2、为了避免在多个使用该类的源文件中，对其重复定义，所以，不能在类的头文件中定义。<br>
 3、静态数据成员因为程序一开始运行就必需存在，所以其初始化的最佳位置在类的内部实现。</p>
 </blockquote>
 </blockquote>
@@ -342,7 +342,7 @@
 <blockquote>
 <p>特点：</p>
 <blockquote>
-<p>1、静态成员函数与类相联系，不与类的对象相联系。<br />
+<p>1、静态成员函数与类相联系，不与类的对象相联系。<br>
 2、静态成员函数不能访问非静态数据成员。原因很简单，非静态数据成员属于特定的类实例。</p>
 </blockquote>
 </blockquote>
@@ -359,8 +359,8 @@
 </blockquote>
 </blockquote>
 <h3 id="总结">总结</h3>
-<p>静态方法只能访问类的静态成员，不能访问类的非静态成员；<br />
-非静态方法可以访问类的静态成员，也可以访问类的非静态成员；<br />
+<p>静态方法只能访问类的静态成员，不能访问类的非静态成员；<br>
+非静态方法可以访问类的静态成员，也可以访问类的非静态成员；<br>
 静态方法不能使用实例来调用，只能使用类名来调用。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="built_in">int</span> i = getNum();</span><br><span class="line"><span class="built_in">int</span> j = getNum();</span><br><span class="line"><span class="keyword">static</span> <span class="built_in">int</span> num = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="built_in">int</span> <span class="title">getNum</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;i=&#123;0&#125;&quot;</span>,i);</span><br><span class="line">    Console.WriteLine(<span class="string">&quot;j=&#123;0&#125;&quot;</span>, <span class="keyword">new</span> class1().j);</span><br><span class="line">    Console.Read();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>分析：<code>Console.WriteLine(&quot;i=&#123;0&#125;&quot;,i);</code>这里<code>i</code>是<code>static</code>变量，而且类<code>class1</code>是第一次被引用，要先为<code>class1</code>里面所有的<code>static</code>变量分配内存。尽管现在有超线程技术，但是指令在逻辑还是一条一条的按顺序执行的，所以先为<code>static int i</code>分配内存，并且在该内存中保持<code>int</code>的缺省值<code>0</code>，接着再为<code>static</code> <code>int num</code> 变量分配内存，值当然也为<code>0</code>。</p>
@@ -368,7 +368,7 @@
 <h3 id="static的优点是什么？为什么要使用static-变量或函数？？">static的优点是什么？为什么要使用static 变量或函数？？</h3>
 <p>有一些频繁使用的东西，如果你每次使用都重新<code>new</code>一下，那么这个开销可能会很高，如果使用<code>static</code>，一直放在内存中，那么想用就直接用，而不需要重新<code>new</code>一块空间初始化数据。那么<code>static</code>就是为了实现一个系统的缓存作用的，其生命周期直到应用程序退出结束。</p>
 <p>静态成员包括静态字段和静态属性，静态成员和类相关联，不依赖于对象而存在，只能由类访问，而不能由对象访问；</p>
-<p>静态成员属于类所有，无论创建多少实例对象，静态成员在内存中只有一份；实例成员属于类的实例所有，每创建一个实例对象，实例成员都会在内存中分配一块内存区域。<br />
+<p>静态成员属于类所有，无论创建多少实例对象，静态成员在内存中只有一份；实例成员属于类的实例所有，每创建一个实例对象，实例成员都会在内存中分配一块内存区域。<br>
 所以静态成员一般用于存放共享的数据段，如数据库连接字符串等。</p>
 <p>一个类如果只包含静态成员和静态方法，则该类可以定义为静态类，给类加上<code>static</code>修饰符；</p>
 <h3 id="静态方法和非静态方法">静态方法和非静态方法</h3>
@@ -377,7 +377,7 @@
 <blockquote>
 <p>优点：</p>
 <blockquote>
-<p>1、静态变量在类载入时，就装入内存<br />
+<p>1、静态变量在类载入时，就装入内存<br>
 2、使用时不用 New 就意味的不必创建类中所有对象，就可以调用某个方法</p>
 </blockquote>
 </blockquote>
@@ -391,16 +391,16 @@
 <blockquote>
 <p>缺点：</p>
 <blockquote>
-<p>1、整个类型在程序运行期间只加载一次。 这样是对于那些经常使用的类型来说的，那就不用每次使用前都先加载。效率高些。但是对那些不常用的类型来说。<br />
+<p>1、整个类型在程序运行期间只加载一次。 这样是对于那些经常使用的类型来说的，那就不用每次使用前都先加载。效率高些。但是对那些不常用的类型来说。<br>
 如果是静态类型，那就要一直占用相当的内存；一直到程序停止。或者应用程序域被卸载。所以应该只对那些常用的类型定义成静态类型。</p>
 </blockquote>
 </blockquote>
 <blockquote>
 <p>优点：</p>
 <blockquote>
-<p>1、它们仅包含静态成员。<br />
-2、它们不能被实例化。<br />
-3、它们是密封的。<br />
+<p>1、它们仅包含静态成员。<br>
+2、它们不能被实例化。<br>
+3、它们是密封的。<br>
 4、它们不能包含实例构造函数（C# 编程指南）。</p>
 </blockquote>
 </blockquote>
@@ -505,7 +505,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -569,13 +569,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -583,6 +583,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

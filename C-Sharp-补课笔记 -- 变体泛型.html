@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>4.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,7 +294,7 @@
 
       
         <center></center>
-<p>基础知识普及<br />
+<p>基础知识普及<br>
 逆变与协变对应子类与父类之间的转换</p>
 <span id="more"></span>
 <h2 id="变体泛型接口">变体泛型接口</h2>
@@ -316,17 +316,17 @@
 <p>实现变体接口的类是固定类</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// The interface is covariant.</span></span><br><span class="line">ICovariant&lt;Button&gt; ibutton = <span class="keyword">new</span> SampleImplementation&lt;Button&gt;();</span><br><span class="line">ICovariant&lt;Object&gt; iobj = ibutton;</span><br><span class="line"><span class="comment">// The class is invariant.</span></span><br><span class="line">SampleImplementation&lt;Button&gt; button = <span class="keyword">new</span> SampleImplementation&lt;Button&gt;();</span><br><span class="line"><span class="comment">// The following statement generates a compiler error</span></span><br><span class="line"><span class="comment">// because classes are invariant.</span></span><br><span class="line"><span class="comment">// SampleImplementation&lt;Object&gt; obj = button;</span></span><br></pre></td></tr></table></figure>
 <h2 id="扩展变体泛型接口">扩展变体泛型接口</h2>
-<p>扩展变体泛型接口时，必须使用 in 和 out 关键字来显式指定派生接口是否支持变体。 编译器不会根据正在扩展<br />
+<p>扩展变体泛型接口时，必须使用 in 和 out 关键字来显式指定派生接口是否支持变体。 编译器不会根据正在扩展<br>
 的接口来推断变体</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">ICovariant</span>&lt;<span class="keyword">out</span> <span class="title">T</span>&gt; &#123; &#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">IInvariant</span>&lt;<span class="title">T</span>&gt; : <span class="title">ICovariant</span>&lt;<span class="title">T</span>&gt; &#123; &#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">IExtCovariant</span>&lt;<span class="keyword">out</span> <span class="title">T</span>&gt; : <span class="title">ICovariant</span>&lt;<span class="title">T</span>&gt; &#123; &#125;</span><br></pre></td></tr></table></figure>
-<p>尽管 IInvariant&lt;T&gt; 接口和 T 接口扩展的是同一个接口，但泛型类型参数 IExtCovariant&lt;out T&gt; 在前者中为固定参数，在后者中为协变参数。 此规则也适用于逆变泛型类型参数。<br />
+<p>尽管 IInvariant&lt;T&gt; 接口和 T 接口扩展的是同一个接口，但泛型类型参数 IExtCovariant&lt;out T&gt; 在前者中为固定参数，在后者中为协变参数。 此规则也适用于逆变泛型类型参数。<br>
 无论泛型类型参数 T 在接口中是协变还是逆变，都可以创建一个接口来扩展这两类接口，只要在扩展接口中，该T 泛型类型参数为固定参数</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">ICovariant</span>&lt;<span class="keyword">out</span> <span class="title">T</span>&gt; &#123; &#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">IContravariant</span>&lt;<span class="keyword">in</span> <span class="title">T</span>&gt; &#123; &#125;</span><br><span class="line"><span class="keyword">interface</span> <span class="title">IInvariant</span>&lt;<span class="title">T</span>&gt; : <span class="title">ICovariant</span>&lt;<span class="title">T</span>&gt;, <span class="title">IContravariant</span>&lt;<span class="title">T</span>&gt; &#123; &#125;</span><br></pre></td></tr></table></figure>
 <p>如果泛型类型参数 T 在一个接口中声明为协变，则无法在扩展接口中将其声明为逆变，反之亦然</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">ICovariant</span>&lt;<span class="keyword">out</span> <span class="title">T</span>&gt; &#123; &#125;</span><br><span class="line"><span class="comment">// The following statement generates a compiler error.</span></span><br><span class="line"><span class="comment">// interface ICoContraVariant&lt;in T&gt; : ICovariant&lt;T&gt; &#123; &#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="变体泛型委托">变体泛型委托</h2>
 <p>NET Framework 3.5 引入了变体支持，用于在 C# 中匹配所有委托的方法签名和委托类型。 这表明不仅可以将具有匹配签名的方法分配给委托，还可以将返回派生程度较大的派生类型的方法分配给委托（协变），或者如果方法所接受参数的派生类型所具有的派生程度小于委托类型指定的程度（逆变），也可将其分配给委托。 这包括泛型委托和非泛型委托。</p>
-<p>在 .NET Framework 4 或更高版本中，可以启用委托之间的隐式转换，以便在具有泛型类型参数所指定的不同类型按变体的要求继承自对方时，可以将这些类型的泛型委托分配给对方。<br />
+<p>在 .NET Framework 4 或更高版本中，可以启用委托之间的隐式转换，以便在具有泛型类型参数所指定的不同类型按变体的要求继承自对方时，可以将这些类型的泛型委托分配给对方。<br>
 若要启用隐式转换，必须使用 in 或 out 关键字将委托中的泛型参数显式声明为协变或逆变。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Type T is declared covariant by using the out keyword.</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">delegate</span> T <span class="title">SampleGenericDelegate</span> &lt;<span class="keyword">out</span> T&gt;()</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Test</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    SampleGenericDelegate &lt;String&gt; dString = () =&gt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    <span class="comment">// You can assign delegates to each other,</span></span><br><span class="line">    <span class="comment">// because the type T is declared covariant.</span></span><br><span class="line">    SampleGenericDelegate &lt;Object&gt; dObject = dString;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果仅使用变体支持来匹配方法签名和委托类型，且不使用 in 和 out 关键字，则可能会发现有时可以使用相同的 lambda 表达式或方法实例化委托，但不能将一个委托分配给另一个委托</p>
@@ -437,7 +437,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -501,13 +501,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -515,6 +515,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

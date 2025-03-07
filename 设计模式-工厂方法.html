@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -273,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,13 +293,13 @@
 
       
         <p>一个工厂类只创建一个产品</p>
-<p>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。<br />
+<p>定义一个创建对象的接口，让其子类自己决定实例化哪一个工厂类，工厂模式使其创建过程延迟到子类进行。<br>
 将所要创建的具体对象放在子类, 实现扩展(非更改)</p>
 <span id="more"></span>
 <h2 id="简单工厂实现">简单工厂实现</h2>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">ILogger</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">WriteLog</span>()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">DatabaseLogger</span> : <span class="title">ILogger</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">WriteLog</span>()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">FileLogger</span> : <span class="title">ILogger</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">WriteLog</span>()</span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">LoggerFactory</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Logger <span class="title">CreateLogger</span>(<span class="params"><span class="built_in">string</span> args</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(args.EqualsIgnoreCase(<span class="string">&quot;db&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">//连接数据库</span></span><br><span class="line">            <span class="comment">//创建对象</span></span><br><span class="line">            ILogger logger = <span class="keyword">new</span> DatabaseLogger();</span><br><span class="line">            <span class="comment">//初始化数据库</span></span><br><span class="line">            <span class="keyword">return</span> logger;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(args.EqualsIgnoreCase(<span class="string">&quot;file&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">//创建日志文件</span></span><br><span class="line">            <span class="comment">//创建对象</span></span><br><span class="line">            ILogger logger = <span class="keyword">new</span> FileLogger();</span><br><span class="line">            <span class="comment">//初始化日志文件</span></span><br><span class="line">            <span class="keyword">return</span> logger;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="缺点">缺点</h3>
-<p>新增产品必须修改工厂类, 违反开闭原则;<br />
+<p>新增产品必须修改工厂类, 违反开闭原则;<br>
 所有产品都由同一工厂创建,职责重,逻辑复杂,耦合度高</p>
 <p>工厂方法把简单工厂的内部逻辑判断移到了客户端代码来进行</p>
 <h2 id="工厂方法">工厂方法</h2>
@@ -403,7 +403,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -467,13 +467,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -481,6 +481,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

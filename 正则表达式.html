@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,14 +274,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
+              <span>3.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
             <div class="post-description">常用正则表达式</div>
 
@@ -295,15 +295,15 @@
 
       
         <h2 id="Re库">Re库</h2>
-<p>re.search 扫描整个字符串并返回第一个成功的匹配<br />
+<p>re.search 扫描整个字符串并返回第一个成功的匹配<br>
 re.search(pattern,string,flag=0)</p>
 <blockquote>
-<p>pattern:正则表达式字符串<br />
-string:待匹配字符串<br />
+<p>pattern:正则表达式字符串<br>
+string:待匹配字符串<br>
 flag:控制标记</p>
 <blockquote>
-<p>re.I或re.IGNORECASE表示忽略正则表达式的大小写，[A-Z]可匹配大小写<br />
-re.M或re.MULTILINE正字表达式中的^操作符能将给定字符串的每一行当做匹配开始<br />
+<p>re.I或re.IGNORECASE表示忽略正则表达式的大小写，[A-Z]可匹配大小写<br>
+re.M或re.MULTILINE正字表达式中的^操作符能将给定字符串的每一行当做匹配开始<br>
 re.S或re.DOTALL正则表达式中的.操作符能匹配所有字符，默认不能匹配换行符</p>
 </blockquote>
 </blockquote>
@@ -311,51 +311,51 @@ re.S或re.DOTALL正则表达式中的.操作符能匹配所有字符，默认不
 <blockquote>
 <p>re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配</p>
 </blockquote>
-<p>re.findall在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表<br />
+<p>re.findall在字符串中找到正则表达式所匹配的所有子串，并返回一个列表，如果没有找到匹配的，则返回空列表<br>
 re.split(pattern,string,maxsplit=0,flag=0)</p>
 <blockquote>
-<p>将字符串按照正则表达式匹配的结果进行分割，返回列表<br />
+<p>将字符串按照正则表达式匹配的结果进行分割，返回列表<br>
 re.split([a],sadfab)返回s,df,b</p>
 </blockquote>
 <p>re.sub(pattern,repl,string,count=0,flag=0)</p>
 <blockquote>
-<p>在一个字符串中替换所有正则表达式所匹配的子串，返回替换后的字符串<br />
-repl:替换匹配字符串的字符串<br />
+<p>在一个字符串中替换所有正则表达式所匹配的子串，返回替换后的字符串<br>
+repl:替换匹配字符串的字符串<br>
 count:匹配的最大替换次数</p>
 </blockquote>
 <h3 id="Match对象属性">Match对象属性</h3>
 <blockquote>
-<p>.string:待匹配文本<br />
-.re:匹配时使用的pattern对象<br />
-.pos:正则表达式搜索文本的开始位置<br />
+<p>.string:待匹配文本<br>
+.re:匹配时使用的pattern对象<br>
+.pos:正则表达式搜索文本的开始位置<br>
 .endpos:正则表达式搜索文本的结束位置</p>
 </blockquote>
 <h3 id="Match对象方法">Match对象方法</h3>
 <blockquote>
-<p>.group():group(0)获取匹配后的字符串,group(n)匹配正则表达式中如(\d+)第n个括号所匹配字符串<br />
-.start():匹配字符串在原始字符串的开始位置<br />
-.end():<br />
+<p>.group():group(0)获取匹配后的字符串,group(n)匹配正则表达式中如(\d+)第n个括号所匹配字符串<br>
+.start():匹配字符串在原始字符串的开始位置<br>
+.end():<br>
 .span():返回(.start(),.end())</p>
 </blockquote>
 <h2 id="常用字符">常用字符</h2>
-<p>字符|描述|实例<br />
-:|:|:<br />
-. | 任意单个字符 |<br />
-[] | 字符集，对单个字符给出取值范围 | [abc]表示a或b或c的单个字符，[a-z]表示a-z的单个字符<br />
+<p>字符|描述|实例<br>
+:|:|:<br>
+. | 任意单个字符 |<br>
+[] | 字符集，对单个字符给出取值范围 | [abc]表示a或b或c的单个字符，[a-z]表示a-z的单个字符<br>
 [^]  |非字符集，对单个字符给出排除范围   | [^abc]表示非a或b或c的单个字符</p>
 <ul>
 <li>| 前一个字符0次或无限次重复  |  abc*表示ab、abc、abccccc</li>
 </ul>
 <ul>
-<li>| 前一个字符的1次或无限次重复  |abc+表示abc、abccc<br />
-?   | 前一个字符0次或1次重复  |   abc?表示ab或abc<br />
-| |左右表达式任意一个   |a|b 表示a或b<br />
-{m}  |重复前一个字符m次   |ab{2}cb表示abbcb,注意次数<br />
-{m,n}  | 重复前面一个字符m至n次(包含n)  |  ab{1,2}c表示abc或abbc<br />
-^  | 匹配字符串开头  | ^abc表示abc在一个字符串的开头<br />
-$  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
-()  | 分组标记，内部只能用|操作符  | (abc)表示abc,(abc|def)表示abc或def<br />
-\d  | 数字，等价于[0-9]  |<br />
+<li>| 前一个字符的1次或无限次重复  |abc+表示abc、abccc<br>
+?   | 前一个字符0次或1次重复  |   abc?表示ab或abc<br>
+| |左右表达式任意一个   |a|b 表示a或b<br>
+{m}  |重复前一个字符m次   |ab{2}cb表示abbcb,注意次数<br>
+{m,n}  | 重复前面一个字符m至n次(包含n)  |  ab{1,2}c表示abc或abbc<br>
+^  | 匹配字符串开头  | ^abc表示abc在一个字符串的开头<br>
+$  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br>
+()  | 分组标记，内部只能用|操作符  | (abc)表示abc,(abc|def)表示abc或def<br>
+\d  | 数字，等价于[0-9]  |<br>
 \w  | 单词字符，等价于[A-Za-z0-9]  |</li>
 </ul>
 <h3 id="非打印字符">非打印字符</h3>
@@ -437,7 +437,7 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
 </tr>
 <tr>
 <td style="text-align:center">[]</td>
-<td style="text-align:left">[abc]表示a或b或c，[a<sub>z]表示a</sub>z其中一个</td>
+<td style="text-align:left">[abc]表示a或b或c，[a~z]表示a~z其中一个</td>
 </tr>
 <tr>
 <td style="text-align:center">[^]</td>
@@ -466,7 +466,7 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
 </tbody>
 </table>
 <h3 id="限定符">限定符</h3>
-<p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。<br />
+<p>限定符用来指定正则表达式的一个给定组件必须要出现多少次才能满足匹配。有 * 或 + 或 ? 或 {n} 或 {n,} 或 {n,m} 共6种。<br>
 正则表达式的限定符有：</p>
 <table>
 <thead>
@@ -504,8 +504,8 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
 </table>
 <p><em><strong>*、+限定符都是贪婪的，因为它们会尽可能多的匹配文字，只有在它们的后面加上一个?就可以实现非贪婪或最小匹配</strong></em></p>
 <h3 id="定位符">定位符</h3>
-<p>定位符使您能够将正则表达式固定到行首或行尾。它们还使您能够创建这样的正则表达式，这些正则表达式出现在一个单词内、在一个单词的开头或者一个单词的结尾。<br />
-定位符用来描述字符串或单词的边界，^ 和 $ 分别指字符串的开始与结束，\b 描述单词的前或后边界，\B 表示非单词边界。<br />
+<p>定位符使您能够将正则表达式固定到行首或行尾。它们还使您能够创建这样的正则表达式，这些正则表达式出现在一个单词内、在一个单词的开头或者一个单词的结尾。<br>
+定位符用来描述字符串或单词的边界，^ 和 $ 分别指字符串的开始与结束，\b 描述单词的前或后边界，\B 表示非单词边界。<br>
 正则表达式的定位符有：</p>
 <table>
 <thead>
@@ -533,19 +533,19 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
 </tr>
 </tbody>
 </table>
-<p><strong>注意</strong>：不能将限定符与定位符一起使用。由于在紧靠换行或者单词边界的前面或后面不能有一个以上位置，因此不允许诸如 ^* 之类的表达式。<br />
-若要匹配一行文本开始处的文本，请在正则表达式的开始使用 ^ 字符。不要将 ^ 的这种用法与中括号表达式内的用法混淆。<br />
+<p><strong>注意</strong>：不能将限定符与定位符一起使用。由于在紧靠换行或者单词边界的前面或后面不能有一个以上位置，因此不允许诸如 ^* 之类的表达式。<br>
+若要匹配一行文本开始处的文本，请在正则表达式的开始使用 ^ 字符。不要将 ^ 的这种用法与中括号表达式内的用法混淆。<br>
 若要匹配一行文本的结束处的文本，请在正则表达式的结束处使用 $ 字符。</p>
 <h2 id="环视">环视</h2>
-<p>环视又叫预搜索和零宽断言<br />
+<p>环视又叫预搜索和零宽断言<br>
 环视只占用逻辑位置 不占用物理位置</p>
-<p>环视 | 含义<br />
-|:|:|<br />
-(?=exp)  | 肯定顺序环视，子表达式能匹配右侧的文本<br />
-(?!exp)  | 否定顺序环视，子表达式不能匹配右侧的文本<br />
-(?&lt;=exp)  |  肯定逆序环视，子表达式能匹配左侧的文本<br />
+<p>环视 | 含义<br>
+|:|:|<br>
+(?=exp)  | 肯定顺序环视，子表达式能匹配右侧的文本<br>
+(?!exp)  | 否定顺序环视，子表达式不能匹配右侧的文本<br>
+(?&lt;=exp)  |  肯定逆序环视，子表达式能匹配左侧的文本<br>
 (?&lt;!exp)  |  否定逆序环视，子表达式不能匹配左侧的文本</p>
-<p>示例：<br />
+<p>示例：<br>
 下列环视正则匹配均输出&quot;AAA&quot;</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">&quot;(?&lt;=B)AAA&quot;</span>,<span class="string">&quot;BAAA&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">&quot;(?&lt;!B)AAA&quot;</span>,<span class="string">&quot;CAAA&quot;</span>))<span class="comment">#这里使用(?&lt;!B)、(?&lt;!=B)均可</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">&quot;AAA(?=B)&quot;</span>,<span class="string">&quot;AAAB&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">&quot;AAA(?!B)&quot;</span>,<span class="string">&quot;AAAC&quot;</span>))<span class="comment">#这里使用(?!B)、(?!=B)均可</span></span><br></pre></td></tr></table></figure>
 
@@ -649,7 +649,7 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -713,13 +713,13 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -727,6 +727,7 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br />
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

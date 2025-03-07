@@ -146,7 +146,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -282,14 +282,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
             <div class="post-description">C# IBMMQ</div>
 
@@ -310,42 +310,42 @@ https://blog.csdn.net/java_sparrow/article/details/80626705
 <span id="more"></span>
 <h2 id="IBMMQ-软件安装设置">IBMMQ 软件安装设置</h2>
 <h3 id="安装">安装</h3>
-<p>安装包(WebSphereMQ8.0)已上传网盘，下载后直接安装即可。<br />
-链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1P9Dz74tvf8_SExH0Dl0hHA">https://pan.baidu.com/s/1P9Dz74tvf8_SExH0Dl0hHA</a><br />
+<p>安装包(WebSphereMQ8.0)已上传网盘，下载后直接安装即可。<br>
+链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1P9Dz74tvf8_SExH0Dl0hHA">https://pan.baidu.com/s/1P9Dz74tvf8_SExH0Dl0hHA</a><br>
 提取码：0a87</p>
 <h3 id="服务端配置">服务端配置</h3>
 <p>下文中未提到的部分默认参数即可</p>
 <h4 id="创建队列管理器">创建队列管理器</h4>
-<p><img src="IBM%20MQ/QM.PNG" alt="" /></p>
+<p><img src="IBM%20MQ/QM.PNG" alt=""></p>
 <h5 id="设置侦听端口">设置侦听端口</h5>
-<p><img src="IBM%20MQ/QM3.png" alt="" /></p>
+<p><img src="IBM%20MQ/QM3.png" alt=""></p>
 <h4 id="创建通道">创建通道</h4>
-<p><img src="IBM%20MQ/CHANNEL.PNG" alt="" /></p>
+<p><img src="IBM%20MQ/CHANNEL.PNG" alt=""></p>
 <h4 id="创建队列">创建队列</h4>
-<p><img src="IBM%20MQ/Q.PNG" alt="" /></p>
+<p><img src="IBM%20MQ/Q.PNG" alt=""></p>
 <h4 id="添加用户组">添加用户组</h4>
-<p>将当前用户添加到IBMMQ管理组<br />
-<img src="IBM%20MQ/USER.png" alt="" /></p>
-<p>其中对象名为下图所示安装IBMMQ后自动创建的组mqm<br />
-<img src="IBM%20MQ/GROUP.png" alt="" /></p>
+<p>将当前用户添加到IBMMQ管理组<br>
+<img src="IBM%20MQ/USER.png" alt=""></p>
+<p>其中对象名为下图所示安装IBMMQ后自动创建的组mqm<br>
+<img src="IBM%20MQ/GROUP.png" alt=""></p>
 <p>至此，IBMMQ环境设置完毕</p>
 <h2 id="C-连接MQ">C# 连接MQ</h2>
 <h3 id="准备">准备</h3>
 <h4 id="已安装IBMMQ软件">已安装IBMMQ软件</h4>
-<p>程序中引用：amqmdnet.dll库文件（IBMMQ客户端安装后生成）<br />
-路径分别为：<br />
-C:\Program Files\IBM\WebSphere MQ\bin\amqmdnet.dll<br />
-程序中添加using IBM.WMQ;<br />
-程序安装完成后可能缺少mqdc.dll文件，可下载后放在安装路径<br />
-C:\Program Files\IBM\WebSphere MQ\bin64 下<br />
-链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19XMuE1q46K1E3BfO8lPPIQ">https://pan.baidu.com/s/19XMuE1q46K1E3BfO8lPPIQ</a><br />
+<p>程序中引用：amqmdnet.dll库文件（IBMMQ客户端安装后生成）<br>
+路径分别为：<br>
+C:\Program Files\IBM\WebSphere MQ\bin\amqmdnet.dll<br>
+程序中添加using IBM.WMQ;<br>
+程序安装完成后可能缺少mqdc.dll文件，可下载后放在安装路径<br>
+C:\Program Files\IBM\WebSphere MQ\bin64 下<br>
+链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/19XMuE1q46K1E3BfO8lPPIQ">https://pan.baidu.com/s/19XMuE1q46K1E3BfO8lPPIQ</a><br>
 提取码：5qhq</p>
 <h4 id="免安装IBMMQ">免安装IBMMQ</h4>
-<p>准备好amqmdnet.dll在程序中直接引用即可下载地址：<br />
-链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Qb4bdDpqXmyQO5_Jx4hmnA">https://pan.baidu.com/s/1Qb4bdDpqXmyQO5_Jx4hmnA</a><br />
-提取码：soua<br />
-若缺少其他文件请自取：IBMMQ8.0安装路径Bin文件夹<br />
-链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdg4J2I1-1qLcHh_hnfXBA">https://pan.baidu.com/s/1vdg4J2I1-1qLcHh_hnfXBA</a><br />
+<p>准备好amqmdnet.dll在程序中直接引用即可下载地址：<br>
+链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Qb4bdDpqXmyQO5_Jx4hmnA">https://pan.baidu.com/s/1Qb4bdDpqXmyQO5_Jx4hmnA</a><br>
+提取码：soua<br>
+若缺少其他文件请自取：IBMMQ8.0安装路径Bin文件夹<br>
+链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdg4J2I1-1qLcHh_hnfXBA">https://pan.baidu.com/s/1vdg4J2I1-1qLcHh_hnfXBA</a><br>
 提取码：kgi9</p>
 <h3 id="C-代码">C#代码</h3>
 <h4 id="初始化">初始化</h4>
@@ -459,7 +459,7 @@ C:\Program Files\IBM\WebSphere MQ\bin64 下<br />
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -523,13 +523,13 @@ C:\Program Files\IBM\WebSphere MQ\bin64 下<br />
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -537,6 +537,7 @@ C:\Program Files\IBM\WebSphere MQ\bin64 下<br />
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -299,12 +299,12 @@
 <p>protected:只有同一类或派生类中的代码可以访问该类型或成员</p>
 <p>internal:同一程序集中的任何代码都可以访问该类型或成员，但其他程序集中的代码不可以。</p>
 <p>protected internal:同一程序集中的任何代码或其他程序集中的任何派生类都可以访问该类型或成员。</p>
-<p>private protected:同一类或基类程序集内派生类中的代码可以访问该类型或成<br />
+<p>private protected:同一类或基类程序集内派生类中的代码可以访问该类型或成<br>
 员。</p>
 <p>abstract:要求在派生类中重写类成员。</p>
 <h2 id="数据类型">数据类型</h2>
-<p>值类型存储在堆栈上，引用类型在栈中存储一个引用，其实际的存储位置位于托管堆。<br />
-C#类为引用类型，结构为值类型。<br />
+<p>值类型存储在堆栈上，引用类型在栈中存储一个引用，其实际的存储位置位于托管堆。<br>
+C#类为引用类型，结构为值类型。<br>
 从值类型转化为引用类型称为装箱，如果方法需要把一个对象作为参数，而且传送一个值类型，装箱操作会自动进行；装箱的值类型可以使用拆箱操作转换为值类型，在拆箱时，<strong>需要使用类型转换运算符</strong>。</p>
 <h3 id="值类型">值类型</h3>
 <p>结构体 数值类型(整数，浮点数，高精度浮点数) 可空类型 布尔 字符 枚举</p>
@@ -313,33 +313,33 @@ C#类为引用类型，结构为值类型。<br />
 <h2 id="装箱和拆箱">装箱和拆箱</h2>
 <p>装箱是一种通过将变量存储到System.Object中来显式地将值类型转换为引用类型的机制。当您装入值时，CLR会将新对象分配到堆中，并将值类型的值复制到该实例中。例如：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">20</span>;  </span><br><span class="line"><span class="built_in">object</span> b = a; <span class="comment">//装箱</span></span><br></pre></td></tr></table></figure>
-<p>相反的操作是拆箱，它是将引用类型转换回值类型的过程。此过程验证接收数据类型是否与装箱类型一致;<br />
+<p>相反的操作是拆箱，它是将引用类型转换回值类型的过程。此过程验证接收数据类型是否与装箱类型一致;<br>
 <code>int c = (int)b; // 拆箱</code></p>
 <h2 id="泛型">泛型</h2>
 <blockquote>
 <p>特征：</p>
 <blockquote>
-<p>类型安全<br />
-性能<br />
+<p>类型安全<br>
+性能<br>
 二进制代码复用</p>
 </blockquote>
 </blockquote>
 <p>详见： <a href="/%E6%B3%9B%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9.html" title="泛型的特点">泛型的特点</a></p>
 <h3 id="为什么不用object代替泛型">为什么不用object代替泛型</h3>
-<p>由于Object为所有类型的基类，所以可以处理任何数据类型的数据，但是其中存在这拆箱和装箱，如果数据太多会影响到程序的性能。<br />
+<p>由于Object为所有类型的基类，所以可以处理任何数据类型的数据，但是其中存在这拆箱和装箱，如果数据太多会影响到程序的性能。<br>
 在使用泛型的时候程序会在编译阶段根据我们提供的类型生成相应的二进制代码，无须进行装箱和拆箱操作。</p>
 <h2 id="接口">接口</h2>
 <h3 id="为什么要用接口">为什么要用接口</h3>
-<p>接口一般由上层人员发起，下层人员实现。<br />
+<p>接口一般由上层人员发起，下层人员实现。<br>
 写接口并不是为了扩展，而是为了扩展以后的模块仍然跟项目模块保持高度一致，为了扩展后的规范化。</p>
 <p>反射</p>
 <h3 id="实例化接口对象">实例化接口对象</h3>
 <h4 id="接口回调">接口回调</h4>
-<p>接口不仅可以声明对象，而且可以把对象实例化，还可以当做参数被传入。<br />
+<p>接口不仅可以声明对象，而且可以把对象实例化，还可以当做参数被传入。<br>
 即继承中的向上转型，父类 FL=new 子类()，只不过这里的父类就是interface接口。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="built_in">double</span> <span class="title">plus</span>()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">num</span> : <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">double</span> aa, bb;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">num</span>(<span class="params"><span class="built_in">double</span> a, <span class="built_in">double</span> b</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">this</span>.bb = b;</span><br><span class="line">    <span class="keyword">this</span>.aa = a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="built_in">double</span> <span class="title">plus</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> (aa + bb);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  Itemp tm = <span class="literal">null</span>;<span class="comment">//声明接口对象引用</span></span><br><span class="line">  tm = <span class="keyword">new</span> num(<span class="number">1</span>, <span class="number">2</span>);<span class="comment">//接口回调(向上转型)</span></span><br><span class="line">  Console.WriteLine(tm.plus());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="类型参数约束">类型参数约束</h2>
-<p>  在定义泛型类时，可以对客户端代码能够在实例化类时用于类型参数的类型种类施加限制。如果客户端代码尝试使用某个约束所不允许的类型来实例化类，则会产生编译时错误。这些限制称为约束。<br />
+<p>  在定义泛型类时，可以对客户端代码能够在实例化类时用于类型参数的类型种类施加限制。如果客户端代码尝试使用某个约束所不允许的类型来实例化类，则会产生编译时错误。这些限制称为约束。<br>
 类型参数约束.NET支持的类型参数约束有以下五种：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> T : <span class="keyword">struct</span>  <span class="comment">//类型参数必须是值类型；可以指定除 Nullable 以外的任何值类型</span></span><br><span class="line"><span class="keyword">where</span> T : <span class="keyword">class</span>   <span class="comment">//类型参数必须是引用类型；这一点也适用于任何类、接口、委托或数组类型</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">new</span>()   <span class="comment">//类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new() 约束必须最后指定</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">NameOfBaseClass</span>   <span class="comment">//类型参数必须是指定的基类或派生自指定的基类</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">NameOfInterface</span>   <span class="comment">//类型参数必须是指定的接口或实现指定的接口。可以指定多个接口约束。约束接口也可以是泛型的</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">U</span>    <span class="comment">//为 T 提供的类型参数必须是为 U 提供的参数或派生自为 U 提供的参数</span></span><br></pre></td></tr></table></figure>
 <h2 id="当前程序运行路径">当前程序运行路径</h2>
@@ -464,7 +464,7 @@ C#类为引用类型，结构为值类型。<br />
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -528,13 +528,13 @@ C#类为引用类型，结构为值类型。<br />
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -542,6 +542,7 @@ C#类为引用类型，结构为值类型。<br />
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

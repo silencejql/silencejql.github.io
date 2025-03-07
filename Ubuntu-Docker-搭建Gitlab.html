@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -264,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,25 +294,25 @@ Ubuntu下基于Docker搭建Gitlab
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /gitlab/data</span><br><span class="line">sudo mkdir -p /gitlab/logs</span><br><span class="line">sudo mkdir -p /gitlab/config</span><br></pre></td></tr></table></figure>
 <h3 id="启动容器">启动容器</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">    --publish 8443:433 --publish 8000:80 --publish 2222:22 \</span><br><span class="line">    --name gitlab \</span><br><span class="line">    --restart always \</span><br><span class="line">    --volume /gitlab/config:/etc/gitlab \</span><br><span class="line">    --volume /gitlab/logs:/var/log/gitlab \</span><br><span class="line">    --volume /gitlab/data:/var/opt/gitlab \</span><br><span class="line">    -log-driver=none \</span><br><span class="line">    beginor/gitlab-ce</span><br></pre></td></tr></table></figure>
-<p>说明:<br />
-–detach 设置容器后台运行<br />
-–publish 暴露 https、http和ssh端口,关于端口下文会细说<br />
-–name 容器名称<br />
-–restart always 每次启动容器就重启GitLab<br />
+<p>说明:<br>
+–detach 设置容器后台运行<br>
+–publish 暴露 https、http和ssh端口,关于端口下文会细说<br>
+–name 容器名称<br>
+–restart always 每次启动容器就重启GitLab<br>
 –volume 设置GitLab数据挂载点</p>
 <h3 id="查询Docker状态">查询Docker状态</h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//status=starting表示正在启动, 启动成功转为health</span><br><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure>
 <h2 id="配置Gitlab">配置Gitlab</h2>
 <p>配置文件位于/gitlab/config/gitlab.rb中</p>
-<p>修改external_url, 外部访问地址<br />
-修改gitlab_shell_ssh_port --不修改每次访问都需要输入密码<br />
+<p>修改external_url, 外部访问地址<br>
+修改gitlab_shell_ssh_port --不修改每次访问都需要输入密码<br>
 修改nginx监听端口</p>
 <h2 id="Docker常用命令">Docker常用命令</h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start</span><br><span class="line">sudo docker restart</span><br><span class="line">sudo docker stop</span><br></pre></td></tr></table></figure>
 <h2 id="登录gitlab">登录gitlab</h2>
 <p>gitlab启动后浏览器输入IP:8000后进入登录界面</p>
-<p>用户名:root<br />
-获取默认密码:<br />
+<p>用户名:root<br>
+获取默认密码:<br>
 <code>sudo docker exec -it gitlab grep 'Password:' /etc/'gitlab/initial_root_password</code></p>
 <p>登录后点击右上角Edit profile更改密码</p>
 <h2 id="使用Gitlab">使用Gitlab</h2>
@@ -419,7 +419,7 @@ Ubuntu下基于Docker搭建Gitlab
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -483,13 +483,13 @@ Ubuntu下基于Docker搭建Gitlab
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -497,6 +497,7 @@ Ubuntu下基于Docker搭建Gitlab
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

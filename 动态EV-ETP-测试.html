@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -273,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>351</span>
+              <span>360</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -295,21 +295,21 @@
         <center>说明</center>
 动态EV或ETP工位简单说明
 <span id="more"></span>
-<p>新版本ETP测试工况分四部分：加速、匀速、滑行、制动<br />
+<p>新版本ETP测试工况分四部分：加速、匀速、滑行、制动<br>
 测试内容除了基本电流电压等BMS数据读取还包括各阶段的效率及能量消耗率的计算等</p>
 <h2 id="程序配置">程序配置</h2>
-<p>最新程序增加是否为同轴滚筒的配置：在EvDynamicTestCurve.xml中isCoaxial配置为true表示为同轴滚筒<br />
+<p>最新程序增加是否为同轴滚筒的配置：在EvDynamicTestCurve.xml中isCoaxial配置为true表示为同轴滚筒<br>
 非同轴滚筒计算时F为左右滚筒的合力</p>
 <h2 id="计算方法">计算方法</h2>
-<p>加速、匀速过程中电能转化为动能，效率计算公式为 <strong>Fvt/UIt</strong><br />
-滑行、制动过程中动能转化为电能，效率计算公式为 <strong>UIt/Fvt</strong><br />
+<p>加速、匀速过程中电能转化为动能，效率计算公式为 <strong>Fvt/UIt</strong><br>
+滑行、制动过程中动能转化为电能，效率计算公式为 <strong>UIt/Fvt</strong><br>
 其中F、v、U、I均为各阶段的平均值</p>
 <h3 id="能量消耗率">能量消耗率</h3>
-<p>C = E/D 单位为(kW<em>h)/100km<br />
+<p>C = E/D 单位为(kW<em>h)/100km<br>
 程序中的计算公式为：整个过程中的平均100</em>UIt/d</p>
 <h2 id="说明">说明</h2>
-<p>由于I为负数时表示放电加速所以计算时简单处理为<br />
-I为负：效率 = Fvt/UIt<br />
+<p>由于I为负数时表示放电加速所以计算时简单处理为<br>
+I为负：效率 = Fvt/UIt<br>
 I为正：效率 = UIt/Fvt</p>
 
     </div>
@@ -408,7 +408,7 @@ I为正：效率 = UIt/Fvt</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -472,13 +472,13 @@ I为正：效率 = UIt/Fvt</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -486,6 +486,7 @@ I为正：效率 = UIt/Fvt</p>
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,10 +280,10 @@
         <p>结论: 推荐调用timeBeginPeriod后使用Sleep(1)精度在2ms以内</p>
 <span id="more"></span>
 <h2 id="DateTime-Now">DateTime.Now</h2>
-<p>该属性发解析取决于系统计时器, 后者取决于基础操作系统, 精度一般介于0.5~15ms之间<br />
+<p>该属性发解析取决于系统计时器, 后者取决于基础操作系统, 精度一般介于0.5~15ms之间<br>
 该属性通常用于度量性能, 由于分辨路较低不适合用于测试工具, 推荐使用Stopwatch类</p>
 <h2 id="Stopwatch">Stopwatch</h2>
-<p>Stopwatch内部使用系统API <code>QueryPerformanceCounter / QueryPerformanceFrequency</code>来进行高精度计时,<br />
+<p>Stopwatch内部使用系统API <code>QueryPerformanceCounter / QueryPerformanceFrequency</code>来进行高精度计时,<br>
 精度依赖于硬件通常高达几十纳秒(ns)</p>
 <h3 id="测试一">测试一</h3>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Stopwatch sw = <span class="keyword">new</span> Stopwatch();</span><br><span class="line">sw.Start();</span><br><span class="line">Thread.Sleep(<span class="number">1</span>);</span><br><span class="line">sw.Stop();</span><br><span class="line">TimeSpan timeSpan = sw.Elapsed;</span><br><span class="line"></span><br><span class="line"><span class="built_in">double</span> ms = timeSpan.TotalMilliseconds;</span><br><span class="line"></span><br><span class="line"><span class="comment">//实际定时时间大约15.6ms</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">该测试取决于系统时钟, Windows默认时钟频率为每秒64次即15.625ms</span></span><br><span class="line"><span class="comment">小于16ms的Sleep不会生效</span></span><br><span class="line"><span class="comment">可以调用timeBeginPeriod更改时钟频率</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
@@ -388,7 +388,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -452,13 +452,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -466,6 +466,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

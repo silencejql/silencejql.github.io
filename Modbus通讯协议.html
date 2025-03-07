@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -264,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -287,21 +287,21 @@
 前面啥也没有
 <span id="more"></span>
 <h2 id="Modbus-TCP-数据帧">Modbus TCP 数据帧</h2>
-<p>MBAP + PDU<br />
-MBAP： Modbus Application Protocol Header<br />
-PDU：Protocol Data Unit<br />
+<p>MBAP + PDU<br>
+MBAP： Modbus Application Protocol Header<br>
+PDU：Protocol Data Unit<br>
 MBAP + Function code + Data</p>
-<p>示例：<br />
-00 01 00 00 00 06 01<br />
+<p>示例：<br>
+00 01 00 00 00 06 01<br>
 事务标识2+modbus协议2+数据长度2+Slave站号1</p>
-<p>Function code：<br />
-0x01：读线圈<br />
-02：读离散量输入<br />
-03：读保持寄存器<br />
-04：读输入寄存器<br />
-05：写单个线圈<br />
-06：写单个保持寄存器<br />
-10：写多个保持寄存器<br />
+<p>Function code：<br>
+0x01：读线圈<br>
+02：读离散量输入<br>
+03：读保持寄存器<br>
+04：读输入寄存器<br>
+05：写单个线圈<br>
+06：写单个保持寄存器<br>
+10：写多个保持寄存器<br>
 0F：写多个线圈</p>
 <p>报文头部：</p>
 <table>
@@ -340,8 +340,8 @@ MBAP + Function code + Data</p>
 </tr>
 </tbody>
 </table>
-<p>Modbus TCP协议功能码报文<br />
-功能码3 读多个寄存器<br />
+<p>Modbus TCP协议功能码报文<br>
+功能码3 读多个寄存器<br>
 请求报文格式</p>
 <table>
 <thead>
@@ -396,7 +396,7 @@ MBAP + Function code + Data</p>
 </tr>
 </tbody>
 </table>
-<p>功能码16 写多个寄存器<br />
+<p>功能码16 写多个寄存器<br>
 请求报文格式</p>
 <table>
 <thead>
@@ -455,7 +455,7 @@ MBAP + Function code + Data</p>
 </tr>
 </tbody>
 </table>
-<p>功能码6 写单个寄存器<br />
+<p>功能码6 写单个寄存器<br>
 请求报文格式</p>
 <table>
 <thead>
@@ -504,25 +504,25 @@ MBAP + Function code + Data</p>
 </table>
 <p>控制 IB IL 24 DO8开关量输出模块请求报文，模块寄存器地址：384，控制数据在最后一个字节；</p>
 <p>0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
-<p>控制DO输出成功响应报文<br />
+<p>控制DO输出成功响应报文<br>
 0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
 <p>读取 IB IL 24 DI8开关量输入模块请求报文，模块寄存器地址：0，数据寄存器长度为1；</p>
 <p>0B 01 00 00 00 06 FF 03 00 00 00 01</p>
-<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br />
+<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br>
 0B 01 00 00 00 05 FF 03 02 00 XX</p>
 <p>读取 IB IL AI2SF-230模拟量输入模块请求报文，模块寄存器地址：192，数据寄存器长度为2，该模块默认连接0~10V信号；</p>
 <p>0B 02 00 00 00 06 FF 03 00 C0 00 02</p>
-<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br />
+<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br>
 0B 02 00 00 00 07 FF 03 04 XX XX XX XX</p>
 <h2 id="Kepserver">Kepserver</h2>
-<p>Address<br />
-输出线圈：  000001 ~ 065536<br />
-输入线圈：  100001 ~ 165536<br />
-内部寄存器：300001 ~ 365536<br />
+<p>Address<br>
+输出线圈：  000001 ~ 065536<br>
+输入线圈：  100001 ~ 165536<br>
+内部寄存器：300001 ~ 365536<br>
 保持寄存器：400001 ~ 465536</p>
-<p>访问输出线圈：Address：000001<br />
+<p>访问输出线圈：Address：000001<br>
 访问连续10个输出线圈：Address：000001#10</p>
-<p>访问保持寄存器：Address：400001<br />
+<p>访问保持寄存器：Address：400001<br>
 访问连续10个保持寄存器：Address：400001[10]</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -622,7 +622,7 @@ MBAP + Function code + Data</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -686,13 +686,13 @@ MBAP + Function code + Data</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -700,6 +700,7 @@ MBAP + Function code + Data</p>
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

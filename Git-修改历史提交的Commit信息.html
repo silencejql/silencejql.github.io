@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
       
         <p>在 Git 中修改历史提交需要谨慎操作，因为这会影响仓库的提交历史。以下是几种常见的修改历史提交的方法，以及它们的适用场景和注意事项：</p>
 <span id="more"></span>
-<hr />
+<hr>
 <h3 id="1-修改最近一次提交（尚未推送）">1. <strong>修改最近一次提交</strong>（尚未推送）</h3>
 <ul>
 <li>
@@ -294,7 +294,7 @@
 </ul>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="2-修改更早的提交（交互式变基）">2. <strong>修改更早的提交</strong>（交互式变基）</h3>
 <ul>
 <li><strong>场景</strong>：修改某个历史提交（如提交信息、文件内容）或合并多个提交。</li>
@@ -324,7 +324,7 @@
 </ol>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="3-删除历史中的某个提交">3. <strong>删除历史中的某个提交</strong></h3>
 <ul>
 <li><strong>场景</strong>：完全删除某个错误的提交。</li>
@@ -343,7 +343,7 @@
 </ol>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="4-合并多个提交">4. <strong>合并多个提交</strong></h3>
 <ul>
 <li><strong>场景</strong>：将多个小提交合并为一个逻辑完整的提交。</li>
@@ -362,12 +362,12 @@
 </ol>
 </li>
 </ul>
-<hr />
+<hr>
 <h3 id="5-强制推送修改后的历史">5. <strong>强制推送修改后的历史</strong></h3>
 <p>如果修改的是已推送到远程仓库的历史，需强制推送：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push --force</span><br><span class="line"><span class="comment"># 更安全的选项（避免覆盖他人提交）</span></span><br><span class="line">git push --force-with-lease</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>：强制推送会覆盖远程历史，需确保团队其他成员已同步你的修改。</p>
-<hr />
+<hr>
 <h3 id="6-彻底删除敏感信息">6. <strong>彻底删除敏感信息</strong></h3>
 <p>如果提交中误添加了敏感信息（如密码），需使用 <code>git filter-repo</code> 工具：</p>
 <ol>
@@ -384,14 +384,14 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --force --all</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr />
+<hr>
 <h3 id="⚠️-注意事项">⚠️ 注意事项</h3>
 <ol>
 <li><strong>仅限本地未推送的提交</strong>：修改已推送的历史会影响他人，需与团队协商。</li>
 <li><strong>备份分支</strong>：操作前备份当前分支（<code>git branch backup</code>）。</li>
 <li><strong>慎用 <code>--force</code></strong>：强制推送可能导致他人代码丢失。</li>
 </ol>
-<hr />
+<hr>
 <h3 id="示例：修改某次旧提交的信息">示例：修改某次旧提交的信息</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 启动交互式变基（假设修改倒数第3次提交）</span></span><br><span class="line">git rebase -i HEAD~3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 将目标提交行的 &quot;pick&quot; 改为 &quot;edit&quot;，保存退出</span></span><br><span class="line"><span class="comment"># 3. 修改提交信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;New commit message&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 继续变基</span></span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 强制推送（如果已推送过）</span></span><br><span class="line">git push --force-with-lease</span><br></pre></td></tr></table></figure>
 <p>如果需要更复杂的操作（如拆分提交），可结合 <code>git reset</code> 逐步重构历史。</p>
@@ -492,7 +492,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -556,13 +556,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -570,6 +570,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

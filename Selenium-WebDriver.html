@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -267,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.4k</span>
+              <span>7.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -296,8 +296,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Select</span> <span class="variable">select</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Select</span>(driver.findElement(By.tagName(<span class="string">&quot;select&quot;</span>)));</span><br><span class="line">select.deselectAll();</span><br><span class="line">select.selectByVisibleText(<span class="string">&quot;Edam&quot;</span>);</span><br></pre></td></tr></table></figure>
 <p>上述代码取消页面上第一个 select 元素的所有 option 的选中状态，然后选中字面值为 “Edam” 的 option。</p>
 <p>如果你已经完成表单填充，你可能希望提交它，你只要找到 “submit” 按钮然后点击它即可。</p>
-<p><code>driver.findElement(By.id(&quot;submit&quot;)).click();</code><br />
-或者，你可以调用 WebDriver 为每个元素提供的 “submit” 方法。如果你对一个 form 元素调用该方法，WebDriver 将调用这个 form 的 submit 方法。如果这个元素不是一个 form，将抛出一个异常。<br />
+<p><code>driver.findElement(By.id(&quot;submit&quot;)).click();</code><br>
+或者，你可以调用 WebDriver 为每个元素提供的 “submit” 方法。如果你对一个 form 元素调用该方法，WebDriver 将调用这个 form 的 submit 方法。如果这个元素不是一个 form，将抛出一个异常。<br>
 <code>element.submit();</code></p>
 <h2 id="常用类与方法">常用类与方法</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver   <span class="comment"># 驱动浏览器</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver <span class="keyword">import</span> ActionChains   <span class="comment"># 鼠标的相关操作，比如滑动验证</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By   <span class="comment"># 选择器，以什么方式选择标签元素</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys   <span class="comment"># 键盘相关</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support <span class="keyword">import</span> expected_conditions <span class="keyword">as</span> EC  <span class="comment"># 各种判断，一般跟等待事件连用，比如说等待某个元素加载出来</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.wait <span class="keyword">import</span> WebDriverWait  <span class="comment"># 等待事件，可以与EC连用</span></span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line">wait = WebDriverWait(browser, <span class="number">10</span>)</span><br><span class="line">browser.get(<span class="string">&#x27;https://www.baidu.com&#x27;</span>)</span><br><span class="line">browser.maximize_window()  <span class="comment"># 窗口最大化</span></span><br><span class="line"><span class="built_in">print</span>(browser.current_url)   <span class="comment"># 获取当前页URL</span></span><br><span class="line"><span class="built_in">print</span>(browser.title)   <span class="comment"># 获取页面的title</span></span><br><span class="line"><span class="built_in">print</span>(browser.name)  <span class="comment"># 获取driver对象：chrome</span></span><br><span class="line"><span class="built_in">print</span>(browser.current_window_handle)  <span class="comment"># 获取当前窗口</span></span><br><span class="line"><span class="built_in">print</span>(browser.get_cookies())   <span class="comment"># 获取cookies</span></span><br><span class="line"><span class="built_in">print</span>(browser.page_source)   <span class="comment"># 获取当前页面内容</span></span><br><span class="line">browser.back()  <span class="comment"># 后退</span></span><br><span class="line">browser.forward()  <span class="comment"># 前进</span></span><br><span class="line">browser.refresh()    <span class="comment"># 刷新</span></span><br><span class="line">browser.save_screenshot(<span class="string">&#x27;error.png&#x27;</span>)   <span class="comment"># 保存截图</span></span><br><span class="line">browser.close()   <span class="comment"># 关闭当前窗口</span></span><br><span class="line">browser.quit()   <span class="comment"># 退出浏览器驱动，关闭所有关联窗口</span></span><br></pre></td></tr></table></figure>
@@ -412,7 +412,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -476,13 +476,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -490,6 +490,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

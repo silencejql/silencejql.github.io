@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -264,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -288,9 +288,9 @@
 <span id="more"></span>
 <h2 id="AES加密过程">AES加密过程</h2>
 <p>AES加密过程是在一个4×4的字节矩阵上运作，这个矩阵又称为“体（state）”，其初值就是一个明文区块（矩阵中一个元素大小就是明文区块中的一个Byte）。（Rijndael加密法因支持更大的区块，其矩阵行数可视情况增加）加密时，各轮AES加密循环（除最后一轮外）均包含4个步骤：</p>
-<p>AddRoundKey—矩阵中的每一个字节都与该次回合密钥（round key）做XOR运算；每个子密钥由密钥生成方案产生。<br />
-SubBytes—通过一个非线性的替换函数，用查找表的方式把每个字节替换成对应的字节。<br />
-ShiftRows—将矩阵中的每个横列进行循环式移位。<br />
+<p>AddRoundKey—矩阵中的每一个字节都与该次回合密钥（round key）做XOR运算；每个子密钥由密钥生成方案产生。<br>
+SubBytes—通过一个非线性的替换函数，用查找表的方式把每个字节替换成对应的字节。<br>
+ShiftRows—将矩阵中的每个横列进行循环式移位。<br>
 MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使用线性转换来混合每内联的四个字节。最后一个加密循环中省略MixColumns步骤，而以另一个AddRoundKey取代。</p>
 <p>C#代码实现</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 默认密钥-密钥的长度必须是32</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> PublicKey = <span class="string">&quot;1234567890adbcde&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 默认向量</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> Iv = <span class="string">&quot;1234567890hjlkew&quot;</span>;</span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> AES加密</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;str&quot;&gt;</span>需要加密的字符串<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;key&quot;&gt;</span>32位密钥<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>加密后的字符串<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">Encrypt</span>(<span class="params"><span class="built_in">string</span> str, <span class="built_in">string</span> key</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Byte[] keyArray = Encoding.UTF8.GetBytes(key);</span><br><span class="line">    Byte[] toEncryptArray = Encoding.UTF8.GetBytes(str);</span><br><span class="line">    <span class="keyword">var</span> rijndael = <span class="keyword">new</span> System.Security.Cryptography.RijndaelManaged();</span><br><span class="line">    rijndael.Key = keyArray;</span><br><span class="line">    rijndael.BlockSize = <span class="number">128</span>;</span><br><span class="line">    rijndael.Mode = System.Security.Cryptography.CipherMode.CBC;<span class="comment">//</span></span><br><span class="line">    rijndael.Padding = System.Security.Cryptography.PaddingMode.Zeros;<span class="comment">//</span></span><br><span class="line">    rijndael.IV = Encoding.UTF8.GetBytes(Iv);</span><br><span class="line">    System.Security.Cryptography.ICryptoTransform cTransform = rijndael.CreateEncryptor();</span><br><span class="line">    Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, <span class="number">0</span>, toEncryptArray.Length);</span><br><span class="line">    <span class="keyword">return</span> Convert.ToBase64String(resultArray, <span class="number">0</span>, resultArray.Length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> AES解密</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;str&quot;&gt;</span>需要解密的字符串<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;key&quot;&gt;</span>32位密钥<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>解密后的字符串<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">Decrypt</span>(<span class="params"><span class="built_in">string</span> str, <span class="built_in">string</span> key</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Byte[] keyArray = System.Text.Encoding.UTF8.GetBytes(key);</span><br><span class="line">    Byte[] toEncryptArray = Convert.FromBase64String(str);</span><br><span class="line">    <span class="keyword">var</span> rijndael = <span class="keyword">new</span> System.Security.Cryptography.RijndaelManaged();</span><br><span class="line">    rijndael.Key = keyArray;</span><br><span class="line">    rijndael.Mode = System.Security.Cryptography.CipherMode.CBC;</span><br><span class="line">    rijndael.Padding = System.Security.Cryptography.PaddingMode.Zeros;</span><br><span class="line">    rijndael.IV = System.Text.Encoding.UTF8.GetBytes(Iv);</span><br><span class="line">    System.Security.Cryptography.ICryptoTransform cTransform = rijndael.CreateDecryptor();</span><br><span class="line">    Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, <span class="number">0</span>, toEncryptArray.Length);</span><br><span class="line">    <span class="keyword">return</span> System.Text.Encoding.UTF8.GetString(resultArray);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -391,7 +391,7 @@ MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -455,13 +455,13 @@ MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -469,6 +469,7 @@ MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使�
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

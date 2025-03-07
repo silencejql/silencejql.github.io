@@ -143,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -279,7 +279,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>513</span>
+              <span>544</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,18 +302,18 @@
 BBK设备数据库常用操作说明
 <span id="more"></span>
 <h2 id="新增数据表">新增数据表</h2>
-<p>创建脚本修改字段和表名<br />
-打开数据表所在路径：<br />
-<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TablePath.png" alt="" /></p>
-<p>更改图中相应字段表名后点击黑色方框中的执行按钮并确认输出窗口为成功即可<br />
-<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatTableScript.png" alt="" /></p>
-<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TableScript.png" alt="" /></p>
+<p>创建脚本修改字段和表名<br>
+打开数据表所在路径：<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TablePath.png" alt=""></p>
+<p>更改图中相应字段表名后点击黑色方框中的执行按钮并确认输出窗口为成功即可<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatTableScript.png" alt=""></p>
+<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TableScript.png" alt=""></p>
 <h2 id="新增字段">新增字段</h2>
-<p>当保存数据时Systemerror.log中存在警告缺少字段是可在数据库中新增缺少的字段<br />
-<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/MissField.png" alt="" /></p>
+<p>当保存数据时Systemerror.log中存在警告缺少字段是可在数据库中新增缺少的字段<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/MissField.png" alt=""></p>
 <p>图中Miss Field List:后面就是数据库中缺少的字段名</p>
 <h3 id="创建脚本新增字段">创建脚本新增字段</h3>
-<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatFieldScript.png" alt="" /></p>
+<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatFieldScript.png" alt=""></p>
 <p>如下所示，新增字段并根据需要更改字段长度即可</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Column: &quot;前轮侧滑&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- ALTER TABLE public.&quot;侧滑表&quot; DROP COLUMN &quot;前轮侧滑&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段1&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段2&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段3&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 
@@ -413,7 +413,7 @@ BBK设备数据库常用操作说明
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -477,13 +477,13 @@ BBK设备数据库常用操作说明
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -491,6 +491,7 @@ BBK设备数据库常用操作说明
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

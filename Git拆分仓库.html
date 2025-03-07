@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -273,7 +273,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>735</span>
+              <span>809</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Project中执行</span></span><br><span class="line"><span class="comment"># &lt;name-of-folder&gt; : 要拆分出来的文件夹</span></span><br><span class="line"><span class="comment"># &lt;name-of-new-branch&gt; : 分离提交到新建分支</span></span><br><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Pro1 -b Project1</span><br></pre></td></tr></table></figure>
 <h2 id="2-提取分离后的分支">2.提取分离后的分支</h2>
 <h3 id="2-1在新路径保存分支">2.1在新路径保存分支</h3>
-<p>在合适位置新建文件夹后初始化Git, 然后拉取刚才新建的Project1分支即可<br />
+<p>在合适位置新建文件夹后初始化Git, 然后拉取刚才新建的Project1分支即可<br>
 查看git log</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &lt;path-of-Project&gt; : 步骤1中创建分支所在的路径, 即Project</span></span><br><span class="line"><span class="comment"># &lt;name-of-new-branch&gt; : 分离后新建分支名</span></span><br><span class="line">git pull &lt;path-of-Project&gt; &lt;name-of-new-branch&gt;</span><br><span class="line">git pull &lt;path-of-Project&gt; Project1</span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <h3 id="2-2在Pro1中初始化Git-不更改原文件夹结构">2.2在Pro1中初始化Git, 不更改原文件夹结构</h3>
@@ -404,7 +404,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -468,13 +468,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -482,6 +482,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

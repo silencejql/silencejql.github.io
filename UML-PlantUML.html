@@ -137,7 +137,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -264,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,7 +290,7 @@
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS0QHVecvgGhLNDeAYIKbHPb9fIMfXWfM2Y6L1Qc6NCe8GIEee15GPMvgIKP-Yg669b0iABMaj2WFeXmcOwHHa5YKc6je1HRMKG3pZC0y8rGzHbor0000>
 <h2 id="类之间关系">类之间关系</h2>
 <h3 id="泛化关系">泛化关系</h3>
-<p>继承非抽象类<br />
+<p>继承非抽象类<br>
 继承关系为 is-a的关系；两个对象之间如果可以用 is-a 来表示</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//B继承自A</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;|-- B</span><br></pre></td></tr></table></figure>
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71faPNLy490000>
@@ -306,14 +306,14 @@
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//说A由B组成</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A *-- B</span><br></pre></td></tr></table></figure>
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb51IrTNmGa0>
 <h3 id="关联关系">关联关系</h3>
-<p>描述不同类的对象之间的结构关系<br />
-比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系<br />
+<p>描述不同类的对象之间的结构关系<br>
+比如，乘车人和车票之间就是一种关联关系；学生和学校就是一种关联关系<br>
 关联关系默认不强调方向，表示对象间相互知道；如果特别强调方向，如下图，表示B知道A，但 A不知道B</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;-- B</span><br></pre></td></tr></table></figure>
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HbTNmGa0>
 <h3 id="依赖关系">依赖关系</h3>
-<p>一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化<br />
-一个对象在运行期间会用到另一个对象的关系<br />
+<p>一种临时性的关系，通常在运行期间产生，并且随着运行时的变化； 依赖关系也可能发生变化<br>
+一个对象在运行期间会用到另一个对象的关系<br>
 应该保持单向依赖，杜绝双向依赖的产生</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;.. B</span><br></pre></td></tr></table></figure>
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HazFmGa0>
@@ -414,7 +414,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -478,13 +478,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -492,6 +492,7 @@
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">

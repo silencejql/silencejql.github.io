@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">186</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">188</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -301,21 +301,21 @@
 </blockquote>
 <h3 id="测试软件导入">测试软件导入</h3>
 <blockquote>
-<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br />
-2、删除原数据库已有行后保存<br />
-3、打开Postgres找到相应表右键导入<br />
-4、文件名选择csv文件路径、格式选csv、字符编码可选<br />
+<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br>
+2、删除原数据库已有行后保存<br>
+3、打开Postgres找到相应表右键导入<br>
+4、文件名选择csv文件路径、格式选csv、字符编码可选<br>
 5、点击导入即可</p>
 <blockquote>
-<p>如果主键为自增序列执行6、7<br />
-6、将相应表的序列创建脚本后删除<br />
+<p>如果主键为自增序列执行6、7<br>
+6、将相应表的序列创建脚本后删除<br>
 7、更改脚本中的START大于新增数据的主键ID后执行脚本</p>
 </blockquote>
 </blockquote>
 <h2 id="SQL-shell-psql-导入">SQL shell(psql)导入</h2>
 <blockquote>
-<p>1、将excel处理好后，另存为csv（Comma Delimited）<br />
-2、运行SQL shell(psql) 并登录<br />
+<p>1、将excel处理好后，另存为csv（Comma Delimited）<br>
+2、运行SQL shell(psql) 并登录<br>
 3、运行’COPY mytable FROM ‘/myfile.csv’  WITH CSV  HEADER</p>
 </blockquote>
 <h2 id="SQL-shell-psql-导出">SQL shell(psql)导出</h2>
@@ -328,19 +328,19 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 删除7天以前的数据</span><br><span class="line">D:/“Program Files (x86)“/PostgreSQL/9.5/bin/psql -h 127.0.0.1 -p 5432 -d LocalDB -U postgres --command &quot;delete from 侧滑表 where 测试时间 &lt; (now() - interval &#x27;7 day&#x27;)&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="时间扩展">时间扩展</h3>
 <h4 id="年">年</h4>
-<p>interval ‘2 years’<br />
-interval ‘2 year’<br />
-interval ‘2 y’<br />
-interval ‘2 Y’<br />
+<p>interval ‘2 years’<br>
+interval ‘2 year’<br>
+interval ‘2 y’<br>
+interval ‘2 Y’<br>
 interval ‘2Y’</p>
 <h4 id="月">月</h4>
-<p>interval ‘1 month’<br />
+<p>interval ‘1 month’<br>
 interval ‘one month’</p>
 <h4 id="周">周</h4>
 <p>interval ‘3 week’</p>
 <p>说明：interval 可以不写</p>
-<p>运行时会提示数据用户名密码<br />
-windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务器信息，实现免密操作。<br />
+<p>运行时会提示数据用户名密码<br>
+windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务器信息，实现免密操作。<br>
 参考：<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/current/libpq-pgpass.html">https://www.postgresql.org/docs/current/libpq-pgpass.html</a></p>
 
     </div>
@@ -361,12 +361,12 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/%E6%97%A0%E5%A4%84%E5%AE%89%E6%94%BE%E7%9A%84%E7%9F%AB%E6%83%85.html" rel="prev" title="无处安放的矫情">
-      <i class="fa fa-chevron-left"></i> 无处安放的矫情
+    <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA.html" rel="prev" title="数据库导入导出">
+      <i class="fa fa-chevron-left"></i> 数据库导入导出
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA.html" rel="next" title="数据库导入导出">
-      数据库导入导出 <i class="fa fa-chevron-right"></i>
+    <a href="/%E7%8E%B0%E5%9C%BA%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD%E8%B7%AF%E5%BE%84.html" rel="next" title="现场软件备份路径">
+      现场软件备份路径 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -443,7 +443,7 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">186</span>
+          <span class="site-state-item-count">188</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -507,13 +507,13 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">391k</span>
+    <span title="站点总字数">461k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">5:56</span>
+    <span title="站点阅读时长">6:59</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
@@ -521,6 +521,7 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       mermaid.initialize({theme: 'forest'});
     }
   </script>
+
 
         
 <div class="busuanzi-count">
