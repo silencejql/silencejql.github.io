@@ -132,7 +132,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -264,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>419</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -283,8 +283,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>3D轮眉测试说明, 后续整理<br><span id="more"></span></p>
-<h2 id="轮眉"><a href="#轮眉" class="headerlink" title="轮眉"></a>轮眉</h2><p>WBH3DAlgorithm_WBH</p>
+        <p>3D轮眉测试说明, 后续整理</p>
+<span id="more"></span>
+<h2 id="轮眉">轮眉</h2>
+<p>WBH3DAlgorithm_WBH</p>
 <ol>
 <li>从点云中读取原始数据通过标定架矩阵转换为实际坐标系</li>
 <li>GetMiddleX()获取X中心坐标 CenterX = 标定点坐标X + X向偏移 = Calibration.MasterGaugeExParam.Point.X + OffsetMiddle</li>
@@ -294,29 +296,54 @@
 <li>FindALlTopPositions筛选聚类后X宽度大的点集合, 排除X向点数少的簇,找到满足条件的各簇的最高点topPositions</li>
 <li>筛选出大于最小topPosition - 150的点(取出下方无效点)作为绿色区域</li>
 <li>FindJumpPoints-从上往下寻找Z向距离差较大点的前一个点及其周边点的集合</li>
-<li>Dictionary<int, List<Vector3>&gt; LineMaps, 从上述点云中以X为key存储相同X±2坐标点的集合</li>
+<li>Dictionary&lt;int, List<Vector3>&gt; LineMaps, 从上述点云中以X为key存储相同X±2坐标点的集合</li>
 <li>LineMaps所有value找到连续点Z向差值大于dropDepth的点, 即断点处, 添加断点附近点的集合(红色区域)</li>
 <li>拟合曲线找到曲线最高点(若配置强制轮眉中心则从曲线中取出X为CenterX处的Y值作为最高点)</li>
 <li>取点云中最外侧的Z作为最高点的Z</li>
 <li>判断最高点X是否在ROI内合理范围</li>
 </ol>
-<h2 id="轮毂"><a href="#轮毂" class="headerlink" title="轮毂"></a>轮毂</h2><p>WBH3DAlgorithm_Wheel_Hub_Curve</p>
+<h2 id="轮毂">轮毂</h2>
+<p>WBH3DAlgorithm_Wheel_Hub_Curve</p>
 <blockquote>
 <p>Calculate</p>
 <blockquote>
 <p>FindTop</p>
 <blockquote>
-<p>WhitePointsGetHandle分离提取轮眉下方点集合<br>FindTop所有距离最高点Y向小于4mm点的集合<br>FindTopPosition根据最高点的集合拟合曲线求出轮胎最高点TopPosition并估算轮胎半径TireRadiusFit<br>根据轮胎半径和最高点估算轮心Center,取轮胎半径+20mm范围内的所有点</p>
+<p>WhitePointsGetHandle分离提取轮眉下方点集合<br>
+FindTop所有距离最高点Y向小于4mm点的集合<br>
+FindTopPosition根据最高点的集合拟合曲线求出轮胎最高点TopPosition并估算轮胎半径TireRadiusFit<br>
+根据轮胎半径和最高点估算轮心Center,取轮胎半径+20mm范围内的所有点</p>
 </blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
 <p>FindPoint</p>
 <blockquote>
 <p>FindHubPosition</p>
 <blockquote>
-<p>FindXOrYFit<br>findDatas为计算的轮心XY±20mm的矩形边上的点<br>找到轮胎最高点后Y-轮胎半径+轮毂半径后的点估算轮毂最高点坐标HubPosition<br>在计算的轮胎中心点基础上XY坐标左右上下范围放大±20mm<br>_FindHubPosition筛选所有点中Z向深度差值最大的小范围集合及最大Z向差值</p>
+<p>FindXOrYFit<br>
+findDatas为计算的轮心XY±20mm的矩形边上的点<br>
+找到轮胎最高点后Y-轮胎半径+轮毂半径后的点估算轮毂最高点坐标HubPosition<br>
+在计算的轮胎中心点基础上XY坐标左右上下范围放大±20mm<br>
+_FindHubPosition筛选所有点中Z向深度差值最大的小范围集合及最大Z向差值</p>
 <blockquote>
-<p>GreenPointsToMid轮胎半径+20mm内所有点到轮心附近的距离满足轮毂半径±40mm切角度在±AutoROISize / 10内的环形内的所有点<br>将上述点全部集中在center相同XY下, Z向深度不同, 所有点沿圆心压缩到同一Y轴上<br>FindMidFeaturePoint以oneRange为范围筛选所有点中Z向深度差值最大的范围</p>
+<p>GreenPointsToMid轮胎半径+20mm内所有点到轮心附近的距离满足轮毂半径±40mm切角度在±AutoROISize / 10内的环形内的所有点<br>
+将上述点全部集中在center相同XY下, Z向深度不同, 所有点沿圆心压缩到同一Y轴上<br>
+FindMidFeaturePoint以oneRange为范围筛选所有点中Z向深度差值最大的范围</p>
 </blockquote>
-<p>取出所有点中Z向差值最大的部分<br>GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作为轮毂最高点HubPosition<br>通过TopPosition和轮胎半径计算出轮胎中心点以轮胎半径画圆<br>通过HubPosition和轮毂半径计算出轮毂中心点以轮毂半径画圆</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>取出所有点中Z向差值最大的部分<br>
+GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作为轮毂最高点HubPosition<br>
+通过TopPosition和轮胎半径计算出轮胎中心点以轮胎半径画圆<br>
+通过HubPosition和轮毂半径计算出轮毂中心点以轮毂半径画圆</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -426,7 +453,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -483,13 +510,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">469k</span>
+    <span title="站点总字数">470k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:06</span>
+    <span title="站点阅读时长">7:08</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
