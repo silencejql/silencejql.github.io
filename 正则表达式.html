@@ -30,7 +30,7 @@
 <meta property="og:description" content="常用正则表达式">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-06T09:46:21.000Z">
-<meta property="article:modified_time" content="2023-01-05T05:09:38.309Z">
+<meta property="article:modified_time" content="2025-03-07T12:33:03.807Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="正则表达式">
 <meta name="twitter:card" content="summary">
@@ -128,12 +128,12 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">60</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">72</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">27</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-01-05 13:09:38" itemprop="dateModified" datetime="2023-01-05T13:09:38+08:00">2023-01-05</time>
+                <time title="修改时间：2025-03-07 20:33:03" itemprop="dateModified" datetime="2025-03-07T20:33:03+08:00">2025-03-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -343,11 +343,8 @@ count:匹配的最大替换次数</p>
 . | 任意单个字符 |<br>
 [] | 字符集，对单个字符给出取值范围 | [abc]表示a或b或c的单个字符，[a-z]表示a-z的单个字符<br>
 [^]  |非字符集，对单个字符给出排除范围   | [^abc]表示非a或b或c的单个字符</p>
-<ul>
-<li>| 前一个字符0次或无限次重复  |  abc*表示ab、abc、abccccc</li>
-</ul>
-<ul>
-<li>| 前一个字符的1次或无限次重复  |abc+表示abc、abccc<br>
+<p>* | 前一个字符0次或无限次重复  |  abc*表示ab、abc、abccccc</p>
+<p>+ | 前一个字符的1次或无限次重复  |abc+表示abc、abccc<br>
 ?   | 前一个字符0次或1次重复  |   abc?表示ab或abc<br>
 | |左右表达式任意一个   |a|b 表示a或b<br>
 {m}  |重复前一个字符m次   |ab{2}cb表示abbcb,注意次数<br>
@@ -356,8 +353,7 @@ count:匹配的最大替换次数</p>
 $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br>
 ()  | 分组标记，内部只能用|操作符  | (abc)表示abc,(abc|def)表示abc或def<br>
 \d  | 数字，等价于[0-9]  |<br>
-\w  | 单词字符，等价于[A-Za-z0-9]  |</li>
-</ul>
+\w  | 单词字符，等价于[A-Za-z0-9]  |</p>
 <h3 id="非打印字符">非打印字符</h3>
 <p>非打印字符也可以是正则表达式的组成部分。下表列出了表示非打印字符的转义序列：</p>
 <table>
@@ -478,7 +474,7 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br>
 <tbody>
 <tr>
 <td style="text-align:center">*</td>
-<td style="text-align:center">匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</td>
+<td style="text-align:center">匹配前面的子表达式零次或多次。例如，zo<em>能匹配 “z” 以及 “zoo”。</em> 等价于{0,}。</td>
 </tr>
 <tr>
 <td style="text-align:center">+</td>
@@ -656,13 +652,13 @@ $  | 匹配字符串结尾  | abc$abc表示abc在一个字符串的结尾<br>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">27</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
