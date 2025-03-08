@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silencejql.github.io/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0Gitlab.html</loc>
+    
+    <lastmod>2025-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/C-%E5%9F%BA%E7%A1%80.html</loc>
     
     <lastmod>2025-03-07</lastmod>
