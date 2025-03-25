@@ -119,8 +119,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>主题</tag>
-        <tag>文章密码</tag>
         <tag>Markdown</tag>
       </tags>
   </entry>
@@ -174,6 +172,7 @@
         <tag>匿名方法</tag>
         <tag>Lambda</tag>
         <tag>Func&lt;T&gt;委托</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -185,9 +184,6 @@
       <categories>
         <category>Test</category>
       </categories>
-      <tags>
-        <tag>Test</tag>
-      </tags>
   </entry>
   <entry>
     <title>CSharp Static</title>
@@ -308,7 +304,7 @@
         <category>CSharp</category>
       </categories>
       <tags>
-        <tag>static</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -388,6 +384,9 @@ C#类为引用类型，结构为值类型。<br>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo博客部署到Coding和github</title>
@@ -436,8 +435,7 @@ ssh -T <a href="mailto:git@git.dev.tencent.com">git@git.dev.tencent.com</a> //�
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>Coding</tag>
-        <tag>github</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -451,6 +449,7 @@ ssh -T <a href="mailto:git@git.dev.tencent.com">git@git.dev.tencent.com</a> //�
       </categories>
       <tags>
         <tag>XML</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -464,10 +463,10 @@ ssh -T <a href="mailto:git@git.dev.tencent.com">git@git.dev.tencent.com</a> //�
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> style=&quot;<span class="attribute">color</span>:blueviolet<span class="string">&quot;&gt;ppppp&lt;/div&gt; //颜色少</span></span><br><span class="line"><span class="string">&lt;div style=&quot;</span>color:<span class="number">#ffee33</span><span class="string">&quot;&gt;ppppp&lt;/div&gt;  //百度颜色代码可以查询更多</span></span><br><span class="line"><span class="string">&lt;div style=&quot;</span>color:<span class="built_in">rgb</span>(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>)<span class="string">&quot;&gt;ppppp&lt;/div&gt; //三原色 红绿蓝256级</span></span><br><span class="line"><span class="string">&lt;div style=&quot;</span>color:<span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.5</span>)<span class="string">&quot;&gt;ppppp&lt;/div&gt; //比上一个 加了一个透明度</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>css</category>
+        <category>CSS</category>
       </categories>
       <tags>
-        <tag>css属性</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -533,10 +532,10 @@ CallingConvention： 指示入口点的调用约定， 如：CallingConvention=C
 </blockquote>
 ]]></content>
       <categories>
-        <category>C#</category>
+        <category>CSharp</category>
       </categories>
       <tags>
-        <tag>托管DLL</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -620,13 +619,8 @@ CallingConvention： 指示入口点的调用约定， 如：CallingConvention=C
         <category>数据转换</category>
       </categories>
       <tags>
-        <tag>C#</tag>
         <tag>IEEE</tag>
-        <tag>Hex</tag>
-        <tag>Double</tag>
-        <tag>Byte</tag>
-        <tag>int</tag>
-        <tag>String</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -657,10 +651,11 @@ CallingConvention： 指示入口点的调用约定， 如：CallingConvention=C
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">TestClass&lt;<span class="built_in">int</span>&gt; obj = <span class="keyword">new</span> TestClass&lt;<span class="built_in">int</span>&gt;();  </span><br><span class="line">obj.Add(<span class="number">50</span>);  </span><br><span class="line"></span><br><span class="line">TestClass&lt;<span class="built_in">string</span>&gt; obj1 = <span class="keyword">new</span> TestClass&lt;<span class="built_in">string</span>&gt;();  </span><br><span class="line">Obj1.Add(<span class="string">&quot;hello&quot;</span>);  </span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>C#</category>
+        <category>CSharp</category>
       </categories>
       <tags>
         <tag>泛型</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -726,8 +721,8 @@ C:\Program Files\IBM\WebSphere MQ\bin64 下<br>
         <category>MQ</category>
       </categories>
       <tags>
-        <tag>C#</tag>
         <tag>IBMMQ</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -740,10 +735,11 @@ C# 执行SQLServer数据库中的存储过程，新增数据
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">SqlConnection DbConnection = <span class="keyword">new</span> SqlConnection(m_MESConnString);</span><br><span class="line">SqlCommand command = <span class="keyword">new</span> SqlCommand(<span class="string">&quot;SP_Check_Equipotential&quot;</span>, DbConnection);</span><br><span class="line">DbConnection.Open();</span><br><span class="line">InitCommand(<span class="keyword">ref</span> command);</span><br><span class="line">command.Parameters[<span class="string">&quot;@Part2GNDInfo&quot;</span>].Value = Part2GNDInfo;</span><br><span class="line">command.Parameters[<span class="string">&quot;@Part2GND&quot;</span>].Value = Convert.ToDecimal(mo2o(dr[<span class="string">&quot;步骤一最大值&quot;</span>],<span class="literal">true</span>));</span><br><span class="line">command.ExecuteNonQuery();</span><br><span class="line"><span class="built_in">int</span> result = command.Parameters[<span class="string">&quot;@Resultflag&quot;</span>].Value.zInt32();</span><br><span class="line"><span class="built_in">string</span> ResultMessage = command.Parameters[<span class="string">&quot;@ResultMessage&quot;</span>].Value.ToString();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InitCommand</span>(<span class="params"><span class="keyword">ref</span> SqlCommand command</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    command.CommandType = CommandType.StoredProcedure;</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@Part2GNDInfo&quot;</span>, SqlDbType.VarChar, <span class="number">3000</span>);</span><br><span class="line">    SqlParameter Part2GND = <span class="keyword">new</span> SqlParameter(<span class="string">&quot;@Part2GND&quot;</span>, SqlDbType.Decimal);</span><br><span class="line">    Part2GND.Precision = <span class="number">3</span>;</span><br><span class="line">    Part2GND.Scale = <span class="number">2</span>;</span><br><span class="line">    command.Parameters.Add(Part2GND);</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@Resultflag&quot;</span>, SqlDbType.Int, <span class="number">1</span>);</span><br><span class="line">    command.Parameters[<span class="string">&quot;@Resultflag&quot;</span>].Direction = ParameterDirection.Output;</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@ResultMessage&quot;</span>, SqlDbType.VarChar, <span class="number">4000</span>);</span><br><span class="line">    command.Parameters[<span class="string">&quot;@ResultMessage&quot;</span>].Direction = ParameterDirection.Output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>C#</category>
+        <category>CSharp</category>
       </categories>
       <tags>
         <tag>存储过程</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -762,6 +758,9 @@ C# 执行SQLServer数据库中的存储过程，新增数据
       <categories>
         <category>工作</category>
       </categories>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>HTML常用标签</title>
@@ -866,7 +865,7 @@ bordercolor：设置边框颜色</p>
         <category>HTML</category>
       </categories>
       <tags>
-        <tag>HTML标签</tag>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
@@ -967,8 +966,8 @@ callback 消费者 DefaultConsumer建立使用，重写其中的方法</p>
         <category>MQ</category>
       </categories>
       <tags>
-        <tag>C#</tag>
         <tag>Rabbit MQ</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,8 +1031,8 @@ delete from <code>tablename</code> where tm&gt;=dateadd(month,-6,getdate())//删
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>Postgresql</tag>
-        <tag>shell</tag>
+        <tag>BBK</tag>
+        <tag>PostgreSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1089,6 +1088,7 @@ SQL字符串：<code>select * from [Table] where VIN='vin' order by ID desc</cod
       <tags>
         <tag>链接字符串</tag>
         <tag>BBK</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -1116,6 +1116,7 @@ SQL字符串：<code>select * from [Table] where VIN='vin' order by ID desc</cod
         <category>工作</category>
       </categories>
       <tags>
+        <tag>BBK</tag>
         <tag>现场软件备份</tag>
       </tags>
   </entry>
@@ -1162,7 +1163,7 @@ SQL字符串：<code>select * from [Table] where VIN='vin' order by ID desc</cod
         <category>工作</category>
       </categories>
       <tags>
-        <tag>安装包</tag>
+        <tag>BBK</tag>
       </tags>
   </entry>
   <entry>
@@ -1192,6 +1193,7 @@ SendID：<code>0730</code>；RecvID：<code>0738</code><br>
         <category>工作</category>
       </categories>
       <tags>
+        <tag>BBK</tag>
         <tag>现场问题</tag>
       </tags>
   </entry>
@@ -1818,8 +1820,7 @@ bit5 = bit4 = bit3 = bit0 = 1<br>
         <category>工作</category>
       </categories>
       <tags>
-        <tag>ISO15031-5</tag>
-        <tag>15765-4</tag>
+        <tag>BBK</tag>
       </tags>
   </entry>
   <entry>
@@ -1838,7 +1839,6 @@ hoststring.xml</p>
 ]]></content>
       <tags>
         <tag>BBK</tag>
-        <tag>BEP独立大灯</tag>
       </tags>
   </entry>
   <entry>
@@ -2099,6 +2099,9 @@ _   底线<br>
 </ul>
 <pre><code></code></pre>
 ]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBK程序解析</title>
@@ -4319,7 +4322,6 @@ IBM官方说明：https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.0.0/com.i
       </categories>
       <tags>
         <tag>IBMMQ</tag>
-        <tag>ErrorCode</tag>
       </tags>
   </entry>
   <entry>
@@ -4541,6 +4543,9 @@ MQTT数据包由：固定头（Fixed header）、可变头（Variable header）�
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>上汽通用五菱</title>
@@ -4559,8 +4564,7 @@ MQTT数据包由：固定头（Fixed header）、可变头（Variable header）�
         <category>现场</category>
       </categories>
       <tags>
-        <tag>上汽</tag>
-        <tag>五菱</tag>
+        <tag>BBK</tag>
       </tags>
   </entry>
   <entry>
@@ -4588,44 +4592,23 @@ MQTT数据包由：固定头（Fixed header）、可变头（Variable header）�
   <entry>
     <title>现场工作代码路径说明</title>
     <url>/%E7%8E%B0%E5%9C%BA%E5%B7%A5%E4%BD%9C%E4%BB%A3%E7%A0%81%E8%B7%AF%E5%BE%84%E8%AF%B4%E6%98%8E.html</url>
-    <content><![CDATA[<center></center>
-程序版本更新后可能没有合入原有程序，本文作为各现场的程序在电脑中存放的路径进行说明
-<span id="more"></span>
-<h2 id="国六排放">国六排放</h2>
-<h3 id="MES联网">MES联网</h3>
-<p><code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code></p>
-<p>包含上汽临港、上汽南京、上汽宁德、上汽郑州、上汽无锡大通、<br>
-长沙菲亚特、杭州福特(包含QLS，双怠速转速控制)、重庆福特、哈尔滨福特(继承杭州福特未测试)</p>
-<h2 id="上汽">上汽</h2>
-<h3 id="上汽检测线">上汽检测线</h3>
-<p>上汽DSA：<code>D:\工作\software\Platforms_Using\Platforms2\SocketOpraLib</code></p>
+    <content><![CDATA[<p><center></center><br>程序版本更新后可能没有合入原有程序，本文作为各现场的程序在电脑中存放的路径进行说明<br><span id="more"></span></p>
+<h2 id="国六排放"><a href="#国六排放" class="headerlink" title="国六排放"></a>国六排放</h2><h3 id="MES联网"><a href="#MES联网" class="headerlink" title="MES联网"></a>MES联网</h3><p><code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code></p>
+<p>包含上汽临港、上汽南京、上汽宁德、上汽郑州、上汽无锡大通、<br>长沙菲亚特、杭州福特(包含QLS，双怠速转速控制)、重庆福特、哈尔滨福特(继承杭州福特未测试)</p>
+<h2 id="上汽"><a href="#上汽" class="headerlink" title="上汽"></a>上汽</h2><h3 id="上汽检测线"><a href="#上汽检测线" class="headerlink" title="上汽检测线"></a>上汽检测线</h3><p>上汽DSA：<code>D:\工作\software\Platforms_Using\Platforms2\SocketOpraLib</code></p>
 <p>其中包括上汽郑州FAS、360；上汽宁德现场程序。</p>
-<h2 id="五菱">五菱</h2>
-<p>五菱ABS：<code>D:\工作\software\Platforms_Using\PlatABS\RBABS_SGMW</code></p>
+<h2 id="五菱"><a href="#五菱" class="headerlink" title="五菱"></a>五菱</h2><p>五菱ABS：<code>D:\工作\software\Platforms_Using\PlatABS\RBABS_SGMW</code></p>
 <p>20191028新增宝骏现场更改保持在线3E 00为3E 80备份，目前调试未成功，采用备份程序</p>
 <p>程序包含所有五菱现场最新的ABS程序</p>
-<h2 id="东风">东风</h2>
-<h3 id="东风小康">东风小康</h3>
-<p>东风小康MES：<code>D:\工作\现场工作文件整理\东风小康\319015-201905\Platforms2-正在使用\SpeciallNeed</code></p>
+<h2 id="东风"><a href="#东风" class="headerlink" title="东风"></a>东风</h2><h3 id="东风小康"><a href="#东风小康" class="headerlink" title="东风小康"></a>东风小康</h3><p>东风小康MES：<code>D:\工作\现场工作文件整理\东风小康\319015-201905\Platforms2-正在使用\SpeciallNeed</code></p>
 <p>程序为东风小康现场最新MES程序，新增64字节车型识别</p>
-<h3 id="东风乘用车-武汉">东风乘用车(武汉)</h3>
-<p><code>D:\工作\现场工作文件整理\武汉东风乘用车\Platforms2-武汉东风乘用车</code></p>
-<p>其中SpecialNeed中包含FAS工位AEB相关提示，CanCmdOpraLib包含FAS相关安全算法<br>
-ABS：<code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS\RBABS_DF</code></p>
-<h2 id="合众">合众</h2>
-<p><code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code><br>
-201909新增EP30ESC</p>
-<h2 id="比亚迪">比亚迪</h2>
-<p><code>D:\BaiduNetdiskDownload\GX\Platforms2\Platforms2\CanCmdOpraLib</code><br>
-201904增加联电供应商的转速控制</p>
-<h2 id="程序合并进行中">程序合并进行中</h2>
-<h3 id="PlatABS">PlatABS</h3>
-<p>最新程序在<code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code>中<br>
-20191120将五菱ABS更新至本工程代码中，待测试，其中包含齿讯学习</p>
-<h4 id="ABS">ABS</h4>
-<p>合众<br>
-东风乘用车</p>
-<h4 id="国六">国六</h4>
+<h3 id="东风乘用车-武汉"><a href="#东风乘用车-武汉" class="headerlink" title="东风乘用车(武汉)"></a>东风乘用车(武汉)</h3><p><code>D:\工作\现场工作文件整理\武汉东风乘用车\Platforms2-武汉东风乘用车</code></p>
+<p>其中SpecialNeed中包含FAS工位AEB相关提示，CanCmdOpraLib包含FAS相关安全算法<br>ABS：<code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS\RBABS_DF</code></p>
+<h2 id="合众"><a href="#合众" class="headerlink" title="合众"></a>合众</h2><p><code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code><br>201909新增EP30ESC</p>
+<h2 id="比亚迪"><a href="#比亚迪" class="headerlink" title="比亚迪"></a>比亚迪</h2><p><code>D:\BaiduNetdiskDownload\GX\Platforms2\Platforms2\CanCmdOpraLib</code><br>201904增加联电供应商的转速控制</p>
+<h2 id="程序合并进行中"><a href="#程序合并进行中" class="headerlink" title="程序合并进行中"></a>程序合并进行中</h2><h3 id="PlatABS"><a href="#PlatABS" class="headerlink" title="PlatABS"></a>PlatABS</h3><p>最新程序在<code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS</code>中<br>20191120将五菱ABS更新至本工程代码中，待测试，其中包含齿讯学习</p>
+<h4 id="ABS"><a href="#ABS" class="headerlink" title="ABS"></a>ABS</h4><p>合众<br>东风乘用车</p>
+<h4 id="国六"><a href="#国六" class="headerlink" title="国六"></a>国六</h4><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -4635,49 +4618,20 @@ ABS：<code>D:\BaiduNetdiskDownload\GX\Platforms2\PlatABS\RBABS_DF</code></p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">上汽临港</td>
-<td style="text-align:center">MES</td>
-</tr>
-<tr>
-<td style="text-align:center">上汽名爵</td>
-<td style="text-align:center">MES</td>
-</tr>
-<tr>
-<td style="text-align:center">上汽宁德</td>
-<td style="text-align:center">MES</td>
-</tr>
-<tr>
-<td style="text-align:center">上汽郑州一期</td>
-<td style="text-align:center">MES</td>
-</tr>
-<tr>
-<td style="text-align:center">上汽无锡大通</td>
-<td style="text-align:center">MES、车型信息获取、ZTS匹配</td>
-</tr>
-<tr>
-<td style="text-align:center">福特杭州</td>
-<td style="text-align:center">MES、QLS、双怠速转速控制</td>
-</tr>
-<tr>
-<td style="text-align:center">福特重庆</td>
-<td style="text-align:center">MES、QLS、双怠速转速控制</td>
-</tr>
-<tr>
-<td style="text-align:center">福特哈尔滨</td>
-<td style="text-align:center">MES、QLS、双怠速转速控制</td>
-</tr>
-<tr>
-<td style="text-align:center">菲亚特长沙</td>
-<td style="text-align:center">MES</td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-<h4 id="其他">其他</h4>
-<p>北汽莱西FAS</p>
+</div>
+<p>上汽临港|MES<br>上汽名爵|MES<br>上汽宁德|MES<br>上汽郑州一期|MES<br>上汽无锡大通|MES、车型信息获取、ZTS匹配<br>福特杭州|MES、QLS、双怠速转速控制<br>福特重庆|MES、QLS、双怠速转速控制<br>福特哈尔滨|MES、QLS、双怠速转速控制<br>菲亚特长沙|MES</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>北汽莱西FAS</p>
 ]]></content>
       <categories>
         <category>工作</category>
       </categories>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>AES加密</title>
@@ -4694,6 +4648,10 @@ MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使�
 <p>C#代码实现</p>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 默认密钥-密钥的长度必须是32</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> PublicKey = <span class="string">&quot;1234567890adbcde&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 默认向量</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">const</span> <span class="built_in">string</span> Iv = <span class="string">&quot;1234567890hjlkew&quot;</span>;</span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> AES加密</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;str&quot;&gt;</span>需要加密的字符串<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;key&quot;&gt;</span>32位密钥<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>加密后的字符串<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">Encrypt</span>(<span class="params"><span class="built_in">string</span> str, <span class="built_in">string</span> key</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Byte[] keyArray = Encoding.UTF8.GetBytes(key);</span><br><span class="line">    Byte[] toEncryptArray = Encoding.UTF8.GetBytes(str);</span><br><span class="line">    <span class="keyword">var</span> rijndael = <span class="keyword">new</span> System.Security.Cryptography.RijndaelManaged();</span><br><span class="line">    rijndael.Key = keyArray;</span><br><span class="line">    rijndael.BlockSize = <span class="number">128</span>;</span><br><span class="line">    rijndael.Mode = System.Security.Cryptography.CipherMode.CBC;<span class="comment">//</span></span><br><span class="line">    rijndael.Padding = System.Security.Cryptography.PaddingMode.Zeros;<span class="comment">//</span></span><br><span class="line">    rijndael.IV = Encoding.UTF8.GetBytes(Iv);</span><br><span class="line">    System.Security.Cryptography.ICryptoTransform cTransform = rijndael.CreateEncryptor();</span><br><span class="line">    Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, <span class="number">0</span>, toEncryptArray.Length);</span><br><span class="line">    <span class="keyword">return</span> Convert.ToBase64String(resultArray, <span class="number">0</span>, resultArray.Length);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> AES解密</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;str&quot;&gt;</span>需要解密的字符串<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;key&quot;&gt;</span>32位密钥<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>解密后的字符串<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> <span class="title">Decrypt</span>(<span class="params"><span class="built_in">string</span> str, <span class="built_in">string</span> key</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    Byte[] keyArray = System.Text.Encoding.UTF8.GetBytes(key);</span><br><span class="line">    Byte[] toEncryptArray = Convert.FromBase64String(str);</span><br><span class="line">    <span class="keyword">var</span> rijndael = <span class="keyword">new</span> System.Security.Cryptography.RijndaelManaged();</span><br><span class="line">    rijndael.Key = keyArray;</span><br><span class="line">    rijndael.Mode = System.Security.Cryptography.CipherMode.CBC;</span><br><span class="line">    rijndael.Padding = System.Security.Cryptography.PaddingMode.Zeros;</span><br><span class="line">    rijndael.IV = System.Text.Encoding.UTF8.GetBytes(Iv);</span><br><span class="line">    System.Security.Cryptography.ICryptoTransform cTransform = rijndael.CreateDecryptor();</span><br><span class="line">    Byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, <span class="number">0</span>, toEncryptArray.Length);</span><br><span class="line">    <span class="keyword">return</span> System.Text.Encoding.UTF8.GetString(resultArray);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>AES</tag>
+      </tags>
   </entry>
   <entry>
     <title>河北长安中车联网</title>
@@ -4708,6 +4666,9 @@ MixColumns—为了充分混合矩阵中各个直行的操作。这个步骤使�
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>等待车型 数据库查询当前工位是否有车型信息</span><br><span class="line"><span class="keyword">SELECT</span> INSP_ITEM,TASKID,VIN <span class="keyword">FROM</span> &quot;);</span><br><span class="line">strSql.Append(&quot;CVIC_INSP_TASK_TMP <span class="keyword">WHERE</span> CUR_WP<span class="operator">=</span>&quot;);</span><br><span class="line">strSql.Append(strInfo[0]);</span><br><span class="line">strSql.Append(&quot;  <span class="keyword">AND</span> CHECK_STATE<span class="operator">=</span><span class="string">&#x27;G0&#x27;</span> <span class="keyword">AND</span> LINE_ID<span class="operator">=</span><span class="string">&#x27;&quot;);</span></span><br><span class="line"><span class="string">strSql.Append(strInfo[1]);</span></span><br><span class="line"><span class="string">strSql.Append(&quot;&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> PRIORITY <span class="keyword">DESC</span>,BG_TIME <span class="keyword">ASC</span></span><br><span class="line"><span class="number">2</span>获取车型信息</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> &quot;);</span><br><span class="line">strSql.Append(&quot;CVIC_INSP_TASK_TMP <span class="keyword">WHERE</span> TASKID<span class="operator">=</span><span class="string">&#x27;&quot;);</span></span><br><span class="line"><span class="string">strSql.Append(strInfo[0]);</span></span><br><span class="line"><span class="string">strSql.Append(&quot;&#x27;</span> <span class="keyword">AND</span>  CHECK_STATE<span class="operator">=</span><span class="string">&#x27;G0&#x27;</span> <span class="keyword">AND</span> VIN<span class="operator">=</span><span class="string">&#x27;&quot;);</span></span><br><span class="line"><span class="string">strSql.Append(strInfo[1]);</span></span><br><span class="line"><span class="string">strSql.Append(&quot;&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> PRIORITY <span class="keyword">DESC</span>,BG_TIME <span class="keyword">ASC</span></span><br><span class="line"></span><br><span class="line"><span class="number">3</span>获取标准</span><br><span class="line"><span class="keyword">SELECT</span> SVL,SVH <span class="keyword">FROM</span> CVIC_INSP_STD_TMP <span class="keyword">WHERE</span> TASKID<span class="operator">=</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span>初始化设备等待车辆</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>保存数据</span><br><span class="line">strSql.Append(&quot;INSERT INTO CVIC_SS_RESULT_TMP(TASKID,VEH_NO,CHECK_DATA,JUDGE,BG_TIME,INSP_SEQ,ED_TIME)VALUES(&quot;);</span><br><span class="line">protected bool SaveResult()</span><br><span class="line">&#123;</span><br><span class="line">    List<span class="operator">&lt;</span>string<span class="operator">&gt;</span> data <span class="operator">=</span> <span class="keyword">new</span> List<span class="operator">&lt;</span>string<span class="operator">&gt;</span>();</span><br><span class="line">    string tmp <span class="operator">=</span> &quot;&quot;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i <span class="operator">=</span> <span class="number">0</span>; i <span class="operator">&lt;</span> <span class="number">6</span>; i<span class="operator">+</span><span class="operator">+</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        switch (i)</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">            tmp <span class="operator">=</span> VehInfo.TASKID;</span><br><span class="line">            break;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            tmp <span class="operator">=</span> VehInfo.VIN;</span><br><span class="line">            break;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            tmp <span class="operator">=</span> string.Format(&quot;&#123;0:F1&#125;&quot;, VehInfo.DATA[<span class="number">0</span>]);</span><br><span class="line">            break;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            tmp <span class="operator">=</span> string.Format(&quot;&#123;0:N0&#125;&quot;, VehInfo.JUDGE[<span class="number">0</span>]);</span><br><span class="line">            break;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">            tmp <span class="operator">=</span> VehInfo.BGTIME;</span><br><span class="line">            break;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">            tmp <span class="operator">=</span> VehInfo.CheckSeq.ToString();</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        data.Insert(i, tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> DbOperation.SaveResult(data);</span><br><span class="line">&#125;</span><br><span class="line">foreach (string s <span class="keyword">in</span> strInfo)</span><br><span class="line">&#123;</span><br><span class="line">strSql.Append(&quot;&#x27;&quot; <span class="operator">+</span> s <span class="operator">+</span> &quot;&#x27;&quot;);</span><br><span class="line">strSql.Append(&quot;,&quot;);</span><br><span class="line">&#125;</span><br><span class="line">strSql.Append(&quot;CONVERT(VARCHAR(24), GETDATE(), 120)&quot;);</span><br><span class="line">strSql.Append(&quot;)&quot;);</span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">Process currentproc = Process.GetCurrentProcess();</span><br><span class="line">Process[] processcollection = Process.GetProcessesByName(currentproc.ProcessName);</span><br><span class="line"><span class="keyword">if</span> (processcollection.Length &gt; <span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    MessageBox.Show(<span class="string">&quot;应用程序已经在运行中。。&quot;</span>);</span><br><span class="line">    Thread.Sleep(<span class="number">1000</span>);</span><br><span class="line">    Environment.Exit(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>PostgreSQL数据库安装配置</title>
@@ -4742,7 +4703,7 @@ Postgre数据库安装与配置
 <a href="/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91.html" title="BBK检测线联网">PostgreSQL配置</a>
 ]]></content>
       <tags>
-        <tag>Postgre</tag>
+        <tag>PostgreSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -4853,7 +4814,7 @@ EA 是这个记录的校 验 和；</p>
 来自 数 据 记录地址域的地址 2462 + 1200 &lt;&lt; 4 =  00014462</p>
 ]]></content>
       <tags>
-        <tag>Hex解析</tag>
+        <tag>Hex</tag>
       </tags>
   </entry>
   <entry>
@@ -5020,9 +4981,9 @@ clear 函数名 : 删除该函数的断点<br>
 <p>gcc 默认不会链接上 C++ 标准库.</p>
 ]]></content>
       <tags>
-        <tag>linux</tag>
         <tag>C</tag>
         <tag>C++</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -5187,6 +5148,7 @@ ChildOneParam22</p>
       </categories>
       <tags>
         <tag>构造函数</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -5231,8 +5193,8 @@ ChildOneParam22</p>
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python3</tag>
         <tag>Script</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -5614,6 +5576,9 @@ NA Not applicable<br>
 PID Parameter Identifier (SAE J1587 or SAE J1979)<br>
 OBD II On Board Diagnostics II</p>
 ]]></content>
+      <tags>
+        <tag>J1939</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBKTimeLock</title>
@@ -5676,6 +5641,10 @@ BBK设备数据库常用操作说明
       <categories>
         <category>Postgre</category>
       </categories>
+      <tags>
+        <tag>BBK</tag>
+        <tag>PostgreSQL</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBK检测线联网</title>
@@ -5919,6 +5888,9 @@ r.content  |  HTTP响应内容的二进制格式</p>
 <h3 id="爬取图片、视频等">爬取图片、视频等</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">url = <span class="string">&quot;&quot;</span></span><br><span class="line">root = <span class="string">&quot;D://Python//Pic&quot;</span></span><br><span class="line">path = root + url.split(<span class="string">&#x27;/&#x27;</span>)[-<span class="number">1</span>]</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(root):</span><br><span class="line">    os.mkdir(root)</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f</span><br><span class="line">      f.write(r.content)</span><br><span class="line">      f.close()</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">&quot;文件保存成功&quot;</span>)</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;文件已存在&quot;</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title>VCU</title>
@@ -5942,6 +5914,9 @@ MCU温度MCUTempretureGetTest：D061         (MCU温度D02E- Inverter Actual Tem
 刹车回馈电流FeedbackCurrentGetTest：D030     (D027- Battery Total Current回馈电流)</p>
 <p>MCU转速与实际车速差值PreChargeVoltageGetTest：</p>
 ]]></content>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>lambda Expressions</title>
@@ -5960,6 +5935,9 @@ MCU温度MCUTempretureGetTest：D061         (MCU温度D02E- Inverter Actual Tem
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>刷题记</title>
@@ -6066,6 +6044,9 @@ Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时�
 单线程程序中推荐使用 Dictionary, 有泛型优势, 且读取速度较快, 容量利用更充分。多线程程序中推荐使用 Hashtable, 默认的 Hashtable 允许单线程写入, 多线程读取, 对 Hashtable 进一步调用 Synchronized() 方法可以获得完全线程安全的类型. 而 Dictionary 非线程安全, 必须人为使用 lock 语句进行保护, 效率大减。<br>
 在通过代码测试的时候发现key是整数型Dictionary的效率比Hashtable快，如果key是字符串型，Dictionary的效率没有Hashtable快。</p>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>JSON字符串</title>
@@ -6093,6 +6074,9 @@ Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时�
 <h2 id="匿名类型生成Json字符串">匿名类型生成Json字符串</h2>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> &#123;</span><br><span class="line">  Name = <span class="string">&quot;Jone&quot;</span>,</span><br><span class="line">  Age = <span class="number">18</span>,</span><br><span class="line">  Address = <span class="keyword">new</span> &#123;</span><br><span class="line">    Street = <span class="string">&quot;123 St&quot;</span>,</span><br><span class="line">    City = <span class="string">&quot;Shanghai&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">string</span> jsonString = JsonConvert.SerializeObject(obj, Formatting.Indented);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>动态EV(ETP)测试</title>
@@ -6163,14 +6147,20 @@ HttpClient有预热机制，第一次进行访问时比较慢，所以不应该�
 <h3 id="示例">示例</h3>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HttpClientHelper</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> <span class="built_in">object</span> LockObj = <span class="keyword">new</span> <span class="built_in">object</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> HttpClient client = <span class="literal">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">HttpClientHelper</span>()</span> &#123;</span><br><span class="line">        GetInstance();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpClient <span class="title">GetInstance</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (client == <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">lock</span> (LockObj)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (client == <span class="literal">null</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    client = <span class="keyword">new</span> HttpClient();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> client;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task&lt;<span class="built_in">string</span>&gt; <span class="title">PostAsync</span>(<span class="params"><span class="built_in">string</span> url, <span class="built_in">string</span> strJson</span>)<span class="comment">//post异步请求方法</span></span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">            HttpContent content = <span class="keyword">new</span> StringContent(strJson);</span><br><span class="line">            content.Headers.ContentType = <span class="keyword">new</span> System.Net.Http.Headers.MediaTypeHeaderValue(<span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">            <span class="comment">//由HttpClient发出异步Post请求</span></span><br><span class="line">            HttpResponseMessage res = <span class="keyword">await</span> client.PostAsync(url, content);</span><br><span class="line">            <span class="keyword">if</span> (res.StatusCode == System.Net.HttpStatusCode.OK)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> str = res.Content.ReadAsStringAsync().Result;</span><br><span class="line">                <span class="keyword">return</span> str;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">string</span> <span class="title">Post</span>(<span class="params"><span class="built_in">string</span> url, <span class="built_in">string</span> strJson</span>)<span class="comment">//post同步请求方法</span></span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">           <span class="comment">// private static HttpClient client = new HttpClient();</span></span><br><span class="line">           <span class="comment">//client.DefaultRequestHeaders.Accept.TryParseAdd(&quot;application/json&quot;);</span></span><br><span class="line">            HttpContent content = <span class="keyword">new</span> StringContent(strJson);</span><br><span class="line">            content.Headers.ContentType = <span class="keyword">new</span> System.Net.Http.Headers.MediaTypeHeaderValue(<span class="string">&quot;application/json&quot;</span>);</span><br><span class="line">            <span class="comment">//client.DefaultRequestHeaders.Connection.Add(&quot;keep-alive&quot;);</span></span><br><span class="line">            <span class="comment">//由HttpClient发出Post请求</span></span><br><span class="line">            Task&lt;HttpResponseMessage&gt; res = client.PostAsync(url, content);</span><br><span class="line">            <span class="keyword">if</span> (res.Result.StatusCode == System.Net.HttpStatusCode.OK)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> str = res.Result.Content.ReadAsStringAsync().Result;</span><br><span class="line">                <span class="keyword">return</span> str;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">string</span> <span class="title">Get</span>(<span class="params"><span class="built_in">string</span> url</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">try</span></span><br><span class="line">        &#123;</span><br><span class="line">           <span class="comment">// private static HttpClient client = new HttpClient();</span></span><br><span class="line">           <span class="comment">//client.DefaultRequestHeaders.Accept.TryParseAdd(&quot;application/json&quot;);</span></span><br><span class="line">            <span class="keyword">var</span> responseString = client.GetStringAsync(url);</span><br><span class="line">            <span class="keyword">return</span> responseString.Result;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">catch</span> (Exception ex)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>字符串匹配算法</title>
     <url>/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95.html</url>
     <content><![CDATA[<center></center>
+
 <span id="more"></span>
-<h2 id=""></h2>
-]]></content>
+<h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1>]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>Selenium WebDriver</title>
@@ -6257,6 +6247,9 @@ front 和 rear 随着插入和删除而变化。当队列为空时， front=rear
 <p>队列的另外一种存储方式是链式存储，这样的队列称为链队列(LinkedQueue)<br>
 由于链队列的操作只是在一端进行，为了操作方便，把队头设在链表的头部，并且不需要头结点</p>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>中牟日产打印更改</title>
@@ -6323,11 +6316,11 @@ Param1为串口号、Param3为输出LOG的文件名<br>
 <h4 id="Cookie">Cookie</h4>
 <p>通过抓包拿到cookie，再将cookie放到header中请求即可</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">driver.find_element_by_id(<span class="string">&#x27;user&#x27;</span>).send_keys(<span class="string">&#x27;用户账号&#x27;</span>)</span><br><span class="line">driver.find_element_by_id(<span class="string">&#x27;pass&#x27;</span>).send_keys(<span class="string">&#x27;用户密码&#x27;</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">&#x27;//*[@id=&quot;submit&quot;]&#x27;</span>).click()</span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line">cookie = driver.get_cookies()</span><br><span class="line">cookiea = [item[<span class="string">&quot;name&quot;</span>] + <span class="string">&quot;=&quot;</span> + item[<span class="string">&quot;value&quot;</span>] <span class="keyword">for</span> item <span class="keyword">in</span> cookie]</span><br><span class="line">cookiestr = <span class="string">&#x27;; &#x27;</span>.join(item <span class="keyword">for</span> item <span class="keyword">in</span> cookiea)</span><br><span class="line">driver.close() <span class="comment">#获取到登录cookie,就可以关闭窗口了</span></span><br><span class="line"><span class="keyword">return</span> cookiestr</span><br><span class="line"></span><br><span class="line"><span class="comment"># join说明</span></span><br><span class="line"><span class="built_in">str</span> = <span class="string">&quot;-&quot;</span>;</span><br><span class="line">seq = (<span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>); <span class="comment"># 字符串序列</span></span><br><span class="line"><span class="built_in">print</span> <span class="built_in">str</span>.join( seq );</span><br><span class="line">输出: a-b-c</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> md5</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> RequestException</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">GetPageHtml</span>(<span class="params">url</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        option = webdriver.ChromeOptions()</span><br><span class="line">        driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">        driver.get(<span class="string">&quot;https://www.bjjnts.cn/login&quot;</span>)</span><br><span class="line">        txt = driver.page_source</span><br><span class="line">        <span class="comment"># 设置默认编码为 utf-8</span></span><br><span class="line">        driver.find_element_by_name(<span class="string">&quot;username&quot;</span>).send_keys(<span class="string">&quot;370831199309165413&quot;</span>)</span><br><span class="line">        driver.find_element_by_name(<span class="string">&quot;password&quot;</span>).send_keys(<span class="string">&quot;bj123465&quot;</span>)</span><br><span class="line">        driver.find_element_by_xpath(<span class="string">&quot;//button[@class=&#x27;login_btn&#x27; and @type=&#x27;submit&#x27;]&quot;</span>).click()</span><br><span class="line">        header = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36&#x27;</span>,<span class="string">&#x27;Referer&#x27;</span>:url&#125;</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        driver.get(url)</span><br><span class="line">        <span class="keyword">return</span>  driver.page_source</span><br><span class="line">        <span class="comment">#res = requests.get(url,headers = header)</span></span><br><span class="line">        <span class="comment">#if res.status_code == 200:</span></span><br><span class="line">            <span class="comment">#return res.text</span></span><br><span class="line">        <span class="comment">#return None</span></span><br><span class="line">    <span class="keyword">except</span> RequestException:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ParseHtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;video src=&quot;(.*?)&quot;\sposter=&#x27;</span>,re.S)</span><br><span class="line">    items = re.search(pattern,html)</span><br><span class="line">    <span class="built_in">print</span>(items.group(<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span>  items.group(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ParseVideoHtml</span>(<span class="params">html, name</span>):</span><br><span class="line">    root = <span class="string">&quot;D://Downloads//&quot;</span></span><br><span class="line">    path = root + name + <span class="string">&quot;.mp4&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(root):</span><br><span class="line">            os.mkdir(root)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">            r = requests.get(html)</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(r.content)</span><br><span class="line">                f.close()</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;文件保存成功&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;文件已存在&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_config</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;&quot;读取配置&quot;&quot;&quot;</span></span><br><span class="line">    path = os.getcwd()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">        os.mkdir(path)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(<span class="string">&quot;config.json&quot;</span>):  <span class="comment"># 无文件时创建</span></span><br><span class="line">         <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;config.json&quot;</span>, mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> jsonfile:</span><br><span class="line">             jsonfile.write(json.dump(&#123;<span class="string">&#x27;url&#x27;</span>:<span class="string">&#x27;https://www.bjjnts.cn/lessonStudy/202/4268&#x27;</span>&#125;),indent=<span class="number">4</span>)</span><br><span class="line">         jsonfile.close()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;config.json&quot;</span>) <span class="keyword">as</span> json_file:</span><br><span class="line">        config = json.load(json_file)</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment">#html = &quot;https://bjjnts-bd.xuetangx.com/4233125536dfb27e-10.mp4?auth_key=1596034097-0-0-f7f5072dec07ec43c1110ade3a8d412d&quot;</span></span><br><span class="line">    <span class="comment">#ParseVideoHtml(html)</span></span><br><span class="line">    <span class="comment">#https://www.bjjnts.cn/login</span></span><br><span class="line">    config = read_config()</span><br><span class="line">    <span class="comment">#html = &quot;https://www.bjjnts.cn/lessonStudy/202/4268&quot;</span></span><br><span class="line">    html = config[<span class="string">&quot;url&quot;</span>]</span><br><span class="line">    <span class="built_in">print</span>(html)</span><br><span class="line">    url = <span class="string">&quot;https://www.bjjnts.cn/login&quot;</span></span><br><span class="line">    option = webdriver.ChromeOptions()</span><br><span class="line">    driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">    driver.get(url)</span><br><span class="line">    txt = driver.page_source</span><br><span class="line">    <span class="comment"># 设置默认编码为 utf-8</span></span><br><span class="line">    driver.find_element_by_name(<span class="string">&quot;username&quot;</span>).send_keys(<span class="string">&quot;370831199309165413&quot;</span>)</span><br><span class="line">    driver.find_element_by_name(<span class="string">&quot;password&quot;</span>).send_keys(<span class="string">&quot;bj123465&quot;</span>)</span><br><span class="line">    driver.find_element_by_xpath(<span class="string">&quot;//button[@class=&#x27;login_btn&#x27; and @type=&#x27;submit&#x27;]&quot;</span>).click()</span><br><span class="line">    header = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36&#x27;</span>,<span class="string">&#x27;Referer&#x27;</span>:url&#125;</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    driver.get(html)</span><br><span class="line"></span><br><span class="line">    videoNames = []</span><br><span class="line">    bsObj = BeautifulSoup(driver.page_source.replace(<span class="string">&#x27;&amp;nbsp;&#x27;</span>, <span class="string">&#x27; &#x27;</span>), <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    VideoList = bsObj.findAll(class_=<span class="string">&quot;course_study_menubox&quot;</span>)</span><br><span class="line">    <span class="comment">##print(VideoList)</span></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> video <span class="keyword">in</span> VideoList:</span><br><span class="line">        videoname = video.find(<span class="string">&quot;h4&quot;</span>,class_=<span class="string">&quot;course_study_menutitle&quot;</span>).get_text()</span><br><span class="line">        <span class="comment">##driver.get(html)</span></span><br><span class="line">        videoHtml = ParseHtml(driver.page_source)</span><br><span class="line">        <span class="comment">#th = Thread()</span></span><br><span class="line">        ParseVideoHtml(videoHtml, videoname)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        driver.find_element_by_xpath(<span class="string">&quot;//a[@class=&#x27;change_chapter lesson-&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;&#x27;]&quot;</span>).find_element_by_xpath(<span class="string">&#x27;..&#x27;</span>).click()</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">str</span>(i))</span><br><span class="line">        <span class="comment">#videoNames.append(video.find(&quot;h4&quot;,class_=&quot;course_study_menutitle&quot;).get_text())</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#print(videoNames)</span></span><br><span class="line">    <span class="comment">#print(html)</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> md5</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> RequestException</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Thread</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">GetPageHtml</span>(<span class="params">url</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        option = webdriver.ChromeOptions()</span><br><span class="line">        driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">        driver.get(<span class="string">&quot;https://www.bjjnts.cn/login&quot;</span>)</span><br><span class="line">        txt = driver.page_source</span><br><span class="line">        <span class="comment"># 设置默认编码为 utf-8</span></span><br><span class="line">        driver.find_element_by_name(<span class="string">&quot;username&quot;</span>).send_keys(<span class="string">&quot;ID&quot;</span>)</span><br><span class="line">        driver.find_element_by_name(<span class="string">&quot;password&quot;</span>).send_keys(<span class="string">&quot;KW&quot;</span>)</span><br><span class="line">        driver.find_element_by_xpath(<span class="string">&quot;//button[@class=&#x27;login_btn&#x27; and @type=&#x27;submit&#x27;]&quot;</span>).click()</span><br><span class="line">        header = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36&#x27;</span>,<span class="string">&#x27;Referer&#x27;</span>:url&#125;</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        driver.get(url)</span><br><span class="line">        <span class="keyword">return</span>  driver.page_source</span><br><span class="line">        <span class="comment">#res = requests.get(url,headers = header)</span></span><br><span class="line">        <span class="comment">#if res.status_code == 200:</span></span><br><span class="line">            <span class="comment">#return res.text</span></span><br><span class="line">        <span class="comment">#return None</span></span><br><span class="line">    <span class="keyword">except</span> RequestException:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ParseHtml</span>(<span class="params">html</span>):</span><br><span class="line">    pattern = re.<span class="built_in">compile</span>(<span class="string">&#x27;&lt;video src=&quot;(.*?)&quot;\sposter=&#x27;</span>,re.S)</span><br><span class="line">    items = re.search(pattern,html)</span><br><span class="line">    <span class="built_in">print</span>(items.group(<span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span>  items.group(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ParseVideoHtml</span>(<span class="params">html, name</span>):</span><br><span class="line">    root = <span class="string">&quot;D://Downloads//&quot;</span></span><br><span class="line">    path = root + name + <span class="string">&quot;.mp4&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(root):</span><br><span class="line">            os.mkdir(root)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">            r = requests.get(html)</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                f.write(r.content)</span><br><span class="line">                f.close()</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;文件保存成功&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;文件已存在&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;爬取失败&quot;</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_config</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;&quot;读取配置&quot;&quot;&quot;</span></span><br><span class="line">    path = os.getcwd()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(path):</span><br><span class="line">        os.mkdir(path)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(<span class="string">&quot;config.json&quot;</span>):  <span class="comment"># 无文件时创建</span></span><br><span class="line">         <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;config.json&quot;</span>, mode=<span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> jsonfile:</span><br><span class="line">             jsonfile.write(json.dump(&#123;<span class="string">&#x27;url&#x27;</span>:<span class="string">&#x27;https://www.bjjnts.cn/lessonStudy/202/4268&#x27;</span>&#125;),indent=<span class="number">4</span>)</span><br><span class="line">         jsonfile.close()</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;config.json&quot;</span>) <span class="keyword">as</span> json_file:</span><br><span class="line">        config = json.load(json_file)</span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment">#html = &quot;https://bjjnts-bd.xuetangx.com/4233125536dfb27e-10.mp4?auth_key=1596034097-0-0-f7f5072dec07ec43c1110ade3a8d412d&quot;</span></span><br><span class="line">    <span class="comment">#ParseVideoHtml(html)</span></span><br><span class="line">    <span class="comment">#https://www.bjjnts.cn/login</span></span><br><span class="line">    config = read_config()</span><br><span class="line">    <span class="comment">#html = &quot;https://www.bjjnts.cn/lessonStudy/202/4268&quot;</span></span><br><span class="line">    html = config[<span class="string">&quot;url&quot;</span>]</span><br><span class="line">    <span class="built_in">print</span>(html)</span><br><span class="line">    url = <span class="string">&quot;https://www.bjjnts.cn/login&quot;</span></span><br><span class="line">    option = webdriver.ChromeOptions()</span><br><span class="line">    driver = webdriver.Chrome(chrome_options=option)</span><br><span class="line">    driver.get(url)</span><br><span class="line">    txt = driver.page_source</span><br><span class="line">    <span class="comment"># 设置默认编码为 utf-8</span></span><br><span class="line">    driver.find_element_by_name(<span class="string">&quot;username&quot;</span>).send_keys(<span class="string">&quot;370831199309165413&quot;</span>)</span><br><span class="line">    driver.find_element_by_name(<span class="string">&quot;password&quot;</span>).send_keys(<span class="string">&quot;bj123465&quot;</span>)</span><br><span class="line">    driver.find_element_by_xpath(<span class="string">&quot;//button[@class=&#x27;login_btn&#x27; and @type=&#x27;submit&#x27;]&quot;</span>).click()</span><br><span class="line">    header = &#123;<span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36&#x27;</span>,<span class="string">&#x27;Referer&#x27;</span>:url&#125;</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    driver.get(html)</span><br><span class="line"></span><br><span class="line">    videoNames = []</span><br><span class="line">    bsObj = BeautifulSoup(driver.page_source.replace(<span class="string">&#x27;&amp;nbsp;&#x27;</span>, <span class="string">&#x27; &#x27;</span>), <span class="string">&quot;lxml&quot;</span>)</span><br><span class="line">    VideoList = bsObj.findAll(class_=<span class="string">&quot;course_study_menubox&quot;</span>)</span><br><span class="line">    <span class="comment">##print(VideoList)</span></span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> video <span class="keyword">in</span> VideoList:</span><br><span class="line">        videoname = video.find(<span class="string">&quot;h4&quot;</span>,class_=<span class="string">&quot;course_study_menutitle&quot;</span>).get_text()</span><br><span class="line">        <span class="comment">##driver.get(html)</span></span><br><span class="line">        videoHtml = ParseHtml(driver.page_source)</span><br><span class="line">        <span class="comment">#th = Thread()</span></span><br><span class="line">        ParseVideoHtml(videoHtml, videoname)</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        driver.find_element_by_xpath(<span class="string">&quot;//a[@class=&#x27;change_chapter lesson-&quot;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot;&#x27;]&quot;</span>).find_element_by_xpath(<span class="string">&#x27;..&#x27;</span>).click()</span><br><span class="line">        time.sleep(<span class="number">2</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">str</span>(i))</span><br><span class="line">        <span class="comment">#videoNames.append(video.find(&quot;h4&quot;,class_=&quot;course_study_menutitle&quot;).get_text())</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#print(videoNames)</span></span><br><span class="line">    <span class="comment">#print(html)</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
+        <tag>Python</tag>
         <tag>爬虫</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -6342,6 +6335,9 @@ Param1为串口号、Param3为输出LOG的文件名<br>
       <categories>
         <category>SQLServer</category>
       </categories>
+      <tags>
+        <tag>SQLServer</tag>
+      </tags>
   </entry>
   <entry>
     <title>GAE AppID</title>
@@ -6501,6 +6497,7 @@ dotnet new --help 查看帮助<br>
 ]]></content>
       <tags>
         <tag>BBK</tag>
+        <tag>PostgreSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -6749,6 +6746,9 @@ MBAP + Function code + Data</p>
 访问连续10个保持寄存器：Address：400001[10]</p>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>Modbus</tag>
+      </tags>
   </entry>
   <entry>
     <title>Flask框架</title>
@@ -6765,6 +6765,9 @@ IconFont网址下载图标</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;&#123;&#123; url_for(&#x27;result&#x27;) &#125;&#125;&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>age:  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>sex:  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span>&gt;</span></span><br><span class="line">            &#123;% for key,value in result.items() %&#125;</span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">th</span>&gt;</span>&#123;&#123;key&#125;&#125;<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span>&#123;&#123;value&#125;&#125;<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            &#123;% endfor %&#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    Result</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>Flask</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBK工位打印配置</title>
@@ -6876,6 +6879,7 @@ BBK检测线设备程序打印配置, 本文档只包含加载Excel模板进行�
       </categories>
       <tags>
         <tag>CSharp 补课笔记</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -6902,6 +6906,9 @@ URI（统一资源标识符）指向资源，每种资源对应一个特定的UR
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>C Sharp 补课笔记 -- LINQ</title>
@@ -6937,6 +6944,7 @@ URI（统一资源标识符）指向资源，每种资源对应一个特定的UR
       </categories>
       <tags>
         <tag>CSharp 补课笔记</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -6992,6 +7000,7 @@ LINQ to XML 是一种启用了 LINQ 的内存 XML 编程接口，支持在 .NET 
       </categories>
       <tags>
         <tag>CSharp 补课笔记</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -7031,6 +7040,7 @@ C++ 是这条规则的一个例外，因为它也能够生成可在 Windows 上�
       </categories>
       <tags>
         <tag>CSharp 补课笔记</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -7048,6 +7058,7 @@ C++ 是这条规则的一个例外，因为它也能够生成可在 Windows 上�
       </categories>
       <tags>
         <tag>UDP</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -7072,6 +7083,7 @@ C++ 是这条规则的一个例外，因为它也能够生成可在 Windows 上�
       </categories>
       <tags>
         <tag>CSharp 补课笔记</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -7104,6 +7116,7 @@ C++ 是这条规则的一个例外，因为它也能够生成可在 Windows 上�
       <tags>
         <tag>委托</tag>
         <tag>事件</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -7234,6 +7247,9 @@ SocketOpraLib.UDPServerOpra.SetLocalInfoConfig(ConfigRecv)</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>C# Minio存储文件</title>
@@ -7270,6 +7286,10 @@ secret_key :value  密码<br>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>MiniIO</tag>
+      </tags>
   </entry>
   <entry>
     <title>C++字符</title>
@@ -7379,7 +7399,12 @@ EOLPrint一般用于检测线打印工位
 ]]></content>
       <categories>
         <category>设计模式</category>
+        <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBK平台软件添加通讯点</title>
@@ -7452,6 +7477,10 @@ ShowName为设备状态界面显示分类及名称</p>
 <h3 id="Server">Server</h3>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">HttpListener httpListenner;</span><br><span class="line">httpListenner = <span class="keyword">new</span> HttpListener();</span><br><span class="line">httpListenner.AuthenticationSchemes = AuthenticationSchemes.Anonymous;</span><br><span class="line">httpListenner.Prefixes.Add(httpServerUrl);</span><br><span class="line">httpListenner.Start();</span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> ThreadStart(<span class="built_in">delegate</span></span><br><span class="line">&#123;</span><br><span class="line">    loop(httpListenner);</span><br><span class="line">&#125;)).Start();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">loop</span>(<span class="params">HttpListener httpListenner</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        HttpListenerContext context = httpListenner.GetContext();</span><br><span class="line">        HttpListenerRequest request = context.Request;</span><br><span class="line">        HttpListenerResponse response = context.Response;</span><br><span class="line">        <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;POST&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            HandlePost(request, response);                    </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (request.HttpMethod == <span class="string">&quot;GET&quot;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            response.OutputStream.Write(Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>), <span class="number">0</span>, Encoding.ASCII.GetBytes(<span class="string">&quot;NotSupport&quot;</span>).Length);</span><br><span class="line">        &#125;</span><br><span class="line">        response.Close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">HandlePost</span>(<span class="params">HttpListenerRequest request, HttpListenerResponse response</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">var</span> stream = response.OutputStream;</span><br><span class="line">    <span class="built_in">byte</span>[] readBytes = <span class="keyword">new</span> <span class="built_in">byte</span>[<span class="number">1024</span>];</span><br><span class="line">    request.InputStream.Read(readBytes, <span class="number">0</span>, <span class="number">1024</span>);</span><br><span class="line">    <span class="built_in">string</span> recv = Encoding.ASCII.GetString(readBytes);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> jsonRecv = JObject.Parse(recv.Trim(<span class="string">&#x27;\0&#x27;</span>));</span><br><span class="line">    JObject jsonSend = <span class="keyword">new</span> JObject();</span><br><span class="line">    <span class="keyword">if</span> (jsonRecv[<span class="string">&quot;stationCode&quot;</span>].ToString() == <span class="string">&quot;EV&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        jsonSend[<span class="string">&quot;factoryCode&quot;</span>] = <span class="string">&quot;Changzhou&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;stationCode&quot;</span>] = <span class="string">&quot;EV&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;vin&quot;</span>] = <span class="string">&quot;12345678901234567&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;state&quot;</span>] = <span class="string">&quot;Start&quot;</span>;</span><br><span class="line">        jsonSend[<span class="string">&quot;result&quot;</span>] = <span class="string">&quot;OK&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    stream.Write(Encoding.ASCII.GetBytes(jsonSend.ToString()), <span class="number">0</span>, Encoding.ASCII.GetBytes(jsonSend.ToString()).Length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>Http</tag>
+      </tags>
   </entry>
   <entry>
     <title>Markdown画图</title>
@@ -7545,6 +7574,9 @@ graph
     Y --> M
     Y --> N</pre>
 ]]></content>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
   </entry>
   <entry>
     <title>OBDII参数配置说明</title>
@@ -7593,6 +7625,9 @@ y: 线程池的总数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Postgresql数据导入导出</title>
@@ -7650,7 +7685,7 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>Postgresql</tag>
+        <tag>PostgreSQL</tag>
       </tags>
   </entry>
   <entry>
@@ -7688,6 +7723,9 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp bit循环移位</title>
@@ -7698,6 +7736,9 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp执行外部exe</title>
@@ -7711,6 +7752,9 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git复习</title>
@@ -7737,6 +7781,9 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp删除文件或文件夹</title>
@@ -7752,6 +7799,9 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>DoIP协议解读</title>
@@ -7883,6 +7933,9 @@ ISO13400
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Ubuntu Docker 搭建Gitlab</title>
@@ -7950,6 +8003,9 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git常用命令</title>
@@ -7963,6 +8019,9 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-代理模式</title>
@@ -7975,6 +8034,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-外观模式</title>
@@ -7988,6 +8051,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-原型模式</title>
@@ -8005,6 +8072,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-工厂方法</title>
@@ -8027,6 +8098,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-抽象工厂</title>
@@ -8057,6 +8132,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-建造者模式</title>
@@ -8073,6 +8152,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-简单工厂</title>
@@ -8088,6 +8171,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-模板方法模式</title>
@@ -8102,6 +8189,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-策略模式</title>
@@ -8117,6 +8208,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>Git拆分仓库</title>
@@ -8140,6 +8235,9 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-装饰模式</title>
@@ -8155,6 +8253,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-观察者模式</title>
@@ -8168,6 +8270,10 @@ Ubuntu下基于Docker搭建Gitlab
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>HUD机器人标定及验证</title>
@@ -8245,6 +8351,9 @@ Ubuntu下基于Docker搭建Gitlab
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">A</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title">B</span> &#123;</span><br><span class="line">  + method() : ReturnType</span><br><span class="line">&#125;</span><br><span class="line">A &lt;.. B</span><br></pre></td></tr></table></figure>
 <img  src=http://www.plantuml.com/plantuml/svg/Iyv9B2vMS5Ievj9Mo4qjoSXFqT1Ki588IYqfBSeBgIn8vQhbIWQhSSAhnb71HazFmGa0>
 ]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-MVC模式</title>
@@ -8259,6 +8368,10 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-中介者模式</title>
@@ -8273,6 +8386,10 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-享元模式</title>
@@ -8289,6 +8406,10 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-命令模式</title>
@@ -8302,6 +8423,10 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-备忘录模式</title>
@@ -8314,6 +8439,10 @@ Controller（控制器） - 控制器作用于模型和视图上。它控制数�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-总结</title>
@@ -8428,6 +8557,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-组合模式</title>
@@ -8440,6 +8573,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-职责链模式</title>
@@ -8453,6 +8590,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-状态模式</title>
@@ -8468,6 +8609,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-桥接模式</title>
@@ -8482,6 +8627,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-访问者模式</title>
@@ -8494,6 +8643,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-解释器模式</title>
@@ -8506,12 +8659,19 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>GUID/UUID</title>
     <url>/GUID-UUID.html</url>
     <content><![CDATA[<h2 id="示例">示例</h2>
 <figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> uuid = Guid.NewGuid().ToString();<span class="comment">//带-</span></span><br><span class="line">uuid = Guid.NewGuid().ToString(<span class="string">&quot;N&quot;</span>);<span class="comment">//纯数字</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-迭代器模式</title>
@@ -8524,6 +8684,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计模式-适配器模式</title>
@@ -8541,6 +8705,10 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
       <categories>
         <category>设计模式</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>MagicInfo三星多显示器配置</title>
@@ -8608,6 +8776,9 @@ To stop tracking a file that is currently tracked, use <code>git rm --cached</co
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>UDS DTC格式解析</title>
@@ -8828,6 +8999,9 @@ CSS用于给HTML元素添加样式</p>
 <code>&lt;script src=&quot;scripts/main.js&quot; defer&gt;&lt;/script&gt;</code></p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> myHeading = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;h1&quot;</span>);</span><br><span class="line">myHeading.<span class="property">textContent</span> = <span class="string">&quot;Hello world!&quot;</span>;</span><br></pre></td></tr></table></figure>
 ]]></content>
+      <tags>
+        <tag>Web</tag>
+      </tags>
   </entry>
   <entry>
     <title>分布式系统</title>
@@ -9165,6 +9339,9 @@ CSS用于给HTML元素添加样式</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>3D轮眉相机软件解读</title>
@@ -9234,6 +9411,9 @@ GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作�
 <h2 id="标定算法">标定算法</h2>
 <p>WBH3DAlgorithm_MasterGauge</p>
 ]]></content>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>HUD单双目测距说明</title>
@@ -9241,6 +9421,9 @@ GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作�
     <content><![CDATA[<span id="more"></span>
 <h2 id=""></h2>
 ]]></content>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
   <entry>
     <title>AlgorithmLearning-D&amp;C</title>
@@ -9253,32 +9436,32 @@ GetHubPosition向深度差值最大的点集合中区Z为平均值处的点作�
       <categories>
         <category>算法</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>聚类算法</title>
     <url>/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95.html</url>
-    <content><![CDATA[<p>聚类: 将相似或满足条件的样本归类到同一类别中</p>
-<span id="more"></span>
-<h2 id="DBSCAN">DBSCAN</h2>
-<p>DBSCAN(Density-Based Spatial Clustering of Applications with Noise)基于密度的聚类算法</p>
-<p><img src="%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/DBSCAN.gif" alt="DBSCAN"></p>
-<h3 id="聚类方式">聚类方式</h3>
-<ol>
+    <content><![CDATA[<p>聚类: 将相似或满足条件的样本归类到同一类别中<br><span id="more"></span></p>
+<h2 id="DBSCAN"><a href="#DBSCAN" class="headerlink" title="DBSCAN"></a>DBSCAN</h2><p>DBSCAN(Density-Based Spatial Clustering of Applications with Noise)基于密度的聚类算法</p>
+<p><img src="聚类算法/DBSCAN.gif" alt="DBSCAN"></p>
+<h3 id="聚类方式"><a href="#聚类方式" class="headerlink" title="聚类方式"></a>聚类方式</h3><ol>
 <li>以任一点开始, 判断当前点ep范围内点数是否大于minPts, 若大于则为核心点, 否则为噪点</li>
 <li>然后以邻域内任一点重复步骤1, 将样本归类为不同簇</li>
 </ol>
-<h3 id="算法参数">算法参数</h3>
-<p>ep: 邻域半径<br>
-minPts: 最少点数</p>
-<h3 id="点类别">点类别</h3>
-<ol>
+<h3 id="算法参数"><a href="#算法参数" class="headerlink" title="算法参数"></a>算法参数</h3><p>ep: 邻域半径<br>minPts: 最少点数</p>
+<h3 id="点类别"><a href="#点类别" class="headerlink" title="点类别"></a>点类别</h3><ol>
 <li>核心点是指那些在邻域内具有足够多的点的对象(&gt;minPts)</li>
 <li>边界点则是那些邻近核心点但自身不是核心点的点</li>
 <li>噪声点则既不是核心点也不是边界点</li>
 </ol>
-<h2 id="K-MEANS">K-MEANS</h2>
-<p><img src="%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/K-MEANS.gif" alt="DBSCAN"></p>
+<h2 id="K-MEANS"><a href="#K-MEANS" class="headerlink" title="K-MEANS"></a>K-MEANS</h2><p><img src="聚类算法/K-MEANS.gif" alt="DBSCAN"></p>
 ]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>AlgorithmLearning-DFS</title>
@@ -9304,6 +9487,10 @@ minPts: 最少点数</p>
       <categories>
         <category>算法</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>C# Open Protocol</title>
@@ -9403,18 +9590,24 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>AlgorithmLearning-二分查找</title>
     <url>/AlgorithmLearning-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html</url>
-    <content><![CDATA[<p>二分查找法</p>
-<span id="more"></span>
-<h2 id="示例">示例</h2>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//返回一组数中某个数的索引</span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">BinarySearch</span>(<span class="params">List&lt;<span class="built_in">int</span>&gt; list, <span class="built_in">int</span> target</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">int</span> high = list.Count - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">int</span> tmp = list[mid];</span><br><span class="line">        <span class="keyword">if</span>(tmp == target)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span>(tmp &gt; target)</span><br><span class="line">            high = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> pos = BinarySearch(<span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>&#125;, <span class="number">3</span>);<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>二分查找法<br><span id="more"></span></p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//返回一组数中某个数的索引</span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">BinarySearch</span>(<span class="params">List&lt;<span class="built_in">int</span>&gt; list, <span class="built_in">int</span> target</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">int</span> low = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">int</span> high = list.Count - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">int</span> mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="built_in">int</span> tmp = list[mid];</span><br><span class="line">        <span class="keyword">if</span>(tmp == target)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span>(tmp &gt; target)</span><br><span class="line">            high = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> pos = BinarySearch(<span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>&#125;, <span class="number">3</span>);<span class="comment">//1</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
+        <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>C#范围运算符</title>
@@ -9434,6 +9627,9 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>C#高精度定时器</title>
@@ -9456,6 +9652,9 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>C#集合表达式</title>
@@ -9470,21 +9669,24 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>合并不同仓库的历史提交</title>
     <url>/%E5%90%88%E5%B9%B6%E4%B8%8D%E5%90%8C%E4%BB%93%E5%BA%93%E7%9A%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4.html</url>
-    <content><![CDATA[<p>目的:<br>
-如两个开发人员分别在本地创建了自己的仓库进行同一项目的开发工作, 后需合并的同时需要保留所有历史提交或其中某个重要的历史提交</p>
+    <content><![CDATA[<p>目的:<br>如两个开发人员分别在本地创建了自己的仓库进行同一项目的开发工作, 后需合并的同时需要保留所有历史提交或其中某个重要的历史提交</p>
 <span id="more"></span>
-<h2 id="合并部分提交">合并部分提交</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看rrepo1/master的历史提交</span></span><br><span class="line">git <span class="built_in">log</span> rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并某一次提交</span></span><br><span class="line">git cherry-pick &lt;commit-hash&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并连续的几次提交</span></span><br><span class="line">git cherry-pick A..B <span class="comment"># 合并从A~B的提交(不含A)</span></span><br><span class="line">git cherry-pick A^..B <span class="comment"># 合并从A~B的提交(含A)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h2 id="合并所有提交">合并所有提交</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并到repo</span></span><br><span class="line">git merge rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="合并部分提交"><a href="#合并部分提交" class="headerlink" title="合并部分提交"></a>合并部分提交</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看rrepo1/master的历史提交</span></span><br><span class="line">git <span class="built_in">log</span> rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并某一次提交</span></span><br><span class="line">git cherry-pick &lt;commit-hash&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并连续的几次提交</span></span><br><span class="line">git cherry-pick A..B <span class="comment"># 合并从A~B的提交(不含A)</span></span><br><span class="line">git cherry-pick A^..B <span class="comment"># 合并从A~B的提交(含A)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="合并所有提交"><a href="#合并所有提交" class="headerlink" title="合并所有提交"></a>合并所有提交</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如将repo1合并到repo中</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在repo中添加repo1为远程分支</span></span><br><span class="line">git remote add rrepo1 //repo1的路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取repo1的变更记录</span></span><br><span class="line">git fetch rrepo1 <span class="comment"># 自动创建rrepo1/master的分支</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并到repo</span></span><br><span class="line">git merge rrepo1/master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看提交记录</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Git</category>
       </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp Linq</title>
@@ -9497,6 +9699,9 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>BBK-相机内参标定</title>
@@ -9508,6 +9713,7 @@ minPts: 最少点数</p>
 ]]></content>
       <tags>
         <tag>BBK</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -9522,7 +9728,8 @@ minPts: 最少点数</p>
         <category>CSharp</category>
       </categories>
       <tags>
-        <tag>ini</tag>
+        <tag>CSharp</tag>
+        <tag>Ini</tag>
       </tags>
   </entry>
   <entry>
@@ -9535,6 +9742,7 @@ minPts: 最少点数</p>
 ]]></content>
       <tags>
         <tag>BBK</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -9659,6 +9867,9 @@ minPts: 最少点数</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1. 启动交互式变基（假设修改倒数第3次提交）</span></span><br><span class="line">git rebase -i HEAD~3</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 将目标提交行的 &quot;pick&quot; 改为 &quot;edit&quot;，保存退出</span></span><br><span class="line"><span class="comment"># 3. 修改提交信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;New commit message&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. 继续变基</span></span><br><span class="line">git rebase --<span class="built_in">continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 5. 强制推送（如果已推送过）</span></span><br><span class="line">git push --force-with-lease</span><br></pre></td></tr></table></figure>
 <p>如果需要更复杂的操作（如拆分提交），可结合 <code>git reset</code> 逐步重构历史。</p>
 ]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp 获取当前运行函数名</title>
@@ -9749,6 +9960,9 @@ minPts: 最少点数</p>
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hexo中修改KaTeX界定符</title>
@@ -9864,7 +10078,7 @@ minPts: 最少点数</p>
         <category>KaTeX</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
         <tag>KaTeX</tag>
       </tags>
   </entry>
@@ -9972,7 +10186,7 @@ minPts: 最少点数</p>
         <category>KaTeX</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
         <tag>KaTeX</tag>
       </tags>
   </entry>
@@ -10065,7 +10279,7 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
         <category>KaTeX</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
         <tag>KaTeX</tag>
       </tags>
   </entry>
@@ -10321,6 +10535,9 @@ Hexo 基于 Node.js，需先安装 <a href="https://nodejs.org/">Node.js</a>（�
 </li>
 </ol>
 ]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>ini文件序列化与反序列化</title>
@@ -10427,9 +10644,10 @@ Hexo 基于 Node.js，需先安装 <a href="https://nodejs.org/">Node.js</a>（�
         <category>CSharp</category>
       </categories>
       <tags>
-        <tag>ini</tag>
         <tag>特性</tag>
         <tag>反射</tag>
+        <tag>CSharp</tag>
+        <tag>Ini</tag>
       </tags>
   </entry>
   <entry>
@@ -10532,6 +10750,7 @@ Hexo 基于 Node.js，需先安装 <a href="https://nodejs.org/">Node.js</a>（�
       <tags>
         <tag>特性</tag>
         <tag>反射</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -10560,6 +10779,7 @@ Hexo 基于 Node.js，需先安装 <a href="https://nodejs.org/">Node.js</a>（�
       <tags>
         <tag>特性</tag>
         <tag>反射</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -10692,11 +10912,7 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
 </li>
 </ol>
 <hr>
-<h3 id="6-示例代码（Python）"><strong>6. 示例代码（Python）</strong></h3>
-<p>假设已知深度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>c</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z_c = 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>，使用 OpenCV 进行坐标转换：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 内参矩阵 K</span></span><br><span class="line">K = np.array([[<span class="number">1000</span>, <span class="number">0</span>, <span class="number">320</span>], [<span class="number">0</span>, <span class="number">1000</span>, <span class="number">240</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 外参矩阵 R 和 T</span></span><br><span class="line">R = np.eye(<span class="number">3</span>)  <span class="comment"># 假设无旋转</span></span><br><span class="line">T = np.array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])  <span class="comment"># 假设无平移</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像坐标 (u, v)</span></span><br><span class="line">u, v = <span class="number">400</span>, <span class="number">300</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 已知深度 Z_c</span></span><br><span class="line">Z_c = <span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 逆投影到相机坐标系</span></span><br><span class="line">uv1 = np.array([u, v, <span class="number">1</span>])</span><br><span class="line">K_inv = np.linalg.inv(K)</span><br><span class="line">Xc_Yc_Zc = Z_c * K_inv.dot(uv1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 转换到世界坐标系</span></span><br><span class="line">Xc_Yc_Zc_homogeneous = np.append(Xc_Yc_Zc, <span class="number">1</span>)</span><br><span class="line">RT = np.hstack((R.T, -R.T.dot(T).reshape(-<span class="number">1</span>, <span class="number">1</span>)))</span><br><span class="line">Xw_Yw_Zw = RT.dot(Xc_Yc_Zc_homogeneous)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;世界坐标系坐标:&quot;</span>, Xw_Yw_Zw[:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="7-总结"><strong>7. 总结</strong></h3>
+<h3 id="6-总结"><strong>6. 总结</strong></h3>
 <ul>
 <li><strong>核心公式</strong>：<p class="katex-block "><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>X</mi><mi>w</mi></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>Y</mi><mi>w</mi></msub></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><msub><mi>Z</mi><mi>w</mi></msub></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>=</mo><msup><mi>R</mi><mi>T</mi></msup><mrow><mo fence="true">(</mo><msup><mi>K</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⋅</mo><msub><mi>Z</mi><mi>c</mi></msub><mo>⋅</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.16em" columnalign="center" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>u</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mi>v</mi></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mo>−</mo><mi>T</mi><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{bmatrix} X_w \\ Y_w \\ Z_w \end{bmatrix} = R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} - T \right)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.6em;vertical-align:-1.55em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.05em;"><span class="pstrut" style="height:5.6em;"></span><span style="width:0.667em;height:3.600em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.667em" height="3.600em" viewBox="0 0 667 3600"><path d="M403 1759 V84 H666 V0 H319 V1759 v0 v1759 h347 v-84
@@ -10843,6 +11059,7 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
       <tags>
         <tag>特性</tag>
         <tag>反射</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -10857,6 +11074,9 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>CSharp冷知识-await</title>
@@ -10869,6 +11089,9 @@ l0,-144c-2,-159.3,-10,-310.7,-24,-454c-53.3,-528,-210,-949.7,
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>Opencv内参标定</title>
@@ -10984,6 +11207,9 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
       <categories>
         <category>CSharp</category>
       </categories>
+      <tags>
+        <tag>CSharp</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用Tcp程序</title>
@@ -11006,6 +11232,7 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
       </categories>
       <tags>
         <tag>特性</tag>
+        <tag>CSharp</tag>
       </tags>
   </entry>
   <entry>
@@ -11057,5 +11284,45 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
       <categories>
         <category>WindowsTerminal</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Obsidain Dataview使用</title>
+    <url>/Obsidain-Dataview%E4%BD%BF%E7%94%A8.html</url>
+    <content><![CDATA[<span id="more"></span>
+<h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1>]]></content>
+  </entry>
+  <entry>
+    <title>BBK查询软件新增查询链接</title>
+    <url>/BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5.html</url>
+    <content><![CDATA[<p>BBK查询软件新增或修改数据库链接字符串<br>
+可手动更改链接字符串或根据以下步骤自动生成</p>
+<span id="more"></span>
+<h2 id="新增本地链接Local">新增本地链接Local</h2>
+<ol>
+<li>登录管理员后勾选编辑模式</li>
+<li>双击要更改的名称或点击添加连接<br>
+<img src="BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%5C%E9%80%89%E6%8B%A9%E9%93%BE%E6%8E%A5.png" alt="选择链接"></li>
+<li>点击<strong>创建链接字符串</strong>选择相应的数据源, 本地PostgreSql选择如下<br>
+<img src="BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%5C%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E6%BA%90.png" alt="选择数据源"></li>
+<li>配置连接属性如下, 其中Host可配置被访问数据库的ip<br>
+<img src="BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%5C%E8%BF%9E%E6%8E%A5%E5%B1%9E%E6%80%A7.png" alt="连接属性"></li>
+<li>单击确定即可</li>
+</ol>
+<h2 id="新增服务器链接Server">新增服务器链接Server</h2>
+<ol>
+<li>登录管理员后勾选编辑模式</li>
+<li>双击要更改的名称或点击添加连接后点击<strong>创建链接字符串</strong>选择相应的数据源, 服务器SQLServer选择如下<br>
+<img src="BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%5C%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E6%BA%90Server.png" alt="选择数据源"></li>
+<li>配置链接属性如下, 其中Server name可配置被访问数据库的ip<br>
+<img src="BBK%E6%9F%A5%E8%AF%A2%E8%BD%AF%E4%BB%B6%E6%96%B0%E5%A2%9E%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%5C%E8%BF%9E%E6%8E%A5%E5%B1%9E%E6%80%A7Server.png" alt="连接属性"></li>
+<li>单击确定即可</li>
+</ol>
+]]></content>
+      <categories>
+        <category>BBK</category>
+      </categories>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
 </search>
