@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://silencejql.github.io/Docker-composer%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.html</loc>
+    
+    <lastmod>2025-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/Windows%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEDocker.html</loc>
+    
+    <lastmod>2025-04-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/Git-%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4%E7%9A%84Commit%E4%BF%A1%E6%81%AF.html</loc>
     
     <lastmod>2025-04-01</lastmod>
@@ -2211,6 +2229,13 @@
   
   <url>
     <loc>https://silencejql.github.io/tags/Linux/</loc>
+    <lastmod>2025-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Docker/</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
