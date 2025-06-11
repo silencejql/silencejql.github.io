@@ -1,0 +1,2797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googleb7a40486d7212754.html">
+  <meta name="baidu-site-verification" content="Wk81Qkj2MG">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":10,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="IBM MQ 错误代码说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IBMMQ错误代码">
+<meta property="og:url" content="https://silencejql.github.io/IBMMQ%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81.html">
+<meta property="og:site_name" content="Silencejql">
+<meta property="og:description" content="IBM MQ 错误代码说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-11-07T04:47:13.000Z">
+<meta property="article:modified_time" content="2025-03-25T03:22:11.757Z">
+<meta property="article:author" content="Justin">
+<meta property="article:tag" content="IBMMQ">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://silencejql.github.io/IBMMQ%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>IBMMQ错误代码 | Silencejql</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Silencejql</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">28</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">198</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/silencejql" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/IBMMQ%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headim.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silencejql">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          IBMMQ错误代码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-07 12:47:13" itemprop="dateCreated datePublished" datetime="2019-11-07T12:47:13+08:00">2019-11-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-25 11:22:11" itemprop="dateModified" datetime="2025-03-25T11:22:11+08:00">2025-03-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MQ/" itemprop="url" rel="index"><span itemprop="name">MQ</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/IBMMQ%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/IBMMQ%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>24k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>22 分钟</span>
+            </span>
+            <div class="post-description">IBM MQ 错误代码说明</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center></center>
+IBM官方说明：https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.0.0/com.ibm.mq.tro.doc/q040710_.htm
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ErrorCode</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0 (0000) (RC0)</td>
+<td style="text-align:left">MQRC_NONE</td>
+</tr>
+<tr>
+<td style="text-align:left">900 (0384) (RC900)</td>
+<td style="text-align:left">MQRC_APPL_FIRST</td>
+</tr>
+<tr>
+<td style="text-align:left">999 (03E7) (RC999)</td>
+<td style="text-align:left">MQRC_APPL_LAST</td>
+</tr>
+<tr>
+<td style="text-align:left">2001 (07D1) (RC2001)</td>
+<td style="text-align:left">MQRC_ALIAS_BASE_Q_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2002 (07D2) (RC2002)</td>
+<td style="text-align:left">MQRC_ALREADY_CONNECTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2003 (07D3) (RC2003)</td>
+<td style="text-align:left">MQRC_BACKED_OUT</td>
+</tr>
+<tr>
+<td style="text-align:left">2004 (07D4) (RC2004)</td>
+<td style="text-align:left">MQRC_BUFFER_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2005 (07D5) (RC2005)</td>
+<td style="text-align:left">MQRC_BUFFER_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2006 (07D6) (RC2006)</td>
+<td style="text-align:left">MQRC_CHAR_ATTR_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2007 (07D7) (RC2007)</td>
+<td style="text-align:left">MQRC_CHAR_ATTRS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2008 (07D8) (RC2008)</td>
+<td style="text-align:left">MQRC_CHAR_ATTRS_TOO_SHORT</td>
+</tr>
+<tr>
+<td style="text-align:left">2009 (07D9) (RC2009)</td>
+<td style="text-align:left">MQRC_CONNECTION_BROKEN</td>
+</tr>
+<tr>
+<td style="text-align:left">2010 (07DA) (RC2010)</td>
+<td style="text-align:left">MQRC_DATA_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2011 (07DB) (RC2011)</td>
+<td style="text-align:left">MQRC_DYNAMIC_Q_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2012 (07DC) (RC2012)</td>
+<td style="text-align:left">MQRC_ENVIRONMENT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2013 (07DD) (RC2013)</td>
+<td style="text-align:left">MQRC_EXPIRY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2014 (07DE) (RC2014)</td>
+<td style="text-align:left">MQRC_FEEDBACK_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2016 (07E0) (RC2016)</td>
+<td style="text-align:left">MQRC_GET_INHIBITED</td>
+</tr>
+<tr>
+<td style="text-align:left">2017 (07E1) (RC2017)</td>
+<td style="text-align:left">MQRC_HANDLE_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2018 (07E2) (RC2018)</td>
+<td style="text-align:left">MQRC_HCONN_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2019 (07E3) (RC2019)</td>
+<td style="text-align:left">MQRC_HOBJ_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2020 (07E4) (RC2020)</td>
+<td style="text-align:left">MQRC_INHIBIT_VALUE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2021 (07E5) (RC2021)</td>
+<td style="text-align:left">MQRC_INT_ATTR_COUNT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2022 (07E6) (RC2022)</td>
+<td style="text-align:left">MQRC_INT_ATTR_COUNT_TOO_SMALL</td>
+</tr>
+<tr>
+<td style="text-align:left">2023 (07E7) (RC2023)</td>
+<td style="text-align:left">MQRC_INT_ATTRS_ARRAY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2024 (07E8) (RC2024)</td>
+<td style="text-align:left">MQRC_SYNCPOINT_LIMIT_REACHED</td>
+</tr>
+<tr>
+<td style="text-align:left">2025 (07E9) (RC2025)</td>
+<td style="text-align:left">MQRC_MAX_CONNS_LIMIT_REACHED</td>
+</tr>
+<tr>
+<td style="text-align:left">2026 (07EA) (RC2026)</td>
+<td style="text-align:left">MQRC_MD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2027 (07EB) (RC2027)</td>
+<td style="text-align:left">MQRC_MISSING_REPLY_TO_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2029 (07ED) (RC2029)</td>
+<td style="text-align:left">MQRC_MSG_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2030 (07EE) (RC2030)</td>
+<td style="text-align:left">MQRC_MSG_TOO_BIG_FOR_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2031 (07EF) (RC2031)</td>
+<td style="text-align:left">MQRC_MSG_TOO_BIG_FOR_Q_MGR</td>
+</tr>
+<tr>
+<td style="text-align:left">2033 (07F1) (RC2033)</td>
+<td style="text-align:left">MQRC_NO_MSG_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2034 (07F2) (RC2034)</td>
+<td style="text-align:left">MQRC_NO_MSG_UNDER_CURSOR</td>
+</tr>
+<tr>
+<td style="text-align:left">2035 (07F3) (RC2035)</td>
+<td style="text-align:left">MQRC_NOT_AUTHORIZED</td>
+</tr>
+<tr>
+<td style="text-align:left">2036 (07F4) (RC2036)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_BROWSE</td>
+</tr>
+<tr>
+<td style="text-align:left">2037 (07F5) (RC2037)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_INPUT</td>
+</tr>
+<tr>
+<td style="text-align:left">2038 (07F6) (RC2038)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_INQUIRE</td>
+</tr>
+<tr>
+<td style="text-align:left">2039 (07F7) (RC2039)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_OUTPUT</td>
+</tr>
+<tr>
+<td style="text-align:left">2040 (07F8) (RC2040)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_SET</td>
+</tr>
+<tr>
+<td style="text-align:left">2041 (07F9) (RC2041)</td>
+<td style="text-align:left">MQRC_OBJECT_CHANGED</td>
+</tr>
+<tr>
+<td style="text-align:left">2042 (07FA) (RC2042)</td>
+<td style="text-align:left">MQRC_OBJECT_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2043 (07FB) (RC2043)</td>
+<td style="text-align:left">MQRC_OBJECT_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2044 (07FC) (RC2044)</td>
+<td style="text-align:left">MQRC_OD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2045 (07FD) (RC2045)</td>
+<td style="text-align:left">MQRC_OPTION_NOT_VALID_FOR_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2046 (07FE) (RC2046)</td>
+<td style="text-align:left">MQRC_OPTIONS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2047 (07FF) (RC2047)</td>
+<td style="text-align:left">MQRC_PERSISTENCE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2048 (0800) (RC2048)</td>
+<td style="text-align:left">MQRC_PERSISTENT_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2049 (0801) (RC2049)</td>
+<td style="text-align:left">MQRC_PRIORITY_EXCEEDS_MAXIMUM</td>
+</tr>
+<tr>
+<td style="text-align:left">2050 (0802) (RC2050)</td>
+<td style="text-align:left">MQRC_PRIORITY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2051 (0803) (RC2051)</td>
+<td style="text-align:left">MQRC_PUT_INHIBITED</td>
+</tr>
+<tr>
+<td style="text-align:left">2052 (0804) (RC2052)</td>
+<td style="text-align:left">MQRC_Q_DELETED</td>
+</tr>
+<tr>
+<td style="text-align:left">2053 (0805) (RC2053)</td>
+<td style="text-align:left">MQRC_Q_FULL</td>
+</tr>
+<tr>
+<td style="text-align:left">2055 (0807) (RC2055)</td>
+<td style="text-align:left">MQRC_Q_NOT_EMPTY</td>
+</tr>
+<tr>
+<td style="text-align:left">2056 (0808) (RC2056)</td>
+<td style="text-align:left">MQRC_Q_SPACE_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2057 (0809) (RC2057)</td>
+<td style="text-align:left">MQRC_Q_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2058 (080A) (RC2058)</td>
+<td style="text-align:left">MQRC_Q_MGR_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2059 (080B) (RC2059)</td>
+<td style="text-align:left">MQRC_Q_MGR_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2061 (080D) (RC2061)</td>
+<td style="text-align:left">MQRC_REPORT_OPTIONS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2062 (080E) (RC2062)</td>
+<td style="text-align:left">MQRC_SECOND_MARK_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2063 (080F) (RC2063)</td>
+<td style="text-align:left">MQRC_SECURITY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2065 (0811) (RC2065)</td>
+<td style="text-align:left">MQRC_SELECTOR_COUNT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2066 (0812) (RC2066)</td>
+<td style="text-align:left">MQRC_SELECTOR_LIMIT_EXCEEDED</td>
+</tr>
+<tr>
+<td style="text-align:left">2067 (0813) (RC2067)</td>
+<td style="text-align:left">MQRC_SELECTOR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2068 (0814) (RC2068)</td>
+<td style="text-align:left">MQRC_SELECTOR_NOT_FOR_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS][Windows]2069 (0815) (RC2069)</td>
+<td style="text-align:left">MQRC_SIGNAL_OUTSTANDING</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS][Windows]2070 (0816) (RC2070)</td>
+<td style="text-align:left">MQRC_SIGNAL_REQUEST_ACCEPTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2071 (0817) (RC2071)</td>
+<td style="text-align:left">MQRC_STORAGE_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2072 (0818) (RC2072)</td>
+<td style="text-align:left">MQRC_SYNCPOINT_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2075 (081B) (RC2075)</td>
+<td style="text-align:left">MQRC_TRIGGER_CONTROL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2076 (081C) (RC2076)</td>
+<td style="text-align:left">MQRC_TRIGGER_DEPTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2077 (081D) (RC2077)</td>
+<td style="text-align:left">MQRC_TRIGGER_MSG_PRIORITY_ERR</td>
+</tr>
+<tr>
+<td style="text-align:left">2078 (081E) (RC2078)</td>
+<td style="text-align:left">MQRC_TRIGGER_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2079 (081F) (RC2079)</td>
+<td style="text-align:left">MQRC_TRUNCATED_MSG_ACCEPTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2080 (0820) (RC2080)</td>
+<td style="text-align:left">MQRC_TRUNCATED_MSG_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">2082 (0822) (RC2082)</td>
+<td style="text-align:left">MQRC_UNKNOWN_ALIAS_BASE_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2085 (0825) (RC2085)</td>
+<td style="text-align:left">MQRC_UNKNOWN_OBJECT_NAME</td>
+</tr>
+<tr>
+<td style="text-align:left">2086 (0826) (RC2086)</td>
+<td style="text-align:left">MQRC_UNKNOWN_OBJECT_Q_MGR</td>
+</tr>
+<tr>
+<td style="text-align:left">2087 (0827) (RC2087)</td>
+<td style="text-align:left">MQRC_UNKNOWN_REMOTE_Q_MGR</td>
+</tr>
+<tr>
+<td style="text-align:left">2090 (082A) (RC2090)</td>
+<td style="text-align:left">MQRC_WAIT_INTERVAL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2091 (082B) (RC2091)</td>
+<td style="text-align:left">MQRC_XMIT_Q_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2092 (082C) (RC2092)</td>
+<td style="text-align:left">MQRC_XMIT_Q_USAGE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2093 (082D) (RC2093)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_PASS_ALL</td>
+</tr>
+<tr>
+<td style="text-align:left">2094 (082E) (RC2094)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_PASS_IDENT</td>
+</tr>
+<tr>
+<td style="text-align:left">2095 (082F) (RC2095)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_SET_ALL</td>
+</tr>
+<tr>
+<td style="text-align:left">2096 (0830) (RC2096)</td>
+<td style="text-align:left">MQRC_NOT_OPEN_FOR_SET_IDENT</td>
+</tr>
+<tr>
+<td style="text-align:left">2097 (0831) (RC2097)</td>
+<td style="text-align:left">MQRC_CONTEXT_HANDLE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2098 (0832) (RC2098)</td>
+<td style="text-align:left">MQRC_CONTEXT_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS][Windows]2099 (0833) (RC2099)</td>
+<td style="text-align:left">MQRC_SIGNAL1_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2100 (0834) (RC2100)</td>
+<td style="text-align:left">MQRC_OBJECT_ALREADY_EXISTS</td>
+</tr>
+<tr>
+<td style="text-align:left">2101 (0835) (RC2101)</td>
+<td style="text-align:left">MQRC_OBJECT_DAMAGED</td>
+</tr>
+<tr>
+<td style="text-align:left">2102 (0836) (RC2102)</td>
+<td style="text-align:left">MQRC_RESOURCE_PROBLEM</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2103 (0837) (RC2103)</td>
+<td style="text-align:left">MQRC_ANOTHER_Q_MGR_CONNECTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2104 (0838) (RC2104)</td>
+<td style="text-align:left">MQRC_UNKNOWN_REPORT_OPTION</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2105 (0839) (RC2105)</td>
+<td style="text-align:left">MQRC_STORAGE_CLASS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2106 (083A) (RC2106)</td>
+<td style="text-align:left">MQRC_COD_NOT_VALID_FOR_XCF_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2107 (083B) (RC2107)</td>
+<td style="text-align:left">MQRC_XWAIT_CANCELED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2108 (083C) (RC2108)</td>
+<td style="text-align:left">MQRC_XWAIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2109 (083D) (RC2109)</td>
+<td style="text-align:left">MQRC_SUPPRESSED_BY_EXIT</td>
+</tr>
+<tr>
+<td style="text-align:left">2110 (083E) (RC2110)</td>
+<td style="text-align:left">MQRC_FORMAT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2111 (083F) (RC2111)</td>
+<td style="text-align:left">MQRC_SOURCE_CCSID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2112 (0840) (RC2112)</td>
+<td style="text-align:left">MQRC_SOURCE_INTEGER_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2113 (0841) (RC2113)</td>
+<td style="text-align:left">MQRC_SOURCE_DECIMAL_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2114 (0842) (RC2114)</td>
+<td style="text-align:left">MQRC_SOURCE_FLOAT_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2115 (0843) (RC2115)</td>
+<td style="text-align:left">MQRC_TARGET_CCSID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2116 (0844) (RC2116)</td>
+<td style="text-align:left">MQRC_TARGET_INTEGER_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2117 (0845) (RC2117)</td>
+<td style="text-align:left">MQRC_TARGET_DECIMAL_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2118 (0846) (RC2118)</td>
+<td style="text-align:left">MQRC_TARGET_FLOAT_ENC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2119 (0847) (RC2119)</td>
+<td style="text-align:left">MQRC_NOT_CONVERTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2120 (0848) (RC2120)</td>
+<td style="text-align:left">MQRC_CONVERTED_MSG_TOO_BIG</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2121 (0849) (RC2121)</td>
+<td style="text-align:left">MQRC_NO_EXTERNAL_PARTICIPANTS</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2122 (084A) (RC2122)</td>
+<td style="text-align:left">MQRC_PARTICIPANT_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2123 (084B) (RC2123)</td>
+<td style="text-align:left">MQRC_OUTCOME_MIXED</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows][z/OS]2124 (084C) (RC2124)</td>
+<td style="text-align:left">MQRC_OUTCOME_PENDING</td>
+</tr>
+<tr>
+<td style="text-align:left">2125 (084D) (RC2125)</td>
+<td style="text-align:left">MQRC_BRIDGE_STARTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2126 (084E) (RC2126)</td>
+<td style="text-align:left">MQRC_BRIDGE_STOPPED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2127 (084F) (RC2127)</td>
+<td style="text-align:left">MQRC_ADAPTER_STORAGE_SHORTAGE</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2128 (0850) (RC2128)</td>
+<td style="text-align:left">MQRC_UOW_IN_PROGRESS</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2129 (0851) (RC2129)</td>
+<td style="text-align:left">MQRC_ADAPTER_CONN_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2130 (0852) (RC2130)</td>
+<td style="text-align:left">MQRC_ADAPTER_SERV_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2131 (0853) (RC2131)</td>
+<td style="text-align:left">MQRC_ADAPTER_DEFS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2132 (0854) (RC2132)</td>
+<td style="text-align:left">MQRC_ADAPTER_DEFS_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2133 (0855) (RC2133)</td>
+<td style="text-align:left">MQRC_ADAPTER_CONV_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2134 (0856) (RC2134)</td>
+<td style="text-align:left">MQRC_BO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2135 (0857) (RC2135)</td>
+<td style="text-align:left">MQRC_DH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2136 (0858) (RC2136)</td>
+<td style="text-align:left">MQRC_MULTIPLE_REASONS</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2137 (0859) (RC2137)</td>
+<td style="text-align:left">MQRC_OPEN_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2138 (085A) (RC2138)</td>
+<td style="text-align:left">MQRC_ADAPTER_DISC_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2139 (085B) (RC2139)</td>
+<td style="text-align:left">MQRC_CNO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2140 (085C) (RC2140)</td>
+<td style="text-align:left">MQRC_CICS_WAIT_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">2141 (085D) (RC2141)</td>
+<td style="text-align:left">MQRC_DLH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2142 (085E) (RC2142)</td>
+<td style="text-align:left">MQRC_HEADER_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2143 (085F) (RC2143)</td>
+<td style="text-align:left">MQRC_SOURCE_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2144 (0860) (RC2144)</td>
+<td style="text-align:left">MQRC_TARGET_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2145 (0861) (RC2145)</td>
+<td style="text-align:left">MQRC_SOURCE_BUFFER_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2146 (0862) (RC2146)</td>
+<td style="text-align:left">MQRC_TARGET_BUFFER_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[Windows][V9.0.0.6 Mar 2019]2147 (0863) (RC2147)</td>
+<td style="text-align:left">MQRC_INCOMPLETE_TRANSACTION</td>
+</tr>
+<tr>
+<td style="text-align:left">2148 (0864) (RC2148)</td>
+<td style="text-align:left">MQRC_IIH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2149 (0865) (RC2149)</td>
+<td style="text-align:left">MQRC_PCF_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2150 (0866) (RC2150)</td>
+<td style="text-align:left">MQRC_DBCS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2152 (0868) (RC2152)</td>
+<td style="text-align:left">MQRC_OBJECT_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2153 (0869) (RC2153)</td>
+<td style="text-align:left">MQRC_OBJECT_Q_MGR_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2154 (086A) (RC2154)</td>
+<td style="text-align:left">MQRC_RECS_PRESENT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2155 (086B) (RC2155)</td>
+<td style="text-align:left">MQRC_OBJECT_RECORDS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2156 (086C) (RC2156)</td>
+<td style="text-align:left">MQRC_RESPONSE_RECORDS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2157 (086D) (RC2157)</td>
+<td style="text-align:left">MQRC_ASID_MISMATCH</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2158 (086E) (RC2158)</td>
+<td style="text-align:left">MQRC_PMO_RECORD_FLAGS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2159 (086F) (RC2159)</td>
+<td style="text-align:left">MQRC_PUT_MSG_RECORDS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2160 (0870) (RC2160)</td>
+<td style="text-align:left">MQRC_CONN_ID_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2161 (0871) (RC2161)</td>
+<td style="text-align:left">MQRC_Q_MGR_QUIESCING</td>
+</tr>
+<tr>
+<td style="text-align:left">2162 (0872) (RC2162)</td>
+<td style="text-align:left">MQRC_Q_MGR_STOPPING</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2163 (0873) (RC2163)</td>
+<td style="text-align:left">MQRC_DUPLICATE_RECOV_COORD</td>
+</tr>
+<tr>
+<td style="text-align:left">2173 (087D) (RC2173)</td>
+<td style="text-align:left">MQRC_PMO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2182 (0886) (RC2182)</td>
+<td style="text-align:left">MQRC_API_EXIT_NOT_FOUND</td>
+</tr>
+<tr>
+<td style="text-align:left">2183 (0887) (RC2183)</td>
+<td style="text-align:left">MQRC_API_EXIT_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2184 (0888) (RC2184)</td>
+<td style="text-align:left">MQRC_REMOTE_Q_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2185 (0889) (RC2185)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_PERSISTENCE</td>
+</tr>
+<tr>
+<td style="text-align:left">2186 (088A) (RC2186)</td>
+<td style="text-align:left">MQRC_GMO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2187 (088B) (RC2187)</td>
+<td style="text-align:left">MQRC_CICS_BRIDGE_RESTRICTION</td>
+</tr>
+<tr>
+<td style="text-align:left">2188 (088C) (RC2188)</td>
+<td style="text-align:left">MQRC_STOPPED_BY_CLUSTER_EXIT</td>
+</tr>
+<tr>
+<td style="text-align:left">2189 (088D) (RC2189)</td>
+<td style="text-align:left">MQRC_CLUSTER_RESOLUTION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2190 (088E) (RC2190)</td>
+<td style="text-align:left">MQRC_CONVERTED_STRING_TOO_BIG</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2191 (088F) (RC2191)</td>
+<td style="text-align:left">MQRC_TMC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2192 (0890) (RC2192)</td>
+<td style="text-align:left">MQRC_PAGESET_FULL</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2192 (0890) (RC2192)</td>
+<td style="text-align:left">MQRC_STORAGE_MEDIUM_FULL</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2193 (0891) (RC2193)</td>
+<td style="text-align:left">MQRC_PAGESET_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2194 (0892) (RC2194)</td>
+<td style="text-align:left">MQRC_NAME_NOT_VALID_FOR_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2195 (0893) (RC2195)</td>
+<td style="text-align:left">MQRC_UNEXPECTED_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2196 (0894) (RC2196)</td>
+<td style="text-align:left">MQRC_UNKNOWN_XMIT_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2197 (0895) (RC2197)</td>
+<td style="text-align:left">MQRC_UNKNOWN_DEF_XMIT_Q</td>
+</tr>
+<tr>
+<td style="text-align:left">2198 (0896) (RC2198)</td>
+<td style="text-align:left">MQRC_DEF_XMIT_Q_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2199 (0897) (RC2199)</td>
+<td style="text-align:left">MQRC_DEF_XMIT_Q_USAGE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2201 (0899) (RC2201)</td>
+<td style="text-align:left">MQRC_NAME_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2202 (089A) (RC2202)</td>
+<td style="text-align:left">MQRC_CONNECTION_QUIESCING</td>
+</tr>
+<tr>
+<td style="text-align:left">2203 (089B) (RC2203)</td>
+<td style="text-align:left">MQRC_CONNECTION_STOPPING</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2204 (089C) (RC2204)</td>
+<td style="text-align:left">MQRC_ADAPTER_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2206 (089E) (RC2206)</td>
+<td style="text-align:left">MQRC_MSG_ID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2207 (089F) (RC2207)</td>
+<td style="text-align:left">MQRC_CORREL_ID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2208 (08A0) (RC2208)</td>
+<td style="text-align:left">MQRC_FILE_SYSTEM_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2209 (08A1) (RC2209)</td>
+<td style="text-align:left">MQRC_NO_MSG_LOCKED</td>
+</tr>
+<tr>
+<td style="text-align:left">2210 (08A2) (RC2210)</td>
+<td style="text-align:left">MQRC_SOAP_DOTNET_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2211 (08A3) (RC2211)</td>
+<td style="text-align:left">MQRC_SOAP_AXIS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2212 (08A4) (RC2212)</td>
+<td style="text-align:left">MQRC_SOAP_URL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2217 (08A9) (RC2217)</td>
+<td style="text-align:left">MQRC_CONNECTION_NOT_AUTHORIZED</td>
+</tr>
+<tr>
+<td style="text-align:left">2218 (08AA) (RC2218)</td>
+<td style="text-align:left">MQRC_MSG_TOO_BIG_FOR_CHANNEL</td>
+</tr>
+<tr>
+<td style="text-align:left">2219 (08AB) (RC2219)</td>
+<td style="text-align:left">MQRC_CALL_IN_PROGRESS</td>
+</tr>
+<tr>
+<td style="text-align:left">2220 (08AC) (RC2220)</td>
+<td style="text-align:left">MQRC_RMH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2222 (08AE) (RC2222)</td>
+<td style="text-align:left">MQRC_Q_MGR_ACTIVE</td>
+</tr>
+<tr>
+<td style="text-align:left">2223 (08AF) (RC2223)</td>
+<td style="text-align:left">MQRC_Q_MGR_NOT_ACTIVE</td>
+</tr>
+<tr>
+<td style="text-align:left">2224 (08B0) (RC2224)</td>
+<td style="text-align:left">MQRC_Q_DEPTH_HIGH</td>
+</tr>
+<tr>
+<td style="text-align:left">2225 (08B1) (RC2225)</td>
+<td style="text-align:left">MQRC_Q_DEPTH_LOW</td>
+</tr>
+<tr>
+<td style="text-align:left">2226 (08B2) (RC2226)</td>
+<td style="text-align:left">MQRC_Q_SERVICE_INTERVAL_HIGH</td>
+</tr>
+<tr>
+<td style="text-align:left">2227 (08B3) (RC2227)</td>
+<td style="text-align:left">MQRC_Q_SERVICE_INTERVAL_OK</td>
+</tr>
+<tr>
+<td style="text-align:left">2228 (08B4) (RC2228)</td>
+<td style="text-align:left">MQRC_RFH_HEADER_FIELD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2229 (08B5) (RC2229)</td>
+<td style="text-align:left">MQRC_RAS_PROPERTY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2232 (08B8) (RC2232)</td>
+<td style="text-align:left">MQRC_UNIT_OF_WORK_NOT_STARTED</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2233 (08B9) (RC2233)</td>
+<td style="text-align:left">MQRC_CHANNEL_AUTO_DEF_OK</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2234 (08BA) (RC2234)</td>
+<td style="text-align:left">MQRC_CHANNEL_AUTO_DEF_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2235 (08BB) (RC2235)</td>
+<td style="text-align:left">MQRC_CFH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2236 (08BC) (RC2236)</td>
+<td style="text-align:left">MQRC_CFIL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2237 (08BD) (RC2237)</td>
+<td style="text-align:left">MQRC_CFIN_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2238 (08BE) (RC2238)</td>
+<td style="text-align:left">MQRC_CFSL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2239 (08BF) (RC2239)</td>
+<td style="text-align:left">MQRC_CFST_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2241 (08C1) (RC2241)</td>
+<td style="text-align:left">MQRC_INCOMPLETE_GROUP</td>
+</tr>
+<tr>
+<td style="text-align:left">2242 (08C2) (RC2242)</td>
+<td style="text-align:left">MQRC_INCOMPLETE_MSG</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2243 (08C3) (RC2243)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_CCSIDS</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2244 (08C4) (RC2244)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_ENCODINGS</td>
+</tr>
+<tr>
+<td style="text-align:left">2245 (08C5) (RC2245)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_UOW</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2246 (08C6) (RC2246)</td>
+<td style="text-align:left">MQRC_INVALID_MSG_UNDER_CURSOR</td>
+</tr>
+<tr>
+<td style="text-align:left">2247 (08C7) (RC2247)</td>
+<td style="text-align:left">MQRC_MATCH_OPTIONS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2248 (08C8) (RC2248)</td>
+<td style="text-align:left">MQRC_MDE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2249 (08C9) (RC2249)</td>
+<td style="text-align:left">MQRC_MSG_FLAGS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2250 (08CA) (RC2250)</td>
+<td style="text-align:left">MQRC_MSG_SEQ_NUMBER_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2251 (08CB) (RC2251)</td>
+<td style="text-align:left">MQRC_OFFSET_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2252 (08CC) (RC2252)</td>
+<td style="text-align:left">MQRC_ORIGINAL_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2253 (08CD) (RC2253)</td>
+<td style="text-align:left">MQRC_SEGMENT_LENGTH_ZERO</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2255 (08CF) (RC2255)</td>
+<td style="text-align:left">MQRC_UOW_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2256 (08D0) (RC2256)</td>
+<td style="text-align:left">MQRC_WRONG_GMO_VERSION</td>
+</tr>
+<tr>
+<td style="text-align:left">2257 (08D1) (RC2257)</td>
+<td style="text-align:left">MQRC_WRONG_MD_VERSION</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2258 (08D2) (RC2258)</td>
+<td style="text-align:left">MQRC_GROUP_ID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2259 (08D3) (RC2259)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_BROWSE</td>
+</tr>
+<tr>
+<td style="text-align:left">2260 (08D4) (RC2260)</td>
+<td style="text-align:left">MQRC_XQH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2261 (08D5) (RC2261)</td>
+<td style="text-align:left">MQRC_SRC_ENV_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2262 (08D6) (RC2262)</td>
+<td style="text-align:left">MQRC_SRC_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Linux]2263 (08D7) (RC2263)</td>
+<td style="text-align:left">MQRC_DEST_ENV_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2264 (08D8) (RC2264)</td>
+<td style="text-align:left">MQRC_DEST_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2265 (08D9) (RC2265)</td>
+<td style="text-align:left">MQRC_TM_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2266 (08DA) (RC2266)</td>
+<td style="text-align:left">MQRC_CLUSTER_EXIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2267 (08DB) (RC2267)</td>
+<td style="text-align:left">MQRC_CLUSTER_EXIT_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2268 (08DC) (RC2268)</td>
+<td style="text-align:left">MQRC_CLUSTER_PUT_INHIBITED</td>
+</tr>
+<tr>
+<td style="text-align:left">2269 (08DD) (RC2269)</td>
+<td style="text-align:left">MQRC_CLUSTER_RESOURCE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2270 (08DE) (RC2270)</td>
+<td style="text-align:left">MQRC_NO_DESTINATIONS_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2271 (08DF) (RC2271)</td>
+<td style="text-align:left">MQRC_CONN_TAG_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2272 (08E0) (RC2272)</td>
+<td style="text-align:left">MQRC_PARTIALLY_CONVERTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2273 (08E1) (RC2273)</td>
+<td style="text-align:left">MQRC_CONNECTION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2274 (08E2) (RC2274)</td>
+<td style="text-align:left">MQRC_OPTION_ENVIRONMENT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2277 (08E5) (RC2277)</td>
+<td style="text-align:left">MQRC_CD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2278 (08E6) (RC2278)</td>
+<td style="text-align:left">MQRC_CLIENT_CONN_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2279 (08E7) (RC2279)</td>
+<td style="text-align:left">MQRC_CHANNEL_STOPPED_BY_USER</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2280 (08E8) (RC2280)</td>
+<td style="text-align:left">MQRC_HCONFIG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2281 (08E9) (RC2281)</td>
+<td style="text-align:left">MQRC_FUNCTION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2282 (08EA) (RC2282)</td>
+<td style="text-align:left">MQRC_CHANNEL_STARTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2283 (08EB) (RC2283)</td>
+<td style="text-align:left">MQRC_CHANNEL_STOPPED</td>
+</tr>
+<tr>
+<td style="text-align:left">2284 (08EC) (RC2284)</td>
+<td style="text-align:left">MQRC_CHANNEL_CONV_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2285 (08ED) (RC2285)</td>
+<td style="text-align:left">MQRC_SERVICE_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2286 (08EE) (RC2286)</td>
+<td style="text-align:left">MQRC_INITIALIZATION_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2287 (08EF) (RC2287)</td>
+<td style="text-align:left">MQRC_TERMINATION_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2288 (08F0) (RC2288)</td>
+<td style="text-align:left">MQRC_UNKNOWN_Q_NAME</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2289 (08F1) (RC2289)</td>
+<td style="text-align:left">MQRC_SERVICE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2290 (08F2) (RC2290)</td>
+<td style="text-align:left">MQRC_Q_ALREADY_EXISTS</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2291 (08F3) (RC2291)</td>
+<td style="text-align:left">MQRC_USER_ID_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2292 (08F4) (RC2292)</td>
+<td style="text-align:left">MQRC_UNKNOWN_ENTITY</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2294 (08F6) (RC2294)</td>
+<td style="text-align:left">MQRC_UNKNOWN_REF_OBJECT</td>
+</tr>
+<tr>
+<td style="text-align:left">2295 (08F7) (RC2295)</td>
+<td style="text-align:left">MQRC_CHANNEL_ACTIVATED</td>
+</tr>
+<tr>
+<td style="text-align:left">2296 (08F8) (RC2296)</td>
+<td style="text-align:left">MQRC_CHANNEL_NOT_ACTIVATED</td>
+</tr>
+<tr>
+<td style="text-align:left">2297 (08F9) (RC2297)</td>
+<td style="text-align:left">MQRC_UOW_CANCELED</td>
+</tr>
+<tr>
+<td style="text-align:left">2298 (08FA) (RC2298)</td>
+<td style="text-align:left">MQRC_FUNCTION_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2299 (08FB) (RC2299)</td>
+<td style="text-align:left">MQRC_SELECTOR_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2300 (08FC) (RC2300)</td>
+<td style="text-align:left">MQRC_COMMAND_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2301 (08FD) (RC2301)</td>
+<td style="text-align:left">MQRC_MULTIPLE_INSTANCE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2302 (08FE) (RC2302)</td>
+<td style="text-align:left">MQRC_SYSTEM_ITEM_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2303 (08FF) (RC2303)</td>
+<td style="text-align:left">MQRC_BAG_CONVERSION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2304 (0900) (RC2304)</td>
+<td style="text-align:left">MQRC_SELECTOR_OUT_OF_RANGE</td>
+</tr>
+<tr>
+<td style="text-align:left">2305 (0901) (RC2305)</td>
+<td style="text-align:left">MQRC_SELECTOR_NOT_UNIQUE</td>
+</tr>
+<tr>
+<td style="text-align:left">2306 (0902) (RC2306)</td>
+<td style="text-align:left">MQRC_INDEX_NOT_PRESENT</td>
+</tr>
+<tr>
+<td style="text-align:left">2307 (0903) (RC2307)</td>
+<td style="text-align:left">MQRC_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2308 (0904) (RC2308)</td>
+<td style="text-align:left">MQRC_ENCODING_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2309 (0905) (RC2309)</td>
+<td style="text-align:left">MQRC_SELECTOR_NOT_PRESENT</td>
+</tr>
+<tr>
+<td style="text-align:left">2310 (0906) (RC2310)</td>
+<td style="text-align:left">MQRC_OUT_SELECTOR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2311 (0907) (RC2311)</td>
+<td style="text-align:left">MQRC_STRING_TRUNCATED</td>
+</tr>
+<tr>
+<td style="text-align:left">2312 (0908) (RC2312)</td>
+<td style="text-align:left">MQRC_SELECTOR_WRONG_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2313 (0909) (RC2313)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_ITEM_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2314 (090A) (RC2314)</td>
+<td style="text-align:left">MQRC_INDEX_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2315 (090B) (RC2315)</td>
+<td style="text-align:left">MQRC_SYSTEM_BAG_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2316 (090C) (RC2316)</td>
+<td style="text-align:left">MQRC_ITEM_COUNT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2317 (090D) (RC2317)</td>
+<td style="text-align:left">MQRC_FORMAT_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2318 (090E) (RC2318)</td>
+<td style="text-align:left">MQRC_SELECTOR_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2319 (090F) (RC2319)</td>
+<td style="text-align:left">MQRC_ITEM_VALUE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2320 (0910) (RC2320)</td>
+<td style="text-align:left">MQRC_HBAG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2321 (0911) (RC2321)</td>
+<td style="text-align:left">MQRC_PARAMETER_MISSING</td>
+</tr>
+<tr>
+<td style="text-align:left">2322 (0912) (RC2322)</td>
+<td style="text-align:left">MQRC_CMD_SERVER_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2323 (0913) (RC2323)</td>
+<td style="text-align:left">MQRC_STRING_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2324 (0914) (RC2324)</td>
+<td style="text-align:left">MQRC_INQUIRY_COMMAND_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2325 (0915) (RC2325)</td>
+<td style="text-align:left">MQRC_NESTED_BAG_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2326 (0916) (RC2326)</td>
+<td style="text-align:left">MQRC_BAG_WRONG_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2327 (0917) (RC2327)</td>
+<td style="text-align:left">MQRC_ITEM_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2328 (0918) (RC2328)</td>
+<td style="text-align:left">MQRC_SYSTEM_BAG_NOT_DELETABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2329 (0919) (RC2329)</td>
+<td style="text-align:left">MQRC_SYSTEM_ITEM_NOT_DELETABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2330 (091A) (RC2330)</td>
+<td style="text-align:left">MQRC_CODED_CHAR_SET_ID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2331 (091B) (RC2331)</td>
+<td style="text-align:left">MQRC_MSG_TOKEN_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2332 (091C) (RC2332)</td>
+<td style="text-align:left">MQRC_MISSING_WIH</td>
+</tr>
+<tr>
+<td style="text-align:left">2333 (091D) (RC2333)</td>
+<td style="text-align:left">MQRC_WIH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2334 (091E) (RC2334)</td>
+<td style="text-align:left">MQRC_RFH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2335 (091F) (RC2335)</td>
+<td style="text-align:left">MQRC_RFH_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2336 (0920) (RC2336)</td>
+<td style="text-align:left">MQRC_RFH_COMMAND_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2337 (0921) (RC2337)</td>
+<td style="text-align:left">MQRC_RFH_PARM_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2338 (0922) (RC2338)</td>
+<td style="text-align:left">MQRC_RFH_DUPLICATE_PARM</td>
+</tr>
+<tr>
+<td style="text-align:left">2339 (0923) (RC2339)</td>
+<td style="text-align:left">MQRC_RFH_PARM_MISSING</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2340 (0924) (RC2340)</td>
+<td style="text-align:left">MQRC_CHAR_CONVERSION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2341 (0925) (RC2341)</td>
+<td style="text-align:left">MQRC_UCS2_CONVERSION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2342 (0926) (RC2342)</td>
+<td style="text-align:left">MQRC_DB2_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2343 (0927) (RC2343)</td>
+<td style="text-align:left">MQRC_OBJECT_NOT_UNIQUE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2344 (0928) (RC2344)</td>
+<td style="text-align:left">MQRC_CONN_TAG_NOT_RELEASED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2345 (0929) (RC2345)</td>
+<td style="text-align:left">MQRC_CF_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2346 (092A) (RC2346)</td>
+<td style="text-align:left">MQRC_CF_STRUC_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2347 (092B) (RC2347)</td>
+<td style="text-align:left">MQRC_CF_STRUC_LIST_HDR_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2348 (092C) (RC2348)</td>
+<td style="text-align:left">MQRC_CF_STRUC_AUTH_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2349 (092D) (RC2349)</td>
+<td style="text-align:left">MQRC_CF_STRUC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2350 (092E) (RC2350)</td>
+<td style="text-align:left">MQRC_CONN_TAG_NOT_USABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[Windows][z/OS]2351 (092F) (RC2351)</td>
+<td style="text-align:left">MQRC_GLOBAL_UOW_CONFLICT</td>
+</tr>
+<tr>
+<td style="text-align:left">[Windows][z/OS]2352 (0930) (RC2352)</td>
+<td style="text-align:left">MQRC_LOCAL_UOW_CONFLICT</td>
+</tr>
+<tr>
+<td style="text-align:left">[Windows]2353 (0931) (RC2353)</td>
+<td style="text-align:left">MQRC_HANDLE_IN_USE_FOR_UOW</td>
+</tr>
+<tr>
+<td style="text-align:left">[HPNSS][Windows]2354 (0932) (RC2354)</td>
+<td style="text-align:left">MQRC_UOW_ENLISTMENT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[HPNSS][Windows]2355 (0933) (RC2355)</td>
+<td style="text-align:left">MQRC_UOW_MIX_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2356 (0934) (RC2356)</td>
+<td style="text-align:left">MQRC_WXP_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2357 (0935) (RC2357)</td>
+<td style="text-align:left">MQRC_CURRENT_RECORD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2358 (0936) (RC2358)</td>
+<td style="text-align:left">MQRC_NEXT_OFFSET_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2359 (0937) (RC2359)</td>
+<td style="text-align:left">MQRC_NO_RECORD_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2360 (0938) (RC2360)</td>
+<td style="text-align:left">MQRC_OBJECT_LEVEL_INCOMPATIBLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2361 (0939) (RC2361)</td>
+<td style="text-align:left">MQRC_NEXT_RECORD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2362 (093A) (RC2362)</td>
+<td style="text-align:left">MQRC_BACKOUT_THRESHOLD_REACHED</td>
+</tr>
+<tr>
+<td style="text-align:left">2363 (093B) (RC2363)</td>
+<td style="text-align:left">MQRC_MSG_NOT_MATCHED</td>
+</tr>
+<tr>
+<td style="text-align:left">2364 (093C) (RC2364)</td>
+<td style="text-align:left">MQRC_JMS_FORMAT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2365 (093D) (RC2365)</td>
+<td style="text-align:left">MQRC_SEGMENTS_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2366 (093E) (RC2366)</td>
+<td style="text-align:left">MQRC_WRONG_CF_LEVEL</td>
+</tr>
+<tr>
+<td style="text-align:left">2367 (093F) (RC2367)</td>
+<td style="text-align:left">MQRC_CONFIG_CREATE_OBJECT</td>
+</tr>
+<tr>
+<td style="text-align:left">2368 (0940) (RC2368)</td>
+<td style="text-align:left">MQRC_CONFIG_CHANGE_OBJECT</td>
+</tr>
+<tr>
+<td style="text-align:left">2369 (0941) (RC2369)</td>
+<td style="text-align:left">MQRC_CONFIG_DELETE_OBJECT</td>
+</tr>
+<tr>
+<td style="text-align:left">2370 (0942) (RC2370)</td>
+<td style="text-align:left">MQRC_CONFIG_REFRESH_OBJECT</td>
+</tr>
+<tr>
+<td style="text-align:left">2371 (0943) (RC2371)</td>
+<td style="text-align:left">MQRC_CHANNEL_SSL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2373 (0945) (RC2373)</td>
+<td style="text-align:left">MQRC_CF_STRUC_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2374 (0946) (RC2374)</td>
+<td style="text-align:left">MQRC_API_EXIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2375 (0947) (RC2375)</td>
+<td style="text-align:left">MQRC_API_EXIT_INIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2376 (0948) (RC2376)</td>
+<td style="text-align:left">MQRC_API_EXIT_TERM_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2377 (0949) (RC2377)</td>
+<td style="text-align:left">MQRC_EXIT_REASON_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2378 (094A) (RC2378)</td>
+<td style="text-align:left">MQRC_RESERVED_VALUE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2379 (094B) (RC2379)</td>
+<td style="text-align:left">MQRC_NO_DATA_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2380 (094C) (RC2380)</td>
+<td style="text-align:left">MQRC_SCO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2381 (094D) (RC2381)</td>
+<td style="text-align:left">MQRC_KEY_REPOSITORY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2382 (094E) (RC2382)</td>
+<td style="text-align:left">MQRC_CRYPTO_HARDWARE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2383 (094F) (RC2383)</td>
+<td style="text-align:left">MQRC_AUTH_INFO_REC_COUNT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2384 (0950) (RC2384)</td>
+<td style="text-align:left">MQRC_AUTH_INFO_REC_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2385 (0951) (RC2385)</td>
+<td style="text-align:left">MQRC_AIR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2386 (0952) (RC2386)</td>
+<td style="text-align:left">MQRC_AUTH_INFO_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2387 (0953) (RC2387)</td>
+<td style="text-align:left">MQRC_AUTH_INFO_CONN_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2388 (0954) (RC2388)</td>
+<td style="text-align:left">MQRC_LDAP_USER_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2389 (0955) (RC2389)</td>
+<td style="text-align:left">MQRC_LDAP_USER_NAME_LENGTH_ERR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2390 (0956) (RC2390)</td>
+<td style="text-align:left">MQRC_LDAP_PASSWORD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2391 (0957) (RC2391)</td>
+<td style="text-align:left">MQRC_SSL_ALREADY_INITIALIZED</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2392 (0958) (RC2392)</td>
+<td style="text-align:left">MQRC_SSL_CONFIG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX][Windows]2393 (0959) (RC2393)</td>
+<td style="text-align:left">MQRC_SSL_INITIALIZATION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2394 (095A) (RC2394)</td>
+<td style="text-align:left">MQRC_Q_INDEX_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2395 (095B) (RC2395)</td>
+<td style="text-align:left">MQRC_CFBS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2396 (095C) (RC2396)</td>
+<td style="text-align:left">MQRC_SSL_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2397 (095D) (RC2397)</td>
+<td style="text-align:left">MQRC_JSSE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2398 (095E) (RC2398)</td>
+<td style="text-align:left">MQRC_SSL_PEER_NAME_MISMATCH</td>
+</tr>
+<tr>
+<td style="text-align:left">2399 (095F) (RC2399)</td>
+<td style="text-align:left">MQRC_SSL_PEER_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2400 (0960) (RC2400)</td>
+<td style="text-align:left">MQRC_UNSUPPORTED_CIPHER_SUITE</td>
+</tr>
+<tr>
+<td style="text-align:left">2401 (0961) (RC2401)</td>
+<td style="text-align:left">MQRC_SSL_CERTIFICATE_REVOKED</td>
+</tr>
+<tr>
+<td style="text-align:left">2402 (0962) (RC2402)</td>
+<td style="text-align:left">MQRC_SSL_CERT_STORE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2406 (0966) (RC2406)</td>
+<td style="text-align:left">MQRC_CLIENT_EXIT_LOAD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2407 (0967) (RC2407)</td>
+<td style="text-align:left">MQRC_CLIENT_EXIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2409 (0969) (RC2409)</td>
+<td style="text-align:left">MQRC_SSL_KEY_RESET_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2411 (096B) (RC2411)</td>
+<td style="text-align:left">MQRC_LOGGER_STATUS</td>
+</tr>
+<tr>
+<td style="text-align:left">2412 (096C) (RC2412)</td>
+<td style="text-align:left">MQRC_COMMAND_MQSC</td>
+</tr>
+<tr>
+<td style="text-align:left">2413 (096D) (RC2413)</td>
+<td style="text-align:left">MQRC_COMMAND_PCF</td>
+</tr>
+<tr>
+<td style="text-align:left">2414 (096E) (RC2414)</td>
+<td style="text-align:left">MQRC_CFIF_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2415 (096F) (RC2415)</td>
+<td style="text-align:left">MQRC_CFSF_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2416 (0970) (RC2416)</td>
+<td style="text-align:left">MQRC_CFGR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2417 (0971) (RC2417)</td>
+<td style="text-align:left">MQRC_MSG_NOT_ALLOWED_IN_GROUP</td>
+</tr>
+<tr>
+<td style="text-align:left">2418 (0972) (RC2418)</td>
+<td style="text-align:left">MQRC_FILTER_OPERATOR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2419 (0973) (RC2419)</td>
+<td style="text-align:left">MQRC_NESTED_SELECTOR_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2420 (0974) (RC2420)</td>
+<td style="text-align:left">MQRC_EPH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2421 (0975) (RC2421)</td>
+<td style="text-align:left">MQRC_RFH_FORMAT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[IBM i][UNIX][Windows]2422 (0976) (RC2422)</td>
+<td style="text-align:left">MQRC_CFBF_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2423 (0977) (RC2423)</td>
+<td style="text-align:left">MQRC_CLIENT_CHANNEL_CONFLICT</td>
+</tr>
+<tr>
+<td style="text-align:left">2424 (0978) (RC2424)</td>
+<td style="text-align:left">MQRC_SD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2425 (0979) (RC2425)</td>
+<td style="text-align:left">MQRC_TOPIC_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2426 (097A) (RC2426)</td>
+<td style="text-align:left">MQRC_STS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2428 (097C) (RC2428)</td>
+<td style="text-align:left">MQRC_NO_SUBSCRIPTION</td>
+</tr>
+<tr>
+<td style="text-align:left">2429 (097D) (RC2429)</td>
+<td style="text-align:left">MQRC_SUBSCRIPTION_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2430 (097E) (RC2430)</td>
+<td style="text-align:left">MQRC_STAT_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2431 (097F) (RC2431)</td>
+<td style="text-align:left">MQRC_SUB_USER_DATA_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2432 (0980) (RC2432)</td>
+<td style="text-align:left">MQRC_SUB_ALREADY_EXISTS</td>
+</tr>
+<tr>
+<td style="text-align:left">2434 (0982) (RC2434)</td>
+<td style="text-align:left">MQRC_IDENTITY_MISMATCH</td>
+</tr>
+<tr>
+<td style="text-align:left">2435 (0983) (RC2435)</td>
+<td style="text-align:left">MQRC_ALTER_SUB_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2436 (0984) (RC2436)</td>
+<td style="text-align:left">MQRC_DURABILITY_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2437 (0985) (RC2437)</td>
+<td style="text-align:left">MQRC_NO_RETAINED_MSG</td>
+</tr>
+<tr>
+<td style="text-align:left">2438 (0986) (RC2438)</td>
+<td style="text-align:left">MQRC_SRO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2440 (0988) (RC2440)</td>
+<td style="text-align:left">MQRC_SUB_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2441 (0989) (RC2441)</td>
+<td style="text-align:left">MQRC_OBJECT_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2442 (098A) (RC2442)</td>
+<td style="text-align:left">MQRC_PROPERTY_NAME_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2443 (098B) (RC2443)</td>
+<td style="text-align:left">MQRC_SEGMENTATION_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2444 (098C) (RC2444)</td>
+<td style="text-align:left">MQRC_CBD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2445 (098D) (RC2445)</td>
+<td style="text-align:left">MQRC_CTLO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2446 (098E) (RC2446)</td>
+<td style="text-align:left">MQRC_NO_CALLBACKS_ACTIVE</td>
+</tr>
+<tr>
+<td style="text-align:left">2448 (0990) (RC2448)</td>
+<td style="text-align:left">MQRC_CALLBACK_NOT_REGISTERED</td>
+</tr>
+<tr>
+<td style="text-align:left">2449 (0991) (RC2449)</td>
+<td style="text-align:left">MQRC_OPERATION_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2457 (0999) (RC2457)</td>
+<td style="text-align:left">MQRC_OPTIONS_CHANGED</td>
+</tr>
+<tr>
+<td style="text-align:left">2458 (099A) (RC2458)</td>
+<td style="text-align:left">MQRC_READ_AHEAD_MSGS</td>
+</tr>
+<tr>
+<td style="text-align:left">2459 (099B) (RC2459)</td>
+<td style="text-align:left">MQRC_SELECTOR_SYNTAX_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2460 (099C) (RC2460)</td>
+<td style="text-align:left">MQRC_HMSG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2461 (099D) (RC2461)</td>
+<td style="text-align:left">MQRC_CMHO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2462 (099E) (RC2462)</td>
+<td style="text-align:left">MQRC_DMHO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2463 (099F) (RC2463)</td>
+<td style="text-align:left">MQRC_SMPO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2464 (09A0) (RC2464)</td>
+<td style="text-align:left">MQRC_IMPO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2465 (09A1) (RC2465)</td>
+<td style="text-align:left">MQRC_PROPERTY_NAME_TOO_BIG</td>
+</tr>
+<tr>
+<td style="text-align:left">2466 (09A2) (RC2466)</td>
+<td style="text-align:left">MQRC_PROP_VALUE_NOT_CONVERTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2467 (09A3) (RC2467)</td>
+<td style="text-align:left">MQRC_PROP_TYPE_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2469 (09A5) (RC2469)</td>
+<td style="text-align:left">MQRC_PROPERTY_VALUE_TOO_BIG</td>
+</tr>
+<tr>
+<td style="text-align:left">2470 (09A6) (RC2470)</td>
+<td style="text-align:left">MQRC_PROP_CONV_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2471 (09A7) (RC2471)</td>
+<td style="text-align:left">MQRC_PROPERTY_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2472 (09A8) (RC2472)</td>
+<td style="text-align:left">MQRC_PROP_NUMBER_FORMAT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2473 (09A9) (RC2473)</td>
+<td style="text-align:left">MQRC_PROPERTY_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2478 (09AE) (RC2478)</td>
+<td style="text-align:left">MQRC_PROPERTIES_TOO_BIG</td>
+</tr>
+<tr>
+<td style="text-align:left">2479 (09AF) (RC2479)</td>
+<td style="text-align:left">MQRC_PUT_NOT_RETAINED</td>
+</tr>
+<tr>
+<td style="text-align:left">2480 (09B0) (RC2480)</td>
+<td style="text-align:left">MQRC_ALIAS_TARGTYPE_CHANGED</td>
+</tr>
+<tr>
+<td style="text-align:left">2481 (09B1) (RC2481)</td>
+<td style="text-align:left">MQRC_DMPO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2482 (09B2) (RC2482)</td>
+<td style="text-align:left">MQRC_PD_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2483 (09B3) (RC2483)</td>
+<td style="text-align:left">MQRC_CALLBACK_TYPE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2484 (09B4) (RC2484)</td>
+<td style="text-align:left">MQRC_CBD_OPTIONS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2485 (09B5) (RC2485)</td>
+<td style="text-align:left">MQRC_MAX_MSG_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2486 (09B6) (RC2486)</td>
+<td style="text-align:left">MQRC_CALLBACK_ROUTINE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2487 (09B7) (RC2487)</td>
+<td style="text-align:left">MQRC_CALLBACK_LINK_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2488 (09B8) (RC2488)</td>
+<td style="text-align:left">MQRC_OPERATION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2489 (09B9) (RC2489)</td>
+<td style="text-align:left">MQRC_BMHO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2490 (09BA) (RC2490)</td>
+<td style="text-align:left">MQRC_UNSUPPORTED_PROPERTY</td>
+</tr>
+<tr>
+<td style="text-align:left">2492 (09BC) (RC2492)</td>
+<td style="text-align:left">MQRC_PROP_NAME_NOT_CONVERTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2494 (09BE) (RC2494)</td>
+<td style="text-align:left">MQRC_GET_ENABLED</td>
+</tr>
+<tr>
+<td style="text-align:left">2495 (09BF) (RC2495)</td>
+<td style="text-align:left">MQRC_MODULE_NOT_FOUND</td>
+</tr>
+<tr>
+<td style="text-align:left">2496 (09C0) (RC2496)</td>
+<td style="text-align:left">MQRC_MODULE_INVALID</td>
+</tr>
+<tr>
+<td style="text-align:left">2497 (09C1) (RC2497)</td>
+<td style="text-align:left">MQRC_MODULE_ENTRY_NOT_FOUND</td>
+</tr>
+<tr>
+<td style="text-align:left">2498 (09C2) (RC2498)</td>
+<td style="text-align:left">MQRC_MIXED_CONTENT_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2499 (09C3) (RC2499)</td>
+<td style="text-align:left">MQRC_MSG_HANDLE_IN_USE</td>
+</tr>
+<tr>
+<td style="text-align:left">2500 (09C4) (RC2500)</td>
+<td style="text-align:left">MQRC_HCONN_ASYNC_ACTIVE</td>
+</tr>
+<tr>
+<td style="text-align:left">2501 (09C5) (RC2501)</td>
+<td style="text-align:left">MQRC_MHBO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2502 (09C6) (RC2502)</td>
+<td style="text-align:left">MQRC_PUBLICATION_FAILURE</td>
+</tr>
+<tr>
+<td style="text-align:left">2503 (09C7) (RC2503)</td>
+<td style="text-align:left">MQRC_SUB_INHIBITED</td>
+</tr>
+<tr>
+<td style="text-align:left">2504 (09C8) (RC2504)</td>
+<td style="text-align:left">MQRC_SELECTOR_ALWAYS_FALSE</td>
+</tr>
+<tr>
+<td style="text-align:left">2507 (09CB) (RC2507)</td>
+<td style="text-align:left">MQRC_XEPO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2509 (09CD) (RC2509)</td>
+<td style="text-align:left">MQRC_DURABILITY_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2510 (09CE) (RC2510)</td>
+<td style="text-align:left">MQRC_TOPIC_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2512 (09D0) (RC2512)</td>
+<td style="text-align:left">MQRC_SUBLEVEL_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2513 (09D1) (RC2513)</td>
+<td style="text-align:left">MQRC_PROPERTY_NAME_LENGTH_ERR</td>
+</tr>
+<tr>
+<td style="text-align:left">2514 (09D2) (RC2514)</td>
+<td style="text-align:left">MQRC_DUPLICATE_GROUP_SUB</td>
+</tr>
+<tr>
+<td style="text-align:left">2515 (09D3) (RC2515)</td>
+<td style="text-align:left">MQRC_GROUPING_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2516 (09D4) (RC2516)</td>
+<td style="text-align:left">MQRC_SELECTOR_INVALID_FOR_TYPE</td>
+</tr>
+<tr>
+<td style="text-align:left">2517 (09D5) (RC2517)</td>
+<td style="text-align:left">MQRC_HOBJ_QUIESCED</td>
+</tr>
+<tr>
+<td style="text-align:left">2518 (09D6) (RC2518)</td>
+<td style="text-align:left">MQRC_HOBJ_QUIESCED_NO_MSGS</td>
+</tr>
+<tr>
+<td style="text-align:left">2519 (09D7) (RC2519)</td>
+<td style="text-align:left">MQRC_SELECTION_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2520 (09D8) (RC2520)</td>
+<td style="text-align:left">MQRC_RES_OBJECT_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2521 (09D9) (RC2521)</td>
+<td style="text-align:left">MQRC_CONNECTION_SUSPENDED</td>
+</tr>
+<tr>
+<td style="text-align:left">2522 (09DA) (RC2522)</td>
+<td style="text-align:left">MQRC_INVALID_DESTINATION</td>
+</tr>
+<tr>
+<td style="text-align:left">2523 (09DB) (RC2523)</td>
+<td style="text-align:left">MQRC_INVALID_SUBSCRIPTION</td>
+</tr>
+<tr>
+<td style="text-align:left">2524 (09DC) (RC2524)</td>
+<td style="text-align:left">MQRC_SELECTOR_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2525 (09DD) (RC2525)</td>
+<td style="text-align:left">MQRC_RETAINED_MSG_Q_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2526 (09DE) (RC2526)</td>
+<td style="text-align:left">MQRC_RETAINED_NOT_DELIVERED</td>
+</tr>
+<tr>
+<td style="text-align:left">2527 (09DF) (RC2527)</td>
+<td style="text-align:left">MQRC_RFH_RESTRICTED_FORMAT_ERR</td>
+</tr>
+<tr>
+<td style="text-align:left">2528 (09E0) (RC2528)</td>
+<td style="text-align:left">MQRC_CONNECTION_STOPPED</td>
+</tr>
+<tr>
+<td style="text-align:left">2529 (09E1) (RC2529)</td>
+<td style="text-align:left">MQRC_ASYNC_UOW_CONFLICT</td>
+</tr>
+<tr>
+<td style="text-align:left">2530 (09E2) (RC2530)</td>
+<td style="text-align:left">MQRC_ASYNC_XA_CONFLICT</td>
+</tr>
+<tr>
+<td style="text-align:left">2531 (09E3) (RC2531)</td>
+<td style="text-align:left">MQRC_PUBSUB_INHIBITED</td>
+</tr>
+<tr>
+<td style="text-align:left">2532 (09E4) (RC2532)</td>
+<td style="text-align:left">MQRC_MSG_HANDLE_COPY_FAILURE</td>
+</tr>
+<tr>
+<td style="text-align:left">2533 (09E5) (RC2533)</td>
+<td style="text-align:left">MQRC_DEST_CLASS_NOT_ALTERABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2534 (09E6) (RC2534)</td>
+<td style="text-align:left">MQRC_OPERATION_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2535 (09E7)</td>
+<td style="text-align:left">MQRC_ACTION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2537 (09E9) (RC2537)</td>
+<td style="text-align:left">MQRC_CHANNEL_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2538 (09EA) (RC2538)</td>
+<td style="text-align:left">MQRC_HOST_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2539 (09EB) (RC2539)</td>
+<td style="text-align:left">MQRC_CHANNEL_CONFIG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2540 (09EC) (RC2540)</td>
+<td style="text-align:left">MQRC_UNKNOWN_CHANNEL_NAME</td>
+</tr>
+<tr>
+<td style="text-align:left">2541 (09ED) (RC2541)</td>
+<td style="text-align:left">MQRC_LOOPING_PUBLICATION</td>
+</tr>
+<tr>
+<td style="text-align:left">2543 (09EF) (RC2543)</td>
+<td style="text-align:left">MQRC_STANDBY_Q_MGR</td>
+</tr>
+<tr>
+<td style="text-align:left">2544 (09F0) (RC2544)</td>
+<td style="text-align:left">MQRC_RECONNECTING</td>
+</tr>
+<tr>
+<td style="text-align:left">2545 (09F1) (RC2545)</td>
+<td style="text-align:left">MQRC_RECONNECTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2546 (09F2) (RC2546)</td>
+<td style="text-align:left">MQRC_RECONNECT_QMID_MISMATCH</td>
+</tr>
+<tr>
+<td style="text-align:left">2547 (09F3) (RC2547)</td>
+<td style="text-align:left">MQRC_RECONNECT_INCOMPATIBLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2548 (09F4) (RC2548)</td>
+<td style="text-align:left">MQRC_RECONNECT_FAILED</td>
+</tr>
+<tr>
+<td style="text-align:left">2549 (09F5) (RC2549)</td>
+<td style="text-align:left">MQRC_CALL_INTERRUPTED</td>
+</tr>
+<tr>
+<td style="text-align:left">2550 (09F6) (RC2550)</td>
+<td style="text-align:left">MQRC_NO_SUBS_MATCHED</td>
+</tr>
+<tr>
+<td style="text-align:left">2551 (09F7) (RC2551)</td>
+<td style="text-align:left">MQRC_SELECTION_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2552 (09F8) (RC2552)</td>
+<td style="text-align:left">MQRC_CHANNEL_SSL_WARNING</td>
+</tr>
+<tr>
+<td style="text-align:left">2553 (09F9) (RC2553)</td>
+<td style="text-align:left">MQRC_OCSP_URL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2554 (09FA) (RC2554)</td>
+<td style="text-align:left">MQRC_CONTENT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2555 (09FB) (RC2555)</td>
+<td style="text-align:left">MQRC_RECONNECT_Q_MGR_REQD</td>
+</tr>
+<tr>
+<td style="text-align:left">2556 (09FC) (RC2556)</td>
+<td style="text-align:left">MQRC_RECONNECT_TIMED_OUT</td>
+</tr>
+<tr>
+<td style="text-align:left">[UNIX, Linux, Windows, IBM i]2557 (09FD) (RC2557)</td>
+<td style="text-align:left">MQRC_PUBLISH_EXIT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2558 (09FE) (RC2558)</td>
+<td style="text-align:left">MQRC_COMMINFO_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2560 (0A00) (RC2560)</td>
+<td style="text-align:left">MQRC_MULTICAST_ONLY</td>
+</tr>
+<tr>
+<td style="text-align:left">[z/OS]2561 (0A01) (RC2561)</td>
+<td style="text-align:left">MQRC_DATA_SET_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2562 (0A02) (RC2562)</td>
+<td style="text-align:left">MQRC_GROUPING_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2563 (0A03) (RC2563)</td>
+<td style="text-align:left">MQRC_GROUP_ADDRESS_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2564 (0A04) (RC2564)</td>
+<td style="text-align:left">MQRC_MULTICAST_CONFIG_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2565 (0A05) (RC2565)</td>
+<td style="text-align:left">MQRC_MULTICAST_INTERFACE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2566 (0A06) (RC2566)</td>
+<td style="text-align:left">MQRC_MULTICAST_SEND_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2567 (0A07) (RC2567)</td>
+<td style="text-align:left">MQRC_MULTICAST_INTERNAL_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2568 (0A08) (RC2568)</td>
+<td style="text-align:left">MQRC_CONNECTION_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2569 (0A09) (RC2569)</td>
+<td style="text-align:left">MQRC_SYNCPOINT_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2577 (0A11) (RC2577)</td>
+<td style="text-align:left">MQRC_CHANNEL_BLOCKED</td>
+</tr>
+<tr>
+<td style="text-align:left">2578 (0A12) (RC2578)</td>
+<td style="text-align:left">MQRC_CHANNEL_BLOCKED_WARNING</td>
+</tr>
+<tr>
+<td style="text-align:left">2583 (0A17) (RC2583)</td>
+<td style="text-align:left">MQRC_INSTALLATION_MISMATCH</td>
+</tr>
+<tr>
+<td style="text-align:left">2587 (0A1B) (RC2587)</td>
+<td style="text-align:left">MQRC_HMSG_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2589 (0A1D) (RC2589)</td>
+<td style="text-align:left">MQRC_INSTALLATION_MISSING</td>
+</tr>
+<tr>
+<td style="text-align:left">2590 (0A1E) (RC2590)</td>
+<td style="text-align:left">MQRC_FASTPATH_NOT_AVAILABLE</td>
+</tr>
+<tr>
+<td style="text-align:left">2591 (0A1F) (RC2591)</td>
+<td style="text-align:left">MQRC_CIPHER_SPEC_NOT_SUITE_B</td>
+</tr>
+<tr>
+<td style="text-align:left">2592 (0A20) (RC2592)</td>
+<td style="text-align:left">MQRC_SUITE_B_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2593 (0A21)(RC2593)</td>
+<td style="text-align:left">MQRC_CERT_VAL_POLICY_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2594 (0A22)(RC2594)</td>
+<td style="text-align:left">MQRC_PASSWORD_PROTECTION_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2595 (0A23)(RC2595)</td>
+<td style="text-align:left">MQRC_CSP_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">2596 (0A24)(RC2596)</td>
+<td style="text-align:left">MQRC_CERT_LABEL_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td style="text-align:left">2598 (0A26)(RC2598)</td>
+<td style="text-align:left">MQRC_ADMIN_TOPIC_STRING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6100 (17D4) (RC6100)</td>
+<td style="text-align:left">MQRC_REOPEN_EXCL_INPUT_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6101 (17D5) (RC6101)</td>
+<td style="text-align:left">MQRC_REOPEN_INQUIRE_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6102 (17D6) (RC6102)</td>
+<td style="text-align:left">MQRC_REOPEN_SAVED_CONTEXT_ERR</td>
+</tr>
+<tr>
+<td style="text-align:left">6103 (17D7) (RC6103)</td>
+<td style="text-align:left">MQRC_REOPEN_TEMPORARY_Q_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6104 (17D8) (RC6104)</td>
+<td style="text-align:left">MQRC_ATTRIBUTE_LOCKED</td>
+</tr>
+<tr>
+<td style="text-align:left">6105 (17D9) (RC6105)</td>
+<td style="text-align:left">MQRC_CURSOR_NOT_VALID</td>
+</tr>
+<tr>
+<td style="text-align:left">6106 (17DA) (RC6106)</td>
+<td style="text-align:left">MQRC_ENCODING_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6107 (17DB) (RC6107)</td>
+<td style="text-align:left">MQRC_STRUC_ID_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6108 (17DC) (RC6108)</td>
+<td style="text-align:left">MQRC_NULL_POINTER</td>
+</tr>
+<tr>
+<td style="text-align:left">6109 (17DD) (RC6109)</td>
+<td style="text-align:left">MQRC_NO_CONNECTION_REFERENCE</td>
+</tr>
+<tr>
+<td style="text-align:left">6110 (17DE) (RC6110)</td>
+<td style="text-align:left">MQRC_NO_BUFFER</td>
+</tr>
+<tr>
+<td style="text-align:left">6111 (17DF) (RC6111)</td>
+<td style="text-align:left">MQRC_BINARY_DATA_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6112 (17E0) (RC6112)</td>
+<td style="text-align:left">MQRC_BUFFER_NOT_AUTOMATIC</td>
+</tr>
+<tr>
+<td style="text-align:left">6113 (17E1) (RC6113)</td>
+<td style="text-align:left">MQRC_INSUFFICIENT_BUFFER</td>
+</tr>
+<tr>
+<td style="text-align:left">6114 (17E2) (RC6114)</td>
+<td style="text-align:left">MQRC_INSUFFICIENT_DATA</td>
+</tr>
+<tr>
+<td style="text-align:left">6115 (17E3) (RC6115)</td>
+<td style="text-align:left">MQRC_DATA_TRUNCATED</td>
+</tr>
+<tr>
+<td style="text-align:left">6116 (17E4) (RC6116)</td>
+<td style="text-align:left">MQRC_ZERO_LENGTH</td>
+</tr>
+<tr>
+<td style="text-align:left">6117 (17E5) (RC6117)</td>
+<td style="text-align:left">MQRC_NEGATIVE_LENGTH</td>
+</tr>
+<tr>
+<td style="text-align:left">6118 (17E6) (RC6118)</td>
+<td style="text-align:left">MQRC_NEGATIVE_OFFSET</td>
+</tr>
+<tr>
+<td style="text-align:left">6119 (17E7) (RC6119)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_FORMAT</td>
+</tr>
+<tr>
+<td style="text-align:left">6120 (17E8) (RC6120)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_OBJECT_STATE</td>
+</tr>
+<tr>
+<td style="text-align:left">6121 (17E9) (RC6121)</td>
+<td style="text-align:left">MQRC_CONTEXT_OBJECT_NOT_VALID</td>
+</tr>
+<tr>
+<td style="text-align:left">6122 (17EA) (RC6122)</td>
+<td style="text-align:left">MQRC_CONTEXT_OPEN_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6123 (17EB) (RC6123)</td>
+<td style="text-align:left">MQRC_STRUC_LENGTH_ERROR</td>
+</tr>
+<tr>
+<td style="text-align:left">6124 (17EC) (RC6124)</td>
+<td style="text-align:left">MQRC_NOT_CONNECTED</td>
+</tr>
+<tr>
+<td style="text-align:left">6125 (17ED) (RC6125)</td>
+<td style="text-align:left">MQRC_NOT_OPEN</td>
+</tr>
+<tr>
+<td style="text-align:left">6126 (17EE) (RC6126)</td>
+<td style="text-align:left">MQRC_DISTRIBUTION_LIST_EMPTY</td>
+</tr>
+<tr>
+<td style="text-align:left">6127 (17EF) (RC6127)</td>
+<td style="text-align:left">MQRC_INCONSISTENT_OPEN_OPTIONS</td>
+</tr>
+<tr>
+<td style="text-align:left">6128 (17FO) (RC6128)</td>
+<td style="text-align:left">MQRC_WRONG_VERSION</td>
+</tr>
+<tr>
+<td style="text-align:left">6129 (17F1) (RC6129)</td>
+<td style="text-align:left">MQRC_REFERENCE_ERROR</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/IBMMQ/" rel="tag"><i class="fa fa-tag"></i> IBMMQ</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/%E7%8E%B0%E5%9C%BA%E5%B7%A5%E4%BD%9C%E4%BB%A3%E7%A0%81%E8%B7%AF%E5%BE%84%E8%AF%B4%E6%98%8E.html" rel="prev" title="现场工作代码路径说明">
+      <i class="fa fa-chevron-left"></i> 现场工作代码路径说明
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/IDMDownload.html" rel="next" title="IDMDownload">
+      IDMDownload <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Justin"
+      src="/images/headim.png">
+  <p class="site-author-name" itemprop="name">Justin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">198</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/silencejql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;silencejql" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:silencejql@163.com" title="E-Mail → mailto:silencejql@163.com" rel="noopener" target="_blank"><i class="fab fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://music.163.com/#/user/home?id=103195839" title="NetEaet → https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;103195839" rel="noopener" target="_blank"><i class="fab fa-headphones fa-fw"></i>NetEaet</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2808102675/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2808102675&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Justin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">422k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">6:23</span>
+</div>
+  <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : '[object Object]',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8c9MWTg5hbBfsCntHAbBOKqg-gzGzoHsz',
+      appKey     : 'pJWUgkSsuys2uKmnaleLMmi6',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
+</html>
