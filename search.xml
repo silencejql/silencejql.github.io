@@ -10448,11 +10448,8 @@ To stop tracking a file that is currently tracked, use <code>git rm --cached</co
   <entry>
     <title>UDS DTC格式解析</title>
     <url>/UDS-DTC%E6%A0%BC%E5%BC%8F%E8%A7%A3%E6%9E%90.html</url>
-    <content><![CDATA[<p>UDS DTC故障码解析说明</p>
-<span id="more"></span>
-<h2 id="格式结构">格式结构</h2>
-<p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br>
-DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
+    <content><![CDATA[<p>UDS DTC故障码解析说明<br><span id="more"></span></p>
+<h2 id="格式结构"><a href="#格式结构" class="headerlink" title="格式结构"></a>格式结构</h2><p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br>DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
 <table>
     <tr>
         <td colspan="8" style="text-align:center;">DTCHightByte</td>>
@@ -10483,10 +10480,10 @@ DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故�
         <td colspan="8" style="text-align:center;">第四五位</td>
     </tr>
 </table>
-<h3 id="故障内码">故障内码</h3>
-<p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
-<h4 id="第一位">第一位</h4>
-<p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
+
+<h3 id="故障内码"><a href="#故障内码" class="headerlink" title="故障内码"></a>故障内码</h3><p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
+<h4 id="第一位"><a href="#第一位" class="headerlink" title="第一位"></a>第一位</h4><p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -10518,8 +10515,9 @@ DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故�
 </tr>
 </tbody>
 </table>
-<h4 id="第二位">第二位</h4>
-<p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
+</div>
+<h4 id="第二位"><a href="#第二位" class="headerlink" title="第二位"></a>第二位</h4><p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -10551,14 +10549,12 @@ DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故�
 </tr>
 </tbody>
 </table>
-<h4 id="第三位">第三位</h4>
-<p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
-<h4 id="第四五位">第四五位</h4>
-<p>最后两位表示具体故障对象和类型(hex)</p>
-<h3 id="DTCLowByte">DTCLowByte</h3>
-<p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
-<h3 id="StatusofDTC">StatusofDTC</h3>
-<p>故障码状态位:</p>
+</div>
+<h4 id="第三位"><a href="#第三位" class="headerlink" title="第三位"></a>第三位</h4><p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
+<h4 id="第四五位"><a href="#第四五位" class="headerlink" title="第四五位"></a>第四五位</h4><p>最后两位表示具体故障对象和类型(hex)</p>
+<h3 id="DTCLowByte"><a href="#DTCLowByte" class="headerlink" title="DTCLowByte"></a>DTCLowByte</h3><p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
+<h3 id="StatusofDTC"><a href="#StatusofDTC" class="headerlink" title="StatusofDTC"></a>StatusofDTC</h3><p>故障码状态位:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -10610,6 +10606,7 @@ DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故�
 </tr>
 </tbody>
 </table>
+</div>
 ]]></content>
   </entry>
   <entry>
@@ -11505,6 +11502,95 @@ minPts: 最少点数</p>
       </categories>
       <tags>
         <tag>CSharp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSharp调用C++ dll</title>
+    <url>/CSharp%E8%B0%83%E7%94%A8C-dll.html</url>
+    <content><![CDATA[<p>C#中动态加载C++ DLL文件<br><span id="more"></span></p>
+<p>在C#中动态加载C++ DLL（动态链接库）可以通过几种方式实现。下面我将介绍最常用的方法：</p>
+<h2 id="1-使用DllImport特性（静态加载）"><a href="#1-使用DllImport特性（静态加载）" class="headerlink" title="1. 使用DllImport特性（静态加载）"></a>1. 使用DllImport特性（静态加载）</h2><p>这是最常见的方式，虽然不是完全动态的，但值得了解：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 声明DLL中的函数</span></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;YourCppDll.dll&quot;</span>, CallingConvention = CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">int</span> <span class="title">YourCppFunction</span>(<span class="params"><span class="built_in">int</span> param1, <span class="built_in">string</span> param2</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 调用DLL中的函数</span></span><br><span class="line">        <span class="built_in">int</span> result = YourCppFunction(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Result: <span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-使用LoadLibrary和GetProcAddress（真正动态加载）"><a href="#2-使用LoadLibrary和GetProcAddress（真正动态加载）" class="headerlink" title="2. 使用LoadLibrary和GetProcAddress（真正动态加载）"></a>2. 使用LoadLibrary和GetProcAddress（真正动态加载）</h2><p>如果你想在运行时决定加载哪个DLL，可以使用Windows API：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 导入Windows API函数</span></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadLibrary</span>(<span class="params"><span class="built_in">string</span> dllToLoad</span>)</span>;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">GetProcAddress</span>(<span class="params">IntPtr hModule, <span class="built_in">string</span> procedureName</span>)</span>;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">bool</span> <span class="title">FreeLibrary</span>(<span class="params">IntPtr hModule</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义委托类型匹配C++函数签名</span></span><br><span class="line">    [<span class="meta">UnmanagedFunctionPointer(CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="built_in">delegate</span> <span class="built_in">int</span> <span class="title">YourCppFunctionDelegate</span>(<span class="params"><span class="built_in">int</span> param1, <span class="built_in">string</span> param2</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        IntPtr pDll = LoadLibrary(<span class="string">@&quot;YourCppDll.dll&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (pDll == IntPtr.Zero)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Failed to load DLL&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        IntPtr pAddressOfFunctionToCall = GetProcAddress(pDll, <span class="string">&quot;YourCppFunction&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (pAddressOfFunctionToCall == IntPtr.Zero)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Failed to find function&quot;</span>);</span><br><span class="line">            FreeLibrary(pDll);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将函数指针转换为委托</span></span><br><span class="line">        YourCppFunctionDelegate yourFunction = Marshal.GetDelegateForFunctionPointer&lt;YourCppFunctionDelegate&gt;(pAddressOfFunctionToCall);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用函数</span></span><br><span class="line">        <span class="built_in">int</span> result = yourFunction(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Result: <span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 释放DLL</span></span><br><span class="line">        FreeLibrary(pDll);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-使用COM-Interop（如果DLL是COM组件）"><a href="#3-使用COM-Interop（如果DLL是COM组件）" class="headerlink" title="3. 使用COM Interop（如果DLL是COM组件）"></a>3. 使用COM Interop（如果DLL是COM组件）</h2><p>如果C++ DLL是COM组件，可以使用COM互操作：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line">Type comType = Type.GetTypeFromProgID(<span class="string">&quot;YourCOMComponent.YourClass&quot;</span>);</span><br><span class="line"><span class="built_in">dynamic</span> comObject = Activator.CreateInstance(comType);</span><br><span class="line">comObject.YourMethod(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li><p><strong>调用约定</strong>：确保C#端和C++端的调用约定一致（通常C++使用<code>__cdecl</code>或<code>__stdcall</code>）。</p>
+</li>
+<li><p><strong>数据类型映射</strong>：注意C++和C#之间的数据类型转换，特别是字符串和指针类型。</p>
+</li>
+<li><p><strong>32/64位兼容性</strong>：确保DLL和应用程序的平台架构一致（同为x86或x64）。</p>
+</li>
+<li><p><strong>DLL位置</strong>：DLL文件需要放在应用程序可找到的路径（如exe所在目录或系统PATH中）。</p>
+</li>
+<li><p><strong>内存管理</strong>：如果DLL分配内存，确保有相应的释放机制，避免内存泄漏。</p>
+</li>
+<li><p><strong>异常处理</strong>：C++异常不能直接传递到C#，需要在C++端捕获并转换为错误码。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CSharp</category>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AlgorithmLearning-汉诺塔(分治递归)</title>
+    <url>/AlgorithmLearning-%E6%B1%89%E8%AF%BA%E5%A1%94-%E5%88%86%E6%B2%BB%E9%80%92%E5%BD%92.html</url>
+    <content><![CDATA[<p>利用分治处理汉诺塔问题<br><span id="more"></span></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>给定三根柱子，记为 A、B 和 C 。起始状态下，柱子A 上套着 𝑛 个圆盘，它们从上到下按照从小到大的顺序排列。我们的任务是要把这 𝑛 个圆盘移到柱子C 上，并保持它们的原有顺序不变</p>
+<ol>
+<li>圆盘只能从一根柱子顶部拿出，从另一根柱子顶部放入。  </li>
+<li>每次只能移动一个圆盘。  </li>
+<li>小圆盘必须时刻位于大圆盘之上。<br>![[Pasted image 20250619133250.png]]</li>
+</ol>
+<h3 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h3><h4 id="对于问题-𝑓-1"><a href="#对于问题-𝑓-1" class="headerlink" title="对于问题 𝑓(1)"></a>对于问题 𝑓(1)</h4><p>即当只有一个圆盘时，我们将它直接从 A 移动至 C 即可<br>![[Pasted image 20250619133711.png]]</p>
+<h4 id="对于问题-𝑓-2"><a href="#对于问题-𝑓-2" class="headerlink" title="对于问题 𝑓(2)"></a>对于问题 𝑓(2)</h4><p>即当有两个圆盘时， 由于要时刻满足小圆盘在大圆盘之上，因此需要借助<br>B 来完成移动。</p>
+<ol>
+<li>先将上面的小圆盘从 A 移至 B 。  </li>
+<li>再将大圆盘从 A 移至 C 。  </li>
+<li>最后将小圆盘从 B 移至 C 。<br>解决问题 𝑓(2) 的过程可总结为： 将两个圆盘借助 B 从 A 移至 C 。其中，C 称为目标柱、B 称为缓冲柱。<br>![[Pasted image 20250619133805.png]]<br>![[Pasted image 20250619133825.png]]<br>![[Pasted image 20250619133831.png]]<br>![[Pasted image 20250619133835.png]]</li>
+</ol>
+<h4 id="对于问题-𝑓-3"><a href="#对于问题-𝑓-3" class="headerlink" title="对于问题 𝑓(3)"></a>对于问题 𝑓(3)</h4><p>即当有三个圆盘时，情况变得稍微复杂了一些。<br>因为已知 𝑓(1) 和 𝑓(2) 的解，所以我们可从分治角度思考， 将 A 顶部的两个圆盘看作一个整体, 这样三个圆盘就被顺利地从 A 移至 C 了。</p>
+<ol>
+<li>令 B 为目标柱、 C 为缓冲柱，将两个圆盘从 A 移至 B 。  </li>
+<li>将 A 中剩余的一个圆盘从 A 直接移动至 C 。  </li>
+<li>令 C 为目标柱、 A 为缓冲柱，将两个圆盘从 B 移至 C 。<br>![[Pasted image 20250619133859.png]]<br>![[Pasted image 20250619133903.png]]<br>![[Pasted image 20250619133907.png]]<br>![[Pasted image 20250619133919.png]]</li>
+</ol>
+<p>从本质上看， 我们将问题 𝑓(3) 划分为两个子问题 𝑓(2) 和一个子问题 𝑓(1) 。按顺序解决这三个子问题之后，<br>原问题随之得到解决。这说明子问题是独立的，而且解可以合并。<br>至此，我们可总结出下图所示的解决汉诺塔问题的分治策略：将原问题 𝑓(𝑛) 划分为两个子问题 𝑓(𝑛-1)<br>和一个子问题 𝑓(1) ，并按照以下顺序解决这三个子问题。  </p>
+<ol>
+<li>将 𝑛 - 1 个圆盘借助 C 从 A 移至 B 。  </li>
+<li>将剩余 1 个圆盘从 A 直接移至 C 。  </li>
+<li>将 𝑛 - 1 个圆盘借助 A 从 B 移至 C 。<br>对于这两个子问题 𝑓(𝑛 - 1) ， 可以通过相同的方式进行递归划分，直至达到最小子问题 𝑓(1) 。而 𝑓(1) 的<br>解是已知的，只需一次移动操作即可。<br>![[Pasted image 20250619133615.png]]</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 移动一个圆盘 */</span>  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Move</span>(<span class="params">List&lt;<span class="built_in">int</span>&gt; src, List&lt;<span class="built_in">int</span>&gt; target</span>)</span> &#123;  </span><br><span class="line">	<span class="comment">// 从 src 顶部拿出一个圆盘  </span></span><br><span class="line">	<span class="built_in">int</span> pan = src[^<span class="number">1</span>];  </span><br><span class="line">	src.RemoveAt(src.Count - <span class="number">1</span>);  </span><br><span class="line">	<span class="comment">// 将圆盘放入 target 顶部  </span></span><br><span class="line">	target.Add(pan);  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 求解汉诺塔问题 f(i) */</span>  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span>(<span class="params"><span class="built_in">int</span> i, List&lt;<span class="built_in">int</span>&gt; src, List&lt;<span class="built_in">int</span>&gt; buffer, List&lt;<span class="built_in">int</span>&gt; target</span>)</span> &#123;  </span><br><span class="line">	<span class="comment">// 若 src 只剩下一个圆盘，则直接将其移到 target  </span></span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">1</span>) &#123;  </span><br><span class="line">		Move(src, target);  </span><br><span class="line">		<span class="keyword">return</span>;  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="comment">// 子问题 f(i-1) ：将 src 顶部 i-1 个圆盘借助 target 移到 buffer  </span></span><br><span class="line">	DFS(i - <span class="number">1</span>, src, target, buffer);  </span><br><span class="line">	<span class="comment">// 子问题 f(1) ：将 src 剩余一个圆盘移到 target  </span></span><br><span class="line">	Move(src, target);  </span><br><span class="line">	<span class="comment">// 子问题 f(i-1) ：将 buffer 顶部 i-1 个圆盘借助 src 移到 target</span></span><br><span class="line">	DFS(i - <span class="number">1</span>, buffer, src, target);  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 求解汉诺塔问题 */</span>  </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SolveHanota</span>(<span class="params">List&lt;<span class="built_in">int</span>&gt; A, List&lt;<span class="built_in">int</span>&gt; B, List&lt;<span class="built_in">int</span>&gt; C</span>)</span> &#123;  </span><br><span class="line">	<span class="built_in">int</span> n = A.Count;  </span><br><span class="line">	<span class="comment">// 将 A 顶部 n 个圆盘借助 B 移到 C  </span></span><br><span class="line">	DFS(n, A, B, C);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+        <category>CSharp</category>
+      </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AlgorithmLearning-二分查找(分治递归)</title>
+    <url>/AlgorithmLearning-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE-%E5%88%86%E6%B2%BB%E9%80%92%E5%BD%92.html</url>
+    <content><![CDATA[<p>基于分治的二分查找<br><span id="more"></span></p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span>[] sortedArray2 = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>, <span class="number">46</span>, <span class="number">57</span>, <span class="number">68</span>, <span class="number">79</span> &#125;;  </span><br><span class="line">FindIndex(sortedArray2, <span class="number">25</span>, <span class="number">0</span>, <span class="number">9</span>);  </span><br><span class="line"><span class="comment">//查找target = 6的index  </span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">FindIndex</span>(<span class="params"><span class="built_in">int</span>[] sortedArray, <span class="built_in">int</span> target, <span class="built_in">int</span> start, <span class="built_in">int</span> end</span>)</span>  </span><br><span class="line">&#123;    </span><br><span class="line">	<span class="keyword">if</span>(start &gt; end)        </span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;    </span><br><span class="line">	<span class="built_in">int</span> mid = (start + end) / <span class="number">2</span>;  </span><br><span class="line">    mid.Dump();    </span><br><span class="line">    <span class="keyword">if</span>(sortedArray[mid] == target)        </span><br><span class="line">	    <span class="keyword">return</span> mid;    </span><br><span class="line">	<span class="keyword">if</span>(sortedArray[mid] &lt; target)  </span><br><span class="line">    &#123;        </span><br><span class="line">	    <span class="comment">//递归子问题f(m + 1, end)</span></span><br><span class="line">	    <span class="keyword">return</span> FindIndex(sortedArray, target, mid + <span class="number">1</span>, end);  </span><br><span class="line">    &#125;    </span><br><span class="line">    <span class="keyword">else</span>    </span><br><span class="line">    &#123;       </span><br><span class="line">	    <span class="comment">//递归子问题f(start, m - 1) </span></span><br><span class="line">	    <span class="keyword">return</span> FindIndex(sortedArray, target, start, mid - <span class="number">1</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>CSharp</category>
+      </categories>
+      <tags>
+        <tag>CSharp</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>
