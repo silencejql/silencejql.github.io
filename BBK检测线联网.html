@@ -36,9 +36,9 @@
 <meta property="og:image" content="https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/ViewConfig.png">
 <meta property="og:image" content="https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvConfigClient.PNG">
 <meta property="og:image" content="https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvBaseClient.PNG">
-<meta property="og:image" content="https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/RemoteIni.PNG">
+<meta property="og:image" content="https://silencejql.github.io/BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/RemoteInit.PNG">
 <meta property="article:published_time" content="2020-05-24T01:50:22.000Z">
-<meta property="article:modified_time" content="2025-03-07T12:36:18.510Z">
+<meta property="article:modified_time" content="2025-07-21T03:39:51.040Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="BBK">
 <meta name="twitter:card" content="summary">
@@ -137,17 +137,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">60</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">29</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">30</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">201</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">202</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-07 20:36:18" itemprop="dateModified" datetime="2025-03-07T20:36:18+08:00">2025-03-07</time>
+                <time title="修改时间：2025-07-21 11:39:51" itemprop="dateModified" datetime="2025-07-21T11:39:51+08:00">2025-07-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,39 +314,37 @@
 <h3 id="PostgreSQL配置">PostgreSQL配置</h3>
 <p>打开PostgreSQL菜单：工具-服务器配置-pg_hba.conf<br>
 新增如图配置后保存<br>
-<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/Postgreconfi.png" alt="1"></p>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/Postgreconfi.png" alt="Config"></p>
 <h3 id="BBK软件配置">BBK软件配置</h3>
 <p>1、确认流程中有初始化联网步骤，一般在Init_InitConst中一般命名为InitNet<br>
-<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/InitNet.png" alt="2"></p>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/InitNet.png" alt="InitNet"></p>
 <p>2、确认流程中有上图中的红框中的设备号、线号的步骤<br>
 若没有可参考带有初始化联网的程序进行添加<br>
 3、打开BBK软件在菜单中配置<em>线号、设备号、服务器IP</em><br>
-<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/BBKConfig.png" alt="3"></p>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/BBKConfig.png" alt="BBKConfig"></p>
 <h2 id="服务器软件配置">服务器软件配置</h2>
 <p>打开服务软件所在文件夹中Set.mdb数据库进行服务器联网配置</p>
 <h3 id="StationConfig">StationConfig</h3>
-<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/StationConfig.png" alt="4"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/StationConfig.png" alt="StationConfig"></p>
 <p>该表中每一行代表一个工位<br>
-<strong>字段说明：</strong></p>
-<blockquote>
-<p>DeviceID：对应工位配置的设备号DeviceID<br>
-Describe：用于服务器显示的设备描述<br>
-LineID：对应工位配置的线号LineID<br>
-IPAdsress：工位IP<br>
-StationNo：用于服务器显示工位顺序<br>
-StationUpload：设置当前工位需要上传的表名 <strong>逗号为英文字符</strong></p>
-</blockquote>
+<strong>字段说明：</strong><br>
+<code>DeviceID</code>：对应工位配置的设备号DeviceID<br>
+<code>Describe</code>：用于服务器显示的设备描述<br>
+<code>LineID</code>：对应工位配置的线号LineID<br>
+<code>IPAdsress</code>：工位IP<br>
+<code>StationNo</code>：用于服务器显示工位顺序<br>
+<code>StationUpload</code>：设置当前工位需要上传的表名 <strong>逗号为英文字符</strong></p>
 <h3 id="车辆查看配置">车辆查看配置</h3>
-<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/ViewConfig.png" alt="5"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/ViewConfig.png" alt="ViewConfig"></p>
 <p>改表为显示测试数据页面的相关配置，根据需求进行相应配置即可</p>
 <h2 id="四轮与标定或侧滑通讯">四轮与标定或侧滑通讯</h2>
 <h3 id="四轮">四轮</h3>
 <p>四轮程序中创建GeneralLib.xDvConfigClient对象<br>
 并在该对象下创建需要共享的对象</p>
-<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvConfigClient.PNG" alt="6"></p>
-<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvBaseClient.PNG" alt="7"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvConfigClient.PNG" alt="DvClient"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvBaseClient.PNG" alt="DvBase"></p>
 <p>调用该对象的Init函数，参数选GeneralLib.xRemoterClientConfig；</p>
-<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/RemoteIni.PNG" alt="8"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/RemoteInit.PNG" alt="Remote"></p>
 <p>初始化后会自动生成创建</p>
 <p>需要传值时直接给变量赋值即可</p>
 <h3 id="标定或侧滑">标定或侧滑</h3>
@@ -455,20 +453,20 @@ StationUpload：设置当前工位需要上传的表名 <strong>逗号为英文�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">201</span>
+          <span class="site-state-item-count">202</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-count">60</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -519,13 +517,13 @@ StationUpload：设置当前工位需要上传的表名 <strong>逗号为英文�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">426k</span>
+    <span title="站点总字数">431k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:28</span>
+    <span title="站点阅读时长">6:32</span>
 </div>
   <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
   <script>
