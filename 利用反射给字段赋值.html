@@ -296,62 +296,46 @@
 
       
         <p>在 C# 中通过反射给字段赋值是一种动态操作对象成员的常用方法，尤其适用于需要绕过编译时类型检查的场景。以下是完整的实现步骤和代码示例：</p>
-<span id="more"></span>
-<hr>
-<h3 id="反射赋值的核心步骤"><strong>反射赋值的核心步骤</strong></h3>
-<ol>
+<h2 id=""><a href="#" class="headerlink" title=""></a><span id="more"></span></h2><h3 id="反射赋值的核心步骤"><a href="#反射赋值的核心步骤" class="headerlink" title="反射赋值的核心步骤"></a><strong>反射赋值的核心步骤</strong></h3><ol>
 <li><strong>获取类型信息</strong>：通过 <code>Type</code> 类获取目标对象的类型元数据。</li>
 <li><strong>获取字段信息</strong>：通过 <code>GetField</code> 或 <code>GetFields</code> 方法获取目标字段。</li>
 <li><strong>设置字段值</strong>：使用 <code>FieldInfo.SetValue</code> 方法为字段赋值。</li>
 <li><strong>处理类型转换</strong>：确保输入值与字段类型兼容（可能需要类型转换）。</li>
 </ol>
 <hr>
-<h3 id="完整代码实现"><strong>完整代码实现</strong></h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> Age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> Country = <span class="string">&quot;China&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReflectionDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 1. 创建对象实例</span></span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 获取类型信息</span></span><br><span class="line">        Type type = <span class="keyword">typeof</span>(Person);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 设置公共字段</span></span><br><span class="line">        FieldInfo nameField = type.GetField(<span class="string">&quot;Name&quot;</span>);</span><br><span class="line">        nameField.SetValue(person, <span class="string">&quot;Alice&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Name: <span class="subst">&#123;person.Name&#125;</span>&quot;</span>); <span class="comment">// 输出: Alice</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 设置私有字段（需要 BindingFlags）</span></span><br><span class="line">        FieldInfo ageField = type.GetField(<span class="string">&quot;Age&quot;</span>, BindingFlags.NonPublic | BindingFlags.Instance);</span><br><span class="line">        ageField.SetValue(person, <span class="number">30</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Age: <span class="subst">&#123;ageField.GetValue(person)&#125;</span>&quot;</span>); <span class="comment">// 输出: 30</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 设置静态字段</span></span><br><span class="line">        FieldInfo countryField = type.GetField(<span class="string">&quot;Country&quot;</span>, BindingFlags.Public | BindingFlags.Static);</span><br><span class="line">        countryField.SetValue(<span class="literal">null</span>, <span class="string">&quot;USA&quot;</span>); <span class="comment">// 静态字段实例参数传 null</span></span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Country: <span class="subst">&#123;Person.Country&#125;</span>&quot;</span>); <span class="comment">// 输出: USA</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 6. 动态类型转换示例</span></span><br><span class="line">        <span class="built_in">string</span> inputValue = <span class="string">&quot;42&quot;</span>;</span><br><span class="line">        FieldInfo dynamicField = type.GetField(<span class="string">&quot;Age&quot;</span>, BindingFlags.NonPublic | BindingFlags.Instance);</span><br><span class="line">        dynamicField.SetValue(person, Convert.ChangeType(inputValue, <span class="keyword">typeof</span>(<span class="built_in">int</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整代码实现"><a href="#完整代码实现" class="headerlink" title="完整代码实现"></a><strong>完整代码实现</strong></h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> Name;</span><br><span class="line">    <span class="keyword">private</span> <span class="built_in">int</span> Age;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">string</span> Country = <span class="string">&quot;China&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ReflectionDemo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 1. 创建对象实例</span></span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 获取类型信息</span></span><br><span class="line">        Type type = <span class="keyword">typeof</span>(Person);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 设置公共字段</span></span><br><span class="line">        FieldInfo nameField = type.GetField(<span class="string">&quot;Name&quot;</span>);</span><br><span class="line">        nameField.SetValue(person, <span class="string">&quot;Alice&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Name: <span class="subst">&#123;person.Name&#125;</span>&quot;</span>); <span class="comment">// 输出: Alice</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 设置私有字段（需要 BindingFlags）</span></span><br><span class="line">        FieldInfo ageField = type.GetField(<span class="string">&quot;Age&quot;</span>, BindingFlags.NonPublic | BindingFlags.Instance);</span><br><span class="line">        ageField.SetValue(person, <span class="number">30</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Age: <span class="subst">&#123;ageField.GetValue(person)&#125;</span>&quot;</span>); <span class="comment">// 输出: 30</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 设置静态字段</span></span><br><span class="line">        FieldInfo countryField = type.GetField(<span class="string">&quot;Country&quot;</span>, BindingFlags.Public | BindingFlags.Static);</span><br><span class="line">        countryField.SetValue(<span class="literal">null</span>, <span class="string">&quot;USA&quot;</span>); <span class="comment">// 静态字段实例参数传 null</span></span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Country: <span class="subst">&#123;Person.Country&#125;</span>&quot;</span>); <span class="comment">// 输出: USA</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 6. 动态类型转换示例</span></span><br><span class="line">        <span class="built_in">string</span> inputValue = <span class="string">&quot;42&quot;</span>;</span><br><span class="line">        FieldInfo dynamicField = type.GetField(<span class="string">&quot;Age&quot;</span>, BindingFlags.NonPublic | BindingFlags.Instance);</span><br><span class="line">        dynamicField.SetValue(person, Convert.ChangeType(inputValue, <span class="keyword">typeof</span>(<span class="built_in">int</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="关键注意事项"><strong>关键注意事项</strong></h3>
-<ol>
-<li>
-<p><strong>字段可见性</strong>：</p>
+<h3 id="关键注意事项"><a href="#关键注意事项" class="headerlink" title="关键注意事项"></a><strong>关键注意事项</strong></h3><ol>
+<li><p><strong>字段可见性</strong>：</p>
 <ul>
-<li>
-<p>公共字段直接使用 <code>GetField(&quot;Name&quot;)</code>。</p>
-</li>
-<li>
-<p>私有字段需要指定 <code>BindingFlags</code>：</p>
+<li>公共字段直接使用 <code>GetField(&quot;Name&quot;)</code>。</li>
+<li><p>私有字段需要指定 <code>BindingFlags</code>：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BindingFlags.NonPublic | BindingFlags.Instance</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>静态字段</strong>：</p>
+<li><p><strong>静态字段</strong>：</p>
 <ul>
-<li>
-<p>设置静态字段时，<code>SetValue</code> 的第一个参数传 <code>null</code>：</p>
+<li><p>设置静态字段时，<code>SetValue</code> 的第一个参数传 <code>null</code>：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">countryField.SetValue(<span class="literal">null</span>, <span class="string">&quot;USA&quot;</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>类型转换</strong>：</p>
+<li><p><strong>类型转换</strong>：</p>
 <ul>
-<li>
-<p>如果字段类型与输入值类型不匹配，需手动转换：</p>
+<li><p>如果字段类型与输入值类型不匹配，需手动转换：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Convert.ChangeType(<span class="keyword">value</span>, targetType);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>性能优化</strong>：</p>
+<li><p><strong>性能优化</strong>：</p>
 <ul>
-<li>
-<p>反射操作较慢，频繁调用时可缓存 <code>FieldInfo</code> 对象：</p>
+<li><p>反射操作较慢，频繁调用时可缓存 <code>FieldInfo</code> 对象：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">readonly</span> FieldInfo _cachedAgeField = <span class="keyword">typeof</span>(Person).GetField(...);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>安全性</strong>：</p>
+<li><p><strong>安全性</strong>：</p>
 <ul>
 <li>修改私有字段可能破坏封装性，需谨慎使用。</li>
 <li>可通过 <code>fieldInfo.IsInitOnly</code> 检查字段是否为只读。</li>
@@ -359,27 +343,20 @@
 </li>
 </ol>
 <hr>
-<h3 id="高级用法：泛型扩展方法"><strong>高级用法：泛型扩展方法</strong></h3>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">ReflectionExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetFieldValue</span>&lt;<span class="title">T</span>&gt;(<span class="params"><span class="keyword">this</span> T obj, <span class="built_in">string</span> fieldName, <span class="built_in">object</span> <span class="keyword">value</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        FieldInfo field = <span class="keyword">typeof</span>(T).GetField(</span><br><span class="line">            fieldName,</span><br><span class="line">            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (field != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            field.SetValue(obj, <span class="keyword">value</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">$&quot;Field <span class="subst">&#123;fieldName&#125;</span> not found&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line">Person person = <span class="keyword">new</span> Person();</span><br><span class="line">person.SetFieldValue(<span class="string">&quot;Age&quot;</span>, <span class="number">25</span>); <span class="comment">// 直接通过扩展方法赋值</span></span><br></pre></td></tr></table></figure>
+<h3 id="高级用法：泛型扩展方法"><a href="#高级用法：泛型扩展方法" class="headerlink" title="高级用法：泛型扩展方法"></a><strong>高级用法：泛型扩展方法</strong></h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">ReflectionExtensions</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">SetFieldValue</span>&lt;<span class="title">T</span>&gt;(<span class="params"><span class="keyword">this</span> T obj, <span class="built_in">string</span> fieldName, <span class="built_in">object</span> <span class="keyword">value</span></span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        FieldInfo field = <span class="keyword">typeof</span>(T).GetField(</span><br><span class="line">            fieldName,</span><br><span class="line">            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (field != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            field.SetValue(obj, <span class="keyword">value</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ArgumentException(<span class="string">$&quot;Field <span class="subst">&#123;fieldName&#125;</span> not found&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用示例</span></span><br><span class="line">Person person = <span class="keyword">new</span> Person();</span><br><span class="line">person.SetFieldValue(<span class="string">&quot;Age&quot;</span>, <span class="number">25</span>); <span class="comment">// 直接通过扩展方法赋值</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="适用场景"><strong>适用场景</strong></h3>
-<ol>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a><strong>适用场景</strong></h3><ol>
 <li>动态配置加载（如将 JSON/XML 数据映射到对象）。</li>
 <li>实现通用序列化/反序列化工具。</li>
 <li>编写测试框架时动态修改对象状态。</li>
 <li>依赖注入容器等底层框架开发。</li>
 </ol>
 <hr>
-<h3 id="替代方案"><strong>替代方案</strong></h3>
-<ul>
-<li>
-<p><strong>表达式树（Expression Trees）</strong>：<br>
-通过编译后的表达式树操作字段，性能接近直接赋值：</p>
+<h3 id="替代方案"><a href="#替代方案" class="headerlink" title="替代方案"></a><strong>替代方案</strong></h3><ul>
+<li><p><strong>表达式树（Expression Trees）</strong>：<br>通过编译后的表达式树操作字段，性能接近直接赋值：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> param = Expression.Parameter(<span class="keyword">typeof</span>(Person));</span><br><span class="line"><span class="keyword">var</span> field = Expression.Field(param, <span class="string">&quot;Name&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> setter = Expression.Lambda&lt;Action&lt;Person, <span class="built_in">string</span>&gt;&gt;(</span><br><span class="line">    Expression.Assign(field, Expression.Convert(paramValue, <span class="keyword">typeof</span>(<span class="built_in">string</span>))),</span><br><span class="line">    param, paramValue</span><br><span class="line">).Compile();</span><br><span class="line"></span><br><span class="line">setter(person, <span class="string">&quot;Bob&quot;</span>);</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>dynamic 关键字</strong>：<br>
-简单场景下快速访问公共字段（但无法访问私有成员）：</p>
+<li><p><strong>dynamic 关键字</strong>：<br>简单场景下快速访问公共字段（但无法访问私有成员）：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dynamic</span> dynPerson = person;</span><br><span class="line">dynPerson.Name = <span class="string">&quot;Charlie&quot;</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -472,7 +449,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E8%B5%8B%E5%80%BC%E7%9A%84%E6%A0%B8%E5%BF%83%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">反射赋值的核心步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">完整代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">3.</span> <span class="nav-text">关键注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%EF%BC%9A%E6%B3%9B%E5%9E%8B%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">高级用法：泛型扩展方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">5.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">6.</span> <span class="nav-text">替代方案</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E8%B5%8B%E5%80%BC%E7%9A%84%E6%A0%B8%E5%BF%83%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.1.</span> <span class="nav-text">反射赋值的核心步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">完整代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-number">1.3.</span> <span class="nav-text">关键注意事项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%EF%BC%9A%E6%B3%9B%E5%9E%8B%E6%89%A9%E5%B1%95%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">高级用法：泛型扩展方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.5.</span> <span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88"><span class="nav-number">1.6.</span> <span class="nav-text">替代方案</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -553,13 +530,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -581,7 +558,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

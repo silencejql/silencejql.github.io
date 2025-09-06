@@ -292,42 +292,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>配置BEP四轮软件和注册表实现BBK与BEP通讯</p>
-<span id="more"></span>
-<h2 id="通讯简介">通讯简介</h2>
-<p>BBK与BEP软件之间可选择串口(232)和TCP两种通讯方式, 现场常用串口通讯<br>
-软件之间交互主要有两个, 1. BBK扫码后将车型信息发送给BEP; 2. BEP将测试结果发送给BBK软件</p>
-<h2 id="注册表配置">注册表配置</h2>
-<h3 id="选择通讯方式">选择通讯方式</h3>
-<h4 id="串口">串口</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/RegSerial.PNG" alt="Reg"></p>
-<p>如上图<code>Use Host</code>用于配置软件间的通讯方式, 1为串口通讯, 2为网络通讯<br>
-当选择串口通讯时需要在软件中配置串口号, BEP软件对串口号的列举有限制,若串口使用扩展设备时串口号大于限值则不会在软件中显示, 这时需要将限值改大后再选择对应串口, 对应更改上图中的<code>Number of Serial Ports on Machine</code>.</p>
-<h4 id="网口">网口</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/RegTcpip.PNG" alt="Tcp"></p>
+        <p>配置BEP四轮软件和注册表实现BBK与BEP通讯<br><span id="more"></span></p>
+<h2 id="通讯简介"><a href="#通讯简介" class="headerlink" title="通讯简介"></a>通讯简介</h2><p>BBK与BEP软件之间可选择串口(232)和TCP两种通讯方式, 现场常用串口通讯<br>软件之间交互主要有两个, 1. BBK扫码后将车型信息发送给BEP; 2. BEP将测试结果发送给BBK软件</p>
+<h2 id="注册表配置"><a href="#注册表配置" class="headerlink" title="注册表配置"></a>注册表配置</h2><h3 id="选择通讯方式"><a href="#选择通讯方式" class="headerlink" title="选择通讯方式"></a>选择通讯方式</h3><h4 id="串口"><a href="#串口" class="headerlink" title="串口"></a>串口</h4><p><img src="BEP软件配置实现与BBK通讯/RegSerial.PNG" alt="Reg"></p>
+<p>如上图<code>Use Host</code>用于配置软件间的通讯方式, 1为串口通讯, 2为网络通讯<br>当选择串口通讯时需要在软件中配置串口号, BEP软件对串口号的列举有限制,若串口使用扩展设备时串口号大于限值则不会在软件中显示, 这时需要将限值改大后再选择对应串口, 对应更改上图中的<code>Number of Serial Ports on Machine</code>.</p>
+<h4 id="网口"><a href="#网口" class="headerlink" title="网口"></a>网口</h4><p><img src="BEP软件配置实现与BBK通讯/RegTcpip.PNG" alt="Tcp"></p>
 <p>若选择网口通讯则需要配置上图所示的IP及端口号</p>
-<h3 id="Host配置">Host配置</h3>
-<p>BEP与BBK软件通讯中有相应的协议规则, 为了更方便的使用需要屏蔽一些规则</p>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/RegHost.PNG" alt="Host"></p>
-<p>其中最主要的是要将<code>Use Host Handshaking</code>握手的配置改为0屏蔽掉, 否则无法直接与BEP软件进行数据交互<br>
-也可将图中所有<code>Use</code>开头值为1的配置改为0</p>
-<h3 id="BEP软件配置">BEP软件配置</h3>
-<h4 id="串口-v2">串口</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/BEPSerial.PNG" alt="Serial"></p>
-<p>配置完注册表后需要配置BEP软件中的串口号<br>
-其中BEP软件通过HOST串口将测试数据发送给BBK<br>
-通过SCANNER串口接收BBK发送的车型信息<br>
-其他不需要的不用管或者在注册表中屏蔽</p>
-<h4 id="网口-v2">网口</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/BEPTcp.PNG" alt="TCP"></p>
+<h3 id="Host配置"><a href="#Host配置" class="headerlink" title="Host配置"></a>Host配置</h3><p>BEP与BBK软件通讯中有相应的协议规则, 为了更方便的使用需要屏蔽一些规则</p>
+<p><img src="BEP软件配置实现与BBK通讯/RegHost.PNG" alt="Host"></p>
+<p>其中最主要的是要将<code>Use Host Handshaking</code>握手的配置改为0屏蔽掉, 否则无法直接与BEP软件进行数据交互<br>也可将图中所有<code>Use</code>开头值为1的配置改为0</p>
+<h3 id="BEP软件配置"><a href="#BEP软件配置" class="headerlink" title="BEP软件配置"></a>BEP软件配置</h3><h4 id="串口-1"><a href="#串口-1" class="headerlink" title="串口"></a>串口</h4><p><img src="BEP软件配置实现与BBK通讯/BEPSerial.PNG" alt="Serial"></p>
+<p>配置完注册表后需要配置BEP软件中的串口号<br>其中BEP软件通过HOST串口将测试数据发送给BBK<br>通过SCANNER串口接收BBK发送的车型信息<br>其他不需要的不用管或者在注册表中屏蔽</p>
+<h4 id="网口-1"><a href="#网口-1" class="headerlink" title="网口"></a>网口</h4><p><img src="BEP软件配置实现与BBK通讯/BEPTcp.PNG" alt="TCP"></p>
 <p>若选择网口通讯则需要在上图中进行配置</p>
-<h4 id="车型数据规则配置">车型数据规则配置</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/BEPVINConfig.PNG" alt="VIN"></p>
+<h4 id="车型数据规则配置"><a href="#车型数据规则配置" class="headerlink" title="车型数据规则配置"></a>车型数据规则配置</h4><p><img src="BEP软件配置实现与BBK通讯/BEPVINConfig.PNG" alt="VIN"></p>
 <p>BEP接收BBK发送车型数据字符串后会解析为VIN和ZTS, 由于ZTS可能存在不同长度所以需要配置不同的解析规则</p>
 <p>具体配置参考上图, VIN为17位, ZTS为2位</p>
 <p>BBK发送的车型数据也有一定规则, 在上图第二个标签也中进行配置, 默认为<code>0x02</code>STX开头, <code>0x03</code>ETX结尾</p>
-<h4 id="测试结果发送配置">测试结果发送配置</h4>
-<p><img src="BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE%E5%AE%9E%E7%8E%B0%E4%B8%8EBBK%E9%80%9A%E8%AE%AF/BEPRsm.PNG" alt="rsm"></p>
+<h4 id="测试结果发送配置"><a href="#测试结果发送配置" class="headerlink" title="测试结果发送配置"></a>测试结果发送配置</h4><p><img src="BEP软件配置实现与BBK通讯/BEPRsm.PNG" alt="rsm"></p>
 <p>BEP通过图中<code>rsm_hoststring.xml</code>中配置的规则生成数据字符串后发送给BBK, BBK接收后通过同样的规则进行解析, 因此需要保证BEP和BBK调用该文件的一致性, 上图为BEP软件读取路径, 该路径在注册表配置HOST时可更改; BBK文件路径在相应Config文件下</p>
 
     </div>
@@ -414,7 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%AE%AF%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">通讯简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">注册表配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">选择通讯方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3"><span class="nav-number">2.1.1.</span> <span class="nav-text">串口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%8F%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">网口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Host%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">Host配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">BEP软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3-v2"><span class="nav-number">2.3.1.</span> <span class="nav-text">串口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%8F%A3-v2"><span class="nav-number">2.3.2.</span> <span class="nav-text">网口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%A6%E5%9E%8B%E6%95%B0%E6%8D%AE%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.3.</span> <span class="nav-text">车型数据规则配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E5%8F%91%E9%80%81%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.4.</span> <span class="nav-text">测试结果发送配置</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%AE%AF%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">通讯简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C%E8%A1%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">注册表配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E9%80%9A%E8%AE%AF%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">选择通讯方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3"><span class="nav-number">2.1.1.</span> <span class="nav-text">串口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%8F%A3"><span class="nav-number">2.1.2.</span> <span class="nav-text">网口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Host%E9%85%8D%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">Host配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BEP%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">BEP软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B2%E5%8F%A3-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">串口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BD%91%E5%8F%A3-1"><span class="nav-number">2.3.2.</span> <span class="nav-text">网口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%A6%E5%9E%8B%E6%95%B0%E6%8D%AE%E8%A7%84%E5%88%99%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.3.</span> <span class="nav-text">车型数据规则配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E5%8F%91%E9%80%81%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.4.</span> <span class="nav-text">测试结果发送配置</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,13 +477,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -523,7 +505,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

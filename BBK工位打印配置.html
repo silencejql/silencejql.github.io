@@ -304,51 +304,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-BBK检测线设备程序打印配置, 本文档只包含加载Excel模板进行打印的方式
-<span id="more"></span>
-<h2 id="添加打印功能">添加打印功能</h2>
-<h3 id="创建对象">创建对象</h3>
-<p>编辑打开Always文件, 在对象列表中创建Print对象,如下图:</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/NewPrintExcel.PNG" alt="New"></p>
-<h3 id="初始化">初始化</h3>
-<p>在程序初始化中增加Print的初始化, 如下图:</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/Init.PNG" alt="Init"></p>
+        <p><center></center><br>BBK检测线设备程序打印配置, 本文档只包含加载Excel模板进行打印的方式<br><span id="more"></span></p>
+<h2 id="添加打印功能"><a href="#添加打印功能" class="headerlink" title="添加打印功能"></a>添加打印功能</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>编辑打开Always文件, 在对象列表中创建Print对象,如下图:</p>
+<p><img src="BBK工位打印配置/NewPrintExcel.PNG" alt="New"></p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>在程序初始化中增加Print的初始化, 如下图:</p>
+<p><img src="BBK工位打印配置/Init.PNG" alt="Init"></p>
 <p>本文档选择PrintDbTable类, 意为从读取单个表中数据打印.</p>
-<h3 id="新增菜单配置选项">新增菜单配置选项</h3>
-<p>进入菜单编辑中新增打印配置选项, 如下图:</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/MenuShow.PNG" alt="New"></p>
+<h3 id="新增菜单配置选项"><a href="#新增菜单配置选项" class="headerlink" title="新增菜单配置选项"></a>新增菜单配置选项</h3><p>进入菜单编辑中新增打印配置选项, 如下图:</p>
+<p><img src="BBK工位打印配置/MenuShow.PNG" alt="New"></p>
 <p>添加完成后保存退出编辑界面</p>
-<h2 id="配置">配置</h2>
-<h3 id="模板配置">模板配置</h3>
-<p>软件打开后会在Config文件夹中生成ExcelReport和PrintConfig文件夹<br>
-可将已有模板和配置复制到相应文件夹中,或者新建excel后在软件中进行配置</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="模板配置"><a href="#模板配置" class="headerlink" title="模板配置"></a>模板配置</h3><p>软件打开后会在Config文件夹中生成ExcelReport和PrintConfig文件夹<br>可将已有模板和配置复制到相应文件夹中,或者新建excel后在软件中进行配置</p>
 <p>双击打开Always程序, 在菜单中打开创建的打印配置选项</p>
 <p>点击模板参数如下:</p>
-<h4 id="配置链接字符串">配置链接字符串</h4>
-<p>DbConnectString对应需要访问数据库的链接字符串</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/ConfigSql.PNG" alt="New"></p>
-<h4 id="配置表名">配置表名</h4>
-<p>设置读取表名</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/ConfigTable.PNG" alt="New"></p>
-<h3 id="模板编辑">模板编辑</h3>
-<p>点击模板编辑进行字段绑定及格式配置</p>
+<h4 id="配置链接字符串"><a href="#配置链接字符串" class="headerlink" title="配置链接字符串"></a>配置链接字符串</h4><p>DbConnectString对应需要访问数据库的链接字符串</p>
+<p><img src="BBK工位打印配置/ConfigSql.PNG" alt="New"></p>
+<h4 id="配置表名"><a href="#配置表名" class="headerlink" title="配置表名"></a>配置表名</h4><p>设置读取表名</p>
+<p><img src="BBK工位打印配置/ConfigTable.PNG" alt="New"></p>
+<h3 id="模板编辑"><a href="#模板编辑" class="headerlink" title="模板编辑"></a>模板编辑</h3><p>点击模板编辑进行字段绑定及格式配置</p>
 <p>如下图: 在右侧模板中点击需要配置的单元格,勾选左侧启用后可以进行相应字段操作</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/TempConfig1.PNG" alt="New"><br>
-<img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/TempConfig2.PNG" alt="New"></p>
-<h2 id="查询">查询</h2>
-<p>编辑完模板后可点击查询按钮进行数据查询, 若出现下图报错,说明数据表中没有已打印字段,需要在数据库中进行添加</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/FieldError.PNG" alt="New"></p>
-<p>数据库中添加字段可参考:</p>
-<a href="/BBK-PostgreSQL%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5.html" title="BBK-PostgreSQL添加字段">BBK-PostgreSQL添加字段</a>
-<p>添加完字段后便可进行查询打印<br>
-<img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/Select.PNG" alt="New"></p>
-<h2 id="打印">打印</h2>
-<h3 id="手动打印">手动打印</h3>
-<p>在打印配置中查询并打印</p>
-<h3 id="测试结束自动打印">测试结束自动打印</h3>
-<p>在always中调用Print函数,参数为模板名</p>
-<p><img src="BBK%E5%B7%A5%E4%BD%8D%E6%89%93%E5%8D%B0%E9%85%8D%E7%BD%AE/Print.PNG" alt="New"></p>
+<p><img src="BBK工位打印配置/TempConfig1.PNG" alt="New"><br><img src="BBK工位打印配置/TempConfig2.PNG" alt="New"></p>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><p>编辑完模板后可点击查询按钮进行数据查询, 若出现下图报错,说明数据表中没有已打印字段,需要在数据库中进行添加</p>
+<p><img src="BBK工位打印配置/FieldError.PNG" alt="New"></p>
+<p>数据库中添加字段可参考:<br><a href="/BBK-PostgreSQL%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5.html" title="BBK-PostgreSQL添加字段">BBK-PostgreSQL添加字段</a></p>
+<p>添加完字段后便可进行查询打印<br><img src="BBK工位打印配置/Select.PNG" alt="New"></p>
+<h2 id="打印"><a href="#打印" class="headerlink" title="打印"></a>打印</h2><h3 id="手动打印"><a href="#手动打印" class="headerlink" title="手动打印"></a>手动打印</h3><p>在打印配置中查询并打印</p>
+<h3 id="测试结束自动打印"><a href="#测试结束自动打印" class="headerlink" title="测试结束自动打印"></a>测试结束自动打印</h3><p>在always中调用Print函数,参数为模板名</p>
+<p><img src="BBK工位打印配置/Print.PNG" alt="New"></p>
 <p>注意: 改函数调用后默认会打印数据库中最早的一条未打印数据, 若要打印最新数据需将之前的已打印字段设置成Y, 或者要下最新的dll更新</p>
 <p>若不想自动打,只在需要时手动查询进行打印可在PrintConfig文件夹相应模板中将AutoPrint改为false,改为false后即使调用Print函数也不会打印</p>
 
@@ -517,13 +498,13 @@ BBK检测线设备程序打印配置, 本文档只包含加载Excel模板进行�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -545,7 +526,7 @@ BBK检测线设备程序打印配置, 本文档只包含加载Excel模板进行�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

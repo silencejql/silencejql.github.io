@@ -292,9 +292,9 @@
 
       
         <center></center>
+
 <span id="more"></span>
-<h2 id="Bash">Bash</h2>
-<h3 id="Bash-常用命令">Bash 常用命令</h3>
+<h2 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h2><h3 id="Bash-常用命令"><a href="#Bash-常用命令" class="headerlink" title="Bash 常用命令"></a>Bash 常用命令</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -345,10 +345,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="git">git</h2>
-<h3 id="设置用户名与邮箱">设置用户名与邮箱</h3>
-<p><code>git config --global user.name &quot;Your Name&quot;</code></p>
+</div>
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><h3 id="设置用户名与邮箱"><a href="#设置用户名与邮箱" class="headerlink" title="设置用户名与邮箱"></a>设置用户名与邮箱</h3><p><code>git config --global user.name &quot;Your Name&quot;</code></p>
 <p><code>git config --global user.email &quot;email@example.com&quot;</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -358,127 +358,12 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">git init</td>
-<td style="text-align:center">在指定路径下执行，创建本地仓库</td>
-</tr>
-<tr>
-<td style="text-align:left">git config -l</td>
-<td style="text-align:center">查看git环境详细配置</td>
-</tr>
-<tr>
-<td style="text-align:left">git config --system --list</td>
-<td style="text-align:center">查看系统config</td>
-</tr>
-<tr>
-<td style="text-align:left">git config --global  --list</td>
-<td style="text-align:center">查看当前用户（global）配置</td>
-</tr>
-<tr>
-<td style="text-align:left">git config --local  --list</td>
-<td style="text-align:center">查看当前仓库配置信息</td>
-</tr>
-<tr>
-<td style="text-align:left">git add</td>
-<td style="text-align:center">提交文件到暂存区，多个文件空格分开</td>
-</tr>
-<tr>
-<td style="text-align:left">git commit</td>
-<td style="text-align:center">提交到仓库分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git commit -m “说明”</td>
-<td style="text-align:center">添加本次提交的说明便于查看更改记录</td>
-</tr>
-<tr>
-<td style="text-align:left">git log</td>
-<td style="text-align:center">历史版本信息 Git中版本用HEAD做标识，当前版本为HEAD，上一个版本是HEAD^</td>
-</tr>
-<tr>
-<td style="text-align:left">git reset --hard HEAD^</td>
-<td style="text-align:center">退回到上个版本</td>
-</tr>
-<tr>
-<td style="text-align:left">git reset --hard commit_id</td>
-<td style="text-align:center">HEAD 可用commit id前几位</td>
-</tr>
-<tr>
-<td style="text-align:left">git reflog</td>
-<td style="text-align:center">查看之前所有版本信息</td>
-</tr>
-<tr>
-<td style="text-align:left">git status</td>
-<td style="text-align:center">查看状态</td>
-</tr>
-<tr>
-<td style="text-align:left">git diff HEAD – file</td>
-<td style="text-align:center">查看工作区与版本库中的区别</td>
-</tr>
-<tr>
-<td style="text-align:left">git checkout – file</td>
-<td style="text-align:center">将工作区恢复到暂存区或版本库中的内容</td>
-</tr>
-<tr>
-<td style="text-align:left">git reset HEAD file</td>
-<td style="text-align:center">将暂存区恢复到版本库的内容</td>
-</tr>
-<tr>
-<td style="text-align:left">git rm file</td>
-<td style="text-align:center">删除文件</td>
-</tr>
-<tr>
-<td style="text-align:left">git remote add origin <a href="mailto:git@github.com">git@github.com</a>:yourgithubname/Repositoryname.git</td>
-<td style="text-align:center">关联远程库</td>
-</tr>
-<tr>
-<td style="text-align:left">git push -u origin master</td>
-<td style="text-align:center">将本地仓库推送到远程仓库master分支并关联本地master分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git push origin master</td>
-<td style="text-align:center">推送到远程master分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git clone <a href="mailto:git@github.com">git@github.com</a>:githubname/Repositoryname.git</td>
-<td style="text-align:center">clone到本地</td>
-</tr>
-<tr>
-<td style="text-align:left">git branch bra</td>
-<td style="text-align:center">创建bra分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git checkout bra</td>
-<td style="text-align:center">切换到bra分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git checkout -b bra</td>
-<td style="text-align:center">等效于上面两条指令</td>
-</tr>
-<tr>
-<td style="text-align:left">git branch</td>
-<td style="text-align:center">查看分支，当前分支用*标识，切换分支后提交到当前分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git checkout master</td>
-<td style="text-align:center">切换到master分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git merge</td>
-<td style="text-align:center">合并指定分支到当前分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git branch -d bra</td>
-<td style="text-align:center">删除bra分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git switch -c bra</td>
-<td style="text-align:center">创建并切换分支</td>
-</tr>
-<tr>
-<td style="text-align:left">git switch master</td>
-<td style="text-align:center">切换到master分支</td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
+</div>
+<p>git init| 在指定路径下执行，创建本地仓库<br>git config -l |查看git环境详细配置<br>git config —system —list  |  查看系统config<br>git config —global  —list  |  查看当前用户（global）配置<br>git config —local  —list  |  查看当前仓库配置信息<br>git add |提交文件到暂存区，多个文件空格分开<br>git commit| 提交到仓库分支<br>git commit -m “说明”| 添加本次提交的说明便于查看更改记录<br>git log |历史版本信息 Git中版本用HEAD做标识，当前版本为HEAD，上一个版本是HEAD^<br>git reset —hard HEAD^ | 退回到上个版本<br>git reset —hard commit_id|  HEAD 可用commit id前几位<br>git reflog| 查看之前所有版本信息<br>git status |查看状态<br>git diff HEAD — file |查看工作区与版本库中的区别<br>git checkout — file  |将工作区恢复到暂存区或版本库中的内容<br>git reset HEAD file | 将暂存区恢复到版本库的内容<br>git rm file | 删除文件<br>git remote add origin git@github.com:yourgithubname/Repositoryname.git |关联远程库<br>git push -u origin master |将本地仓库推送到远程仓库master分支并关联本地master分支<br>git push origin master  |推送到远程master分支<br>git clone git@github.com:githubname/Repositoryname.git |clone到本地<br>git branch bra | 创建bra分支<br>git checkout bra | 切换到bra分支<br>git checkout -b bra|等效于上面两条指令<br>git branch | 查看分支，当前分支用*标识，切换分支后提交到当前分支<br>git checkout master |切换到master分支<br>git merge  |合并指定分支到当前分支<br>git branch -d bra | 删除bra分支<br>git switch -c bra | 创建并切换分支<br>git switch master | 切换到master分支</p>
 
     </div>
 
@@ -645,13 +530,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -673,7 +558,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

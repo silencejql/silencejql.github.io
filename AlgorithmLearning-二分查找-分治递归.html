@@ -298,8 +298,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>基于分治的二分查找</p>
-<span id="more"></span>
+        <p>基于分治的二分查找<br><span id="more"></span></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] sortedArray2 = <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">23</span>, <span class="number">24</span>, <span class="number">25</span>, <span class="number">46</span>, <span class="number">57</span>, <span class="number">68</span>, <span class="number">79</span> &#125;;  </span><br><span class="line">FindIndex(sortedArray2, <span class="number">25</span>, <span class="number">0</span>, <span class="number">9</span>);  </span><br><span class="line"><span class="comment">//查找target = 6的index  </span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">FindIndex</span>(<span class="params"><span class="built_in">int</span>[] sortedArray, <span class="built_in">int</span> target, <span class="built_in">int</span> start, <span class="built_in">int</span> end</span>)</span>  </span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">if</span>(start &gt; end)</span><br><span class="line">  <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line"> <span class="built_in">int</span> mid = (start + end) / <span class="number">2</span>;  </span><br><span class="line">    mid.Dump();</span><br><span class="line">    <span class="keyword">if</span>(sortedArray[mid] == target)</span><br><span class="line">     <span class="keyword">return</span> mid;    </span><br><span class="line"> <span class="keyword">if</span>(sortedArray[mid] &lt; target)  </span><br><span class="line">    &#123;        </span><br><span class="line">     <span class="comment">//递归子问题f(m + 1, end)</span></span><br><span class="line">     <span class="keyword">return</span> FindIndex(sortedArray, target, mid + <span class="number">1</span>, end);  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">     <span class="comment">//递归子问题f(start, m - 1) </span></span><br><span class="line">     <span class="keyword">return</span> FindIndex(sortedArray, target, start, mid - <span class="number">1</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -467,13 +466,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -495,7 +494,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

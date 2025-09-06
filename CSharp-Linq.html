@@ -274,7 +274,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>736</span>
+              <span>737</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -293,10 +293,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Linqpad8 linq</p>
-<span id="more"></span>
-<h2 id=""></h2>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">numbers.Add (<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">IEnumerable&lt;<span class="built_in">int</span>&gt; query = numbers.Select (n =&gt; n * <span class="number">10</span>);    <span class="comment">// Build query</span></span><br><span class="line"></span><br><span class="line">numbers.Add (<span class="number">2</span>);                    <span class="comment">// Sneak in an extra element</span></span><br><span class="line"></span><br><span class="line">query.Dump (<span class="string">&quot;Notice both elements are returned in the result set&quot;</span>);</span><br><span class="line"></span><br><span class="line">numbers.Add (<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">query.Dump();<span class="comment">//10,20,30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;() &#123; <span class="number">1</span>, <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line">List&lt;<span class="built_in">int</span>&gt; timesTen = numbers</span><br><span class="line"> .Select (n =&gt; n * <span class="number">10</span>) </span><br><span class="line"> .ToList();                      <span class="comment">// Executes immediately into a List&lt;int&gt;</span></span><br><span class="line"></span><br><span class="line">numbers.Clear();</span><br><span class="line">timesTen.Count.Dump (<span class="string">&quot;Still two elements present&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.</span></span><br><span class="line"><span class="built_in">int</span>[] numbers = &#123; <span class="number">1</span>, <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> factor = <span class="number">10</span>;</span><br><span class="line">IEnumerable&lt;<span class="built_in">int</span>&gt; query = numbers.Select (n =&gt; n * factor);</span><br><span class="line"></span><br><span class="line">factor = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">query.Dump (<span class="string">&quot;Notice both numbers are multiplied by 20, not 10&quot;</span>);</span><br></pre></td></tr></table></figure>
+        <p>Linqpad8 linq<br><span id="more"></span></p>
+<h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.</span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">numbers.Add (<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">IEnumerable&lt;<span class="built_in">int</span>&gt; query = numbers.Select (n =&gt; n * <span class="number">10</span>);    <span class="comment">// Build query</span></span><br><span class="line"></span><br><span class="line">numbers.Add (<span class="number">2</span>);                    <span class="comment">// Sneak in an extra element</span></span><br><span class="line"></span><br><span class="line">query.Dump (<span class="string">&quot;Notice both elements are returned in the result set&quot;</span>);</span><br><span class="line"></span><br><span class="line">numbers.Add (<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">query.Dump();<span class="comment">//10,20,30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//2. </span></span><br><span class="line"><span class="keyword">var</span> numbers = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;() &#123; <span class="number">1</span>, <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line">List&lt;<span class="built_in">int</span>&gt; timesTen = numbers</span><br><span class="line"> .Select (n =&gt; n * <span class="number">10</span>) </span><br><span class="line"> .ToList();                      <span class="comment">// Executes immediately into a List&lt;int&gt;</span></span><br><span class="line"></span><br><span class="line">numbers.Clear();</span><br><span class="line">timesTen.Count.Dump (<span class="string">&quot;Still two elements present&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.</span></span><br><span class="line"><span class="built_in">int</span>[] numbers = &#123; <span class="number">1</span>, <span class="number">2</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> factor = <span class="number">10</span>;</span><br><span class="line">IEnumerable&lt;<span class="built_in">int</span>&gt; query = numbers.Select (n =&gt; n * factor);</span><br><span class="line"></span><br><span class="line">factor = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">query.Dump (<span class="string">&quot;Notice both numbers are multiplied by 20, not 10&quot;</span>);</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -382,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">#</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -463,13 +461,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -491,7 +489,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

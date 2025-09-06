@@ -294,54 +294,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="测试软件导出、Postgresql导入">测试软件导出、Postgresql导入</h2>
-<h3 id="测试软件导出">测试软件导出</h3>
-<blockquote>
+        <h2 id="测试软件导出、Postgresql导入"><a href="#测试软件导出、Postgresql导入" class="headerlink" title="测试软件导出、Postgresql导入"></a>测试软件导出、Postgresql导入</h2><h3 id="测试软件导出"><a href="#测试软件导出" class="headerlink" title="测试软件导出"></a>测试软件导出</h3><blockquote>
 <p>连接数据库设置完筛选条件后点击导出到Excel重命名为：表名.csv</p>
 </blockquote>
-<h3 id="测试软件导入">测试软件导入</h3>
+<h3 id="测试软件导入"><a href="#测试软件导入" class="headerlink" title="测试软件导入"></a>测试软件导入</h3><blockquote>
+<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br>2、删除原数据库已有行后保存<br>3、打开Postgres找到相应表右键导入<br>4、文件名选择csv文件路径、格式选csv、字符编码可选<br>5、点击导入即可</p>
 <blockquote>
-<p>1、打开导出表添加新的数据后，删除第一行表头以及第一列序号<br>
-2、删除原数据库已有行后保存<br>
-3、打开Postgres找到相应表右键导入<br>
-4、文件名选择csv文件路径、格式选csv、字符编码可选<br>
-5、点击导入即可</p>
-<blockquote>
-<p>如果主键为自增序列执行6、7<br>
-6、将相应表的序列创建脚本后删除<br>
-7、更改脚本中的START大于新增数据的主键ID后执行脚本</p>
+<p>如果主键为自增序列执行6、7<br>6、将相应表的序列创建脚本后删除<br>7、更改脚本中的START大于新增数据的主键ID后执行脚本</p>
 </blockquote>
 </blockquote>
-<h2 id="SQL-shell-psql-导入">SQL shell(psql)导入</h2>
-<blockquote>
-<p>1、将excel处理好后，另存为csv（Comma Delimited）<br>
-2、运行SQL shell(psql) 并登录<br>
-3、运行’COPY mytable FROM ‘/myfile.csv’  WITH CSV  HEADER</p>
+<h2 id="SQL-shell-psql-导入"><a href="#SQL-shell-psql-导入" class="headerlink" title="SQL shell(psql)导入"></a>SQL shell(psql)导入</h2><blockquote>
+<p>1、将excel处理好后，另存为csv（Comma Delimited）<br>2、运行SQL shell(psql) 并登录<br>3、运行’COPY mytable FROM ‘/myfile.csv’  WITH CSV  HEADER</p>
 </blockquote>
-<h2 id="SQL-shell-psql-导出">SQL shell(psql)导出</h2>
-<blockquote>
+<h2 id="SQL-shell-psql-导出"><a href="#SQL-shell-psql-导出" class="headerlink" title="SQL shell(psql)导出"></a>SQL shell(psql)导出</h2><blockquote>
 <p>COPY (select * from mytable) to ‘/myfile.csv’ with csv header;</p>
 </blockquote>
-<h2 id="数据库备份脚本">数据库备份脚本</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo off</span><br><span class="line">set PRJDB=LocalDB</span><br><span class="line">set FileName=%PRJDB%_%date:~0,4%_%date:~5,2%_%date:~8,2%.backup</span><br><span class="line">if not exist &quot;D:\BBK\DBbackup&quot; (md D:\BBK\DBbackup)</span><br><span class="line">D:/“Program Files (x86)“/PostgreSQL/9.5/bin\pg_dump.exe --host localhost --port 5432 --username &quot;postgres&quot; --no-password  --format custom --verbose --file &quot;D:\BBK\DBbackup\%FileName%&quot; &quot;LocalDB&quot;</span><br></pre></td></tr></table></figure>
-<h2 id="删除表中数据">删除表中数据</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 删除7天以前的数据</span><br><span class="line">D:/“Program Files (x86)“/PostgreSQL/9.5/bin/psql -h 127.0.0.1 -p 5432 -d LocalDB -U postgres --command &quot;delete from 侧滑表 where 测试时间 &lt; (now() - interval &#x27;7 day&#x27;)&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="时间扩展">时间扩展</h3>
-<h4 id="年">年</h4>
-<p>interval ‘2 years’<br>
-interval ‘2 year’<br>
-interval ‘2 y’<br>
-interval ‘2 Y’<br>
-interval ‘2Y’</p>
-<h4 id="月">月</h4>
-<p>interval ‘1 month’<br>
-interval ‘one month’</p>
-<h4 id="周">周</h4>
-<p>interval ‘3 week’</p>
+<h2 id="数据库备份脚本"><a href="#数据库备份脚本" class="headerlink" title="数据库备份脚本"></a>数据库备份脚本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo off</span><br><span class="line">set PRJDB=LocalDB</span><br><span class="line">set FileName=%PRJDB%_%date:~0,4%_%date:~5,2%_%date:~8,2%.backup</span><br><span class="line">if not exist &quot;D:\BBK\DBbackup&quot; (md D:\BBK\DBbackup)</span><br><span class="line">D:/“Program Files (x86)“/PostgreSQL/9.5/bin\pg_dump.exe --host localhost --port 5432 --username &quot;postgres&quot; --no-password  --format custom --verbose --file &quot;D:\BBK\DBbackup\%FileName%&quot; &quot;LocalDB&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 删除7天以前的数据</span><br><span class="line">D:/“Program Files (x86)“/PostgreSQL/9.5/bin/psql -h 127.0.0.1 -p 5432 -d LocalDB -U postgres --command &quot;delete from 侧滑表 where 测试时间 &lt; (now() - interval &#x27;7 day&#x27;)&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="时间扩展"><a href="#时间扩展" class="headerlink" title="时间扩展"></a>时间扩展</h3><h4 id="年"><a href="#年" class="headerlink" title="年"></a>年</h4><p>interval ‘2 years’<br>interval ‘2 year’<br>interval ‘2 y’<br>interval ‘2 Y’<br>interval ‘2Y’</p>
+<h4 id="月"><a href="#月" class="headerlink" title="月"></a>月</h4><p>interval ‘1 month’<br>interval ‘one month’</p>
+<h4 id="周"><a href="#周" class="headerlink" title="周"></a>周</h4><p>interval ‘3 week’</p>
 <p>说明：interval 可以不写</p>
-<p>运行时会提示数据用户名密码<br>
-windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务器信息，实现免密操作。<br>
-参考：<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/current/libpq-pgpass.html">https://www.postgresql.org/docs/current/libpq-pgpass.html</a></p>
+<p>运行时会提示数据用户名密码<br>windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务器信息，实现免密操作。<br>参考：<a target="_blank" rel="noopener" href="https://www.postgresql.org/docs/current/libpq-pgpass.html">https://www.postgresql.org/docs/current/libpq-pgpass.html</a></p>
 
     </div>
 
@@ -508,13 +482,13 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -536,7 +510,7 @@ windows系统可在<code>%APPDATA%\postgresql\pgpass.conf</code>中添加服务�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="说明 动态EV或ETP工位简单说明">
+  <meta name="description" content="说明动态EV或ETP工位简单说明">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态EV(ETP)测试">
 <meta property="og:url" content="https://silencejql.github.io/%E5%8A%A8%E6%80%81EV-ETP-%E6%B5%8B%E8%AF%95.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="说明 动态EV或ETP工位简单说明">
+<meta property="og:description" content="说明动态EV或ETP工位简单说明">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-05T07:31:43.000Z">
 <meta property="article:modified_time" content="2025-03-07T12:37:18.944Z">
@@ -293,25 +293,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center>说明</center>
-动态EV或ETP工位简单说明
-<span id="more"></span>
-<p>新版本ETP测试工况分四部分：加速、匀速、滑行、制动<br>
-测试内容除了基本电流电压等BMS数据读取还包括各阶段的效率及能量消耗率的计算等</p>
-<h2 id="程序配置">程序配置</h2>
-<p>最新程序增加是否为同轴滚筒的配置：在EvDynamicTestCurve.xml中isCoaxial配置为true表示为同轴滚筒<br>
-非同轴滚筒计算时F为左右滚筒的合力</p>
-<h2 id="计算方法">计算方法</h2>
-<p>加速、匀速过程中电能转化为动能，效率计算公式为 <strong>Fvt/UIt</strong><br>
-滑行、制动过程中动能转化为电能，效率计算公式为 <strong>UIt/Fvt</strong><br>
-其中F、v、U、I均为各阶段的平均值</p>
-<h3 id="能量消耗率">能量消耗率</h3>
-<p>C = E/D 单位为(kW<em>h)/100km<br>
-程序中的计算公式为：整个过程中的平均100</em>UIt/d</p>
-<h2 id="说明">说明</h2>
-<p>由于I为负数时表示放电加速所以计算时简单处理为<br>
-I为负：效率 = Fvt/UIt<br>
-I为正：效率 = UIt/Fvt</p>
+        <p><center>说明</center><br>动态EV或ETP工位简单说明<br><span id="more"></span></p>
+<p>新版本ETP测试工况分四部分：加速、匀速、滑行、制动<br>测试内容除了基本电流电压等BMS数据读取还包括各阶段的效率及能量消耗率的计算等</p>
+<h2 id="程序配置"><a href="#程序配置" class="headerlink" title="程序配置"></a>程序配置</h2><p>最新程序增加是否为同轴滚筒的配置：在EvDynamicTestCurve.xml中isCoaxial配置为true表示为同轴滚筒<br>非同轴滚筒计算时F为左右滚筒的合力</p>
+<h2 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h2><p>加速、匀速过程中电能转化为动能，效率计算公式为 <strong>Fvt/UIt</strong><br>滑行、制动过程中动能转化为电能，效率计算公式为 <strong>UIt/Fvt</strong><br>其中F、v、U、I均为各阶段的平均值</p>
+<h3 id="能量消耗率"><a href="#能量消耗率" class="headerlink" title="能量消耗率"></a>能量消耗率</h3><p>C = E/D 单位为(kW<em>h)/100km<br>程序中的计算公式为：整个过程中的平均100</em>UIt/d</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>由于I为负数时表示放电加速所以计算时简单处理为<br>I为负：效率 = Fvt/UIt<br>I为正：效率 = UIt/Fvt</p>
 
     </div>
 
@@ -478,13 +465,13 @@ I为正：效率 = UIt/Fvt</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -506,7 +493,7 @@ I为正：效率 = UIt/Fvt</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

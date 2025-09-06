@@ -293,72 +293,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>记录写bug过程中遇到的一些疑问</p>
-<span id="more"></span>
-<h2 id="面向对象">面向对象</h2>
-<p>protected:只有同一类或派生类中的代码可以访问该类型或成员</p>
+        <p>记录写bug过程中遇到的一些疑问<br><span id="more"></span></p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>protected:只有同一类或派生类中的代码可以访问该类型或成员</p>
 <p>internal:同一程序集中的任何代码都可以访问该类型或成员，但其他程序集中的代码不可以。</p>
 <p>protected internal:同一程序集中的任何代码或其他程序集中的任何派生类都可以访问该类型或成员。</p>
-<p>private protected:同一类或基类程序集内派生类中的代码可以访问该类型或成<br>
-员。</p>
+<p>private protected:同一类或基类程序集内派生类中的代码可以访问该类型或成<br>员。</p>
 <p>abstract:要求在派生类中重写类成员。</p>
-<h2 id="数据类型">数据类型</h2>
-<p>值类型存储在堆栈上，引用类型在栈中存储一个引用，其实际的存储位置位于托管堆。<br>
-C#类为引用类型，结构为值类型。<br>
-从值类型转化为引用类型称为装箱，如果方法需要把一个对象作为参数，而且传送一个值类型，装箱操作会自动进行；装箱的值类型可以使用拆箱操作转换为值类型，在拆箱时，<strong>需要使用类型转换运算符</strong>。</p>
-<h3 id="值类型">值类型</h3>
-<p>结构体 数值类型(整数，浮点数，高精度浮点数) 可空类型 布尔 字符 枚举</p>
-<h3 id="引用类型">引用类型</h3>
-<p>数组，用户定义的类、接口、委托，object，字符串</p>
-<h2 id="装箱和拆箱">装箱和拆箱</h2>
-<p>装箱是一种通过将变量存储到System.Object中来显式地将值类型转换为引用类型的机制。当您装入值时，CLR会将新对象分配到堆中，并将值类型的值复制到该实例中。例如：</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>值类型存储在堆栈上，引用类型在栈中存储一个引用，其实际的存储位置位于托管堆。<br>C#类为引用类型，结构为值类型。<br>从值类型转化为引用类型称为装箱，如果方法需要把一个对象作为参数，而且传送一个值类型，装箱操作会自动进行；装箱的值类型可以使用拆箱操作转换为值类型，在拆箱时，<strong>需要使用类型转换运算符</strong>。</p>
+<h3 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h3><p>结构体 数值类型(整数，浮点数，高精度浮点数) 可空类型 布尔 字符 枚举</p>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>数组，用户定义的类、接口、委托，object，字符串</p>
+<h2 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h2><p>装箱是一种通过将变量存储到System.Object中来显式地将值类型转换为引用类型的机制。当您装入值时，CLR会将新对象分配到堆中，并将值类型的值复制到该实例中。例如：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> a = <span class="number">20</span>;  </span><br><span class="line"><span class="built_in">object</span> b = a; <span class="comment">//装箱</span></span><br></pre></td></tr></table></figure>
-<p>相反的操作是拆箱，它是将引用类型转换回值类型的过程。此过程验证接收数据类型是否与装箱类型一致;<br>
-<code>int c = (int)b; // 拆箱</code></p>
-<h2 id="泛型">泛型</h2>
-<blockquote>
+<p>相反的操作是拆箱，它是将引用类型转换回值类型的过程。此过程验证接收数据类型是否与装箱类型一致;<br><code>int c = (int)b; // 拆箱</code></p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><blockquote>
 <p>特征：</p>
 <blockquote>
-<p>类型安全<br>
-性能<br>
-二进制代码复用</p>
+<p>类型安全<br>性能<br>二进制代码复用</p>
 </blockquote>
 </blockquote>
 <p>详见： <a href="/%E6%B3%9B%E5%9E%8B%E7%9A%84%E7%89%B9%E7%82%B9.html" title="泛型的特点">泛型的特点</a></p>
-<h3 id="为什么不用object代替泛型">为什么不用object代替泛型</h3>
-<p>由于Object为所有类型的基类，所以可以处理任何数据类型的数据，但是其中存在这拆箱和装箱，如果数据太多会影响到程序的性能。<br>
-在使用泛型的时候程序会在编译阶段根据我们提供的类型生成相应的二进制代码，无须进行装箱和拆箱操作。</p>
-<h2 id="接口">接口</h2>
-<h3 id="为什么要用接口">为什么要用接口</h3>
-<p>接口一般由上层人员发起，下层人员实现。<br>
-写接口并不是为了扩展，而是为了扩展以后的模块仍然跟项目模块保持高度一致，为了扩展后的规范化。</p>
+<h3 id="为什么不用object代替泛型"><a href="#为什么不用object代替泛型" class="headerlink" title="为什么不用object代替泛型"></a>为什么不用object代替泛型</h3><p>由于Object为所有类型的基类，所以可以处理任何数据类型的数据，但是其中存在这拆箱和装箱，如果数据太多会影响到程序的性能。<br>在使用泛型的时候程序会在编译阶段根据我们提供的类型生成相应的二进制代码，无须进行装箱和拆箱操作。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="为什么要用接口"><a href="#为什么要用接口" class="headerlink" title="为什么要用接口"></a>为什么要用接口</h3><p>接口一般由上层人员发起，下层人员实现。<br>写接口并不是为了扩展，而是为了扩展以后的模块仍然跟项目模块保持高度一致，为了扩展后的规范化。</p>
 <p>反射</p>
-<h3 id="实例化接口对象">实例化接口对象</h3>
-<h4 id="接口回调">接口回调</h4>
-<p>接口不仅可以声明对象，而且可以把对象实例化，还可以当做参数被传入。<br>
-即继承中的向上转型，父类 FL=new 子类()，只不过这里的父类就是interface接口。</p>
+<h3 id="实例化接口对象"><a href="#实例化接口对象" class="headerlink" title="实例化接口对象"></a>实例化接口对象</h3><h4 id="接口回调"><a href="#接口回调" class="headerlink" title="接口回调"></a>接口回调</h4><p>接口不仅可以声明对象，而且可以把对象实例化，还可以当做参数被传入。<br>即继承中的向上转型，父类 FL=new 子类()，只不过这里的父类就是interface接口。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="built_in">double</span> <span class="title">plus</span>()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">num</span> : <span class="title">Itemp</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">double</span> aa, bb;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">num</span>(<span class="params"><span class="built_in">double</span> a, <span class="built_in">double</span> b</span>)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">this</span>.bb = b;</span><br><span class="line">    <span class="keyword">this</span>.aa = a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="built_in">double</span> <span class="title">plus</span>()</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">return</span> (aa + bb);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] <span class="keyword">args</span></span>)</span></span><br><span class="line">&#123;</span><br><span class="line">  Itemp tm = <span class="literal">null</span>;<span class="comment">//声明接口对象引用</span></span><br><span class="line">  tm = <span class="keyword">new</span> num(<span class="number">1</span>, <span class="number">2</span>);<span class="comment">//接口回调(向上转型)</span></span><br><span class="line">  Console.WriteLine(tm.plus());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="类型参数约束">类型参数约束</h2>
-<p>  在定义泛型类时，可以对客户端代码能够在实例化类时用于类型参数的类型种类施加限制。如果客户端代码尝试使用某个约束所不允许的类型来实例化类，则会产生编译时错误。这些限制称为约束。<br>
-类型参数约束.NET支持的类型参数约束有以下五种：</p>
+<h2 id="类型参数约束"><a href="#类型参数约束" class="headerlink" title="类型参数约束"></a>类型参数约束</h2><p>&emsp;&emsp;在定义泛型类时，可以对客户端代码能够在实例化类时用于类型参数的类型种类施加限制。如果客户端代码尝试使用某个约束所不允许的类型来实例化类，则会产生编译时错误。这些限制称为约束。<br>类型参数约束.NET支持的类型参数约束有以下五种：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> T : <span class="keyword">struct</span>  <span class="comment">//类型参数必须是值类型；可以指定除 Nullable 以外的任何值类型</span></span><br><span class="line"><span class="keyword">where</span> T : <span class="keyword">class</span>   <span class="comment">//类型参数必须是引用类型；这一点也适用于任何类、接口、委托或数组类型</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">new</span>()   <span class="comment">//类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new() 约束必须最后指定</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">NameOfBaseClass</span>   <span class="comment">//类型参数必须是指定的基类或派生自指定的基类</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">NameOfInterface</span>   <span class="comment">//类型参数必须是指定的接口或实现指定的接口。可以指定多个接口约束。约束接口也可以是泛型的</span></span><br><span class="line"><span class="keyword">where</span> <span class="title">T</span> : <span class="title">U</span>    <span class="comment">//为 T 提供的类型参数必须是为 U 提供的参数或派生自为 U 提供的参数</span></span><br></pre></td></tr></table></figure>
-<h2 id="当前程序运行路径">当前程序运行路径</h2>
-<p><code>Directory.GetCurrentDirectory() + &quot;\\Config</code></p>
-<h2 id="数据类型补充">数据类型补充</h2>
-<p><code>@&quot;&quot;&quot;Ahoy!&quot;&quot; cried the captain.&quot; // &quot;Ahoy!&quot; cried the captain.</code></p>
+<h2 id="当前程序运行路径"><a href="#当前程序运行路径" class="headerlink" title="当前程序运行路径"></a>当前程序运行路径</h2><p><code>Directory.GetCurrentDirectory() + &quot;\\Config</code></p>
+<h2 id="数据类型补充"><a href="#数据类型补充" class="headerlink" title="数据类型补充"></a>数据类型补充</h2><p><code>@&quot;&quot;&quot;Ahoy!&quot;&quot; cried the captain.&quot; // &quot;Ahoy!&quot; cried the captain.</code></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">double</span> d = <span class="number">3</span>D;</span><br><span class="line">d = <span class="number">4</span>d;</span><br><span class="line">d = <span class="number">3.934</span>_001;</span><br><span class="line"><span class="built_in">float</span> f = <span class="number">3</span>_000<span class="number">.5F</span>;</span><br><span class="line">f = <span class="number">5.4f</span>;</span><br><span class="line"><span class="built_in">decimal</span> myMoney = <span class="number">3</span>_000<span class="number">.5</span>m;</span><br><span class="line">myMoney = <span class="number">400.75</span>M;</span><br><span class="line"></span><br><span class="line">[<span class="meta">Flags</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> Days</span><br><span class="line">&#123;</span><br><span class="line">  None = <span class="number">0b</span>_0000_0000, <span class="comment">// 0</span></span><br><span class="line">  Monday = <span class="number">0b</span>_0000_0001, <span class="comment">// 1</span></span><br><span class="line">  Tuesday = <span class="number">0b</span>_0000_0010, <span class="comment">// 2</span></span><br><span class="line">  Wednesday = <span class="number">0b</span>_0000_0100, <span class="comment">// 4</span></span><br><span class="line">  Thursday = <span class="number">0b</span>_0000_1000, <span class="comment">// 8</span></span><br><span class="line">  Friday = <span class="number">0b</span>_0001_0000, <span class="comment">// 16</span></span><br><span class="line">  Saturday = <span class="number">0b</span>_0010_0000, <span class="comment">// 32</span></span><br><span class="line">  Sunday = <span class="number">0b</span>_0100_0000, <span class="comment">// 64</span></span><br><span class="line">  Weekend = Saturday | Sunday</span><br><span class="line">&#125;</span><br><span class="line">Days meetingDays = Days.Monday | Days.Wednesday | Days.Friday;</span><br></pre></td></tr></table></figure>
 <p>checked 关键字用于对整型类型算术运算和转换显式启用溢出检查</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> i = <span class="number">2147483647</span>;</span><br><span class="line">checked</span><br><span class="line">&#123;</span><br><span class="line">  i += <span class="number">10</span>;</span><br><span class="line">  Console.WriteLine(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//i=0;不会抛异常</span></span><br></pre></td></tr></table></figure>
-<h2 id="lock">lock</h2>
-<p>lock 语句获取给定对象的互斥 lock，执行语句块，然后释放 lock。 持有 lock 时，持有 lock 的线程可以再次获取并释放 lock。 阻止任何其他线程获取 lock 并等待释放 lock。</p>
+<h2 id="lock"><a href="#lock" class="headerlink" title="lock"></a>lock</h2><p>lock 语句获取给定对象的互斥 lock，执行语句块，然后释放 lock。 持有 lock 时，持有 lock 的线程可以再次获取并释放 lock。 阻止任何其他线程获取 lock 并等待释放 lock。</p>
 <p>lock(引用类型)</p>
 <p>当同步对共享资源的线程访问时，请锁定专用对象实例（例如,private readonly object balanceLock = new object(); ）或另一个不太可能被代码无关部分用作 lock 对象的实例。避免对不同的共享资源使用相同的 lock 对象实例，因为这可能导致死锁或锁争用</p>
-<h2 id="when">when</h2>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">new</span> HttpClient();</span><br><span class="line"><span class="keyword">var</span> streamTask = client.GetStringAsync(<span class="string">&quot;https://localHost:10000&quot;</span>);</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> responseText = <span class="keyword">await</span> streamTask;</span><br><span class="line">  <span class="keyword">return</span> responseText;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) <span class="keyword">when</span> (e.Message.Contains(<span class="string">&quot;301&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Site Moved&quot;</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) <span class="keyword">when</span> (e.Message.Contains(<span class="string">&quot;404&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Page Not Found&quot;</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> e.Message;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="when"><a href="#when" class="headerlink" title="when"></a>when</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> client = <span class="keyword">new</span> HttpClient();</span><br><span class="line"><span class="keyword">var</span> streamTask = client.GetStringAsync(<span class="string">&quot;https://localHost:10000&quot;</span>);</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> responseText = <span class="keyword">await</span> streamTask;</span><br><span class="line">  <span class="keyword">return</span> responseText;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) <span class="keyword">when</span> (e.Message.Contains(<span class="string">&quot;301&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Site Moved&quot;</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e) <span class="keyword">when</span> (e.Message.Contains(<span class="string">&quot;404&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;Page Not Found&quot;</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">catch</span> (HttpRequestException e)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">return</span> e.Message;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>case 标签无需是互斥的，且 case 标签在 switch 语句中的显示顺序可以决定要执行的 switch块。 when 关键字可指定一个筛选条件，该条件使得仅当筛选条件也为 true 时，与其相关联的 case 标签才为 true。</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> (expr) <span class="keyword">when</span> (<span class="keyword">when</span>-condition):</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> Shape shape <span class="keyword">when</span> shape.Area == <span class="number">0</span>:</span><br><span class="line">Console.WriteLine(<span class="string">$&quot;The shape: <span class="subst">&#123;shape.GetType().Name&#125;</span> with no dimensions&quot;</span>);</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="运算符-C-8-0">运算符 C#8.0</h2>
-<p>从末尾运算符 ^ 开始索引</p>
+<h2 id="运算符-C-8-0"><a href="#运算符-C-8-0" class="headerlink" title="运算符 C#8.0"></a>运算符 C#8.0</h2><p>从末尾运算符 ^ 开始索引</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] xs = <span class="keyword">new</span>[] &#123; <span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span> &#125;;</span><br><span class="line"><span class="built_in">int</span> last = xs[^<span class="number">1</span>];</span><br><span class="line"><span class="comment">// last = 40</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>[] numbers = <span class="keyword">new</span>[] &#123; <span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line"><span class="built_in">int</span> start = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">int</span> amountToTake = <span class="number">3</span>;</span><br><span class="line"><span class="built_in">int</span>[] subset = numbers[start..(start + amountToTake)];</span><br><span class="line">Display(subset); <span class="comment">// output: 10 20 30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//a.. 等效于 a..^0</span></span><br><span class="line"><span class="comment">//..b 等效于 0..b</span></span><br><span class="line"><span class="comment">//.. 等效于 0..^0</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>命名空间别名限定符 :: 访问已设置别名的命名空间的成员</p>
@@ -529,13 +501,13 @@ C#类为引用类型，结构为值类型。<br>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -557,7 +529,7 @@ C#类为引用类型，结构为值类型。<br>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

@@ -284,11 +284,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车型会自动生成相应配置文件
-<span id="more"></span>
-<h2 id="ABS参数配置说明">ABS参数配置说明</h2>
-<p>增减压时间参数说明如下, 因各现场及车型不同, 参数意义可能不同</p>
+        <p><center></center><br>ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车型会自动生成相应配置文件<br><span id="more"></span></p>
+<h2 id="ABS参数配置说明"><a href="#ABS参数配置说明" class="headerlink" title="ABS参数配置说明"></a>ABS参数配置说明</h2><p>增减压时间参数说明如下, 因各现场及车型不同, 参数意义可能不同</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">NewDataSet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Table1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--0:增减压力值采集满设定时间后退出当前增减压步骤;1:增减压力值合格后立即退出当前增减压步骤--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">UseJump</span>&gt;</span>0<span class="tag">&lt;/<span class="name">UseJump</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--脉冲增压次数,用于ESC或ESP--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncPulseN</span>&gt;</span>5<span class="tag">&lt;/<span class="name">IncPulseN</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--增压力值采集时间,记录当前时间内的最大值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">IncCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">IncCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--减压力值采集时间,记录当前时间内的最小值--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DecCollectT</span>&gt;</span>1000<span class="tag">&lt;/<span class="name">DecCollectT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT1</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A1_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--左前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A1_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A1_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A2_IncT1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前脉冲增压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A2_IncT2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--右前减压输入时间参数--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A2_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A2_DecT</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--预留--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A3_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A3_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A3_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A3_DecT</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT1</span>&gt;</span>150<span class="tag">&lt;/<span class="name">A4_IncT1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_IncT2</span>&gt;</span>50<span class="tag">&lt;/<span class="name">A4_IncT2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">A4_DecT</span>&gt;</span>250<span class="tag">&lt;/<span class="name">A4_DecT</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">Table1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">NewDataSet</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -456,13 +453,13 @@ ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -484,7 +481,7 @@ ABS增减压参数配置文件路径在Config\ABSValveTestConfig中, 不同车�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

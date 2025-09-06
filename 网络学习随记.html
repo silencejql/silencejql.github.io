@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="应用层-表示层-会话层---HTTP&#x2F;FTP&#x2F;DNS&#x2F;Telnet... 传输层---TCP&#x2F;UDP 网络层---IP&#x2F;ARP&#x2F;ICMP&#x2F;RARP 数据链路层 物理层">
+  <meta name="description" content="应用层-表示层-会话层—-HTTP&#x2F;FTP&#x2F;DNS&#x2F;Telnet…传输层—-TCP&#x2F;UDP网络层—-IP&#x2F;ARP&#x2F;ICMP&#x2F;RARP数据链路层物理层">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络学习随记">
 <meta property="og:url" content="https://silencejql.github.io/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="应用层-表示层-会话层---HTTP&#x2F;FTP&#x2F;DNS&#x2F;Telnet... 传输层---TCP&#x2F;UDP 网络层---IP&#x2F;ARP&#x2F;ICMP&#x2F;RARP 数据链路层 物理层">
+<meta property="og:description" content="应用层-表示层-会话层—-HTTP&#x2F;FTP&#x2F;DNS&#x2F;Telnet…传输层—-TCP&#x2F;UDP网络层—-IP&#x2F;ARP&#x2F;ICMP&#x2F;RARP数据链路层物理层">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-27T05:54:46.000Z">
 <meta property="article:modified_time" content="2023-04-18T02:46:50.289Z">
@@ -264,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>738</span>
+              <span>719</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -283,73 +283,73 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-应用层-表示层-会话层---HTTP/FTP/DNS/Telnet...
-传输层---TCP/UDP
-网络层---IP/ARP/ICMP/RARP
-数据链路层
-物理层
-<span id="more"></span>
-<h2 id="物理层">物理层</h2>
-<p>-Bit流</p>
-<h2 id="数据链路层-帧">数据链路层 帧</h2>
-<p>交换机 可识别MAC<br>
-FCS|Data|SIP|DIP|SMAC|DMAC</p>
-<h2 id="网络层-包">网络层 包</h2>
-<h3 id="协议">协议</h3>
-<p>IP、ARP、ICMP、IGMP<br>
-路由器 可识别IP<br>
-Data|SIP|DIP</p>
-<h4 id="ARP">ARP</h4>
-<p>ARP广播查询目标MAC地址<br>
-ipconfig /all查看网卡MAC<br>
-arp -a查询局域网内MAC<br>
-<em><strong>ARP欺骗</strong></em><br>
-arp -s ip mac设置静态MAC(更改网络通讯中IP对应的MAC)<br>
-网卡属性中修复可重置</p>
-<h4 id="ICMP">ICMP</h4>
-<p>PING-Packet Internet Grope因特网包探索器<br>
-ping局域网延迟一般小于10ms<br>
-TTL数据包生存周期，每过一个路由-1，防止网络回路<br>
-ping ip -i n 通过n值查看途经路由器IP<br>
-默认TTL：</p>
+        <p><center></center><br>应用层-表示层-会话层—-HTTP/FTP/DNS/Telnet…<br>传输层—-TCP/UDP<br>网络层—-IP/ARP/ICMP/RARP<br>数据链路层<br>物理层<br><span id="more"></span></p>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>-Bit流  </p>
+<h2 id="数据链路层-帧"><a href="#数据链路层-帧" class="headerlink" title="数据链路层 帧"></a>数据链路层 帧</h2><p>交换机 可识别MAC<br>FCS|Data|SIP|DIP|SMAC|DMAC</p>
+<h2 id="网络层-包"><a href="#网络层-包" class="headerlink" title="网络层 包"></a>网络层 包</h2><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>IP、ARP、ICMP、IGMP<br>路由器 可识别IP<br>Data|SIP|DIP</p>
+<h4 id="ARP"><a href="#ARP" class="headerlink" title="ARP"></a>ARP</h4><p>ARP广播查询目标MAC地址<br>ipconfig /all查看网卡MAC<br>arp -a查询局域网内MAC<br><strong><em>ARP欺骗</em></strong><br>arp -s ip mac设置静态MAC(更改网络通讯中IP对应的MAC)<br>网卡属性中修复可重置</p>
+<h4 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h4><p>PING-Packet Internet Grope因特网包探索器<br>ping局域网延迟一般小于10ms<br>TTL数据包生存周期，每过一个路由-1，防止网络回路<br>ping ip -i n 通过n值查看途经路由器IP<br>默认TTL：</p>
 <blockquote>
-<p>Linux : 64<br>
-Windows : 128<br>
-Unix : 255</p>
+<p>Linux : 64<br>Windows : 128<br>Unix : 255</p>
 </blockquote>
-<p>tracert ip 跟踪数据包路径<br>
-pathping 跟踪数据包路径，计算丢包情况</p>
-<h3 id="路由">路由</h3>
-<p>静态路由 管理员配置路径<br>
-动态路由 RIP协议 最大15级</p>
-<h2 id="传输层">传输层</h2>
-<p>netstat -n查看会话<br>
-netstat -nb查看会话及会话进程<br>
-netstat -an查看监听端口</p>
-<h3 id="端口">端口</h3>
-<p>16位<br>
-常用端口：0-1023<br>
-登机端口：1024-49151<br>
-客户端端口：49152-65535<br>
-常见应用层协议端口</p>
-<p>协议|端口<br>
-:|:<br>
-http  |TCP:80<br>
-https  |TCP:443<br>
-ftp  |TCP:21<br>
-RDP  |TCP:3389  远程桌面<br>
-SMTP  |TCP:25<br>
-POP3  |TCP:110<br>
-Telnet  |TCP:23<br>
-SQL  |TCP:1433<br>
-|<br>
-DNS  |UDP:53(一般)</p>
-<h3 id="套接字">套接字</h3>
-<p>socket=IP:Port</p>
-<h2 id="其他">其他</h2>
-<p>设置开/关机/登录启动脚本<br>
-gpedit.msc</p>
+<p>tracert ip 跟踪数据包路径<br>pathping 跟踪数据包路径，计算丢包情况</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>静态路由 管理员配置路径<br>动态路由 RIP协议 最大15级</p>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>netstat -n查看会话<br>netstat -nb查看会话及会话进程<br>netstat -an查看监听端口</p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>16位<br>常用端口：0-1023<br>登机端口：1024-49151<br>客户端端口：49152-65535<br>常见应用层协议端口</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>协议</th>
+<th>端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>http</td>
+<td>TCP:80  </td>
+</tr>
+<tr>
+<td>https</td>
+<td>TCP:443  </td>
+</tr>
+<tr>
+<td>ftp</td>
+<td>TCP:21  </td>
+</tr>
+<tr>
+<td>RDP</td>
+<td>TCP:3389  远程桌面</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>TCP:25  </td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>TCP:110  </td>
+</tr>
+<tr>
+<td>Telnet</td>
+<td>TCP:23  </td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>TCP:1433</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>UDP:53(一般)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h3><p>socket=IP:Port</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>设置开/关机/登录启动脚本<br>gpedit.msc</p>
 
     </div>
 
@@ -512,13 +512,13 @@ gpedit.msc</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -540,7 +540,7 @@ gpedit.msc</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

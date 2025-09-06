@@ -1766,7 +1766,7 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0.html</loc>
+    <loc>https://silencejql.github.io/Python-script-save-somethings.html</loc>
     
     <lastmod>2023-04-18</lastmod>
     
@@ -1775,7 +1775,7 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/Python-script-save-somethings.html</loc>
+    <loc>https://silencejql.github.io/%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E9%9A%8F%E8%AE%B0.html</loc>
     
     <lastmod>2023-04-18</lastmod>
     
@@ -1919,119 +1919,14 @@
 
   
   <url>
-    <loc>https://silencejql.github.io/tags/%E5%A7%94%E6%89%98/</loc>
+    <loc>https://silencejql.github.io/tags/Script/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Lambda/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Func-T-%E5%A7%94%E6%89%98/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/CSharp/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Hexo/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Markdown/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/XML/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/RGB%E9%A2%9C%E8%89%B2%E8%A1%A8/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/IEEE/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Postgresql/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/CSS/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E6%B3%9B%E5%9E%8B/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Rabbit-MQ/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/HTML/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/IBMMQ/</loc>
+    <loc>https://silencejql.github.io/tags/Python/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2052,70 +1947,7 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/%E7%8E%B0%E5%9C%BA%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E9%93%BE%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E8%AF%8A%E6%96%AD%E6%8C%87%E4%BB%A4/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/CAN/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E7%8E%B0%E5%9C%BA%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Git/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Script/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/Python/</loc>
+    <loc>https://silencejql.github.io/tags/CSharp/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2150,6 +1982,13 @@
   </url>
   
   <url>
+    <loc>https://silencejql.github.io/tags/Modbus/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/tags/Flask/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2157,7 +1996,7 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/Modbus/</loc>
+    <loc>https://silencejql.github.io/tags/UDP/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2171,7 +2010,175 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/UDP/</loc>
+    <loc>https://silencejql.github.io/tags/%E5%A7%94%E6%89%98/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/CSharp-%E8%A1%A5%E8%AF%BE%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Hexo/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Markdown/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E5%8C%BF%E5%90%8D%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Lambda/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Func-T-%E5%A7%94%E6%89%98/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/XML/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/RGB%E9%A2%9C%E8%89%B2%E8%A1%A8/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/CSS/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/IEEE/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/IBMMQ/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Postgresql/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Rabbit-MQ/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E6%B3%9B%E5%9E%8B/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/Git/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/HTML/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E9%93%BE%E6%8E%A5%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E7%8E%B0%E5%9C%BA%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E7%8E%B0%E5%9C%BA%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E8%AF%8A%E6%96%AD%E6%8C%87%E4%BB%A4/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/CAN/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2234,13 +2241,6 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/CSharp-%E8%A1%A5%E8%AF%BE%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://silencejql.github.io/tags/J1939/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2248,14 +2248,14 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/Ini/</loc>
+    <loc>https://silencejql.github.io/tags/KaTeX/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/KaTeX/</loc>
+    <loc>https://silencejql.github.io/tags/Ini/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2311,27 +2311,6 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/tags/DoIP/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/GitLab/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://silencejql.github.io/tags/RFID/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2345,7 +2324,63 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://silencejql.github.io/tags/GitLab/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/DoIP/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/Python/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/Python3/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/Postgre/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/SQLServer/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://silencejql.github.io/categories/CSharp/</loc>
@@ -2362,14 +2397,14 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/categories/Test/</loc>
+    <loc>https://silencejql.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <loc>https://silencejql.github.io/categories/Test/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2383,21 +2418,14 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/categories/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://silencejql.github.io/categories/CSS/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2418,6 +2446,13 @@
   </url>
   
   <url>
+    <loc>https://silencejql.github.io/categories/Git/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/categories/HTML/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2426,41 +2461,6 @@
   
   <url>
     <loc>https://silencejql.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/Git/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/Python/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/Python3/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/Postgre/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/SQLServer/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2488,6 +2488,27 @@
   </url>
   
   <url>
+    <loc>https://silencejql.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/BBK/CSharp/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/%E7%AE%97%E6%B3%95/CSharp/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2509,41 +2530,6 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/CSharp/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/%E7%AE%97%E6%B3%95/CSharp/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://silencejql.github.io/categories/WindowsTerminal/</loc>
-    <lastmod>2025-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://silencejql.github.io/categories/CSharp/C/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2558,6 +2544,13 @@
   </url>
   
   <url>
+    <loc>https://silencejql.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/CSharp/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://silencejql.github.io/categories/CSharp/WPF/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -2565,7 +2558,14 @@
   </url>
   
   <url>
-    <loc>https://silencejql.github.io/categories/BBK/CSharp/</loc>
+    <loc>https://silencejql.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-09-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://silencejql.github.io/categories/WindowsTerminal/</loc>
     <lastmod>2025-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

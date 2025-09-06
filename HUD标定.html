@@ -291,38 +291,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-主要包括HUD机器人角度标定方式
-<span id="more"></span>
-<h2 id="标定相机">标定相机</h2>
-<h3 id="添加标定界面">添加标定界面</h3>
-<p>参考轮眉标定配置:</p>
-<a href="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC.html" title="轮眉软件调试-棋盘格">轮眉软件调试-棋盘格</a>
-<h3 id="选择标定类型">选择标定类型</h3>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E9%85%8D%E7%BD%AE%E6%A0%87%E5%AE%9A.PNG" alt="标定类型"></p>
-<h3 id="标定">标定</h3>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E6%A0%87%E5%AE%9A.PNG" alt="标定界面"></p>
-<h3 id="说明">说明</h3>
-<p>目前HUD测试中只用到了相机内参,所以标定板左上角十字坐标和棋盘格参数务必保持准确.</p>
-<h2 id="标定相机角度">标定相机角度</h2>
-<p>当前版本机器人无法准确标定相机三个角度的零点, 且无法正确的通过上位机补偿角度.<br>
-可以采用上位机辅助机器人确定好角度零点后再进行机器人坐标系标定.</p>
-<h3 id="准备工作">准备工作</h3>
-<h4 id="添加角度识别">添加角度识别</h4>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E9%85%8D%E7%BD%AE%E8%A7%92%E5%BA%A6%E8%AF%86%E5%88%AB.PNG" alt="标定类型"></p>
-<h4 id="移动机器人">移动机器人</h4>
-<p>将相机移动至于标靶中心平行的位置</p>
-<h4 id="打开相机拍照">打开相机拍照</h4>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E8%B0%83%E6%95%B4%E8%A7%92%E5%BA%A6%E5%89%8D.PNG" alt="标定类型"></p>
+        <p><center></center><br>主要包括HUD机器人角度标定方式<br><span id="more"></span></p>
+<h2 id="标定相机"><a href="#标定相机" class="headerlink" title="标定相机"></a>标定相机</h2><h3 id="添加标定界面"><a href="#添加标定界面" class="headerlink" title="添加标定界面"></a>添加标定界面</h3><p>参考轮眉标定配置:<br><a href="/%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC.html" title="轮眉软件调试-棋盘格">轮眉软件调试-棋盘格</a></p>
+<h3 id="选择标定类型"><a href="#选择标定类型" class="headerlink" title="选择标定类型"></a>选择标定类型</h3><p><img src="HUD标定/配置标定.PNG" alt="标定类型"></p>
+<h3 id="标定"><a href="#标定" class="headerlink" title="标定"></a>标定</h3><p><img src="HUD标定/标定.PNG" alt="标定界面"></p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>目前HUD测试中只用到了相机内参,所以标定板左上角十字坐标和棋盘格参数务必保持准确.</p>
+<h2 id="标定相机角度"><a href="#标定相机角度" class="headerlink" title="标定相机角度"></a>标定相机角度</h2><p>当前版本机器人无法准确标定相机三个角度的零点, 且无法正确的通过上位机补偿角度.<br>可以采用上位机辅助机器人确定好角度零点后再进行机器人坐标系标定.</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="添加角度识别"><a href="#添加角度识别" class="headerlink" title="添加角度识别"></a>添加角度识别</h4><p><img src="HUD标定/配置角度识别.PNG" alt="标定类型"></p>
+<h4 id="移动机器人"><a href="#移动机器人" class="headerlink" title="移动机器人"></a>移动机器人</h4><p>将相机移动至于标靶中心平行的位置</p>
+<h4 id="打开相机拍照"><a href="#打开相机拍照" class="headerlink" title="打开相机拍照"></a>打开相机拍照</h4><p><img src="HUD标定/调整角度前.PNG" alt="标定类型"></p>
 <p>中心十字线为图像中心点,要求图像中心在标靶中心可保证Ry,Rz角度为零</p>
-<h4 id="旋转相机角度">旋转相机角度</h4>
-<p>调整Ry,Rz使标靶中心位于图像中心</p>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E8%B0%83%E6%95%B4%E8%A7%92%E5%BA%A6%E5%90%8E.PNG" alt="标定类型"></p>
+<h4 id="旋转相机角度"><a href="#旋转相机角度" class="headerlink" title="旋转相机角度"></a>旋转相机角度</h4><p>调整Ry,Rz使标靶中心位于图像中心</p>
+<p><img src="HUD标定/调整角度后.PNG" alt="标定类型"></p>
 <p>调整红色ROI区域使四个角点位于四个孔的中心(据版本算法而定),点击识别点(角度)</p>
-<p><img src="HUD%E6%A0%87%E5%AE%9A/%E8%AF%86%E5%88%AB%E8%A7%92%E5%BA%A6.PNG" alt="标定类型"></p>
+<p><img src="HUD标定/识别角度.PNG" alt="标定类型"></p>
 <p>左上角为Rx旋转角, 调节相机Rx使其接近0即可找到三个角度的零点位置</p>
-<h3 id="机器人标定">机器人标定</h3>
-<p>保持角度不变的情况下对机器人进行坐标系0点的标定.</p>
+<h3 id="机器人标定"><a href="#机器人标定" class="headerlink" title="机器人标定"></a>机器人标定</h3><p>保持角度不变的情况下对机器人进行坐标系0点的标定.</p>
 
     </div>
 
@@ -489,13 +473,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -517,7 +501,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

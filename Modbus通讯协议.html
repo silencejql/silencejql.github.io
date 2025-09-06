@@ -265,7 +265,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,27 +284,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-前面啥也没有
-<span id="more"></span>
-<h2 id="Modbus-TCP-数据帧">Modbus TCP 数据帧</h2>
-<p>MBAP + PDU<br>
-MBAP： Modbus Application Protocol Header<br>
-PDU：Protocol Data Unit<br>
-MBAP + Function code + Data</p>
-<p>示例：<br>
-00 01 00 00 00 06 01<br>
-事务标识2+modbus协议2+数据长度2+Slave站号1</p>
-<p>Function code：<br>
-0x01：读线圈<br>
-02：读离散量输入<br>
-03：读保持寄存器<br>
-04：读输入寄存器<br>
-05：写单个线圈<br>
-06：写单个保持寄存器<br>
-10：写多个保持寄存器<br>
-0F：写多个线圈</p>
+        <p><center></center><br>前面啥也没有<br><span id="more"></span></p>
+<h2 id="Modbus-TCP-数据帧"><a href="#Modbus-TCP-数据帧" class="headerlink" title="Modbus TCP 数据帧"></a>Modbus TCP 数据帧</h2><p>MBAP + PDU<br>MBAP： Modbus Application Protocol Header<br>PDU：Protocol Data Unit<br>MBAP + Function code + Data</p>
+<p>示例：<br>00 01 00 00 00 06 01<br>事务标识2+modbus协议2+数据长度2+Slave站号1</p>
+<p>Function code：<br>0x01：读线圈<br>02：读离散量输入<br>03：读保持寄存器<br>04：读输入寄存器<br>05：写单个线圈<br>06：写单个保持寄存器<br>10：写多个保持寄存器<br>0F：写多个线圈</p>
 <p>报文头部：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -316,215 +301,30 @@ MBAP + Function code + Data</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">BYTE 0 – 1</td>
-<td style="text-align:center">传输标志，事务标识符</td>
-<td style="text-align:center">由客户端生成</td>
-<td style="text-align:center">应答时复制该值</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 2 – 3</td>
-<td style="text-align:center">协议标识，Modbus 协议=0</td>
-<td style="text-align:center">由客户端生成</td>
-<td style="text-align:center">应答时复制该值</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 4 ¬-  5</td>
-<td style="text-align:center">报文后续数据的字节长度</td>
-<td style="text-align:center">由客户端生成</td>
-<td style="text-align:center">应答时由服务器重新生成</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 6</td>
-<td style="text-align:center">MODBUS单元标志</td>
-<td style="text-align:center">由客户端生成</td>
-<td style="text-align:center">应答时复制该值</td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-<p>Modbus TCP协议功能码报文<br>
-功能码3 读多个寄存器<br>
-请求报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=3</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8 - 9</td>
-<td style="text-align:center">读取数据的寄存器偏移地址</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 10 - 11</td>
-<td style="text-align:center">读取数据的寄存器数量，单位为Word</td>
-</tr>
-</tbody>
-</table>
-<p>读数据成功的响应报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=3</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8</td>
-<td style="text-align:center">读取到的数据的字节数</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 9- 10</td>
-<td style="text-align:center">读取到的寄存器1的数据</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 11 - 12</td>
-<td style="text-align:center">读取到的寄存器2的数据</td>
-</tr>
-<tr>
-<td style="text-align:center">….</td>
-<td style="text-align:center">…</td>
-</tr>
-</tbody>
-</table>
-<p>功能码16 写多个寄存器<br>
-请求报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=16</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8 - 9</td>
-<td style="text-align:center">写数据的寄存器偏移地址</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 10 - 11</td>
-<td style="text-align:center">写数据的寄存器数量，单位为Word</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 12</td>
-<td style="text-align:center">写数据的字节数（数据等于写数据的寄存器数量 x 2）</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 13 - 14</td>
-<td style="text-align:center">寄存器1的数据</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 15 - 16</td>
-<td style="text-align:center">寄存器1的数据</td>
-</tr>
-</tbody>
-</table>
-<p>写数据成功的响应报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=16</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8 - 9</td>
-<td style="text-align:center">写数据的寄存器偏移地址</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 10 - 11</td>
-<td style="text-align:center">写数据的寄存器数量，单位为WORD</td>
-</tr>
-</tbody>
-</table>
-<p>功能码6 写单个寄存器<br>
-请求报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=6</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8 - 9</td>
-<td style="text-align:center">写数据的寄存器偏移地址</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 10 - 11</td>
-<td style="text-align:center">寄存器的数值</td>
-</tr>
-</tbody>
-</table>
-<p>写数据成功的响应报文格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">字节序号</th>
-<th style="text-align:center">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">BYTE 7</td>
-<td style="text-align:center">功能码=6</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 8 - 9</td>
-<td style="text-align:center">写数据的寄存器偏移地址</td>
-</tr>
-<tr>
-<td style="text-align:center">BYTE 10 - 11</td>
-<td style="text-align:center">寄存器的数值</td>
-</tr>
-</tbody>
-</table>
+</div>
+<p>BYTE 0 – 1|传输标志，事务标识符|由客户端生成|应答时复制该值<br>BYTE 2 – 3|协议标识，Modbus 协议=0|由客户端生成|应答时复制该值<br>BYTE 4 ¬-  5|报文后续数据的字节长度|由客户端生成|应答时由服务器重新生成<br>BYTE 6|MODBUS单元标志|由客户端生成|应答时复制该值</p>
+<p>Modbus TCP协议功能码报文<br>功能码3 读多个寄存器<br>请求报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=3<br>BYTE 8 - 9|读取数据的寄存器偏移地址<br>BYTE 10 - 11|读取数据的寄存器数量，单位为Word</p>
+<p>读数据成功的响应报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=3<br>BYTE 8 |读取到的数据的字节数<br>BYTE 9- 10|读取到的寄存器1的数据<br>BYTE 11 - 12|读取到的寄存器2的数据<br>….|…</p>
+<p>功能码16 写多个寄存器<br>请求报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=16<br>BYTE 8 - 9|写数据的寄存器偏移地址<br>BYTE 10 - 11|写数据的寄存器数量，单位为Word<br>BYTE 12|写数据的字节数（数据等于写数据的寄存器数量 x 2）<br>BYTE 13 - 14|寄存器1的数据<br>BYTE 15 - 16|寄存器1的数据</p>
+<p>写数据成功的响应报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=16<br>BYTE 8 - 9 |写数据的寄存器偏移地址<br>BYTE 10 - 11|写数据的寄存器数量，单位为WORD</p>
+<p>功能码6 写单个寄存器<br>请求报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=6<br>BYTE 8 - 9|写数据的寄存器偏移地址<br>BYTE 10 - 11|寄存器的数值</p>
+<p>写数据成功的响应报文格式<br>|字节序号|含义|<br>|:-:|:-:|<br>BYTE 7|功能码=6<br>BYTE 8 - 9 |写数据的寄存器偏移地址<br>BYTE 10 - 11|寄存器的数值</p>
 <p>控制 IB IL 24 DO8开关量输出模块请求报文，模块寄存器地址：384，控制数据在最后一个字节；</p>
 <p>0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
-<p>控制DO输出成功响应报文<br>
-0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
+<p>控制DO输出成功响应报文<br>0F 01 00 00 00 06 FF 06 01 80 00 0F</p>
 <p>读取 IB IL 24 DI8开关量输入模块请求报文，模块寄存器地址：0，数据寄存器长度为1；</p>
 <p>0B 01 00 00 00 06 FF 03 00 00 00 01</p>
-<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br>
-0B 01 00 00 00 05 FF 03 02 00 XX</p>
+<p>读取IB IL 24 DI8开关量输入成功的响应报文，数据在最后一个字节；<br>0B 01 00 00 00 05 FF 03 02 00 XX</p>
 <p>读取 IB IL AI2SF-230模拟量输入模块请求报文，模块寄存器地址：192，数据寄存器长度为2，该模块默认连接0~10V信号；</p>
 <p>0B 02 00 00 00 06 FF 03 00 C0 00 02</p>
-<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br>
-0B 02 00 00 00 07 FF 03 04 XX XX XX XX</p>
-<h2 id="Kepserver">Kepserver</h2>
-<p>Address<br>
-输出线圈：  000001 ~ 065536<br>
-输入线圈：  100001 ~ 165536<br>
-内部寄存器：300001 ~ 365536<br>
-保持寄存器：400001 ~ 465536</p>
-<p>访问输出线圈：Address：000001<br>
-访问连续10个输出线圈：Address：000001#10</p>
-<p>访问保持寄存器：Address：400001<br>
-访问连续10个保持寄存器：Address：400001[10]</p>
+<p>读取数据成功的响应报文，数据在最后4个字节，分别为通道1~2；<br>0B 02 00 00 00 07 FF 03 04 XX XX XX XX</p>
+<h2 id="Kepserver"><a href="#Kepserver" class="headerlink" title="Kepserver"></a>Kepserver</h2><p>Address<br>输出线圈：  000001 ~ 065536<br>输入线圈：  100001 ~ 165536<br>内部寄存器：300001 ~ 365536<br>保持寄存器：400001 ~ 465536</p>
+<p>访问输出线圈：Address：000001<br>访问连续10个输出线圈：Address：000001#10</p>
+<p>访问保持寄存器：Address：400001<br>访问连续10个保持寄存器：Address：400001[10]</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -692,13 +492,13 @@ MBAP + Function code + Data</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -720,7 +520,7 @@ MBAP + Function code + Data</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

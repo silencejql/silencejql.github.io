@@ -294,9 +294,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-C# 执行SQLServer数据库中的存储过程，新增数据
-<span id="more"></span>
+        <p><center></center><br>C# 执行SQLServer数据库中的存储过程，新增数据<br><span id="more"></span></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">存储过程名：SP_Check_Equipotential</span><br><span class="line">	参数：</span><br><span class="line">		<span class="variable">@Part2GNDInfo</span> <span class="type">varchar</span>(<span class="number">3000</span>),<span class="comment">--</span></span><br><span class="line">		<span class="variable">@Part2GND</span> <span class="type">decimal</span>(<span class="number">3</span>,<span class="number">2</span>),<span class="comment">--</span></span><br><span class="line">		<span class="variable">@Resultflag</span> <span class="type">int</span> output,<span class="comment">--1保存成功  0保存失败</span></span><br><span class="line">		<span class="variable">@ResultMessage</span> <span class="type">varchar</span>(<span class="number">4000</span>)output<span class="comment">--返回success 或 错误信息</span></span><br><span class="line">	返回值：</span><br><span class="line">		<span class="variable">@Resultflag</span> <span class="type">int</span> output,<span class="comment">--1保存成功  0保存失败</span></span><br><span class="line">		<span class="variable">@ResultMessage</span> <span class="type">varchar</span>(<span class="number">4000</span>)output<span class="comment">--返回success 或 错误信息</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">SqlConnection DbConnection = <span class="keyword">new</span> SqlConnection(m_MESConnString);</span><br><span class="line">SqlCommand command = <span class="keyword">new</span> SqlCommand(<span class="string">&quot;SP_Check_Equipotential&quot;</span>, DbConnection);</span><br><span class="line">DbConnection.Open();</span><br><span class="line">InitCommand(<span class="keyword">ref</span> command);</span><br><span class="line">command.Parameters[<span class="string">&quot;@Part2GNDInfo&quot;</span>].Value = Part2GNDInfo;</span><br><span class="line">command.Parameters[<span class="string">&quot;@Part2GND&quot;</span>].Value = Convert.ToDecimal(mo2o(dr[<span class="string">&quot;步骤一最大值&quot;</span>],<span class="literal">true</span>));</span><br><span class="line">command.ExecuteNonQuery();</span><br><span class="line"><span class="built_in">int</span> result = command.Parameters[<span class="string">&quot;@Resultflag&quot;</span>].Value.zInt32();</span><br><span class="line"><span class="built_in">string</span> ResultMessage = command.Parameters[<span class="string">&quot;@ResultMessage&quot;</span>].Value.ToString();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">InitCommand</span>(<span class="params"><span class="keyword">ref</span> SqlCommand command</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    command.CommandType = CommandType.StoredProcedure;</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@Part2GNDInfo&quot;</span>, SqlDbType.VarChar, <span class="number">3000</span>);</span><br><span class="line">    SqlParameter Part2GND = <span class="keyword">new</span> SqlParameter(<span class="string">&quot;@Part2GND&quot;</span>, SqlDbType.Decimal);</span><br><span class="line">    Part2GND.Precision = <span class="number">3</span>;</span><br><span class="line">    Part2GND.Scale = <span class="number">2</span>;</span><br><span class="line">    command.Parameters.Add(Part2GND);</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@Resultflag&quot;</span>, SqlDbType.Int, <span class="number">1</span>);</span><br><span class="line">    command.Parameters[<span class="string">&quot;@Resultflag&quot;</span>].Direction = ParameterDirection.Output;</span><br><span class="line">    command.Parameters.Add(<span class="string">&quot;@ResultMessage&quot;</span>, SqlDbType.VarChar, <span class="number">4000</span>);</span><br><span class="line">    command.Parameters[<span class="string">&quot;@ResultMessage&quot;</span>].Direction = ParameterDirection.Output;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -465,13 +463,13 @@ C# 执行SQLServer数据库中的存储过程，新增数据
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -493,7 +491,7 @@ C# 执行SQLServer数据库中的存储过程，新增数据
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

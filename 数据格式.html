@@ -283,27 +283,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-数据格式说明
-<span id="more"></span>
-<h2 id="Base64">Base64</h2>
-<p>基于64个可打印字符来表示二进制数据的方法<br>
-64个字符0~63分别对应A~Za~z0~9+/</p>
+        <p><center></center><br>数据格式说明<br><span id="more"></span></p>
+<h2 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h2><p>基于64个可打印字符来表示二进制数据的方法<br>64个字符0~63分别对应A~Za~z0~9+/</p>
 <p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3*8 = 4*6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。</p>
-<h3 id="编码规则">编码规则</h3>
-<ol>
+<h3 id="编码规则"><a href="#编码规则" class="headerlink" title="编码规则"></a>编码规则</h3><ol>
 <li>把3个字节变成4个字节。</li>
 <li>每76个字符加一个换行符。</li>
 <li>最后的结束符也要处理。</li>
 </ol>
-<p>例如:<br>
-转换前: 10101101,10111010,01110110<br>
-转换后: 00101011, 00011011 ,00101001 ,00110110<br>
-十进制 43 27 41 54<br>
-对应码表中的值 r b p 2<br>
-所以上面的24位编码，编码后的Base64值为 rbp2</p>
-<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的Bit用0补足。然后，每次取出6个bit，按照其值选择ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。<br>
-如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
+<p>例如:<br>转换前: 10101101,10111010,01110110<br>转换后: 00101011, 00011011 ,00101001 ,00110110<br>十进制 43 27 41 54<br>对应码表中的值 r b p 2<br>所以上面的24位编码，编码后的Base64值为 rbp2</p>
+<p>转换的时候，将三个byte的数据，先后放入一个24bit的缓冲区中，先来的byte占高位。数据不足3byte的话，于缓冲区中剩下的Bit用0补足。然后，每次取出6个bit，按照其值选择ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/中的字符作为编码后的输出。不断进行，直到全部输入数据转换完成。<br>如果最后剩下两个输入数据，在编码结果后加1个“=”；如果最后剩下一个输入数据，编码结果后加2个“=”；如果没有剩下任何数据，就什么都不要加，这样才可以保证资料还原的正确性。</p>
 
     </div>
 
@@ -466,13 +455,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -494,7 +483,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

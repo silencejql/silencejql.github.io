@@ -284,45 +284,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-参考：https://blog.csdn.net/woshimaxiao1/article/details/83661464
-<span id="more"></span>
-<h2 id="Hashmap">Hashmap</h2>
-<p>HashMap是Java 1.2引进的Map接口的一个实现，c#中无HashMap</p>
-<h3 id="数组">数组</h3>
-<p>采用一段连续的存储单元来存储数据。对于指定下标的查找，时间复杂度为O(1)；通过给定值进行查找，需要遍历数组，逐一比对给定关键字和数组元素，时间复杂度为O(n)，当然，对于有序数组，则可采用二分查找，插值查找，斐波那契查找等方式，可将查找复杂度提高为O(logn)；对于一般的插入删除操作，涉及到数组元素的移动，其平均复杂度也为O(n)</p>
-<h3 id="线性链表">线性链表</h3>
-<p>对于链表的新增，删除等操作（在找到指定操作位置后），仅需处理结点间的引用即可，时间复杂度为O(1)，而查找操作需要遍历链表逐一进行比对，复杂度为O(n)</p>
-<h3 id="二叉树">二叉树</h3>
-<p>对一棵相对平衡的有序二叉树，对其进行插入，查找，删除等操作，平均复杂度均为O(logn)。</p>
-<h3 id="哈希表">哈希表</h3>
-<p>相比上述几种数据结构，在哈希表中进行添加，删除，查找等操作，性能十分之高，不考虑哈希冲突的情况下，仅需一次定位即可完成，时间复杂度为O(1)。<br>
-当要新增或查找某个元素，我们通过把当前元素的关键字 通过某个函数映射到数组中的某个位置，通过数组下标一次定位就可完成操作。<br>
-<strong>存储位置 = 哈希函数f(关键字)</strong></p>
-<h4 id="哈希冲突">哈希冲突</h4>
-<p>两个不同的元素，通过哈希函数得出的实际存储地址相同<br>
-HashMap采用了链地址法，也就是数组+链表的方式解决哈希冲突<br>
-HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可<br>
-HashMap可以简单理解为由数组+链表组成，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的</p>
-<h2 id="Hashtable">Hashtable</h2>
-<p>哈希表（HashTable）又叫做散列表，是根据关键码值（即键值对）而直接访问的数据结构。也就是说，它通过把关键码映射到表中一个位置来访问记录，以加快查找速度，Hashtable是基于Dictionary类的</p>
-<h2 id="Hashtable-与-Hashmap区别">Hashtable 与 Hashmap区别</h2>
-<h3 id="Hashtable-v2">Hashtable</h3>
-<p>底层数组+链表实现，无论key还是value都不能为null，线程安全，实现线程安全的方式是在修改数据时锁住整个HashTable，效率低，ConcurrentHashMap做了相关优化<br>
-初始size为11，扩容：newsize = olesize*2+1<br>
-计算index的方法：index = (hash &amp; 0x7FFFFFFF) % tab.length</p>
-<h3 id="Hashmap-v2">Hashmap</h3>
-<p>底层数组+链表实现，可以存储null键和null值，线程不安全<br>
-初始size为16，扩容：newsize = oldsize*2，size一定为2的n次幂<br>
-扩容针对整个Map，每次扩容时，原来数组中的元素依次重新计算存放位置，并重新插入<br>
-插入元素后才判断该不该扩容，有可能无效扩容（插入后如果扩容，如果没有再次插入，就会产生无效扩容）<br>
-当Map中元素总数超过Entry数组的75%，触发扩容操作，为了减少链表长度，元素分配更均匀<br>
-计算index方法：index = hash &amp; (tab.length – 1)</p>
-<h2 id="HashTable和Dictionary区别">HashTable和Dictionary区别</h2>
-<p>HashTable不支持泛型，而Dictionary支持泛型。<br>
-Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时通常发生装箱和拆箱的操作，所以你可能需要进行一些类型转换的操作，而且对于int,float这些值类型还需要进行装箱等操作，非常耗时。<br>
-单线程程序中推荐使用 Dictionary, 有泛型优势, 且读取速度较快, 容量利用更充分。多线程程序中推荐使用 Hashtable, 默认的 Hashtable 允许单线程写入, 多线程读取, 对 Hashtable 进一步调用 Synchronized() 方法可以获得完全线程安全的类型. 而 Dictionary 非线程安全, 必须人为使用 lock 语句进行保护, 效率大减。<br>
-在通过代码测试的时候发现key是整数型Dictionary的效率比Hashtable快，如果key是字符串型，Dictionary的效率没有Hashtable快。</p>
+        <p><center></center><br>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/woshimaxiao1/article/details/83661464">https://blog.csdn.net/woshimaxiao1/article/details/83661464</a><br><span id="more"></span></p>
+<h2 id="Hashmap"><a href="#Hashmap" class="headerlink" title="Hashmap"></a>Hashmap</h2><p>HashMap是Java 1.2引进的Map接口的一个实现，c#中无HashMap</p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>  采用一段连续的存储单元来存储数据。对于指定下标的查找，时间复杂度为O(1)；通过给定值进行查找，需要遍历数组，逐一比对给定关键字和数组元素，时间复杂度为O(n)，当然，对于有序数组，则可采用二分查找，插值查找，斐波那契查找等方式，可将查找复杂度提高为O(logn)；对于一般的插入删除操作，涉及到数组元素的移动，其平均复杂度也为O(n)</p>
+<h3 id="线性链表"><a href="#线性链表" class="headerlink" title="线性链表"></a>线性链表</h3><p>  对于链表的新增，删除等操作（在找到指定操作位置后），仅需处理结点间的引用即可，时间复杂度为O(1)，而查找操作需要遍历链表逐一进行比对，复杂度为O(n)</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>  对一棵相对平衡的有序二叉树，对其进行插入，查找，删除等操作，平均复杂度均为O(logn)。</p>
+<h3 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h3><p>  相比上述几种数据结构，在哈希表中进行添加，删除，查找等操作，性能十分之高，不考虑哈希冲突的情况下，仅需一次定位即可完成，时间复杂度为O(1)。<br>  当要新增或查找某个元素，我们通过把当前元素的关键字 通过某个函数映射到数组中的某个位置，通过数组下标一次定位就可完成操作。<br>  <strong>存储位置 = 哈希函数f(关键字)</strong></p>
+<h4 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h4><p>两个不同的元素，通过哈希函数得出的实际存储地址相同<br>HashMap采用了链地址法，也就是数组+链表的方式解决哈希冲突<br>HashMap数组的每一个元素不止是一个Entry对象，也是一个链表的头节点。每一个Entry对象通过Next指针指向它的下一个Entry节点。当新来的Entry映射到冲突的数组位置时，只需要插入到对应的链表即可<br>HashMap可以简单理解为由数组+链表组成，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的</p>
+<h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p>哈希表（HashTable）又叫做散列表，是根据关键码值（即键值对）而直接访问的数据结构。也就是说，它通过把关键码映射到表中一个位置来访问记录，以加快查找速度，Hashtable是基于Dictionary类的</p>
+<h2 id="Hashtable-与-Hashmap区别"><a href="#Hashtable-与-Hashmap区别" class="headerlink" title="Hashtable 与 Hashmap区别"></a>Hashtable 与 Hashmap区别</h2><h3 id="Hashtable-1"><a href="#Hashtable-1" class="headerlink" title="Hashtable"></a>Hashtable</h3><p>底层数组+链表实现，无论key还是value都不能为null，线程安全，实现线程安全的方式是在修改数据时锁住整个HashTable，效率低，ConcurrentHashMap做了相关优化<br>初始size为11，扩容：newsize = olesize*2+1<br>计算index的方法：index = (hash &amp; 0x7FFFFFFF) % tab.length</p>
+<h3 id="Hashmap-1"><a href="#Hashmap-1" class="headerlink" title="Hashmap"></a>Hashmap</h3><p>底层数组+链表实现，可以存储null键和null值，线程不安全<br>初始size为16，扩容：newsize = oldsize*2，size一定为2的n次幂<br>扩容针对整个Map，每次扩容时，原来数组中的元素依次重新计算存放位置，并重新插入<br>插入元素后才判断该不该扩容，有可能无效扩容（插入后如果扩容，如果没有再次插入，就会产生无效扩容）<br>当Map中元素总数超过Entry数组的75%，触发扩容操作，为了减少链表长度，元素分配更均匀<br>计算index方法：index = hash &amp; (tab.length – 1)</p>
+<h2 id="HashTable和Dictionary区别"><a href="#HashTable和Dictionary区别" class="headerlink" title="HashTable和Dictionary区别"></a>HashTable和Dictionary区别</h2><p>  HashTable不支持泛型，而Dictionary支持泛型。<br>  Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时通常发生装箱和拆箱的操作，所以你可能需要进行一些类型转换的操作，而且对于int,float这些值类型还需要进行装箱等操作，非常耗时。<br>  单线程程序中推荐使用 Dictionary, 有泛型优势, 且读取速度较快, 容量利用更充分。多线程程序中推荐使用 Hashtable, 默认的 Hashtable 允许单线程写入, 多线程读取, 对 Hashtable 进一步调用 Synchronized() 方法可以获得完全线程安全的类型. 而 Dictionary 非线程安全, 必须人为使用 lock 语句进行保护, 效率大减。<br>  在通过代码测试的时候发现key是整数型Dictionary的效率比Hashtable快，如果key是字符串型，Dictionary的效率没有Hashtable快。</p>
 
     </div>
 
@@ -408,7 +380,7 @@ Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashmap"><span class="nav-number">1.</span> <span class="nav-text">Hashmap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E9%93%BE%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">线性链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.3.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="nav-number">1.4.1.</span> <span class="nav-text">哈希冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable"><span class="nav-number">2.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable-%E4%B8%8E-Hashmap%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">Hashtable 与 Hashmap区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable-v2"><span class="nav-number">3.1.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashmap-v2"><span class="nav-number">3.2.</span> <span class="nav-text">Hashmap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable%E5%92%8CDictionary%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">HashTable和Dictionary区别</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashmap"><span class="nav-number">1.</span> <span class="nav-text">Hashmap</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E9%93%BE%E8%A1%A8"><span class="nav-number">1.2.</span> <span class="nav-text">线性链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">1.3.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81"><span class="nav-number">1.4.1.</span> <span class="nav-text">哈希冲突</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable"><span class="nav-number">2.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable-%E4%B8%8E-Hashmap%E5%8C%BA%E5%88%AB"><span class="nav-number">3.</span> <span class="nav-text">Hashtable 与 Hashmap区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable-1"><span class="nav-number">3.1.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashmap-1"><span class="nav-number">3.2.</span> <span class="nav-text">Hashmap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashTable%E5%92%8CDictionary%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">HashTable和Dictionary区别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -489,13 +461,13 @@ Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时�
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -517,7 +489,7 @@ Hashtable 的元素属于 Object 类型，所以在存储或检索值类型时�
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

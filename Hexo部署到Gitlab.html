@@ -284,252 +284,182 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>博客部署到Gitlab与部署到Github等生成静态页面不同, Gitlab中需要存储完整代码.</p>
-<span id="more"></span>
-<h2 id="完整步骤">完整步骤</h2>
-<p>以下是使用 <strong>Hexo</strong> 部署到 <strong>GitLab Pages</strong> 创建个人博客的完整指南，包含详细步骤和常见问题排查：</p>
+        <p>博客部署到Gitlab与部署到Github等生成静态页面不同, Gitlab中需要存储完整代码.<br><span id="more"></span></p>
+<h2 id="完整步骤"><a href="#完整步骤" class="headerlink" title="完整步骤"></a>完整步骤</h2><p>以下是使用 <strong>Hexo</strong> 部署到 <strong>GitLab Pages</strong> 创建个人博客的完整指南，包含详细步骤和常见问题排查：</p>
 <hr>
-<h3 id="一、准备工作">一、准备工作</h3>
-<ol>
-<li>
-<p><strong>安装 Node.js 和 npm</strong><br>
-Hexo 基于 Node.js，需先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a>（建议选择 LTS 版本）。</p>
+<h3 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h3><ol>
+<li><p><strong>安装 Node.js 和 npm</strong><br>Hexo 基于 Node.js，需先安装 <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a>（建议选择 LTS 版本）。</p>
 </li>
-<li>
-<p><strong>安装 Git</strong><br>
-下载并安装 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>，用于代码管理。</p>
+<li><p><strong>安装 Git</strong><br>下载并安装 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a>，用于代码管理。</p>
 </li>
-<li>
-<p><strong>注册 GitLab 账号</strong><br>
-访问 <a target="_blank" rel="noopener" href="https://gitlab.com/">GitLab</a> 注册账号。</p>
+<li><p><strong>注册 GitLab 账号</strong><br>访问 <a target="_blank" rel="noopener" href="https://gitlab.com/">GitLab</a> 注册账号。</p>
 </li>
 </ol>
 <hr>
-<h3 id="二、安装-Hexo-并初始化博客">二、安装 Hexo 并初始化博客</h3>
-<ol>
-<li>
-<p><strong>全局安装 Hexo 命令行工具</strong></p>
+<h3 id="二、安装-Hexo-并初始化博客"><a href="#二、安装-Hexo-并初始化博客" class="headerlink" title="二、安装 Hexo 并初始化博客"></a>二、安装 Hexo 并初始化博客</h3><ol>
+<li><p><strong>全局安装 Hexo 命令行工具</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>创建 Hexo 项目</strong></p>
+<li><p><strong>创建 Hexo 项目</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog  <span class="comment"># 创建名为 my-blog 的博客目录</span></span><br><span class="line"><span class="built_in">cd</span> my-blog         <span class="comment"># 进入项目目录</span></span><br><span class="line">npm install        <span class="comment"># 安装依赖</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>本地预览</strong></p>
+<li><p><strong>本地预览</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server        <span class="comment"># 启动本地服务器</span></span><br></pre></td></tr></table></figure>
 <p>访问 <code>http://localhost:4000</code> 查看默认博客。</p>
 </li>
 </ol>
 <hr>
-<h3 id="三、关联-GitLab-仓库">三、关联 GitLab 仓库</h3>
-<ol>
-<li>
-<p><strong>在 GitLab 创建新项目</strong></p>
+<h3 id="三、关联-GitLab-仓库"><a href="#三、关联-GitLab-仓库" class="headerlink" title="三、关联 GitLab 仓库"></a>三、关联 GitLab 仓库</h3><ol>
+<li><p><strong>在 GitLab 创建新项目</strong>  </p>
 <ul>
-<li>登录 GitLab → <strong>New project</strong> → <strong>Create blank project</strong>。</li>
-<li>填写项目名称（如 <code>my-blog</code>），可见性选择 <code>Public</code>。</li>
-<li><strong>重要</strong>：项目名称需与 Hexo 的 <code>_config.yml</code> 中配置的路径一致（默认无需修改）。</li>
+<li>登录 GitLab → <strong>New project</strong> → <strong>Create blank project</strong>。  </li>
+<li>填写项目名称（如 <code>my-blog</code>），可见性选择 <code>Public</code>。  </li>
+<li><strong>重要</strong>：项目名称需与 Hexo 的 <code>_config.yml</code> 中配置的路径一致（默认无需修改）。  </li>
 </ul>
 </li>
-<li>
-<p><strong>本地关联 GitLab 仓库</strong></p>
+<li><p><strong>本地关联 GitLab 仓库</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin https://gitlab.com/你的用户名/my-blog.git</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
-<h3 id="四、配置-Hexo-部署到-GitLab">四、配置 Hexo 部署到 GitLab</h3>
-<ol>
-<li>
-<p><strong>安装 Hexo Git 部署插件</strong></p>
+<h3 id="四、配置-Hexo-部署到-GitLab"><a href="#四、配置-Hexo-部署到-GitLab" class="headerlink" title="四、配置 Hexo 部署到 GitLab"></a>四、配置 Hexo 部署到 GitLab</h3><ol>
+<li><p><strong>安装 Hexo Git 部署插件</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>修改 Hexo 配置文件</strong><br>
-打开 <code>_config.yml</code>，找到 <code>deploy</code> 部分，修改为：</p>
+<li><p><strong>修改 Hexo 配置文件</strong><br>打开 <code>_config.yml</code>，找到 <code>deploy</code> 部分，修改为：  </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://gitlab.com/你的用户名/my-blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span>  <span class="comment"># GitLab 默认分支是 main，不是 master！</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>测试部署</strong></p>
+<li><p><strong>测试部署</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate --deploy</span><br></pre></td></tr></table></figure>
 <ul>
-<li>此命令会将生成的静态文件（在 <code>public</code> 目录下）推送到 GitLab 的 <code>main</code> 分支。</li>
+<li>此命令会将生成的静态文件（在 <code>public</code> 目录下）推送到 GitLab 的 <code>main</code> 分支。  </li>
 <li>但为了自动化构建，建议使用 GitLab CI/CD（见下一步）。</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="五、配置-GitLab-CI-CD-自动化部署">五、配置 GitLab CI/CD 自动化部署</h3>
-<ol>
-<li>
-<p><strong>创建 <code>.gitlab-ci.yml</code> 文件</strong><br>
-在项目根目录新建文件，内容如下：</p>
+<h3 id="五、配置-GitLab-CI-CD-自动化部署"><a href="#五、配置-GitLab-CI-CD-自动化部署" class="headerlink" title="五、配置 GitLab CI/CD 自动化部署"></a>五、配置 GitLab CI/CD 自动化部署</h3><ol>
+<li><p><strong>创建 <code>.gitlab-ci.yml</code> 文件</strong><br>在项目根目录新建文件，内容如下：  </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image:</span> <span class="string">node:16</span>  <span class="comment"># 使用 Node.js 16 环境</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pages:</span></span><br><span class="line">  <span class="attr">cache:</span></span><br><span class="line">    <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">node_modules/</span>  <span class="comment"># 缓存依赖加速构建</span></span><br><span class="line">  <span class="attr">script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span>  <span class="comment"># 全局安装 Hexo</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span>  <span class="comment"># 生成静态文件到 public 目录</span></span><br><span class="line">  <span class="attr">artifacts:</span></span><br><span class="line">    <span class="attr">paths:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">public</span>  <span class="comment"># GitLab Pages 默认从 public 目录部署</span></span><br><span class="line">  <span class="attr">only:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">main</span>  <span class="comment"># 仅 main 分支触发构建</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>推送代码到 GitLab</strong></p>
+<li><p><strong>推送代码到 GitLab</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;初始化 Hexo 博客&quot;</span></span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>查看构建状态</strong></p>
+<li><p><strong>查看构建状态</strong>  </p>
 <ul>
-<li>进入 GitLab 项目 → <strong>CI/CD → Pipelines</strong>，查看流水线状态。</li>
+<li>进入 GitLab 项目 → <strong>CI/CD → Pipelines</strong>，查看流水线状态。  </li>
 <li>构建成功后，进入 <strong>Settings → Pages</strong>，确认网站地址。</li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="六、访问博客">六、访问博客</h3>
-<ul>
-<li>
-<p><strong>默认地址</strong>：</p>
+<h3 id="六、访问博客"><a href="#六、访问博客" class="headerlink" title="六、访问博客"></a>六、访问博客</h3><ul>
+<li><p><strong>默认地址</strong>：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://你的用户名.gitlab.io/my-blog</span><br></pre></td></tr></table></figure>
 <ul>
-<li>如果项目名称为 <code>my-blog</code>，访问路径需包含项目名。</li>
+<li>如果项目名称为 <code>my-blog</code>，访问路径需包含项目名。  </li>
 <li>如果希望直接使用 <code>https://你的用户名.gitlab.io</code>，需将项目重命名为 <code>你的用户名.gitlab.io</code>（如 <code>john.gitlab.io</code>）。</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h3 id="七、自定义域名（可选）">七、自定义域名（可选）</h3>
-<ol>
-<li>
-<p><strong>购买域名</strong><br>
-在域名服务商（如 GoDaddy、阿里云）购买域名（如 <code>example.com</code>）。</p>
+<h3 id="七、自定义域名（可选）"><a href="#七、自定义域名（可选）" class="headerlink" title="七、自定义域名（可选）"></a>七、自定义域名（可选）</h3><ol>
+<li><p><strong>购买域名</strong><br>在域名服务商（如 GoDaddy、阿里云）购买域名（如 <code>example.com</code>）。</p>
 </li>
-<li>
-<p><strong>配置 DNS 解析</strong></p>
+<li><p><strong>配置 DNS 解析</strong>  </p>
 <ul>
-<li>
-<p>添加 <code>CNAME</code> 记录：</p>
+<li><p>添加 <code>CNAME</code> 记录：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主机名：blog  </span><br><span class="line">类型：CNAME  </span><br><span class="line">值：你的用户名.gitlab.io</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>或添加 <code>A</code> 记录：</p>
+<li><p>或添加 <code>A</code> 记录：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">主机名：@  </span><br><span class="line">类型：A  </span><br><span class="line">值：35.185.44.232（GitLab Pages 的 IP）</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>GitLab 配置自定义域名</strong></p>
+<li><p><strong>GitLab 配置自定义域名</strong>  </p>
 <ul>
-<li>
-<p>进入项目 → <strong>Settings → Pages</strong> → <strong>New Domain</strong>。</p>
-</li>
-<li>
-<p>输入域名（如 <code>blog.example.com</code>），点击 <strong>Save</strong>。</p>
-</li>
-<li>
-<p>在 Hexo 的 <code>source</code> 目录下创建 <code>CNAME</code> 文件（无后缀），内容为域名：</p>
+<li>进入项目 → <strong>Settings → Pages</strong> → <strong>New Domain</strong>。  </li>
+<li>输入域名（如 <code>blog.example.com</code>），点击 <strong>Save</strong>。  </li>
+<li><p>在 Hexo 的 <code>source</code> 目录下创建 <code>CNAME</code> 文件（无后缀），内容为域名：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blog.example.com</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>推送代码使配置生效：</p>
+<li><p>推送代码使配置生效：  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add <span class="built_in">source</span>/CNAME</span><br><span class="line">git commit -m <span class="string">&quot;添加自定义域名&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="八、更新博客内容">八、更新博客内容</h3>
-<ol>
-<li>
-<p><strong>新建文章</strong></p>
+<h3 id="八、更新博客内容"><a href="#八、更新博客内容" class="headerlink" title="八、更新博客内容"></a>八、更新博客内容</h3><ol>
+<li><p><strong>新建文章</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">&quot;我的第一篇文章&quot;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>编辑文件 <code>source/_posts/我的第一篇文章.md</code>。</li>
 </ul>
 </li>
-<li>
-<p><strong>本地预览</strong></p>
+<li><p><strong>本地预览</strong>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo server</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>部署到 GitLab</strong></p>
+<li><p><strong>部署到 GitLab</strong>  </p>
 <ul>
-<li>
-<p><strong>方式一</strong>：手动生成并推送</p>
+<li><p><strong>方式一</strong>：手动生成并推送  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate --deploy</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>方式二</strong>：触发 CI/CD 自动构建（推荐）</p>
+<li><p><strong>方式二</strong>：触发 CI/CD 自动构建（推荐）  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;添加新文章&quot;</span></span><br><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="九、常见问题解决">九、常见问题解决</h3>
-<ol>
-<li>
-<p><strong>构建失败</strong></p>
+<h3 id="九、常见问题解决"><a href="#九、常见问题解决" class="headerlink" title="九、常见问题解决"></a>九、常见问题解决</h3><ol>
+<li><p><strong>构建失败</strong>  </p>
 <ul>
-<li><strong>错误提示</strong>：<code>npm install</code> 失败。
-<ul>
-<li>检查 <code>.gitlab-ci.yml</code> 中的 Node.js 版本是否与本地一致。</li>
+<li><strong>错误提示</strong>：<code>npm install</code> 失败。  <ul>
+<li>检查 <code>.gitlab-ci.yml</code> 中的 Node.js 版本是否与本地一致。  </li>
 </ul>
 </li>
-<li><strong>错误提示</strong>：<code>hexo generate</code> 报错。
-<ul>
+<li><strong>错误提示</strong>：<code>hexo generate</code> 报错。  <ul>
 <li>确保 <code>_config.yml</code> 中语法正确（避免使用 Tab 缩进，需用空格）。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>页面 404</strong></p>
+<li><p><strong>页面 404</strong>  </p>
 <ul>
-<li><strong>原因</strong>：访问路径错误。
-<ul>
-<li>如果项目名为 <code>my-blog</code>，访问地址应为 <code>https://用户名.gitlab.io/my-blog</code>。</li>
+<li><strong>原因</strong>：访问路径错误。  <ul>
+<li>如果项目名为 <code>my-blog</code>，访问地址应为 <code>https://用户名.gitlab.io/my-blog</code>。  </li>
 <li>若希望根路径访问，需将项目重命名为 <code>用户名.gitlab.io</code>。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>自定义域名不生效</strong></p>
+<li><p><strong>自定义域名不生效</strong>  </p>
 <ul>
-<li>检查 <code>CNAME</code> 文件是否提交到仓库。</li>
+<li>检查 <code>CNAME</code> 文件是否提交到仓库。  </li>
 <li>等待 DNS 解析生效（最长可能需要 48 小时）。</li>
 </ul>
 </li>
 </ol>
 <hr>
 <p>按照以上步骤，你可以将 Hexo 博客无缝部署到 GitLab Pages，享受免费、稳定的静态网站托管服务！</p>
-<h2 id="部署Github方式部署到Gitlab">部署Github方式部署到Gitlab</h2>
-<ol>
-<li>
-<p>在<code>_config.yml</code>中增加部署仓库链接</p>
-</li>
-<li>
-<p>新建<code>.gitlab-ci.yml</code>文件用于触发流水线</p>
+<h2 id="部署Github方式部署到Gitlab"><a href="#部署Github方式部署到Gitlab" class="headerlink" title="部署Github方式部署到Gitlab"></a>部署Github方式部署到Gitlab</h2><ol>
+<li>在<code>_config.yml</code>中增加部署仓库链接</li>
+<li><p>新建<code>.gitlab-ci.yml</code>文件用于触发流水线</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pages:</span></span><br><span class="line"><span class="attr">stage:</span> <span class="string">deploy</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mkdir</span> <span class="string">.public</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">cp</span> <span class="string">-r</span> <span class="string">./*</span> <span class="string">.public</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">rm</span> <span class="string">-rf</span> <span class="string">public</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">mv</span> <span class="string">.public</span> <span class="string">public</span></span><br><span class="line"><span class="attr">artifacts:</span></span><br><span class="line">    <span class="attr">paths:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">public</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">if:</span> <span class="string">$CI_COMMIT_BRANCH</span> <span class="string">==</span> <span class="string">$CI_DEFAULT_BRANCH</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>在执行完<code>hexo g</code>后先将<code>.gitlab-ci.yml</code>复制到<code>.deploy_git</code>中再执行<code>hexo d</code></p>
+<li><p>在执行完<code>hexo g</code>后先将<code>.gitlab-ci.yml</code>复制到<code>.deploy_git</code>中再执行<code>hexo d</code></p>
 </li>
 </ol>
-<h2 id="官方方式">官方方式</h2>
-<ol>
-<li>
-<p>如果你更希望你的站点部署在 <code>&lt;你的 GitLab 用户名&gt;.gitlab.io</code> 的子目录中，你的 <code>repository</code> 需要直接命名为子目录的名字，这样你的站点可以通过 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io/&lt;repository 的名字&gt;</code> 访问。 你需要检查你的 Hexo 配置文件，将 url 的值修改为 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io/&lt;repository 的名字&gt;</code>、将 root 的值修改为 <code>/&lt;repository 的名字&gt;/</code></p>
-</li>
-<li>
-<p>通过 Settings &gt; CI/CD &gt; Runners &gt; Enable shared runners for this project 启用共享运行程序。</p>
-</li>
-<li>
-<p>将你的 Hexo 站点文件夹推送到 repository 中。 默认情况下 public 目录将不会（并且不应该）被推送到 repository 中，建议你检查 .gitignore 文件中是否包含 public 一行，如果没有请加上。 整体文件夹结构应该与 示例储存库 大致相似。</p>
-</li>
-<li>
-<p>使用 <code>node --version</code> 指令检查你电脑上的 Node.js 版本。 记下主要版本（例如，v16.y.z）</p>
-</li>
-<li>
-<p>将 <code>.gitlab-ci.yml</code> 文件添加到您的版本库根目录（与 _config.yml &amp; package.json并列），内容如下（将16替换为您在上一步中注意到的 Node.js 主版本）</p>
+<h2 id="官方方式"><a href="#官方方式" class="headerlink" title="官方方式"></a>官方方式</h2><ol>
+<li>如果你更希望你的站点部署在 <code>&lt;你的 GitLab 用户名&gt;.gitlab.io</code> 的子目录中，你的 <code>repository</code> 需要直接命名为子目录的名字，这样你的站点可以通过 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io/&lt;repository 的名字&gt;</code> 访问。 你需要检查你的 Hexo 配置文件，将 url 的值修改为 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io/&lt;repository 的名字&gt;</code>、将 root 的值修改为 <code>/&lt;repository 的名字&gt;/</code></li>
+<li>通过 Settings &gt; CI/CD &gt; Runners &gt; Enable shared runners for this project 启用共享运行程序。</li>
+<li>将你的 Hexo 站点文件夹推送到 repository 中。 默认情况下 public 目录将不会（并且不应该）被推送到 repository 中，建议你检查 .gitignore 文件中是否包含 public 一行，如果没有请加上。 整体文件夹结构应该与 示例储存库 大致相似。</li>
+<li>使用 <code>node --version</code> 指令检查你电脑上的 Node.js 版本。 记下主要版本（例如，v16.y.z）</li>
+<li><p>将 <code>.gitlab-ci.yml</code> 文件添加到您的版本库根目录（与 _config.yml &amp; package.json并列），内容如下（将16替换为您在上一步中注意到的 Node.js 主版本）</p>
  <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">image:</span> <span class="string">node:16-alpine</span></span><br><span class="line"><span class="attr">cache:</span></span><br><span class="line"><span class="attr">paths:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">node_modules/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">before_script:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"></span><br><span class="line"><span class="attr">pages:</span></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">npm</span> <span class="string">run</span> <span class="string">build</span></span><br><span class="line"><span class="attr">artifacts:</span></span><br><span class="line">    <span class="attr">paths:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">public</span></span><br><span class="line"><span class="attr">rules:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">if:</span> <span class="string">$CI_COMMIT_BRANCH</span> <span class="string">==</span> <span class="string">$CI_DEFAULT_BRANCH</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>GitLab CI 应该会自动开始运行，构建成功以后你应该可以在 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io</code> 查看你的网站。</p>
+<li><p>GitLab CI 应该会自动开始运行，构建成功以后你应该可以在 <code>https://&lt;你的 GitLab 用户名&gt;.gitlab.io</code> 查看你的网站。</p>
 </li>
 </ol>
 
@@ -698,13 +628,13 @@ Hexo 基于 Node.js，需先安装 <a target="_blank" rel="noopener" href="https
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -726,7 +656,7 @@ Hexo 基于 Node.js，需先安装 <a target="_blank" rel="noopener" href="https
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

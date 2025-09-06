@@ -278,40 +278,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>windows安装docker, 示例部署gitlab</p>
-<span id="more"></span>
-<h2 id="安装">安装</h2>
-<p>自行下载安装Docker Desktop</p>
+        <p>windows安装docker, 示例部署gitlab<br><span id="more"></span></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>自行下载安装Docker Desktop</p>
 <p>安装完成后命令行输入<code>docker -v</code>可查看Docker版本信息</p>
-<h2 id="配置">配置</h2>
-<h3 id="配置镜像源">配置镜像源</h3>
-<ol>
-<li>
-<p>在配置中添加registry mirrors</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h3><ol>
+<li><p>在配置中添加registry mirrors</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;registry-mirrors&quot;:</span> [</span><br><span class="line"> <span class="string">&quot;https://docker.1ms.run&quot;</span>,</span><br><span class="line"> <span class="string">&quot;https://docker.xuanyuan.me&quot;</span></span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>修改docker/daemon.json文件设置registry mirrors</p>
+<li><p>修改docker/daemon.json文件设置registry mirrors</p>
 </li>
 </ol>
-<h3 id="拉去镜像">拉去镜像</h3>
-<p>如: 拉取gitlab<code>docker pull gitlab/gitlab-ee:latest</code></p>
-<h4 id="Gitlab配置">Gitlab配置</h4>
-<p>新建文件路径存储Gitlab信息如:</p>
+<h3 id="拉去镜像"><a href="#拉去镜像" class="headerlink" title="拉去镜像"></a>拉去镜像</h3><p>如: 拉取gitlab<code>docker pull gitlab/gitlab-ee:latest</code></p>
+<h4 id="Gitlab配置"><a href="#Gitlab配置" class="headerlink" title="Gitlab配置"></a>Gitlab配置</h4><p>新建文件路径存储Gitlab信息如:</p>
 <blockquote>
 <p>gitlab</p>
 <blockquote>
-<p>config<br>
-data<br>
-logs<br>
-docker-compose.yml</p>
+<p>config<br>data<br>logs<br>docker-compose.yml</p>
 </blockquote>
 </blockquote>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">gitlab:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">&#x27;gitlab/gitlab-ee:latest&#x27;</span>  <span class="comment"># 使用 GitLab 企业版镜像，或将 &#x27;gitlab-ee&#x27; 改为 &#x27;gitlab-ce&#x27; 使用社区版</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">hostname:</span> <span class="string">&#x27;localhost&#x27;</span>  <span class="comment"># 配置 GitLab 的主机名，可以改为你自己的域名或 IP 地址</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="attr">GITLAB_OMNIBUS_CONFIG:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        external_url &#x27;http://localhost&#x27;  # GitLab 的外部 URL，建议替换为你服务器的域名或 IP</span></span><br><span class="line"><span class="string"></span>    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;80:80&#x27;</span>    <span class="comment"># 映射 HTTP 端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;443:443&#x27;</span>  <span class="comment"># 映射 HTTPS 端口</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&#x27;22:22&#x27;</span>    <span class="comment"># 映射 SSH 端口，供 GitLab 使用</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./gitlab/config:/etc/gitlab</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./gitlab/data:/var/opt/gitlab</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./gitlab/logs:/var/log/gitlab</span></span><br><span class="line">    <span class="attr">logging:</span></span><br><span class="line">      <span class="attr">driver:</span> <span class="string">&#x27;json-file&#x27;</span></span><br><span class="line">      <span class="attr">options:</span></span><br><span class="line">        <span class="attr">max-size:</span> <span class="string">&#x27;2g&#x27;</span></span><br></pre></td></tr></table></figure>
-<h4 id="启动Gitlab">启动Gitlab</h4>
-<p>使用命令<code>docker-compose up -d</code>启动容器需要一定时间, 期间可以用<code>docker ps</code>查看状态, 从starting转为healthy则启动成功<br>
-访问<a target="_blank" rel="noopener" href="http://xn--localhostgitlab-ym1zi4dy26g750f">http://localhost即可登录gitlab</a><br>
-默认用户为：root 密码在gitlab部署目录下gitlab下的gitlab/config/initial_root_password文件中</p>
+<h4 id="启动Gitlab"><a href="#启动Gitlab" class="headerlink" title="启动Gitlab"></a>启动Gitlab</h4><p>使用命令<code>docker-compose up -d</code>启动容器需要一定时间, 期间可以用<code>docker ps</code>查看状态, 从starting转为healthy则启动成功<br>访问<a target="_blank" rel="noopener" href="http://localhost即可登录gitlab">http://localhost即可登录gitlab</a><br>默认用户为：root 密码在gitlab部署目录下gitlab下的gitlab/config/initial_root_password文件中</p>
 
     </div>
 
@@ -478,13 +464,13 @@ docker-compose.yml</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -506,7 +492,7 @@ docker-compose.yml</p>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

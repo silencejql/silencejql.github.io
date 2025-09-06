@@ -284,40 +284,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <center></center>
-Ubuntu下基于Docker搭建Gitlab
-<span id="more"></span>
-<h2 id="Docker">Docker</h2>
-<p>安装如下或自行搜索</p>
+        <p><center></center><br>Ubuntu下基于Docker搭建Gitlab<br><span id="more"></span></p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>安装如下或自行搜索</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//来添加新的 HTTPS 软件源</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</span><br><span class="line"></span><br><span class="line">//导入源仓库的 GPG key</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;</span><br><span class="line"></span><br><span class="line">//安装 Docker 最新版本</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install docker-ce docker-ce-cli containerd.io</span><br><span class="line"></span><br><span class="line">//安装完成，Docker 服务将会自动启动, 如下为手动启动</span><br><span class="line">sudo systemctl enable docker</span><br><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br><span class="line">//你可以输入下面的命令，验证</span><br><span class="line">sudo systemctl status docker</span><br><span class="line">输出如下:</span><br><span class="line">docker.service - Docker Application Container Engine</span><br><span class="line">     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: active (running) since Thu 2020-05-21 14:47:34 UTC; 42s **ago**</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
-<h2 id="部署Gitlab">部署Gitlab</h2>
-<h3 id="创建容器外挂目录">创建容器外挂目录</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /gitlab/data</span><br><span class="line">sudo mkdir -p /gitlab/logs</span><br><span class="line">sudo mkdir -p /gitlab/config</span><br></pre></td></tr></table></figure>
-<h3 id="启动容器">启动容器</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">    --publish 8443:433 --publish 8000:80 --publish 2222:22 \</span><br><span class="line">    --name gitlab \</span><br><span class="line">    --restart always \</span><br><span class="line">    --volume /gitlab/config:/etc/gitlab \</span><br><span class="line">    --volume /gitlab/logs:/var/log/gitlab \</span><br><span class="line">    --volume /gitlab/data:/var/opt/gitlab \</span><br><span class="line">    -log-driver=none \</span><br><span class="line">    beginor/gitlab-ce</span><br></pre></td></tr></table></figure>
-<p>说明:<br>
-–detach 设置容器后台运行<br>
-–publish 暴露 https、http和ssh端口,关于端口下文会细说<br>
-–name 容器名称<br>
-–restart always 每次启动容器就重启GitLab<br>
-–volume 设置GitLab数据挂载点</p>
-<h3 id="查询Docker状态">查询Docker状态</h3>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//status=starting表示正在启动, 启动成功转为health</span><br><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure>
-<h2 id="配置Gitlab">配置Gitlab</h2>
-<p>配置文件位于/gitlab/config/gitlab.rb中</p>
-<p>修改external_url, 外部访问地址<br>
-修改gitlab_shell_ssh_port --不修改每次访问都需要输入密码<br>
-修改nginx监听端口</p>
-<h2 id="Docker常用命令">Docker常用命令</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start</span><br><span class="line">sudo docker restart</span><br><span class="line">sudo docker stop</span><br></pre></td></tr></table></figure>
-<h2 id="登录gitlab">登录gitlab</h2>
-<p>gitlab启动后浏览器输入IP:8000后进入登录界面</p>
-<p>用户名:root<br>
-获取默认密码:<br>
-<code>sudo docker exec -it gitlab grep 'Password:' /etc/'gitlab/initial_root_password</code></p>
+<h2 id="部署Gitlab"><a href="#部署Gitlab" class="headerlink" title="部署Gitlab"></a>部署Gitlab</h2><h3 id="创建容器外挂目录"><a href="#创建容器外挂目录" class="headerlink" title="创建容器外挂目录"></a>创建容器外挂目录</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p /gitlab/data</span><br><span class="line">sudo mkdir -p /gitlab/logs</span><br><span class="line">sudo mkdir -p /gitlab/config</span><br></pre></td></tr></table></figure>
+<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">    --publish 8443:433 --publish 8000:80 --publish 2222:22 \</span><br><span class="line">    --name gitlab \</span><br><span class="line">    --restart always \</span><br><span class="line">    --volume /gitlab/config:/etc/gitlab \</span><br><span class="line">    --volume /gitlab/logs:/var/log/gitlab \</span><br><span class="line">    --volume /gitlab/data:/var/opt/gitlab \</span><br><span class="line">    -log-driver=none \</span><br><span class="line">    beginor/gitlab-ce</span><br></pre></td></tr></table></figure>
+<p>说明:<br>–detach 设置容器后台运行<br>–publish 暴露 https、http和ssh端口,关于端口下文会细说<br>–name 容器名称<br>–restart always 每次启动容器就重启GitLab<br>–volume 设置GitLab数据挂载点</p>
+<h3 id="查询Docker状态"><a href="#查询Docker状态" class="headerlink" title="查询Docker状态"></a>查询Docker状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//status=starting表示正在启动, 启动成功转为health</span><br><span class="line">sudo docker ps</span><br></pre></td></tr></table></figure>
+<h2 id="配置Gitlab"><a href="#配置Gitlab" class="headerlink" title="配置Gitlab"></a>配置Gitlab</h2><p>配置文件位于/gitlab/config/gitlab.rb中</p>
+<p>修改external_url, 外部访问地址<br>修改gitlab_shell_ssh_port —不修改每次访问都需要输入密码<br>修改nginx监听端口</p>
+<h2 id="Docker常用命令"><a href="#Docker常用命令" class="headerlink" title="Docker常用命令"></a>Docker常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker start</span><br><span class="line">sudo docker restart</span><br><span class="line">sudo docker stop</span><br></pre></td></tr></table></figure>
+<h2 id="登录gitlab"><a href="#登录gitlab" class="headerlink" title="登录gitlab"></a>登录gitlab</h2><p>gitlab启动后浏览器输入IP:8000后进入登录界面</p>
+<p>用户名:root<br>获取默认密码:<br><code>sudo docker exec -it gitlab grep &#39;Password:&#39; /etc/&#39;gitlab/initial_root_password</code></p>
 <p>登录后点击右上角Edit profile更改密码</p>
-<h2 id="使用Gitlab">使用Gitlab</h2>
-<ol>
+<h2 id="使用Gitlab"><a href="#使用Gitlab" class="headerlink" title="使用Gitlab"></a>使用Gitlab</h2><ol>
 <li>添加组Group和用户</li>
 <li>新建项目Project</li>
 <li>使用</li>
@@ -489,13 +469,13 @@ Ubuntu下基于Docker搭建Gitlab
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">441k</span>
+    <span title="站点总字数">438k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:41</span>
+    <span title="站点阅读时长">6:39</span>
 </div>
 <!--
 <div class="powered-by">
@@ -517,7 +497,7 @@ Ubuntu下基于Docker搭建Gitlab
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共117.2k字</span>
+  <span class="post-count">博客全站共115.6k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
