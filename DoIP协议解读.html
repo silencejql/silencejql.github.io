@@ -286,8 +286,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>ISO13400<br><span id="more"></span></p>
-<h2 id="帧格式"><a href="#帧格式" class="headerlink" title="帧格式"></a>帧格式</h2><div class="table-container">
+        <center></center>
+ISO13400
+<span id="more"></span>
+<h2 id="帧格式">帧格式</h2>
 <table>
 <thead>
 <tr>
@@ -371,11 +373,15 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>关于数据类型参考:<code>https://blog.csdn.net/weixin_42967006/article/details/121638078</code></p>
-<h2 id="源地址"><a href="#源地址" class="headerlink" title="源地址"></a>源地址</h2><p>0x0E00-0x0E7F用于OBD诊断, 0x0E80-0x0EFF用于增强型诊断<br>物理逻辑地址, 在0x0001-0x0DFF或0x1000-0x7FFF范围内<br>功能寻址, 是0xE000</p>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">02</span> FD PayloadType Length SourceAddress TargetAddress Message</span><br><span class="line"><span class="number">1.</span> <span class="number">02</span> FD <span class="number">0005</span> <span class="number">0000000B</span> <span class="number">0E80</span> <span class="number">000000000000000000</span> <span class="comment">//请求路由激活</span></span><br><span class="line"><span class="number">2.</span> <span class="number">02</span> FD <span class="number">0006</span> <span class="number">000000</span>XX XXXX XXXX XXXX YY XX... <span class="comment">//收到回复YY=0x10表示成功</span></span><br><span class="line"><span class="number">3.</span> <span class="number">02</span> FD <span class="number">8001</span> <span class="number">00000006</span> <span class="number">0E800304</span> <span class="number">1003</span> <span class="comment">//进入诊断模式</span></span><br><span class="line"><span class="number">4.</span> <span class="number">02</span> FD <span class="number">8002</span> <span class="number">00000005</span> <span class="number">03040E80</span> <span class="number">00</span> <span class="comment">//诊断报文正反馈</span></span><br><span class="line"><span class="number">5.</span> <span class="number">02</span> FD <span class="number">8001</span> <span class="number">0000000</span>A <span class="number">03040E80</span> <span class="number">5003003200</span>C8 <span class="comment">//收到诊断报文</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><img src="DoIP协议解读/PayloadType.jpg" alt="截图"></p>
+<h2 id="源地址">源地址</h2>
+<p>0x0E00-0x0E7F用于OBD诊断, 0x0E80-0x0EFF用于增强型诊断<br>
+物理逻辑地址, 在0x0001-0x0DFF或0x1000-0x7FFF范围内<br>
+功能寻址, 是0xE000</p>
+<h2 id="示例">示例</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">02</span> FD PayloadType Length SourceAddress TargetAddress Message</span><br><span class="line"><span class="number">1.</span> <span class="number">02</span> FD <span class="number">0005</span> <span class="number">0000000B</span> <span class="number">0E80</span> <span class="number">000000000000000000</span> <span class="comment">//请求路由激活</span></span><br><span class="line"><span class="number">2.</span> <span class="number">02</span> FD <span class="number">0006</span> <span class="number">000000</span>XX XXXX XXXX XXXX YY XX... <span class="comment">//收到回复YY=0x10表示成功</span></span><br><span class="line"><span class="number">3.</span> <span class="number">02</span> FD <span class="number">8001</span> <span class="number">00000006</span> <span class="number">0E800304</span> <span class="number">1003</span> <span class="comment">//进入诊断模式</span></span><br><span class="line"><span class="number">4.</span> <span class="number">02</span> FD <span class="number">8002</span> <span class="number">00000005</span> <span class="number">03040E80</span> <span class="number">00</span> <span class="comment">//诊断报文正反馈</span></span><br><span class="line"><span class="number">5.</span> <span class="number">02</span> FD <span class="number">8001</span> <span class="number">0000000</span>A <span class="number">03040E80</span> <span class="number">5003003200</span>C8 <span class="comment">//收到诊断报文</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考">参考</h2>
+<p><img src="DoIP%E5%8D%8F%E8%AE%AE%E8%A7%A3%E8%AF%BB/PayloadType.jpg" alt="截图"></p>
 
     </div>
 
@@ -542,13 +548,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -570,7 +576,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

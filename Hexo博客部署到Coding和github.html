@@ -294,25 +294,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="部署到Github和Coding"><a href="#部署到Github和Coding" class="headerlink" title="部署到Github和Coding"></a>部署到Github和Coding</h3><h4 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h4><blockquote>
-<p>Github：<br>新建Repository：name.github.io</p>
-<p>Coding：<br>新建Repository：name.coding.me</p>
-</blockquote>
-<h4 id="添加SSH-key"><a href="#添加SSH-key" class="headerlink" title="添加SSH key"></a>添加SSH key</h4><p>若无SSHkey</p>
+        <h3 id="部署到Github和Coding">部署到Github和Coding</h3>
+<h4 id="新建仓库">新建仓库</h4>
 <blockquote>
-<p>ssh-keygen -t rsa -C “your e-mail”<br>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;<br>Enter same passphrase again:&lt;再次输入加密串&gt;</p>
+<p>Github：<br>
+新建Repository：<a target="_blank" rel="noopener" href="http://name.github.io">name.github.io</a></p>
+</blockquote>
+<blockquote>
+<p>Coding：<br>
+新建Repository：<a target="_blank" rel="noopener" href="http://name.coding.me">name.coding.me</a></p>
+</blockquote>
+<h4 id="添加SSH-key">添加SSH key</h4>
+<p>若无SSHkey</p>
+<blockquote>
+<p>ssh-keygen -t rsa -C “your e-mail”<br>
+Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;<br>
+Enter same passphrase again:&lt;再次输入加密串&gt;</p>
 </blockquote>
 <p>打开生成的id_rsa.pub文件并复制其中的内容添加到Github或Coding项目中然后在git中执行</p>
 <blockquote>
-<p>Github：<br>    ssh -T git@github.com</p>
-<p>Coding：<br>    ssh -T git@git.coding.net //coding<br>    ssh -T git@git.dev.tencent.com //腾讯云</p>
+<p>Github：<br>
+ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
+</blockquote>
+<blockquote>
+<p>Coding：<br>
+ssh -T <a href="mailto:git@git.coding.net">git@git.coding.net</a> //coding<br>
+ssh -T <a href="mailto:git@git.dev.tencent.com">git@git.dev.tencent.com</a> //腾讯云</p>
 </blockquote>
 <p>添加到腾讯云后需要开启Pages服务才可通过name.coding.me登录</p>
-<h4 id="更改博客配置文件"><a href="#更改博客配置文件" class="headerlink" title="更改博客配置文件"></a>更改博客配置文件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:silencejql/silencejql.github.io.git</span><br><span class="line">    coding: git@git.dev.tencent.com:silencejql/silencejql.coding.me.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="更改博客配置文件">更改博客配置文件</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository:</span><br><span class="line">    github: git@github.com:silencejql/silencejql.github.io.git</span><br><span class="line">    coding: git@git.dev.tencent.com:silencejql/silencejql.coding.me.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>不同格式相应作出调整即可</p>
-<h4 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h4><p><a target="_blank" rel="noopener" href="http://name.coding.me">http://name.coding.me</a> 在google chrome中打开可能会默认https，修复方式为:</p>
+<h4 id="可能出现的问题">可能出现的问题</h4>
+<p><a target="_blank" rel="noopener" href="http://name.coding.me">http://name.coding.me</a> 在google chrome中打开可能会默认https，修复方式为:</p>
 <blockquote>
-<p>地址栏中输入 chrome://net-internals/#hsts<br>在 Delete domain security policies 中输入项目的域名，并 Delete 删除<br>可以在 Query domain 测试是否删除成功</p>
+<p>地址栏中输入 chrome://net-internals/#hsts<br>
+在 Delete domain security policies 中输入项目的域名，并 Delete 删除<br>
+可以在 Query domain 测试是否删除成功</p>
 </blockquote>
 <p>这里如果还是不行， 请清除浏览器缓存！</p>
 
@@ -481,13 +499,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -509,7 +527,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

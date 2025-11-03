@@ -286,13 +286,62 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>linux编译、调试c、c++<br><span id="more"></span></p>
-<h2 id="安装g-gcc"><a href="#安装g-gcc" class="headerlink" title="安装g++/gcc"></a>安装g++/gcc</h2><h2 id="创建cpp文件"><a href="#创建cpp文件" class="headerlink" title="创建cpp文件"></a>创建cpp文件</h2><h2 id="编译cpp文件生成可执行文件"><a href="#编译cpp文件生成可执行文件" class="headerlink" title="编译cpp文件生成可执行文件"></a>编译cpp文件生成可执行文件</h2><p><code>g++ *.cpp -o outfile</code></p>
+        <center></center>
+linux编译、调试c、c++
+<span id="more"></span>
+<h2 id="安装g-gcc">安装g++/gcc</h2>
+<h2 id="创建cpp文件">创建cpp文件</h2>
+<h2 id="编译cpp文件生成可执行文件">编译cpp文件生成可执行文件</h2>
+<p><code>g++ *.cpp -o outfile</code></p>
 <p>编译*.cpp文件生成可执行文件outfile</p>
-<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><p>1、没有任何选项：gcc  helloworld.c<br>结果会在与helloworld.c相同的目录下产生一个a.out的可执行文件。<br>2、-o选项，指定输出文件名：gcc -o helloworld helloworld.c<br>-o意思是Output即需要指定输出的可执行文件的名称。这里的名称为helloworld。<br>3、-c选项，只编译，不汇编连接：gcc -c helloworld.c<br> -c意思就是Compile，产生一个叫helloworld.o的目标文件<br>4、-S选项，产生汇编源文件：gcc -s helloworld.c<br>-S意思就是assemble，产生一个叫helloworld.s的汇编源文件<br>5、-E选项，预处理C源文件：gcc -E helloworld.c<br>-E意思就是prEprocess。输出不是送到一个文件而是标准输出。当然可以对它进行重定向：<br>gcc -E helloworld.c &gt; helloworld.txt<br>二、优化选项<br>7、-O选项，基本优化：gcc -O helloworld.c<br>-O意思就是Optimize，产生一个经过优化的叫作a.out的可执行文件。也可以同时使用-o选项，以指定输出文件名。如：<br>gcc -O -o test helloworld.c<br>即会产生一个叫test的经过优化的可执行文件。<br>8、-O2选项，最大优化：gcc -O2 helloworld.c<br>产生一个经过最大优化的叫作a.out的可执行文件。<br>三、调试选项<br>9、-g选项，产生供gdb调试用的可执行文件：gcc -g helloworld.c<br>产生一个叫作a.out的可执行文件，大小明显比只用-o选项编译汇编连接后的文件大。<br>10、-pg选项，产生供gprof剖析用的可执行文件：gcc -pg helloworld.c<br>产生一个叫作a.out的执行文件，大小明显比用-g选项后产生的文件还大。</p>
-<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><p><code>./outfile</code></p>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>1.编译：gcc -o xxx xxx.c<br>2.生成可调试文件：gcc -o xxx -g xxx.c<br>3.调试程序：gdb xxx<br>4.执行程序：<br>start 从程序第一步开始执行<br>run 直接运行程序到结束或者断点处<br>5.设置断点：break line(行数）或函数名或者条件表达式<br>break 6 在第6行设置断点<br>break Swap 在Swap函数入口设置断点<br>break 6 if i == 10 在第6行设置断点，要求i == 10<br>6.删除断点：<br>clear 删除所有断点<br>clear 行号 : 删除这行的断点<br>clear 函数名 : 删除该函数的断点<br>7.info 查看断点<br>8.c 继续执行到下一个断点<br>9.print +变量 打印变量值<br>10.n 下一步<br>11.q 退出调试</p>
-<h2 id="gcc与g"><a href="#gcc与g" class="headerlink" title="gcc与g++"></a>gcc与g++</h2><p>gcc 和 g++ 的区别无非就是调用的编译器不同, 并且传递给链接器的参数不同.</p>
+<h3 id="拓展">拓展</h3>
+<p>1、没有任何选项：gcc  helloworld.c<br>
+结果会在与helloworld.c相同的目录下产生一个a.out的可执行文件。<br>
+2、-o选项，指定输出文件名：gcc -o helloworld helloworld.c<br>
+-o意思是Output即需要指定输出的可执行文件的名称。这里的名称为helloworld。<br>
+3、-c选项，只编译，不汇编连接：gcc -c helloworld.c<br>
+-c意思就是Compile，产生一个叫helloworld.o的目标文件<br>
+4、-S选项，产生汇编源文件：gcc -s helloworld.c<br>
+-S意思就是assemble，产生一个叫helloworld.s的汇编源文件<br>
+5、-E选项，预处理C源文件：gcc -E helloworld.c<br>
+-E意思就是prEprocess。输出不是送到一个文件而是标准输出。当然可以对它进行重定向：<br>
+gcc -E helloworld.c &gt; helloworld.txt<br>
+二、优化选项<br>
+7、-O选项，基本优化：gcc -O helloworld.c<br>
+-O意思就是Optimize，产生一个经过优化的叫作a.out的可执行文件。也可以同时使用-o选项，以指定输出文件名。如：<br>
+gcc -O -o test helloworld.c<br>
+即会产生一个叫test的经过优化的可执行文件。<br>
+8、-O2选项，最大优化：gcc -O2 helloworld.c<br>
+产生一个经过最大优化的叫作a.out的可执行文件。<br>
+三、调试选项<br>
+9、-g选项，产生供gdb调试用的可执行文件：gcc -g helloworld.c<br>
+产生一个叫作a.out的可执行文件，大小明显比只用-o选项编译汇编连接后的文件大。<br>
+10、-pg选项，产生供gprof剖析用的可执行文件：gcc -pg helloworld.c<br>
+产生一个叫作a.out的执行文件，大小明显比用-g选项后产生的文件还大。</p>
+<h2 id="执行">执行</h2>
+<p><code>./outfile</code></p>
+<h2 id="调试">调试</h2>
+<p>1.编译：gcc -o xxx xxx.c<br>
+2.生成可调试文件：gcc -o xxx -g xxx.c<br>
+3.调试程序：gdb xxx<br>
+4.执行程序：<br>
+start 从程序第一步开始执行<br>
+run 直接运行程序到结束或者断点处<br>
+5.设置断点：break line(行数）或函数名或者条件表达式<br>
+break 6 在第6行设置断点<br>
+break Swap 在Swap函数入口设置断点<br>
+break 6 if i == 10 在第6行设置断点，要求i == 10<br>
+6.删除断点：<br>
+clear 删除所有断点<br>
+clear 行号 : 删除这行的断点<br>
+clear 函数名 : 删除该函数的断点<br>
+<a target="_blank" rel="noopener" href="http://7.info">7.info</a> 查看断点<br>
+8.c 继续执行到下一个断点<br>
+9.print +变量 打印变量值<br>
+10.n 下一步<br>
+11.q 退出调试</p>
+<h2 id="gcc与g">gcc与g++</h2>
+<p>gcc 和 g++ 的区别无非就是调用的编译器不同, 并且传递给链接器的参数不同.</p>
 <p>g++ 会把 .c 文件当做是 C++ 语言 (在 .c 文件前后分别加上 -xc++ 和 -xnone, 强行变成 C++), 从而调用 cc1plus 进行编译.</p>
 <p>g++ 遇到 .cpp 文件也会当做是 C++, 调用 cc1plus 进行编译.</p>
 <p>g++ 还会默认告诉链接器, 让它链接上 C++ 标准库.</p>
@@ -467,13 +516,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -495,7 +544,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

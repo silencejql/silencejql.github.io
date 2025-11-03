@@ -292,17 +292,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>C++中各类型字符区别<br><span id="more"></span></p>
-<p>字符通常可用1个或两个字节表示;<br>ANSI编码中一个字符使用一个字节表示;<br>Unicode编码中一个字符使用两个字节表示</p>
+        <center></center>
+C++中各类型字符区别
+<span id="more"></span>
+<p>字符通常可用1个或两个字节表示;<br>
+ANSI编码中一个字符使用一个字节表示;<br>
+Unicode编码中一个字符使用两个字节表示</p>
 <p>Visual C++编译器支持TCHAR、WCHAR、LPSTR、LPWSTR、LPCTSTR 的 ANSI 和 Unicode 字符。</p>
-<h2 id="char"><a href="#char" class="headerlink" title="char"></a>char</h2><p>C语言标准数据类型，字符型<br>由几个字节组成通常由编译器决定，一般一个字节。</p>
-<h2 id="CHAR"><a href="#CHAR" class="headerlink" title="CHAR"></a>CHAR</h2><p>ANSI字符<br>英文用一个字节,中文用两个字节</p>
-<h2 id="WCHAR"><a href="#WCHAR" class="headerlink" title="WCHAR"></a>WCHAR</h2><p>Unicode字符<br>每个字符有两个字节组成。</p>
-<h2 id="TCHAR"><a href="#TCHAR" class="headerlink" title="TCHAR"></a>TCHAR</h2><p>当前编译方式为ANSI（默认）方式，TCHAR等价于CHAR<br>如果为Unicode方式，TCHAR等价于WCHAR</p>
+<h2 id="char">char</h2>
+<p>C语言标准数据类型，字符型<br>
+由几个字节组成通常由编译器决定，一般一个字节。</p>
+<h2 id="CHAR">CHAR</h2>
+<p>ANSI字符<br>
+英文用一个字节,中文用两个字节</p>
+<h2 id="WCHAR">WCHAR</h2>
+<p>Unicode字符<br>
+每个字符有两个字节组成。</p>
+<h2 id="TCHAR">TCHAR</h2>
+<p>当前编译方式为ANSI（默认）方式，TCHAR等价于CHAR<br>
+如果为Unicode方式，TCHAR等价于WCHAR</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _UNICODE</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">char</span> TCHAR;</span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">wchar_t</span> TCHAR;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="LPSTR"><a href="#LPSTR" class="headerlink" title="LPSTR"></a>LPSTR</h2><p>LPSTR 是长指针字符串。它要么是char <em>要么是 wchar_t</em> 取决于 uopn<br>uncicod 是否定义。 其中<br>LP 代表长指针<br>STR 代表字符串<br>LPSTR 表示 CHAR 或长指针常量的常量以空结尾的字符串</p>
-<h2 id="LPWSTR"><a href="#LPWSTR" class="headerlink" title="LPWSTR"></a>LPWSTR</h2><p>LPWSTR 是一个指向 32 位 Unicode 字符字符串的 16 位指针<br>它是 WCHAR 类型的以 null 结尾的字符串或长指针 wchar 类型的字符串</p>
-<h2 id="LPCTSTR"><a href="#LPCTSTR" class="headerlink" title="LPCTSTR"></a>LPCTSTR</h2><p>LPCSTR 是一个 32 位指针，指向以 8 位 Windows （ANSI） 字符的常量 null 结尾字符串</p>
+<h2 id="LPSTR">LPSTR</h2>
+<p>LPSTR 是长指针字符串。它要么是char <em>要么是 wchar_t</em> 取决于 uopn<br>
+uncicod 是否定义。 其中<br>
+LP 代表长指针<br>
+STR 代表字符串<br>
+LPSTR 表示 CHAR 或长指针常量的常量以空结尾的字符串</p>
+<h2 id="LPWSTR">LPWSTR</h2>
+<p>LPWSTR 是一个指向 32 位 Unicode 字符字符串的 16 位指针<br>
+它是 WCHAR 类型的以 null 结尾的字符串或长指针 wchar 类型的字符串</p>
+<h2 id="LPCTSTR">LPCTSTR</h2>
+<p>LPCSTR 是一个 32 位指针，指向以 8 位 Windows （ANSI） 字符的常量 null 结尾字符串</p>
 
     </div>
 
@@ -465,13 +485,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -493,7 +513,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

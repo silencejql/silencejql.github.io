@@ -291,30 +291,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>前面啥也没有<br><span id="more"></span></p>
-<h2 id="坐标系说明"><a href="#坐标系说明" class="headerlink" title="坐标系说明"></a>坐标系说明</h2><p>工位后方是Z轴正方向,右侧为X正方向,上侧为Y正方向</p>
-<h2 id="标定界面"><a href="#标定界面" class="headerlink" title="标定界面"></a>标定界面</h2><p><img src="轮眉软件调试-棋盘格/CAL01.PNG" alt="CAL"><br><img src="轮眉软件调试-棋盘格/CAL02.PNG" alt="CAL"><br><img src="轮眉软件调试-棋盘格/CAL03.PNG" alt="CAL"></p>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>PixelSize: 传感器像素尺寸<br>说明: 比如相机Sensor Size 为5.7mm <em>4.3mm, 分辨率为2592</em> 1944px, 则<br>PixelSizeH = 5.7 / 2592<br>PixelSizeV = 4.3 / 1944</p>
+        <center></center>
+前面啥也没有
+<span id="more"></span>
+<h2 id="坐标系说明">坐标系说明</h2>
+<p>工位后方是Z轴正方向,右侧为X正方向,上侧为Y正方向</p>
+<h2 id="标定界面">标定界面</h2>
+<p><img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL01.PNG" alt="CAL"><br>
+<img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL02.PNG" alt="CAL"><br>
+<img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/CAL03.PNG" alt="CAL"></p>
+<h3 id="参数说明">参数说明</h3>
+<p>PixelSize: 传感器像素尺寸<br>
+说明: 比如相机Sensor Size 为5.7mm <em>4.3mm, 分辨率为2592</em> 1944px, 则<br>
+PixelSizeH = 5.7 / 2592<br>
+PixelSizeV = 4.3 / 1944</p>
 <p>左上角:</p>
 <blockquote>
-<p>Point3DX:<br>Point3DY: 棋盘格左上角第一个黑块的右下角这一点到地面的高度<br>Point3DZ: 棋盘格到标定架中心的距离</p>
+<p>Point3DX:<br>
+Point3DY: 棋盘格左上角第一个黑块的右下角这一点到地面的高度<br>
+Point3DZ: 棋盘格到标定架中心的距离</p>
 </blockquote>
 <p>右边:</p>
 <blockquote>
-<p>ChessboardRow: 棋盘格行数<br>ChessboardColumn: 棋盘格列数<br>ChessboardLength: 棋盘格边长<br>ChessboardDistance: 棋盘格到相机的距离 + 110(外壳镜面到相机传感器的距离)</p>
+<p>ChessboardRow: 棋盘格行数<br>
+ChessboardColumn: 棋盘格列数<br>
+ChessboardLength: 棋盘格边长<br>
+ChessboardDistance: 棋盘格到相机的距离 + 110(外壳镜面到相机传感器的距离)</p>
 </blockquote>
 <p>相机坐标:</p>
 <blockquote>
-<p>Camera_X:<br>Camera_Y: 相机玻璃面到标定架中心线的距离<br>Camera_Z: 相机玻璃面中心到地的距离</p>
+<p>Camera_X:<br>
+Camera_Y: 相机玻璃面到标定架中心线的距离<br>
+Camera_Z: 相机玻璃面中心到地的距离</p>
 </blockquote>
-<h3 id="标定结果"><a href="#标定结果" class="headerlink" title="标定结果"></a>标定结果</h3><p>内参标定完成后焦距f应接近相机镜头实际焦距大小;<br>fx,fy两数接近</p>
+<h3 id="标定结果">标定结果</h3>
+<p>内参标定完成后焦距f应接近相机镜头实际焦距大小;<br>
+fx,fy两数接近</p>
 <p>可以检查棋盘格识别点,表示识别到每个点的像素坐标值</p>
-<h2 id="测试界面"><a href="#测试界面" class="headerlink" title="测试界面"></a>测试界面</h2><p>与四个孔的标定架不同点:</p>
+<h2 id="测试界面">测试界面</h2>
+<p>与四个孔的标定架不同点:</p>
 <blockquote>
 <p>轮眉距离: 轮眉到车中轴线的距离</p>
 </blockquote>
 <p>测试点识别同样是识别ROI中最下面的白点</p>
-<p><img src="轮眉软件调试-棋盘格/TEST01.PNG" alt="CAL"><br><img src="轮眉软件调试-棋盘格/TEST02.PNG" alt="CAL"><br><img src="轮眉软件调试-棋盘格/TEST03.PNG" alt="CAL"></p>
+<p><img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST01.PNG" alt="CAL"><br>
+<img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST02.PNG" alt="CAL"><br>
+<img src="%E8%BD%AE%E7%9C%89%E8%BD%AF%E4%BB%B6%E8%B0%83%E8%AF%95-%E6%A3%8B%E7%9B%98%E6%A0%BC/TEST03.PNG" alt="CAL"></p>
 
     </div>
 
@@ -481,13 +503,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -509,7 +531,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

@@ -283,31 +283,53 @@
 
       
         <center></center>
-
 <span id="more"></span>
-<h2 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h2><p>线性表插入和删除操作不受限制 在任意位置进行<br>栈和队列是两种特殊的线性表。他们的数据元素之间具有顺序的逻辑关系，都采用顺序结构和链式结构存储</p>
+<h2 id="栈与队列">栈与队列</h2>
+<p>线性表插入和删除操作不受限制 在任意位置进行<br>
+栈和队列是两种特殊的线性表。他们的数据元素之间具有顺序的逻辑关系，都采用顺序结构和链式结构存储</p>
 <blockquote>
-<p>栈的插入和删除操作只允许在线性表的尾端(栈顶Top)进行<br>队列插入操作限定在线性表的尾部而其它操作限定在表的头部进行</p>
+<p>栈的插入和删除操作只允许在线性表的尾端(栈顶Top)进行<br>
+队列插入操作限定在线性表的尾部而其它操作限定在表的头部进行</p>
 </blockquote>
 <p>栈的特点为后进先出，队列先进先出</p>
-<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>表尾称为栈顶（Top）,另一端称为栈底（Bottom），当栈中没有数据元素时叫空栈（Empty Stack）<br>方法：</p>
+<h2 id="栈">栈</h2>
+<p>表尾称为栈顶（Top）,另一端称为栈底（Bottom），当栈中没有数据元素时叫空栈（Empty Stack）<br>
+方法：</p>
 <blockquote>
-<p>Push（）入栈 //添加数据<br>Pop（）出栈 //删除数据，返回被删除的数据<br>Peek（）//取得栈顶的元素，不删除<br>ToArray() //方法创建数组并将堆栈元素复制到其中<br>Contains() //方法判断一个元素是否在栈中<br>Clear（）//清空所有数据<br>Count //取得栈中元素的个数</p>
+<p>Push（）入栈 //添加数据<br>
+Pop（）出栈 //删除数据，返回被删除的数据<br>
+Peek（）//取得栈顶的元素，不删除<br>
+ToArray() //方法创建数组并将堆栈元素复制到其中<br>
+Contains() //方法判断一个元素是否在栈中<br>
+Clear（）//清空所有数据<br>
+Count //取得栈中元素的个数</p>
 </blockquote>
 <p>接口定义：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IStack</span>&#123;</span><br><span class="line"><span class="built_in">int</span> Count&#123;<span class="keyword">get</span>;&#125;<span class="comment">//求栈中元素个数</span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">GetLength</span>()</span>;<span class="comment">//求栈的长度</span></span><br><span class="line"><span class="function"><span class="built_in">bool</span> <span class="title">IsEmpty</span>()</span>;<span class="comment">//判断栈是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Clear</span>()</span>;<span class="comment">//清空操作</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span>(<span class="params">T item</span>)</span>;<span class="comment">//入栈操作</span></span><br><span class="line"><span class="function">T <span class="title">Pop</span>()</span>;<span class="comment">//出栈操作</span></span><br><span class="line"><span class="function">T <span class="title">Peek</span>()</span>;<span class="comment">//取栈顶元素</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>栈的本质是一个线性表，线性表有两种存储形式，那么栈也有分为栈的顺序存储结构和栈的链式存储结构<br>用连续的存储空间来存储栈中的数据元素(使用数组)，这样的栈称为顺序栈(Sequence Stack)<br>类似于顺序表，用一维数组来存放顺序栈中的数据元素<br>栈顶指示器 top 设在数组下标为 0 的端，top随着插入和删除而变化，当栈为空时，top=-1</p>
-<p>栈的另外一种存储方式是链式存储，这样的栈称为链栈(Linked Stack)<br>由于链栈的操作只是在一端进行，为了操作方便，把栈顶设在链表的头部，并且不需要头结点</p>
+<p>栈的本质是一个线性表，线性表有两种存储形式，那么栈也有分为栈的顺序存储结构和栈的链式存储结构<br>
+用连续的存储空间来存储栈中的数据元素(使用数组)，这样的栈称为顺序栈(Sequence Stack)<br>
+类似于顺序表，用一维数组来存放顺序栈中的数据元素<br>
+栈顶指示器 top 设在数组下标为 0 的端，top随着插入和删除而变化，当栈为空时，top=-1</p>
+<p>栈的另外一种存储方式是链式存储，这样的栈称为链栈(Linked Stack)<br>
+由于链栈的操作只是在一端进行，为了操作方便，把栈顶设在链表的头部，并且不需要头结点</p>
 <p>示例</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Stack&lt;T&gt; staA = new Stack&lt;T&gt;();</span></span><br><span class="line">Stack&lt;<span class="built_in">string</span>&gt; staA = <span class="keyword">new</span> Stack&lt;<span class="built_in">string</span>&gt;();            </span><br><span class="line">staA.Push(<span class="string">&quot;one&quot;</span>);            </span><br><span class="line">staA.Push(<span class="string">&quot;two&quot;</span>);            </span><br><span class="line">staA.Push(<span class="string">&quot;three&quot;</span>);            </span><br><span class="line">staA.Push(<span class="string">&quot;four&quot;</span>);            </span><br><span class="line">staA.Push(<span class="string">&quot;five&quot;</span>);            </span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">string</span> a <span class="keyword">in</span> staA)<span class="comment">//遍历元素，将之变成string类型            </span></span><br><span class="line">&#123;                </span><br><span class="line">  Console.WriteLine(a);            </span><br><span class="line">&#125;             </span><br><span class="line"><span class="comment">//peek是把栈顶元素弹出（取出），但不删除            </span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;取出的元素是：&#123;0&#125;&quot;</span>, staA.Peek());            </span><br><span class="line"><span class="comment">//pop是把栈顶的元素弹出（取出），并将其删除            </span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;删除的栈顶元素是：&#123;0&#125;&quot;</span>,staA .Pop ());             </span><br><span class="line"><span class="comment">//此时再输出一次栈的元素，会发现five被删除了            </span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">string</span> b <span class="keyword">in</span> staA)            </span><br><span class="line">&#123;                </span><br><span class="line">  Console.ForegroundColor = ConsoleColor.Blue;                </span><br><span class="line">  Console.WriteLine(b);            </span><br><span class="line">&#125;             </span><br><span class="line"><span class="comment">//ToArray从栈底到栈顶将一个栈复制到另一个栈中            </span></span><br><span class="line">Stack&lt;<span class="built_in">string</span>&gt; staB = <span class="keyword">new</span> Stack&lt;<span class="built_in">string</span>&gt;(staA.ToArray());            </span><br><span class="line"><span class="keyword">foreach</span> (<span class="built_in">string</span> c <span class="keyword">in</span> staB)            </span><br><span class="line">&#123;                </span><br><span class="line">  Console.ForegroundColor = ConsoleColor.Cyan;                </span><br><span class="line">  Console.WriteLine(c);            </span><br><span class="line">&#125;             </span><br><span class="line">Console.WriteLine(<span class="string">&quot; &quot;</span>);            </span><br><span class="line">Console.ForegroundColor = ConsoleColor.DarkRed;            </span><br><span class="line"><span class="comment">//contains方法，判断一个元素是否在栈中            </span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;six是否在栈中？&quot;</span>);            </span><br><span class="line">Console.WriteLine(staA .Contains (<span class="string">&quot;six&quot;</span>));</span><br></pre></td></tr></table></figure>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>插入操作的表尾称为队尾(Rear)，把进行其它操作的头部称为队头(Front)。当队列中没有数据元素时称为空队列(EmptyQueue)<br>方法：</p>
+<h2 id="队列">队列</h2>
+<p>插入操作的表尾称为队尾(Rear)，把进行其它操作的头部称为队头(Front)。当队列中没有数据元素时称为空队列(EmptyQueue)<br>
+方法：</p>
 <blockquote>
-<p>Enqueue() 入队（放在队尾）<br>Dequeue() 出队（移除队首元素，并返回被移除的元素）<br>Peek() 取得队首的元素，不移除<br>Clear() 清空元素</p>
+<p>Enqueue() 入队（放在队尾）<br>
+Dequeue() 出队（移除队首元素，并返回被移除的元素）<br>
+Peek() 取得队首的元素，不移除<br>
+Clear() 清空元素</p>
 </blockquote>
 <p>接口定义：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IQueue</span>&lt;<span class="title">T</span>&gt;&#123;</span><br><span class="line"><span class="built_in">int</span> Count&#123;<span class="keyword">get</span>;&#125;<span class="comment">//取得队列长度的属性</span></span><br><span class="line"><span class="function"><span class="built_in">int</span> <span class="title">GetLength</span>()</span>;<span class="comment">//求队列的长度</span></span><br><span class="line"><span class="function"><span class="built_in">bool</span> <span class="title">IsEmpty</span>()</span>;<span class="comment">//判断队列是否为空</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Clear</span>()</span>;<span class="comment">//清空队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Enqueue</span>(<span class="params">T item</span>)</span>;<span class="comment">//入队</span></span><br><span class="line"><span class="function">T <span class="title">Dequque</span>()</span>;<span class="comment">//出队</span></span><br><span class="line"><span class="function">T <span class="title">Peek</span>()</span>;<span class="comment">//取队头元素</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>用连续的存储空间来存储队列中的数据元素，这样的队列称为顺序队列(SequenceQueue)<br>类似于顺序栈，用一维数组来存放顺序队列中的数据元素。队头位置设在数组下标为 0 的端，用 front 表示；队尾位置设在数组的另一端，用rear 表示<br>front 和 rear 随着插入和删除而变化。当队列为空时， front=rear=-1</p>
-<p>队列的另外一种存储方式是链式存储，这样的队列称为链队列(LinkedQueue)<br>由于链队列的操作只是在一端进行，为了操作方便，把队头设在链表的头部，并且不需要头结点</p>
+<p>用连续的存储空间来存储队列中的数据元素，这样的队列称为顺序队列(SequenceQueue)<br>
+类似于顺序栈，用一维数组来存放顺序队列中的数据元素。队头位置设在数组下标为 0 的端，用 front 表示；队尾位置设在数组的另一端，用rear 表示<br>
+front 和 rear 随着插入和删除而变化。当队列为空时， front=rear=-1</p>
+<p>队列的另外一种存储方式是链式存储，这样的队列称为链队列(LinkedQueue)<br>
+由于链队列的操作只是在一端进行，为了操作方便，把队头设在链表的头部，并且不需要头结点</p>
 
     </div>
 
@@ -474,13 +496,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -502,7 +524,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

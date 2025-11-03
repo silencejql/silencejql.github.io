@@ -294,42 +294,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>如果按照 Hexo添加KaTeX插件 仍未生效，可能是某些环节配置错误或冲突导致<br><span id="more"></span></p>
+        <p>如果按照 Hexo添加KaTeX插件 仍未生效，可能是某些环节配置错误或冲突导致</p>
+<span id="more"></span>
 <hr>
-<h3 id="1-检查关键依赖安装"><a href="#1-检查关键依赖安装" class="headerlink" title="1. 检查关键依赖安装"></a><strong>1. 检查关键依赖安装</strong></h3><p>确保以下依赖已正确安装：</p>
+<h3 id="1-检查关键依赖安装"><strong>1. 检查关键依赖安装</strong></h3>
+<p>确保以下依赖已正确安装：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确保渲染器和插件存在</span></span><br><span class="line">npm list hexo-renderer-markdown-it</span><br><span class="line">npm list @traptitech/markdown-it-katex</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果未安装，重新执行：</span></span><br><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it @traptitech/markdown-it-katex --save</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="2-确认-Hexo-全局配置"><a href="#2-确认-Hexo-全局配置" class="headerlink" title="2. 确认 Hexo 全局配置"></a><strong>2. 确认 Hexo 全局配置</strong></h3><p>在 Hexo 根目录的 <code>_config.yml</code> 中，检查 <code>markdown-it</code> 的配置：</p>
+<h3 id="2-确认-Hexo-全局配置"><strong>2. 确认 Hexo 全局配置</strong></h3>
+<p>在 Hexo 根目录的 <code>_config.yml</code> 中，检查 <code>markdown-it</code> 的配置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span>  <span class="comment"># 必须开启，否则公式中的 HTML 标签会被转义</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&quot;@traptitech/markdown-it-katex&quot;</span>  <span class="comment"># 确保插件名称正确</span></span><br><span class="line">  <span class="attr">anchors:</span></span><br><span class="line">    <span class="attr">level:</span> <span class="number">2</span></span><br><span class="line">    <span class="attr">collisionSuffix:</span> <span class="string">&#x27;v&#x27;</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="3-检查-Next-主题配置"><a href="#3-检查-Next-主题配置" class="headerlink" title="3. 检查 Next 主题配置"></a><strong>3. 检查 Next 主题配置</strong></h3><p>在 <code>themes/next/_config.yml</code> 中，确保以下配置：</p>
+<h3 id="3-检查-Next-主题配置"><strong>3. 检查 Next 主题配置</strong></h3>
+<p>在 <code>themes/next/_config.yml</code> 中，确保以下配置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭 MathJax 和默认的数学公式渲染</span></span><br><span class="line"><span class="attr">math:</span></span><br><span class="line">  <span class="attr">mathjax:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">katex:</span></span><br><span class="line">    <span class="attr">enable:</span> <span class="literal">true</span>  <span class="comment"># 启用 KaTeX</span></span><br><span class="line">    <span class="attr">copy_tex:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># 如果 vendor_css 设为 true，需手动添加 CSS（不建议新手开启）</span></span><br><span class="line">    <span class="attr">vendor_css:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="4-验证资源加载路径"><a href="#4-验证资源加载路径" class="headerlink" title="4. 验证资源加载路径"></a><strong>4. 验证资源加载路径</strong></h3><h4 id="1-检查-CSS-和-JS-是否引入"><a href="#1-检查-CSS-和-JS-是否引入" class="headerlink" title="(1) 检查 CSS 和 JS 是否引入"></a>(1) 检查 CSS 和 JS 是否引入</h4><ul>
-<li><p><strong>CSS 位置</strong>：<br>打开生成的网页，按 <code>F12</code> 进入开发者工具 → <code>Network</code> 标签 → 刷新页面，检查是否有 <code>katex.min.css</code> 的请求。若未加载，说明主题模板未正确插入 CSS。</p>
+<h3 id="4-验证资源加载路径"><strong>4. 验证资源加载路径</strong></h3>
+<h4 id="1-检查-CSS-和-JS-是否引入">(1) 检查 CSS 和 JS 是否引入</h4>
+<ul>
+<li>
+<p><strong>CSS 位置</strong>：<br>
+打开生成的网页，按 <code>F12</code> 进入开发者工具 → <code>Network</code> 标签 → 刷新页面，检查是否有 <code>katex.min.css</code> 的请求。若未加载，说明主题模板未正确插入 CSS。</p>
 </li>
-<li><p><strong>JS 位置</strong>：<br>同样检查 <code>katex.min.js</code> 和 <code>auto-render.min.js</code> 是否加载。如果未加载，检查主题模板文件的修改是否正确。</p>
+<li>
+<p><strong>JS 位置</strong>：<br>
+同样检查 <code>katex.min.js</code> 和 <code>auto-render.min.js</code> 是否加载。如果未加载，检查主题模板文件的修改是否正确。</p>
 </li>
 </ul>
-<h4 id="2-修复资源路径"><a href="#2-修复资源路径" class="headerlink" title="(2) 修复资源路径"></a>(2) 修复资源路径</h4><ul>
-<li><p>如果使用的是旧版 Next 主题，模板文件路径可能是 <code>.swig</code> 或 <code>.njk</code>，确保修改了正确的文件：</p>
+<h4 id="2-修复资源路径">(2) 修复资源路径</h4>
+<ul>
+<li>
+<p>如果使用的是旧版 Next 主题，模板文件路径可能是 <code>.swig</code> 或 <code>.njk</code>，确保修改了正确的文件：</p>
 <ul>
 <li><strong>CSS</strong>：<code>themes/next/layout/_partials/head/head.njk</code>（或 <code>.swig</code>）</li>
 <li><strong>JS</strong>：<code>themes/next/layout/_partials/footer.njk</code>（或 <code>.swig</code>）</li>
 </ul>
 </li>
-<li><p>手动指定最新版本 CDN（避免缓存问题）：</p>
+<li>
+<p>手动指定最新版本 CDN（避免缓存问题）：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- JS --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-XjKyOOzGykjIg/xn6ACkxIRv6gm2t6/E2lbLU5ZqH7sBE4k1pL5qfhMcJcH4dZnF&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js&quot;</span> <span class="attr">integrity</span>=<span class="string">&quot;sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCkM5qKq6gYVvokzNvAQu3fT8KX4l&quot;</span> <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">onload</span>=<span class="string">&quot;renderMathInElement(document.body, &#123; delimiters: [&#123;left: &#x27;$$&#x27;, right: &#x27;$$&#x27;, display: true&#125;, &#123;left: &#x27;$&#x27;, right: &#x27;$&#x27;, display: false&#125;] &#125;);&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h3 id="5-检查文章-Front-matter"><a href="#5-检查文章-Front-matter" class="headerlink" title="5. 检查文章 Front-matter"></a><strong>5. 检查文章 Front-matter</strong></h3><p>在需要渲染公式的文章头部，确保已添加 <code>katex: true</code>：</p>
+<h3 id="5-检查文章-Front-matter"><strong>5. 检查文章 Front-matter</strong></h3>
+<p>在需要渲染公式的文章头部，确保已添加 <code>katex: true</code>：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">测试文章</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2023-01-01</span></span><br><span class="line"><span class="attr">katex:</span> <span class="literal">true</span>  <span class="comment"># 必须开启</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="6-处理特殊符号转义"><a href="#6-处理特殊符号转义" class="headerlink" title="6. 处理特殊符号转义"></a><strong>6. 处理特殊符号转义</strong></h3><p>如果公式中的 <code>_</code> 或 <code>*</code> 被错误转义，需调整渲染器配置：</p>
+<h3 id="6-处理特殊符号转义"><strong>6. 处理特殊符号转义</strong></h3>
+<p>如果公式中的 <code>_</code> 或 <code>*</code> 被错误转义，需调整渲染器配置：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo 根目录的 _config.yml</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">breaks:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">quotes:</span> <span class="string">&#x27;“”‘’&#x27;</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="7-清理缓存并重新生成"><a href="#7-清理缓存并重新生成" class="headerlink" title="7. 清理缓存并重新生成"></a><strong>7. 清理缓存并重新生成</strong></h3><p>Hexo 的缓存可能导致修改未生效：</p>
+<h3 id="7-清理缓存并重新生成"><strong>7. 清理缓存并重新生成</strong></h3>
+<p>Hexo 的缓存可能导致修改未生效：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo generate --debug</span><br></pre></td></tr></table></figure>
 <p>生成后，检查 <code>public</code> 目录下对应文章的 HTML 文件：</p>
 <ul>
@@ -337,22 +353,30 @@
 <li>检查公式是否被包裹在 <code>&lt;span class=&quot;katex&quot;&gt;...&lt;/span&gt;</code> 中。</li>
 </ul>
 <hr>
-<h3 id="8-常见问题排查"><a href="#8-常见问题排查" class="headerlink" title="8. 常见问题排查"></a><strong>8. 常见问题排查</strong></h3><h4 id="1-公式被渲染为纯文本"><a href="#1-公式被渲染为纯文本" class="headerlink" title="(1) 公式被渲染为纯文本"></a>(1) 公式被渲染为纯文本</h4><ul>
+<h3 id="8-常见问题排查"><strong>8. 常见问题排查</strong></h3>
+<h4 id="1-公式被渲染为纯文本">(1) 公式被渲染为纯文本</h4>
+<ul>
 <li><strong>原因</strong>：KaTeX 资源未加载或初始化失败。</li>
 <li><strong>解决</strong>：按 <code>F12</code> 打开控制台，查看是否有 <code>ReferenceError</code> 或资源加载错误。如果发现 <code>renderMathInElement is not defined</code>，说明 <code>auto-render.min.js</code> 未正确加载。</li>
 </ul>
-<h4 id="2-公式显示错乱"><a href="#2-公式显示错乱" class="headerlink" title="(2) 公式显示错乱"></a>(2) 公式显示错乱</h4><ul>
-<li><strong>原因</strong>：$$<code>或</code>$$$ 定界符被其他插件干扰。</li>
-<li><p><strong>解决</strong>：在 <code>markdown-it</code> 配置中强制指定定界符：</p>
+<h4 id="2-公式显示错乱">(2) 公式显示错乱</h4>
+<ul>
+<li>
+<p><strong>原因</strong>：<code>$</code> 或 <code>$$</code> 定界符被其他插件干扰。</p>
+</li>
+<li>
+<p><strong>解决</strong>：在 <code>markdown-it</code> 配置中强制指定定界符：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Hexo 的 _config.yml</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">plugins:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">&quot;@traptitech/markdown-it-katex&quot;</span></span><br><span class="line">      <span class="attr">options:</span></span><br><span class="line">        <span class="attr">delimiters:</span> </span><br><span class="line">          <span class="attr">left:</span> <span class="string">&#x27;$&#x27;</span><span class="string">,</span> <span class="attr">right:</span> <span class="string">&#x27;$&#x27;</span><span class="string">,</span> <span class="attr">display:</span> <span class="literal">false</span></span><br><span class="line">          <span class="attr">left:</span> <span class="string">&#x27;$$&#x27;</span><span class="string">,</span> <span class="attr">right:</span> <span class="string">&#x27;$$&#x27;</span><span class="string">,</span> <span class="attr">display:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="3-与代码高亮冲突"><a href="#3-与代码高亮冲突" class="headerlink" title="(3) 与代码高亮冲突"></a>(3) 与代码高亮冲突</h4><ul>
+<h4 id="3-与代码高亮冲突">(3) 与代码高亮冲突</h4>
+<ul>
 <li><strong>原因</strong>：某些代码块语法与 KaTeX 冲突。</li>
 <li><strong>解决</strong>：在公式前后添加空行，避免与其他内容粘连。</li>
 </ul>
 <hr>
-<h3 id="9-终极测试"><a href="#9-终极测试" class="headerlink" title="9. 终极测试"></a><strong>9. 终极测试</strong></h3><p>创建一个最简单的测试文章，内容如下：</p>
+<h3 id="9-终极测试"><strong>9. 终极测试</strong></h3>
+<p>创建一个最简单的测试文章，内容如下：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: KaTeX 测试</span><br><span class="line">date: 2023-01-01</span><br><span class="line"><span class="section">katex: true</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line">行内公式：$E = mc^2$</span><br><span class="line"></span><br><span class="line">块级公式：</span><br><span class="line">$$ \sum<span class="emphasis">_&#123;i=1&#125;^n i = \frac&#123;n(n+1)&#125;&#123;2&#125; $$</span></span><br></pre></td></tr></table></figure>
 <p>如果仍不生效，可能是主题兼容性问题。尝试：</p>
 <ol>
@@ -533,13 +557,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -561,7 +585,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

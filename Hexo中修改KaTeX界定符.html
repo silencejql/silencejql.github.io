@@ -294,49 +294,71 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在 Hexo 中修改 KaTeX 的界定符（定界符）<br><span id="more"></span></p>
-<p>主要涉及 <strong>两个位置</strong>：<strong>主题模板文件</strong>和 <strong>KaTeX 初始化脚本</strong>。<br>以下是详细操作步骤：</p>
+        <p>在 Hexo 中修改 KaTeX 的界定符（定界符）</p>
+<span id="more"></span>
+<p>主要涉及 <strong>两个位置</strong>：<strong>主题模板文件</strong>和 <strong>KaTeX 初始化脚本</strong>。<br>
+以下是详细操作步骤：</p>
 <hr>
-<h3 id="1-修改位置：主题的-footer-模板文件"><a href="#1-修改位置：主题的-footer-模板文件" class="headerlink" title="1. 修改位置：主题的 footer 模板文件"></a><strong>1. 修改位置：主题的 <code>footer</code> 模板文件</strong></h3><p>KaTeX 的界定符配置在初始化脚本中，通常位于 Next 主题的 <code>footer</code> 模板文件中。<br>文件路径：  </p>
+<h3 id="1-修改位置：主题的-footer-模板文件"><strong>1. 修改位置：主题的 <code>footer</code> 模板文件</strong></h3>
+<p>KaTeX 的界定符配置在初始化脚本中，通常位于 Next 主题的 <code>footer</code> 模板文件中。<br>
+文件路径：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">themes/next/layout/_partials/footer.njk</span><br><span class="line">或</span><br><span class="line">themes/next/layout/_partials/footer.swig</span><br></pre></td></tr></table></figure>
-<h4 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a><strong>操作步骤：</strong></h4><ol>
-<li>打开对应的 <code>footer</code> 文件（根据你的主题模板引擎，可能是 <code>.njk</code> 或 <code>.swig</code>）。</li>
-<li><p>找到引入 <code>auto-render.min.js</code> 的脚本，修改 <code>delimiters</code> 参数：</p>
+<h4 id="操作步骤："><strong>操作步骤：</strong></h4>
+<ol>
+<li>
+<p>打开对应的 <code>footer</code> 文件（根据你的主题模板引擎，可能是 <code>.njk</code> 或 <code>.swig</code>）。</p>
+</li>
+<li>
+<p>找到引入 <code>auto-render.min.js</code> 的脚本，修改 <code>delimiters</code> 参数：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">renderMathInElement</span>(<span class="variable language_">document</span>.<span class="property">body</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">delimiters</span>: [</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 修改这里的 left 和 right 值</span></span></span><br><span class="line"><span class="language-javascript">        &#123;<span class="attr">left</span>: <span class="string">&#x27;$$&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;$$&#x27;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,   <span class="comment">// 块级公式</span></span></span><br><span class="line"><span class="language-javascript">        &#123;<span class="attr">left</span>: <span class="string">&#x27;$&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;$&#x27;</span>, <span class="attr">display</span>: <span class="literal">false</span>&#125;     <span class="comment">// 行内公式</span></span></span><br><span class="line"><span class="language-javascript">      ],</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">throwOnError</span>: <span class="literal">false</span>  <span class="comment">// 忽略公式错误</span></span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript">  &#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>将 <code>left</code> 和 <code>right</code> 的值改为你想要的界定符。例如：</p>
+<li>
+<p>将 <code>left</code> 和 <code>right</code> 的值改为你想要的界定符。例如：</p>
 <ul>
-<li><p><strong>改用 <code>\(...\)</code> 和 <code>\[...\]</code></strong>（LaTeX 标准风格）：</p>
+<li>
+<p><strong>改用 <code>\(...\)</code> 和 <code>\[...\]</code></strong>（LaTeX 标准风格）：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">delimiters</span>: [</span><br><span class="line">  &#123;<span class="attr">left</span>: <span class="string">&#x27;\\[&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;\\]&#x27;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,  <span class="comment">// 块级公式</span></span><br><span class="line">  &#123;<span class="attr">left</span>: <span class="string">&#x27;\\(&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;\\)&#x27;</span>, <span class="attr">display</span>: <span class="literal">false</span>&#125;   <span class="comment">// 行内公式</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>改用自定义符号</strong>（如 <code>@...@</code>）：</p>
+<li>
+<p><strong>改用自定义符号</strong>（如 <code>@...@</code>）：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">delimiters</span>: [</span><br><span class="line">  &#123;<span class="attr">left</span>: <span class="string">&#x27;@@&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;@@&#x27;</span>, <span class="attr">display</span>: <span class="literal">true</span>&#125;,  <span class="comment">// 块级公式</span></span><br><span class="line">  &#123;<span class="attr">left</span>: <span class="string">&#x27;@&#x27;</span>, <span class="attr">right</span>: <span class="string">&#x27;@&#x27;</span>, <span class="attr">display</span>: <span class="literal">false</span>&#125;     <span class="comment">// 行内公式</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
-<h3 id="2-同步修改-Markdown-中的公式写法"><a href="#2-同步修改-Markdown-中的公式写法" class="headerlink" title="2. 同步修改 Markdown 中的公式写法"></a><strong>2. 同步修改 Markdown 中的公式写法</strong></h3><p>修改界定符后，需在文章的 Markdown 中使用新的定界符。例如：</p>
+<h3 id="2-同步修改-Markdown-中的公式写法"><strong>2. 同步修改 Markdown 中的公式写法</strong></h3>
+<p>修改界定符后，需在文章的 Markdown 中使用新的定界符。例如：</p>
 <ul>
-<li><strong>原写法</strong>：<script type="math/tex">E = mc^2</script> 和 $$$\sum_{i=1}^n i$$$</li>
-<li><p><strong>修改后</strong>（使用 <code>\(...\)</code> 和 <code>\[...\]</code>）：</p>
+<li>
+<p><strong>原写法</strong>：<code>$E = mc^2$</code> 和 <code>$$\sum_&#123;i=1&#125;^n i$$</code></p>
+</li>
+<li>
+<p><strong>修改后</strong>（使用 <code>\(...\)</code> 和 <code>\[...\]</code>）：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">行内公式：<span class="keyword">\\</span>(E = mc<span class="built_in">^</span>2<span class="keyword">\\</span>)</span><br><span class="line"></span><br><span class="line">块级公式：</span><br><span class="line"><span class="keyword">\\</span>[</span><br><span class="line"><span class="keyword">\sum</span><span class="built_in">_</span>&#123;i=1&#125;<span class="built_in">^</span>n i</span><br><span class="line"><span class="keyword">\\</span>]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h3 id="3-处理转义问题"><a href="#3-处理转义问题" class="headerlink" title="3. 处理转义问题"></a><strong>3. 处理转义问题</strong></h3><p>如果界定符包含特殊字符（如 <code>\</code> 或 <code>@</code>），需确保 Markdown 渲染器不会转义它们：</p>
-<h4 id="1-在-Hexo-的-config-yml-中配置"><a href="#1-在-Hexo-的-config-yml-中配置" class="headerlink" title="(1) 在 Hexo 的 _config.yml 中配置"></a>(1) 在 Hexo 的 <code>_config.yml</code> 中配置</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">html:</span> <span class="literal">true</span>      <span class="comment"># 允许 HTML 标签</span></span><br><span class="line">  <span class="attr">breaks:</span> <span class="literal">false</span>   <span class="comment"># 关闭自动换行转换</span></span><br><span class="line">  <span class="attr">linkify:</span> <span class="literal">false</span>  <span class="comment"># 关闭自动链接识别（避免 @ 被误识别）</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-转义反斜杠（仅限-和-场景）"><a href="#2-转义反斜杠（仅限-和-场景）" class="headerlink" title="(2) 转义反斜杠（仅限 \( 和 \[ 场景）"></a>(2) 转义反斜杠（仅限 <code>\(</code> 和 <code>\[</code> 场景）</h4><p>在 Markdown 中，如果使用 <code>\(...\)</code> 或 <code>\[...\]</code>，需在公式中写双反斜杠：</p>
+<h3 id="3-处理转义问题"><strong>3. 处理转义问题</strong></h3>
+<p>如果界定符包含特殊字符（如 <code>\</code> 或 <code>@</code>），需确保 Markdown 渲染器不会转义它们：</p>
+<h4 id="1-在-Hexo-的-config-yml-中配置">(1) 在 Hexo 的 <code>_config.yml</code> 中配置</h4>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">html:</span> <span class="literal">true</span>      <span class="comment"># 允许 HTML 标签</span></span><br><span class="line">  <span class="attr">breaks:</span> <span class="literal">false</span>   <span class="comment"># 关闭自动换行转换</span></span><br><span class="line">  <span class="attr">linkify:</span> <span class="literal">false</span>  <span class="comment"># 关闭自动链接识别（避免 @ 被误识别）</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-转义反斜杠（仅限-和-场景）">(2) 转义反斜杠（仅限 <code>\(</code> 和 <code>\[</code> 场景）</h4>
+<p>在 Markdown 中，如果使用 <code>\(...\)</code> 或 <code>\[...\]</code>，需在公式中写双反斜杠：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\\</span>[</span><br><span class="line"><span class="keyword">\int</span><span class="built_in">_</span>a<span class="built_in">^</span>b f(x) dx</span><br><span class="line"><span class="keyword">\\</span>]</span><br></pre></td></tr></table></figure>
 <hr>
-<h3 id="4-测试修改结果"><a href="#4-测试修改结果" class="headerlink" title="4. 测试修改结果"></a><strong>4. 测试修改结果</strong></h3><ol>
-<li><p>清理缓存并生成：</p>
+<h3 id="4-测试修改结果"><strong>4. 测试修改结果</strong></h3>
+<ol>
+<li>
+<p>清理缓存并生成：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>启动本地服务器预览：</p>
+<li>
+<p>启动本地服务器预览：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>检查公式是否按新界定符渲染，打开浏览器控制台（F12）：</p>
+<li>
+<p>检查公式是否按新界定符渲染，打开浏览器控制台（F12）：</p>
 <ul>
 <li>确保无 JS 报错。</li>
 <li>检查公式是否被正确包裹（如 <code>&lt;span class=&quot;katex&quot;&gt;</code>）。</li>
@@ -344,27 +366,38 @@
 </li>
 </ol>
 <hr>
-<h3 id="5-常见问题"><a href="#5-常见问题" class="headerlink" title="5. 常见问题"></a><strong>5. 常见问题</strong></h3><h4 id="问题1：修改后公式未渲染"><a href="#问题1：修改后公式未渲染" class="headerlink" title="问题1：修改后公式未渲染"></a><strong>问题1：修改后公式未渲染</strong></h4><ul>
+<h3 id="5-常见问题"><strong>5. 常见问题</strong></h3>
+<h4 id="问题1：修改后公式未渲染"><strong>问题1：修改后公式未渲染</strong></h4>
+<ul>
 <li><strong>原因</strong>：界定符修改未同步到所有位置（如文章中的公式未改用新符号）。</li>
 <li><strong>解决</strong>：全局搜索旧界定符（如 <code>$</code>），替换为新的。</li>
 </ul>
-<h4 id="问题2：-被转义为"><a href="#问题2：-被转义为" class="headerlink" title="问题2：\ 被转义为 \\"></a><strong>问题2：<code>\</code> 被转义为 <code>\\</code></strong></h4><ul>
-<li><strong>原因</strong>：Markdown 渲染器自动转义了反斜杠。</li>
-<li><p><strong>解决</strong>：在 Hexo 配置中关闭转义：</p>
+<h4 id="问题2：-被转义为"><strong>问题2：<code>\</code> 被转义为 <code>\\</code></strong></h4>
+<ul>
+<li>
+<p><strong>原因</strong>：Markdown 渲染器自动转义了反斜杠。</p>
+</li>
+<li>
+<p><strong>解决</strong>：在 Hexo 配置中关闭转义：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">typographer:</span> <span class="literal">false</span>  <span class="comment"># 关闭智能符号转换</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="问题3：与代码高亮冲突"><a href="#问题3：与代码高亮冲突" class="headerlink" title="问题3：与代码高亮冲突"></a><strong>问题3：与代码高亮冲突</strong></h4><ul>
+<h4 id="问题3：与代码高亮冲突"><strong>问题3：与代码高亮冲突</strong></h4>
+<ul>
 <li><strong>现象</strong>：<code>@</code> 或 <code>\</code> 被代码语法高亮干扰。</li>
-<li><strong>解决</strong>：避免使用与代码语法冲突的界定符（如 <code>` </code> 或 <code>*</code>）。</li>
+<li><strong>解决</strong>：避免使用与代码语法冲突的界定符（如 <code>`</code> 或 <code>*</code>）。</li>
 </ul>
 <hr>
-<h3 id="示例配置"><a href="#示例配置" class="headerlink" title="示例配置"></a><strong>示例配置</strong></h3><h4 id="目标界定符"><a href="#目标界定符" class="headerlink" title="目标界定符"></a>目标界定符</h4><ul>
+<h3 id="示例配置"><strong>示例配置</strong></h3>
+<h4 id="目标界定符">目标界定符</h4>
+<ul>
 <li>行内公式：<code>\\(...\\)</code></li>
 <li>块级公式：<code>\\[...\\]</code></li>
 </ul>
-<h4 id="修改后的-footer-模板脚本"><a href="#修改后的-footer-模板脚本" class="headerlink" title="修改后的 footer 模板脚本"></a>修改后的 <code>footer</code> 模板脚本</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">onload</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">    document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() &#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">      renderMathInElement(document.body, &#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">        delimiters: [</span></span></span><br><span class="line"><span class="string"><span class="tag">          &#123;left: &#x27;\\[&#x27;, right: &#x27;\\]&#x27;, display: true&#125;,</span></span></span><br><span class="line"><span class="string"><span class="tag">          &#123;left: &#x27;\\(&#x27;, right: &#x27;\\)&#x27;, display: false&#125;</span></span></span><br><span class="line"><span class="string"><span class="tag">        ],</span></span></span><br><span class="line"><span class="string"><span class="tag">        throwOnError: false</span></span></span><br><span class="line"><span class="string"><span class="tag">      &#125;);</span></span></span><br><span class="line"><span class="string"><span class="tag">    &#125;);</span></span></span><br><span class="line"><span class="string"><span class="tag">  &quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="对应的-Markdown-公式写法"><a href="#对应的-Markdown-公式写法" class="headerlink" title="对应的 Markdown 公式写法"></a>对应的 Markdown 公式写法</h4><figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">行内公式：<span class="keyword">\\</span>( <span class="keyword">\sqrt</span>&#123;2&#125; <span class="keyword">\approx</span> 1.414 <span class="keyword">\\</span>)</span><br><span class="line"></span><br><span class="line">块级公式：</span><br><span class="line"><span class="keyword">\\</span>[</span><br><span class="line"><span class="keyword">\int</span><span class="built_in">_</span>&#123;-<span class="keyword">\infty</span>&#125;<span class="built_in">^</span><span class="keyword">\infty</span> e<span class="built_in">^</span>&#123;-x<span class="built_in">^</span>2&#125; dx = <span class="keyword">\sqrt</span>&#123;<span class="keyword">\pi</span>&#125;</span><br><span class="line"><span class="keyword">\\</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="修改后的-footer-模板脚本">修改后的 <code>footer</code> 模板脚本</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">onload</span>=<span class="string">&quot;</span></span></span><br><span class="line"><span class="string"><span class="tag">    document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() &#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">      renderMathInElement(document.body, &#123;</span></span></span><br><span class="line"><span class="string"><span class="tag">        delimiters: [</span></span></span><br><span class="line"><span class="string"><span class="tag">          &#123;left: &#x27;\\[&#x27;, right: &#x27;\\]&#x27;, display: true&#125;,</span></span></span><br><span class="line"><span class="string"><span class="tag">          &#123;left: &#x27;\\(&#x27;, right: &#x27;\\)&#x27;, display: false&#125;</span></span></span><br><span class="line"><span class="string"><span class="tag">        ],</span></span></span><br><span class="line"><span class="string"><span class="tag">        throwOnError: false</span></span></span><br><span class="line"><span class="string"><span class="tag">      &#125;);</span></span></span><br><span class="line"><span class="string"><span class="tag">    &#125;);</span></span></span><br><span class="line"><span class="string"><span class="tag">  &quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="对应的-Markdown-公式写法">对应的 Markdown 公式写法</h4>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">行内公式：<span class="keyword">\\</span>( <span class="keyword">\sqrt</span>&#123;2&#125; <span class="keyword">\approx</span> 1.414 <span class="keyword">\\</span>)</span><br><span class="line"></span><br><span class="line">块级公式：</span><br><span class="line"><span class="keyword">\\</span>[</span><br><span class="line"><span class="keyword">\int</span><span class="built_in">_</span>&#123;-<span class="keyword">\infty</span>&#125;<span class="built_in">^</span><span class="keyword">\infty</span> e<span class="built_in">^</span>&#123;-x<span class="built_in">^</span>2&#125; dx = <span class="keyword">\sqrt</span>&#123;<span class="keyword">\pi</span>&#125;</span><br><span class="line"><span class="keyword">\\</span>]</span><br></pre></td></tr></table></figure>
 <hr>
 <p>通过以上步骤，即可自定义 KaTeX 的界定符，解决与其他语法（如 Markdown 表格、代码块）的冲突问题。</p>
 
@@ -534,13 +567,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -562,7 +595,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

@@ -292,27 +292,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>配置windows终端<br><span id="more"></span></p>
-<h2 id="终端"><a href="#终端" class="headerlink" title="终端"></a>终端</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>可于windows应用商店下载</p>
-<h3 id="2-下载安装Scoop"><a href="#2-下载安装Scoop" class="headerlink" title="2. 下载安装Scoop"></a>2. 下载安装Scoop</h3><p>2.1 设置远程权限<br><code>Set-ExecutionPolicy RemoteSigned -scope CurrentUser</code><br>2.2 下载安装<br><code>irm get.scoop.sh | iex</code></p>
-<h3 id="3-安装-PSReadline-包，该插件可以让命令行很好用，类似-zsh"><a href="#3-安装-PSReadline-包，该插件可以让命令行很好用，类似-zsh" class="headerlink" title="3. 安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh"></a>3. 安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh</h3><p><code>Install-Module -Name PSReadLine  -Scope CurrentUser</code></p>
-<h3 id="4-安装-posh-git-包，让你的-git-更好用"><a href="#4-安装-posh-git-包，让你的-git-更好用" class="headerlink" title="4. 安装 posh-git 包，让你的 git 更好用"></a>4. 安装 posh-git 包，让你的 git 更好用</h3><p><code>Install-Module posh-git  -Scope CurrentUser</code></p>
-<h3 id="5-安装-oh-my-posh-包，让你的命令行更酷炫、优雅"><a href="#5-安装-oh-my-posh-包，让你的命令行更酷炫、优雅" class="headerlink" title="5. 安装 oh-my-posh 包，让你的命令行更酷炫、优雅"></a>5. 安装 oh-my-posh 包，让你的命令行更酷炫、优雅</h3><p><code>Install-Module oh-my-posh -Scope CurrentUser</code></p>
-<h3 id="6-添加Powershell配置参数"><a href="#6-添加Powershell配置参数" class="headerlink" title="6. 添加Powershell配置参数"></a>6. 添加Powershell配置参数</h3><p><code>notepad $Profile</code></p>
+        <p>配置windows终端</p>
+<span id="more"></span>
+<h2 id="终端">终端</h2>
+<h3 id="1-下载">1. 下载</h3>
+<p>可于windows应用商店下载</p>
+<h3 id="2-下载安装Scoop">2. 下载安装Scoop</h3>
+<p>2.1 设置远程权限<br>
+<code>Set-ExecutionPolicy RemoteSigned -scope CurrentUser</code><br>
+2.2 下载安装<br>
+<code>irm get.scoop.sh | iex</code></p>
+<h3 id="3-安装-PSReadline-包，该插件可以让命令行很好用，类似-zsh">3. 安装 PSReadline 包，该插件可以让命令行很好用，类似 zsh</h3>
+<p><code>Install-Module -Name PSReadLine  -Scope CurrentUser</code></p>
+<h3 id="4-安装-posh-git-包，让你的-git-更好用">4. 安装 posh-git 包，让你的 git 更好用</h3>
+<p><code>Install-Module posh-git  -Scope CurrentUser</code></p>
+<h3 id="5-安装-oh-my-posh-包，让你的命令行更酷炫、优雅">5. 安装 oh-my-posh 包，让你的命令行更酷炫、优雅</h3>
+<p><code>Install-Module oh-my-posh -Scope CurrentUser</code></p>
+<h3 id="6-添加Powershell配置参数">6. 添加Powershell配置参数</h3>
+<p><code>notepad $Profile</code></p>
 <p>在文件中添加如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 引入 posh-git</span></span><br><span class="line">Import-Module posh-git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入 oh-my-posh</span></span><br><span class="line">Import-Module oh-my-posh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引入 ps-read-line</span></span><br><span class="line">Import-Module PSReadLine</span><br><span class="line"></span><br><span class="line"><span class="comment"># oh-my-posh init pwsh | Invoke-Expression</span></span><br><span class="line"><span class="comment">#oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH/jandedobbeleer.omp.json&quot; | Invoke-Expression</span></span><br><span class="line"><span class="comment">#oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH/1_shell.omp.json&quot; | Invoke-Expression</span></span><br><span class="line">oh-my-posh init pwsh --config <span class="string">&quot;<span class="variable">$env</span>:POSH_THEMES_PATH/kushal.omp.json&quot;</span> | Invoke-Expression</span><br><span class="line"><span class="comment">#oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH/montys.omp.json&quot; | Invoke-Expression</span></span><br><span class="line"><span class="comment">#oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH/honukai.omp.json&quot; | Invoke-Expression</span></span><br><span class="line"><span class="comment">#oh-my-posh init pwsh --config &quot;$env:POSH_THEMES_PATH/atomic.omp.json&quot; | Invoke-Expression</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置预测文本来源为历史记录</span></span><br><span class="line">Set-PSReadLineOption -PredictionSource History</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每次回溯输入历史，光标定位于输入内容末尾</span></span><br><span class="line">Set-PSReadLineOption -HistorySearchCursorMovesToEnd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 Tab 为菜单补全和 Intellisense</span></span><br><span class="line">Set-PSReadLineKeyHandler -Key <span class="string">&quot;Tab&quot;</span> -Function MenuComplete</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 Ctrl+d 为退出 PowerShell</span></span><br><span class="line">Set-PSReadlineKeyHandler -Key <span class="string">&quot;Ctrl+d&quot;</span> -Function ViExit</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 Ctrl+z 为撤销</span></span><br><span class="line">Set-PSReadLineKeyHandler -Key <span class="string">&quot;Ctrl+z&quot;</span> -Function Undo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置向上键为后向搜索历史记录</span></span><br><span class="line">Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置向下键为前向搜索历史纪录</span></span><br><span class="line">Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward</span><br><span class="line"></span><br><span class="line">Import-Module posh-git <span class="comment"># git的自动补全</span></span><br><span class="line">Import-Module -Name Terminal-Icons</span><br><span class="line"></span><br><span class="line">Set-Alias cl clear</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="7-添加完成后执行"><a href="#7-添加完成后执行" class="headerlink" title="7. 添加完成后执行"></a>7. 添加完成后执行</h3><p><code>. $PROFILE</code></p>
-<h3 id="8-美化icon"><a href="#8-美化icon" class="headerlink" title="8. 美化icon"></a>8. 美化icon</h3><p><code>Install-Module -Name Terminal-Icons -Repository PSGallery</code></p>
-<h3 id="9-安装Busybox"><a href="#9-安装Busybox" class="headerlink" title="9. 安装Busybox"></a>9. 安装Busybox</h3><p>可使用linux的部分命令</p>
+<h3 id="7-添加完成后执行">7. 添加完成后执行</h3>
+<p><code>. $PROFILE</code></p>
+<h3 id="8-美化icon">8. 美化icon</h3>
+<p><code>Install-Module -Name Terminal-Icons -Repository PSGallery</code></p>
+<h3 id="9-安装Busybox">9. 安装Busybox</h3>
+<p>可使用linux的部分命令</p>
 <p>安装方式<code>scoop</code></p>
-<h3 id="10-设置别名"><a href="#10-设置别名" class="headerlink" title="10. 设置别名"></a>10. 设置别名</h3><ol>
-<li><p><code>Set-Alias cl clear</code></p>
+<h3 id="10-设置别名">10. 设置别名</h3>
+<ol>
+<li>
+<p><code>Set-Alias cl clear</code></p>
 </li>
-<li><p><code>function ll &#123;busybox ls -l&#125;</code></p>
+<li>
+<p><code>function ll &#123;busybox ls -l&#125;</code></p>
 </li>
 </ol>
-<h3 id="11-下载字体"><a href="#11-下载字体" class="headerlink" title="11. 下载字体"></a>11. 下载字体</h3><p>推荐使用 Nerd Font 下载 <a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a><br>如: JetBrainsMono Nerd Font Mono</p>
-<h3 id="12-主题"><a href="#12-主题" class="headerlink" title="12. 主题"></a>12. 主题</h3><p>查看主题样式后在<code>$Profile</code>中更改主题名即可<br><a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes/">https://ohmyposh.dev/docs/themes/</a></p>
+<h3 id="11-下载字体">11. 下载字体</h3>
+<p>推荐使用 Nerd Font 下载 <a target="_blank" rel="noopener" href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a><br>
+如: JetBrainsMono Nerd Font Mono</p>
+<h3 id="12-主题">12. 主题</h3>
+<p>查看主题样式后在<code>$Profile</code>中更改主题名即可<br>
+<a target="_blank" rel="noopener" href="https://ohmyposh.dev/docs/themes/">https://ohmyposh.dev/docs/themes/</a></p>
 
     </div>
 
@@ -475,13 +496,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -503,7 +524,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

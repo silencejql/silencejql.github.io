@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="简介记录刷题过程中遇到问题及新知识">
+  <meta name="description" content="简介 记录刷题过程中遇到问题及新知识">
 <meta property="og:type" content="article">
 <meta property="og:title" content="刷题记">
 <meta property="og:url" content="https://silencejql.github.io/%E5%88%B7%E9%A2%98%E8%AE%B0.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="简介记录刷题过程中遇到问题及新知识">
+<meta property="og:description" content="简介 记录刷题过程中遇到问题及新知识">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-21T08:37:21.000Z">
 <meta property="article:modified_time" content="2023-01-06T03:28:45.436Z">
@@ -264,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -283,27 +283,63 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center>简介</center><br>记录刷题过程中遇到问题及新知识<br><span id="more"></span></p>
-<h2 id="System-Collections"><a href="#System-Collections" class="headerlink" title="System.Collections"></a>System.Collections</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>在C#中，数组由于是固定长度的，由于这种限制不方便，所以出现了ArrayList<br>ArrayList是可变长数组，可以将任意多的数据Add到ArrayList里面。其内部维护的数组，当长度不足时，会自动扩容为原来的两倍。<br>但是ArrayList也有一个缺点，就是存入ArrayList里面的数据都是Object类型的，所以如果将值类型存入和取出的时候会发生装箱、拆箱操作(就是值类型与引用类型之间的转换)，这个会影响程序性能。在.Net 2.0泛型出现以后，就提供了List<T>。</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List<T></h3><p>List<T>是ArrayList的泛型版本，它不再需要装箱拆箱，直接取，直接用，它基本与ArrayList一致，不过在使用的时候要先设置好它的类型，而设置好类型之后，不是这种类型的数据，是不允许Add进去的<br>就性能来说，如果要存进数组的只有一种数据，那么无疑List<T>是最优选择<br><strong>List存储的数据是有序并且可以重复的。 采用链表存储数据</strong></p>
+        <center>简介</center>
+记录刷题过程中遇到问题及新知识
+<span id="more"></span>
+<h2 id="System-Collections">System.Collections</h2>
+<h3 id="ArrayList">ArrayList</h3>
+<p>在C#中，数组由于是固定长度的，由于这种限制不方便，所以出现了ArrayList<br>
+ArrayList是可变长数组，可以将任意多的数据Add到ArrayList里面。其内部维护的数组，当长度不足时，会自动扩容为原来的两倍。<br>
+但是ArrayList也有一个缺点，就是存入ArrayList里面的数据都是Object类型的，所以如果将值类型存入和取出的时候会发生装箱、拆箱操作(就是值类型与引用类型之间的转换)，这个会影响程序性能。<a target="_blank" rel="noopener" href="http://xn--3ds.Net">在.Net</a> 2.0泛型出现以后，就提供了List<T>。</p>
+<h3 id="List-T">List<T></h3>
+<p>List<T>是ArrayList的泛型版本，它不再需要装箱拆箱，直接取，直接用，它基本与ArrayList一致，不过在使用的时候要先设置好它的类型，而设置好类型之后，不是这种类型的数据，是不允许Add进去的<br>
+就性能来说，如果要存进数组的只有一种数据，那么无疑List<T>是最优选择<br>
+<strong>List存储的数据是有序并且可以重复的。 采用链表存储数据</strong></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">List&lt;<span class="built_in">int</span>&gt; ListInt = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="comment">// 属性</span></span><br><span class="line">Count</span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Add(T)</span><br><span class="line">AddRange(IEnumerable&lt;T&gt;)</span><br><span class="line">Clear()</span><br><span class="line">Contains(T)</span><br><span class="line">Find(Predicate&lt;T&gt;) <span class="comment">//搜索与指定谓词所定义的条件相匹配的元素，并返回整个 List&lt;T&gt; 中的第一个匹配元素</span></span><br><span class="line">FindAll(Predicate&lt;T&gt;) <span class="comment">//检索与指定谓词定义的条件匹配的所有元素 返回List&lt;&gt;</span></span><br><span class="line">IndexOf(T)	<span class="comment">//搜索指定的对象，并返回整个 List&lt;T&gt; 中第一个匹配项的从零开始的索引</span></span><br><span class="line">LastIndexOf(T)	<span class="comment">//搜索指定对象并返回整个 List&lt;T&gt; 中最后一个匹配项的从零开始索引</span></span><br><span class="line">IndexOf(T, Int32)	<span class="comment">//搜索指定对象并返回 List&lt;T&gt; 中从指定索引到最后一个元素这部分元素中第一个匹配项的从零开始索引</span></span><br><span class="line">IndexOf(T, Int32, Int32)	<span class="comment">//搜索指定对象并返回 List&lt;T&gt; 中从指定索引开始并包含指定元素数的这部分元素中第一个匹配项的从零开始索引</span></span><br><span class="line">Insert(Int32, T)	<span class="comment">//将元素插入到 List&lt;T&gt; 中的指定索引处</span></span><br><span class="line">Remove(T) <span class="comment">//从 List&lt;T&gt; 中删除特定对象的第一个匹配项</span></span><br><span class="line">Reverse()	<span class="comment">//将整个 List&lt;T&gt; 中元素的顺序反转</span></span><br><span class="line">Reverse(Int32, Int32)	<span class="comment">//将指定范围中元素的顺序反转</span></span><br><span class="line">Sort()	<span class="comment">//使用默认比较器对整个 List&lt;T&gt; 中的元素进行排序</span></span><br><span class="line">ToArray()	<span class="comment">//将 List&lt;T&gt; 的元素复制到新数组中</span></span><br></pre></td></tr></table></figure>
-<h3 id="HashTable"><a href="#HashTable" class="headerlink" title="HashTable"></a>HashTable</h3><p>HashTable是一种根据key查找非常快的键值数据结构，不能有重复key，而且由于其特点，其长度总是一个素数，所以扩容后容量会比2倍大一点点，加载因子为0.72f。<br>当要大量使用key来查找value的时候，HashTable无疑是最有选择，HashTable与ArrayList一样，是非泛型的，value存进去是object,存取会发生装箱、拆箱，所以出现了Dictionary<T,T></p>
+<h3 id="HashTable">HashTable</h3>
+<p>HashTable是一种根据key查找非常快的键值数据结构，不能有重复key，而且由于其特点，其长度总是一个素数，所以扩容后容量会比2倍大一点点，加载因子为0.72f。<br>
+当要大量使用key来查找value的时候，HashTable无疑是最有选择，HashTable与ArrayList一样，是非泛型的，value存进去是object,存取会发生装箱、拆箱，所以出现了Dictionary&lt;T,T&gt;</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性</span></span><br><span class="line">Count <span class="comment">//获取包含在 Hashtable 中的键/值对的数目</span></span><br><span class="line">Keys</span><br><span class="line">Values</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Add(Object, Object)</span><br><span class="line">Clear()</span><br><span class="line">Clone()</span><br><span class="line">Contains(Object)</span><br><span class="line">ContainsKey(Object)</span><br><span class="line">ContainsValue(Object)</span><br><span class="line">GetHash(Object)	<span class="comment">//返回指定键的哈希代码</span></span><br><span class="line">Remove(Object)</span><br></pre></td></tr></table></figure>
-<h3 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary<T,T></h3><p>Dictionary<T,T>是HashTable的泛型版本，存取同样快，但是不需要装箱和拆箱了。而且，其优化了算法，Hashtable是0.72，它的浪费容量少了很多<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;<span class="built_in">string</span>,Person&gt; Dic = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>,Person&gt;();</span><br></pre></td></tr></table></figure></p>
-<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet<T></h3><p>HashSet<T>类，算法，存储结构都与哈希表相同，主要是设计用来做高性能集运算的，例如对两个集合求交集、并集、差集等。集合中包含一组不重复出现且无特定顺序的元素<br><strong>HashSet存储的数据是无序并且唯一的，底层使用HashMap存储数据</strong><br>Add(T) 方法返回值为如果该元素添加到 HashSet<T> 对象中则为 true；如果该元素已存在则为 false</p>
+<h3 id="Dictionary-T-T">Dictionary&lt;T,T&gt;</h3>
+<p>Dictionary&lt;T,T&gt;是HashTable的泛型版本，存取同样快，但是不需要装箱和拆箱了。而且，其优化了算法，Hashtable是0.72，它的浪费容量少了很多</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dictionary&lt;<span class="built_in">string</span>,Person&gt; Dic = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>,Person&gt;();</span><br></pre></td></tr></table></figure>
+<h3 id="HashSet-T">HashSet<T></h3>
+<p>HashSet<T>类，算法，存储结构都与哈希表相同，主要是设计用来做高性能集运算的，例如对两个集合求交集、并集、差集等。集合中包含一组不重复出现且无特定顺序的元素<br>
+<strong>HashSet存储的数据是无序并且唯一的，底层使用HashMap存储数据</strong><br>
+Add(T) 方法返回值为如果该元素添加到 HashSet<T> 对象中则为 true；如果该元素已存在则为 false</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">HashSet&lt;<span class="built_in">int</span>&gt; numbers1;</span><br><span class="line">HashSet&lt;<span class="built_in">int</span>&gt; numbers2;</span><br><span class="line"><span class="comment">//分别进行numbers1和numbers2的值初始化或赋值</span></span><br><span class="line">numbers1.UnionWith(numbers2);<span class="comment">//求两个集合的并集。</span></span><br><span class="line">numbers1.IntersectWith(numbers2);<span class="comment">//求两个集合的交集。</span></span><br><span class="line">numbers1.ExceptWith(numbers2);<span class="comment">//求两个集合的差集。</span></span><br><span class="line">numbers1.SymmetricExceptWith(numbers2);<span class="comment">//求两个集合的对称差集。</span></span><br><span class="line"><span class="comment">// 属性</span></span><br><span class="line">Count <span class="comment">//获取集中包含的元素数</span></span><br><span class="line">Comparer <span class="comment">//获取用于确定集中的值是否相等的 IEqualityComparer&lt;T&gt; 对象</span></span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Add() <span class="comment">//将项目添加到HashSet之中</span></span><br><span class="line">Clear() <span class="comment">//清空HashSet里面的值</span></span><br><span class="line">Remove() <span class="comment">//从HashSet中移除值</span></span><br><span class="line">Contains() <span class="comment">//判断HashSet是否包含指定项目</span></span><br><span class="line">Equals(Object) <span class="comment">//判断是否相等</span></span><br></pre></td></tr></table></figure>
-<h3 id="Queue、Queue"><a href="#Queue、Queue" class="headerlink" title="Queue、Queue"></a>Queue、Queue<T></h3><p>Queue队列，Queue<T>泛型队列，队列，先进先出</p>
+<h3 id="Queue、Queue-T">Queue、Queue<T></h3>
+<p>Queue队列，Queue<T>泛型队列，队列，先进先出</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性</span></span><br><span class="line">Count</span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Clear()</span><br><span class="line">Contains(T)</span><br><span class="line">Dequeue()	<span class="comment">//移除并返回位于 Queue&lt;T&gt; 开始处的对象</span></span><br><span class="line">Enqueue(T)	<span class="comment">//将一个对象添加到 Queue&lt;T&gt; 的末尾</span></span><br><span class="line">Peek()	<span class="comment">//返回位于 Queue&lt;T&gt; 开始处的对象但不将其移除</span></span><br></pre></td></tr></table></figure>
-<h3 id="Stack、Stack"><a href="#Stack、Stack" class="headerlink" title="Stack、Stack"></a>Stack、Stack<T></h3><p>Stack堆栈，先进后出</p>
+<h3 id="Stack、Stack-T">Stack、Stack<T></h3>
+<p>Stack堆栈，先进后出</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性</span></span><br><span class="line">Count</span><br><span class="line"><span class="comment">// 方法</span></span><br><span class="line">Clear()</span><br><span class="line">Contains(T)</span><br><span class="line">Pop()	<span class="comment">//删除并返回 Stack&lt;T&gt; 顶部的对象</span></span><br><span class="line">Push(T)	<span class="comment">//在 Stack&lt;T&gt; 的顶部插入一个对象</span></span><br><span class="line">Peek()	<span class="comment">//返回位于 Stack&lt;T&gt; 顶部的对象但不将其移除</span></span><br><span class="line">TryPop(T)	<span class="comment">//返回一个值，该值指示 Stack&lt;T&gt; 的顶部是否有对象；如果有，则将其复制到 result 参数，并从 Stack&lt;T&gt; 中删除它</span></span><br></pre></td></tr></table></figure>
-<h3 id="SortedList、SortedList"><a href="#SortedList、SortedList" class="headerlink" title="SortedList、SortedList"></a>SortedList、SortedList<TKey,TValue></h3><p>SortedList集合中的数据是有序的。可以通过key来匹配数据，也可以通过int下标来获取数据<br>添加操作比ArrayList，Hashtable略慢；查找、删除操作比ArrayList快，比Hashtable慢</p>
-<h3 id="SortedDictionary"><a href="#SortedDictionary" class="headerlink" title="SortedDictionary"></a>SortedDictionary<TKey,TValue></h3><p>SortedDictionary<TKey,TValue>相比于SortedList<TKey,TValue>其性能优化了，SortedList<TKey,TValue>其内部维护的是数组而SortedDictionary<TKey,TValue>内部维护的是红黑树(平衡二叉树)的一种，因此其占用的内存，性能都好于SortedDictionary<TKey,TValue>。唯一差在不能用下标取值</p>
-<h3 id="ListDictionary-单向链表-LinkedList-双向链表"><a href="#ListDictionary-单向链表-LinkedList-双向链表" class="headerlink" title="ListDictionary(单向链表),LinkedList(双向链表)"></a>ListDictionary(单向链表),LinkedList<T>(双向链表)</h3><p>List<T>,ArrayList,Hashtable等容器类，其内部维护的是数组Array来，ListDictionary和LinkedList<T>不用Array，而是用链表的形式来保存。链表最大的好处就是节约内存空间<br>ListDictionary是单向链表<br>LinkedList<T>双向链表。双向链表的优势，可以插入到任意位置</p>
-<h3 id="HybridDictionary"><a href="#HybridDictionary" class="headerlink" title="HybridDictionary"></a>HybridDictionary</h3><p>HybridDictionary的类，充分利用了Hashtable查询效率高和ListDictionary占用内存空间少的优点，内置了Hashtable和ListDictionary两个容器，添加数据时内部逻辑如下:<br>当数据量小于8时，Hashtable为null，用ListDictionary保存数据<br>当数据量大于8时，实例化Hashtable，数据转移到Hashtable中，然后将ListDictionary置为null</p>
-<h3 id="BitArray"><a href="#BitArray" class="headerlink" title="BitArray"></a>BitArray</h3><p>BitArray用于二进制运算，”或”、”非”、”与”、”异或非”等这种操作，只能存true或false</p>
-<h2 id="字符串动态匹配算法"><a href="#字符串动态匹配算法" class="headerlink" title="字符串动态匹配算法"></a>字符串动态匹配算法</h2><p>BF算法<br>RK算法<br>BM算法<br>KPM算法<br>Sunday算法</p>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>可理解为数列求通项过程<br>f(n) = f(n - 1) + f(n - 2)</p>
-<h2 id="逻辑运算符短路效应"><a href="#逻辑运算符短路效应" class="headerlink" title="逻辑运算符短路效应"></a>逻辑运算符短路效应</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(A &amp;&amp; B)  <span class="comment">// 若 A 为 false ，则 B 的判断不会执行（即短路），直接判定 A &amp;&amp; B 为 false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(A || B) <span class="comment">// 若 A 为 true ，则 B 的判断不会执行（即短路），直接判定 A || B 为 true</span></span><br></pre></td></tr></table></figure>
+<h3 id="SortedList、SortedList-TKey-TValue">SortedList、SortedList&lt;TKey,TValue&gt;</h3>
+<p>SortedList集合中的数据是有序的。可以通过key来匹配数据，也可以通过int下标来获取数据<br>
+添加操作比ArrayList，Hashtable略慢；查找、删除操作比ArrayList快，比Hashtable慢</p>
+<h3 id="SortedDictionary-TKey-TValue">SortedDictionary&lt;TKey,TValue&gt;</h3>
+<p>SortedDictionary&lt;TKey,TValue&gt;相比于SortedList&lt;TKey,TValue&gt;其性能优化了，SortedList&lt;TKey,TValue&gt;其内部维护的是数组而SortedDictionary&lt;TKey,TValue&gt;内部维护的是红黑树(平衡二叉树)的一种，因此其占用的内存，性能都好于SortedDictionary&lt;TKey,TValue&gt;。唯一差在不能用下标取值</p>
+<h3 id="ListDictionary-单向链表-LinkedList-T-双向链表">ListDictionary(单向链表),LinkedList<T>(双向链表)</h3>
+<p>List<T>,ArrayList,Hashtable等容器类，其内部维护的是数组Array来，ListDictionary和LinkedList<T>不用Array，而是用链表的形式来保存。链表最大的好处就是节约内存空间<br>
+ListDictionary是单向链表<br>
+LinkedList<T>双向链表。双向链表的优势，可以插入到任意位置</p>
+<h3 id="HybridDictionary">HybridDictionary</h3>
+<p>HybridDictionary的类，充分利用了Hashtable查询效率高和ListDictionary占用内存空间少的优点，内置了Hashtable和ListDictionary两个容器，添加数据时内部逻辑如下:<br>
+当数据量小于8时，Hashtable为null，用ListDictionary保存数据<br>
+当数据量大于8时，实例化Hashtable，数据转移到Hashtable中，然后将ListDictionary置为null</p>
+<h3 id="BitArray">BitArray</h3>
+<p>BitArray用于二进制运算，“或”、“非”、“与”、&quot;异或非&quot;等这种操作，只能存true或false</p>
+<h2 id="字符串动态匹配算法">字符串动态匹配算法</h2>
+<p>BF算法<br>
+RK算法<br>
+BM算法<br>
+KPM算法<br>
+Sunday算法</p>
+<h2 id="动态规划">动态规划</h2>
+<p>可理解为数列求通项过程<br>
+f(n) = f(n - 1) + f(n - 2)</p>
+<h2 id="逻辑运算符短路效应">逻辑运算符短路效应</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(A &amp;&amp; B)  <span class="comment">// 若 A 为 false ，则 B 的判断不会执行（即短路），直接判定 A &amp;&amp; B 为 false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(A || B) <span class="comment">// 若 A 为 true ，则 B 的判断不会执行（即短路），直接判定 A || B 为 true</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -385,7 +421,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Collections"><span class="nav-number">1.</span> <span class="nav-text">System.Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashTable"><span class="nav-number">1.3.</span> <span class="nav-text">HashTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dictionary"><span class="nav-number">1.4.</span> <span class="nav-text">Dictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet"><span class="nav-number">1.5.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue%E3%80%81Queue"><span class="nav-number">1.6.</span> <span class="nav-text">Queue、Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack%E3%80%81Stack"><span class="nav-number">1.7.</span> <span class="nav-text">Stack、Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SortedList%E3%80%81SortedList"><span class="nav-number">1.8.</span> <span class="nav-text">SortedList、SortedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SortedDictionary"><span class="nav-number">1.9.</span> <span class="nav-text">SortedDictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListDictionary-%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-LinkedList-%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="nav-number">1.10.</span> <span class="nav-text">ListDictionary(单向链表),LinkedList(双向链表)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HybridDictionary"><span class="nav-number">1.11.</span> <span class="nav-text">HybridDictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BitArray"><span class="nav-number">1.12.</span> <span class="nav-text">BitArray</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A8%E6%80%81%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">字符串动态匹配算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">3.</span> <span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9F%AD%E8%B7%AF%E6%95%88%E5%BA%94"><span class="nav-number">4.</span> <span class="nav-text">逻辑运算符短路效应</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Collections"><span class="nav-number">1.</span> <span class="nav-text">System.Collections</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList"><span class="nav-number">1.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-T"><span class="nav-number">1.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashTable"><span class="nav-number">1.3.</span> <span class="nav-text">HashTable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dictionary-T-T"><span class="nav-number">1.4.</span> <span class="nav-text">Dictionary&lt;T,T&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet-T"><span class="nav-number">1.5.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue%E3%80%81Queue-T"><span class="nav-number">1.6.</span> <span class="nav-text">Queue、Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stack%E3%80%81Stack-T"><span class="nav-number">1.7.</span> <span class="nav-text">Stack、Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SortedList%E3%80%81SortedList-TKey-TValue"><span class="nav-number">1.8.</span> <span class="nav-text">SortedList、SortedList&lt;TKey,TValue&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SortedDictionary-TKey-TValue"><span class="nav-number">1.9.</span> <span class="nav-text">SortedDictionary&lt;TKey,TValue&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListDictionary-%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8-LinkedList-T-%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="nav-number">1.10.</span> <span class="nav-text">ListDictionary(单向链表),LinkedList(双向链表)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HybridDictionary"><span class="nav-number">1.11.</span> <span class="nav-text">HybridDictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BitArray"><span class="nav-number">1.12.</span> <span class="nav-text">BitArray</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8A%A8%E6%80%81%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">字符串动态匹配算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">3.</span> <span class="nav-text">动态规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9F%AD%E8%B7%AF%E6%95%88%E5%BA%94"><span class="nav-number">4.</span> <span class="nav-text">逻辑运算符短路效应</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -466,13 +502,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -494,7 +530,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

@@ -294,12 +294,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>记录搬砖过程中遇到的疑问<br><span id="more"></span></p>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>子类构造函数始终默认调用父类无参构造函数</p>
+        <center></center>
+记录搬砖过程中遇到的疑问
+<span id="more"></span>
+<h2 id="构造函数">构造函数</h2>
+<p>子类构造函数始终默认调用父类无参构造函数</p>
 <p>若父类没有无参构造函数时，子类应显式调用父类有参构造函数，否则编译不过</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] <span class="keyword">args</span></span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//Console.WriteLine(&quot;Hello World!&quot;);</span></span><br><span class="line">            TestFunc();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">TestFunc</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Child c = <span class="keyword">new</span> Child(<span class="string">&quot;22&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">BassTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//public BassTest()</span></span><br><span class="line">        <span class="comment">//&#123;Console.WriteLine(&quot;BassNoneParam&quot;);&#125; </span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">BassTest</span>(<span class="params"><span class="built_in">string</span> s</span>) : <span class="title">this</span>(<span class="params">s,<span class="string">&quot;333&quot;</span></span>)</span></span><br><span class="line">        &#123;Console.WriteLine(<span class="string">&quot;BassOneParam&quot;</span> + s);&#125; </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">BassTest</span>(<span class="params"><span class="built_in">string</span> s, <span class="built_in">string</span> t</span>)</span></span><br><span class="line">        &#123;Console.WriteLine(<span class="string">&quot;BassTwoParam&quot;</span> + s + t);&#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Child</span> : <span class="title">BassTest</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//public Child()</span></span><br><span class="line">        <span class="comment">//&#123;Console.WriteLine(&quot;ChildNoneParam&quot;);&#125;</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Child</span>(<span class="params"><span class="built_in">string</span> s</span>) : <span class="title">this</span>(<span class="params">s,<span class="string">&quot;111&quot;</span></span>)</span></span><br><span class="line">        &#123;Console.WriteLine(<span class="string">&quot;ChildOneParam&quot;</span> + s);&#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Child</span>(<span class="params"><span class="built_in">string</span> s, <span class="built_in">string</span> t</span>):<span class="title">base</span>(<span class="params">s</span>)</span></span><br><span class="line">        &#123;Console.WriteLine(<span class="string">&quot;ChildTwoParam&quot;</span> + s + t);&#125; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>示例中：this()调用子类中对应参数的构造函数<br>base()调用父类中对应参数的构造函数<br><code>Child c = new Child(&quot;22&quot;);</code>输出为：</p>
-<p>BassTwoParam22333<br>BassOneParam22<br>ChildTwoParam22111<br>ChildOneParam22</p>
+<p>示例中：this()调用子类中对应参数的构造函数<br>
+base()调用父类中对应参数的构造函数<br>
+<code>Child c = new Child(&quot;22&quot;);</code>输出为：</p>
+<p>BassTwoParam22333<br>
+BassOneParam22<br>
+ChildTwoParam22111<br>
+ChildOneParam22</p>
 
     </div>
 
@@ -467,13 +475,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -495,7 +503,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

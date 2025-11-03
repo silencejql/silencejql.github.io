@@ -283,8 +283,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>UDS DTC故障码解析说明<br><span id="more"></span></p>
-<h2 id="格式结构"><a href="#格式结构" class="headerlink" title="格式结构"></a>格式结构</h2><p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br>DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
+        <p>UDS DTC故障码解析说明</p>
+<span id="more"></span>
+<h2 id="格式结构">格式结构</h2>
+<p>ISO 14229-1的故障诊断码格式规定, 故障码信息由四个字节组成: DTCHightByte,DTCMiddleByte,DTCLowByte,StatusofDTC<br>
+DTCHightByte,DTCMiddleByte两个字节表示故障内码, StatusofDTC表示故障码状态</p>
 <table>
     <tr>
         <td colspan="8" style="text-align:center;">DTCHightByte</td>>
@@ -315,10 +318,10 @@
         <td colspan="8" style="text-align:center;">第四五位</td>
     </tr>
 </table>
-
-<h3 id="故障内码"><a href="#故障内码" class="headerlink" title="故障内码"></a>故障内码</h3><p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
-<h4 id="第一位"><a href="#第一位" class="headerlink" title="第一位"></a>第一位</h4><p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
-<div class="table-container">
+<h3 id="故障内码">故障内码</h3>
+<p>故障内码由DTCHightByte,DTCMiddleByte两个字节解析出的5位字符组成</p>
+<h4 id="第一位">第一位</h4>
+<p>由DTCHightByte高两位(Bit8Bit7)解析而来</p>
 <table>
 <thead>
 <tr>
@@ -350,9 +353,8 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="第二位"><a href="#第二位" class="headerlink" title="第二位"></a>第二位</h4><p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
-<div class="table-container">
+<h4 id="第二位">第二位</h4>
+<p>第二位数字为0,1,2或3表示故障类型,由DTCHightByte的Bit6Bit5解析而来</p>
 <table>
 <thead>
 <tr>
@@ -384,12 +386,14 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h4 id="第三位"><a href="#第三位" class="headerlink" title="第三位"></a>第三位</h4><p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
-<h4 id="第四五位"><a href="#第四五位" class="headerlink" title="第四五位"></a>第四五位</h4><p>最后两位表示具体故障对象和类型(hex)</p>
-<h3 id="DTCLowByte"><a href="#DTCLowByte" class="headerlink" title="DTCLowByte"></a>DTCLowByte</h3><p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
-<h3 id="StatusofDTC"><a href="#StatusofDTC" class="headerlink" title="StatusofDTC"></a>StatusofDTC</h3><p>故障码状态位:</p>
-<div class="table-container">
+<h4 id="第三位">第三位</h4>
+<p>第三位字符表示故障所属子系统,由DTCHightByte的低四位解析而来</p>
+<h4 id="第四五位">第四五位</h4>
+<p>最后两位表示具体故障对象和类型(hex)</p>
+<h3 id="DTCLowByte">DTCLowByte</h3>
+<p>DTCLowByte描述故障种类和子类型(hex), 遵循ISO15031-6, 不需要该字节的DTC填充为0x00</p>
+<h3 id="StatusofDTC">StatusofDTC</h3>
+<p>故障码状态位:</p>
 <table>
 <thead>
 <tr>
@@ -441,7 +445,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 
     </div>
 
@@ -604,13 +607,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -632,7 +635,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

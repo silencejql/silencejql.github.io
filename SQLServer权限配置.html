@@ -284,8 +284,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>前面啥也没有<br><span id="more"></span></p>
-<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p>GRANT:赋予权限<br>REVOKE:收回已经授予的权限<br>DENY:禁掉某个权限</p>
+        <center></center>
+前面啥也没有
+<span id="more"></span>
+<h2 id="关键字">关键字</h2>
+<p>GRANT:赋予权限<br>
+REVOKE:收回已经授予的权限<br>
+DENY:禁掉某个权限</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--赋予Jack用户对表student的SELECT,UPDATE,DELETE权限</span></span><br><span class="line">​<span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,<span class="keyword">UPDATE</span>,<span class="keyword">DELETE</span> <span class="keyword">ON</span> <span class="keyword">TABLE</span> student <span class="keyword">TO</span> Jack</span><br><span class="line"></span><br><span class="line"><span class="comment">--收回Jack SELECT 权限</span></span><br><span class="line"><span class="keyword">REVOKE</span> <span class="keyword">SELECT</span> <span class="keyword">FROM</span> Jack</span><br><span class="line"></span><br><span class="line"><span class="comment">--拒绝Jack 的SELECT 权限</span></span><br><span class="line">DENY <span class="keyword">SELECT</span> <span class="keyword">TO</span> Jack</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> login test <span class="keyword">with</span> password<span class="operator">=</span><span class="string">&#x27;test&#x27;</span>,default_database<span class="operator">=</span>JIAOGUAN  <span class="comment">--此登录账户默认拥有数据库JIAOGUAN的权限</span></span><br><span class="line"></span><br><span class="line">use JIAOGUAN</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> test <span class="keyword">for</span> login test <span class="keyword">with</span> default_schema<span class="operator">=</span>dbo <span class="comment">--dbo为DataBaseOwner的简写，每个数据库都有一个dbo用户</span></span><br><span class="line"><span class="keyword">exec</span> sp_addrolemember <span class="string">&#x27;db_owner&#x27;</span>, <span class="string">&#x27;test&#x27;</span>   <span class="comment">--将test加入 db_owner角色</span></span><br><span class="line"></span><br><span class="line">use JIAOGUAN</span><br><span class="line">deny <span class="keyword">insert</span> <span class="keyword">on</span> Student <span class="keyword">to</span> test <span class="comment">--拒绝test用户对Student表执行insert</span></span><br><span class="line"></span><br><span class="line">use JIAOGUAN</span><br><span class="line">deny <span class="keyword">select</span> <span class="keyword">on</span> Student(gender,birth) <span class="keyword">to</span> test <span class="comment">--拒绝test用户访问Student表的gender和birth字段</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -454,13 +459,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -482,7 +487,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

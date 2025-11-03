@@ -297,17 +297,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>无线或有线OBD通过软件方式判断OBD的插入与拔出<br><span id="more"></span></p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>BBK OBD需要从车端取电, 模块上电后才可进行数据交互, 判断是否插入时实时与模块进行通讯,当模块有反馈时表示已插好.</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ol>
+        <center></center>
+无线或有线OBD通过软件方式判断OBD的插入与拔出
+<span id="more"></span>
+<h2 id="原理">原理</h2>
+<p>BBK OBD需要从车端取电, 模块上电后才可进行数据交互, 判断是否插入时实时与模块进行通讯,当模块有反馈时表示已插好.</p>
+<h2 id="实现">实现</h2>
+<ol>
 <li>初始化通讯</li>
 <li>在需要判断的流程中增加判断步骤</li>
 </ol>
-<h3 id="Always"><a href="#Always" class="headerlink" title="Always"></a>Always</h3><p>在程序初始化的地方创建通讯, 参数为CAN标识,运行程序会自动出现在系统配置的VehicleCmd中.<br>注意调用对象类型应为CanCmdOpraLib.VehicleCmdObject</p>
-<p><img src="BBK无线OBD判断连接/Init.PNG" alt="Init"></p>
+<h3 id="Always">Always</h3>
+<p>在程序初始化的地方创建通讯, 参数为CAN标识,运行程序会自动出现在系统配置的VehicleCmd中.<br>
+注意调用对象类型应为CanCmdOpraLib.VehicleCmdObject</p>
+<p><img src="BBK%E6%97%A0%E7%BA%BFOBD%E5%88%A4%E6%96%AD%E8%BF%9E%E6%8E%A5/Init.PNG" alt="Init"></p>
 <p>可参考下图在合适位置调用判断函数, 已连接向下执行Y, 未连接执行N继续等待</p>
-<p><img src="BBK无线OBD判断连接/Check.PNG" alt="Check"></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>执行完<br><img src="BBK无线OBD判断连接/Config.PNG" alt="Config"></p>
+<p><img src="BBK%E6%97%A0%E7%BA%BFOBD%E5%88%A4%E6%96%AD%E8%BF%9E%E6%8E%A5/Check.PNG" alt="Check"></p>
+<h3 id="配置">配置</h3>
+<p>执行完<br>
+<img src="BBK%E6%97%A0%E7%BA%BFOBD%E5%88%A4%E6%96%AD%E8%BF%9E%E6%8E%A5/Config.PNG" alt="Config"></p>
 
     </div>
 
@@ -474,13 +482,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -502,7 +510,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

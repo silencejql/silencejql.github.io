@@ -296,13 +296,19 @@
         <p>将功能复杂的版本库拆分为功能单一的版本库并保存所有相关提交信息</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># project</span></span><br><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Project/Pro1 -b Project1</span><br><span class="line"></span><br><span class="line"><span class="comment"># subProject</span></span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;分离仓库&quot;</span></span><br><span class="line"></span><br><span class="line">git pull ../ Project1</span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>比如, Project版本库中存在Pro1和Pro2两个项目文件, 现在我们要将Pro1项目拆分到单独的版本库中进行维护, 并且要保留原有提交信息</p>
+<h2 id="示例">示例</h2>
+<p>比如, Project版本库中存在Pro1和Pro2两个项目文件, 现在我们要将Pro1项目拆分到单独的版本库中进行维护, 并且要保留原有提交信息</p>
 <p>文件路径如下</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">D:.</span><br><span class="line">├─Project</span><br><span class="line">│  └─Pro1</span><br><span class="line">│     └─File1</span><br><span class="line">│     └─File2</span><br><span class="line">│  └─Pro2</span><br><span class="line">│     └─File1</span><br><span class="line">│     └─File2</span><br></pre></td></tr></table></figure>
-<h2 id="1-分离相关提交到新建分支"><a href="#1-分离相关提交到新建分支" class="headerlink" title="1.分离相关提交到新建分支"></a>1.分离相关提交到新建分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Project中执行</span></span><br><span class="line"><span class="comment"># &lt;name-of-folder&gt; : 要拆分出来的文件夹</span></span><br><span class="line"><span class="comment"># &lt;name-of-new-branch&gt; : 分离提交到新建分支</span></span><br><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Pro1 -b Project1</span><br></pre></td></tr></table></figure>
-<h2 id="2-提取分离后的分支"><a href="#2-提取分离后的分支" class="headerlink" title="2.提取分离后的分支"></a>2.提取分离后的分支</h2><h3 id="2-1在新路径保存分支"><a href="#2-1在新路径保存分支" class="headerlink" title="2.1在新路径保存分支"></a>2.1在新路径保存分支</h3><p>在合适位置新建文件夹后初始化Git, 然后拉取刚才新建的Project1分支即可<br>查看git log</p>
+<h2 id="1-分离相关提交到新建分支">1.分离相关提交到新建分支</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Project中执行</span></span><br><span class="line"><span class="comment"># &lt;name-of-folder&gt; : 要拆分出来的文件夹</span></span><br><span class="line"><span class="comment"># &lt;name-of-new-branch&gt; : 分离提交到新建分支</span></span><br><span class="line">git subtree <span class="built_in">split</span> -P &lt;name-of-folder&gt; -b &lt;name-of-new-branch&gt;</span><br><span class="line">git subtree <span class="built_in">split</span> -P Pro1 -b Project1</span><br></pre></td></tr></table></figure>
+<h2 id="2-提取分离后的分支">2.提取分离后的分支</h2>
+<h3 id="2-1在新路径保存分支">2.1在新路径保存分支</h3>
+<p>在合适位置新建文件夹后初始化Git, 然后拉取刚才新建的Project1分支即可<br>
+查看git log</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># &lt;path-of-Project&gt; : 步骤1中创建分支所在的路径, 即Project</span></span><br><span class="line"><span class="comment"># &lt;name-of-new-branch&gt; : 分离后新建分支名</span></span><br><span class="line">git pull &lt;path-of-Project&gt; &lt;name-of-new-branch&gt;</span><br><span class="line">git pull &lt;path-of-Project&gt; Project1</span><br><span class="line"></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-2在Pro1中初始化Git-不更改原文件夹结构"><a href="#2-2在Pro1中初始化Git-不更改原文件夹结构" class="headerlink" title="2.2在Pro1中初始化Git, 不更改原文件夹结构"></a>2.2在Pro1中初始化Git, 不更改原文件夹结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Pro1中执行</span></span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;提交信息&quot;</span></span><br><span class="line"></span><br><span class="line">git pull .. Project1</span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2在Pro1中初始化Git-不更改原文件夹结构">2.2在Pro1中初始化Git, 不更改原文件夹结构</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在Pro1中执行</span></span><br><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&quot;提交信息&quot;</span></span><br><span class="line"></span><br><span class="line">git pull .. Project1</span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -469,13 +475,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -497,7 +503,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

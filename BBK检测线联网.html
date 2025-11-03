@@ -302,25 +302,56 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>检测线联网相关的基本配置说明<br><span id="more"></span></p>
-<h2 id="设备设置"><a href="#设备设置" class="headerlink" title="设备设置"></a>设备设置</h2><p>1、设备及服务器安装好运行环境<br>2、关闭防火墙<br>3、分配IP<br>4、保证工位与服务器相互可以Ping通</p>
-<h2 id="工位配置"><a href="#工位配置" class="headerlink" title="工位配置"></a>工位配置</h2><h3 id="PostgreSQL配置"><a href="#PostgreSQL配置" class="headerlink" title="PostgreSQL配置"></a>PostgreSQL配置</h3><p>打开PostgreSQL菜单：工具-服务器配置-pg_hba.conf<br>新增如图配置后保存<br><img src="BBK检测线联网/Postgreconfi.png" alt="Config"></p>
-<h3 id="BBK软件配置"><a href="#BBK软件配置" class="headerlink" title="BBK软件配置"></a>BBK软件配置</h3><p>1、确认流程中有初始化联网步骤，一般在Init_InitConst中一般命名为InitNet<br><img src="BBK检测线联网/InitNet.png" alt="InitNet"></p>
-<p>2、确认流程中有上图中的红框中的设备号、线号的步骤<br>若没有可参考带有初始化联网的程序进行添加<br>3、打开BBK软件在菜单中配置<em>线号、设备号、服务器IP</em><br><img src="BBK检测线联网/BBKConfig.png" alt="BBKConfig"></p>
-<h2 id="服务器软件配置"><a href="#服务器软件配置" class="headerlink" title="服务器软件配置"></a>服务器软件配置</h2><p>打开服务软件所在文件夹中Set.mdb数据库进行服务器联网配置</p>
-<h3 id="StationConfig"><a href="#StationConfig" class="headerlink" title="StationConfig"></a>StationConfig</h3><p><img src="BBK检测线联网/StationConfig.png" alt="StationConfig"></p>
-<p>该表中每一行代表一个工位<br><strong>字段说明：</strong><br><code>DeviceID</code>：对应工位配置的设备号DeviceID<br><code>Describe</code>：用于服务器显示的设备描述<br><code>LineID</code>：对应工位配置的线号LineID<br><code>IPAdsress</code>：工位IP<br><code>StationNo</code>：用于服务器显示工位顺序<br><code>StationUpload</code>：设置当前工位需要上传的表名 <strong>逗号为英文字符</strong></p>
-<h3 id="车辆查看配置"><a href="#车辆查看配置" class="headerlink" title="车辆查看配置"></a>车辆查看配置</h3><p><img src="BBK检测线联网/ViewConfig.png" alt="ViewConfig"></p>
+        <center></center>
+检测线联网相关的基本配置说明
+<span id="more"></span>
+<h2 id="设备设置">设备设置</h2>
+<p>1、设备及服务器安装好运行环境<br>
+2、关闭防火墙<br>
+3、分配IP<br>
+4、保证工位与服务器相互可以Ping通</p>
+<h2 id="工位配置">工位配置</h2>
+<h3 id="PostgreSQL配置">PostgreSQL配置</h3>
+<p>打开PostgreSQL菜单：工具-服务器配置-pg_hba.conf<br>
+新增如图配置后保存<br>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/Postgreconfi.png" alt="Config"></p>
+<h3 id="BBK软件配置">BBK软件配置</h3>
+<p>1、确认流程中有初始化联网步骤，一般在Init_InitConst中一般命名为InitNet<br>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/InitNet.png" alt="InitNet"></p>
+<p>2、确认流程中有上图中的红框中的设备号、线号的步骤<br>
+若没有可参考带有初始化联网的程序进行添加<br>
+3、打开BBK软件在菜单中配置<em>线号、设备号、服务器IP</em><br>
+<img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/BBKConfig.png" alt="BBKConfig"></p>
+<h2 id="服务器软件配置">服务器软件配置</h2>
+<p>打开服务软件所在文件夹中Set.mdb数据库进行服务器联网配置</p>
+<h3 id="StationConfig">StationConfig</h3>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/StationConfig.png" alt="StationConfig"></p>
+<p>该表中每一行代表一个工位<br>
+<strong>字段说明：</strong><br>
+<code>DeviceID</code>：对应工位配置的设备号DeviceID<br>
+<code>Describe</code>：用于服务器显示的设备描述<br>
+<code>LineID</code>：对应工位配置的线号LineID<br>
+<code>IPAdsress</code>：工位IP<br>
+<code>StationNo</code>：用于服务器显示工位顺序<br>
+<code>StationUpload</code>：设置当前工位需要上传的表名 <strong>逗号为英文字符</strong></p>
+<h3 id="车辆查看配置">车辆查看配置</h3>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/ViewConfig.png" alt="ViewConfig"></p>
 <p>改表为显示测试数据页面的相关配置，根据需求进行相应配置即可</p>
-<h2 id="四轮与标定或侧滑通讯"><a href="#四轮与标定或侧滑通讯" class="headerlink" title="四轮与标定或侧滑通讯"></a>四轮与标定或侧滑通讯</h2><h3 id="四轮"><a href="#四轮" class="headerlink" title="四轮"></a>四轮</h3><p>四轮程序中创建GeneralLib.xDvConfigClient对象<br>并在该对象下创建需要共享的对象</p>
-<p><img src="BBK检测线联网/xDvConfigClient.PNG" alt="DvClient"></p>
-<p><img src="BBK检测线联网/xDvBaseClient.PNG" alt="DvBase"></p>
+<h2 id="四轮与标定或侧滑通讯">四轮与标定或侧滑通讯</h2>
+<h3 id="四轮">四轮</h3>
+<p>四轮程序中创建GeneralLib.xDvConfigClient对象<br>
+并在该对象下创建需要共享的对象</p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvConfigClient.PNG" alt="DvClient"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/xDvBaseClient.PNG" alt="DvBase"></p>
 <p>调用该对象的Init函数，参数选GeneralLib.xRemoterClientConfig；</p>
-<p><img src="BBK检测线联网/RemoteInit.PNG" alt="Remote"></p>
+<p><img src="BBK%E6%A3%80%E6%B5%8B%E7%BA%BF%E8%81%94%E7%BD%91/RemoteInit.PNG" alt="Remote"></p>
 <p>初始化后会自动生成创建</p>
 <p>需要传值时直接给变量赋值即可</p>
-<h3 id="标定或侧滑"><a href="#标定或侧滑" class="headerlink" title="标定或侧滑"></a>标定或侧滑</h3><p>创建GeneralLib.GenO对象<br>调用该对象的InitRemoterTcpserver函数即可。</p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>打开四轮程序，配置文件中会自动生成相关配置，对对象进行绑定即可；</p>
+<h3 id="标定或侧滑">标定或侧滑</h3>
+<p>创建GeneralLib.GenO对象<br>
+调用该对象的InitRemoterTcpserver函数即可。</p>
+<h3 id="配置">配置</h3>
+<p>打开四轮程序，配置文件中会自动生成相关配置，对对象进行绑定即可；</p>
 
     </div>
 
@@ -487,13 +518,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -515,7 +546,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

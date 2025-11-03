@@ -30,7 +30,7 @@
 <meta property="og:description" content="介绍BBK软件中采用的简易内参标定, 用于计算相机焦距, 本文主要用于老版本HUD和轮眉软件.新版本相机内参在公司出厂前就会标定好, 不需要现场标定, 并且标定方式也与本文不同">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-03-04T06:05:40.000Z">
-<meta property="article:modified_time" content="2025-03-28T05:15:05.224Z">
+<meta property="article:modified_time" content="2025-09-07T06:33:14.454Z">
 <meta property="article:author" content="Justin">
 <meta property="article:tag" content="BBK">
 <meta property="article:tag" content="CSharp">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-28 13:15:05" itemprop="dateModified" datetime="2025-03-28T13:15:05+08:00">2025-03-28</time>
+                <time title="修改时间：2025-09-07 14:33:14" itemprop="dateModified" datetime="2025-09-07T14:33:14+08:00">2025-09-07</time>
               </span>
 
           
@@ -287,7 +287,7 @@
       
         <p>介绍BBK软件中采用的简易内参标定, 用于计算相机焦距, 本文主要用于老版本HUD和轮眉软件.<br>新版本相机内参在公司出厂前就会标定好, 不需要现场标定, 并且标定方式也与本文不同<br><span id="more"></span></p>
 <h2 id="BBK使用的内参标定方法一"><a href="#BBK使用的内参标定方法一" class="headerlink" title="BBK使用的内参标定方法一"></a>BBK使用的内参标定方法一</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>小孔成像图自行脑补</p>
-<script type="math/tex; mode=display">D_{\text{物距}} / f_{\text{焦距}} = L_{\text{物体尺寸}} / p_{\text{图像尺寸}}$$$$(D-f)/f = L/p</script><p>其中, $D$为感光芯片到物体的距离, $f$为相机焦距, $L$为物体实际尺寸, $p$为物体在图像中的像素尺寸<br>由于无法准确测量像距所以近似认为,$D= D_{\text{物距}} + f(近似认为像距=焦距)$<br>推导出焦距计算公式为:</p>
+<script type="math/tex; mode=display">D_{\text{物距}} / f_{\text{焦距}} = L_{\text{物体尺寸}} / p_{\text{图像尺寸} }$$$$(D-f)/f = L/p</script><p>其中, $D$为感光芯片到物体的距离, $f$为相机焦距, $L$为物体实际尺寸, $p$为物体在图像中的像素尺寸<br>由于无法准确测量像距所以近似认为,$D= D_{\text{物距}} + f(近似认为像距=焦距)$<br>推导出焦距计算公式为:</p>
 <script type="math/tex; mode=display">(D-f)/f = D/f-1 = L/p</script><script type="math/tex; mode=display">D/f = L/p + 1 = (L+p)/p</script><script type="math/tex; mode=display">f/D = p/(L+p)$$$$f = D*p / (L+p)</script><h4 id="误差说明"><a href="#误差说明" class="headerlink" title="误差说明"></a>误差说明</h4><ol>
 <li>首先公式中唯一需要测量的D即标靶到相机感光芯片的距离要求测量准确</li>
 <li>其次由于近似认为物体成像在一倍焦距上, 所以$D-f$会根据焦距大小不同存在几毫米到到十几毫米的误差, 被测图像越远误差越小</li>
@@ -476,13 +476,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -504,7 +504,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

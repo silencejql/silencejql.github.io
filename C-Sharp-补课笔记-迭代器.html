@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。可以使用 yield break 语句来终止迭代。">
+  <meta name="description" content="迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。 可以使用 yield break 语句来终止迭代。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C Sharp 补课笔记 -- 迭代器">
 <meta property="og:url" content="https://silencejql.github.io/C-Sharp-%E8%A1%A5%E8%AF%BE%E7%AC%94%E8%AE%B0-%E8%BF%AD%E4%BB%A3%E5%99%A8.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。可以使用 yield break 语句来终止迭代。">
+<meta property="og:description" content="迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。 可以使用 yield break 语句来终止迭代。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-06T02:30:58.000Z">
 <meta property="article:modified_time" content="2025-03-24T11:37:22.538Z">
@@ -275,7 +275,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>670</span>
+              <span>694</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,12 +294,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。<br>可以使用 yield break 语句来终止迭代。<br><span id="more"></span></p>
-<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="function"><span class="built_in">int</span> number <span class="keyword">in</span> <span class="title">SomeNumbers</span>())</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(number.ToString() + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">// Output: 3 5 8</span></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> System.Collections.<span class="function">IEnumerable <span class="title">SomeNumbers</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>迭代器方法或 get 访问器的返回类型可以是 IEnumerable、IEnumerable\<T>、IEnumerator 或 IEnumerator\<T>。</p>
+        <center></center>
+迭代器方法或 get 访问器可对集合执行自定义迭代。 迭代器方法使用 yield return 语句返回元素，每次返回一个。 到达 yield return 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。
+可以使用 yield break 语句来终止迭代。
+<span id="more"></span>
+<h2 id="简单示例">简单示例</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="function"><span class="built_in">int</span> number <span class="keyword">in</span> <span class="title">SomeNumbers</span>())</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.Write(number.ToString() + <span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">// Output: 3 5 8</span></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> System.Collections.<span class="function">IEnumerable <span class="title">SomeNumbers</span>()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>迭代器方法或 get 访问器的返回类型可以是 IEnumerable、IEnumerable&lt;T&gt;、IEnumerator 或 IEnumerator&lt;T&gt;。</p>
 <blockquote>
 <p>迭代器可用作一种方法，或一个 get 访问器。 不能在事件、实例构造函数、静&gt;态构造函数或静态终结器中使用迭代器。</p>
-<p>必须存在从 yield return 语句中的表达式类型到迭代器返回的 &gt;IEnumerable\<T> 类型参数的隐式转换。</p>
+<p>必须存在从 yield return 语句中的表达式类型到迭代器返回的 &gt;IEnumerable&lt;T&gt; 类型参数的隐式转换。</p>
 <p>在 C# 中，迭代器方法不能有任何 in 、 ref 或 out 参数。</p>
 <p>在 C# 中， yield 不是保留字，只有在 return 或 break 关键字之前使用时才有特殊含义。</p>
 </blockquote>
@@ -470,13 +474,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -498,7 +502,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

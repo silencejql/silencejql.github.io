@@ -293,10 +293,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>&emsp; 国六排放测试过程中常用通讯指令说明</p>
-<p>详细资料请参考ISO15031-5或J1979-DA<br><span id="more"></span></p>
-<h2 id="ISO15031-5"><a href="#ISO15031-5" class="headerlink" title="ISO15031-5"></a>ISO15031-5</h2><h3 id="15765-4"><a href="#15765-4" class="headerlink" title="15765-4"></a>15765-4</h3><h4 id="Service-01"><a href="#Service-01" class="headerlink" title="Service 01"></a>Service 01</h4><p>请求当前动力系统诊断数据<br>01后最多可以读取6个PID(Parameter Identification)<br>请求：01 PID PID PID PID PID PID<br>回复：41 PID Data PID Data PID Data PID Data PID Data PID Data</p>
-<h5 id="PID"><a href="#PID" class="headerlink" title="PID"></a>PID</h5><div class="table-container">
+        <center></center>
+&emsp; 国六排放测试过程中常用通讯指令说明
+<p>详细资料请参考ISO15031-5或J1979-DA</p>
+<span id="more"></span>
+<h2 id="ISO15031-5">ISO15031-5</h2>
+<h3 id="15765-4">15765-4</h3>
+<h4 id="Service-01">Service 01</h4>
+<p>请求当前动力系统诊断数据<br>
+01后最多可以读取6个PID(Parameter Identification)<br>
+请求：01 PID PID PID PID PID PID<br>
+回复：41 PID Data PID Data PID Data PID Data PID Data PID Data</p>
+<h5 id="PID">PID</h5>
 <table>
 <thead>
 <tr>
@@ -407,17 +415,34 @@
 <td style="text-align:center">85</td>
 <td style="text-align:center">NOx控制系统</td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h6 id="PID-00"><a href="#PID-00" class="headerlink" title="PID 00"></a>PID 00</h6><p>请求：01 00<br>回复：</p>
+<h6 id="PID-00">PID 00</h6>
+<p>请求：01 00<br>
+回复：</p>
 <blockquote>
-<p>41 00 A B C D //PID 01~20<br>41 20 A B C D //PID 21~40<br>41 40 A B C D //PID 41~60<br>41 60 A B C D //PID 61~80<br>41 80 A B C D //PID 81~A0<br>41 A0 A B C D //PID A1~C0<br>41 C0 A B C D //PID C1~E0<br>41 E0 A B C D //PID E1~FF</p>
+<p>41 00 A B C D //PID 01~20<br>
+41 20 A B C D //PID 21~40<br>
+41 40 A B C D //PID 41~60<br>
+41 60 A B C D //PID 61~80<br>
+41 80 A B C D //PID 81~A0<br>
+41 A0 A B C D //PID A1~C0<br>
+41 C0 A B C D //PID C1~E0<br>
+41 E0 A B C D //PID E1~FF</p>
 </blockquote>
-<p><code>41 00 A B C D</code><br>Data A bit7 ~ Data D bit0 表示是否支持PID 01~20</p>
-<p>如：<code>41 00 90 39 00 00</code><br>Data A = 90 = 1001 0000<br>bit7 = 1; bit4 = 1<br>表示支持 PID 01、PID 04<br>Data B = 39 = 0011 1001<br>bit5 = bit4 = bit3 = bit0 = 1<br>表示支持 PID 0B、PID 0C、PID 0D、PID 10</p>
-<h4 id="Service-09"><a href="#Service-09" class="headerlink" title="Service 09"></a>Service 09</h4><h5 id="PID-1"><a href="#PID-1" class="headerlink" title="PID"></a>PID</h5><div class="table-container">
+<p><code>41 00 A B C D</code><br>
+Data A bit7 ~ Data D bit0 表示是否支持PID 01~20</p>
+<p>如：<code>41 00 90 39 00 00</code><br>
+Data A = 90 = 1001 0000<br>
+bit7 = 1; bit4 = 1<br>
+表示支持 PID 01、PID 04<br>
+Data B = 39 = 0011 1001<br>
+bit5 = bit4 = bit3 = bit0 = 1<br>
+表示支持 PID 0B、PID 0C、PID 0D、PID 10</p>
+<h4 id="Service-09">Service 09</h4>
+<h5 id="PID-v2">PID</h5>
 <table>
 <thead>
 <tr>
@@ -436,7 +461,7 @@
 </tr>
 <tr>
 <td style="text-align:center">04</td>
-<td style="text-align:center">Cal.ID</td>
+<td style="text-align:center"><a target="_blank" rel="noopener" href="http://Cal.ID">Cal.ID</a></td>
 <td style="text-align:center"></td>
 <td style="text-align:center"></td>
 </tr>
@@ -450,11 +475,14 @@
 <td style="text-align:center">08</td>
 <td style="text-align:center">IPT</td>
 <td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h2 id="ISO27145"><a href="#ISO27145" class="headerlink" title="ISO27145"></a>ISO27145</h2><h4 id="Service-22"><a href="#Service-22" class="headerlink" title="Service 22"></a>Service 22</h4><p>22 F4 对应 ISO15031的01服务<br>22 F8 对应 ISO15031的09服务</p>
+<h2 id="ISO27145">ISO27145</h2>
+<h4 id="Service-22">Service 22</h4>
+<p>22 F4 对应 ISO15031的01服务<br>
+22 F8 对应 ISO15031的09服务</p>
 
     </div>
 
@@ -540,7 +568,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO15031-5"><span class="nav-number">1.</span> <span class="nav-text">ISO15031-5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#15765-4"><span class="nav-number">1.1.</span> <span class="nav-text">15765-4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-01"><span class="nav-number">1.1.1.</span> <span class="nav-text">Service 01</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PID"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">PID</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#PID-00"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">PID 00</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-09"><span class="nav-number">1.1.2.</span> <span class="nav-text">Service 09</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PID-1"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">PID</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO27145"><span class="nav-number">2.</span> <span class="nav-text">ISO27145</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-22"><span class="nav-number">2.0.1.</span> <span class="nav-text">Service 22</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO15031-5"><span class="nav-number">1.</span> <span class="nav-text">ISO15031-5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#15765-4"><span class="nav-number">1.1.</span> <span class="nav-text">15765-4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-01"><span class="nav-number">1.1.1.</span> <span class="nav-text">Service 01</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PID"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">PID</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#PID-00"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">PID 00</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-09"><span class="nav-number">1.1.2.</span> <span class="nav-text">Service 09</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PID-v2"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">PID</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO27145"><span class="nav-number">2.</span> <span class="nav-text">ISO27145</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Service-22"><span class="nav-number">2.0.1.</span> <span class="nav-text">Service 22</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -621,13 +649,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -649,7 +677,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

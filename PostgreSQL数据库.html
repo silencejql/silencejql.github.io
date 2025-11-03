@@ -300,13 +300,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><center></center><br>BBK设备数据库常用操作说明<br><span id="more"></span></p>
-<h2 id="新增数据表"><a href="#新增数据表" class="headerlink" title="新增数据表"></a>新增数据表</h2><p>创建脚本修改字段和表名<br>打开数据表所在路径：<br><img src="PostgreSQL数据库/TablePath.png" alt="1"></p>
-<p>更改图中相应字段表名后点击黑色方框中的执行按钮并确认输出窗口为成功即可<br><img src="PostgreSQL数据库/CreatTableScript.png" alt="2"></p>
-<p><img src="PostgreSQL数据库/TableScript.png" alt="3"></p>
-<h2 id="新增字段"><a href="#新增字段" class="headerlink" title="新增字段"></a>新增字段</h2><p>当保存数据时Systemerror.log中存在警告缺少字段是可在数据库中新增缺少的字段<br><img src="PostgreSQL数据库/MissField.png" alt="4"></p>
+        <center></center>
+BBK设备数据库常用操作说明
+<span id="more"></span>
+<h2 id="新增数据表">新增数据表</h2>
+<p>创建脚本修改字段和表名<br>
+打开数据表所在路径：<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TablePath.png" alt="1"></p>
+<p>更改图中相应字段表名后点击黑色方框中的执行按钮并确认输出窗口为成功即可<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatTableScript.png" alt="2"></p>
+<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/TableScript.png" alt="3"></p>
+<h2 id="新增字段">新增字段</h2>
+<p>当保存数据时Systemerror.log中存在警告缺少字段是可在数据库中新增缺少的字段<br>
+<img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/MissField.png" alt="4"></p>
 <p>图中Miss Field List:后面就是数据库中缺少的字段名</p>
-<h3 id="创建脚本新增字段"><a href="#创建脚本新增字段" class="headerlink" title="创建脚本新增字段"></a>创建脚本新增字段</h3><p><img src="PostgreSQL数据库/CreatFieldScript.png" alt="5"></p>
+<h3 id="创建脚本新增字段">创建脚本新增字段</h3>
+<p><img src="PostgreSQL%E6%95%B0%E6%8D%AE%E5%BA%93/CreatFieldScript.png" alt="5"></p>
 <p>如下所示，新增字段并根据需要更改字段长度即可</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Column: &quot;前轮侧滑&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- ALTER TABLE public.&quot;侧滑表&quot; DROP COLUMN &quot;前轮侧滑&quot;;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段1&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">ALTER TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段2&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">ALTER TABLE</span> public.&quot;侧滑表&quot; <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> &quot;新增字段3&quot; <span class="type">character</span> <span class="type">varying</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
 
@@ -476,13 +485,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -504,7 +513,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

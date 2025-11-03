@@ -294,8 +294,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Divide and Conquer分治<br><span id="more"></span></p>
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">QuickSort</span>(<span class="params"><span class="built_in">int</span>[] data, <span class="built_in">int</span> left, <span class="built_in">int</span> right</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(left &gt; right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">int</span> i = left;</span><br><span class="line">    <span class="built_in">int</span> j = right;</span><br><span class="line">    <span class="built_in">int</span> mark = data[left];</span><br><span class="line">    <span class="keyword">while</span> (i != j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (data[j] &gt;= mark &amp;&amp; i &lt; j)</span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">while</span> (data[i] &lt;= mark &amp;&amp; i &lt; j)</span><br><span class="line">            i++;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> temp = data[i];</span><br><span class="line">            data[i] = data[j];</span><br><span class="line">            data[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    data[left] = data[i];</span><br><span class="line">    data[i] = mark;</span><br><span class="line">    QuickSort(data, left, i - <span class="number">1</span>);</span><br><span class="line">    QuickSort(data, i + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>Divide and Conquer分治</p>
+<span id="more"></span>
+<h2 id="快速排序">快速排序</h2>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">QuickSort</span>(<span class="params"><span class="built_in">int</span>[] data, <span class="built_in">int</span> left, <span class="built_in">int</span> right</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(left &gt; right)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">int</span> i = left;</span><br><span class="line">    <span class="built_in">int</span> j = right;</span><br><span class="line">    <span class="built_in">int</span> mark = data[left];</span><br><span class="line">    <span class="keyword">while</span> (i != j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (data[j] &gt;= mark &amp;&amp; i &lt; j)</span><br><span class="line">            j--;</span><br><span class="line">        <span class="keyword">while</span> (data[i] &lt;= mark &amp;&amp; i &lt; j)</span><br><span class="line">            i++;</span><br><span class="line">        <span class="keyword">if</span> (i &lt; j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> temp = data[i];</span><br><span class="line">            data[i] = data[j];</span><br><span class="line">            data[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    data[left] = data[i];</span><br><span class="line">    data[i] = mark;</span><br><span class="line">    QuickSort(data, left, i - <span class="number">1</span>);</span><br><span class="line">    QuickSort(data, i + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -463,13 +465,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -491,7 +493,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

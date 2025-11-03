@@ -276,7 +276,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -296,25 +296,91 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="通讯测试"><a href="#通讯测试" class="headerlink" title="通讯测试"></a>通讯测试</h2><p>串口测试车辆通讯问题<br>SendID：<code>0730</code>；RecvID：<code>0738</code><br><code>33 33 07 38 FF FF 88 88</code> 设置滤波 只接收ID为<code>0738</code>的指令<br><code>55 55 07 30 02 10 03 00 00 00 00 00 88 88</code> 发送指令 发送ID为<code>0730</code><br>其中：<font color="#FF0000"> 02 </font> <font color="#00FF00"> 10 03 </font> <font color="#000000"> 00 00 00 00 00 </font>为CAN指令，第一位为长度位。<br>为什么用55指令测试通讯：</p>
+        <h2 id="通讯测试">通讯测试</h2>
+<p>串口测试车辆通讯问题<br>
+SendID：<code>0730</code>；RecvID：<code>0738</code><br>
+<code>33 33 07 38 FF FF 88 88</code> 设置滤波 只接收ID为<code>0738</code>的指令<br>
+<code>55 55 07 30 02 10 03 00 00 00 00 00 88 88</code> 发送指令 发送ID为<code>0730</code><br>
+其中：<font color="#FF0000"> 02 </font> <font color="#00FF00"> 10 03 </font> <font color="#000000"> 00 00 00 00 00 </font>为CAN指令，第一位为长度位。<br>
+为什么用55指令测试通讯：</p>
 <blockquote>
 <p>55指令中不包含CAN通讯等待的时间参数，不会出现第三版协议因超时时间较短而导致收不到车辆回复。</p>
 </blockquote>
-<h2 id="第三版协议指令说明"><a href="#第三版协议指令说明" class="headerlink" title="第三版协议指令说明"></a>第三版协议指令说明</h2><h3 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h3><p>F0 F0<br>XX XX// 数据长度<br>XX //指令类型:<br>&emsp;&emsp;10: CAN数据（针对ISO15765协议而定）<br>&emsp;&emsp;13: 设置CAN通信滤波ID<br>&emsp;&emsp;14: 只发送指定长度(小于等于8)CAN数据<br>&emsp;&emsp;15:设置CAN通信波特率及标准帧拓展帧<br>&emsp;&emsp;20 :K线数据<br>&emsp;&emsp;25: 设置K线初始化波特率及通信波特率<br>&emsp;&emsp;05: 设置超时时间 CAN通讯短等待回复时间，默认100ms，长等待时间，默认5000ms<br>XX XX XX XX //本机ID<br>XX XX XX XX //目标ID<br>XX n…//数据<br>FF//结尾</p>
-<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><p>0F 0F<br>XX XX// 数据长度<br>XX //指令类型:<br>&emsp;&emsp;10: CAN数据（针对ISO15765协议而定）<br>&emsp;&emsp;13: 设置CAN通信滤波ID<br>&emsp;&emsp;14: 接收到已设置了CAN通信滤波ID的CAN数据<br>&emsp;&emsp;15:设置CAN通信波特率及标准帧拓展帧<br>&emsp;&emsp;20: K线数据<br>&emsp;&emsp;25: 设置K线初始化波特率及通信波特率<br>&emsp;&emsp;05: 设置通信响应超时时间成功的响应指令<br>&emsp;&emsp;7F: 收到错误回复，比如超时、数据格式错误等<br>XX XX XX XX //本机ID<br>XX XX XX XX //目标ID<br>XX n…//数据<br>FF//结尾</p>
-<p>示例：<br>发送：<code>F0 F0 00 0C 10 00 00 07 20 00 00 07 30 10 03 FF</code><br>接收：<code>0F 0F 00 10 10 00 00 07 20 00 00 07 30 50 03 00 32 01 F4 FF</code></p>
-<h3 id="设置指定滤波ID及读取超时时间-0x12"><a href="#设置指定滤波ID及读取超时时间-0x12" class="headerlink" title="设置指定滤波ID及读取超时时间(0x12)"></a>设置指定滤波ID及读取超时时间(0x12)</h3><p>发送：<code>F0 F0 00 07 12 00 00 07 30 14 FF</code><br>接收：若CAN总线上指定滤波ID(<code>00 00 07 20</code>)对应的数据及超时时间（20*10=200ms），则返回：<br><code>0F 0F 00 0E 12 00 00 07 30 00 01 02 03 04 05 06 07 FF</code> //(<code>00 00 07 30</code> 目标ID)<br>否则返回超时提示；</p>
-<h3 id="设置滤波ID-0x13"><a href="#设置滤波ID-0x13" class="headerlink" title="设置滤波ID(0x13)"></a>设置滤波ID(0x13)</h3><p>发送：<code>F0 F0 00 0A 13 00 00 07 20 FF FF FF FF FF</code><br>接收：若CAN总线上有设置的ID对应的数据，则返回：<br><code>0F 0F 00 0E 14 00 00 07 30 50 03 00 32 01 F4 FF</code>//(<code>00 00 07 30</code> 目标ID)<br>否则无返回；</p>
-<h3 id="只发送单帧数据-0x14"><a href="#只发送单帧数据-0x14" class="headerlink" title="只发送单帧数据(0x14)"></a>只发送单帧数据(0x14)</h3><p>发送：<code>F0 F0 00 0E 14 00 00 07 20 00 00 00 00 12 34 56 78 FF</code><br>发送的目标ID: <code>00 00 07 20</code>  发送的CAN数据: <code>12 34 56 78</code></p>
-<h3 id="设置波特率及标准帧拓展帧（0x15）"><a href="#设置波特率及标准帧拓展帧（0x15）" class="headerlink" title="设置波特率及标准帧拓展帧（0x15）"></a>设置波特率及标准帧拓展帧（0x15）</h3><p>第6字节及第7字节表示设置波特率大小，单位kbps<br>第8字节及第9字节表示设置标准帧或拓展帧：<code>00 00</code> 标准帧 <code>00 01</code> 拓展帧<br>接收数据01代表设置成功，无返回或者返回其他字节数目则设置失败，请注意检测数据格式。<br>比如<br>发送：<code>F0 F0 00 06 15 01 F4 00 01 FF</code>//设置波特率500K，拓展帧<br>接收：<code>0F 0F 00 03 15 01 FF</code>//设置成功</p>
-<h3 id="设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）-0x16"><a href="#设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）-0x16" class="headerlink" title="设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）(0x16)"></a>设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）(0x16)</h3><p>第6字节及第7字节表示设置波特率大小，单位kbps<br>第8字节及第9字节表示设置标准帧或拓展帧：<code>00 00</code> 标准帧 <code>00 01</code> 拓展帧<br>设置成功与否，都不返回数据<br>发送：<code>F0 F0 00 06 16 01 F4 00 01 FF</code>//设置波特率500K，拓展帧<br>接收：无</p>
-<h3 id="K-Line设置初始波特率及正常通讯波特率（0x25）"><a href="#K-Line设置初始波特率及正常通讯波特率（0x25）" class="headerlink" title="K-Line设置初始波特率及正常通讯波特率（0x25）"></a>K-Line设置初始波特率及正常通讯波特率（0x25）</h3><p>第6字节及第7字节表示设置初始波特率（单位：bps），默认200bps<br>第8字节及第9字节表示设置正常通讯波特率（单位：bps），默认10400bps<br>接收数据01代表设置成功，无返回或者返回其他字节数目则设置失败，请注意检测数据格式。</p>
+<h2 id="第三版协议指令说明">第三版协议指令说明</h2>
+<h3 id="发送数据">发送数据</h3>
+<p>F0 F0<br>
+XX XX// 数据长度<br>
+XX //指令类型:<br>
+  10: CAN数据（针对ISO15765协议而定）<br>
+  13: 设置CAN通信滤波ID<br>
+  14: 只发送指定长度(小于等于8)CAN数据<br>
+  15:设置CAN通信波特率及标准帧拓展帧<br>
+  20 :K线数据<br>
+  25: 设置K线初始化波特率及通信波特率<br>
+  05: 设置超时时间 CAN通讯短等待回复时间，默认100ms，长等待时间，默认5000ms<br>
+XX XX XX XX //本机ID<br>
+XX XX XX XX //目标ID<br>
+XX n…//数据<br>
+FF//结尾</p>
+<h3 id="接收数据">接收数据</h3>
+<p>0F 0F<br>
+XX XX// 数据长度<br>
+XX //指令类型:<br>
+  10: CAN数据（针对ISO15765协议而定）<br>
+  13: 设置CAN通信滤波ID<br>
+  14: 接收到已设置了CAN通信滤波ID的CAN数据<br>
+  15:设置CAN通信波特率及标准帧拓展帧<br>
+  20: K线数据<br>
+  25: 设置K线初始化波特率及通信波特率<br>
+  05: 设置通信响应超时时间成功的响应指令<br>
+  7F: 收到错误回复，比如超时、数据格式错误等<br>
+XX XX XX XX //本机ID<br>
+XX XX XX XX //目标ID<br>
+XX n…//数据<br>
+FF//结尾</p>
+<p>示例：<br>
+发送：<code>F0 F0 00 0C 10 00 00 07 20 00 00 07 30 10 03 FF</code><br>
+接收：<code>0F 0F 00 10 10 00 00 07 20 00 00 07 30 50 03 00 32 01 F4 FF</code></p>
+<h3 id="设置指定滤波ID及读取超时时间-0x12">设置指定滤波ID及读取超时时间(0x12)</h3>
+<p>发送：<code>F0 F0 00 07 12 00 00 07 30 14 FF</code><br>
+接收：若CAN总线上指定滤波ID(<code>00 00 07 20</code>)对应的数据及超时时间（20*10=200ms），则返回：<br>
+<code>0F 0F 00 0E 12 00 00 07 30 00 01 02 03 04 05 06 07 FF</code> //(<code>00 00 07 30</code> 目标ID)<br>
+否则返回超时提示；</p>
+<h3 id="设置滤波ID-0x13">设置滤波ID(0x13)</h3>
+<p>发送：<code>F0 F0 00 0A 13 00 00 07 20 FF FF FF FF FF</code><br>
+接收：若CAN总线上有设置的ID对应的数据，则返回：<br>
+<code>0F 0F 00 0E 14 00 00 07 30 50 03 00 32 01 F4 FF</code>//(<code>00 00 07 30</code> 目标ID)<br>
+否则无返回；</p>
+<h3 id="只发送单帧数据-0x14">只发送单帧数据(0x14)</h3>
+<p>发送：<code>F0 F0 00 0E 14 00 00 07 20 00 00 00 00 12 34 56 78 FF</code><br>
+发送的目标ID: <code>00 00 07 20</code>  发送的CAN数据: <code>12 34 56 78</code></p>
+<h3 id="设置波特率及标准帧拓展帧（0x15）">设置波特率及标准帧拓展帧（0x15）</h3>
+<p>第6字节及第7字节表示设置波特率大小，单位kbps<br>
+第8字节及第9字节表示设置标准帧或拓展帧：<code>00 00</code> 标准帧 <code>00 01</code> 拓展帧<br>
+接收数据01代表设置成功，无返回或者返回其他字节数目则设置失败，请注意检测数据格式。<br>
+比如<br>
+发送：<code>F0 F0 00 06 15 01 F4 00 01 FF</code>//设置波特率500K，拓展帧<br>
+接收：<code>0F 0F 00 03 15 01 FF</code>//设置成功</p>
+<h3 id="设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）-0x16">设置波特率及标准帧拓展帧，无返回确认指令（针对0x15）(0x16)</h3>
+<p>第6字节及第7字节表示设置波特率大小，单位kbps<br>
+第8字节及第9字节表示设置标准帧或拓展帧：<code>00 00</code> 标准帧 <code>00 01</code> 拓展帧<br>
+设置成功与否，都不返回数据<br>
+发送：<code>F0 F0 00 06 16 01 F4 00 01 FF</code>//设置波特率500K，拓展帧<br>
+接收：无</p>
+<h3 id="K-Line设置初始波特率及正常通讯波特率（0x25）">K-Line设置初始波特率及正常通讯波特率（0x25）</h3>
+<p>第6字节及第7字节表示设置初始波特率（单位：bps），默认200bps<br>
+第8字节及第9字节表示设置正常通讯波特率（单位：bps），默认10400bps<br>
+接收数据01代表设置成功，无返回或者返回其他字节数目则设置失败，请注意检测数据格式。</p>
 <blockquote>
-<p>发送：<code>F0 F0 00 06 25 00 C8 28 A0 FF</code>//设置波初始波特率200bps及正常通讯波特率10400bps<br>接收：<code>0F 0F 00 03 25 01 FF</code>//设置成功</p>
+<p>发送：<code>F0 F0 00 06 25 00 C8 28 A0 FF</code>//设置波初始波特率200bps及正常通讯波特率10400bps<br>
+接收：<code>0F 0F 00 03 25 01 FF</code>//设置成功</p>
 </blockquote>
-<h3 id="K线指令（0x20）"><a href="#K线指令（0x20）" class="headerlink" title="K线指令（0x20）"></a>K线指令（0x20）</h3><p>发送：<code>F0 F0 00 08 20 80 28 F1 01 81 1b FF</code><br>接收：<code>0F 0F 00 0A 20 80 F1 28 03 C1 6B 8F 57 FF</code></p>
-<h3 id="通讯错误的回复指令（0x7F）"><a href="#通讯错误的回复指令（0x7F）" class="headerlink" title="通讯错误的回复指令（0x7F）"></a>通讯错误的回复指令（0x7F）</h3><p><code>0F 0F 00 03 7F XX FF</code></p>
-<h4 id="故障码说明"><a href="#故障码说明" class="headerlink" title="故障码说明"></a>故障码说明</h4><div class="table-container">
+<h3 id="K线指令（0x20）">K线指令（0x20）</h3>
+<p>发送：<code>F0 F0 00 08 20 80 28 F1 01 81 1b FF</code><br>
+接收：<code>0F 0F 00 0A 20 80 F1 28 03 C1 6B 8F 57 FF</code></p>
+<h3 id="通讯错误的回复指令（0x7F）">通讯错误的回复指令（0x7F）</h3>
+<p><code>0F 0F 00 03 7F XX FF</code></p>
+<h4 id="故障码说明">故障码说明</h4>
 <table>
 <thead>
 <tr>
@@ -381,7 +447,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 
     </div>
 
@@ -550,13 +615,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -578,7 +643,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

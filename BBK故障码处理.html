@@ -285,12 +285,21 @@
 
       
         <center></center>
-
 <p>检测线处理故障码，包括只判断指定故障码和忽略指定故障码</p>
 <span id="more"></span>
-<h2 id="CanCmdOpraLib-CanCmd"><a href="#CanCmdOpraLib-CanCmd" class="headerlink" title="CanCmdOpraLib.CanCmd"></a>CanCmdOpraLib.CanCmd</h2><h3 id="HandleDTC"><a href="#HandleDTC" class="headerlink" title="HandleDTC"></a>HandleDTC</h3><p>该函数参数为忽略的故障码，可以为{0xD1 55 84};{0xD1 55 85}的格式，也可以为U1155-84;U1155-85的格式<br>不设置参数则将所有读出的DTC添加到<strong>useDTClist</strong>中</p>
-<h3 id="CheckDTC"><a href="#CheckDTC" class="headerlink" title="CheckDTC"></a>CheckDTC</h3><p>该函数参数为判断的故障码，判断该故障码是否存在于<strong>useDTClist</strong>中<br>存在返回False，不存在返回True</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>Recv：{0x59 02 AB D1 55 84 2B D1 55 85 2B}<br>HandleDTC({0xD1 55 84})<br>useDTClist为U1155-85 D1 55 85<br>CheckDTC({0xD1 55 84})返回true<br>CheckDTC({0xD1 55 85})返回false</p>
+<h2 id="CanCmdOpraLib-CanCmd">CanCmdOpraLib.CanCmd</h2>
+<h3 id="HandleDTC">HandleDTC</h3>
+<p>该函数参数为忽略的故障码，可以为{0xD1 55 84};{0xD1 55 85}的格式，也可以为U1155-84;U1155-85的格式<br>
+不设置参数则将所有读出的DTC添加到<strong>useDTClist</strong>中</p>
+<h3 id="CheckDTC">CheckDTC</h3>
+<p>该函数参数为判断的故障码，判断该故障码是否存在于<strong>useDTClist</strong>中<br>
+存在返回False，不存在返回True</p>
+<h3 id="示例">示例</h3>
+<p>Recv：{0x59 02 AB D1 55 84 2B D1 55 85 2B}<br>
+HandleDTC({0xD1 55 84})<br>
+useDTClist为U1155-85 D1 55 85<br>
+CheckDTC({0xD1 55 84})返回true<br>
+CheckDTC({0xD1 55 85})返回false</p>
 
     </div>
 
@@ -457,13 +466,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -485,7 +494,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．

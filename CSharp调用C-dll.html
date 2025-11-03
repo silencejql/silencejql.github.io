@@ -292,26 +292,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>C#中动态加载C++ DLL文件<br><span id="more"></span></p>
+        <p>C#中动态加载C++ DLL文件</p>
+<span id="more"></span>
 <p>在C#中动态加载C++ DLL（动态链接库）可以通过几种方式实现。下面我将介绍最常用的方法：</p>
-<h2 id="1-使用DllImport特性（静态加载）"><a href="#1-使用DllImport特性（静态加载）" class="headerlink" title="1. 使用DllImport特性（静态加载）"></a>1. 使用DllImport特性（静态加载）</h2><p>这是最常见的方式，虽然不是完全动态的，但值得了解：</p>
+<h2 id="1-使用DllImport特性（静态加载）">1. 使用DllImport特性（静态加载）</h2>
+<p>这是最常见的方式，虽然不是完全动态的，但值得了解：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 声明DLL中的函数</span></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;YourCppDll.dll&quot;</span>, CallingConvention = CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">int</span> <span class="title">YourCppFunction</span>(<span class="params"><span class="built_in">int</span> param1, <span class="built_in">string</span> param2</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 调用DLL中的函数</span></span><br><span class="line">        <span class="built_in">int</span> result = YourCppFunction(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Result: <span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-使用LoadLibrary和GetProcAddress（真正动态加载）"><a href="#2-使用LoadLibrary和GetProcAddress（真正动态加载）" class="headerlink" title="2. 使用LoadLibrary和GetProcAddress（真正动态加载）"></a>2. 使用LoadLibrary和GetProcAddress（真正动态加载）</h2><p>如果你想在运行时决定加载哪个DLL，可以使用Windows API：</p>
+<h2 id="2-使用LoadLibrary和GetProcAddress（真正动态加载）">2. 使用LoadLibrary和GetProcAddress（真正动态加载）</h2>
+<p>如果你想在运行时决定加载哪个DLL，可以使用Windows API：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Runtime.InteropServices;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 导入Windows API函数</span></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">LoadLibrary</span>(<span class="params"><span class="built_in">string</span> dllToLoad</span>)</span>;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> IntPtr <span class="title">GetProcAddress</span>(<span class="params">IntPtr hModule, <span class="built_in">string</span> procedureName</span>)</span>;</span><br><span class="line"></span><br><span class="line">    [<span class="meta">DllImport(<span class="string">&quot;kernel32.dll&quot;</span>, SetLastError = true)</span>]</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">extern</span> <span class="built_in">bool</span> <span class="title">FreeLibrary</span>(<span class="params">IntPtr hModule</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义委托类型匹配C++函数签名</span></span><br><span class="line">    [<span class="meta">UnmanagedFunctionPointer(CallingConvention.Cdecl)</span>]</span><br><span class="line">    <span class="function"><span class="built_in">delegate</span> <span class="built_in">int</span> <span class="title">YourCppFunctionDelegate</span>(<span class="params"><span class="built_in">int</span> param1, <span class="built_in">string</span> param2</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        IntPtr pDll = LoadLibrary(<span class="string">@&quot;YourCppDll.dll&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (pDll == IntPtr.Zero)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Failed to load DLL&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        IntPtr pAddressOfFunctionToCall = GetProcAddress(pDll, <span class="string">&quot;YourCppFunction&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (pAddressOfFunctionToCall == IntPtr.Zero)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;Failed to find function&quot;</span>);</span><br><span class="line">            FreeLibrary(pDll);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将函数指针转换为委托</span></span><br><span class="line">        YourCppFunctionDelegate yourFunction = Marshal.GetDelegateForFunctionPointer&lt;YourCppFunctionDelegate&gt;(pAddressOfFunctionToCall);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 调用函数</span></span><br><span class="line">        <span class="built_in">int</span> result = yourFunction(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">$&quot;Result: <span class="subst">&#123;result&#125;</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 释放DLL</span></span><br><span class="line">        FreeLibrary(pDll);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-使用COM-Interop（如果DLL是COM组件）"><a href="#3-使用COM-Interop（如果DLL是COM组件）" class="headerlink" title="3. 使用COM Interop（如果DLL是COM组件）"></a>3. 使用COM Interop（如果DLL是COM组件）</h2><p>如果C++ DLL是COM组件，可以使用COM互操作：</p>
+<h2 id="3-使用COM-Interop（如果DLL是COM组件）">3. 使用COM Interop（如果DLL是COM组件）</h2>
+<p>如果C++ DLL是COM组件，可以使用COM互操作：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Type comType = Type.GetTypeFromProgID(<span class="string">&quot;YourCOMComponent.YourClass&quot;</span>);</span><br><span class="line"><span class="built_in">dynamic</span> comObject = Activator.CreateInstance(comType);</span><br><span class="line">comObject.YourMethod(<span class="number">123</span>, <span class="string">&quot;test&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li><p><strong>调用约定</strong>：确保C#端和C++端的调用约定一致（通常C++使用<code>__cdecl</code>或<code>__stdcall</code>）。</p>
+<h2 id="注意事项">注意事项</h2>
+<ol>
+<li>
+<p><strong>调用约定</strong>：确保C#端和C++端的调用约定一致（通常C++使用<code>__cdecl</code>或<code>__stdcall</code>）。</p>
 </li>
-<li><p><strong>数据类型映射</strong>：注意C++和C#之间的数据类型转换，特别是字符串和指针类型。</p>
+<li>
+<p><strong>数据类型映射</strong>：注意C++和C#之间的数据类型转换，特别是字符串和指针类型。</p>
 </li>
-<li><p><strong>32/64位兼容性</strong>：确保DLL和应用程序的平台架构一致（同为x86或x64）。</p>
+<li>
+<p><strong>32/64位兼容性</strong>：确保DLL和应用程序的平台架构一致（同为x86或x64）。</p>
 </li>
-<li><p><strong>DLL位置</strong>：DLL文件需要放在应用程序可找到的路径（如exe所在目录或系统PATH中）。</p>
+<li>
+<p><strong>DLL位置</strong>：DLL文件需要放在应用程序可找到的路径（如exe所在目录或系统PATH中）。</p>
 </li>
-<li><p><strong>内存管理</strong>：如果DLL分配内存，确保有相应的释放机制，避免内存泄漏。</p>
+<li>
+<p><strong>内存管理</strong>：如果DLL分配内存，确保有相应的释放机制，避免内存泄漏。</p>
 </li>
-<li><p><strong>异常处理</strong>：C++异常不能直接传递到C#，需要在C++端捕获并转换为错误码。</p>
+<li>
+<p><strong>异常处理</strong>：C++异常不能直接传递到C#，需要在C++端捕获并转换为错误码。</p>
 </li>
 </ol>
 
@@ -481,13 +492,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">438k</span>
+    <span title="站点总字数">440k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:39</span>
+    <span title="站点阅读时长">6:40</span>
 </div>
 <!--
 <div class="powered-by">
@@ -509,7 +520,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共115.6k字</span>
+  <span class="post-count">博客全站共117k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
