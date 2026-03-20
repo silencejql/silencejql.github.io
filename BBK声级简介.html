@@ -143,7 +143,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">211</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">212</span></a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -283,13 +283,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>声级计设置及使用简介<br><span id="more"></span></p>
-<h2 id="国标"><a href="#国标" class="headerlink" title="国标"></a>国标</h2><p>国标7258中要求声级标准范围为: A计权 90~115dB, 因此声级计选择A计权,高(70~130dB)</p>
-<p><img src="BBK声级简介/7258.PNG" alt="7258.PNG"><br><img src="BBK声级简介/AC.PNG" alt="AC.png"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>现场声级计通过串口接入PC, 波特率默认为<code>300 Bd</code>, 1 位起始位, 8 位数据位, 1 位停止位，无奇偶校验</p>
+        <p>声级计设置及使用简介</p>
+<span id="more"></span>
+<h2 id="国标">国标</h2>
+<p>国标7258中要求声级标准范围为: A计权 90~115dB, 因此声级计选择A计权,高(70~130dB)</p>
+<p><img src="BBK%E5%A3%B0%E7%BA%A7%E7%AE%80%E4%BB%8B/7258.PNG" alt="7258.PNG"><br>
+<img src="BBK%E5%A3%B0%E7%BA%A7%E7%AE%80%E4%BB%8B/AC.PNG" alt="AC.png"></p>
+<h2 id="使用">使用</h2>
+<p>现场声级计通过串口接入PC, 波特率默认为<code>300 Bd</code>, 1 位起始位, 8 位数据位, 1 位停止位，无奇偶校验</p>
 <p>读取声级数值需通过串口发送十六进制 <code>B8</code> 到声级计后返回当前声级数值</p>
-<p><img src="BBK声级简介/Protocol.PNG" alt="Protocol.png"></p>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p><img src="BBK声级简介/Recv.png" alt="Recv.png"><br>如接收到<code>&#123;0x013036332E3700FEFF&#125;</code> 解析为063.7</p>
+<p><img src="BBK%E5%A3%B0%E7%BA%A7%E7%AE%80%E4%BB%8B/Protocol.PNG" alt="Protocol.png"></p>
+<h3 id="解析">解析</h3>
+<p><img src="BBK%E5%A3%B0%E7%BA%A7%E7%AE%80%E4%BB%8B/Recv.png" alt="Recv.png"><br>
+如接收到<code>&#123;0x013036332E3700FEFF&#125;</code> 解析为063.7</p>
 <p>由于各种因素会导致串口接收到异常数据从而解析出错, 频繁输出错误日志, 在转换声级数据前可对接收到的数据进行过滤, 如判断数据长度必须大于6, 第5位必须是小数点或者<code>2E</code>等</p>
 
     </div>
@@ -392,7 +398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">212</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -457,13 +463,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">456k</span>
+    <span title="站点总字数">459k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:55</span>
+    <span title="站点阅读时长">6:57</span>
 </div>
 <!--
 <div class="powered-by">
@@ -485,7 +491,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共121.8k字</span>
+  <span class="post-count">博客全站共122.3k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
