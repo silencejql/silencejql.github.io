@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -283,10 +283,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>实现每次编译后自动复制引用到指定路径</p>
-<span id="more"></span>
-<h2 id="方法">方法</h2>
-<p>将下述xml配置复制到项目配置文件<code>*.csproj</code>末尾(<code>&lt;/Project&gt;</code>标签之前)</p>
+        <p>实现每次编译后自动复制引用到指定路径<br><span id="more"></span></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>将下述xml配置复制到项目配置文件<code>*.csproj</code>末尾(<code>&lt;/Project&gt;</code>标签之前)</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只复制当前项目直接引用的 DLL（NuGet + 本地 Reference），排除项目引用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Target</span> <span class="attr">Name</span>=<span class="string">&quot;CopyDirectReferencedDlls&quot;</span> <span class="attr">AfterTargets</span>=<span class="string">&quot;Build&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ReferencePath 包含所有已解析的引用路径 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 但项目引用的 DLL 路径通常在 _ResolvedProjectReferencePaths 中，通过条件排除 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">_DirectReferenceDlls</span> <span class="attr">Include</span>=<span class="string">&quot;@(ReferencePath)&quot;</span> </span></span><br><span class="line"><span class="tag">                          <span class="attr">Condition</span>=<span class="string">&quot;&#x27;%(ReferencePath.IsProjectReference)&#x27; != &#x27;true&#x27; AND &#x27;%(Extension)&#x27; == &#x27;.dll&#x27;&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ItemGroup</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 目标文件夹 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">DirectDllsTargetFolder</span>&gt;</span>$(ProjectDir)dll\<span class="tag">&lt;/<span class="name">DirectDllsTargetFolder</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 或者用绝对路径： &lt;DirectDllsTargetFolder&gt;D:\MyLibs\&lt;/DirectDllsTargetFolder&gt; --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 或者用宏：$(SolutionDir)SharedLibs\ --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">PropertyGroup</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">Copy</span> <span class="attr">SourceFiles</span>=<span class="string">&quot;@(_DirectReferenceDlls)&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">DestinationFolder</span>=<span class="string">&quot;$(DirectDllsTargetFolder)&quot;</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">SkipUnchangedFiles</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">OverwriteReadOnlyFiles</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">Message</span> <span class="attr">Text</span>=<span class="string">&quot;已复制直接引用 DLL 到 $(DirectDllsTargetFolder) (共 @( _DirectReferenceDlls-&gt;Count() ) 个)&quot;</span> </span></span><br><span class="line"><span class="tag">           <span class="attr">Importance</span>=<span class="string">&quot;high&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Target</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
     </div>
@@ -447,13 +445,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">459k</span>
+    <span title="站点总字数">456k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:57</span>
+    <span title="站点阅读时长">6:55</span>
 </div>
 <!--
 <div class="powered-by">
@@ -475,7 +473,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共122.3k字</span>
+  <span class="post-count">博客全站共120.7k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
