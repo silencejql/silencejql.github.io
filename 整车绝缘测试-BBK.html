@@ -22,17 +22,17 @@
     var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="原理 BBK整车绝缘已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。 继电器控制OBD通过OBD诊断控制BMS闭合K5K6继电器 模拟充电通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器 测试流程 插入直流枪，设备控制继电器使得测试回路导通 K5K6吸合，BMS绝缘监测功能关闭 BBK软件执行">
+  <meta name="description" content="整车绝缘测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="整车绝缘测试-BBK">
 <meta property="og:url" content="https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK.html">
 <meta property="og:site_name" content="Silencejql">
-<meta property="og:description" content="原理 BBK整车绝缘已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。 继电器控制OBD通过OBD诊断控制BMS闭合K5K6继电器 模拟充电通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器 测试流程 插入直流枪，设备控制继电器使得测试回路导通 K5K6吸合，BMS绝缘监测功能关闭 BBK软件执行">
+<meta property="og:description" content="整车绝缘测试">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%861.png">
 <meta property="og:image" content="https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%862.png">
 <meta property="article:published_time" content="2026-06-12T06:18:52.000Z">
-<meta property="article:modified_time" content="2026-06-12T07:09:59.129Z">
+<meta property="article:modified_time" content="2026-06-15T03:11:39.347Z">
 <meta property="article:author" content="Justin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%861.png">
@@ -229,10 +229,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2026-06-12 14:18:52 / 修改时间：15:09:59" itemprop="dateCreated datePublished" datetime="2026-06-12T14:18:52+08:00">2026-06-12</time>
+              <time title="创建时间：2026-06-12 14:18:52" itemprop="dateCreated datePublished" datetime="2026-06-12T14:18:52+08:00">2026-06-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2026-06-15 11:11:39" itemprop="dateModified" datetime="2026-06-15T11:11:39+08:00">2026-06-15</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -261,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>575</span>
+              <span>581</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,12 +286,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="整车绝缘测试-BBK/测试原理1.png" alt="a测试原理1"><br><img src="整车绝缘测试-BBK/测试原理2.png" alt="a测试原理2"></p>
-<h2 id="BBK整车绝缘"><a href="#BBK整车绝缘" class="headerlink" title="BBK整车绝缘"></a>BBK整车绝缘</h2><p>已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。</p>
-<h3 id="继电器控制"><a href="#继电器控制" class="headerlink" title="继电器控制"></a>继电器控制</h3><h4 id="OBD"><a href="#OBD" class="headerlink" title="OBD"></a>OBD</h4><p>通过OBD诊断控制BMS闭合K5K6继电器</p>
-<h4 id="模拟充电"><a href="#模拟充电" class="headerlink" title="模拟充电"></a>模拟充电</h4><p>通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器</p>
-<h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><ol>
+        <p>整车绝缘测试</p>
+<span id="more"></span>
+<h2 id="原理">原理</h2>
+<p><img src="%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%861.png" alt="a测试原理1"><br>
+<img src="%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%862.png" alt="a测试原理2"></p>
+<h2 id="BBK整车绝缘">BBK整车绝缘</h2>
+<p>已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。</p>
+<h3 id="继电器控制">继电器控制</h3>
+<h4 id="OBD">OBD</h4>
+<p>通过OBD诊断控制BMS闭合K5K6继电器</p>
+<h4 id="模拟充电">模拟充电</h4>
+<p>通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器</p>
+<h2 id="测试流程">测试流程</h2>
+<ol>
 <li>插入直流枪，设备控制继电器使得测试回路导通</li>
 <li>K5K6吸合，BMS绝缘监测功能关闭</li>
 <li>BBK软件执行绝缘盒的OperForMeasU1方法，用两个电压表(UA，UB)测量直流枪口正极对地和负极对地的电压并记录稳定后的电压值U1</li>
@@ -294,7 +308,8 @@
 <li>断开K5K6，打开BMS绝缘监测功能</li>
 <li>测试完成</li>
 </ol>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<h2 id="注意事项">注意事项</h2>
+<ol>
 <li>测试前先确保测试回路导通，通过执行OperForMeasU1后测量直流枪正负对地的电压均为电压表内阻值</li>
 <li>执行OperForMeasU2A(或OperForMeasU2B)后测量直流枪正极对地或负极对地的电阻为1MΩ</li>
 <li>测试过程中观察两个电压表电压的变化，确保第一次采集电压值大的一侧并联1MΩ电阻后第二次采集的电压值小(若与实际不符可以调换两个电压表)</li>
