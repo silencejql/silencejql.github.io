@@ -9,23 +9,23 @@
   <link href="https://silencejql.github.io/atom.xml" rel="self"/>
   <rights>All rights reserved 2026, Justin</rights>
   <title>Silencejql</title>
-  <updated>2026-06-12T07:09:59.129Z</updated>
+  <updated>2026-06-15T03:31:43.686Z</updated>
   <entry>
     <author>
       <name>Justin</name>
     </author>
+    <category term="BBK" scheme="https://silencejql.github.io/tags/BBK/"/>
     <content>
-      <![CDATA[<span id="more"></span><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="整车绝缘测试-BBK/测试原理1.png" alt="a测试原理1"><br><img src="整车绝缘测试-BBK/测试原理2.png" alt="a测试原理2"></p><h2 id="BBK整车绝缘"><a href="#BBK整车绝缘" class="headerlink" title="BBK整车绝缘"></a>BBK整车绝缘</h2><p>已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。</p><h3 id="继电器控制"><a href="#继电器控制" class="headerlink" title="继电器控制"></a>继电器控制</h3><h4 id="OBD"><a href="#OBD" class="headerlink" title="OBD"></a>OBD</h4><p>通过OBD诊断控制BMS闭合K5K6继电器</p><h4 id="模拟充电"><a href="#模拟充电" class="headerlink" title="模拟充电"></a>模拟充电</h4><p>通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器</p><h2 id="测试流程"><a href="#测试流程" class="headerlink" title="测试流程"></a>测试流程</h2><ol><li>插入直流枪，设备控制继电器使得测试回路导通</li><li>K5K6吸合，BMS绝缘监测功能关闭</li><li>BBK软件执行绝缘盒的OperForMeasU1方法，用两个电压表(UA，UB)测量直流枪口正极对地和负极对地的电压并记录稳定后的电压值U1</li><li>判断电压大小，BBK软件执行绝缘盒的OperForMeasU2A(或OperForMeasU2B)方法在较大电压的一侧并联电阻R0(1M),读取两个电压表稳定后的电压值U2</li><li>根据公式计算整车绝缘电阻值</li><li>断开K5K6，打开BMS绝缘监测功能</li><li>测试完成</li></ol><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>测试前先确保测试回路导通，通过执行OperForMeasU1后测量直流枪正负对地的电压均为电压表内阻值</li><li>执行OperForMeasU2A(或OperForMeasU2B)后测量直流枪正极对地或负极对地的电阻为1MΩ</li><li>测试过程中观察两个电压表电压的变化，确保第一次采集电压值大的一侧并联1MΩ电阻后第二次采集的电压值小(若与实际不符可以调换两个电压表)</li><li>可以通过log记录的U1U2计算验证测试结果</li></ol>]]>
+      <![CDATA[<p>整车绝缘测试</p><span id="more"></span><h2 id="原理">原理</h2><p><img src="%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%861.png" alt="a测试原理1"><br><img src="%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK/%E6%B5%8B%E8%AF%95%E5%8E%9F%E7%90%862.png" alt="a测试原理2"></p><h2 id="BBK整车绝缘">BBK整车绝缘</h2><p>已知要测量直流枪口正极对地和负极对地的电压值，需要控制车辆闭合充电口K5K6继电器使得可以通过充电口测量电压，同时关闭BMS绝缘监测功能。</p><h3 id="继电器控制">继电器控制</h3><h4 id="OBD">OBD</h4><p>通过OBD诊断控制BMS闭合K5K6继电器</p><h4 id="模拟充电">模拟充电</h4><p>通过直流枪Can通讯模拟充电的方式使得BMS闭合K5K6继电器</p><h2 id="测试流程">测试流程</h2><ol><li>插入直流枪，设备控制继电器使得测试回路导通</li><li>K5K6吸合，BMS绝缘监测功能关闭</li><li>BBK软件执行绝缘盒的OperForMeasU1方法，用两个电压表(UA，UB)测量直流枪口正极对地和负极对地的电压并记录稳定后的电压值U1</li><li>判断电压大小，BBK软件执行绝缘盒的OperForMeasU2A(或OperForMeasU2B)方法在较大电压的一侧并联电阻R0(1M),读取两个电压表稳定后的电压值U2</li><li>根据公式计算整车绝缘电阻值</li><li>断开K5K6，打开BMS绝缘监测功能</li><li>测试完成</li></ol><h2 id="注意事项">注意事项</h2><ol><li>测试前先确保测试回路导通，通过执行OperForMeasU1后测量直流枪正负对地的电压均为电压表内阻值</li><li>执行OperForMeasU2A(或OperForMeasU2B)后测量直流枪正极对地或负极对地的电阻为1MΩ</li><li>测试过程中观察两个电压表电压的变化，确保第一次采集电压值大的一侧并联1MΩ电阻后第二次采集的电压值小(若与实际不符可以调换两个电压表)</li><li>可以通过log记录的U1U2计算验证测试结果</li></ol>]]>
     </content>
     <id>https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK.html</id>
     <link href="https://silencejql.github.io/%E6%95%B4%E8%BD%A6%E7%BB%9D%E7%BC%98%E6%B5%8B%E8%AF%95-BBK.html"/>
     <published>2026-06-12T06:18:52.000Z</published>
     <summary>
-      <![CDATA[<span id="more"></span>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><img src="整车绝缘测试-BBK/测试原理1.png" alt="a测试原理1"><]]>
+      <![CDATA[<p>整车绝缘测试</p>]]>
     </summary>
     <title>整车绝缘测试-BBK</title>
-    <updated>2026-06-12T07:09:59.129Z</updated>
+    <updated>2026-06-15T03:31:43.686Z</updated>
   </entry>
   <entry>
     <author>

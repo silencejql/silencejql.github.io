@@ -7045,5 +7045,8 @@ R^T \left( K^{-1} \cdot Z_c \cdot \begin{bmatrix} u \\ v \\ 1 \end{bmatrix} - T 
 <li>可以通过log记录的U1U2计算验证测试结果</li>
 </ol>
 ]]></content>
+      <tags>
+        <tag>BBK</tag>
+      </tags>
   </entry>
 </search>
