@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="googleb7a40486d7212754.html">
+  <meta name="baidu-site-verification" content="Wk81Qkj2MG">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"silencejql.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":20,"unescape":true,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="BBK 文件同步与备份工具 使用说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BBKSync-BBK备份更新软件说明">
+<meta property="og:url" content="https://silencejql.github.io/BBKSync-BBK%E5%A4%87%E4%BB%BD%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E.html">
+<meta property="og:site_name" content="Silencejql">
+<meta property="og:description" content="BBK 文件同步与备份工具 使用说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-09-11T08:44:19.000Z">
+<meta property="article:modified_time" content="2026-09-11T08:46:27.967Z">
+<meta property="article:author" content="Justin">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://silencejql.github.io/BBKSync-BBK%E5%A4%87%E4%BB%BD%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>BBKSync-BBK备份更新软件说明 | Silencejql</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Silencejql" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Silencejql</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">61</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">32</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">215</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/silencejql" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://silencejql.github.io/BBKSync-BBK%E5%A4%87%E4%BB%BD%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/headim.png">
+      <meta itemprop="name" content="Justin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Silencejql">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          BBKSync-BBK备份更新软件说明
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-09-11 16:44:19 / 修改时间：16:46:27" itemprop="dateCreated datePublished" datetime="2026-09-11T16:44:19+08:00">2026-09-11</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/BBKSync-BBK%E5%A4%87%E4%BB%BD%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/BBKSync-BBK%E5%A4%87%E4%BB%BD%E6%9B%B4%E6%96%B0%E8%BD%AF%E4%BB%B6%E8%AF%B4%E6%98%8E.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>BBK 文件同步与备份工具 使用说明<br><span id="more"></span></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><a href="#简介">简介</a></li>
+<li><a href="#安装与启动">安装与启动</a></li>
+<li><a href="#界面概览">界面概览</a></li>
+<li><a href="#本机配置">本机配置</a></li>
+<li><a href="#远端电脑配置">远端电脑配置</a></li>
+<li><a href="#bbk-备份">BBK 备份</a></li>
+<li><a href="#bbk-更新">BBK 更新</a></li>
+<li><a href="#文件传输">文件传输</a></li>
+<li><a href="#windows-共享连接">Windows 共享连接</a></li>
+<li><a href="#电脑名称配置">电脑名称配置</a></li>
+<li><a href="#连接历史">连接历史</a></li>
+<li><a href="#开机自启与托盘">开机自启与托盘</a></li>
+<li><a href="#设置文件说明">设置文件说明</a></li>
+<li><a href="#常见问题">常见问题</a></li>
+</ol>
+<hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>BBK 文件同步与备份工具是一款局域网内的文件同步、备份与传输工具，基于 TCP 直连通信，无需安装客户端即可在远端电脑上运行备份/同步操作。</p>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li><strong>BBK 备份</strong> — 将本机或远端电脑的 BBK 文件夹备份到指定目录</li>
+<li><strong>BBK 更新</strong> — 在局域网电脑之间同步 BBK 文件夹（支持推送/拉取/共享文件夹三种方式）</li>
+<li><strong>文件传输</strong> — 将本机的文件或文件夹传输到远端电脑的相同路径</li>
+</ul>
+<hr>
+<h2 id="安装与启动"><a href="#安装与启动" class="headerlink" title="安装与启动"></a>安装与启动</h2><h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><ul>
+<li>Windows 7 SP1 及以上（推荐 Windows 10/11）</li>
+<li>无需安装 .NET 运行时（单文件发布，自带运行时）</li>
+</ul>
+<h3 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h3><ol>
+<li>直接双击 <code>BBKSync.exe</code> 运行</li>
+<li>首次运行会自动在同目录生成 <code>settings.json</code> 配置文件</li>
+<li>如无写入权限，配置文件会存放在 <code>%LocalAppData%\BBKFileSync\</code> 目录</li>
+</ol>
+<hr>
+<h2 id="界面概览"><a href="#界面概览" class="headerlink" title="界面概览"></a>界面概览</h2><p>软件界面分为以下几个区域：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────────────────────────┐</span><br><span class="line">│  [最小化] [最大化] [关闭]   BBK文件同步与备份工具  │  ← 自定义标题栏</span><br><span class="line">├──────────────────────────────────────────────┤</span><br><span class="line">│  ┌─ 本机配置 ──────────┐ ┌─ 远端电脑 ──────────┐ │</span><br><span class="line">│  │ BBK文件夹: [    ]   │ │ IP/范围: [       ]  │ │</span><br><span class="line">│  │ 端口: [    ]        │ │ 对方端口: [      ]  │ │</span><br><span class="line">│  │ [启动服务] [停止服务]│ │ [测试连接][历史]   │ │</span><br><span class="line">│  │ ☐ 开机自启          │ │ [电脑名称]         │ │</span><br><span class="line">│  └────────────────────┘ └────────────────────┘ │</span><br><span class="line">│  ┌─ [BBK备份] [BBK更新] [文件传输] ─────────┐ │</span><br><span class="line">│  │                                          │ │</span><br><span class="line">│  │        （对应标签页内容）                  │ │</span><br><span class="line">│  │                                          │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">│  ┌─ 传输与进度 ─────────────────────────────┐ │</span><br><span class="line">│  │ [开始备份] [开始更新] [取消]              │ │</span><br><span class="line">│  │ ████████████████░░░░  进度: 正在传输...  │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">│  ┌─ 日志 ───────────────────────────────────┐ │</span><br><span class="line">│  │ [12:00:01] 工具已启动...                 │ │</span><br><span class="line">│  │ [12:00:02] 服务已启动，监听端口 25010    │ │</span><br><span class="line">│  │                          [复制日志][清空] │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">├──────────────────────────────────────────────┤</span><br><span class="line">│  就绪                         192.168.1.100  │  ← 状态栏</span><br><span class="line">└──────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="本机配置"><a href="#本机配置" class="headerlink" title="本机配置"></a>本机配置</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BBK 文件夹</strong></td>
+<td>本机 BBK 源文件夹路径，备份/同步操作以此为根目录</td>
+<td><code>D:\BBK</code></td>
+</tr>
+<tr>
+<td><strong>端口</strong></td>
+<td>本机 TCP 服务监听端口（1-65535）</td>
+<td><code>25010</code></td>
+</tr>
+<tr>
+<td><strong>启动服务</strong></td>
+<td>启动 TCP 监听服务，等待远端电脑连接</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>停止服务</strong></td>
+<td>停止 TCP 监听服务</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>开机自启并后台监听</strong></td>
+<td>开机自动启动服务并最小化到系统托盘</td>
+<td>关闭</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>点击「启动服务」后，软件开始监听指定端口。状态栏右侧会显示本机所有局域网 IP 地址，方便在其他电脑上配置连接。</p>
+<h3 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h3><p>勾选「开机自启并后台监听」后，软件会将自身添加到 Windows 开机启动项（注册表 <code>HKCU\...\Run</code>），每次开机自动启动服务并最小化到托盘。</p>
+<hr>
+<h2 id="远端电脑配置"><a href="#远端电脑配置" class="headerlink" title="远端电脑配置"></a>远端电脑配置</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP/范围</strong></td>
+<td>对方电脑 IP 地址，支持多种格式（见下方）</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>对方端口</strong></td>
+<td>对方电脑的服务监听端口</td>
+<td>与本机端口相同</td>
+</tr>
+<tr>
+<td><strong>测试连接</strong></td>
+<td>验证 TCP 连接和协议握手是否成功</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>历史</strong></td>
+<td>打开连接历史窗口，管理历史连接记录</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>电脑名称</strong></td>
+<td>打开 IP 与电脑名称配置窗口</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="IP-输入格式"><a href="#IP-输入格式" class="headerlink" title="IP 输入格式"></a>IP 输入格式</h3><p>支持以下格式，可混合使用：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单个 IP</td>
+<td><code>192.168.1.5</code></td>
+<td>直接输入</td>
+</tr>
+<tr>
+<td>逗号分隔</td>
+<td><code>192.168.1.5,192.168.1.8</code></td>
+<td>多台电脑</td>
+</tr>
+<tr>
+<td>分号分隔</td>
+<td><code>192.168.1.5;192.168.1.8</code></td>
+<td>多台电脑</td>
+</tr>
+<tr>
+<td>短范围</td>
+<td><code>192.168.1.5-8</code></td>
+<td>展开为 .5,.6,.7,.8</td>
+</tr>
+<tr>
+<td>完整范围</td>
+<td><code>192.168.1.5-192.168.1.8</code></td>
+<td>展开范围内所有 IP</td>
+</tr>
+<tr>
+<td>空格分隔</td>
+<td><code>192.168.1.5 192.168.1.8</code></td>
+<td>多台电脑</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>注意：</strong> 最后一位 IP 范围为 1-254，不支持 0 和 255。</p>
+</blockquote>
+<h3 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h3><p>点击「测试连接」会执行两步验证：</p>
+<ol>
+<li><strong>TCP 连接测试</strong> — 尝试建立 TCP 连接（4 秒超时）</li>
+<li><strong>协议握手</strong> — 发送探测请求，验证对方是否运行 BBK 服务（5 秒超时）</li>
+</ol>
+<p>常见错误提示：</p>
+<ul>
+<li><strong>10060</strong> — 连接超时，请检查 IP 是否正确、网络是否通畅</li>
+<li><strong>10013</strong> — 权限被拒绝，可能被防火墙拦截，建议将程序放入纯英文目录运行</li>
+<li><strong>10061</strong> — 连接被拒绝，对方未启动服务或端口不正确</li>
+</ul>
+<hr>
+<h2 id="BBK-备份"><a href="#BBK-备份" class="headerlink" title="BBK 备份"></a>BBK 备份</h2><h3 id="备份来源"><a href="#备份来源" class="headerlink" title="备份来源"></a>备份来源</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>本机</strong></td>
+<td>从本机 BBK 文件夹备份</td>
+</tr>
+<tr>
+<td><strong>局域网电脑（可多台）</strong></td>
+<td>从远端电脑拉取 BBK 文件夹备份（需对方启动服务）</td>
+</tr>
+<tr>
+<td><strong>Windows 共享</strong></td>
+<td>从 Windows 共享文件夹备份（需配置共享连接）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="备份目标"><a href="#备份目标" class="headerlink" title="备份目标"></a>备份目标</h3><p>备份文件存放在「备份到」指定的父目录下，实际存入格式为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">备份目录\</span><br><span class="line">  └─ BBK_电脑名称_日期\</span><br><span class="line">       ├─ (Line1)\        ← 如果检测到 LineNo，按产线分子目录</span><br><span class="line">       │   ├─ Bin\</span><br><span class="line">       │   ├─ Config\</span><br><span class="line">       │   └─ ...</span><br><span class="line">       └─ ...</span><br></pre></td></tr></table></figure>
+<h3 id="备份选项"><a href="#备份选项" class="headerlink" title="备份选项"></a>备份选项</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>自动获取设备配置</strong></td>
+<td>自动从 BBK 文件夹的 <code>SystemConfig.xml</code> 读取设备编号和产线号</td>
+<td>开启</td>
+</tr>
+<tr>
+<td><strong>Log 文件夹只备份最近</strong></td>
+<td>只备份 Log 文件夹中最近 N 天的文件</td>
+<td>开启，2 天</td>
+</tr>
+<tr>
+<td><strong>备份完成后自动压缩为 zip</strong></td>
+<td>备份完成后将文件夹打包为 zip 并删除原文件夹</td>
+<td>开启</td>
+</tr>
+<tr>
+<td><strong>备份前先执行配置的备份脚本</strong></td>
+<td>备份前运行 <code>settings.json</code> 中预设的脚本（如数据库备份）</td>
+<td>关闭</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="忽略规则"><a href="#忽略规则" class="headerlink" title="忽略规则"></a>忽略规则</h3><p>勾选「启用忽略规则」后，按行配置正则表达式，匹配到的文件/文件夹将被跳过备份。</p>
+<p><strong>语法规则：</strong></p>
+<ul>
+<li>每行一条正则表达式（大小写不敏感）</li>
+<li>匹配的是相对于 BBK 根目录的路径</li>
+<li>使用 <code>/</code> 作为路径分隔符</li>
+</ul>
+<p><strong>常用示例：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>正则表达式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\.bak$</code></td>
+<td>忽略所有 .bak 文件</td>
+</tr>
+<tr>
+<td><code>副本</code></td>
+<td>忽略路径中含”副本”的文件</td>
+</tr>
+<tr>
+<td>`(^</td>
+<td>/).git(/</td>
+<td>$)`</td>
+<td>忽略所有 .git 文件夹</td>
+</tr>
+<tr>
+<td>`(^</td>
+<td>/)Temp(/</td>
+<td>$)`</td>
+<td>忽略顶层 Temp 文件夹</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>注意：</strong> <code>*</code> 号在正则中无效，需用 <code>.*</code> 代替。临时文件（<code>.tmp</code> 后缀）始终自动跳过。</p>
+</blockquote>
+<hr>
+<h2 id="BBK-更新"><a href="#BBK-更新" class="headerlink" title="BBK 更新"></a>BBK 更新</h2><blockquote>
+<p><strong>注意：</strong> BBK 更新标签页支持密码保护。如需启用，请在 <code>settings.json</code> 中设置 <code>&quot;UpdatePassword&quot;: &quot;你的密码&quot;</code>。留空则不启用密码保护。</p>
+</blockquote>
+<h3 id="更新方向"><a href="#更新方向" class="headerlink" title="更新方向"></a>更新方向</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>接收对方更新（对方为源）</strong></td>
+<td>从远端电脑拉取 BBK 到本机</td>
+<td>对方需启动服务</td>
+</tr>
+<tr>
+<td><strong>推送本机给对方（本机为源）</strong></td>
+<td>将本机 BBK 推送到远端电脑</td>
+<td>对方需启动服务</td>
+</tr>
+<tr>
+<td><strong>从共享文件夹更新本机（免安装）</strong></td>
+<td>从 Windows 共享文件夹同步到本机</td>
+<td>需配置共享连接</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="更新规则"><a href="#更新规则" class="headerlink" title="更新规则"></a>更新规则</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bin 整体替换</strong></td>
+<td>勾选：先删除本地 Bin 再整体拷贝。不勾选：按日期增量</td>
+<td>关闭</td>
+</tr>
+<tr>
+<td><strong>替换出错时自动结束 BBK 软件后重试</strong></td>
+<td>文件被占用时自动结束相关进程后重试</td>
+<td>开启</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p>当需要更新的文件数量 <strong>少于 10 个</strong> 时，会将每个文件名输出到日志中，方便确认具体更新了哪些文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[12:00:01] 对方需要 3 个文件，开始发送...</span><br><span class="line">[12:00:01]   → Bin/xxx.dll</span><br><span class="line">[12:00:01]   → Config/sys.xml</span><br><span class="line">[12:00:01]   → Log/latest.log</span><br></pre></td></tr></table></figure>
+<h3 id="更新流程"><a href="#更新流程" class="headerlink" title="更新流程"></a>更新流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 客户端连接到目标电脑</span><br><span class="line">2. 目标电脑发送文件清单（路径、大小、修改时间）</span><br><span class="line">3. 客户端比对本地与远端文件差异</span><br><span class="line">4. 计算出需要更新的文件列表</span><br><span class="line">5. 目标电脑逐个发送需要更新的文件</span><br><span class="line">6. 客户端接收并写入本地</span><br><span class="line">7. 完成</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>将本机的文件或文件夹传输到远端电脑的<strong>相同绝对路径</strong>。</p>
+<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<li>在「路径」框输入或选择要传输的文件/文件夹</li>
+<li>配置对方 IP 和端口</li>
+<li>点击「开始更新」</li>
+</ol>
+<h3 id="传输选项"><a href="#传输选项" class="headerlink" title="传输选项"></a>传输选项</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>修改时间与大小都相同则跳过传输</strong></td>
+<td>已存在且相同的文件不重复传输</td>
+<td>开启</td>
+</tr>
+<tr>
+<td><strong>出错时结束 FreeFormAlways* 后重试一次</strong></td>
+<td>文件被占用时自动结束相关进程后重试</td>
+<td>开启</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><p>传输前会自动备份对方目标路径的现有文件/文件夹：</p>
+<ul>
+<li>文件重命名为：<code>原名-更新自动备份-YYYYMMDD.扩展名</code></li>
+<li>文件夹重命名为：<code>原名-更新自动备份-YYYYMMDD</code></li>
+</ul>
+<hr>
+<h2 id="Windows-共享连接"><a href="#Windows-共享连接" class="headerlink" title="Windows 共享连接"></a>Windows 共享连接</h2><p>当选择「Windows 共享」作为备份来源或「从共享文件夹更新本机」时，会显示共享连接配置区域。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>设置项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>对方 IP</strong></td>
+<td>共享服务器的 IP 地址</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>用户名</strong></td>
+<td>共享账号（留空使用当前 Windows 账号）</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>密码</strong></td>
+<td>共享密码（可留空）</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>共享路径</strong></td>
+<td>UNC 共享路径</td>
+<td><code>c$\BBK</code></td>
+</tr>
+<tr>
+<td><strong>测试连接</strong></td>
+<td>验证 SMB 共享连接是否可用</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p><strong>提示：</strong> 对方只需共享 BBK 文件夹或开放 <code>c$</code> 管理共享，无需安装本程序。</p>
+</blockquote>
+<hr>
+<h2 id="电脑名称配置"><a href="#电脑名称配置" class="headerlink" title="电脑名称配置"></a>电脑名称配置</h2><p>点击「电脑名称」按钮打开配置窗口，用于设置 IP 与电脑名称的对应关系。</p>
+<p><strong>用途：</strong></p>
+<ul>
+<li>备份文件夹自动命名为 <code>BBK_电脑名称_日期</code>（而非纯 IP）</li>
+<li>IP 下拉框显示电脑名称而非 IP</li>
+</ul>
+<p><strong>操作：</strong></p>
+<ul>
+<li><strong>添加一行</strong> — 新增一条 IP-名称映射</li>
+<li><strong>删除所选</strong> — 删除选中的映射</li>
+<li><strong>保存并关闭</strong> — 保存配置并关闭窗口</li>
+</ul>
+<hr>
+<h2 id="连接历史"><a href="#连接历史" class="headerlink" title="连接历史"></a>连接历史</h2><p>点击「历史」按钮打开连接历史窗口，自动记录每次成功连接的信息。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>列</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IP/主机</strong></td>
+<td>连接的 IP 地址</td>
+</tr>
+<tr>
+<td><strong>备注</strong></td>
+<td>可编辑的备注信息</td>
+</tr>
+<tr>
+<td><strong>上次使用</strong></td>
+<td>最后一次连接的时间</td>
+</tr>
+<tr>
+<td><strong>连接次数</strong></td>
+<td>累计连接次数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>操作：</strong></p>
+<ul>
+<li>选中记录后可编辑备注，点击「保存备注」</li>
+<li>点击「删除记录」可删除选中条目</li>
+</ul>
+<hr>
+<h2 id="开机自启与托盘"><a href="#开机自启与托盘" class="headerlink" title="开机自启与托盘"></a>开机自启与托盘</h2><h3 id="开机自启-1"><a href="#开机自启-1" class="headerlink" title="开机自启"></a>开机自启</h3><p>勾选「开机自启并后台监听」后：</p>
+<ul>
+<li>软件添加到 Windows 开机启动项</li>
+<li>每次开机自动启动服务</li>
+<li>自动最小化到系统托盘</li>
+</ul>
+<h3 id="系统托盘"><a href="#系统托盘" class="headerlink" title="系统托盘"></a>系统托盘</h3><ul>
+<li><strong>双击托盘图标</strong> — 打开主界面</li>
+<li><strong>右键托盘菜单</strong> — 「打开主界面」或「退出」</li>
+<li><strong>关闭窗口</strong> — 如果启用了开机自启，关闭窗口只会隐藏到托盘，不会退出程序</li>
+<li><strong>最小化窗口</strong> — 自动隐藏到托盘</li>
+</ul>
+<blockquote>
+<p><strong>完全退出：</strong> 右键托盘图标 → 选择「退出」</p>
+</blockquote>
+<hr>
+<h2 id="设置文件说明"><a href="#设置文件说明" class="headerlink" title="设置文件说明"></a>设置文件说明</h2><p>配置文件为 <code>settings.json</code>，位于程序同目录（如无写入权限则在 <code>%LocalAppData%\BBKFileSync\</code>）。</p>
+<h3 id="完整配置结构"><a href="#完整配置结构" class="headerlink" title="完整配置结构"></a>完整配置结构</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Server&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Root&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Port&quot;</span><span class="punctuation">:</span> <span class="number">25010</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoStartAndListen&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Backup&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Dest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK_AutoBackup&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogRule&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogDays&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexEnabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;CompressZip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoFetchComputerName&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;RunPreBackupBat&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;PreBackupScript&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Transfer&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SameSkip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;KillFreeForm&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;FreeForm&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ProcessPrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;FreeFormAlways&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Computers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;UpdatePassword&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="主要字段说明"><a href="#主要字段说明" class="headerlink" title="主要字段说明"></a>主要字段说明</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Server.Root</code></td>
+<td>string</td>
+<td>BBK 源文件夹路径</td>
+</tr>
+<tr>
+<td><code>Server.Port</code></td>
+<td>int</td>
+<td>TCP 监听端口</td>
+</tr>
+<tr>
+<td><code>Server.AutoStartAndListen</code></td>
+<td>bool</td>
+<td>开机自启</td>
+</tr>
+<tr>
+<td><code>Backup.Dest</code></td>
+<td>string</td>
+<td>备份目标父目录</td>
+</tr>
+<tr>
+<td><code>Backup.LogRule</code></td>
+<td>bool</td>
+<td>Log 文件夹天数限制</td>
+</tr>
+<tr>
+<td><code>Backup.LogDays</code></td>
+<td>int</td>
+<td>Log 保留天数</td>
+</tr>
+<tr>
+<td><code>Backup.IgnoreRegexEnabled</code></td>
+<td>bool</td>
+<td>启用忽略规则</td>
+</tr>
+<tr>
+<td><code>Backup.IgnoreRegexes</code></td>
+<td>string</td>
+<td>忽略规则（每行一条正则）</td>
+</tr>
+<tr>
+<td><code>Backup.CompressZip</code></td>
+<td>bool</td>
+<td>备份后压缩</td>
+</tr>
+<tr>
+<td><code>Backup.AutoFetchComputerName</code></td>
+<td>bool</td>
+<td>自动获取设备配置</td>
+</tr>
+<tr>
+<td><code>Backup.RunPreBackupBat</code></td>
+<td>bool</td>
+<td>备份前执行脚本</td>
+</tr>
+<tr>
+<td><code>Backup.PreBackupScript</code></td>
+<td>string</td>
+<td>备份脚本内容</td>
+</tr>
+<tr>
+<td><code>Transfer.SameSkip</code></td>
+<td>bool</td>
+<td>相同文件跳过</td>
+</tr>
+<tr>
+<td><code>Transfer.KillFreeForm</code></td>
+<td>bool</td>
+<td>出错时结束进程</td>
+</tr>
+<tr>
+<td><code>FreeForm.ProcessPrefix</code></td>
+<td>string</td>
+<td>要结束的进程名前缀</td>
+</tr>
+<tr>
+<td><code>Computers</code></td>
+<td>array</td>
+<td>IP 与名称映射列表</td>
+</tr>
+<tr>
+<td><code>UpdatePassword</code></td>
+<td>string</td>
+<td>更新标签页密码（空=不启用）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Q-启动服务后提示-10013-错误？"><a href="#Q-启动服务后提示-10013-错误？" class="headerlink" title="Q: 启动服务后提示 10013 错误？"></a>Q: 启动服务后提示 10013 错误？</h3><p><strong>A:</strong> 权限被拒绝，通常是防火墙拦截。建议：</p>
+<ol>
+<li>将程序放到纯英文路径下运行</li>
+<li>在 Windows 防火墙中允许程序通过</li>
+<li>以管理员身份运行一次</li>
+</ol>
+<h3 id="Q-备份时提示”找不到路径”？"><a href="#Q-备份时提示”找不到路径”？" class="headerlink" title="Q: 备份时提示”找不到路径”？"></a>Q: 备份时提示”找不到路径”？</h3><p><strong>A:</strong> 请检查 <code>settings.json</code> 中 <code>Server.Root</code> 路径是否存在，路径中的反斜杠需双写（<code>\\</code>）。</p>
+<h3 id="Q-如何修改密码保护？"><a href="#Q-如何修改密码保护？" class="headerlink" title="Q: 如何修改密码保护？"></a>Q: 如何修改密码保护？</h3><p><strong>A:</strong> 编辑 <code>settings.json</code> 文件，修改 <code>UpdatePassword</code> 字段。留空表示不启用密码保护。</p>
+<h3 id="Q-如何自定义备份前脚本？"><a href="#Q-如何自定义备份前脚本？" class="headerlink" title="Q: 如何自定义备份前脚本？"></a>Q: 如何自定义备份前脚本？</h3><p><strong>A:</strong> 编辑 <code>settings.json</code> 中的 <code>Backup.PreBackupScript</code> 字段，填写批处理脚本内容。勾选「备份前先执行配置的备份脚本」后生效。</p>
+<h3 id="Q-日志在哪里？"><a href="#Q-日志在哪里？" class="headerlink" title="Q: 日志在哪里？"></a>Q: 日志在哪里？</h3><p><strong>A:</strong> 程序界面底部有实时日志区域，点击「复制日志」可复制全部内容。崩溃日志记录在程序同目录的 <code>crash.log</code> 文件中。</p>
+<h3 id="Q-如何完全卸载？"><a href="#Q-如何完全卸载？" class="headerlink" title="Q: 如何完全卸载？"></a>Q: 如何完全卸载？</h3><p><strong>A:</strong></p>
+<ol>
+<li>右键托盘图标 → 退出</li>
+<li>删除程序文件夹</li>
+<li>如启用了开机自启，软件退出时会自动清理注册表启动项</li>
+</ol>
+<hr>
+<h2 id="技术规格"><a href="#技术规格" class="headerlink" title="技术规格"></a>技术规格</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>框架</td>
+<td>.NET 10.0 WPF</td>
+</tr>
+<tr>
+<td>通信协议</td>
+<td>TCP + JSON 帧协议</td>
+</tr>
+<tr>
+<td>文件传输缓冲</td>
+<td>128 KB</td>
+</tr>
+<tr>
+<td>最大帧大小</td>
+<td>~488 MB</td>
+</tr>
+<tr>
+<td>时间容差</td>
+<td>1 秒（文件修改时间比较）</td>
+</tr>
+<tr>
+<td>日志上限</td>
+<td>4000 条</td>
+</tr>
+<tr>
+<td>进程结束重试</td>
+<td>1 次，间隔 500ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/CSharp%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2.html" rel="prev" title="CSharp常用数据转换">
+      <i class="fa fa-chevron-left"></i> CSharp常用数据转换
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">3.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">启动方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E6%A6%82%E8%A7%88"><span class="nav-number">4.</span> <span class="nav-text">界面概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">本机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">5.2.</span> <span class="nav-text">开机自启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%AB%AF%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">远端电脑配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">6.1.</span> <span class="nav-text">IP 输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.2.</span> <span class="nav-text">测试连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E5%A4%87%E4%BB%BD"><span class="nav-number">7.</span> <span class="nav-text">BBK 备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%9D%A5%E6%BA%90"><span class="nav-number">7.1.</span> <span class="nav-text">备份来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E7%9B%AE%E6%A0%87"><span class="nav-number">7.2.</span> <span class="nav-text">备份目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E9%80%89%E9%A1%B9"><span class="nav-number">7.3.</span> <span class="nav-text">备份选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E8%A7%84%E5%88%99"><span class="nav-number">7.4.</span> <span class="nav-text">忽略规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E6%9B%B4%E6%96%B0"><span class="nav-number">8.</span> <span class="nav-text">BBK 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91"><span class="nav-number">8.1.</span> <span class="nav-text">更新方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">8.2.</span> <span class="nav-text">更新规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="nav-number">8.3.</span> <span class="nav-text">更新日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B"><span class="nav-number">8.4.</span> <span class="nav-text">更新流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">9.</span> <span class="nav-text">文件传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">9.1.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E9%80%89%E9%A1%B9"><span class="nav-number">9.2.</span> <span class="nav-text">传输选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD"><span class="nav-number">9.3.</span> <span class="nav-text">自动备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5"><span class="nav-number">10.</span> <span class="nav-text">Windows 共享连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E5%90%8D%E7%A7%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">11.</span> <span class="nav-text">电脑名称配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%8E%86%E5%8F%B2"><span class="nav-number">12.</span> <span class="nav-text">连接历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E4%B8%8E%E6%89%98%E7%9B%98"><span class="nav-number">13.</span> <span class="nav-text">开机自启与托盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF-1"><span class="nav-number">13.1.</span> <span class="nav-text">开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%89%98%E7%9B%98"><span class="nav-number">13.2.</span> <span class="nav-text">系统托盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="nav-number">14.</span> <span class="nav-text">设置文件说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84"><span class="nav-number">14.1.</span> <span class="nav-text">完整配置结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">14.2.</span> <span class="nav-text">主要字段说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%90%8E%E6%8F%90%E7%A4%BA-10013-%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="nav-number">15.1.</span> <span class="nav-text">Q: 启动服务后提示 10013 错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A4%87%E4%BB%BD%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9D%E6%89%BE%E4%B8%8D%E5%88%B0%E8%B7%AF%E5%BE%84%E2%80%9D%EF%BC%9F"><span class="nav-number">15.2.</span> <span class="nav-text">Q: 备份时提示”找不到路径”？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%EF%BC%9F"><span class="nav-number">15.3.</span> <span class="nav-text">Q: 如何修改密码保护？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%87%E4%BB%BD%E5%89%8D%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="nav-number">15.4.</span> <span class="nav-text">Q: 如何自定义备份前脚本？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E6%97%A5%E5%BF%97%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="nav-number">15.5.</span> <span class="nav-text">Q: 日志在哪里？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD%EF%BC%9F"><span class="nav-number">15.6.</span> <span class="nav-text">Q: 如何完全卸载？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%A7%84%E6%A0%BC"><span class="nav-number">16.</span> <span class="nav-text">技术规格</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Justin"
+      src="/images/headim.png">
+  <p class="site-author-name" itemprop="name">Justin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">215</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/silencejql" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;silencejql" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:silencejql@163.com" title="E-Mail → mailto:silencejql@163.com" rel="noopener" target="_blank"><i class="fab fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://music.163.com/#/user/home?id=103195839" title="NetEaet → https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;103195839" rel="noopener" target="_blank"><i class="fab fa-headphones fa-fw"></i>NetEaet</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2808102675/profile?topnav=1&wvr=6" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2808102675&#x2F;profile?topnav&#x3D;1&amp;wvr&#x3D;6" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Justin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">463k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">7:01</span>
+</div>
+<!--
+<div class="powered-by">
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+</span>
+
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共124.4k字</span>
+</div>
+-->
+  <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
+  </div>
+  <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : '[object Object]',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '8c9MWTg5hbBfsCntHAbBOKqg-gzGzoHsz',
+      appKey     : 'pJWUgkSsuys2uKmnaleLMmi6',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"left","width":20,"height":40},"mobile":{"show":true},"log":false});</script></body>
+</html>
