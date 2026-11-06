@@ -277,25 +277,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>BBK 文件同步与备份工具 使用说明<br><span id="more"></span></p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
-<li><a href="#简介">简介</a></li>
-<li><a href="#安装与启动">安装与启动</a></li>
-<li><a href="#界面概览">界面概览</a></li>
-<li><a href="#本机配置">本机配置</a></li>
-<li><a href="#远端电脑配置">远端电脑配置</a></li>
-<li><a href="#bbk-备份">BBK 备份</a></li>
-<li><a href="#bbk-更新">BBK 更新</a></li>
-<li><a href="#文件传输">文件传输</a></li>
-<li><a href="#windows-共享连接">Windows 共享连接</a></li>
-<li><a href="#电脑名称配置">电脑名称配置</a></li>
-<li><a href="#连接历史">连接历史</a></li>
-<li><a href="#开机自启与托盘">开机自启与托盘</a></li>
-<li><a href="#设置文件说明">设置文件说明</a></li>
-<li><a href="#常见问题">常见问题</a></li>
+        <p>BBK 文件同步与备份工具 使用说明</p>
+<span id="more"></span>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8">安装与启动</a></li>
+<li><a href="#%E7%95%8C%E9%9D%A2%E6%A6%82%E8%A7%88">界面概览</a></li>
+<li><a href="#%E6%9C%AC%E6%9C%BA%E9%85%8D%E7%BD%AE">本机配置</a></li>
+<li><a href="#%E8%BF%9C%E7%AB%AF%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE">远端电脑配置</a></li>
+<li><a href="#bbk-%E5%A4%87%E4%BB%BD">BBK 备份</a></li>
+<li><a href="#bbk-%E6%9B%B4%E6%96%B0">BBK 更新</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93">文件传输</a></li>
+<li><a href="#windows-%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5">Windows 共享连接</a></li>
+<li><a href="#%E7%94%B5%E8%84%91%E5%90%8D%E7%A7%B0%E9%85%8D%E7%BD%AE">电脑名称配置</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E5%8E%86%E5%8F%B2">连接历史</a></li>
+<li><a href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E4%B8%8E%E6%89%98%E7%9B%98">开机自启与托盘</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E">设置文件说明</a></li>
+<li><a href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">常见问题</a></li>
 </ol>
 <hr>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>BBK 文件同步与备份工具是一款局域网内的文件同步、备份与传输工具，基于 TCP 直连通信，无需安装客户端即可在远端电脑上运行备份/同步操作。</p>
+<h2 id="简介">简介</h2>
+<p>BBK 文件同步与备份工具是一款局域网内的文件同步、备份与传输工具，基于 TCP 直连通信，无需安装客户端即可在远端电脑上运行备份/同步操作。</p>
 <p><strong>主要功能：</strong></p>
 <ul>
 <li><strong>BBK 备份</strong> — 将本机或远端电脑的 BBK 文件夹备份到指定目录</li>
@@ -303,20 +306,24 @@
 <li><strong>文件传输</strong> — 将本机的文件或文件夹传输到远端电脑的相同路径</li>
 </ul>
 <hr>
-<h2 id="安装与启动"><a href="#安装与启动" class="headerlink" title="安装与启动"></a>安装与启动</h2><h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><ul>
+<h2 id="安装与启动">安装与启动</h2>
+<h3 id="运行环境">运行环境</h3>
+<ul>
 <li>Windows 7 SP1 及以上（推荐 Windows 10/11）</li>
 <li>无需安装 .NET 运行时（单文件发布，自带运行时）</li>
 </ul>
-<h3 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h3><ol>
+<h3 id="启动方式">启动方式</h3>
+<ol>
 <li>直接双击 <code>BBKSync.exe</code> 运行</li>
 <li>首次运行会自动在同目录生成 <code>settings.json</code> 配置文件</li>
 <li>如无写入权限，配置文件会存放在 <code>%LocalAppData%\BBKFileSync\</code> 目录</li>
 </ol>
 <hr>
-<h2 id="界面概览"><a href="#界面概览" class="headerlink" title="界面概览"></a>界面概览</h2><p>软件界面分为以下几个区域：</p>
+<h2 id="界面概览">界面概览</h2>
+<p>软件界面分为以下几个区域：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">┌──────────────────────────────────────────────┐</span><br><span class="line">│  [最小化] [最大化] [关闭]   BBK文件同步与备份工具  │  ← 自定义标题栏</span><br><span class="line">├──────────────────────────────────────────────┤</span><br><span class="line">│  ┌─ 本机配置 ──────────┐ ┌─ 远端电脑 ──────────┐ │</span><br><span class="line">│  │ BBK文件夹: [    ]   │ │ IP/范围: [       ]  │ │</span><br><span class="line">│  │ 端口: [    ]        │ │ 对方端口: [      ]  │ │</span><br><span class="line">│  │ [启动服务] [停止服务]│ │ [测试连接][历史]   │ │</span><br><span class="line">│  │ ☐ 开机自启          │ │ [电脑名称]         │ │</span><br><span class="line">│  └────────────────────┘ └────────────────────┘ │</span><br><span class="line">│  ┌─ [BBK备份] [BBK更新] [文件传输] ─────────┐ │</span><br><span class="line">│  │                                          │ │</span><br><span class="line">│  │        （对应标签页内容）                  │ │</span><br><span class="line">│  │                                          │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">│  ┌─ 传输与进度 ─────────────────────────────┐ │</span><br><span class="line">│  │ [开始备份] [开始更新] [取消]              │ │</span><br><span class="line">│  │ ████████████████░░░░  进度: 正在传输...  │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">│  ┌─ 日志 ───────────────────────────────────┐ │</span><br><span class="line">│  │ [12:00:01] 工具已启动...                 │ │</span><br><span class="line">│  │ [12:00:02] 服务已启动，监听端口 25010    │ │</span><br><span class="line">│  │                          [复制日志][清空] │ │</span><br><span class="line">│  └──────────────────────────────────────────┘ │</span><br><span class="line">├──────────────────────────────────────────────┤</span><br><span class="line">│  就绪                         192.168.1.100  │  ← 状态栏</span><br><span class="line">└──────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="本机配置"><a href="#本机配置" class="headerlink" title="本机配置"></a>本机配置</h2><div class="table-container">
+<h2 id="本机配置">本机配置</h2>
 <table>
 <thead>
 <tr>
@@ -353,11 +360,12 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>点击「启动服务」后，软件开始监听指定端口。状态栏右侧会显示本机所有局域网 IP 地址，方便在其他电脑上配置连接。</p>
-<h3 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h3><p>勾选「开机自启并后台监听」后，软件会将自身添加到 Windows 开机启动项（注册表 <code>HKCU\...\Run</code>），每次开机自动启动服务并最小化到托盘。</p>
+<h3 id="启动服务">启动服务</h3>
+<p>点击「启动服务」后，软件开始监听指定端口。状态栏右侧会显示本机所有局域网 IP 地址，方便在其他电脑上配置连接。</p>
+<h3 id="开机自启">开机自启</h3>
+<p>勾选「开机自启并后台监听」后，软件会将自身添加到 Windows 开机启动项（注册表 <code>HKCU\...\Run</code>），每次开机自动启动服务并最小化到托盘。</p>
 <hr>
-<h2 id="远端电脑配置"><a href="#远端电脑配置" class="headerlink" title="远端电脑配置"></a>远端电脑配置</h2><div class="table-container">
+<h2 id="远端电脑配置">远端电脑配置</h2>
 <table>
 <thead>
 <tr>
@@ -394,9 +402,8 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="IP-输入格式"><a href="#IP-输入格式" class="headerlink" title="IP 输入格式"></a>IP 输入格式</h3><p>支持以下格式，可混合使用：</p>
-<div class="table-container">
+<h3 id="IP-输入格式">IP 输入格式</h3>
+<p>支持以下格式，可混合使用：</p>
 <table>
 <thead>
 <tr>
@@ -438,11 +445,11 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p><strong>注意：</strong> 最后一位 IP 范围为 1-254，不支持 0 和 255。</p>
 </blockquote>
-<h3 id="测试连接"><a href="#测试连接" class="headerlink" title="测试连接"></a>测试连接</h3><p>点击「测试连接」会执行两步验证：</p>
+<h3 id="测试连接">测试连接</h3>
+<p>点击「测试连接」会执行两步验证：</p>
 <ol>
 <li><strong>TCP 连接测试</strong> — 尝试建立 TCP 连接（4 秒超时）</li>
 <li><strong>协议握手</strong> — 发送探测请求，验证对方是否运行 BBK 服务（5 秒超时）</li>
@@ -454,7 +461,8 @@
 <li><strong>10061</strong> — 连接被拒绝，对方未启动服务或端口不正确</li>
 </ul>
 <hr>
-<h2 id="BBK-备份"><a href="#BBK-备份" class="headerlink" title="BBK 备份"></a>BBK 备份</h2><h3 id="备份来源"><a href="#备份来源" class="headerlink" title="备份来源"></a>备份来源</h3><div class="table-container">
+<h2 id="BBK-备份">BBK 备份</h2>
+<h3 id="备份来源">备份来源</h3>
 <table>
 <thead>
 <tr>
@@ -477,10 +485,10 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="备份目标"><a href="#备份目标" class="headerlink" title="备份目标"></a>备份目标</h3><p>备份文件存放在「备份到」指定的父目录下，实际存入格式为：</p>
+<h3 id="备份目标">备份目标</h3>
+<p>备份文件存放在「备份到」指定的父目录下，实际存入格式为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">备份目录\</span><br><span class="line">  └─ BBK_电脑名称_日期\</span><br><span class="line">       ├─ (Line1)\        ← 如果检测到 LineNo，按产线分子目录</span><br><span class="line">       │   ├─ Bin\</span><br><span class="line">       │   ├─ Config\</span><br><span class="line">       │   └─ ...</span><br><span class="line">       └─ ...</span><br></pre></td></tr></table></figure>
-<h3 id="备份选项"><a href="#备份选项" class="headerlink" title="备份选项"></a>备份选项</h3><div class="table-container">
+<h3 id="备份选项">备份选项</h3>
 <table>
 <thead>
 <tr>
@@ -512,8 +520,8 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="忽略规则"><a href="#忽略规则" class="headerlink" title="忽略规则"></a>忽略规则</h3><p>勾选「启用忽略规则」后，按行配置正则表达式，匹配到的文件/文件夹将被跳过备份。</p>
+<h3 id="忽略规则">忽略规则</h3>
+<p>勾选「启用忽略规则」后，按行配置正则表达式，匹配到的文件/文件夹将被跳过备份。</p>
 <p><strong>语法规则：</strong></p>
 <ul>
 <li>每行一条正则表达式（大小写不敏感）</li>
@@ -521,7 +529,6 @@
 <li>使用 <code>/</code> 作为路径分隔符</li>
 </ul>
 <p><strong>常用示例：</strong></p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -536,31 +543,27 @@
 </tr>
 <tr>
 <td><code>副本</code></td>
-<td>忽略路径中含”副本”的文件</td>
+<td>忽略路径中含&quot;副本&quot;的文件</td>
 </tr>
 <tr>
 <td>`(^</td>
 <td>/).git(/</td>
-<td>$)`</td>
-<td>忽略所有 .git 文件夹</td>
 </tr>
 <tr>
 <td>`(^</td>
 <td>/)Temp(/</td>
-<td>$)`</td>
-<td>忽略顶层 Temp 文件夹</td>
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p><strong>注意：</strong> <code>*</code> 号在正则中无效，需用 <code>.*</code> 代替。临时文件（<code>.tmp</code> 后缀）始终自动跳过。</p>
 </blockquote>
 <hr>
-<h2 id="BBK-更新"><a href="#BBK-更新" class="headerlink" title="BBK 更新"></a>BBK 更新</h2><blockquote>
+<h2 id="BBK-更新">BBK 更新</h2>
+<blockquote>
 <p><strong>注意：</strong> BBK 更新标签页支持密码保护。如需启用，请在 <code>settings.json</code> 中设置 <code>&quot;UpdatePassword&quot;: &quot;你的密码&quot;</code>。留空则不启用密码保护。</p>
 </blockquote>
-<h3 id="更新方向"><a href="#更新方向" class="headerlink" title="更新方向"></a>更新方向</h3><div class="table-container">
+<h3 id="更新方向">更新方向</h3>
 <table>
 <thead>
 <tr>
@@ -587,8 +590,7 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="更新规则"><a href="#更新规则" class="headerlink" title="更新规则"></a>更新规则</h3><div class="table-container">
+<h3 id="更新规则">更新规则</h3>
 <table>
 <thead>
 <tr>
@@ -610,18 +612,21 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p>当需要更新的文件数量 <strong>少于 10 个</strong> 时，会将每个文件名输出到日志中，方便确认具体更新了哪些文件：</p>
+<h3 id="更新日志">更新日志</h3>
+<p>当需要更新的文件数量 <strong>少于 10 个</strong> 时，会将每个文件名输出到日志中，方便确认具体更新了哪些文件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[12:00:01] 对方需要 3 个文件，开始发送...</span><br><span class="line">[12:00:01]   → Bin/xxx.dll</span><br><span class="line">[12:00:01]   → Config/sys.xml</span><br><span class="line">[12:00:01]   → Log/latest.log</span><br></pre></td></tr></table></figure>
-<h3 id="更新流程"><a href="#更新流程" class="headerlink" title="更新流程"></a>更新流程</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 客户端连接到目标电脑</span><br><span class="line">2. 目标电脑发送文件清单（路径、大小、修改时间）</span><br><span class="line">3. 客户端比对本地与远端文件差异</span><br><span class="line">4. 计算出需要更新的文件列表</span><br><span class="line">5. 目标电脑逐个发送需要更新的文件</span><br><span class="line">6. 客户端接收并写入本地</span><br><span class="line">7. 完成</span><br></pre></td></tr></table></figure>
+<h3 id="更新流程">更新流程</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 客户端连接到目标电脑</span><br><span class="line">2. 目标电脑发送文件清单（路径、大小、修改时间）</span><br><span class="line">3. 客户端比对本地与远端文件差异</span><br><span class="line">4. 计算出需要更新的文件列表</span><br><span class="line">5. 目标电脑逐个发送需要更新的文件</span><br><span class="line">6. 客户端接收并写入本地</span><br><span class="line">7. 完成</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="文件传输"><a href="#文件传输" class="headerlink" title="文件传输"></a>文件传输</h2><p>将本机的文件或文件夹传输到远端电脑的<strong>相同绝对路径</strong>。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><ol>
+<h2 id="文件传输">文件传输</h2>
+<p>将本机的文件或文件夹传输到远端电脑的<strong>相同绝对路径</strong>。</p>
+<h3 id="操作步骤">操作步骤</h3>
+<ol>
 <li>在「路径」框输入或选择要传输的文件/文件夹</li>
 <li>配置对方 IP 和端口</li>
 <li>点击「开始更新」</li>
 </ol>
-<h3 id="传输选项"><a href="#传输选项" class="headerlink" title="传输选项"></a>传输选项</h3><div class="table-container">
+<h3 id="传输选项">传输选项</h3>
 <table>
 <thead>
 <tr>
@@ -637,21 +642,21 @@
 <td>开启</td>
 </tr>
 <tr>
-<td><strong>出错时结束 FreeFormAlways* 后重试一次</strong></td>
+<td><em><em>出错时结束 FreeFormAlways</em> 后重试一次</em>*</td>
 <td>文件被占用时自动结束相关进程后重试</td>
 <td>开启</td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="自动备份"><a href="#自动备份" class="headerlink" title="自动备份"></a>自动备份</h3><p>传输前会自动备份对方目标路径的现有文件/文件夹：</p>
+<h3 id="自动备份">自动备份</h3>
+<p>传输前会自动备份对方目标路径的现有文件/文件夹：</p>
 <ul>
 <li>文件重命名为：<code>原名-更新自动备份-YYYYMMDD.扩展名</code></li>
 <li>文件夹重命名为：<code>原名-更新自动备份-YYYYMMDD</code></li>
 </ul>
 <hr>
-<h2 id="Windows-共享连接"><a href="#Windows-共享连接" class="headerlink" title="Windows 共享连接"></a>Windows 共享连接</h2><p>当选择「Windows 共享」作为备份来源或「从共享文件夹更新本机」时，会显示共享连接配置区域。</p>
-<div class="table-container">
+<h2 id="Windows-共享连接">Windows 共享连接</h2>
+<p>当选择「Windows 共享」作为备份来源或「从共享文件夹更新本机」时，会显示共享连接配置区域。</p>
 <table>
 <thead>
 <tr>
@@ -688,12 +693,12 @@
 </tr>
 </tbody>
 </table>
-</div>
 <blockquote>
 <p><strong>提示：</strong> 对方只需共享 BBK 文件夹或开放 <code>c$</code> 管理共享，无需安装本程序。</p>
 </blockquote>
 <hr>
-<h2 id="电脑名称配置"><a href="#电脑名称配置" class="headerlink" title="电脑名称配置"></a>电脑名称配置</h2><p>点击「电脑名称」按钮打开配置窗口，用于设置 IP 与电脑名称的对应关系。</p>
+<h2 id="电脑名称配置">电脑名称配置</h2>
+<p>点击「电脑名称」按钮打开配置窗口，用于设置 IP 与电脑名称的对应关系。</p>
 <p><strong>用途：</strong></p>
 <ul>
 <li>备份文件夹自动命名为 <code>BBK_电脑名称_日期</code>（而非纯 IP）</li>
@@ -706,8 +711,8 @@
 <li><strong>保存并关闭</strong> — 保存配置并关闭窗口</li>
 </ul>
 <hr>
-<h2 id="连接历史"><a href="#连接历史" class="headerlink" title="连接历史"></a>连接历史</h2><p>点击「历史」按钮打开连接历史窗口，自动记录每次成功连接的信息。</p>
-<div class="table-container">
+<h2 id="连接历史">连接历史</h2>
+<p>点击「历史」按钮打开连接历史窗口，自动记录每次成功连接的信息。</p>
 <table>
 <thead>
 <tr>
@@ -734,20 +739,22 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p><strong>操作：</strong></p>
 <ul>
 <li>选中记录后可编辑备注，点击「保存备注」</li>
 <li>点击「删除记录」可删除选中条目</li>
 </ul>
 <hr>
-<h2 id="开机自启与托盘"><a href="#开机自启与托盘" class="headerlink" title="开机自启与托盘"></a>开机自启与托盘</h2><h3 id="开机自启-1"><a href="#开机自启-1" class="headerlink" title="开机自启"></a>开机自启</h3><p>勾选「开机自启并后台监听」后：</p>
+<h2 id="开机自启与托盘">开机自启与托盘</h2>
+<h3 id="开机自启-v2">开机自启</h3>
+<p>勾选「开机自启并后台监听」后：</p>
 <ul>
 <li>软件添加到 Windows 开机启动项</li>
 <li>每次开机自动启动服务</li>
 <li>自动最小化到系统托盘</li>
 </ul>
-<h3 id="系统托盘"><a href="#系统托盘" class="headerlink" title="系统托盘"></a>系统托盘</h3><ul>
+<h3 id="系统托盘">系统托盘</h3>
+<ul>
 <li><strong>双击托盘图标</strong> — 打开主界面</li>
 <li><strong>右键托盘菜单</strong> — 「打开主界面」或「退出」</li>
 <li><strong>关闭窗口</strong> — 如果启用了开机自启，关闭窗口只会隐藏到托盘，不会退出程序</li>
@@ -757,9 +764,11 @@
 <p><strong>完全退出：</strong> 右键托盘图标 → 选择「退出」</p>
 </blockquote>
 <hr>
-<h2 id="设置文件说明"><a href="#设置文件说明" class="headerlink" title="设置文件说明"></a>设置文件说明</h2><p>配置文件为 <code>settings.json</code>，位于程序同目录（如无写入权限则在 <code>%LocalAppData%\BBKFileSync\</code>）。</p>
-<h3 id="完整配置结构"><a href="#完整配置结构" class="headerlink" title="完整配置结构"></a>完整配置结构</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Server&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Root&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Port&quot;</span><span class="punctuation">:</span> <span class="number">25010</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoStartAndListen&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Backup&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Dest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK_AutoBackup&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogRule&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogDays&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexEnabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;CompressZip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoFetchComputerName&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;RunPreBackupBat&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;PreBackupScript&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Transfer&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SameSkip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;KillFreeForm&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;FreeForm&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ProcessPrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;FreeFormAlways&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Computers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;UpdatePassword&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="主要字段说明"><a href="#主要字段说明" class="headerlink" title="主要字段说明"></a>主要字段说明</h3><div class="table-container">
+<h2 id="设置文件说明">设置文件说明</h2>
+<p>配置文件为 <code>settings.json</code>，位于程序同目录（如无写入权限则在 <code>%LocalAppData%\BBKFileSync\</code>）。</p>
+<h3 id="完整配置结构">完整配置结构</h3>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;Version&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Server&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Root&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Port&quot;</span><span class="punctuation">:</span> <span class="number">25010</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoStartAndListen&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Backup&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Dest&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:\\BBK_AutoBackup&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogRule&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LogDays&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexEnabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IgnoreRegexes&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;CompressZip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;AutoFetchComputerName&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;RunPreBackupBat&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;PreBackupScript&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Transfer&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SameSkip&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;KillFreeForm&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;FreeForm&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;ProcessPrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;FreeFormAlways&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;Computers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;UpdatePassword&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="主要字段说明">主要字段说明</h3>
 <table>
 <thead>
 <tr>
@@ -856,26 +865,32 @@
 </tr>
 </tbody>
 </table>
-</div>
 <hr>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="Q-启动服务后提示-10013-错误？"><a href="#Q-启动服务后提示-10013-错误？" class="headerlink" title="Q: 启动服务后提示 10013 错误？"></a>Q: 启动服务后提示 10013 错误？</h3><p><strong>A:</strong> 权限被拒绝，通常是防火墙拦截。建议：</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="Q-启动服务后提示-10013-错误？">Q: 启动服务后提示 10013 错误？</h3>
+<p><strong>A:</strong> 权限被拒绝，通常是防火墙拦截。建议：</p>
 <ol>
 <li>将程序放到纯英文路径下运行</li>
 <li>在 Windows 防火墙中允许程序通过</li>
 <li>以管理员身份运行一次</li>
 </ol>
-<h3 id="Q-备份时提示”找不到路径”？"><a href="#Q-备份时提示”找不到路径”？" class="headerlink" title="Q: 备份时提示”找不到路径”？"></a>Q: 备份时提示”找不到路径”？</h3><p><strong>A:</strong> 请检查 <code>settings.json</code> 中 <code>Server.Root</code> 路径是否存在，路径中的反斜杠需双写（<code>\\</code>）。</p>
-<h3 id="Q-如何修改密码保护？"><a href="#Q-如何修改密码保护？" class="headerlink" title="Q: 如何修改密码保护？"></a>Q: 如何修改密码保护？</h3><p><strong>A:</strong> 编辑 <code>settings.json</code> 文件，修改 <code>UpdatePassword</code> 字段。留空表示不启用密码保护。</p>
-<h3 id="Q-如何自定义备份前脚本？"><a href="#Q-如何自定义备份前脚本？" class="headerlink" title="Q: 如何自定义备份前脚本？"></a>Q: 如何自定义备份前脚本？</h3><p><strong>A:</strong> 编辑 <code>settings.json</code> 中的 <code>Backup.PreBackupScript</code> 字段，填写批处理脚本内容。勾选「备份前先执行配置的备份脚本」后生效。</p>
-<h3 id="Q-日志在哪里？"><a href="#Q-日志在哪里？" class="headerlink" title="Q: 日志在哪里？"></a>Q: 日志在哪里？</h3><p><strong>A:</strong> 程序界面底部有实时日志区域，点击「复制日志」可复制全部内容。崩溃日志记录在程序同目录的 <code>crash.log</code> 文件中。</p>
-<h3 id="Q-如何完全卸载？"><a href="#Q-如何完全卸载？" class="headerlink" title="Q: 如何完全卸载？"></a>Q: 如何完全卸载？</h3><p><strong>A:</strong></p>
+<h3 id="Q-备份时提示-找不到路径-？">Q: 备份时提示&quot;找不到路径&quot;？</h3>
+<p><strong>A:</strong> 请检查 <code>settings.json</code> 中 <code>Server.Root</code> 路径是否存在，路径中的反斜杠需双写（<code>\\</code>）。</p>
+<h3 id="Q-如何修改密码保护？">Q: 如何修改密码保护？</h3>
+<p><strong>A:</strong> 编辑 <code>settings.json</code> 文件，修改 <code>UpdatePassword</code> 字段。留空表示不启用密码保护。</p>
+<h3 id="Q-如何自定义备份前脚本？">Q: 如何自定义备份前脚本？</h3>
+<p><strong>A:</strong> 编辑 <code>settings.json</code> 中的 <code>Backup.PreBackupScript</code> 字段，填写批处理脚本内容。勾选「备份前先执行配置的备份脚本」后生效。</p>
+<h3 id="Q-日志在哪里？">Q: 日志在哪里？</h3>
+<p><strong>A:</strong> 程序界面底部有实时日志区域，点击「复制日志」可复制全部内容。崩溃日志记录在程序同目录的 <code>crash.log</code> 文件中。</p>
+<h3 id="Q-如何完全卸载？">Q: 如何完全卸载？</h3>
+<p><strong>A:</strong></p>
 <ol>
 <li>右键托盘图标 → 退出</li>
 <li>删除程序文件夹</li>
 <li>如启用了开机自启，软件退出时会自动清理注册表启动项</li>
 </ol>
 <hr>
-<h2 id="技术规格"><a href="#技术规格" class="headerlink" title="技术规格"></a>技术规格</h2><div class="table-container">
+<h2 id="技术规格">技术规格</h2>
 <table>
 <thead>
 <tr>
@@ -914,7 +929,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 
     </div>
 
@@ -993,7 +1007,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">3.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">启动方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E6%A6%82%E8%A7%88"><span class="nav-number">4.</span> <span class="nav-text">界面概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">本机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">5.2.</span> <span class="nav-text">开机自启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%AB%AF%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">远端电脑配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">6.1.</span> <span class="nav-text">IP 输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.2.</span> <span class="nav-text">测试连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E5%A4%87%E4%BB%BD"><span class="nav-number">7.</span> <span class="nav-text">BBK 备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%9D%A5%E6%BA%90"><span class="nav-number">7.1.</span> <span class="nav-text">备份来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E7%9B%AE%E6%A0%87"><span class="nav-number">7.2.</span> <span class="nav-text">备份目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E9%80%89%E9%A1%B9"><span class="nav-number">7.3.</span> <span class="nav-text">备份选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E8%A7%84%E5%88%99"><span class="nav-number">7.4.</span> <span class="nav-text">忽略规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E6%9B%B4%E6%96%B0"><span class="nav-number">8.</span> <span class="nav-text">BBK 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91"><span class="nav-number">8.1.</span> <span class="nav-text">更新方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">8.2.</span> <span class="nav-text">更新规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="nav-number">8.3.</span> <span class="nav-text">更新日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B"><span class="nav-number">8.4.</span> <span class="nav-text">更新流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">9.</span> <span class="nav-text">文件传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">9.1.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E9%80%89%E9%A1%B9"><span class="nav-number">9.2.</span> <span class="nav-text">传输选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD"><span class="nav-number">9.3.</span> <span class="nav-text">自动备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5"><span class="nav-number">10.</span> <span class="nav-text">Windows 共享连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E5%90%8D%E7%A7%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">11.</span> <span class="nav-text">电脑名称配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%8E%86%E5%8F%B2"><span class="nav-number">12.</span> <span class="nav-text">连接历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E4%B8%8E%E6%89%98%E7%9B%98"><span class="nav-number">13.</span> <span class="nav-text">开机自启与托盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF-1"><span class="nav-number">13.1.</span> <span class="nav-text">开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%89%98%E7%9B%98"><span class="nav-number">13.2.</span> <span class="nav-text">系统托盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="nav-number">14.</span> <span class="nav-text">设置文件说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84"><span class="nav-number">14.1.</span> <span class="nav-text">完整配置结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">14.2.</span> <span class="nav-text">主要字段说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%90%8E%E6%8F%90%E7%A4%BA-10013-%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="nav-number">15.1.</span> <span class="nav-text">Q: 启动服务后提示 10013 错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A4%87%E4%BB%BD%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9D%E6%89%BE%E4%B8%8D%E5%88%B0%E8%B7%AF%E5%BE%84%E2%80%9D%EF%BC%9F"><span class="nav-number">15.2.</span> <span class="nav-text">Q: 备份时提示”找不到路径”？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%EF%BC%9F"><span class="nav-number">15.3.</span> <span class="nav-text">Q: 如何修改密码保护？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%87%E4%BB%BD%E5%89%8D%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="nav-number">15.4.</span> <span class="nav-text">Q: 如何自定义备份前脚本？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E6%97%A5%E5%BF%97%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="nav-number">15.5.</span> <span class="nav-text">Q: 日志在哪里？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD%EF%BC%9F"><span class="nav-number">15.6.</span> <span class="nav-text">Q: 如何完全卸载？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%A7%84%E6%A0%BC"><span class="nav-number">16.</span> <span class="nav-text">技术规格</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">安装与启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="nav-number">3.1.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">3.2.</span> <span class="nav-text">启动方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E6%A6%82%E8%A7%88"><span class="nav-number">4.</span> <span class="nav-text">界面概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">5.</span> <span class="nav-text">本机配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">启动服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="nav-number">5.2.</span> <span class="nav-text">开机自启</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%AB%AF%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE"><span class="nav-number">6.</span> <span class="nav-text">远端电脑配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">6.1.</span> <span class="nav-text">IP 输入格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.2.</span> <span class="nav-text">测试连接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E5%A4%87%E4%BB%BD"><span class="nav-number">7.</span> <span class="nav-text">BBK 备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E6%9D%A5%E6%BA%90"><span class="nav-number">7.1.</span> <span class="nav-text">备份来源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E7%9B%AE%E6%A0%87"><span class="nav-number">7.2.</span> <span class="nav-text">备份目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E9%80%89%E9%A1%B9"><span class="nav-number">7.3.</span> <span class="nav-text">备份选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E8%A7%84%E5%88%99"><span class="nav-number">7.4.</span> <span class="nav-text">忽略规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BBK-%E6%9B%B4%E6%96%B0"><span class="nav-number">8.</span> <span class="nav-text">BBK 更新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%96%B9%E5%90%91"><span class="nav-number">8.1.</span> <span class="nav-text">更新方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%A7%84%E5%88%99"><span class="nav-number">8.2.</span> <span class="nav-text">更新规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="nav-number">8.3.</span> <span class="nav-text">更新日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B"><span class="nav-number">8.4.</span> <span class="nav-text">更新流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="nav-number">9.</span> <span class="nav-text">文件传输</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">9.1.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E8%BE%93%E9%80%89%E9%A1%B9"><span class="nav-number">9.2.</span> <span class="nav-text">传输选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%A4%87%E4%BB%BD"><span class="nav-number">9.3.</span> <span class="nav-text">自动备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-%E5%85%B1%E4%BA%AB%E8%BF%9E%E6%8E%A5"><span class="nav-number">10.</span> <span class="nav-text">Windows 共享连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%84%91%E5%90%8D%E7%A7%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">11.</span> <span class="nav-text">电脑名称配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%8E%86%E5%8F%B2"><span class="nav-number">12.</span> <span class="nav-text">连接历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E4%B8%8E%E6%89%98%E7%9B%98"><span class="nav-number">13.</span> <span class="nav-text">开机自启与托盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF-v2"><span class="nav-number">13.1.</span> <span class="nav-text">开机自启</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%89%98%E7%9B%98"><span class="nav-number">13.2.</span> <span class="nav-text">系统托盘</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E"><span class="nav-number">14.</span> <span class="nav-text">设置文件说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84"><span class="nav-number">14.1.</span> <span class="nav-text">完整配置结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">14.2.</span> <span class="nav-text">主要字段说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%90%8E%E6%8F%90%E7%A4%BA-10013-%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="nav-number">15.1.</span> <span class="nav-text">Q: 启动服务后提示 10013 错误？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A4%87%E4%BB%BD%E6%97%B6%E6%8F%90%E7%A4%BA-%E6%89%BE%E4%B8%8D%E5%88%B0%E8%B7%AF%E5%BE%84-%EF%BC%9F"><span class="nav-number">15.2.</span> <span class="nav-text">Q: 备份时提示&quot;找不到路径&quot;？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E4%BF%9D%E6%8A%A4%EF%BC%9F"><span class="nav-number">15.3.</span> <span class="nav-text">Q: 如何修改密码保护？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%A4%87%E4%BB%BD%E5%89%8D%E8%84%9A%E6%9C%AC%EF%BC%9F"><span class="nav-number">15.4.</span> <span class="nav-text">Q: 如何自定义备份前脚本？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E6%97%A5%E5%BF%97%E5%9C%A8%E5%93%AA%E9%87%8C%EF%BC%9F"><span class="nav-number">15.5.</span> <span class="nav-text">Q: 日志在哪里？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-%E5%A6%82%E4%BD%95%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BD%EF%BC%9F"><span class="nav-number">15.6.</span> <span class="nav-text">Q: 如何完全卸载？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%A7%84%E6%A0%BC"><span class="nav-number">16.</span> <span class="nav-text">技术规格</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1072,13 +1086,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">463k</span>
+    <span title="站点总字数">465k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">7:01</span>
+    <span title="站点阅读时长">7:03</span>
 </div>
 <!--
 <div class="powered-by">
@@ -1100,7 +1114,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共124.5k字</span>
+  <span class="post-count">博客全站共126k字</span>
 </div>
 -->
   <div class="powered-by">无有，无无，无亦有亦无，无非有非无．
@@ -1110,7 +1124,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://cn.vercount.one/js"></script>
+  <script async src="/js/vercount.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
